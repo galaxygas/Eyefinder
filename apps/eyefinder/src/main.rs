@@ -5,6 +5,7 @@ mod audio_view;
 mod files_view;
 mod player;
 mod settings;
+mod table_columns;
 mod texture_view;
 mod theme;
 mod thumbs;

@@ -6,7 +6,7 @@ use std::sync::atomic::Ordering;
 use ef_audio::export::{ExportOptions, Progress};
 use ef_audio::{AssetKind, AudioAsset, DecodeOptions};
 use egui::{Align, CornerRadius, Layout, Margin, RichText, Sense, Stroke, Ui, vec2};
-use egui_extras::{Column, TableBuilder};
+use egui_extras::TableBuilder;
 use egui_phosphor::regular as icon;
 
 use crate::app::{
@@ -232,26 +232,22 @@ impl EyefinderApp {
             .show(ui, |ui| {
                 ui.set_min_size(ui.available_size());
                 let view = &self.audio_view;
-                TableBuilder::new(ui)
+                crate::table_columns::audio(TableBuilder::new(ui))
                     .striped(false)
                     .sense(Sense::click())
                     .cell_layout(Layout::left_to_right(Align::Center))
-                    .column(Column::exact(34.0))
-                    .column(Column::remainder().at_least(160.0).clip(true))
-                    .column(Column::initial(160.0).at_least(100.0).clip(true).resizable(true))
-                    .column(Column::initial(110.0).at_least(80.0).clip(true).resizable(true))
-                    .column(Column::initial(70.0).at_least(60.0))
-                    .column(Column::exact(112.0))
                     .header(26.0, |mut h| {
                         for t in ["", "TITLE", "CATEGORY", "FORMAT", "SIZE", "SUPPORT"] {
                             h.col(|ui| {
-                                ui.label(
-                                    RichText::new(t)
-                                        .size(10.5)
-                                        .color(p.muted)
-                                        .family(semibold())
-                                        .extra_letter_spacing(0.8),
-                                );
+                                ui.with_layout(Layout::centered_and_justified(egui::Direction::LeftToRight), |ui| {
+                                    ui.label(
+                                        RichText::new(t)
+                                            .size(10.5)
+                                            .color(p.muted)
+                                            .family(semibold())
+                                            .extra_letter_spacing(0.8),
+                                    );
+                                });
                             });
                         }
                     })

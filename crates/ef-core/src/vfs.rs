@@ -318,7 +318,7 @@ fn parse_record(r: &[u8]) -> Option<IsoNode> {
     if let Some(i) = name.find(';') {
         name.truncate(i); // version number, e.g. ";1"
     }
-    if name.ends_with('.') && !(flags & 2 != 0) {
+    if name.ends_with('.') && flags & 2 == 0 {
         name.pop(); // a file without extension is recorded as "NAME."
     }
     Some(IsoNode { name, is_dir: flags & 2 != 0, lba, size })

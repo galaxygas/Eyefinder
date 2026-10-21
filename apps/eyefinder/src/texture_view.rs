@@ -5,7 +5,7 @@ use std::sync::Arc;
 use ef_core::{GameInstall, SupportLevel};
 use ef_texture::catalog::{TexAsset, TexCatalog};
 use egui::{Align, CornerRadius, Layout, Margin, Rect, RichText, Sense, Stroke, Ui, vec2};
-use egui_extras::{Column, TableBuilder};
+use egui_extras::TableBuilder;
 use egui_phosphor::regular as icon;
 
 use crate::app::{
@@ -325,26 +325,21 @@ impl EyefinderApp {
             .inner_margin(Margin::symmetric(4, 4))
             .show(ui, |ui| {
                 ui.set_min_size(ui.available_size());
-                TableBuilder::new(ui)
+                crate::table_columns::textures(TableBuilder::new(ui))
                     .sense(Sense::click())
                     .cell_layout(Layout::left_to_right(Align::Center))
-                    .column(Column::exact(40.0))
-                    .column(Column::remainder().at_least(140.0).clip(true))
-                    .column(Column::initial(90.0).at_least(70.0))
-                    .column(Column::initial(150.0).at_least(90.0).clip(true).resizable(true))
-                    .column(Column::initial(46.0))
-                    .column(Column::initial(200.0).at_least(100.0).clip(true).resizable(true))
-                    .column(Column::exact(112.0))
                     .header(26.0, |mut h| {
                         for t in ["", "NAME", "SIZE", "FORMAT", "MIPS", "DICTIONARY", "SUPPORT"] {
                             h.col(|ui| {
-                                ui.label(
-                                    RichText::new(t)
-                                        .size(10.5)
-                                        .color(p.muted)
-                                        .family(semibold())
-                                        .extra_letter_spacing(0.8),
-                                );
+                                ui.with_layout(Layout::centered_and_justified(egui::Direction::LeftToRight), |ui| {
+                                    ui.label(
+                                        RichText::new(t)
+                                            .size(10.5)
+                                            .color(p.muted)
+                                            .family(semibold())
+                                            .extra_letter_spacing(0.8),
+                                    );
+                                });
                             });
                         }
                     })
