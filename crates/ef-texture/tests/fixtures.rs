@@ -157,5 +157,7 @@ fn export_writes_png_dds_and_manifest() {
     assert_eq!(&dds[128..], &body[..]);
     let manifest: Value = serde_json::from_str(&std::fs::read_to_string(out.join("manifest.json")).unwrap()).unwrap();
     assert_eq!(manifest["textures"].as_array().unwrap().len(), rep.textures);
+    assert_eq!(manifest["edition"], serde_json::to_value(&install.edition).unwrap());
+    assert_eq!(manifest["user_choice"], false);
     std::fs::remove_dir_all(&out).ok();
 }

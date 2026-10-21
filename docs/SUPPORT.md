@@ -70,6 +70,35 @@ These checks run in CI on every change (`crates/ef-audio/tests/fixtures.rs`, `cr
 
 ## Sources
 
+### Vice City PS2 manifest report (2026-10-21)
+
+The maintainer supplied Eyefinder 0.2.0 audio and texture export manifests for a disc
+identified as `SLUS-20552`. The source filename describes v1.40; that revision was
+not independently identified from the disc. Personal source paths are not reproduced here.
+
+* Audio: 99 entries, 99 files written, no failures, not cancelled. Categories:
+  9 radio stations, 15 police/ambience, 2 announcements, 72 cutscenes, 1 music cue.
+  96 entries use 32000 Hz and 3 use 16000 Hz; all are stereo. Every frame count
+  equals `floor(source_bytes / 16384) * 14336`, and every duration equals frames/rate.
+* Textures: 12,326 entries from 1,382 dictionaries, no reported skips. Formats:
+  10,513 PAL4 ARGB8888, 1,789 PAL8 ARGB8888, 23 ARGB8888, 1 PAL8 RGB888.
+* Both CSV files have the same entry counts as their JSON counterparts.
+
+These are **export-completion observations**, not a byte comparison with a reference
+decoder or an inventory of every asset on the disc. They do not establish support
+for omitted sound banks, mission audio or movies. No support level is promoted.
+
+Report fingerprints (SHA-256, metadata only; the uploads are not committed):
+
+| Report | SHA-256 |
+|---|---|
+| Audio JSON | `2c5aaade72ffe73159cf50adf7ea5836a147ef7ec4db230bec064eca0138b3c5` |
+| Audio CSV | `140f78c95e145b85e4104029373c4276a42817aa1b92fb11040e34395924b3a6` |
+| Texture JSON | `cd204ce5a17b0a0f45ae77eb799865c245c4ff6421a8d0d2f325c295756bed08` |
+| Texture CSV | `8faca0ee0d6d9c857055fde874f76be4481f0c4960219487d994ef7ee9fc39b2` |
+
+### Format references
+
 * re3 / reVC: reverse-engineered GTA III / Vice City source (mirrors of the original repositories). Only facts such as file names, identifiers and record layouts are used; no code is copied.
 * gta-reversed: reverse-engineered San Andreas source, `source/game_sa/Audio/Loaders`.
 * vgmstream: `src/coding/psx_decoder.c`, `doc/TXTH.md`.

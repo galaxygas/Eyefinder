@@ -335,6 +335,8 @@ pub fn export(
         "tool": format!("Eyefinder {}", env!("CARGO_PKG_VERSION")),
         "game": install.game.name(),
         "platform": install.platform.name(),
+        "edition": install.edition,
+        "user_choice": install.user_choice,
         "source": install.vfs.describe(),
         "detection": install.evidence,
         "options": {"mpeg_vorbis_output": if opts.decode.float_output { "IEEE float 32-bit" } else { "PCM 16-bit" }, "split_markers": opts.split_markers},

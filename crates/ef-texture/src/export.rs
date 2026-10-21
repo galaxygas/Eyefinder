@@ -212,7 +212,12 @@ pub fn export(
     let json = serde_json::to_string_pretty(&serde_json::json!({
         "game": install.game.name(),
         "platform": install.platform.name(),
+        "edition": install.edition,
+        "user_choice": install.user_choice,
         "source": install.vfs.describe(),
+        "tool": format!("Eyefinder {}", env!("CARGO_PKG_VERSION")),
+        "detection": install.evidence,
+        "catalog_notices": catalog.notices,
         "textures": manifest,
         "skipped": report.skipped,
     }))

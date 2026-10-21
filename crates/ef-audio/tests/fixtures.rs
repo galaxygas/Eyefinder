@@ -132,6 +132,10 @@ fn gta3_ps2_iso_matches_vgmstream() {
         let c = chunks(&out.join(rel));
         assert_eq!(sha(&c[b"data"]), want.as_str().unwrap(), "{rel}");
     }
+    let manifest: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(out.join("manifest.json")).unwrap()).unwrap();
+    assert_eq!(manifest["edition"], serde_json::to_value(&install.edition).unwrap());
+    assert_eq!(manifest["user_choice"], false);
     // CHAT plays at 16 kHz on the PS2 (IsThisTrackAt16KHz)
     let c = chunks(&out.join("Radio Stations/09 - CHATTERBOX FM (CHAT).wav"));
     assert_eq!(u32::from_le_bytes(c[b"fmt "][4..8].try_into().unwrap()), 16000);
