@@ -349,6 +349,22 @@ impl Vfs for IsoVfs {
     }
 }
 
+/// Every file below `dir` ("" = root) as `(path, entry)`, directories first visited in name order.
+pub fn walk_files(vfs: &dyn Vfs, dir: &str) -> Vec<(String, DirEntry)> {
+    let mut out = Vec::new();
+    let mut stack = vec![dir.trim_matches('/').to_string()];
+    while let Some(d) = stack.pop() {
+        let Some(entries) = vfs.list(&d) else { continue };
+        let mut sub = Vec::new();
+        for e in entries {
+            let p = if d.is_empty() { e.name.clone() } else { format!("{d}/{}", e.name) };
+            if e.is_dir { sub.push(p) } else { out.push((p, e)) }
+        }
+        stack.extend(sub.into_iter().rev());
+    }
+    out
+}
+
 /// Opens a folder or a disc image.
 pub fn open_path(path: &Path) -> Result<Arc<dyn Vfs>, IsoError> {
     if path.is_dir() { Ok(Arc::new(FolderVfs::new(path))) } else { Ok(Arc::new(IsoVfs::open(path)?)) }

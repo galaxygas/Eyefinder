@@ -610,6 +610,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "ef-texture"
+version = "0.1.0"
+dependencies = [
+ "ef-core",
+ "png",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.21",
+]
+
+[[package]]
 name = "eframe"
 version = "0.36.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"

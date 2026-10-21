@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/ef-core", "crates/ef-audio", "apps/eyefinder", "apps/eyefinder-cli"]
+members = ["crates/ef-core", "crates/ef-audio", "crates/ef-texture", "apps/eyefinder", "apps/eyefinder-cli"]
 
 [workspace.package]
 version = "0.1.0"
@@ -13,6 +13,7 @@ authors = ["Eyefinder contributors"]
 [workspace.dependencies]
 ef-core = { path = "crates/ef-core" }
 ef-audio = { path = "crates/ef-audio" }
+ef-texture = { path = "crates/ef-texture" }
 thiserror = "2.0.21"
 anyhow = "1.0.104"
 serde = { version = "1.0.229", features = ["derive"] }
@@ -26,6 +27,7 @@ egui-phosphor = "0.14.0"
 rfd = "0.17.2"
 rodio = { version = "0.23.0", default-features = false, features = ["playback"] }
 dirs = "7.0.0"
+png = "0.18.1"
 
 [profile.release]
 lto = "thin"

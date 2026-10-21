@@ -1,6 +1,7 @@
 //! Eyefinder core: shared types, virtual file systems, game detection and text tables.
 
 pub mod gxt;
+pub mod img;
 pub mod vfs;
 
 use std::fmt;

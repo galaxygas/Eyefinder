@@ -51,3 +51,16 @@ jobs:
           cp -r crates/ef-audio/tests/fixtures/gta3_pc /tmp/gta3_pc
           ./legacy /tmp/gta3_pc
           python3 tools/check_reference.py "/tmp/gta3_pc/Extracted Audio" crates/ef-audio/tests/fixtures/reference.json
+
+  texture-reference:
+    # Rebuilds the texture fixtures and their reference with librw and an exact specification
+    # decoder (tools/txd-ref), and checks they still equal the committed ones.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: python -m pip install pillow==12.3.0
+      - run: tools/txd-ref/build.sh /tmp/txdref
+      - run: python3 tools/txd-ref/compare.py /tmp/txdref/fixtures crates/ef-texture/tests/fixtures

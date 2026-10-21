@@ -1,0 +1,2940 @@
+{
+ "_provenance": {
+  "fixtures": "tools/txd-ref/make_fixtures.py",
+  "structure": "librw aap/librw@18532c2e13efbc1aa43f0b00b4459831f9414de0 via tools/txd-ref/txdref.cpp",
+  "rgba": "tools/txd-ref/make_reference.py specification decoder (exact arithmetic, round to nearest)",
+  "sanity": "librw and Pillow 12.3.0 within 1 per channel (2 for S3TC)",
+  "digest": "FNV-1a 64"
+ },
+ "d3d8_iii.txd": [
+  {
+   "name": "d3d8_iii_c1555",
+   "mask": "",
+   "platform": 8,
+   "format": 256,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "cd6e83815091ab67"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "169ed61dd928a828"
+  },
+  {
+   "name": "d3d8_iii_c565",
+   "mask": "",
+   "platform": 8,
+   "format": 512,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "fe65a0ddab70a6ea"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "791cba7ae0cc1827"
+  },
+  {
+   "name": "d3d8_iii_c4444",
+   "mask": "",
+   "platform": 8,
+   "format": 768,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "f1b85fe5cb11b3de"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "c5e48abd925fc767"
+  },
+  {
+   "name": "d3d8_iii_lum8",
+   "mask": "",
+   "platform": 8,
+   "format": 1024,
+   "width": 16,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 8,
+     "size": 128,
+     "fnv": "afab228668a20b72"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "379f61a8a2302912"
+  },
+  {
+   "name": "d3d8_iii_c8888",
+   "mask": "",
+   "platform": 8,
+   "format": 1280,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 1024,
+     "fnv": "23215e24fce06b32"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "64e2db725d5d7a36"
+  },
+  {
+   "name": "d3d8_iii_c888",
+   "mask": "",
+   "platform": 8,
+   "format": 1536,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 1024,
+     "fnv": "37d3e2715035a9b7"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "3655a1eed3d17c42"
+  },
+  {
+   "name": "d3d8_iii_c555",
+   "mask": "",
+   "platform": 8,
+   "format": 2560,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "cce7b7f992eda524"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "1595bc2b49cc1e08"
+  },
+  {
+   "name": "d3d8_iii_c8888_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 34048,
+   "width": 64,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "size": 8192,
+     "fnv": "199d570e514b4cc3"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "size": 2048,
+     "fnv": "ea6b5528541d205c"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 512,
+     "fnv": "9c08529aaed1ce4d"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 128,
+     "fnv": "7ba0e0e8e5ae9e4d"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 32,
+     "fnv": "4ce0eff70df72672"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "9e1e03c4e54f083a"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 4,
+     "fnv": "13b746b7bbc5323a"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "db31325262ba205f"
+  },
+  {
+   "name": "d3d8_iii_pal8",
+   "mask": "",
+   "platform": 8,
+   "format": 9472,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "7b6f887e984c69d6"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "fda428e57a613e1d"
+  },
+  {
+   "name": "d3d8_iii_pal8_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 42240,
+   "width": 32,
+   "height": 16,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 512,
+     "fnv": "4050a2bd4add8bca"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 128,
+     "fnv": "1108d16b5fc9a06e"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 32,
+     "fnv": "47a8f2a2f905f32a"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 8,
+     "fnv": "d909d72fbf7d5d88"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 2,
+     "fnv": "08cf2707b570c0bc"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 1,
+     "fnv": "af63ce4c8601d4c2"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "5401f1e9e59c51cd"
+  },
+  {
+   "name": "d3d8_iii_pal4",
+   "mask": "",
+   "platform": 8,
+   "format": 17664,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "784952aad6787abf"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "8deb898416fbc8a6"
+  },
+  {
+   "name": "d3d8_iii_dxt1_565",
+   "mask": "",
+   "platform": 8,
+   "format": 512,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "size": 2048,
+     "fnv": "7ef5ef2f83f55472"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "208e588abb8a7bdc"
+  },
+  {
+   "name": "d3d8_iii_dxt1_1555",
+   "mask": "",
+   "platform": 8,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 512,
+     "fnv": "710e174f6b57ba44"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "86a170638e770003"
+  },
+  {
+   "name": "d3d8_iii_dxt1_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 33280,
+   "width": 64,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 16,
+     "size": 512,
+     "fnv": "c7c412e85c7f91ee"
+    },
+    {
+     "w": 32,
+     "h": 8,
+     "size": 128,
+     "fnv": "80fa6ce9865ff176"
+    },
+    {
+     "w": 16,
+     "h": 4,
+     "size": 32,
+     "fnv": "13b4d3b082a6a6c6"
+    },
+    {
+     "w": 8,
+     "h": 2,
+     "size": 16,
+     "fnv": "50f7a6a50fbe33e7"
+    },
+    {
+     "w": 4,
+     "h": 1,
+     "size": 8,
+     "fnv": "29bb50ddac5e7d42"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "e68bd8348b02ad39"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 8,
+     "fnv": "2dfcf1a8af0783bc"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "ba6b106d4378658f"
+  },
+  {
+   "name": "d3d8_iii_dxt3",
+   "mask": "",
+   "platform": 8,
+   "format": 768,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "67b663cdc0f1cd0b"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "c0899a2d25accc99"
+  },
+  {
+   "name": "d3d8_iii_dxt5",
+   "mask": "",
+   "platform": 8,
+   "format": 1280,
+   "width": 32,
+   "height": 64,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 64,
+     "size": 2048,
+     "fnv": "6071a8c8e20ceac5"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "9b5a6aaaa92ddf24"
+  },
+  {
+   "name": "d3d8_iii_dxt5_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 34048,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "bb97632767e0e198"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "f35a8f2ea34dee5a"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "size": 64,
+     "fnv": "9d9d32ba178808fb"
+    },
+    {
+     "w": 4,
+     "h": 4,
+     "size": 16,
+     "fnv": "7db7bb1392500bd8"
+    },
+    {
+     "w": 2,
+     "h": 2,
+     "size": 16,
+     "fnv": "88437cb5fdda394b"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 16,
+     "fnv": "cbc337099ccd3b84"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "e2cf8674ed3bff2c"
+  },
+  {
+   "name": "d3d8_iii_dxt2_unsupported",
+   "mask": "",
+   "platform": 8,
+   "format": 1280,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "fb0abcd8b5230908"
+    }
+   ],
+   "supported": false
+  }
+ ],
+ "d3d8_vc.txd": [
+  {
+   "name": "d3d8_vc_c1555",
+   "mask": "",
+   "platform": 8,
+   "format": 256,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "ac321b4f60546557"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "14714e007dfb5e78"
+  },
+  {
+   "name": "d3d8_vc_c565",
+   "mask": "",
+   "platform": 8,
+   "format": 512,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "cbc652fd5fe9b12c"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "35ac9f9779fda39b"
+  },
+  {
+   "name": "d3d8_vc_c4444",
+   "mask": "",
+   "platform": 8,
+   "format": 768,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "4c23d1d011d4f96f"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "b48264550d9c0807"
+  },
+  {
+   "name": "d3d8_vc_lum8",
+   "mask": "",
+   "platform": 8,
+   "format": 1024,
+   "width": 16,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 8,
+     "size": 128,
+     "fnv": "666380cd146d5998"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "37b5b0fd70292ea0"
+  },
+  {
+   "name": "d3d8_vc_c8888",
+   "mask": "",
+   "platform": 8,
+   "format": 1280,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 1024,
+     "fnv": "9a496843fb274e71"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "ee4ef7e9f773edd5"
+  },
+  {
+   "name": "d3d8_vc_c888",
+   "mask": "",
+   "platform": 8,
+   "format": 1536,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 1024,
+     "fnv": "a00309fa9ccccb26"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "50babc2dee0f2bd8"
+  },
+  {
+   "name": "d3d8_vc_c555",
+   "mask": "",
+   "platform": 8,
+   "format": 2560,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "a4286d36adfee6c6"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "e2245b127b738406"
+  },
+  {
+   "name": "d3d8_vc_c8888_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 34048,
+   "width": 64,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "size": 8192,
+     "fnv": "fa2296db3c151e39"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "size": 2048,
+     "fnv": "e224d75f75c93d9a"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 512,
+     "fnv": "a96aa68d3c27bc47"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 128,
+     "fnv": "7fb9848c8d4cd713"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 32,
+     "fnv": "1acc6aab057f76b4"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "e32eaf188132490a"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 4,
+     "fnv": "5a85b1c378597166"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "082346822a0295c9"
+  },
+  {
+   "name": "d3d8_vc_pal8",
+   "mask": "",
+   "platform": 8,
+   "format": 9472,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "3c19a72151e63514"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "18f83774d22fbb79"
+  },
+  {
+   "name": "d3d8_vc_pal8_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 42240,
+   "width": 32,
+   "height": 16,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 512,
+     "fnv": "7121372cbcc51b07"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 128,
+     "fnv": "61857f9ef92c3f59"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 32,
+     "fnv": "b27656a743a5de51"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 8,
+     "fnv": "91eb6a7c1be0d99d"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 2,
+     "fnv": "09e9b907b6614087"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 1,
+     "fnv": "af64694c8602dc23"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "2eb53ff2f0cd87c2"
+  },
+  {
+   "name": "d3d8_vc_pal4",
+   "mask": "",
+   "platform": 8,
+   "format": 17664,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "d9dc06aa8be7b9d4"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "d73281999b0c265f"
+  },
+  {
+   "name": "d3d8_vc_dxt1_565",
+   "mask": "",
+   "platform": 8,
+   "format": 512,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "size": 2048,
+     "fnv": "27f56e2718a7420d"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "955793c597a6451d"
+  },
+  {
+   "name": "d3d8_vc_dxt1_1555",
+   "mask": "",
+   "platform": 8,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 512,
+     "fnv": "cb271e4863211e79"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "33eeb0413ef7a973"
+  },
+  {
+   "name": "d3d8_vc_dxt1_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 33280,
+   "width": 64,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 16,
+     "size": 512,
+     "fnv": "6aadb3a4edb7c768"
+    },
+    {
+     "w": 32,
+     "h": 8,
+     "size": 128,
+     "fnv": "1afd13e576b9feff"
+    },
+    {
+     "w": 16,
+     "h": 4,
+     "size": 32,
+     "fnv": "60d302a8e121168b"
+    },
+    {
+     "w": 8,
+     "h": 2,
+     "size": 16,
+     "fnv": "d9d37f4e361a40ff"
+    },
+    {
+     "w": 4,
+     "h": 1,
+     "size": 8,
+     "fnv": "521efb96ab205eff"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "0987b19fac9a8ad2"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 8,
+     "fnv": "b6fb6909a2a55518"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "65d7a018278c4ccc"
+  },
+  {
+   "name": "d3d8_vc_dxt3",
+   "mask": "",
+   "platform": 8,
+   "format": 768,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "57c3471b8a4bb7c3"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "a65be41ae33edc2d"
+  },
+  {
+   "name": "d3d8_vc_dxt5",
+   "mask": "",
+   "platform": 8,
+   "format": 1280,
+   "width": 32,
+   "height": 64,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 64,
+     "size": 2048,
+     "fnv": "a9f0ae2f43565386"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "dccc0f776dba4c87"
+  },
+  {
+   "name": "d3d8_vc_dxt5_mip",
+   "mask": "",
+   "platform": 8,
+   "format": 34048,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "82a1719f59de9e11"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "9fe4aaa2575ca030"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "size": 64,
+     "fnv": "0ff661cc4d069f89"
+    },
+    {
+     "w": 4,
+     "h": 4,
+     "size": 16,
+     "fnv": "7373ba02e6288847"
+    },
+    {
+     "w": 2,
+     "h": 2,
+     "size": 16,
+     "fnv": "9c98fdc47cdeeb66"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 16,
+     "fnv": "a4c243c6995b01f0"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "9b97f81861c539d2"
+  },
+  {
+   "name": "d3d8_vc_dxt2_unsupported",
+   "mask": "",
+   "platform": 8,
+   "format": 1280,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "e480b3e81fde3e2c"
+    }
+   ],
+   "supported": false
+  }
+ ],
+ "d3d9_sa.txd": [
+  {
+   "name": "d3d9_sa_c1555",
+   "mask": "",
+   "platform": 9,
+   "format": 256,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "7f85df6640f2b924"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "72197537707217dc"
+  },
+  {
+   "name": "d3d9_sa_c565",
+   "mask": "",
+   "platform": 9,
+   "format": 512,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "177247155f0bdeaf"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "9838c1bec1988d2c"
+  },
+  {
+   "name": "d3d9_sa_c4444",
+   "mask": "",
+   "platform": 9,
+   "format": 768,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "ba5c93ca5c6e00f1"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "4779e66dfc002c67"
+  },
+  {
+   "name": "d3d9_sa_lum8",
+   "mask": "",
+   "platform": 9,
+   "format": 1024,
+   "width": 16,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 8,
+     "size": 128,
+     "fnv": "bf0e0e5f03d5b6af"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "c7ba1128b6f90b9f"
+  },
+  {
+   "name": "d3d9_sa_c8888",
+   "mask": "",
+   "platform": 9,
+   "format": 1280,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 1024,
+     "fnv": "ad71e47bc808e290"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "3ba2ea70e643edc4"
+  },
+  {
+   "name": "d3d9_sa_c888",
+   "mask": "",
+   "platform": 9,
+   "format": 1536,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 1024,
+     "fnv": "7f93d800d7a58c55"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "96af0997c2b6803c"
+  },
+  {
+   "name": "d3d9_sa_c555",
+   "mask": "",
+   "platform": 9,
+   "format": 2560,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "851c195c88b3e8e4"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "25e6414c0d720a90"
+  },
+  {
+   "name": "d3d9_sa_c8888_mip",
+   "mask": "",
+   "platform": 9,
+   "format": 34048,
+   "width": 64,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "size": 8192,
+     "fnv": "b6cca19a6de2abaf"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "size": 2048,
+     "fnv": "8f61f3bf1e9e8b0b"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 512,
+     "fnv": "849a2bde8a724c69"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 128,
+     "fnv": "b17ae5cae075c523"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 32,
+     "fnv": "727a9b4000a8ba2d"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "6234702dbd6a0655"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 4,
+     "fnv": "e3427c6cfca79776"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "14e01e5ed325c66f"
+  },
+  {
+   "name": "d3d9_sa_pal8",
+   "mask": "",
+   "platform": 9,
+   "format": 9472,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "4cfbdd2ed3098d84"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "6ab0e520db62199c"
+  },
+  {
+   "name": "d3d9_sa_pal8_mip",
+   "mask": "",
+   "platform": 9,
+   "format": 42240,
+   "width": 32,
+   "height": 16,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 512,
+     "fnv": "9bfbf0d72f09ee50"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 128,
+     "fnv": "2e635f1e79c80ce8"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 32,
+     "fnv": "83da20101d5158ac"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 8,
+     "fnv": "03b957b66a4aba60"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 2,
+     "fnv": "08a5ac07b54ceaa7"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 1,
+     "fnv": "af63d34c8601dd41"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "5610d85c41ef94e3"
+  },
+  {
+   "name": "d3d9_sa_pal4",
+   "mask": "",
+   "platform": 9,
+   "format": 17664,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "357c63ef398a17f4"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "82a676493bc7c666"
+  },
+  {
+   "name": "d3d9_sa_dxt1_565",
+   "mask": "",
+   "platform": 9,
+   "format": 512,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "size": 2048,
+     "fnv": "cc4a1fcab34f625b"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "785c2868dd257cdb"
+  },
+  {
+   "name": "d3d9_sa_dxt1_1555",
+   "mask": "",
+   "platform": 9,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 512,
+     "fnv": "5cdf9d3c4c92f15f"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "85a921385e5c0abe"
+  },
+  {
+   "name": "d3d9_sa_dxt1_mip",
+   "mask": "",
+   "platform": 9,
+   "format": 33280,
+   "width": 64,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 16,
+     "size": 512,
+     "fnv": "c7acddfbb4a58b91"
+    },
+    {
+     "w": 32,
+     "h": 8,
+     "size": 128,
+     "fnv": "21c57ebf3d6cd9db"
+    },
+    {
+     "w": 16,
+     "h": 4,
+     "size": 32,
+     "fnv": "a9246affb88a0d21"
+    },
+    {
+     "w": 8,
+     "h": 2,
+     "size": 16,
+     "fnv": "94672d577b62f552"
+    },
+    {
+     "w": 4,
+     "h": 1,
+     "size": 8,
+     "fnv": "004ee5fcc6854cf1"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "0b61fa9693ff0f24"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 8,
+     "fnv": "8991a89c6b4eb071"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "725a478d6f8ce8fe"
+  },
+  {
+   "name": "d3d9_sa_dxt3",
+   "mask": "",
+   "platform": 9,
+   "format": 768,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "6cff264bc0e4f0e7"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "6892e5e249241ba2"
+  },
+  {
+   "name": "d3d9_sa_dxt5",
+   "mask": "",
+   "platform": 9,
+   "format": 1280,
+   "width": 32,
+   "height": 64,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 64,
+     "size": 2048,
+     "fnv": "cf152a4be2e3376d"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "30b8deb3e9dce0d2"
+  },
+  {
+   "name": "d3d9_sa_dxt5_mip",
+   "mask": "",
+   "platform": 9,
+   "format": 34048,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "04d343a37a6aaa19"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "368b27f2273470b0"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "size": 64,
+     "fnv": "fd415069040a0661"
+    },
+    {
+     "w": 4,
+     "h": 4,
+     "size": 16,
+     "fnv": "265fd847f10f1782"
+    },
+    {
+     "w": 2,
+     "h": 2,
+     "size": 16,
+     "fnv": "6bf8cd9bf4728e43"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 16,
+     "fnv": "a9e3dbcbc54b6539"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "655d518460583779"
+  },
+  {
+   "name": "d3d9_sa_dxt2_unsupported",
+   "mask": "",
+   "platform": 9,
+   "format": 1280,
+   "width": 16,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "2ca515f9dc23504a"
+    }
+   ],
+   "supported": false
+  }
+ ],
+ "ps2_iii.txd": [
+  {
+   "name": "p8_c8888_64",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 64,
+   "height": 64,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "501456e1c205e296"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "c96cfc5f8229df3c"
+  },
+  {
+   "name": "p8_c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 42240,
+   "width": 64,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "texels": "8da90df281c7e655"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "c7402af6b8cb2baf"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "a14cbcbeeacea320"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "e763061ebd30d6e7"
+  },
+  {
+   "name": "p8_c8888_16x8",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 16,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "56ee1267200c6dfd"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "e26cb8aeac3d2294"
+  },
+  {
+   "name": "p8_c8888_8x8",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 8,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 8,
+     "h": 8,
+     "texels": "e4215827443aaa44"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "20c4eeb04e19cf53"
+  },
+  {
+   "name": "p4_c8888_64",
+   "mask": "",
+   "platform": 4,
+   "format": 17664,
+   "width": 64,
+   "height": 64,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "3e8f50ac8d1088a8"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "d08fdd51d763d80a"
+  },
+  {
+   "name": "p4_c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 50432,
+   "width": 128,
+   "height": 64,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 128,
+     "h": 64,
+     "texels": "59b7bfbae367a39b"
+    },
+    {
+     "w": 64,
+     "h": 32,
+     "texels": "04fb1c01bf77fd4f"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "1ea85d18464b9ca2"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "1b8b84e6fac16343"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "29e8b2fddd80108c"
+  },
+  {
+   "name": "p4_c8888_16",
+   "mask": "",
+   "platform": 4,
+   "format": 17664,
+   "width": 16,
+   "height": 16,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "texels": "39d837127e56b9e8"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "d3d11ecb8bf973e1"
+  },
+  {
+   "name": "c8888_32",
+   "mask": "",
+   "platform": 4,
+   "format": 1280,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "c07fddb7842eb75a"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "a24d21cd8566292b"
+  },
+  {
+   "name": "c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 34048,
+   "width": 32,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "a27a1b26772afc97"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "0fe783bbdde15ac7"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "a0d55f970a5c942b"
+  },
+  {
+   "name": "c1555_32",
+   "mask": "",
+   "platform": 4,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "fcb7c27c8ad10a9b"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "1718db93d4e4db53"
+  },
+  {
+   "name": "c1555_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 33024,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "740d4ed72d6f1810"
+    },
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "c8d6abeb9e161083"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "texels": "e3124413f783788a"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "texels": "6c0b02bc0bc06a68"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "b702924461b996d3"
+  },
+  {
+   "name": "p8_big_512",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 512,
+   "height": 256,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 512,
+     "h": 256,
+     "texels": "a3f20afb4e1265ad"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "ac385c023284fff7"
+  },
+  {
+   "name": "p8_c1555",
+   "mask": "",
+   "platform": 4,
+   "format": 8448,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "04c8d5239a788a4a"
+    }
+   ],
+   "supported": false
+  }
+ ],
+ "ps2_sa.txd": [
+  {
+   "name": "p8_c8888_64",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 64,
+   "height": 64,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "0e6519d06a6c0d29"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "4395e31162e8ad8c"
+  },
+  {
+   "name": "p8_c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 42240,
+   "width": 64,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "texels": "464dfe6c59dd7d20"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "11f9f5077af5192b"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "820ce44b7f4f7312"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "74cd32cae1dbafbc"
+  },
+  {
+   "name": "p8_c8888_16x8",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 16,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "a9b61537cbfdbcf2"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "5be4950e15a4285b"
+  },
+  {
+   "name": "p8_c8888_8x8",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 8,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 8,
+     "h": 8,
+     "texels": "1e9810d27f94ffe2"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "b3d91219a3c39c44"
+  },
+  {
+   "name": "p4_c8888_64",
+   "mask": "",
+   "platform": 4,
+   "format": 17664,
+   "width": 64,
+   "height": 64,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "b5ae445fe8cc620e"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "86efd8a3f4cede93"
+  },
+  {
+   "name": "p4_c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 50432,
+   "width": 128,
+   "height": 64,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 128,
+     "h": 64,
+     "texels": "82a66659268d0c1c"
+    },
+    {
+     "w": 64,
+     "h": 32,
+     "texels": "ba3af29163e52a73"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "877e1800198aadfd"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "516475351ee2006d"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "6dc5d6783331f46d"
+  },
+  {
+   "name": "p4_c8888_16",
+   "mask": "",
+   "platform": 4,
+   "format": 17664,
+   "width": 16,
+   "height": 16,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "texels": "37c78fde88bb1bc3"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "8230d1ec81201fd3"
+  },
+  {
+   "name": "c8888_32",
+   "mask": "",
+   "platform": 4,
+   "format": 1280,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "e0ba26b05bd07784"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "bc0ec5df90e9b188"
+  },
+  {
+   "name": "c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 34048,
+   "width": 32,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "d853f9d420bf1ea6"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "537d0fbd3b002ca5"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "0014f05f30153748"
+  },
+  {
+   "name": "c1555_32",
+   "mask": "",
+   "platform": 4,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "13d56965e95acaf7"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "a6b61ff3dd628192"
+  },
+  {
+   "name": "c1555_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 33024,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "50b9c32e6bdbedd7"
+    },
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "1263fc88139e8822"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "texels": "366f69eaeea4d633"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "texels": "a5503330f06d3c9d"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "c79de5d722f2bef3"
+  },
+  {
+   "name": "p8_big_512",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 512,
+   "height": 256,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 512,
+     "h": 256,
+     "texels": "5cc1f909a4bf000f"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "fb793445f44837ae"
+  },
+  {
+   "name": "p8_c1555",
+   "mask": "",
+   "platform": 4,
+   "format": 8448,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "caa51b29a852dd03"
+    }
+   ],
+   "supported": false
+  }
+ ],
+ "ps2_vc.txd": [
+  {
+   "name": "p8_c8888_64",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 64,
+   "height": 64,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "71f4f8997aeb9479"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "4fe5847723ba0fa2"
+  },
+  {
+   "name": "p8_c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 42240,
+   "width": 64,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "texels": "9616accd2309e535"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "64eba041e4e47145"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "7633cacb4c6d1071"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "83cbfe6211fdfe39"
+  },
+  {
+   "name": "p8_c8888_16x8",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 16,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "0521b1ff0a1f15ba"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "9df23e794cc0db41"
+  },
+  {
+   "name": "p8_c8888_8x8",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 8,
+   "height": 8,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 8,
+     "h": 8,
+     "texels": "c0c5b93736415632"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "4228de49b7257a7b"
+  },
+  {
+   "name": "p4_c8888_64",
+   "mask": "",
+   "platform": 4,
+   "format": 17664,
+   "width": 64,
+   "height": 64,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "9760017c3e20694e"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "7be1f7fddc3b1299"
+  },
+  {
+   "name": "p4_c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 50432,
+   "width": 128,
+   "height": 64,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 128,
+     "h": 64,
+     "texels": "209c142896f844fc"
+    },
+    {
+     "w": 64,
+     "h": 32,
+     "texels": "3127fbb23d4dace5"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "96740776133161c9"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "c19c81bcf280d69a"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "d7af89773778b2a1"
+  },
+  {
+   "name": "p4_c8888_16",
+   "mask": "",
+   "platform": 4,
+   "format": 17664,
+   "width": 16,
+   "height": 16,
+   "depth": 4,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "texels": "d8052992a6268a5a"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "351ce06aa069481e"
+  },
+  {
+   "name": "c8888_32",
+   "mask": "",
+   "platform": 4,
+   "format": 1280,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "64d9e98c8fe500ec"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "549847e0c00c13e2"
+  },
+  {
+   "name": "c8888_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 34048,
+   "width": 32,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "texels": "dd52238e9764c001"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "texels": "d6c96fa931606a66"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "4efa16a0c5803030"
+  },
+  {
+   "name": "c1555_32",
+   "mask": "",
+   "platform": 4,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "a195fa6ee4189ccf"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "ff7bc013bedb35c7"
+  },
+  {
+   "name": "c1555_mip",
+   "mask": "",
+   "platform": 4,
+   "format": 33024,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "texels": "f2a0936b5330d918"
+    },
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "85858713b34712ed"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "texels": "3f4d610d643725c1"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "texels": "adddc7e6d7b52b36"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "9bdb3f258846f7fc"
+  },
+  {
+   "name": "p8_big_512",
+   "mask": "",
+   "platform": 4,
+   "format": 9472,
+   "width": 512,
+   "height": 256,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 512,
+     "h": 256,
+     "texels": "8aa958f27c77cb0d"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "b4c460728d5a538e"
+  },
+  {
+   "name": "p8_c1555",
+   "mask": "",
+   "platform": 4,
+   "format": 8448,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "texels": "a67374214b941f3c"
+    }
+   ],
+   "supported": false
+  }
+ ],
+ "xbox_sa.txd": [
+  {
+   "name": "xbox_sa_c1555",
+   "mask": "",
+   "platform": 5,
+   "format": 256,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "9862c003d2f1f6a6"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "bcd8c1316a41e5cd"
+  },
+  {
+   "name": "xbox_sa_c555",
+   "mask": "",
+   "platform": 5,
+   "format": 2560,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "45b481be6f0df0bc"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "f07f96a7e0f23e95"
+  },
+  {
+   "name": "xbox_sa_c8888",
+   "mask": "",
+   "platform": 5,
+   "format": 1280,
+   "width": 64,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 64,
+     "h": 16,
+     "size": 4096,
+     "fnv": "5e8addda46cd9b59"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "428f79cb57f94a85"
+  },
+  {
+   "name": "xbox_sa_c8888_sq",
+   "mask": "",
+   "platform": 5,
+   "format": 1280,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 4096,
+     "fnv": "5ebc431534dd3a8a"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "509914122713e83a"
+  },
+  {
+   "name": "xbox_sa_c8888_mip",
+   "mask": "",
+   "platform": 5,
+   "format": 34048,
+   "width": 64,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "size": 8192,
+     "fnv": "d695514a2c3a2ad1"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "size": 2048,
+     "fnv": "06d172fa7db8a6ae"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 512,
+     "fnv": "4aaef0e68f06e795"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 128,
+     "fnv": "3116a922d20a1e87"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 32,
+     "fnv": "5aa04150d8b13409"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "e626bf55464b3305"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 4,
+     "fnv": "89ceded18306b3df"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "591326038c730399"
+  },
+  {
+   "name": "xbox_sa_pal8",
+   "mask": "",
+   "platform": 5,
+   "format": 9472,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "7ac5250b748e3941"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "07675bf3ad462705"
+  },
+  {
+   "name": "xbox_sa_pal8_tall",
+   "mask": "",
+   "platform": 5,
+   "format": 9472,
+   "width": 16,
+   "height": 64,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 64,
+     "size": 1024,
+     "fnv": "8cbee55d378fc2cd"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "354ca6e1364184fd"
+  },
+  {
+   "name": "xbox_sa_pal4",
+   "mask": "",
+   "platform": 5,
+   "format": 17664,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "38c4f28996bccfe4"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "59012e0454e8ef49"
+  },
+  {
+   "name": "xbox_sa_dxt1",
+   "mask": "",
+   "platform": 5,
+   "format": 512,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "size": 2048,
+     "fnv": "5e87e2b24cb66d35"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "5b07e8ca2e04979e"
+  },
+  {
+   "name": "xbox_sa_dxt1_alpha",
+   "mask": "",
+   "platform": 5,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 512,
+     "fnv": "5e21ce0b803b671c"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "0ed6aa6b22bd1638"
+  },
+  {
+   "name": "xbox_sa_dxt3",
+   "mask": "",
+   "platform": 5,
+   "format": 768,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "ad85a09b82b6022e"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "eefaf23cce590759"
+  },
+  {
+   "name": "xbox_sa_dxt5",
+   "mask": "",
+   "platform": 5,
+   "format": 1280,
+   "width": 32,
+   "height": 64,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 64,
+     "size": 2048,
+     "fnv": "f6a84853daad840d"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "7e049ca14e7068f3"
+  },
+  {
+   "name": "xbox_sa_dxt5_mip",
+   "mask": "",
+   "platform": 5,
+   "format": 34048,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "9684119e7e75b526"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "3dca2adfa9986d8e"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "size": 64,
+     "fnv": "fcc602043ee4fab2"
+    },
+    {
+     "w": 4,
+     "h": 4,
+     "size": 16,
+     "fnv": "599b9de7e4d81f95"
+    },
+    {
+     "w": 2,
+     "h": 2,
+     "size": 16,
+     "fnv": "f7dd12a86ec25393"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 16,
+     "fnv": "2ae30fc734e95b69"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "d5d3e3ee6754721b"
+  },
+  {
+   "name": "xbox_sa_c565_unsupported",
+   "mask": "",
+   "platform": 5,
+   "format": 512,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "90a1b3c7c700a1f7"
+    }
+   ],
+   "supported": false
+  }
+ ],
+ "xbox_vc.txd": [
+  {
+   "name": "xbox_vc_c1555",
+   "mask": "",
+   "platform": 5,
+   "format": 256,
+   "width": 32,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 16,
+     "size": 1024,
+     "fnv": "07340e01ef734b71"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "24d08d068060bc43"
+  },
+  {
+   "name": "xbox_vc_c555",
+   "mask": "",
+   "platform": 5,
+   "format": 2560,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "bbf0f9ee34041a2d"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "b1240371de7d9d0c"
+  },
+  {
+   "name": "xbox_vc_c8888",
+   "mask": "",
+   "platform": 5,
+   "format": 1280,
+   "width": 64,
+   "height": 16,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 64,
+     "h": 16,
+     "size": 4096,
+     "fnv": "1a0e5425effe51cf"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "305c0f26d5842307"
+  },
+  {
+   "name": "xbox_vc_c8888_sq",
+   "mask": "",
+   "platform": 5,
+   "format": 1280,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 4096,
+     "fnv": "10663fe9994836ff"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "0c154c8767cf1df3"
+  },
+  {
+   "name": "xbox_vc_c8888_mip",
+   "mask": "",
+   "platform": 5,
+   "format": 34048,
+   "width": 64,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 64,
+     "h": 32,
+     "size": 8192,
+     "fnv": "78655fefdf723167"
+    },
+    {
+     "w": 32,
+     "h": 16,
+     "size": 2048,
+     "fnv": "a08912a2c23af367"
+    },
+    {
+     "w": 16,
+     "h": 8,
+     "size": 512,
+     "fnv": "1b175243c3ffd391"
+    },
+    {
+     "w": 8,
+     "h": 4,
+     "size": 128,
+     "fnv": "d1c326bfccb2327c"
+    },
+    {
+     "w": 4,
+     "h": 2,
+     "size": 32,
+     "fnv": "4d3a3efab23c1205"
+    },
+    {
+     "w": 2,
+     "h": 1,
+     "size": 8,
+     "fnv": "9c850466c2d05cde"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 4,
+     "fnv": "a1657c90a99b1ae1"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "9024c3a0e896059f"
+  },
+  {
+   "name": "xbox_vc_pal8",
+   "mask": "",
+   "platform": 5,
+   "format": 9472,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "280fb13f436141cc"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "e54025ee11244e4a"
+  },
+  {
+   "name": "xbox_vc_pal8_tall",
+   "mask": "",
+   "platform": 5,
+   "format": 9472,
+   "width": 16,
+   "height": 64,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 16,
+     "h": 64,
+     "size": 1024,
+     "fnv": "5f2c75beef2f89e1"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "8bae0b0a3a2106c4"
+  },
+  {
+   "name": "xbox_vc_pal4",
+   "mask": "",
+   "platform": 5,
+   "format": 17664,
+   "width": 32,
+   "height": 32,
+   "depth": 8,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "771def2894ced00a"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "d998bddcc33d06e6"
+  },
+  {
+   "name": "xbox_vc_dxt1",
+   "mask": "",
+   "platform": 5,
+   "format": 512,
+   "width": 64,
+   "height": 64,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 64,
+     "h": 64,
+     "size": 2048,
+     "fnv": "fe92d3de84a9d139"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "0d4922c5aea03323"
+  },
+  {
+   "name": "xbox_vc_dxt1_alpha",
+   "mask": "",
+   "platform": 5,
+   "format": 256,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 512,
+     "fnv": "6a82660d8a201dda"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "b247e6a80816bc88"
+  },
+  {
+   "name": "xbox_vc_dxt3",
+   "mask": "",
+   "platform": 5,
+   "format": 768,
+   "width": 32,
+   "height": 32,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "05c929dd4c7893d4"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "aa6cfcdd25a34055"
+  },
+  {
+   "name": "xbox_vc_dxt5",
+   "mask": "",
+   "platform": 5,
+   "format": 1280,
+   "width": 32,
+   "height": 64,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 64,
+     "size": 2048,
+     "fnv": "8005e30ab1e9992b"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "1b1878ae3b5fcb73"
+  },
+  {
+   "name": "xbox_vc_dxt5_mip",
+   "mask": "",
+   "platform": 5,
+   "format": 34048,
+   "width": 32,
+   "height": 32,
+   "depth": 32,
+   "levels": [
+    {
+     "w": 32,
+     "h": 32,
+     "size": 1024,
+     "fnv": "66a71dfb05ce5132"
+    },
+    {
+     "w": 16,
+     "h": 16,
+     "size": 256,
+     "fnv": "239f6c88b3d3186b"
+    },
+    {
+     "w": 8,
+     "h": 8,
+     "size": 64,
+     "fnv": "4882320be274982c"
+    },
+    {
+     "w": 4,
+     "h": 4,
+     "size": 16,
+     "fnv": "fbe013b2019c2bb2"
+    },
+    {
+     "w": 2,
+     "h": 2,
+     "size": 16,
+     "fnv": "4d9429a4eff2046d"
+    },
+    {
+     "w": 1,
+     "h": 1,
+     "size": 16,
+     "fnv": "be7aadac12538b2e"
+    }
+   ],
+   "supported": true,
+   "rgba_spec": "e65aa275c0caca71"
+  },
+  {
+   "name": "xbox_vc_c565_unsupported",
+   "mask": "",
+   "platform": 5,
+   "format": 512,
+   "width": 16,
+   "height": 16,
+   "depth": 16,
+   "levels": [
+    {
+     "w": 16,
+     "h": 16,
+     "size": 512,
+     "fnv": "f3705dbafd2b283c"
+    }
+   ],
+   "supported": false
+  }
+ ]
+}
