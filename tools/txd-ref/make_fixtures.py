@@ -218,3 +218,4 @@ if __name__ == "__main__":
 import style_fixtures
 style_fixtures.generate(sys.argv[2])
 style_fixtures.generate_sty(sys.argv[2])
+style_fixtures.generate_fon(sys.argv[2])

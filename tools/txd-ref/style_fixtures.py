@@ -113,3 +113,24 @@ def reference_sty(out):
     add('sprite_0001_delta_00',2,3,b''.join(color(i,9) for i in values))
     file=os.path.join(out,'style_reference.json');ref=json.load(open(file));ref['style.sty']=rows
     open(file,'w').write(json.dumps(ref,indent=2)+'\n')
+
+def generate_fon(out):
+    # Mixed widths, a zero-width spacer, and every palette index.
+    data=bytearray([4,16])
+    for n,w in enumerate((16,0,3,7)):
+        data.append(w)
+        data.extend((n*19+y*w+x)%256 for y in range(16) for x in range(w))
+    data.extend(c for i in range(256) for c in (i,255-i,(i*13)%256))
+    open(os.path.join(out,'images.fon'),'wb').write(data)
+
+def reference_fon(out):
+    # Image-order semantic reference, with no FON offset parsing.
+    rows=[]
+    for n,w in ((0,16),(2,3),(3,7)):
+        pixels=bytearray()
+        for y in range(16):
+            for x in range(w):
+                i=(n*19+y*w+x)%256
+                pixels.extend((i,255-i,(i*13)%256,255 if i else 0))
+        rows.append(dict(name=f'image_{n:03}',width=w,height=16,fnv=fnv(pixels)))
+    open(os.path.join(out,'fon_reference.json'),'w').write(json.dumps(rows,indent=2)+'\n')

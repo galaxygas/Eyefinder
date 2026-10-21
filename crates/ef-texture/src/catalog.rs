@@ -70,7 +70,7 @@ impl TexCatalog {
     pub fn load(&self, install: &GameInstall, source: usize) -> Result<TextureCollection, Error> {
         let s = &self.sources[source];
         let bytes = self.vfs_of(install, s).read_all(&s.inner)?;
-        collection::parse(&bytes)
+        collection::parse_named(&bytes, &s.inner)
     }
     /// Number of textures per group, in display order.
     pub fn groups(&self) -> Vec<(String, usize)> {
@@ -104,7 +104,7 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
         if (install.game == ef_core::Game::Gta2 && lower.ends_with(".sty"))
             || lower.ends_with(".txd")
             || (matches!(install.game, ef_core::Game::Gta1 | ef_core::Game::London1969 | ef_core::Game::London1961)
-                && (lower.ends_with(".gry") || lower.ends_with(".g24")))
+                && (lower.ends_with(".gry") || lower.ends_with(".g24") || lower.ends_with(".fon")))
         {
             candidates.push((None, path.clone(), path.clone(), e.size, parent(&path)));
         } else if is_img_name(&path) {
@@ -148,11 +148,15 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
                 continue;
             }
         };
-        if !txd::looks_like_txd(&data) && !crate::style::looks_like_style(&data) && !data.starts_with(b"GBST") {
+        if !inner.to_ascii_lowercase().ends_with(".fon")
+            && !txd::looks_like_txd(&data)
+            && !crate::style::looks_like_style(&data)
+            && !data.starts_with(b"GBST")
+        {
             unreadable += 1;
             continue;
         }
-        let t = match collection::parse(&data) {
+        let t = match collection::parse_named(&data, &inner) {
             Ok(t) => t,
             Err(e) => {
                 cat.notices.push(format!("{path}: {e}"));

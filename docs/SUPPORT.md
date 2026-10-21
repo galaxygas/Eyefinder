@@ -14,8 +14,8 @@ A format moves to **Verified** only when someone runs Eyefinder on a real copy a
 
 | Game/platform | Implemented from specification | Not yet covered |
 |---|---|---|
-| GTA1 PC (shared DOS/Windows asset layout) | Six documented SDT/RAW bank types, loose WAVs; GRY 325 and G24 336 tiles, tile palette variants, base sprites and stored deltas | CD tracks, standalone graphics/fonts, sprite remaps and combined delta states |
-| London 1969 / 1961 PC | Explicit expansion choice; UK SDT/RAW and WAV subtree; same documented GRY/G24 readers | Automatic expansion identity, CD tracks, standalone graphics/fonts, sprite remaps and combined delta states |
+| GTA1 PC (shared DOS/Windows asset layout) | Six documented SDT/RAW bank types, loose WAVs; GRY 325 and G24 336 tiles, tile palette variants, base sprites, stored deltas and FON images | CD tracks, standalone RAW/RAT graphics, sprite remaps and combined delta states |
+| London 1969 / 1961 PC | Explicit expansion choice; UK SDT/RAW and WAV subtree; same documented GRY/G24 and FON readers | Automatic expansion identity, CD tracks, standalone RAW/RAT graphics, sprite remaps and combined delta states |
 | GTA2 PC | 24-byte SDT/RAW banks, loose WAVs; STY 700 tiles, default sprites and stored deltas | Sprite remaps, combined delta states, standalone graphics; release-wide asset inventory validation |
 | GTA1 / London / GTA2 PlayStation | None added | Platform-specific discovery and full audio/graphics formats |
 | GTA1 / GTA2 Game Boy Color | None added | ROM asset boundaries, compression/palette mappings and music sequencer |

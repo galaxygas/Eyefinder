@@ -208,6 +208,9 @@ fn styles_use_normal_catalog_preview_and_png_export() {
             .map(|(i, _)| i)
             .collect();
         assert!(!picked.is_empty());
+        if game == Game::Gta1 {
+            assert!(cat.sources.iter().any(|s| s.container == "GTA1 FON"));
+        }
         let root = std::env::temp_dir().join(format!("ef-style-export-{game:?}-{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&root);
         let report = ef_texture::export::export(
@@ -239,4 +242,33 @@ fn styles_use_normal_catalog_preview_and_png_export() {
         assert!(!manifest.to_string().contains("Direct3D"));
         std::fs::remove_dir_all(root).unwrap();
     }
+}
+
+#[test]
+fn fon_images_match_reference_and_reject_truncation() {
+    let bytes = std::fs::read(fixtures().join("images.fon")).unwrap();
+    let rows: Value = serde_json::from_slice(&std::fs::read(fixtures().join("fon_reference.json")).unwrap()).unwrap();
+    let collection = ef_texture::collection::parse_named(&bytes, "IMAGES.FON").unwrap();
+    assert_eq!(collection.kind, "GTA1 FON");
+    assert_eq!(collection.textures.len(), 3);
+    assert_eq!(collection.problems.len(), 1); // zero-width spacer
+    for (tex, want) in collection.textures.iter().zip(rows.as_array().unwrap()) {
+        let image = tex.raster.decode(0).unwrap();
+        assert_eq!(tex.name, want["name"].as_str().unwrap());
+        assert_eq!(image.width as u64, want["width"].as_u64().unwrap());
+        assert_eq!(image.height, 16);
+        assert_eq!(fnv(&image.pixels), want["fnv"].as_str().unwrap());
+        assert_eq!(tex.raster.support().0, ef_core::SupportLevel::FromSpec);
+    }
+    for n in 0..bytes.len() {
+        assert!(ef_texture::fon::parse(&bytes[..n]).is_err(), "truncated at {n}");
+    }
+    let mut bad = bytes.clone();
+    bad[1] = 0;
+    assert!(ef_texture::fon::parse(&bad).is_err());
+    bad = bytes.clone();
+    bad.push(0);
+    assert!(ef_texture::fon::parse(&bad).is_err());
+    // No magic: unrelated containers cannot be silently treated as fonts.
+    assert!(ef_texture::collection::parse(&bytes).is_err());
 }

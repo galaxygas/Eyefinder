@@ -24,3 +24,11 @@ pub fn parse(bytes: &[u8]) -> Result<TextureCollection, Error> {
         problems: txd.problems,
     })
 }
+
+/// FON has no magic: only dispatch it using its container filename.
+pub fn parse_named(bytes: &[u8], name: &str) -> Result<TextureCollection, Error> {
+    if name.to_ascii_lowercase().ends_with(".fon") {
+        return crate::fon::parse(bytes);
+    }
+    parse(bytes)
+}

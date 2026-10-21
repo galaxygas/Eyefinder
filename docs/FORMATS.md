@@ -349,3 +349,19 @@ semantic patterns, independently of the parser's offset/page calculations. Fixtu
 exercise tile strip crossings/padding, sprite page crossings, the second CLUT page,
 remaps, transparent pixels and delta erasures. Catalog-to-PNG round trips compare
 with preview pixels; truncated inputs and invalid sizes are rejected.
+
+### GTA1 / London PC FON images
+
+Source: [Daniel Marschall's firsthand FON analysis](https://misc.daniel-marschall.de/spiele/gta1/format_fon.html).
+Two header bytes specify the image count and shared height. Each image has one
+width byte followed by width × height row-major palette indices. A trailing
+256-entry RGB palette occupies 768 bytes. OpenGTA commit
+`1ae34ae3409d37bf484364d2a1db2e183a8527bd`, `read_fnt.cpp::getCharacterBitmap`
+and `read_gry.cpp::RGBPalette::apply`, establish index-zero transparency.
+
+There is no magic identifier; dispatch requires a `.fon` filename in a GTA1 or
+London catalog. Images retain numeric indices, without guessing character maps.
+Zero-width images are reported and skipped; malformed/truncated containers fail.
+Synthetic variable-width images, spacers, all palette indices, and truncated
+inputs are tested against a semantic pixel reference through the regular texture
+fixture generators. Catalog previews and PNG export use the same collection.

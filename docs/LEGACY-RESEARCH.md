@@ -47,7 +47,7 @@ this work does **not** establish complete cross-platform support.
 | III/VC PS2 SFX, mission audio, PSS movies | Not implemented | Bank/container boundaries, sample metadata and independent fixtures; a successful VB export does not supply those facts |
 | SA PS2 audio | Not implemented | Pack lookup/extraction specification plus separate type-2/type-4 reference tests |
 | GTA1 and London PC audio | SDT/RAW and WAV implemented with ffmpeg/seek tests | CD tracks, automatic London expansion identification, real-file inventory checks |
-| GTA1 and London PC graphics | GRY/G24 tiles, tile variants, sprites and stored deltas, catalog/preview/export and synthetic reference tests | Sprite remaps, combined delta states, loose graphics/fonts, real-file validation |
+| GTA1 and London PC graphics | GRY/G24 tiles, tile variants, sprites and stored deltas; FON images; catalog/preview/export and synthetic reference tests | Sprite remaps, combined delta states, loose RAW/RAT graphics, real-file validation |
 | GTA2 PC audio and graphics | 24-byte SDT/RAW and WAV; STY 700 tiles, sprites and stored deltas with fixtures | Remaps, standalone graphics, release-wide inventory and real-file validation |
 | Earlier console/handheld editions, including Advance | No new support | Platform-specific asset discovery and format specifications; PC layouts must not be assumed to apply |
 
