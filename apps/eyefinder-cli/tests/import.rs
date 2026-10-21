@@ -48,6 +48,19 @@ fn older_assets_import_and_export_through_cli() {
         root.join("loose-out/style.g24/side_0000_palette_0.png").is_file()
             || root.join("loose-out/GTADATA/style.g24/side_0000_palette_0.png").is_file()
     );
+    // Mixed loose selections need both catalogs, even without an AUDIO subfolder.
+    for ext in ["SDT", "RAW"] {
+        std::fs::copy(root.join(format!("GTADATA/AUDIO/LEVEL001.{ext}")), loose.join(format!("LEVEL001.{ext}")))
+            .unwrap();
+    }
+    let output = Command::new(env!("CARGO_BIN_EXE_eyefinder-cli"))
+        .arg("list")
+        .arg(loose.join("LEVEL001.SDT"))
+        .args(["--game", "gta1"])
+        .output()
+        .unwrap();
+    assert!(output.status.success(), "{}", String::from_utf8_lossy(&output.stderr));
+    assert!(String::from_utf8_lossy(&output.stdout).contains("LEVEL001_0000"));
     std::fs::remove_dir_all(loose).unwrap();
     std::fs::remove_dir_all(root).unwrap();
 }

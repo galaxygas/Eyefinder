@@ -110,6 +110,8 @@ fn open_folder(root: &Path) -> Arc<dyn Vfs> {
         "GTADATA"
     } else if fs.exists("LEVEL000.SDT")
         || fs.exists("LEVEL001.SDT")
+        || fs.exists("LEVEL002.SDT")
+        || fs.exists("LEVEL003.SDT")
         || fs.exists("MISBRIEF.SDT")
         || fs.exists("VOCALCOM.SDT")
     {
