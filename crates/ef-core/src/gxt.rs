@@ -32,7 +32,7 @@ impl Gxt {
         }
         let (tkey, tdat) = (tkey?, tdat?);
         let mut entries = HashMap::new();
-        for e in tkey.chunks_exact(12) {
+        for e in tkey.as_chunks::<12>().0 {
             let off = u32::from_le_bytes(e[0..4].try_into().ok()?) as usize;
             let key_end = e[4..12].iter().position(|&b| b == 0).unwrap_or(8);
             let key = String::from_utf8_lossy(&e[4..4 + key_end]).into_owned();

@@ -343,8 +343,7 @@ impl PcmSource for VbSource {
         self.s.read_exact(&mut self.buf)?;
         for c in 0..self.channels {
             let data = &self.buf[c * VB_BLOCK..(c + 1) * VB_BLOCK];
-            for (line, f) in data.chunks_exact(16).enumerate() {
-                let frame: &[u8; 16] = f.try_into().unwrap();
+            for (line, frame) in data.as_chunks::<16>().0.iter().enumerate() {
                 let base = line * 28 * self.channels + c;
                 self.states[c].frame(frame, &mut self.pcm[base..], self.channels);
             }

@@ -41,13 +41,14 @@ pub struct SaTrack {
 
 /// Reads the stream pack and track lookup tables.
 pub fn read_tracks(vfs: &dyn Vfs) -> Result<Vec<SaTrack>> {
-    let packs: Vec<String> = vfs.read_all("AUDIO/CONFIG/STRMPAKS.DAT")?.chunks_exact(16).map(cstr).collect();
+    let packs: Vec<String> =
+        vfs.read_all("AUDIO/CONFIG/STRMPAKS.DAT")?.as_chunks::<16>().0.iter().map(|e| cstr(e)).collect();
     let lk = vfs.read_all("AUDIO/CONFIG/TRAKLKUP.DAT")?;
     if lk.len() % 12 != 0 {
         return Err(Error::Format(format!("TRAKLKUP.DAT size {} is not a multiple of 12", lk.len())));
     }
     let mut out = Vec::with_capacity(lk.len() / 12);
-    for (i, e) in lk.chunks_exact(12).enumerate() {
+    for (i, e) in lk.as_chunks::<12>().0.iter().enumerate() {
         let pack = e[0] as usize;
         let Some(name) = packs.get(pack) else {
             return Err(Error::Format(format!(
@@ -109,12 +110,12 @@ pub struct SaSound {
 /// Reads every sound of every SFX bank. Banks whose header is inconsistent are reported, not guessed.
 pub fn read_sfx(vfs: &dyn Vfs) -> Result<(Vec<SaSound>, Vec<String>)> {
     let paks: Vec<String> =
-        vfs.read_all("AUDIO/CONFIG/PAKFILES.DAT")?.chunks_exact(52).map(|e| cstr(&e[..12])).collect();
+        vfs.read_all("AUDIO/CONFIG/PAKFILES.DAT")?.as_chunks::<52>().0.iter().map(|e| cstr(&e[..12])).collect();
     let lk = vfs.read_all("AUDIO/CONFIG/BANKLKUP.DAT")?;
     let mut sounds = Vec::new();
     let mut problems = Vec::new();
     let mut open: Option<(usize, ByteStream)> = None;
-    for (bank, e) in lk.chunks_exact(12).enumerate() {
+    for (bank, e) in lk.as_chunks::<12>().0.iter().enumerate() {
         let pak = e[0] as usize;
         let (off, bytes) = (u32le(e, 4) as u64, u32le(e, 8) as u64);
         let Some(pak_name) = paks.get(pak) else {

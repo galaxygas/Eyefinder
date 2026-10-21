@@ -79,16 +79,26 @@ pub trait PcmSource: Send {
 pub fn to_f32(kind: SampleKind, bytes: &[u8], out: &mut Vec<f32>) {
     match kind {
         SampleKind::U8 => out.extend(bytes.iter().map(|&b| (b as f32 - 128.0) / 128.0)),
-        SampleKind::I16 => out.extend(bytes.chunks_exact(2).map(|c| i16::from_le_bytes([c[0], c[1]]) as f32 / 32768.0)),
-        SampleKind::I24 => out.extend(
-            bytes
-                .chunks_exact(3)
-                .map(|c| (((c[0] as i32) << 8 | (c[1] as i32) << 16 | (c[2] as i32) << 24) >> 8) as f32 / 8_388_608.0),
-        ),
+        SampleKind::I16 => {
+            out.extend(bytes.as_chunks::<2>().0.iter().map(|c| i16::from_le_bytes([c[0], c[1]]) as f32 / 32768.0))
+        }
+        SampleKind::I24 => {
+            out.extend(
+                bytes.as_chunks::<3>().0.iter().map(|c| {
+                    (((c[0] as i32) << 8 | (c[1] as i32) << 16 | (c[2] as i32) << 24) >> 8) as f32 / 8_388_608.0
+                }),
+            )
+        }
         SampleKind::I32 => out.extend(
-            bytes.chunks_exact(4).map(|c| i32::from_le_bytes([c[0], c[1], c[2], c[3]]) as f32 / 2_147_483_648.0),
+            bytes
+                .as_chunks::<4>()
+                .0
+                .iter()
+                .map(|c| i32::from_le_bytes([c[0], c[1], c[2], c[3]]) as f32 / 2_147_483_648.0),
         ),
-        SampleKind::F32 => out.extend(bytes.chunks_exact(4).map(|c| f32::from_le_bytes([c[0], c[1], c[2], c[3]]))),
+        SampleKind::F32 => {
+            out.extend(bytes.as_chunks::<4>().0.iter().map(|c| f32::from_le_bytes([c[0], c[1], c[2], c[3]])))
+        }
     }
 }
 

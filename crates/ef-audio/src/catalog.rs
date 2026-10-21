@@ -374,7 +374,7 @@ fn sfx20(install: &GameInstall, support: SupportLevel, cat: &mut Catalog) -> Res
         ));
     }
     let mut skipped = 0;
-    for (i, e) in sdt.chunks_exact(20).enumerate() {
+    for (i, e) in sdt.as_chunks::<20>().0.iter().enumerate() {
         let r = |o: usize| u32::from_le_bytes(e[o..o + 4].try_into().unwrap());
         let (offset, size, rate, loop_start, loop_end) = (r(0), r(4) & !1, r(8), r(12), r(16) as i32);
         if size == 0 || rate == 0 || offset as u64 + size as u64 > raw_size {
