@@ -90,13 +90,30 @@ pub fn resolve_path(path: &Path) -> Result<PathBuf, IsoError> {
 pub fn open_path(path: &Path) -> Result<Arc<dyn Vfs>, IsoError> {
     let root = resolve_path(path)?;
     if root.is_file() {
-        return crate::vfs::open_path(&root);
+        let fs = mount_assets(crate::vfs::open_path(&root)?);
+        if fs.exists("SYSTEM.CNF") || !crate::possible_choices(fs.as_ref()).is_empty() {
+            return Ok(fs);
+        }
+        let mut candidates = Vec::new();
+        for entry in fs.list("").unwrap_or_default().into_iter().filter(|e| e.is_dir).take(128) {
+            let child = mount_assets(Arc::new(SubdirVfs { inner: fs.clone(), directory: entry.name }));
+            if !crate::possible_choices(child.as_ref()).is_empty() {
+                candidates.push(child);
+            }
+        }
+        return match candidates.len() {
+            0 => Ok(fs), 1 => Ok(candidates.remove(0)),
+            _ => Err(IsoError::Unsupported("Multiple installations were found inside this disc. Extract and select the desired installation folder.".into())),
+        };
     }
     Ok(open_folder(&root))
 }
 
 fn open_folder(root: &Path) -> Arc<dyn Vfs> {
-    let fs: Arc<dyn Vfs> = Arc::new(FolderVfs::new(root));
+    mount_assets(Arc::new(FolderVfs::new(root)))
+}
+
+fn mount_assets(fs: Arc<dyn Vfs>) -> Arc<dyn Vfs> {
     if crate::has_install_layout(fs.as_ref()) || fs.dir_exists("GTADATA") || fs.dir_exists("DATA") {
         return fs;
     }
@@ -150,5 +167,21 @@ impl Vfs for PrefixVfs {
     fn locate(&self, path: &str) -> Option<FileLocation> {
         let lower = path.to_ascii_lowercase();
         self.inner.locate(lower.strip_prefix(&(self.prefix.to_ascii_lowercase() + "/"))?)
+    }
+}
+
+struct SubdirVfs {
+    inner: Arc<dyn Vfs>,
+    directory: String,
+}
+impl Vfs for SubdirVfs {
+    fn describe(&self) -> String {
+        format!("{} / {}", self.inner.describe(), self.directory)
+    }
+    fn list(&self, path: &str) -> Option<Vec<DirEntry>> {
+        self.inner.list(&format!("{}/{path}", self.directory))
+    }
+    fn locate(&self, path: &str) -> Option<FileLocation> {
+        self.inner.locate(&format!("{}/{path}", self.directory))
     }
 }
