@@ -34,7 +34,16 @@ To rebuild the test fixtures (needs ffmpeg with libmp3lame/libvorbis, and geniso
 python3 tools/fixtures/make_fixtures.py crates/ef-audio/tests/fixtures
 ```
 
-Regenerating the fixtures changes their contents, so `reference.json` must then be recreated with
+To rebuild the texture fixtures and their reference (needs git, cmake, a C++ compiler, Python 3 and
+Pillow; librw is fetched at the pinned commit):
+
+```sh
+tools/txd-ref/build.sh /tmp/txdref crates/ef-texture/tests/fixtures
+```
+
+The texture fixtures are deterministic: CI regenerates them and checks they are unchanged.
+
+Regenerating the audio fixtures changes their contents, so `reference.json` must then be recreated with
 the reference tools named in its `_provenance` section.
 
 ## License

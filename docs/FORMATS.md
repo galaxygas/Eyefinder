@@ -1,7 +1,9 @@
-# Audio formats
+# Formats
 
 Byte layouts Eyefinder implements, with their sources. Little-endian unless stated. See
 [SUPPORT.md](SUPPORT.md) for how far each one is confirmed.
+
+# Audio
 
 ## GTA III and Vice City
 
@@ -81,3 +83,170 @@ Source: gta-reversed `source/game_sa/Audio/Loaders`.
 * ADPCM decodes to 16-bit, its exact output.
 * PCM is copied bit-exact.
 * Nothing is resampled.
+
+# Containers and textures
+
+Every layout below is cited, and has fixture coverage in `crates/ef-texture/tests` against the references in `tools/txd-ref`. Sources:
+* **librw:** `aap/librw` at commit `18532c2e`, MIT licence.
+* **re3:** `src/core`.
+* **gta-reversed:** `source/game_sa`.
+* **gtamods wiki:** pages "RenderWare binary stream file", "Texture Dictionary", "Texture Native Struct", "IMG archive", "RenderWare Version".
+
+## IMG archives (`ef_core::img`)
+* **Version 1 (GTA III, Vice City)**
+  * The data is in `name.img`; the directory is a separate `name.dir`.
+  * Each directory entry is 32 bytes: `{u32 offset; u32 size; char name[24]}`. Offsets and sizes are in 2048-byte sectors.
+  * Sources: re3 `Directory.h` and `CdStream.h` (`CDSTREAM_SECTOR_SIZE`), and `CStreaming::LoadCdDirectory`, which asserts the 32-byte entry size.
+* **Version 2 (San Andreas)**
+  * Layout: `"VER2"`, `u32 count`, then `count` entries of `{u32 offset; u16 streamingSize; u16 sizeInArchive; char name[24]}`.
+  * The size is `sizeInArchive` when it is non-zero, otherwise `streamingSize` (gta-reversed `CStreaming::LoadCdDirectory`).
+* Archives are recognised by content: the `VER2` magic, or a `.dir` file next to the `.img`. Eyefinder assumes no list of archive names.
+* **Xbox:** gtamods describes LZO-compressed entries in Xbox archives. No source code confirms this, so Eyefinder does not decompress them.
+
+## RenderWare streams
+* **Chunk header:** `{u32 type; u32 size; u32 libraryIdStamp}`, where `size` counts the payload including children (librw `base.cpp`).
+* **Version stamp:**
+  * A stamp with bits set in its high 16 is new-style: `version = ((stamp >> 14 & 0x3FF00) + 0x30000) | (stamp >> 16 & 0x3F)`.
+  * Otherwise the stamp is old-style and `version = stamp << 8` (librw `rwbase.h` `libraryIDUnpack`).
+  * Examples: 3.6.0.3 is stored as `0x1803FFFF`, 3.1.0.0 as `0x00000310`.
+* **Texture dictionary** (chunk `0x16`):
+  * A struct `{u16 count; u16 device}`, then `count` TextureNative chunks (`0x15`), then an extension.
+  * The first `u32` of each native's struct gives its platform: 8 = Direct3D 8, 9 = Direct3D 9, 5 = Xbox, `PS2\0` = PlayStation 2 (librw `texture.cpp`).
+
+## Texture natives
+Raster format bits (librw `rwobjects.h`):
+
+| Value | Format |
+|---|---|
+| `0x100` | C1555 |
+| `0x200` | C565 |
+| `0x300` | C4444 |
+| `0x400` | LUM8 |
+| `0x500` | C8888 |
+| `0x600` | C888 |
+| `0xA00` | C555 |
+| `0x2000` | PAL8 flag |
+| `0x4000` | PAL4 flag |
+| `0x8000` | MIPMAP flag |
+
+**Direct3D 8 and 9 (PC)** (librw `d3d8.cpp` / `d3d9.cpp` `readNativeTexture`). An 88-byte header:
+
+| Offset | Field |
+|---|---|
+| 0 | platform |
+| 4 | filter / addressing |
+| 8 | `char name[32]` |
+| 40 | `char mask[32]` |
+| 72 | raster format |
+| 76 | D3D8: `hasAlpha`; D3D9: `D3DFORMAT` or FourCC |
+| 80 | `u16 width` |
+| 82 | `u16 height` |
+| 84 | `u8 depth` |
+| 85 | `u8 levels` |
+| 86 | `u8 type` |
+| 87 | D3D8: compression 1–5 = DXT1–5; D3D9: flags (bit 0 alpha, bit 1 cube, bit 3 compressed) |
+
+* **Palette:** palettised rasters store 1024 bytes (PAL8) or 128 bytes (PAL4, 16 entries used), as `PALETTEENTRY` R, G, B, alpha. Texels use one byte each, even for PAL4.
+* **Levels:** each mip level is a `u32 size` followed by its bytes. Only the first level is read unless the raster has the MIPMAP flag.
+* **Uncompressed texels:** Microsoft `D3DFORMAT` A1R5G5B5, R5G6B5, A4R4G4B4, L8, A8R8G8B8, X8R8G8B8 and X1R5G5B5, little-endian. For uncompressed D3D9 textures Eyefinder, like librw, uses the raster format and not the stored `D3DFORMAT`.
+* **Not decoded:**
+  * D3D9 cube textures, which librw also refuses.
+  * DXT2 and DXT4 (premultiplied alpha).
+
+**Xbox** (librw `xbox.cpp`):
+* The stream must be at least RenderWare 3.4.0.1.
+* The header matches D3D up to offset 72, then:
+
+| Offset | Field |
+|---|---|
+| 72 | raster format |
+| 76 | `i16 hasAlpha` |
+| 78 | `i16` unknown, must be 0 |
+| 80 | width |
+| 82 | height |
+| 84 | depth |
+| 85 | levels |
+| 86 | type |
+| 87 | `D3DFMT` (`0x0C` DXT1, `0x0E` DXT3, `0x0F` DXT5, `rwxbox.h`) |
+| 88 | `u32 totalSize` |
+
+* **Palette:** stored B, G, R, A.
+* **Levels:** stored back to back, each with its computed size.
+* **Swizzling:** uncompressed levels are swizzled. Texel (x, y) sits at the index whose bits interleave x and y, starting with x, for as long as both still have bits (librw `unswizzle`).
+* **Decoded:** C1555, C555, C8888, the palettes, and DXT1/3/5.
+* **Not decoded:** the other pixel formats, because no reference decoder exists to check them against.
+
+**PlayStation 2** (librw `ps2raster.cpp`):
+* **Layout:** the native holds:
+  * a struct `{'PS2\0', filter}`;
+  * the name and mask strings;
+  * a struct containing a 64-byte raster header (`StreamRasterExt`), then a struct of texel and palette data.
+* **Header fields:**
+
+| Offset | Field |
+|---|---|
+| 0 | `i32 width` |
+| 4 | `i32 height` |
+| 8 | `i32 depth` |
+| 12 | `u16 format` |
+| 14 | `i16 version` |
+| 16 | `u64 TEX0` |
+| 24 | palette offset |
+| 28 | `tex1low` (number of mip levels − 1 in bits 2+) |
+| 32 | MIPTBP1 |
+| 40 | MIPTBP2 |
+| 48 | pixel size |
+| 52 | palette size |
+| 56 | total size |
+| 60 | KL |
+
+* **Header `version` ≥ 2:**
+  * Every level and the palette is preceded by a 0x50-byte GIF packet.
+  * A level occupies `ALIGN16(w′·h′·depth/8)`, where w′ and h′ are the level size raised to the GS transfer minimum (`transferMinSize`).
+  * Eyefinder checks that the levels add up to the header's pixel size and otherwise offers only the first level.
+* **Header `version` 0/1:** the texels start the data and the palette follows at the pixel size. Only the first level's position is documented.
+* **Swizzling:**
+  * 8-bit texels are swizzled in new-style rasters and in version 1.
+  * 4-bit texels are swizzled in new-style rasters from RenderWare 3.1.0.1 on.
+  * The unswizzle follows librw `swizzle()` / `unswizzleRaster`: bands of 4 rows, row pitch the next power of two of the padded width.
+* **Palettes:**
+  * 8-bit palettes are in CSM1 order: entries 8–15 and 16–23 of every 32 are exchanged (librw `convertCSM1_32`).
+  * 4-bit palettes use their first 16 entries.
+* **Colours:**
+  * 32-bit colours are RGBA, with alpha `0x80` = opaque (librw: `a·255/128`). Values above `0x80` are treated as opaque.
+  * 16-bit colours are A1B5G5R5, red in the low bits.
+* **Decoded:** palettes of 32-bit colours, C8888 and C1555.
+* **Not decoded:**
+  * 16-bit palettes: librw does not convert them, so their CLUT layout is unconfirmed.
+  * C888 rasters.
+
+## Colour conversion
+* Every stored channel is converted to 8 bits with one rule. Its value is `stored / max` as the format defines it, rounded to the nearest 8-bit step, ties up (Vulkan specification, "Conversion From Floating-Point to Normalized Fixed-Point").
+  * Each 8-bit result therefore identifies its stored value uniquely.
+  * The `.dds` export keeps compressed data untouched.
+* **S3TC** (DXT1, DXT3, DXT5) follows the Khronos Data Format Specification 1.3, "S3TC Compressed Texture Image Formats", including that BC2 and BC3 colour blocks always use the four-colour encoding.
+  * DXT1 is opaque when the raster format is C565 (PC) or `hasAlpha` is 0 (Xbox), as in librw.
+* **Differences from the other decoders:**
+  * librw and Pillow truncate instead of rounding, so they differ from Eyefinder by at most 1 per channel (2 for S3TC, where they truncate twice). `tools/txd-ref/make_reference.py` checks that bound on every fixture.
+  * librw also differs from the specifications in three places: its D3D palette path reads indices two texels ahead, its DXT5 colour block uses the DXT1 three-colour mode, and its Xbox path keeps the unused top bit of X1R5G5B5 as alpha. Eyefinder follows the specifications in all three.
+
+# Game versions (`ef_core::edition`)
+* **PC:** DK22Pac plugin-sdk `shared/GameVersion.cpp` (commit `15f15b60`) identifies each executable by one 32-bit value at a fixed virtual address.
+  * Eyefinder reads that value from the file, mapping the address through the PE section table (Microsoft "PE Format").
+  * Executables that are packed or encrypted on disk are reported as unknown.
+  * Executable names: `gta3.exe`, `gta-vc.exe`, `gta_sa.exe` (retail), `gta-sa.exe` (Steam).
+* **PS2:** the serial is the boot file named by `BOOT2` in `SYSTEM.CNF` (PCSX2 `ExecutablePathToSerial`). It is looked up in PCSX2 `GameIndex.yaml` (commit `5b6e6e23`).
+
+# Finding installed copies (`ef_core::locate`)
+* **Steam app IDs** (Steam app info via api.steamcmd.net): 12100 GTA III, 12110 Vice City, 12120 San Andreas, 12230 GTA III (Mac), 12250 San Andreas (Mac).
+* **Steam roots:**
+  * Windows registry: `HKCU\Software\Valve\Steam\SteamPath`, `HKLM\SOFTWARE\Valve\Steam\InstallPath`.
+  * Linux, Flatpak and Snap: the folders steamlocate 2.1.1 and Lutris check.
+  * macOS: `~/Library/Application Support/Steam`.
+* **Steam libraries:**
+  * Read from `steamapps/libraryfolders.vdf`, in both its current and older layout.
+  * Each game's folder comes from `steamapps/appmanifest_<id>.acf` `installdir`.
+* **Windows retail installs:**
+  * The setup registry values `Rockstar Games\GTA San Andreas\Installation\ExePath` and `Rockstar Games\GTAIII\Path`.
+  * Any folder directly inside `Program Files\Rockstar Games` that contains a game executable.
+* Every candidate must pass detection before it is offered.

@@ -24,9 +24,12 @@ licensed under GPL-3.0-or-later.
    `tools/fixtures/make_fixtures.py`. Do not copy code from re3 / reVC / gta-reversed (they have no
    license). Take facts (names, layouts) only, and generate tables with `tools/gen_tables.py`.
 5. **Prove correctness with tests.**
-   * A new decoder needs fixture coverage in `crates/ef-audio/tests/` and a comparison with an
-     independent reference (ffmpeg, vgmstream, or the original C tool).
-   * It must also pass the seek-exactness check (`assert_seek_exact`).
+   * A new audio decoder needs fixture coverage in `crates/ef-audio/tests/` and a comparison with
+     an independent reference (ffmpeg, vgmstream, or the original C tool). It must also pass the
+     seek-exactness check (`assert_seek_exact`).
+   * A new texture format needs cases in `tools/txd-ref/make_fixtures.py` and a reference in
+     `tools/txd-ref/make_reference.py` (librw for the structure, the specification decoder for the
+     pixels), then `tools/txd-ref/build.sh` to regenerate `crates/ef-texture/tests/fixtures`.
 6. **Keep the UI responsive.** Decoding, loading and exporting run on worker threads, never on the UI thread.
 
 ## Before you open a pull request
@@ -44,18 +47,20 @@ All three must pass. CI runs them on Windows, macOS and Linux. On Linux the GUI 
 
 | Path | What it is |
 |---|---|
-| `crates/ef-core` | Game detection, virtual file systems (folders and ISO 9660 images), GXT text, support levels |
+| `crates/ef-core` | Game detection, game versions (`edition`), finding installed copies (`locate`), virtual file systems (folders, ISO 9660 images, IMG archives), GXT text, support levels |
 | `crates/ef-audio` | Audio codecs, the asset catalog, decoding (`open`), export with manifests |
 | `crates/ef-audio/src/tables` | Generated stream / sample tables (do not edit by hand) |
+| `crates/ef-texture` | RenderWare texture dictionaries: natives for D3D8/9, Xbox and PS2, decoding, PNG/DDS export |
 | `apps/eyefinder` | The egui desktop application |
-| `apps/eyefinder-cli` | Headless `info` / `list` / `export` |
+| `apps/eyefinder-cli` | Headless `scan` / `info` / `versions` / `list` / `export` / `textures` |
 | `tools/legacy-c` | The original, real-file-verified GTA III ripper; reference implementation for tests |
-| `tools/fixtures` | Fixture generator (needs ffmpeg and genisoimage) |
+| `tools/fixtures` | Audio fixture generator (needs ffmpeg and genisoimage) |
+| `tools/txd-ref` | Texture fixtures and their reference (librw harness + specification decoder) |
 | `docs/` | Support matrix and format specifications |
 
 ## Adding a new asset type (textures, models, ...)
 
-Create a new crate next to `ef-audio` (for example `ef-texture`) with the same shape:
+Create a new crate next to `ef-audio` and `ef-texture` (for example `ef-model`) with the same shape:
 * a catalog that turns a `GameInstall` into a list of assets, each carrying a `SupportLevel`,
 * an `open` function for previews,
 * an exporter that writes standard files plus a manifest.
