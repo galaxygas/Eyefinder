@@ -47,7 +47,7 @@ jobs:
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0"><dict>
             <key>CFBundleName</key><string>Eyefinder</string>
-            <key>CFBundleIdentifier</key><string>io.github.eyefinder</string>
+            <key>CFBundleIdentifier</key><string>io.github.galaxygas.eyefinder</string>
             <key>CFBundleExecutable</key><string>eyefinder</string>
             <key>CFBundlePackageType</key><string>APPL</string>
             <key>CFBundleShortVersionString</key><string>${VERSION}</string>
@@ -81,11 +81,14 @@ jobs:
     needs: [windows, macos, linux]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v6
       - uses: actions/download-artifact@v7
         with:
           merge-multiple: true
-      - uses: softprops/action-gh-release@v2
+      # Runs only after all three builds succeeded. Notes come from docs/release-notes/<tag>.md.
+      - uses: softprops/action-gh-release@v3
         with:
-          draft: true
-          generate_release_notes: true
+          draft: false
+          body_path: docs/release-notes/${{ github.ref_name }}.md
+          fail_on_unmatched_files: true
           files: Eyefinder-*
