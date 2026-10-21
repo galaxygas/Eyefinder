@@ -8,3 +8,4 @@ license.workspace = true
 [dependencies]
 ef-core.workspace = true
 ef-audio.workspace = true
+ef-texture.workspace = true

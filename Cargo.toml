@@ -28,6 +28,7 @@ rfd = "0.17.2"
 rodio = { version = "0.23.0", default-features = false, features = ["playback"] }
 dirs = "7.0.0"
 png = "0.18.1"
+winreg = "0.56.0"
 
 [profile.release]
 lto = "thin"

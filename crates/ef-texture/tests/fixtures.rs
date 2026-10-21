@@ -101,8 +101,10 @@ fn catalog_finds_loose_and_archived_dictionaries() {
     let install = GameInstall {
         game: Game::SanAndreas,
         platform: Platform::Pc,
+        edition: ef_core::Edition::unknown(),
         vfs: Arc::new(FolderVfs::new(fixtures())),
         evidence: vec![],
+        user_choice: false,
     };
     let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
     let paths: Vec<&str> = cat.sources.iter().map(|s| s.path.as_str()).collect();
@@ -122,8 +124,10 @@ fn export_writes_png_dds_and_manifest() {
     let install = GameInstall {
         game: Game::Gta3,
         platform: Platform::Pc,
+        edition: ef_core::Edition::unknown(),
         vfs: Arc::new(FolderVfs::new(fixtures())),
         evidence: vec![],
+        user_choice: false,
     };
     let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
     let pick: Vec<usize> =
