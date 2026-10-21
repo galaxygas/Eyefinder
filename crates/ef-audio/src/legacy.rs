@@ -47,11 +47,12 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
     let gta2 = install.game == ef_core::Game::Gta2;
     let root = if gta2 {
         "DATA/AUDIO"
-    } else if london {
+    } else if london && vfs.dir_exists("GTADATA/UK/AUDIO") {
         "GTADATA/UK/AUDIO"
     } else {
         "GTADATA/AUDIO"
     };
+    let root = if gta2 && !vfs.dir_exists(root) { "DATA" } else { root };
     for (path, entry) in walk_files(vfs, root) {
         let upper = path.to_ascii_uppercase();
         let file = upper.rsplit('/').next().unwrap_or(&upper);

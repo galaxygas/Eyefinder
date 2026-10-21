@@ -141,3 +141,19 @@ bank layout is shared. CLI choices include `gta1`, `london1969`, `london1961`, `
 See [the support matrix](docs/SUPPORT.md) for the precise asset limits. These
 implementations are tested against synthetic references and are not yet verified
 on real game files. Earlier console/handheld releases are not covered by these PC readers.
+
+### Importing earlier PC games
+
+Use **Add game folder** for GTA1, London or GTA2 installations. You can select the
+installation root, `GTADATA`/`DATA`, or its `AUDIO` folder. **Open files** supports
+multiple selections, including GRY/G24/STY/FON textures, SDT/RAW banks and
+ISO/BIN/CUE data images. Drag-and-drop and opening files with the executable use
+the same importer. Selecting an asset imports its containing game/data directory
+so companion files remain available; selections from one installation are grouped.
+Loose GTA1/London textures prompt for the game because the format is shared.
+
+Compressed downloads/installers must be extracted first. BIN/CUE data-container
+support does not add PlayStation, GBC, GBA or Dreamcast asset decoders. A recognized
+PC format is still **Implemented from spec** until confirmed with real files.
+The window title, welcome screen and About dialog show the build commit so reports
+can identify exactly which executable was tested.

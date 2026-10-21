@@ -12,11 +12,11 @@ const USAGE: &str = "Eyefinder command line
 
 USAGE:
     eyefinder-cli scan
-    eyefinder-cli info     <game folder or .iso> [choice]
-    eyefinder-cli versions <game folder or .iso>
-    eyefinder-cli list     <game folder or .iso> [choice]
-    eyefinder-cli export   <game folder or .iso> <output folder> [choice] [audio options]
-    eyefinder-cli textures <game folder or .iso> <output folder> [choice] [texture options]
+    eyefinder-cli info     <game folder, asset file or disc image> [choice]
+    eyefinder-cli versions <game folder, asset file or disc image>
+    eyefinder-cli list     <game folder, asset file or disc image> [choice]
+    eyefinder-cli export   <game folder, asset file or disc image> <output folder> [choice] [audio options]
+    eyefinder-cli textures <game folder, asset file or disc image> <output folder> [choice] [texture options]
 
 scan lists the copies found in Steam libraries and the usual Rockstar Games folders.
 
@@ -68,7 +68,7 @@ fn open(path: &str, args: &[String]) -> Result<GameInstall, String> {
     if g.is_none() && p.is_none() && v.is_none() {
         return ef_core::open_and_detect(&path).map_err(|e| e.to_string());
     }
-    let vfs = ef_core::vfs::open_path(&path).map_err(|e| e.to_string())?;
+    let vfs = ef_core::import::open_path(&path).map_err(|e| e.to_string())?;
     let detected = ef_core::detect(vfs.clone());
     let game = match g {
         Some(s) => parse_game(s).ok_or(format!("unknown game {s}"))?,

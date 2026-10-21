@@ -365,3 +365,31 @@ Zero-width images are reported and skipped; malformed/truncated containers fail.
 Synthetic variable-width images, spacers, all palette indices, and truncated
 inputs are tested against a semantic pixel reference through the regular texture
 fixture generators. Catalog previews and PNG export use the same collection.
+
+### Import roots and raw CD images
+
+The folder/file resolver accepts an installation root, a `GTADATA`/`DATA` or
+`AUDIO` subfolder, or a supported asset file. Selecting an asset retains its
+companion files by importing the enclosing installation/data directory. A wrapper
+folder containing exactly one recognized installation or CUE/data image resolves
+to it; multiple candidates require an explicit selection. Loose GTA1/London
+styles and fonts require a game choice because their format does not identify
+which game supplied them. STY requires the `GBST` header and version 700. No
+executable/version identity is inferred from the user's directory name.
+
+BIN reading implements 2352-byte Mode 1 (payload at 16) and Mode 2 Form 1
+(payload at 24), exposing 2048 logical bytes per sector. Source:
+[psx-spx CDROM Format, Sector Encoding](https://psx-spx.consoledev.net/cdromformat/#cdrom-sector-encoding).
+Each read validates synchronization and mode; Mode 2 also validates the duplicated
+subheader and rejects Form 2. Seeking and nested IMG offsets remain in logical
+bytes, so physical sector headers and trailers never enter decoded asset data.
+This reader does not correct ECC errors or decode CD-DA/XA Form 2 audio.
+
+CUE `FILE`, `TRACK`, and `INDEX` interpretation follows
+[libcdio's BIN/CUE driver](https://github.com/libcdio/libcdio/blob/master/lib/driver/image/bincue.c)
+(inspected 2026-10-21). One data track is supported: MODE1/2048, MODE1/2352 or
+MODE2/2352, backed by a BINARY file. INDEX 01 specifies the data start at 75 frames
+per second; INDEX 00 of a following track bounds the stored data extent. Generated
+PREGAP does not occupy source bytes. Audio-only, multiple-data-track and unsupported
+sector-mode CUEs report explicit errors. This is disc-container support, not a
+claim that PlayStation GTA asset decoders are implemented.

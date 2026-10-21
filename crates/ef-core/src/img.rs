@@ -146,7 +146,12 @@ impl Vfs for ImgVfs {
     }
     fn locate(&self, path: &str) -> Option<FileLocation> {
         let e = self.find(path)?;
-        Some(FileLocation { host: self.host.host.clone(), offset: self.host.offset + e.offset, len: e.len })
+        Some(FileLocation {
+            host: self.host.host.clone(),
+            offset: self.host.offset + e.offset,
+            len: e.len,
+            sectors: self.host.sectors.clone(),
+        })
     }
 }
 

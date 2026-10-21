@@ -171,13 +171,27 @@ impl EyefinderApp {
     pub fn new(cc: &eframe::CreationContext<'_>) -> Self {
         theme::install(&cc.egui_ctx);
         let settings: Settings = cc.storage.and_then(|s| eframe::get_value(s, eframe::APP_KEY)).unwrap_or_default();
-        apply_theme(&cc.egui_ctx, settings.theme);
+        let mut app = Self::empty(&cc.egui_ctx, settings, Audio::open());
+        for item in app.settings.library.clone() {
+            app.add_game(item.path, item.choice, &cc.egui_ctx, false);
+        }
+        // paths given on the command line ("Open with", drag onto the executable) are added and selected
+        for a in std::env::args_os().skip(1) {
+            let p = PathBuf::from(a);
+            if p.exists() {
+                app.begin_import(std::path::absolute(&p).unwrap_or(p));
+            }
+        }
+        app
+    }
+
+    fn empty(ctx: &egui::Context, settings: Settings, mut audio: Result<Audio, String>) -> Self {
+        apply_theme(ctx, settings.theme);
         let (load_tx, load_rx) = unbounded();
-        let mut audio = Audio::open();
         if let Ok(a) = &mut audio {
             a.set_volume(settings.volume);
         }
-        let mut app = Self {
+        Self {
             entries: Vec::new(),
             next_id: 1,
             selected_entry: None,
@@ -198,7 +212,7 @@ impl EyefinderApp {
             tex_focused: None,
             tex_level: 0,
             tex_zoom: None,
-            thumbs: Thumbs::new(&cc.egui_ctx),
+            thumbs: Thumbs::new(ctx),
             trees: HashMap::new(),
             audio,
             playback: None,
@@ -214,18 +228,7 @@ impl EyefinderApp {
             show_about: false,
             show_notices: false,
             settings,
-        };
-        for item in app.settings.library.clone() {
-            app.add_game(item.path, item.choice, &cc.egui_ctx, false);
         }
-        // paths given on the command line ("Open with", drag onto the executable) are added and selected
-        for a in std::env::args_os().skip(1) {
-            let p = PathBuf::from(a);
-            if p.exists() {
-                app.add_game(std::path::absolute(&p).unwrap_or(p), None, &cc.egui_ctx, true);
-            }
-        }
-        app
     }
 
     pub(crate) fn toast(&mut self, msg: impl Into<String>) {
@@ -234,6 +237,10 @@ impl EyefinderApp {
 
     /// Opens the import dialog for `path` (detection is quick: file lookups and one header read).
     pub(crate) fn begin_import(&mut self, path: PathBuf) {
+        let path = ef_core::import::resolve_path(&path).unwrap_or(path);
+        if self.import.as_ref().is_some_and(|d| d.path == path) || self.pending_imports.contains(&path) {
+            return;
+        }
         self.open_import(path, false);
     }
 
@@ -250,7 +257,9 @@ impl EyefinderApp {
         let detected = ef_core::open_and_detect(&path).map_err(|e| e.to_string());
         let choices = match &detected {
             Ok(i) => ef_core::possible_choices(i.vfs.as_ref()),
-            Err(_) => ef_core::vfs::open_path(&path).map(|v| ef_core::possible_choices(v.as_ref())).unwrap_or_default(),
+            Err(_) => {
+                ef_core::import::open_path(&path).map(|v| ef_core::possible_choices(v.as_ref())).unwrap_or_default()
+            }
         };
         let (game, platform, edition) = match &detected {
             Ok(i) => (i.game, i.platform, i.edition.id.clone()),
@@ -779,7 +788,7 @@ impl EyefinderApp {
         );
     }
 
-    /// "Add game folder", "Open disc image" and "Find installed games".
+    /// "Add game folder", "Open files" and "Find installed games".
     fn add_buttons(&mut self, ui: &mut Ui, p: &Palette, ctx: &egui::Context, large: bool) {
         let size = if large { vec2(196.0, 40.0) } else { vec2(0.0, 0.0) };
         let t = |s: String| if large { RichText::new(s).size(14.5) } else { RichText::new(s) };
@@ -788,7 +797,7 @@ impl EyefinderApp {
         )
         .fill(p.accent)
         .min_size(size);
-        let iso = egui::Button::new(t(format!("{}  Open disc image", icon::DISC))).min_size(size);
+        let iso = egui::Button::new(t(format!("{}  Open files", icon::DISC))).min_size(size);
         let find = egui::Button::new(t(format!("{}  Find installed games", icon::MAGNIFYING_GLASS))).min_size(size);
         let mut go = |ui: &mut Ui, b: egui::Button, tip: &str, which: u8| {
             if ui.add(b).on_hover_text(tip).clicked() {
@@ -799,8 +808,14 @@ impl EyefinderApp {
                         }
                     }
                     1 => {
-                        if let Some(f) = rfd::FileDialog::new().add_filter("Disc image", &["iso", "ISO"]).pick_file() {
-                            self.begin_import(f);
+                        if let Some(files) = rfd::FileDialog::new()
+                            .add_filter("Game assets and disc images", ef_core::import::FILE_EXTENSIONS)
+                            .add_filter("All files", &["*"])
+                            .pick_files()
+                        {
+                            for file in files {
+                                self.begin_import(file);
+                            }
                         }
                     }
                     _ => self.start_scan(ctx),
@@ -809,7 +824,7 @@ impl EyefinderApp {
         };
         // in the top bar's right-to-left layout this order puts "Add game folder" at the far right
         go(ui, add, "Add an installed or extracted game folder", 0);
-        go(ui, iso, "Add a PS2 or PC disc image (.iso)", 1);
+        go(ui, iso, "Select multiple assets or disc images. Companion files in the same game folder are included.", 1);
         go(ui, find, "Look in Steam libraries and the Rockstar Games folders", 2);
     }
 
@@ -1101,13 +1116,19 @@ impl EyefinderApp {
             ui.label(RichText::new(icon::EYE).size(68.0).color(p.accent_text));
             ui.add_space(6.0);
             ui.label(RichText::new("WELCOME TO EYEFINDER").size(24.0).family(semibold()).extra_letter_spacing(3.0));
+            ui.label(
+                RichText::new(format!(
+                    "Build {}",
+                    &env!("EYEFINDER_REVISION")[..7.min(env!("EYEFINDER_REVISION").len())]
+                ))
+                .size(11.0)
+                .color(p.muted),
+            );
             ui.add_space(4.0);
             ui.label(
-                RichText::new(
-                    "Browse, preview and extract the audio and textures of GTA III, Vice City and San Andreas.",
-                )
-                .size(14.5)
-                .color(p.muted),
+                RichText::new("Audio and textures: GTA1, London 1969/1961, GTA2, GTA III, Vice City and San Andreas.")
+                    .size(14.5)
+                    .color(p.muted),
             );
             ui.add_space(22.0);
             ui.horizontal(|ui| {
@@ -1116,7 +1137,10 @@ impl EyefinderApp {
                 self.add_buttons(ui, p, ctx, true);
             });
             ui.add_space(14.0);
-            ui.label(RichText::new("...or drop a game folder or .iso anywhere in this window.").color(p.muted));
+            ui.label(
+                RichText::new("Drop folders or multiple files here. Older PC games: GRY, G24, STY, FON and SDT/RAW.")
+                    .color(p.muted),
+            );
             ui.add_space(30.0);
             egui::Frame::new()
                 .fill(p.panel)
@@ -1151,8 +1175,12 @@ impl EyefinderApp {
             ui.add_space(10.0);
             match &d.detected {
                 Err(e) => {
-                    ui.label(RichText::new(format!("{} Not recognised", icon::WARNING)).color(p.danger).family(semibold()));
+                    let label = if d.choices.is_empty() { "Cannot import this selection" } else { "Choose the game" };
+                    ui.label(RichText::new(format!("{} {label}", icon::WARNING)).color(p.danger).family(semibold()));
                     ui.label(RichText::new(e).color(p.muted));
+                    if d.choices.is_empty() {
+                        ui.label("Choose the installation folder, GTADATA/DATA folder, or supported asset files. A compressed installer/archive must be extracted first. PS1, GBC, Dreamcast and GBA asset decoders are not implemented.");
+                    }
                     for &(game, platform) in &d.choices {
                         if ui.button(format!("Import as {} ({})", game.name(), platform.name())).clicked() {
                             action = Some(Some(ImportChoice { game, platform, edition: "unknown".into() }));
@@ -1244,15 +1272,19 @@ impl EyefinderApp {
             close = true;
         }
         if let Some(choice) = action {
-            let (path, replace) = self.import.as_ref().map(|d| (d.path.clone(), d.replace)).unwrap();
-            if replace && let Some(i) = self.entries.iter().position(|e| e.path == path) {
-                self.remove_entry(i);
-            }
-            self.add_game(path, choice, ctx, true);
-            self.next_import();
+            self.confirm_import(choice, ctx);
         } else if close {
             self.next_import();
         }
+    }
+
+    fn confirm_import(&mut self, choice: Option<ImportChoice>, ctx: &egui::Context) {
+        let (path, replace) = self.import.as_ref().map(|d| (d.path.clone(), d.replace)).unwrap();
+        if replace && let Some(i) = self.entries.iter().position(|e| e.path == path) {
+            self.remove_entry(i);
+        }
+        self.add_game(path, choice, ctx, true);
+        self.next_import();
     }
 
     fn scan_modal(&mut self, p: &Palette, ctx: &egui::Context) {
@@ -1276,7 +1308,7 @@ impl EyefinderApp {
                 ScanState::Running(_) => {
                     ui.horizontal(|ui| {
                         ui.spinner();
-                        ui.label("Looking for GTA III, Vice City and San Andreas...");
+                        ui.label("Looking for installed GTA games...");
                     });
                 }
                 ScanState::Done { found, picked } => {
@@ -1492,7 +1524,7 @@ impl EyefinderApp {
                 ui.label(RichText::new(icon::EYE).size(30.0).color(p.accent_text));
                 ui.vertical(|ui| {
                     ui.label(RichText::new("EYEFINDER").size(19.0).family(semibold()).extra_letter_spacing(2.0));
-                    ui.label(RichText::new(format!("Version {}", env!("CARGO_PKG_VERSION"))).color(p.muted));
+                    ui.label(RichText::new(format!("Version {} · build {}", env!("CARGO_PKG_VERSION"), env!("EYEFINDER_REVISION"))).color(p.muted));
                 });
             });
             ui.add_space(8.0);
@@ -1701,4 +1733,126 @@ fn tree_row(
     }
     let _ = id;
     resp
+}
+
+#[cfg(test)]
+mod import_tests {
+    use super::*;
+    fn fixture_game(game: Game, suffix: &str) -> PathBuf {
+        let repo = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
+        let root = std::env::temp_dir()
+            .join(format!("ef-import-{game:?}-{suffix}-{}", std::process::id()))
+            .join("Installed game");
+        let _ = std::fs::remove_dir_all(&root);
+        let (fixture, data, banks, style) = if game == Game::Gta2 {
+            ("gta2_pc", "DATA", vec!["FSTYLE"], "style.sty")
+        } else {
+            ("gta1_pc", "GTADATA", vec!["LEVEL000", "LEVEL001"], "style.g24")
+        };
+        std::fs::create_dir_all(root.join(data).join("AUDIO")).unwrap();
+        for bank in banks {
+            for ext in ["SDT", "RAW"] {
+                let relative = format!("{data}/AUDIO/{bank}.{ext}");
+                std::fs::copy(
+                    repo.join("crates/ef-audio/tests/fixtures").join(fixture).join(&relative),
+                    root.join(relative),
+                )
+                .unwrap();
+            }
+        }
+        std::fs::copy(
+            repo.join("crates/ef-texture/tests/fixtures").join(style),
+            root.join(data).join(if game == Game::Gta2 { "FSTYLE.STY" } else { "STYLE.G24" }),
+        )
+        .unwrap();
+        root
+    }
+    fn loaded(app: &mut EyefinderApp, ctx: &egui::Context) {
+        let deadline = Instant::now() + Duration::from_secs(15);
+        loop {
+            app.poll(ctx);
+            if let LoadState::Failed(e) = &app.entries[0].state {
+                panic!("import failed: {e}");
+            }
+            if app.current().is_some() && app.textures_of(0).is_some() {
+                break;
+            }
+            assert!(Instant::now() < deadline, "catalog worker timed out");
+            thread::sleep(Duration::from_millis(5));
+        }
+    }
+    #[test]
+    fn folder_subfolder_and_multiple_asset_imports_populate_both_views() {
+        let ctx = egui::Context::default();
+        for game in [Game::Gta1, Game::Gta2] {
+            let root = fixture_game(game, "views");
+            let (data, style, bank) = if game == Game::Gta2 {
+                ("DATA", "FSTYLE.STY", "FSTYLE.SDT")
+            } else {
+                ("GTADATA", "STYLE.G24", "LEVEL000.SDT")
+            };
+            for selected in [
+                root.parent().unwrap().to_path_buf(),
+                root.clone(),
+                root.join(data),
+                root.join(data).join("AUDIO"),
+                root.join(data).join(style),
+                root.join(data).join("AUDIO").join(bank),
+            ] {
+                let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test without audio device".into()));
+                app.begin_import(selected);
+                let d = app.import.as_ref().expect("import dialog");
+                assert_eq!(d.detected.as_ref().expect("detected installation").game, game);
+                // Multi-selecting companion assets queues only one installation.
+                app.begin_import(root.join(data).join(style));
+                app.begin_import(root.join(data).join("AUDIO").join(bank));
+                assert!(app.pending_imports.is_empty());
+                app.confirm_import(None, &ctx);
+                loaded(&mut app, &ctx);
+                app.refresh_audio_view();
+                assert!(!app.audio_view.is_empty(), "audio view must have rows");
+                app.view = View::Textures(TexFilter::All);
+                app.refresh_texture_view();
+                assert!(!app.tex_view.is_empty(), "texture view must have rows");
+                let (install, audio) = app.current().unwrap();
+                assert!(!audio.assets.is_empty());
+                for asset in &audio.assets {
+                    let opened =
+                        ef_audio::open::open(asset, install.vfs.as_ref(), ef_audio::DecodeOptions::default()).unwrap();
+                    assert!(opened.source.total_frames().unwrap() > 0);
+                }
+                let textures = app.textures_of(0).unwrap();
+                let collection = textures.load(install, 0).unwrap();
+                assert!(!collection.textures[0].raster.decode(0).unwrap().pixels.is_empty());
+                // The saved path and choice must reopen after restarting the app.
+                let saved = &app.settings.library[0];
+                assert_eq!(ef_core::open_with(&saved.path, saved.choice.as_ref()).unwrap().game, game);
+            }
+            std::fs::remove_dir_all(root).unwrap();
+        }
+    }
+    #[test]
+    fn loose_texture_import_offers_identity_choice_and_loads_london() {
+        let ctx = egui::Context::default();
+        let root = std::env::temp_dir().join(format!("ef-loose-fon-{}", std::process::id()));
+        std::fs::create_dir_all(&root).unwrap();
+        let path = root.join("IMAGE.FON");
+        std::fs::copy(
+            Path::new(env!("CARGO_MANIFEST_DIR")).join("../../crates/ef-texture/tests/fixtures/images.fon"),
+            &path,
+        )
+        .unwrap();
+        let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test".into()));
+        app.begin_import(path);
+        let d = app.import.as_ref().unwrap();
+        assert!(d.detected.is_err());
+        assert!(d.choices.contains(&(Game::London1961, Platform::Pc)));
+        app.confirm_import(
+            Some(ImportChoice { game: Game::London1961, platform: Platform::Pc, edition: "unknown".into() }),
+            &ctx,
+        );
+        loaded(&mut app, &ctx);
+        assert_eq!(app.textures_of(0).unwrap().assets.len(), 3);
+        std::fs::remove_dir_all(root).unwrap();
+    }
 }

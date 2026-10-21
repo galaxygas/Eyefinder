@@ -1,8 +1,10 @@
 //! Eyefinder core: shared types, virtual file systems, game detection and text tables.
 
+mod cue;
 pub mod edition;
 pub mod gxt;
 pub mod img;
+pub mod import;
 pub mod locate;
 pub mod vfs;
 
@@ -171,6 +173,10 @@ pub enum DetectError {
         "London audio layout found; choose London 1969 or London 1961 explicitly because the shared bank layout cannot identify the expansion"
     )]
     AmbiguousLondon,
+    #[error(
+        "GTA1/London assets found. These formats are shared: choose GTA1, London 1969 or London 1961. A texture file alone cannot establish the game or release."
+    )]
+    AmbiguousLegacy,
 }
 
 /// File sets that identify each game. Every entry is a path the game itself opens, taken from the
@@ -317,6 +323,9 @@ fn matching_markers(vfs: &dyn Vfs) -> Vec<(&'static Marker, usize)> {
         // require at least two thirds of the marker files, so a stray file cannot trigger a match
         .filter(|(m, found)| found * 3 >= m.files.len() * 2)
         .collect();
+    if v.is_empty() {
+        v.extend(legacy_asset_markers(vfs));
+    }
     v.sort_by_key(|(_, found)| std::cmp::Reverse(*found));
     v
 }
@@ -348,15 +357,28 @@ pub fn detect(vfs: Arc<dyn Vfs>) -> Result<GameInstall, DetectError> {
 /// files support ([`possible_choices`]); otherwise the import is refused instead of decoding data
 /// with the wrong game's rules.
 pub fn detect_with(vfs: Arc<dyn Vfs>, choice: Option<&ImportChoice>) -> Result<GameInstall, DetectError> {
+    if let Ok(config) = vfs.read_all("SYSTEM.CNF") {
+        let config = String::from_utf8_lossy(&config).to_ascii_uppercase();
+        if config.lines().any(|l| l.split_once('=').is_some_and(|(key, _)| key.trim() == "BOOT")) {
+            return Err(DetectError::Mismatch("The PlayStation CD filesystem opened successfully, but PS1 GTA audio/texture formats are not implemented. This is not a PS2 or PC installation.".into()));
+        }
+    }
     let console = console_of(vfs.as_ref());
     let matches = matching_markers(vfs.as_ref());
     let Some(&(m, found)) = matches.first() else {
         return Err(DetectError::NotRecognised(vfs.describe()));
     };
+    if m.files.is_empty() && m.game != Game::Gta2 && choice.is_none() {
+        return Err(DetectError::AmbiguousLegacy);
+    }
     if matches!(m.game, Game::London1969 | Game::London1961) && choice.is_none() {
         return Err(DetectError::AmbiguousLondon);
     }
-    let mut evidence = vec![format!("{found} of {} files from the {} were found", m.files.len(), m.source)];
+    let mut evidence = vec![if m.files.is_empty() {
+        m.source.to_string()
+    } else {
+        format!("{found} of {} files from the {} were found", m.files.len(), m.source)
+    }];
     let platform = match (m.layout, console) {
         (Platform::Unknown, Some((p, why))) => {
             evidence.push(why.to_string());
@@ -378,7 +400,8 @@ pub fn detect_with(vfs: Arc<dyn Vfs>, choice: Option<&ImportChoice>) -> Result<G
         }
     };
     let (mut game, mut platform) = (m.game, platform);
-    let mut user_choice = matches!(m.game, Game::London1969 | Game::London1961);
+    let mut user_choice =
+        (m.files.is_empty() && choice.is_some()) || matches!(m.game, Game::London1969 | Game::London1961);
     let mut edition;
     if let Some(c) = choice {
         if (c.game, c.platform) != (game, platform) {
@@ -416,12 +439,87 @@ pub fn detect_with(vfs: Arc<dyn Vfs>, choice: Option<&ImportChoice>) -> Result<G
 
 /// Opens a folder or disc image and detects the game in it.
 pub fn open_and_detect(path: &std::path::Path) -> Result<GameInstall, DetectError> {
-    detect(vfs::open_path(path)?)
+    detect(import::open_path(path)?)
 }
 
 /// Opens a folder or disc image as the user chose (see [`detect_with`]).
 pub fn open_with(path: &std::path::Path, choice: Option<&ImportChoice>) -> Result<GameInstall, DetectError> {
-    detect_with(vfs::open_path(path)?, choice)
+    detect_with(import::open_path(path)?, choice)
+}
+
+pub(crate) fn has_install_layout(vfs: &dyn Vfs) -> bool {
+    MARKERS.iter().any(|m| m.files.iter().filter(|f| vfs.exists(f)).count() * 3 >= m.files.len() * 2)
+}
+
+// Standalone formats identify a format family, not an edition. GRY/G24/FON and
+// the GTA1 bank layout are also used by London, so all three choices are offered.
+// Layout sources: DMA CityScape, GTA2 GBH Style, Marschall FON/SDT (FORMATS.md).
+fn legacy_asset_markers(vfs: &dyn Vfs) -> Vec<(&'static Marker, usize)> {
+    use std::io::Read;
+    static ASSETS: [Marker; 4] = [
+        Marker { game: Game::Gta1, layout: Platform::Pc, files: &[], source: "GTA1/London PC asset format" },
+        Marker { game: Game::London1969, layout: Platform::Pc, files: &[], source: "GTA1/London PC asset format" },
+        Marker { game: Game::London1961, layout: Platform::Pc, files: &[], source: "GTA1/London PC asset format" },
+        Marker { game: Game::Gta2, layout: Platform::Pc, files: &[], source: "GTA2 PC STY 700 or FSTYLE sample bank" },
+    ];
+    let mut legacy = false;
+    let mut gta2 = false;
+    let mut london = false;
+    for dir in ["GTADATA", "GTADATA/UK", "DATA"] {
+        for e in vfs.list(dir).unwrap_or_default().into_iter().filter(|e| !e.is_dir) {
+            let path = format!("{dir}/{}", e.name);
+            let name = e.name.to_ascii_lowercase();
+            let mut head = [0; 6];
+            let Ok(mut file) = vfs.open(&path) else { continue };
+            if file.read_exact(&mut head).is_err() {
+                continue;
+            }
+            if name.ends_with(".sty") && &head[..4] == b"GBST" && u16::from_le_bytes([head[4], head[5]]) == 700 {
+                gta2 = true;
+            }
+            let version = u32::from_le_bytes(head[..4].try_into().unwrap());
+            let style = (name.ends_with(".gry") && version == 325) || (name.ends_with(".g24") && version == 336);
+            // FON has no magic. Check every image boundary and the exact palette
+            // length before treating the extension as a supported container.
+            let fon = name.ends_with(".fon") && valid_fon_header(&mut file);
+            if style || fon {
+                legacy = true;
+                london |= dir == "GTADATA/UK";
+            }
+        }
+    }
+    for root in ["GTADATA/AUDIO", "GTADATA/UK/AUDIO"] {
+        for bank in ["LEVEL000", "LEVEL001", "LEVEL002", "LEVEL003", "MISBRIEF", "VOCALCOM"] {
+            if vfs.exists(&format!("{root}/{bank}.SDT")) && vfs.exists(&format!("{root}/{bank}.RAW")) {
+                legacy = true;
+                london |= root.contains("/UK/");
+            }
+        }
+    }
+    gta2 |= vfs.exists("DATA/AUDIO/FSTYLE.SDT") && vfs.exists("DATA/AUDIO/FSTYLE.RAW");
+    let mut out = Vec::new();
+    if legacy {
+        out.extend(ASSETS[..3].iter().filter(|m| !london || m.game != Game::Gta1).map(|m| (m, 1)));
+    }
+    if gta2 {
+        out.push((&ASSETS[3], 1));
+    }
+    out
+}
+
+fn valid_fon_header(file: &mut vfs::RangeFile) -> bool {
+    use std::io::{Read, Seek, SeekFrom};
+    let mut h = [0; 2];
+    if file.seek(SeekFrom::Start(0)).is_err() || file.read_exact(&mut h).is_err() || h[1] == 0 {
+        return false;
+    }
+    for _ in 0..h[0] {
+        let mut w = [0];
+        if file.read_exact(&mut w).is_err() || file.seek(SeekFrom::Current(w[0] as i64 * h[1] as i64)).is_err() {
+            return false;
+        }
+    }
+    file.stream_position().is_ok_and(|p| p + 768 == file.len())
 }
 
 #[cfg(test)]

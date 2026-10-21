@@ -98,7 +98,11 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
         let lower = path.to_ascii_lowercase();
         match install.game {
             ef_core::Game::Gta1 if lower.starts_with("gtadata/uk/") => continue,
-            ef_core::Game::London1969 | ef_core::Game::London1961 if !lower.starts_with("gtadata/uk/") => continue,
+            ef_core::Game::London1969 | ef_core::Game::London1961
+                if vfs.dir_exists("GTADATA/UK") && !lower.starts_with("gtadata/uk/") =>
+            {
+                continue;
+            }
             _ => {}
         }
         if (install.game == ef_core::Game::Gta2 && lower.ends_with(".sty"))
