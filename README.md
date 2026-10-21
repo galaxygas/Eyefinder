@@ -131,3 +131,13 @@ Third-party components:
 Format knowledge comes from the re3/reVC, gta-reversed, librw and vgmstream projects, the gtamods
 wiki, plugin-sdk, PCSX2's game database and the official Khronos, Vulkan and Microsoft
 specifications.
+
+### Earlier PC games (development branch)
+
+Import the installation root containing `GTADATA` for GTA1/London, or `DATA` for
+GTA2. The app reads documented SDT/RAW sound banks, loose WAVs, and GRY/G24/STY
+style graphics. London-only imports offer explicit 1969/1961 choices because the
+bank layout is shared. CLI choices include `gta1`, `london1969`, `london1961`, `gta2`.
+See [the support matrix](docs/SUPPORT.md) for the precise asset limits. These
+implementations are tested against synthetic references and are not yet verified
+on real game files. Earlier console/handheld releases are not covered by these PC readers.

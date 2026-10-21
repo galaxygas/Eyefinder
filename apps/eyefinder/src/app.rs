@@ -250,7 +250,7 @@ impl EyefinderApp {
         let detected = ef_core::open_and_detect(&path).map_err(|e| e.to_string());
         let choices = match &detected {
             Ok(i) => ef_core::possible_choices(i.vfs.as_ref()),
-            Err(_) => Vec::new(),
+            Err(_) => ef_core::vfs::open_path(&path).map(|v| ef_core::possible_choices(v.as_ref())).unwrap_or_default(),
         };
         let (game, platform, edition) = match &detected {
             Ok(i) => (i.game, i.platform, i.edition.id.clone()),
@@ -1153,6 +1153,11 @@ impl EyefinderApp {
                 Err(e) => {
                     ui.label(RichText::new(format!("{} Not recognised", icon::WARNING)).color(p.danger).family(semibold()));
                     ui.label(RichText::new(e).color(p.muted));
+                    for &(game, platform) in &d.choices {
+                        if ui.button(format!("Import as {} ({})", game.name(), platform.name())).clicked() {
+                            action = Some(Some(ImportChoice { game, platform, edition: "unknown".into() }));
+                        }
+                    }
                     ui.add_space(12.0);
                     if ui.button("Close").clicked() {
                         close = true;

@@ -161,3 +161,82 @@ fn export_writes_png_dds_and_manifest() {
     assert_eq!(manifest["user_choice"], false);
     std::fs::remove_dir_all(&out).ok();
 }
+
+#[test]
+fn dma_style_pixels_match_specification_reference() {
+    let reference: Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("style_reference.json")).unwrap()).unwrap();
+    for (file, rows) in reference.as_object().unwrap() {
+        let bytes = std::fs::read(fixtures().join(file)).unwrap();
+        let collection = ef_texture::collection::parse(&bytes).unwrap();
+        assert_eq!(collection.rw_version, 0);
+        assert_eq!(collection.textures.len(), rows.as_array().unwrap().len());
+        for (texture, want) in collection.textures.iter().zip(rows.as_array().unwrap()) {
+            assert_eq!(texture.name, want["name"].as_str().unwrap());
+            assert_eq!(texture.raster.support().0, ef_core::SupportLevel::FromSpec);
+            let image = texture.raster.decode(0).unwrap();
+            assert_eq!(image.width as u64, want["width"].as_u64().unwrap());
+            assert_eq!(image.height as u64, want["height"].as_u64().unwrap());
+            assert_eq!(fnv(&image.pixels), want["fnv"].as_str().unwrap(), "{file} {}", texture.name);
+        }
+        for n in [0, 3, 4, 50, 63, 100, bytes.len() - 1] {
+            assert!(ef_texture::collection::parse(&bytes[..n]).is_err(), "truncated {file} at {n}");
+        }
+        let mut bad = bytes.clone();
+        bad[4..8].copy_from_slice(&u32::MAX.to_le_bytes());
+        assert!(ef_texture::collection::parse(&bad).is_err());
+    }
+}
+
+#[test]
+fn styles_use_normal_catalog_preview_and_png_export() {
+    for game in [Game::Gta1, Game::Gta2] {
+        let install = GameInstall {
+            game,
+            platform: Platform::Pc,
+            edition: ef_core::Edition::unknown(),
+            vfs: Arc::new(FolderVfs::new(fixtures())),
+            evidence: vec![],
+            user_choice: false,
+        };
+        let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
+        let picked: Vec<_> = cat
+            .assets
+            .iter()
+            .enumerate()
+            .filter(|(_, a)| a.platform == NativePlatform::DmaStyle)
+            .map(|(i, _)| i)
+            .collect();
+        assert!(!picked.is_empty());
+        let root = std::env::temp_dir().join(format!("ef-style-export-{game:?}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&root);
+        let report = ef_texture::export::export(
+            &install,
+            &cat,
+            &picked,
+            &root,
+            ef_texture::export::ExportOptions::default(),
+            &|_, _| {},
+            &AtomicBool::new(false),
+        )
+        .unwrap();
+        assert!(report.skipped.is_empty(), "{:?}", report.skipped);
+        assert_eq!(report.textures, picked.len());
+        assert_eq!(report.written, picked.len());
+        let manifest: Value = serde_json::from_slice(&std::fs::read(root.join("manifest.json")).unwrap()).unwrap();
+        // Each encoded PNG must match the same catalog object used by preview workers.
+        for i in picked {
+            let asset = &cat.assets[i];
+            let src = &cat.sources[asset.source];
+            let expected = cat.load(&install, asset.source).unwrap().textures[asset.index].raster.decode(0).unwrap();
+            let stem = &src.path;
+            let png = std::fs::read(root.join(stem).join(format!("{}.png", asset.name))).unwrap();
+            let mut reader = png::Decoder::new(std::io::Cursor::new(png)).read_info().unwrap();
+            let mut pixels = vec![0; reader.output_buffer_size().unwrap()];
+            reader.next_frame(&mut pixels).unwrap();
+            assert_eq!(pixels, expected.pixels);
+        }
+        assert!(!manifest.to_string().contains("Direct3D"));
+        std::fs::remove_dir_all(root).unwrap();
+    }
+}

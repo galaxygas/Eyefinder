@@ -1,0 +1,30 @@
+{
+  "FSTYLE_0000": {
+    "sha256": "c0a9c300e730539f06f7f9d6cdd8bf53968507340b99654386d674926982e2a7",
+    "frames": 1550,
+    "channels": 1,
+    "rate": 11025,
+    "bits": 16
+  },
+  "FSTYLE_0001": {
+    "sha256": "1fc41e6f980553c7bd0840a2066d4ce1c50d6891ddd0b46b406011c0fc348398",
+    "frames": 1581,
+    "channels": 1,
+    "rate": 15025,
+    "bits": 16
+  },
+  "FSTYLE_0002": {
+    "sha256": "ded51c16a136a8994ebb25adb9c83dbf013e189a9c30020e21f91ee83f639f23",
+    "frames": 1612,
+    "channels": 1,
+    "rate": 19025,
+    "bits": 16
+  },
+  "FSTYLE_0003": {
+    "sha256": "fa2d650448cfc27c70bfdeeb25b3fd53276bf7d27d299930bbaaae0dc8edbbbc",
+    "frames": 1643,
+    "channels": 1,
+    "rate": 23025,
+    "bits": 16
+  }
+}

@@ -65,6 +65,28 @@ pub fn open(asset: &AudioAsset, vfs: &dyn Vfs, opts: DecodeOptions) -> Result<Op
         return Err(Error::Unsupported(asset.support.explanation().into()));
     }
     match &asset.kind {
+        AssetKind::LegacyPcm { raw, offset, size, rate, channels, bits } => {
+            use crate::pcm::{PcmFormat, SampleKind};
+            let kind = match bits {
+                8 => SampleKind::U8,
+                16 => SampleKind::I16,
+                _ => return Err(Error::Format("invalid legacy PCM depth".into())),
+            };
+            if *rate == 0
+                || !matches!(channels, 1 | 2)
+                || !(*size as usize).is_multiple_of(kind.bytes() * *channels as usize)
+            {
+                return Err(Error::Format("invalid legacy PCM sample metadata".into()));
+            }
+            let s = ByteStream::open_range(vfs, raw, *offset as u64, *size as u64, Xform::None)?;
+            let mut o = Opened::plain(Box::new(RawPcmSource::with_format(
+                s,
+                PcmFormat::new(kind, *channels, *rate),
+                "GTA1 SDT PCM",
+            )));
+            o.extra.insert("sdt_raw_offset".into(), json!(offset));
+            Ok(o)
+        }
         AssetKind::Stream { path } => {
             let (source, markers) = sources::open_stream(ByteStream::open(vfs, path)?, opts.float_output)?;
             Ok(Opened { markers, ..Opened::plain(source) })
@@ -99,10 +121,14 @@ pub fn open(asset: &AudioAsset, vfs: &dyn Vfs, opts: DecodeOptions) -> Result<Op
             o.more_streams = streams;
             Ok(o)
         }
-        AssetKind::Sfx { raw, offset, size, rate, loop_start, loop_end } => {
+        AssetKind::Sfx { raw, offset, size, rate, loop_start, loop_end }
+        | AssetKind::Gta2Sfx { raw, offset, size, rate, loop_start, loop_end, .. } => {
             let s = ByteStream::open_range(vfs, raw, *offset as u64, *size as u64, Xform::None)?;
             let mut o = Opened::plain(Box::new(RawPcmSource::new(s, *rate, "PCM 16-bit (SFX.RAW)")));
             // SDT loop points are byte offsets into the 16-bit sample (re3 divides them by 2); -1 = end
+            if let AssetKind::Gta2Sfx { random_displacement, .. } = &asset.kind {
+                o.extra.insert("random_displacement".into(), json!(random_displacement));
+            }
             o.extra.insert("sfx_raw_offset".into(), json!(offset));
             o.extra.insert("loop_start_bytes".into(), json!(loop_start));
             o.extra.insert("loop_end_bytes".into(), json!(loop_end));

@@ -492,7 +492,10 @@ impl EyefinderApp {
                         field(ui, p, "Alpha mask name", a.mask.clone());
                     }
                     field(ui, p, "Dictionary", src.path.clone());
-                    field(ui, p, "RenderWare version", ef_texture::rw::version_label(src.rw_version));
+                    field(ui, p, "Container", src.container.into());
+                    if src.rw_version != 0 {
+                        field(ui, p, "RenderWare version", ef_texture::rw::version_label(src.rw_version));
+                    }
                     field(ui, p, "Dictionary size", human_bytes(src.bytes));
                     if ui.button(format!("{} Show this dictionary only", icon::FUNNEL)).clicked() {
                         self.set_view(View::Textures(TexFilter::Dict(src.path.clone())));

@@ -1,0 +1,290 @@
+{
+  "style.gry": [
+    {
+      "name": "side_0000_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "43d2e2b4d177c0d9"
+    },
+    {
+      "name": "lid_0000_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "41d9e565ddbaac14"
+    },
+    {
+      "name": "lid_0000_palette_1",
+      "width": 64,
+      "height": 64,
+      "fnv": "abf77b56eb8f9cac"
+    },
+    {
+      "name": "lid_0000_palette_2",
+      "width": 64,
+      "height": 64,
+      "fnv": "75550f40b50186a0"
+    },
+    {
+      "name": "lid_0000_palette_3",
+      "width": 64,
+      "height": 64,
+      "fnv": "732c398a74abc4e8"
+    },
+    {
+      "name": "aux_0000_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "f147d81684baf709"
+    },
+    {
+      "name": "aux_0001_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "c4067979676dd661"
+    },
+    {
+      "name": "aux_0002_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "d7b0377bd825c5d9"
+    },
+    {
+      "name": "sprite_0000",
+      "width": 2,
+      "height": 3,
+      "fnv": "66a0bce1761028ef"
+    },
+    {
+      "name": "sprite_0000_delta_00",
+      "width": 2,
+      "height": 3,
+      "fnv": "e16821483f51b96c"
+    },
+    {
+      "name": "sprite_0001",
+      "width": 2,
+      "height": 3,
+      "fnv": "c2286a76cd326e16"
+    },
+    {
+      "name": "sprite_0001_delta_00",
+      "width": 2,
+      "height": 3,
+      "fnv": "195449741c4215d5"
+    }
+  ],
+  "style.g24": [
+    {
+      "name": "side_0000_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "db572c3a22bfb891"
+    },
+    {
+      "name": "side_0000_palette_1",
+      "width": 64,
+      "height": 64,
+      "fnv": "5d55e8022ae84d35"
+    },
+    {
+      "name": "side_0000_palette_2",
+      "width": 64,
+      "height": 64,
+      "fnv": "db572c3a22bfb891"
+    },
+    {
+      "name": "side_0000_palette_3",
+      "width": 64,
+      "height": 64,
+      "fnv": "5d55e8022ae84d35"
+    },
+    {
+      "name": "lid_0000_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "20cb17196be1ccb4"
+    },
+    {
+      "name": "lid_0000_palette_1",
+      "width": 64,
+      "height": 64,
+      "fnv": "bae761743f6018e8"
+    },
+    {
+      "name": "lid_0000_palette_2",
+      "width": 64,
+      "height": 64,
+      "fnv": "20cb17196be1ccb4"
+    },
+    {
+      "name": "lid_0000_palette_3",
+      "width": 64,
+      "height": 64,
+      "fnv": "bae761743f6018e8"
+    },
+    {
+      "name": "aux_0000_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "3efbcc75e303c589"
+    },
+    {
+      "name": "aux_0000_palette_1",
+      "width": 64,
+      "height": 64,
+      "fnv": "10dabcada3ed48ed"
+    },
+    {
+      "name": "aux_0000_palette_2",
+      "width": 64,
+      "height": 64,
+      "fnv": "3efbcc75e303c589"
+    },
+    {
+      "name": "aux_0000_palette_3",
+      "width": 64,
+      "height": 64,
+      "fnv": "10dabcada3ed48ed"
+    },
+    {
+      "name": "aux_0001_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "86711c646d41b881"
+    },
+    {
+      "name": "aux_0001_palette_1",
+      "width": 64,
+      "height": 64,
+      "fnv": "a93d573085af77ad"
+    },
+    {
+      "name": "aux_0001_palette_2",
+      "width": 64,
+      "height": 64,
+      "fnv": "86711c646d41b881"
+    },
+    {
+      "name": "aux_0001_palette_3",
+      "width": 64,
+      "height": 64,
+      "fnv": "a93d573085af77ad"
+    },
+    {
+      "name": "aux_0002_palette_0",
+      "width": 64,
+      "height": 64,
+      "fnv": "c24bde3cc1c0ba61"
+    },
+    {
+      "name": "aux_0002_palette_1",
+      "width": 64,
+      "height": 64,
+      "fnv": "8ad5ba6880e803c5"
+    },
+    {
+      "name": "aux_0002_palette_2",
+      "width": 64,
+      "height": 64,
+      "fnv": "c24bde3cc1c0ba61"
+    },
+    {
+      "name": "aux_0002_palette_3",
+      "width": 64,
+      "height": 64,
+      "fnv": "8ad5ba6880e803c5"
+    },
+    {
+      "name": "sprite_0000",
+      "width": 2,
+      "height": 3,
+      "fnv": "48dc53f019775763"
+    },
+    {
+      "name": "sprite_0000_delta_00",
+      "width": 2,
+      "height": 3,
+      "fnv": "4d38e741e916a7d0"
+    },
+    {
+      "name": "sprite_0001",
+      "width": 2,
+      "height": 3,
+      "fnv": "19d996b4c2f005cc"
+    },
+    {
+      "name": "sprite_0001_delta_00",
+      "width": 2,
+      "height": 3,
+      "fnv": "9e80855e839be697"
+    }
+  ],
+  "style.sty": [
+    {
+      "name": "tile_0000",
+      "width": 64,
+      "height": 64,
+      "fnv": "db572c3a22bfb891"
+    },
+    {
+      "name": "tile_0001",
+      "width": 64,
+      "height": 64,
+      "fnv": "bae761743f6018e8"
+    },
+    {
+      "name": "tile_0002",
+      "width": 64,
+      "height": 64,
+      "fnv": "3efbcc75e303c589"
+    },
+    {
+      "name": "tile_0003",
+      "width": 64,
+      "height": 64,
+      "fnv": "a93d573085af77ad"
+    },
+    {
+      "name": "tile_0004",
+      "width": 64,
+      "height": 64,
+      "fnv": "c24bde3cc1c0ba61"
+    },
+    {
+      "name": "tile_0005",
+      "width": 64,
+      "height": 64,
+      "fnv": "669f268dc8566a20"
+    },
+    {
+      "name": "tile_0006",
+      "width": 64,
+      "height": 64,
+      "fnv": "e81adf93c4c430a8"
+    },
+    {
+      "name": "tile_0007",
+      "width": 64,
+      "height": 64,
+      "fnv": "7d17eee51fa4e555"
+    },
+    {
+      "name": "sprite_0000",
+      "width": 2,
+      "height": 3,
+      "fnv": "48dc53f019775763"
+    },
+    {
+      "name": "sprite_0001",
+      "width": 2,
+      "height": 3,
+      "fnv": "19d996b4c2f005cc"
+    },
+    {
+      "name": "sprite_0001_delta_00",
+      "width": 2,
+      "height": 3,
+      "fnv": "9e80855e839be697"
+    }
+  ]
+}

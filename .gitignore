@@ -2,3 +2,5 @@
 *.wav.partial
 Eyefinder Exports/
 .DS_Store
+
+__pycache__/

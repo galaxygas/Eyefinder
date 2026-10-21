@@ -250,3 +250,102 @@ Raster format bits (librw `rwobjects.h`):
   * The setup registry values `Rockstar Games\GTA San Andreas\Installation\ExePath` and `Rockstar Games\GTAIII\Path`.
   * Any folder directly inside `Program Files\Rockstar Games` that contains a game executable.
 * Every candidate must pass detection before it is offered.
+
+## GTA1 / London PC sample banks
+
+Source: Daniel Marschall's firsthand [SDT analysis](https://misc.daniel-marschall.de/spiele/gta1/format_sdt.html)
+and [retail inventory](https://misc.daniel-marschall.de/spiele/gta1/files/index.html),
+corroborated for record layout and bit depth by OpenGTA
+`1ae34ae3409d37bf484364d2a1db2e183a8527bd`, `read_sdt.cpp` and `util/sound_fx_cache.cpp`.
+
+* `GTADATA/AUDIO/*.SDT`: consecutive `{u32 offset, u32 length, u32 sample_rate}`
+  records into the same-stem `.RAW`. Only documented audio banks are interpreted;
+  graphics `.RAW` files are never treated as audio.
+* `LEVEL000`: signed little-endian 16-bit PCM; entries 0–2 stereo, subsequent entries mono.
+* `LEVEL001`, `LEVEL002`, `LEVEL003`, `MISBRIEF`, `VOCALCOM`: unsigned 8-bit mono PCM.
+* London uses `GTADATA/UK/AUDIO`; `LEVEL002/003` in that subtree are GTA1 leftovers
+  and are excluded. The shared layout does not identify 1969 versus 1961: users must
+  choose the expansion. Neither executable version nor complete expansion coverage
+  is inferred from these bank names.
+* Truncated index records, zero rates, out-of-file ranges and partial PCM frames
+  reject the bank with a catalog notice. Empty entries are skipped. PCM bytes are
+  preserved without resampling; loose WAVs use the existing content-based reader.
+* Synthetic fixtures include all three channel/depth combinations and nonzero
+  bank offsets, compared with ffmpeg PCM output and exact-seek tests.
+
+## GTA2 PC sample banks
+
+Source: [gta2_re](https://github.com/CriminalRETeam/gta2_re/tree/edb484d3b71d5cadaf3a9ea0e435f56993c747e7),
+`cSampleManager.hpp::sdt_entry_0x18`, `cSampleManager.cpp::LoadWavSdtData_58E980`,
+`AllocSamples_58D9F0` and `InitialiseChannel3D_58DDF0`. Only layout facts are used;
+no source code is copied.
+
+`DATA/AUDIO/<style>.SDT` has **24-byte** records of six little-endian signed 32-bit
+fields: offset, length, playback rate, random displacement, loop start, loop end.
+Companion RAW samples are signed 16-bit mono PCM (Miles format 1, flags 1).
+Random displacement is preserved as metadata; export uses the stored playback rate.
+Loop byte offsets and the `-1` end sentinel are preserved. `DATA/FSTYLE.STY` and its
+frontend audio bank identify the PC layout. Loose WAVs in the audio subtree are
+also catalogued. Synthetic sample references are generated with ffmpeg.
+
+## DMA style textures (GTA1 / London PC)
+
+Sources: DMA Design, [CityScape Data Structure 12.10](https://misc.daniel-marschall.de/spiele/gta1/cds.pdf),
+sections 3.3–3.8; OpenGTA at the revision above, `read_gry.cpp`, `read_g24.cpp`.
+The GRY version contradiction in the document is resolved in favor of **325**, the
+version actually accepted by OpenGTA. Version 305 is not silently treated as 325.
+G24 is **336**. These are separate containers, not synthetic TXDs.
+
+* GRY header: 13 u32 fields (version plus side/lid/aux/animation/palette/remap/
+  remap-index/object/car/sprite-info/sprite-graphics/sprite-number byte sizes).
+* G24 header: 16 u32 fields; palette/remap fields are replaced with CLUT size,
+  tile/sprite/new-car/font virtual CLUT byte counts and palette-index byte size.
+* Tiles are 64×64, indexed 8-bit pixels in 256-pixel-wide strips. The combined tile
+  store is padded to a multiple of four tiles, independent of section size fields.
+* GRY palette is 256 RGB triples. Remaps contain 256 byte-index permutations;
+  each lid has four remap identifiers in the 256×4 remap-index table.
+* G24 physical CLUT storage rounds up to 65536 bytes. Physical palette columns
+  contain BGRA entries: `(palette/64)*65536 + color*256 + (palette%64)*4`.
+  A u16 palette-index table maps virtual to physical palettes. Tile variants use
+  `tile*4+variant`; sprite palettes start at `tileclut_size/1024`.
+* GRY sprite records are 10 bytes and G24 records are 12: width, height, delta
+  count, compression byte, u16 pixel count; G24 adds a u16 palette. The final
+  u32 is the byte offset into the 256-pixel-wide sprite store. Each delta adds
+  `{u16 size,u32 offset}`. Compressed sprites are rejected.
+* Delta streams repeat `{u16 relative_offset,u8 length,u8 pixels[length]}`.
+  Offsets use 256-pixel-wide page coordinates. Each stored delta is exported as
+  its own modified sprite, retaining transparent erasures.
+* Palette index zero is transparent; other indices are opaque. The palette's
+  unused fourth byte is not interpreted as ordinary straight alpha.
+
+## GTA2 PC STY
+
+Sources: DMA Design, [GBH Style Format 4.6](https://gtamp.com/gta2/gta2-style-sty-graphics-file-format/),
+sections 3–6 and 12; gta2_re at the revision above,
+`gtx_0x106C.cpp::LoadSty_5AB750` verifies retail **700**, rather than the older
+600 in the published spec. The independent viewer
+[izawartka/gta2-sty-viewer-js](https://github.com/izawartka/gta2-sty-viewer-js/tree/582f0eb68d495fdbf6838ec0312e2906d639d1f1)
+also accepts 700.
+
+* Header `GBST` + u16 version; chunks `{char id[4],u32 size,payload}` to EOF.
+  Chunk order is independent; unknown chunks are skipped; duplicates/truncation fail.
+* `TILE`: paged 64×64 indexed tiles. `PPAL`: BGRA palette columns as above.
+  `PALX`: 16384 u16 virtual-to-physical palette entries. `PALB`: eight u16 counts;
+  cumulative counts give the bases, so the first count is the sprite palette base.
+* `SPRX`: `{u32 byte_offset,u8 width,u8 height,u16 padding}` into `SPRG` pages.
+* `DELX`: `{u16 sprite,u8 count,u8 padding,u16 sizes[count]}`. `DELS` contains the
+  corresponding delta streams in sequence. Delta instructions use the layout above.
+
+The shared catalog loads a container-neutral collection. Style images use their own
+platform label and RGBA representation; RenderWare version is absent in the UI and
+empty in export metadata. PNG preview/export share the same decoding path. No DDS
+is fabricated for indexed styles. Tile variants, base sprites and individual stored
+deltas are included; sprite remaps, combined delta states and standalone graphics
+are explicitly not yet enumerated. New entries remain **FromSpec**.
+
+`tools/txd-ref/build.sh` also generates GRY/G24/STY fixtures and
+`style_reference.json`. Expected RGBA is generated separately in image order from
+semantic patterns, independently of the parser's offset/page calculations. Fixtures
+exercise tile strip crossings/padding, sprite page crossings, the second CLUT page,
+remaps, transparent pixels and delta erasures. Catalog-to-PNG round trips compare
+with preview pixels; truncated inputs and invalid sizes are rejected.

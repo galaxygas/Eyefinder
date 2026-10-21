@@ -67,6 +67,7 @@ const III_CHECKS: &[ExeCheck] = &[
 
 fn checks(game: Game) -> &'static [ExeCheck] {
     match game {
+        Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 => &[],
         Game::Gta3 => III_CHECKS,
         Game::ViceCity => VC_CHECKS,
         Game::SanAndreas => SA_CHECKS,
@@ -77,6 +78,7 @@ fn checks(game: Game) -> &'static [ExeCheck] {
 /// release, Steam app 12120 launch configuration).
 pub fn exe_names(game: Game) -> &'static [&'static str] {
     match game {
+        Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 => &[],
         Game::Gta3 => &["gta3.exe"],
         Game::ViceCity => &["gta-vc.exe"],
         Game::SanAndreas => &["gta_sa.exe", "gta-sa.exe"],
@@ -158,6 +160,9 @@ fn pe_offset(head: &[u8], va: u32) -> Option<u64> {
 
 /// Identifies a PC executable. Returns the edition and the evidence line.
 pub fn identify_exe(vfs: &dyn Vfs, game: Game) -> (Edition, String) {
+    if exe_names(game).is_empty() {
+        return (Edition::unknown(), "Executable edition identification is not implemented for this game".into());
+    }
     for name in exe_names(game) {
         let Ok(mut f) = vfs.open(name) else { continue };
         let mut head = vec![0u8; 4096];

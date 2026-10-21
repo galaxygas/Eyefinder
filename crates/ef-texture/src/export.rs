@@ -203,7 +203,7 @@ pub fn export(
                 width: r.width,
                 height: r.height,
                 mip_levels: r.levels.len(),
-                renderware: crate::rw::version_label(tex.rw_version),
+                renderware: if tex.rw_version == 0 { String::new() } else { crate::rw::version_label(tex.rw_version) },
                 support: asset.support.label(),
                 files,
             });

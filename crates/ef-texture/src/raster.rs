@@ -30,6 +30,8 @@ pub const FOURCC_PS2: u32 = 0x0032_5350;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, serde::Serialize)]
 pub enum NativePlatform {
+    /// Normalized RGBA from a DMA style container, not a RenderWare native.
+    DmaStyle,
     D3d8,
     D3d9,
     Xbox,
@@ -39,6 +41,7 @@ pub enum NativePlatform {
 impl NativePlatform {
     pub fn label(self) -> &'static str {
         match self {
+            NativePlatform::DmaStyle => "PC (DMA style)",
             NativePlatform::D3d8 => "PC (Direct3D 8)",
             NativePlatform::D3d9 => "PC (Direct3D 9)",
             NativePlatform::Xbox => "Xbox",
@@ -417,6 +420,9 @@ fn parse_ps2(b: &[u8], c: &Chunk, st: &Chunk) -> Result<TextureNative, Error> {
 impl Raster {
     /// Short description of the pixel format, e.g. "DXT1", "8-bit palette (RGBA8888)".
     pub fn format_label(&self) -> String {
+        if self.platform == NativePlatform::DmaStyle {
+            return "Indexed DMA style → RGBA8".into();
+        }
         let px = match self.format & fmt::PIXEL_MASK {
             fmt::C1555 => "ARGB1555",
             fmt::C565 => "RGB565",
@@ -444,6 +450,7 @@ impl Raster {
         let px = self.format & fmt::PIXEL_MASK;
         let pal = self.format & (fmt::PAL8 | fmt::PAL4) != 0;
         let why = match self.platform {
+            NativePlatform::DmaStyle => None,
             NativePlatform::D3d8 | NativePlatform::D3d9 => {
                 if self.dxt == 2 || self.dxt == 4 {
                     Some("premultiplied-alpha DXT2/DXT4 is not decoded")

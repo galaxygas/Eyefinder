@@ -43,7 +43,11 @@ pub fn vb_rate(game: ef_core::Game, id: &str) -> u32 {
         ef_core::Game::ViceCity => {
             &["STREAMED_SOUND_RADIO_KCHAT", "STREAMED_SOUND_RADIO_VCPR", "STREAMED_SOUND_RADIO_POLICE"]
         }
-        ef_core::Game::SanAndreas => &[],
+        ef_core::Game::Gta1
+        | ef_core::Game::Gta2
+        | ef_core::Game::London1969
+        | ef_core::Game::London1961
+        | ef_core::Game::SanAndreas => &[],
     };
     if low.contains(&id) { 16000 } else { 32000 }
 }

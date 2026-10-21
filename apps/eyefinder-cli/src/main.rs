@@ -21,7 +21,7 @@ USAGE:
 scan lists the copies found in Steam libraries and the usual Rockstar Games folders.
 
 CHOICE (default: detected; the files must fit the choice):
-    --game <gta3|vc|sa>         --platform <pc|ps2|xbox>      --version <id from versions>
+    --game <gta1|london1969|london1961|gta2|gta3|vc|sa>         --platform <pc|ps2|xbox>      --version <id from versions>
 
 AUDIO OPTIONS:
     --pcm16             decode MPEG audio / Vorbis to 16-bit PCM instead of 32-bit float
@@ -41,6 +41,10 @@ fn value<'a>(args: &'a [String], flag: &str) -> Option<&'a str> {
 
 fn parse_game(s: &str) -> Option<Game> {
     match s.to_ascii_lowercase().replace([' ', '-', '_'], "").as_str() {
+        "gta1" | "1" => Some(Game::Gta1),
+        "gta2" | "2" => Some(Game::Gta2),
+        "london1969" => Some(Game::London1969),
+        "london1961" => Some(Game::London1961),
         "gta3" | "iii" | "3" => Some(Game::Gta3),
         "vc" | "vicecity" => Some(Game::ViceCity),
         "sa" | "sanandreas" => Some(Game::SanAndreas),
@@ -64,20 +68,27 @@ fn open(path: &str, args: &[String]) -> Result<GameInstall, String> {
     if g.is_none() && p.is_none() && v.is_none() {
         return ef_core::open_and_detect(&path).map_err(|e| e.to_string());
     }
-    let detected = ef_core::open_and_detect(&path).map_err(|e| e.to_string())?;
+    let vfs = ef_core::vfs::open_path(&path).map_err(|e| e.to_string())?;
+    let detected = ef_core::detect(vfs.clone());
     let game = match g {
         Some(s) => parse_game(s).ok_or(format!("unknown game {s}"))?,
-        None => detected.game,
+        None => detected.as_ref().map_err(|e| e.to_string())?.game,
     };
     let platform = match p {
         Some(s) => parse_platform(s).ok_or(format!("unknown platform {s}"))?,
-        None => detected.platform,
+        None => {
+            let platforms: Vec<_> =
+                ef_core::possible_choices(vfs.as_ref()).into_iter().filter(|c| c.0 == game).map(|c| c.1).collect();
+            if platforms.len() == 1 { platforms[0] } else { detected.as_ref().map_err(|e| e.to_string())?.platform }
+        }
     };
-    let edition = match v {
-        Some(s) => s.to_string(),
-        None if (game, platform) == (detected.game, detected.platform) => detected.edition.id.clone(),
-        None => "unknown".into(),
-    };
+    let edition = v.map(str::to_owned).unwrap_or_else(|| {
+        detected
+            .as_ref()
+            .ok()
+            .filter(|d| (d.game, d.platform) == (game, platform))
+            .map_or_else(|| "unknown".into(), |d| d.edition.id.clone())
+    });
     ef_core::open_with(&path, Some(&ImportChoice { game, platform, edition })).map_err(|e| e.to_string())
 }
 

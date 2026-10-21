@@ -31,6 +31,8 @@ fn format_label(a: &AudioAsset) -> String {
         AssetKind::Adf { .. } => "ADF (MP3)".into(),
         AssetKind::Vb { .. } => "VB (PS-ADPCM)".into(),
         AssetKind::Movie { .. } => "MPEG movie".into(),
+        AssetKind::LegacyPcm { bits, channels, .. } => format!("PCM {bits}-bit / {channels} ch"),
+        AssetKind::Gta2Sfx { .. } => "PCM (GTA2 SDT)".into(),
         AssetKind::Sfx { .. } => "PCM (SFX.RAW)".into(),
         AssetKind::SaTrack { .. } => "Ogg Vorbis".into(),
         AssetKind::SaSfx { .. } => "PCM (bank)".into(),

@@ -244,3 +244,80 @@ fn unrecognised_folders_are_rejected() {
     assert!(ef_core::open_and_detect(&d).is_err());
     std::fs::remove_dir_all(d).ok();
 }
+
+#[test]
+fn gta1_pcm_banks_match_ffmpeg_and_seek_exactly() {
+    let install = ef_core::open_and_detect(&fixtures().join("gta1_pc")).unwrap();
+    assert_eq!(install.game, Game::Gta1);
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("gta1_audio_reference.json")).unwrap()).unwrap();
+    assert_eq!(cat.assets.len(), 10);
+    for asset in &cat.assets {
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap());
+        assert_seek_exact(open, &asset.game_id);
+        let mut source = open();
+        source.seek(u64::MAX).unwrap();
+        assert!(decode_all(source.as_mut()).is_empty());
+    }
+    let (out, report) = export_all(&fixtures().join("gta1_pc"), "gta1");
+    assert_eq!(report.written, 10);
+    assert!(report.failed.is_empty());
+    std::fs::remove_dir_all(out).unwrap();
+}
+
+#[test]
+fn gta2_pcm_banks_match_ffmpeg_and_seek_exactly() {
+    let install = ef_core::open_and_detect(&fixtures().join("gta2_pc")).unwrap();
+    assert_eq!(install.game, Game::Gta2);
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("gta2_audio_reference.json")).unwrap()).unwrap();
+    assert_eq!(cat.assets.len(), 4);
+    for asset in &cat.assets {
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap());
+        assert_seek_exact(open, &asset.game_id);
+        let mut source = open();
+        source.seek(u64::MAX).unwrap();
+        assert!(decode_all(source.as_mut()).is_empty());
+    }
+    let (out, report) = export_all(&fixtures().join("gta2_pc"), "gta2");
+    assert_eq!(report.written, 4);
+    assert!(report.failed.is_empty());
+    std::fs::remove_dir_all(out).unwrap();
+}
+
+#[test]
+fn london_requires_explicit_identity_and_uses_uk_banks() {
+    use std::sync::Arc;
+    let root = temp("london");
+    let audio = root.join("GTADATA/UK/AUDIO");
+    std::fs::create_dir_all(&audio).unwrap();
+    for name in ["LEVEL000.SDT", "LEVEL000.RAW", "LEVEL001.SDT", "LEVEL001.RAW"] {
+        std::fs::copy(fixtures().join("gta1_pc/GTADATA/AUDIO").join(name), audio.join(name)).unwrap();
+    }
+    let vfs = Arc::new(ef_core::vfs::FolderVfs::new(&root));
+    assert!(matches!(ef_core::detect(vfs.clone()), Err(ef_core::DetectError::AmbiguousLondon)));
+    for game in [Game::London1969, Game::London1961] {
+        let choice = ef_core::ImportChoice { game, platform: Platform::Pc, edition: "unknown".into() };
+        let install = ef_core::detect_with(vfs.clone(), Some(&choice)).unwrap();
+        assert_eq!(install.game, game);
+        assert!(install.user_choice);
+        let cat = catalog::build(&install).unwrap();
+        assert_eq!(cat.assets.len(), 10);
+        assert!(cat.assets.iter().all(|a| a.source.to_ascii_uppercase().starts_with("GTADATA/UK/")));
+    }
+    std::fs::remove_dir_all(root).unwrap();
+}

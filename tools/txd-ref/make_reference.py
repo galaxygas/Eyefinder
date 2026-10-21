@@ -353,3 +353,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+import style_fixtures
+style_fixtures.reference(sys.argv[2])
+style_fixtures.reference_sty(sys.argv[2])

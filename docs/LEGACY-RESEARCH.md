@@ -1,8 +1,9 @@
 # Earlier GTA formats: evidence and remaining work
 
-Research for `agent/ps2-legacy-support`, 2026-10-21. This is an implementation
-assessment, **not a claim that new game support has shipped**. The current game
-importer still supports GTA III, Vice City and San Andreas only.
+Research and implementation record for `agent/ps2-legacy-support`, 2026-10-21.
+GTA1, London 1969, London 1961 and GTA2 now have PC asset paths in the importer.
+The specific implementations and unimplemented cases are listed in SUPPORT.md;
+this work does **not** establish complete cross-platform support.
 
 ## Primary sources examined
 
@@ -45,18 +46,16 @@ importer still supports GTA III, Vice City and San Andreas only.
 | III/VC PS2 VB | Existing decoder and reference/seek tests retained; VC manifest observations recorded in SUPPORT.md | Any audible defect needs an identified affected file and reproducible output comparison |
 | III/VC PS2 SFX, mission audio, PSS movies | Not implemented | Bank/container boundaries, sample metadata and independent fixtures; a successful VB export does not supply those facts |
 | SA PS2 audio | Not implemented | Pack lookup/extraction specification plus separate type-2/type-4 reference tests |
-| GTA1 and London PC audio | Research only | Dedicated 12-byte SDT parser, bank-specific PCM metadata, game/expansion identification, WAV and radio-source inventory, seek and independent-reference tests |
-| GTA1 and London PC graphics | Research only | GRY/G24 parsers, tile paging, palettes, sprites/deltas/remaps and loose graphics; independent fixtures and preview/export integration |
-| GTA2 PC audio and graphics | Research only | Audio bank specification; STY parser and validated version handling; palettes, sprites/deltas/remaps and reference fixtures |
+| GTA1 and London PC audio | SDT/RAW and WAV implemented with ffmpeg/seek tests | CD tracks, automatic London expansion identification, real-file inventory checks |
+| GTA1 and London PC graphics | GRY/G24 tiles, tile variants, sprites and stored deltas, catalog/preview/export and synthetic reference tests | Sprite remaps, combined delta states, loose graphics/fonts, real-file validation |
+| GTA2 PC audio and graphics | 24-byte SDT/RAW and WAV; STY 700 tiles, sprites and stored deltas with fixtures | Remaps, standalone graphics, release-wide inventory and real-file validation |
 | Earlier console/handheld editions, including Advance | No new support | Platform-specific asset discovery and format specifications; PC layouts must not be assumed to apply |
 
 ## Integration requirements
 
-Earlier games need real `Game` identities and evidence-based import choices in
-`ef-core`, not aliases for GTA III. Their graphics must not be labelled RenderWare
-or exposed as synthetic TXD files: `TexCatalog::load` currently returns `Txd`, and
-the preview/export pipeline expects RenderWare rasters. Add a container-aware
-abstraction before integrating style files. Keep parsing/decoding on workers.
+Earlier games have separate `Game` identities. Texture loading now returns a
+container-neutral collection, and style rasters have a distinct DMA style label.
+Existing preview workers and exporters consume it without fabricating TXDs.
 
 Generate synthetic data only. For each implemented audio path, compare with an
 independent reference and use `assert_seek_exact`; for graphics, extend the
@@ -73,3 +72,23 @@ passes with the flexible column last. Headings are centered in their cells.
 The `Test build` workflow packages the Windows GUI and CLI only after formatting,
 workspace Clippy and workspace tests pass. It records the exact commit in
 `COMMIT.txt`. It uploads a test artifact and does not create a public release.
+
+## Additional evidence and rejected shortcuts
+
+* `CriminalRETeam/gta2_re` at `edb484d3b71d5cadaf3a9ea0e435f56993c747e7`:
+  `cSampleManager` confirms the 24-byte SDT and signed 16-bit mono sample format;
+  `gtx_0x106C::LoadSty_5AB750` confirms retail STY version 700. These resolve the
+  earlier record/version gaps. Only facts were extracted, not source code.
+* `jonathanfrakesjunior/GTA-Advance-Studio` at
+  `7eae5b3ec2a827ffe49495d7ee0244daf01a9f9e` explicitly targets a European ROM.
+  `js/tab_sound.js` scans candidate sample headers/pointers and removes outliers;
+  `js/tab_tex.js` chooses plausible square sizes between scanned addresses.
+  Those heuristics do not prove all assets, all regions or sequenced music. They
+  have not been imported into Eyefinder as a purported complete decoder.
+* `sandervm/g24tool` was inspected but not used as the layout authority: its
+  described extra CLUT prefix differs from DMA/OpenGTA's explicit tile padding.
+  Eyefinder uses the latter documented layout and tests the padding directly.
+
+No real GTA1/London/GTA2/Advance/handheld/Dreamcast assets were available in this
+session. The supplied manifests cover Vice City PS2 exports only; they cannot
+validate unrelated platform layouts or inventories.

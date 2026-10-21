@@ -68,6 +68,8 @@ impl From<StreamCategory> for Category {
 /// How an asset's bytes are decoded.
 #[derive(Debug, Clone)]
 pub enum AssetKind {
+    /// GTA1/London 12-byte SDT record; PCM metadata comes from the documented bank rules.
+    LegacyPcm { raw: String, offset: u32, size: u32, rate: u32, channels: u16, bits: u8 },
     /// RIFF/WAVE, raw MPEG audio or Ogg, detected from the contents.
     Stream { path: String },
     /// Vice City PC radio: MPEG audio XOR 0x22.
@@ -78,6 +80,8 @@ pub enum AssetKind {
     Movie { path: String },
     /// GTA III / Vice City `SFX.SDT` entry (20 bytes) into `SFX.RAW`.
     Sfx { raw: String, offset: u32, size: u32, rate: u32, loop_start: u32, loop_end: i32 },
+    /// GTA2 24-byte SDT record; displacement is stored verbatim, not randomized on export.
+    Gta2Sfx { raw: String, offset: u32, size: u32, rate: u32, random_displacement: i32, loop_start: u32, loop_end: i32 },
     /// San Andreas stream pack track.
     SaTrack { pack: String, offset: u32, size: u32 },
     /// San Andreas SFX bank sound.
@@ -137,7 +141,9 @@ fn level(game: Game, platform: Platform) -> SupportLevel {
     match (game, platform) {
         (Game::Gta3, Platform::Pc) => SupportLevel::Verified,
         (Game::Gta3 | Game::ViceCity, Platform::Pc | Platform::Ps2) => SupportLevel::FromSpec,
-        (Game::SanAndreas, Platform::Pc) => SupportLevel::FromSpec,
+        (Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 | Game::SanAndreas, Platform::Pc) => {
+            SupportLevel::FromSpec
+        }
         _ => SupportLevel::DetectedOnly,
     }
 }
@@ -157,6 +163,7 @@ pub fn build(install: &GameInstall) -> Result<Catalog> {
     }
 
     match install.game {
+        Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 => return crate::legacy::catalog(install),
         Game::Gta3 | Game::ViceCity => {
             let gxt = vfs.read_all("TEXT/AMERICAN.GXT").ok().and_then(|d| Gxt::parse(&d));
             if gxt.is_none() {

@@ -15,6 +15,10 @@ use vfs::Vfs;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum Game {
+    Gta1,
+    Gta2,
+    London1969,
+    London1961,
     Gta3,
     ViceCity,
     SanAndreas,
@@ -23,6 +27,10 @@ pub enum Game {
 impl Game {
     pub fn name(self) -> &'static str {
         match self {
+            Game::Gta1 => "Grand Theft Auto",
+            Game::Gta2 => "Grand Theft Auto 2",
+            Game::London1969 => "Grand Theft Auto: London 1969",
+            Game::London1961 => "Grand Theft Auto: London 1961",
             Game::Gta3 => "Grand Theft Auto III",
             Game::ViceCity => "Grand Theft Auto: Vice City",
             Game::SanAndreas => "Grand Theft Auto: San Andreas",
@@ -30,6 +38,10 @@ impl Game {
     }
     pub fn short(self) -> &'static str {
         match self {
+            Game::Gta1 => "GTA1",
+            Game::Gta2 => "GTA2",
+            Game::London1969 => "London 1969",
+            Game::London1961 => "London 1961",
             Game::Gta3 => "GTA III",
             Game::ViceCity => "Vice City",
             Game::SanAndreas => "San Andreas",
@@ -151,10 +163,14 @@ impl fmt::Debug for GameInstall {
 pub enum DetectError {
     #[error("{0}")]
     Open(#[from] vfs::IsoError),
-    #[error("no GTA III, Vice City or San Andreas data was found in {0}")]
+    #[error("no supported GTA data was found in {0}")]
     NotRecognised(String),
     #[error("{0}")]
     Mismatch(String),
+    #[error(
+        "London audio layout found; choose London 1969 or London 1961 explicitly because the shared bank layout cannot identify the expansion"
+    )]
+    AmbiguousLondon,
 }
 
 /// File sets that identify each game. Every entry is a path the game itself opens, taken from the
@@ -167,6 +183,49 @@ struct Marker {
 }
 
 const MARKERS: &[Marker] = &[
+    // gta2_re Frontend.cpp / cSampleManager::LoadWavSdtData_58E980.
+    Marker {
+        game: Game::Gta2,
+        layout: Platform::Pc,
+        files: &["DATA/FSTYLE.STY", "DATA/AUDIO/FSTYLE.SDT", "DATA/AUDIO/FSTYLE.RAW"],
+        source: "GTA2 frontend style and sample bank",
+    },
+    // GTA1 retail inventory: Daniel Marschall, files/index.html (docs/FORMATS.md).
+    Marker {
+        game: Game::Gta1,
+        layout: Platform::Pc,
+        files: &[
+            "GTADATA/AUDIO/LEVEL000.SDT",
+            "GTADATA/AUDIO/LEVEL000.RAW",
+            "GTADATA/AUDIO/LEVEL001.SDT",
+            "GTADATA/AUDIO/LEVEL001.RAW",
+        ],
+        source: "GTA1 retail audio inventory",
+    },
+    // Both expansions share this layout. It does not identify which is installed.
+    Marker {
+        game: Game::London1969,
+        layout: Platform::Pc,
+        files: &[
+            "GTADATA/UK/AUDIO/LEVEL000.SDT",
+            "GTADATA/UK/AUDIO/LEVEL000.RAW",
+            "GTADATA/UK/AUDIO/LEVEL001.SDT",
+            "GTADATA/UK/AUDIO/LEVEL001.RAW",
+        ],
+        source: "London UK audio inventory (expansion must be chosen)",
+    },
+    // Both expansions share this layout. It does not identify which is installed.
+    Marker {
+        game: Game::London1961,
+        layout: Platform::Pc,
+        files: &[
+            "GTADATA/UK/AUDIO/LEVEL000.SDT",
+            "GTADATA/UK/AUDIO/LEVEL000.RAW",
+            "GTADATA/UK/AUDIO/LEVEL001.SDT",
+            "GTADATA/UK/AUDIO/LEVEL001.RAW",
+        ],
+        source: "London UK audio inventory (expansion must be chosen)",
+    },
     Marker {
         game: Game::Gta3,
         layout: Platform::Pc,
@@ -294,6 +353,9 @@ pub fn detect_with(vfs: Arc<dyn Vfs>, choice: Option<&ImportChoice>) -> Result<G
     let Some(&(m, found)) = matches.first() else {
         return Err(DetectError::NotRecognised(vfs.describe()));
     };
+    if matches!(m.game, Game::London1969 | Game::London1961) && choice.is_none() {
+        return Err(DetectError::AmbiguousLondon);
+    }
     let mut evidence = vec![format!("{found} of {} files from the {} were found", m.files.len(), m.source)];
     let platform = match (m.layout, console) {
         (Platform::Unknown, Some((p, why))) => {
@@ -316,7 +378,7 @@ pub fn detect_with(vfs: Arc<dyn Vfs>, choice: Option<&ImportChoice>) -> Result<G
         }
     };
     let (mut game, mut platform) = (m.game, platform);
-    let mut user_choice = false;
+    let mut user_choice = matches!(m.game, Game::London1969 | Game::London1961);
     let mut edition;
     if let Some(c) = choice {
         if (c.game, c.platform) != (game, platform) {

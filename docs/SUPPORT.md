@@ -10,6 +10,24 @@ Every asset in Eyefinder carries one of three support levels, shown in the app n
 
 A format moves to **Verified** only when someone runs Eyefinder on a real copy and the result is confirmed (see [CONTRIBUTING.md](../CONTRIBUTING.md#reporting-a-format-result)). Each such confirmation is recorded in the table below.
 
+## Earlier games (new, unverified implementations)
+
+| Game/platform | Implemented from specification | Not yet covered |
+|---|---|---|
+| GTA1 PC (shared DOS/Windows asset layout) | Six documented SDT/RAW bank types, loose WAVs; GRY 325 and G24 336 tiles, tile palette variants, base sprites and stored deltas | CD tracks, standalone graphics/fonts, sprite remaps and combined delta states |
+| London 1969 / 1961 PC | Explicit expansion choice; UK SDT/RAW and WAV subtree; same documented GRY/G24 readers | Automatic expansion identity, CD tracks, standalone graphics/fonts, sprite remaps and combined delta states |
+| GTA2 PC | 24-byte SDT/RAW banks, loose WAVs; STY 700 tiles, default sprites and stored deltas | Sprite remaps, combined delta states, standalone graphics; release-wide asset inventory validation |
+| GTA1 / London / GTA2 PlayStation | None added | Platform-specific discovery and full audio/graphics formats |
+| GTA1 / GTA2 Game Boy Color | None added | ROM asset boundaries, compression/palette mappings and music sequencer |
+| GTA2 Dreamcast | None added | Disc/archive inventory, texture/palette mapping, complete audio catalog |
+| GTA Advance Game Boy Advance | None added | Regional ROM mappings, complete graphics inventory and sequenced audio |
+
+These additions have synthetic reference tests, **not real-file confirmation**.
+They do not establish every-platform or every-asset support. Sources and exact
+limits are recorded in [FORMATS.md](FORMATS.md). London import never guesses between
+1969 and 1961 from their shared audio paths. Use the installation root containing
+`GTADATA` (GTA1/London) or `DATA` (GTA2).
+
 ## Audio
 
 | Game | Platform | Data | Level | Specification source | Real-file confirmation |

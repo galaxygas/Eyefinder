@@ -34,6 +34,54 @@ def add_cue(path, cues):
     body = d[12:] + b'cue ' + struct.pack('<I', len(cue)) + cue + b'LIST' + struct.pack('<I', len(adtl)) + adtl
     open(path, 'wb').write(b'RIFF' + struct.pack('<I', len(body) + 4) + b'WAVE' + body)
 
+# ---------------- GTA1 PC (12-byte SDT, mixed channel counts) ----------------
+def legacy_audio():
+    import json, hashlib
+    base = os.path.join(OUT, 'gta1_pc', 'GTADATA', 'AUDIO')
+    os.makedirs(base, exist_ok=True)
+    ref = {}
+    for name in ['LEVEL000', 'LEVEL001']:
+        raw = bytearray(); index = bytearray()
+        for i in range(5):
+            bits = 16 if name == 'LEVEL000' else 8
+            channels = 2 if name == 'LEVEL000' and i < 3 else 1
+            rate = [11025, 22050, 32000, 44100, 8000][i]
+            n = (1500+i*13)*channels*(bits//8)
+            data = bytes((j*71+i*19) % 256 for j in range(n))
+            index += struct.pack('<III', len(raw), n, rate)
+            raw += data
+            # Independent ffmpeg input demuxer and PCM writer; preserve representation.
+            enc = 'u8' if bits == 8 else 's16le'
+            decoded = subprocess.run(['ffmpeg', '-v', 'error', '-f', enc, '-ar', str(rate),
+                '-ac', str(channels), '-i', 'pipe:0', '-f', enc, '-acodec', 'pcm_'+enc, 'pipe:1'],
+                input=data, stdout=subprocess.PIPE, check=True).stdout
+            ref[f'{name}_{i:04}'] = dict(sha256=hashlib.sha256(decoded).hexdigest(),
+                frames=n//(channels*(bits//8)), channels=channels, rate=rate, bits=bits)
+        open(os.path.join(base, name+'.RAW'), 'wb').write(raw)
+        open(os.path.join(base, name+'.SDT'), 'wb').write(index)
+    open(os.path.join(OUT, 'gta1_audio_reference.json'), 'w').write(json.dumps(ref, indent=2)+'\n')
+
+def gta2_audio():
+    import json, hashlib
+    base = os.path.join(OUT, 'gta2_pc', 'DATA', 'AUDIO')
+    os.makedirs(base,exist_ok=True)
+    raw=bytearray();index=bytearray();ref={}
+    for i in range(4):
+        rate=11025+i*4000
+        data=bytes((j*93+i*17)%256 for j in range(2*(1550+i*31)))
+        index+=struct.pack('<6i',len(raw),len(data),rate,100+i,0,-1)
+        raw+=data
+        pcm=subprocess.run(['ffmpeg','-v','error','-f','s16le','-ar',str(rate),'-ac','1','-i','pipe:0','-f','s16le','pipe:1'],input=data,stdout=subprocess.PIPE,check=True).stdout
+        ref[f'FSTYLE_{i:04}']=dict(sha256=hashlib.sha256(pcm).hexdigest(),frames=len(data)//2,channels=1,rate=rate,bits=16)
+    open(os.path.join(base,'FSTYLE.RAW'),'wb').write(raw)
+    open(os.path.join(base,'FSTYLE.SDT'),'wb').write(index)
+    open(os.path.join(OUT,'gta2_audio_reference.json'),'w').write(json.dumps(ref,indent=2)+'\n')
+
+legacy_audio()
+gta2_audio()
+if '--legacy-only' in sys.argv:
+    sys.exit(0)
+
 # ---------------- GTA III PC ----------------
 g = os.path.join(OUT, 'gta3_pc'); a = os.path.join(g, 'audio')
 for d in [a, os.path.join(g, 'movies'), os.path.join(g, 'TEXT')]:
