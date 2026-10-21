@@ -1,0 +1,33 @@
+[workspace]
+resolver = "3"
+members = ["crates/ef-core", "crates/ef-audio", "apps/eyefinder", "apps/eyefinder-cli"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/OWNER/eyefinder"
+authors = ["Eyefinder contributors"]
+
+[workspace.dependencies]
+ef-core = { path = "crates/ef-core" }
+ef-audio = { path = "crates/ef-audio" }
+thiserror = "2.0.21"
+anyhow = "1.0.104"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+crossbeam-channel = "0.5.17"
+symphonia = { version = "0.6.1", default-features = false, features = ["mp1", "mp2", "mp3", "ogg", "vorbis"] }
+eframe = { version = "0.36", default-features = false, features = ["default_fonts", "glow", "persistence", "wayland", "x11"] }
+egui = "0.36"
+egui_extras = "0.36"
+egui-phosphor = "0.14.0"
+rfd = "0.17.2"
+rodio = { version = "0.23.0", default-features = false, features = ["playback"] }
+dirs = "7.0.0"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true

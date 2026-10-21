@@ -1,0 +1,30 @@
+name: Bug report
+description: Something does not work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: game
+    attributes:
+      label: Game, platform and version
+      placeholder: "GTA III, PC, Steam"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and Eyefinder version
+      placeholder: "Windows 11, Eyefinder 0.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages or manifest.json
+      description: Paste error text, or attach the manifest.json of an export. Never attach game files.

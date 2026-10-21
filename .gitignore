@@ -1,0 +1,4 @@
+/target
+*.wav.partial
+Eyefinder Exports/
+.DS_Store

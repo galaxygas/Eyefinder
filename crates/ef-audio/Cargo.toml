@@ -1,0 +1,16 @@
+[package]
+name = "ef-audio"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+symphonia.workspace = true
+ef-core.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+sha2 = "0.11.1"

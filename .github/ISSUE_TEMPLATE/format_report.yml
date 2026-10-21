@@ -1,0 +1,28 @@
+name: Format report
+description: Report how a game copy was decoded, to help move formats to "Verified"
+labels: [format-report]
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game, platform and exact version
+      description: For PS2 include the serial from SYSTEM.CNF (e.g. SLUS_200.62).
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Everything decoded and sounds correct
+        - Some items are wrong or failed
+        - Nothing could be decoded
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Which items were wrong and how (noise, speed, cut-offs, names). Attach the export's manifest.json. Never attach game files.
+    validations:
+      required: true

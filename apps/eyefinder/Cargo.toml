@@ -1,0 +1,19 @@
+[package]
+name = "eyefinder"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+eframe.workspace = true
+egui.workspace = true
+egui_extras.workspace = true
+egui-phosphor.workspace = true
+rfd.workspace = true
+rodio.workspace = true
+ef-core.workspace = true
+ef-audio.workspace = true
+serde.workspace = true
+crossbeam-channel.workspace = true
+dirs.workspace = true
