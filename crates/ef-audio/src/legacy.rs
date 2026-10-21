@@ -11,7 +11,7 @@ fn bank(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAss
         return Err(Error::Format("GTA1 SDT has a truncated 12-byte record".into()));
     }
     let mut assets = Vec::new();
-    for (i, row) in data.chunks_exact(12).enumerate() {
+    for (i, row) in data.as_chunks::<12>().0.iter().enumerate() {
         let word = |n| u32::from_le_bytes(row[n..n + 4].try_into().unwrap());
         let (offset, size, rate) = (word(0), word(4), word(8));
         if size == 0 {
@@ -42,8 +42,7 @@ fn bank(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAss
 pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
     let vfs = install.vfs.as_ref();
     let mut cat = Catalog::default();
-    // The London UK subtree may be installed beside GTA1; keep it separate until
-    // expansion identification is implemented. Never interpret graphics .RAW as sound.
+    // The London UK subtree may be installed beside GTA1; select the expansion explicitly. Never interpret graphics .RAW as sound.
     let london = matches!(install.game, ef_core::Game::London1969 | ef_core::Game::London1961);
     let gta2 = install.game == ef_core::Game::Gta2;
     let root = if gta2 {
@@ -100,14 +99,14 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
 }
 
 // gta2_re edb484d3b71d5cadaf3a9ea0e435f56993c747e7:
-// cSampleManager.hpp sdt_entry_0x18 and cSampleManager.cpp AllocSampleHandles:
+// cSampleManager.hpp sdt_entry_0x18 and cSampleManager.cpp AllocSamples_58D9F0:
 // 24-byte records; Miles sample format 1, flags 1 = signed 16-bit mono PCM.
 fn bank_gta2(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAsset>> {
     if !data.len().is_multiple_of(24) {
         return Err(Error::Format("truncated GTA2 SDT record".into()));
     }
     let mut assets = Vec::new();
-    for (i, row) in data.chunks_exact(24).enumerate() {
+    for (i, row) in data.as_chunks::<24>().0.iter().enumerate() {
         let word = |p| i32::from_le_bytes(row[p..p + 4].try_into().unwrap());
         let (offset, size, rate, loop_start, loop_end) = (word(0), word(4), word(8), word(16), word(20));
         if size == 0 {

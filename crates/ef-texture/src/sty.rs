@@ -49,7 +49,7 @@ pub fn parse(b: &[u8]) -> Result<TextureCollection, Error> {
         return Err(BAD);
     }
     let sprite_base = word(bases, 0, 2)?;
-    for (i, row) in info.chunks_exact(8).enumerate() {
+    for (i, row) in info.as_chunks::<8>().0.iter().enumerate() {
         let (w, h) = (row[4] as usize, row[5] as usize);
         let indices = rectangle(gfx, word(row, 0, 4)?, w, h)?;
         out.textures.push(texture(format!("sprite_{i:04}"), w, h, pal.rgba(&indices, sprite_base + i, None)?));
