@@ -877,12 +877,14 @@ dependencies = [
  "dirs",
  "ef-audio",
  "ef-core",
+ "ef-texture",
  "eframe",
  "egui",
  "egui-phosphor",
  "egui_extras",
  "rfd",
  "rodio",
+ "ron",
  "serde",
 ]
 

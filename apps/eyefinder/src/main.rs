@@ -1,8 +1,13 @@
 #![cfg_attr(all(windows, not(debug_assertions)), windows_subsystem = "windows")]
 
 mod app;
+mod audio_view;
+mod files_view;
 mod player;
+mod settings;
+mod texture_view;
 mod theme;
+mod thumbs;
 
 /// The window icon: an eye drawn at 64x64.
 fn icon() -> egui::IconData {
@@ -20,11 +25,11 @@ fn icon() -> egui::IconData {
             let px = &mut rgba[(y * n + x) * 4..][..4];
             if inside_eye {
                 if d < 6.0 {
-                    px.copy_from_slice(&[0x0E, 0x10, 0x14, 255]);
+                    px.copy_from_slice(&[theme::ICON_DARK[0], theme::ICON_DARK[1], theme::ICON_DARK[2], 255]);
                 } else if d < 14.0 {
-                    px.copy_from_slice(&[0x4C, 0xC9, 0xB0, 255]);
+                    px.copy_from_slice(&[theme::ICON_ACCENT[0], theme::ICON_ACCENT[1], theme::ICON_ACCENT[2], 255]);
                 } else {
-                    px.copy_from_slice(&[0xE6, 0xE9, 0xEF, 255]);
+                    px.copy_from_slice(&[theme::ICON_LIGHT[0], theme::ICON_LIGHT[1], theme::ICON_LIGHT[2], 255]);
                 }
             }
         }
