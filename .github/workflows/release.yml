@@ -1,7 +1,12 @@
 name: Release
 
+# A release is made when docs/release-notes/v<version>.md for the workspace version (Cargo.toml)
+# lands on main, or when a v* tag is pushed. The tag and the release are created by the publish job
+# only after all three platform builds succeeded.
 on:
   push:
+    branches: [main]
+    paths: ["docs/release-notes/**"]
     tags: ["v*"]
 
 permissions:
@@ -11,7 +16,35 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+      release: ${{ steps.tag.outputs.release }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: tag
+        shell: bash
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            TAG="$GITHUB_REF_NAME"
+          else
+            TAG="v$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n 1)"
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          if [[ ! -f "docs/release-notes/$TAG.md" ]]; then
+            echo "No docs/release-notes/$TAG.md, so there is nothing to release."
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          elif [[ "$GITHUB_REF" != refs/tags/* ]] && git ls-remote --exit-code --tags origin "refs/tags/$TAG" > /dev/null; then
+            echo "$TAG already exists."
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          fi
+
   windows:
+    needs: prepare
+    if: needs.prepare.outputs.release == 'true'
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v6
@@ -21,13 +54,17 @@ jobs:
         run: |
           New-Item -ItemType Directory dist/Eyefinder | Out-Null
           Copy-Item target/release/eyefinder.exe, target/release/eyefinder-cli.exe, README.md, LICENSE dist/Eyefinder/
-          Compress-Archive -Path dist/Eyefinder -DestinationPath "Eyefinder-${{ github.ref_name }}-windows-x64.zip"
+          Compress-Archive -Path dist/Eyefinder -DestinationPath "Eyefinder-${{ needs.prepare.outputs.tag }}-windows-x64.zip"
       - uses: actions/upload-artifact@v6
         with:
           name: windows
           path: Eyefinder-*-windows-x64.zip
 
   macos:
+    needs: prepare
+    if: needs.prepare.outputs.release == 'true'
+    env:
+      TAG: ${{ needs.prepare.outputs.tag }}
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
@@ -41,7 +78,7 @@ jobs:
           mkdir -p "$APP/MacOS"
           lipo -create -output "$APP/MacOS/eyefinder" target/aarch64-apple-darwin/release/eyefinder target/x86_64-apple-darwin/release/eyefinder
           lipo -create -output dist/eyefinder-cli target/aarch64-apple-darwin/release/eyefinder-cli target/x86_64-apple-darwin/release/eyefinder-cli
-          VERSION="${GITHUB_REF_NAME#v}"
+          VERSION="${TAG#v}"
           cat > "$APP/Info.plist" <<PLIST
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -55,13 +92,17 @@ jobs:
           </dict></plist>
           PLIST
           cp README.md LICENSE dist/
-          cd dist && zip -r "../Eyefinder-${GITHUB_REF_NAME}-macos-universal.zip" .
+          cd dist && zip -r "../Eyefinder-${TAG}-macos-universal.zip" .
       - uses: actions/upload-artifact@v6
         with:
           name: macos
           path: Eyefinder-*-macos-universal.zip
 
   linux:
+    needs: prepare
+    if: needs.prepare.outputs.release == 'true'
+    env:
+      TAG: ${{ needs.prepare.outputs.tag }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -71,14 +112,14 @@ jobs:
           cargo build --release -p eyefinder -p eyefinder-cli
           mkdir -p dist/eyefinder
           cp target/release/eyefinder target/release/eyefinder-cli README.md LICENSE dist/eyefinder/
-          tar -C dist -czf "Eyefinder-${GITHUB_REF_NAME}-linux-x64.tar.gz" eyefinder
+          tar -C dist -czf "Eyefinder-${TAG}-linux-x64.tar.gz" eyefinder
       - uses: actions/upload-artifact@v6
         with:
           name: linux
           path: Eyefinder-*-linux-x64.tar.gz
 
   publish:
-    needs: [windows, macos, linux]
+    needs: [prepare, windows, macos, linux]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -88,7 +129,9 @@ jobs:
       # Runs only after all three builds succeeded. Notes come from docs/release-notes/<tag>.md.
       - uses: softprops/action-gh-release@v3
         with:
+          tag_name: ${{ needs.prepare.outputs.tag }}
+          target_commitish: ${{ github.sha }}
           draft: false
-          body_path: docs/release-notes/${{ github.ref_name }}.md
+          body_path: docs/release-notes/${{ needs.prepare.outputs.tag }}.md
           fail_on_unmatched_files: true
           files: Eyefinder-*
