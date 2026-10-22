@@ -39,6 +39,36 @@ fn bank(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAss
     Ok(assets)
 }
 
+/// `path` as spelled on disc: the VFS matches names case-insensitively, but asset sources and
+/// exported names keep the stored spelling (GTA2 installs use `data/audio/wil.raw`).
+fn stored_path(vfs: &dyn ef_core::vfs::Vfs, path: &str) -> String {
+    let mut out = String::new();
+    for comp in path.split('/').filter(|c| !c.is_empty()) {
+        let name = vfs
+            .list(&out)
+            .and_then(|l| l.into_iter().find(|e| e.name.eq_ignore_ascii_case(comp)))
+            .map_or_else(|| comp.to_string(), |e| e.name);
+        out = if out.is_empty() { name } else { format!("{out}/{name}") };
+    }
+    out
+}
+
+fn wav(path: String, size: u64, category: Category, group: Option<&str>) -> AudioAsset {
+    let file = path.rsplit('/').next().unwrap_or(&path).to_string();
+    let stem = file.rsplit_once('.').map_or(file.as_str(), |(s, _)| s).to_string();
+    AudioAsset {
+        category,
+        group: group.map(str::to_string),
+        title: stem.clone(),
+        game_id: file.to_ascii_uppercase(),
+        source: path.clone(),
+        bytes: size,
+        file_stem: sanitize(&stem),
+        kind: AssetKind::Stream { path },
+        support: SupportLevel::FromSpec,
+    }
+}
+
 pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
     let vfs = install.vfs.as_ref();
     let mut cat = Catalog::default();
@@ -61,7 +91,8 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
     } else {
         "GTADATA"
     };
-    for (path, entry) in walk_files(vfs, root) {
+    let root = stored_path(vfs, root);
+    for (path, _) in walk_files(vfs, &root) {
         let upper = path.to_ascii_uppercase();
         let file = upper.rsplit('/').next().unwrap_or(&upper);
         if file.ends_with(".SDT") {
@@ -74,7 +105,7 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
                 cat.notices.push(format!("{path}: leftover GTA1 bank, excluded from London"));
                 continue;
             }
-            let raw = format!("{}.RAW", &path[..path.len() - 4]);
+            let raw = stored_path(vfs, &format!("{}.RAW", &path[..path.len() - 4]));
             let Some(len) = vfs.size(&raw) else {
                 cat.notices.push(format!("{path}: missing companion RAW"));
                 continue;
@@ -87,22 +118,40 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
                 Ok(a) => cat.assets.extend(a),
                 Err(e) => cat.notices.push(format!("{path}: {e}")),
             }
-        } else if let Some(stem) = file.strip_suffix(".WAV") {
-            cat.assets.push(AudioAsset {
-                category: Category::Other,
-                group: None,
-                title: stem.into(),
-                game_id: file.into(),
-                source: path.clone(),
-                bytes: entry.size,
-                file_stem: sanitize(stem),
-                kind: AssetKind::Stream { path },
-                support: SupportLevel::FromSpec,
-            });
         }
     }
+    // Every WAV of the installation, by where the game keeps it:
+    // * GTA1/London: GTADATA/AUDIO (GTADATA/UK/AUDIO) holds the cutscene speech 0.WAV-5.WAV
+    //   (Marschall inventory); the Rockstar Classics release plays its music from WAV files
+    //   (Marschall, overview_pc_editions.html, problems.html "Track10.wav").
+    // * GTA2: music is GTAUDIO\*.wav (gta2_re file.cpp gCdCheckFiles, cSampleManager.cpp
+    //   ":\GTAUDIO\"); release 9.6f reads "data\gtaudio\" (gta2_re reccmp/96f-ascii.csv).
+    //   Voice clips are data\audio\vocals\*.wav.
+    // Other WAVs are listed by their path, without guessing what they are.
+    for (path, entry) in walk_files(vfs, "") {
+        let upper = path.to_ascii_uppercase();
+        if !upper.ends_with(".WAV") {
+            continue;
+        }
+        let in_uk = upper.starts_with("GTADATA/UK/");
+        if (london && upper.starts_with("GTADATA/") && !in_uk) || (!london && !gta2 && in_uk) {
+            continue;
+        }
+        let dir = upper.rsplit_once('/').map_or("", |(d, _)| d);
+        let (category, group) = if gta2 && (dir == "GTAUDIO" || dir == "DATA/GTAUDIO") {
+            (Category::Radio, Some("GTAUDIO"))
+        } else if gta2 && dir == "DATA/AUDIO/VOCALS" {
+            (Category::Announcements, Some("vocals"))
+        } else if !gta2 && (dir == "GTADATA/AUDIO" || dir == "GTADATA/UK/AUDIO") {
+            (Category::Cutscenes, None)
+        } else {
+            (Category::Other, dir.is_empty().then_some("installation root").or(Some(dir)))
+        };
+        let group = group.map(|g| if g == dir { path.rsplit_once('/').map_or("", |(d, _)| d) } else { g });
+        cat.assets.push(wav(path.clone(), entry.size, category, group));
+    }
     cat.notices.push(
-        "SDT/RAW banks and loose WAV files are implemented. CD audio tracks are not included in this catalog.".into(),
+        "SDT/RAW banks and WAV files are implemented. CD audio tracks are read from BIN/CUE disc images.".into(),
     );
     Ok(cat)
 }
