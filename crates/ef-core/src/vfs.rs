@@ -61,6 +61,11 @@ pub trait Vfs: Send + Sync {
         })?;
         RangeFile::open(&loc)
     }
+    /// The 32 KiB system area of a disc (ECMA-119 6.2.1: logical sectors 0-15), which holds
+    /// `IP.BIN` on a Dreamcast disc. `None` for folders and single files.
+    fn system_area(&self) -> Option<Vec<u8>> {
+        None
+    }
     /// Reads a whole (small) file.
     fn read_all(&self, path: &str) -> io::Result<Vec<u8>> {
         let mut f = self.open(path)?;
@@ -248,6 +253,10 @@ struct IsoNode {
 pub struct IsoVfs {
     image: PathBuf,
     backing: FileLocation,
+    /// Disc LBA of the first sector of `backing` (45000 for a GD-ROM high-density track).
+    base_lba: u64,
+    /// Further data tracks holding the same filesystem: `(first LBA, track)` (GD-ROM).
+    extra: Vec<(u64, FileLocation)>,
     block: u64,
     root: IsoNode,
     dirs: Mutex<HashMap<u32, Arc<Vec<IsoNode>>>>,
@@ -270,6 +279,14 @@ impl IsoVfs {
             let (host, layout, length) = crate::cue::data_track(&image)?;
             return Self::from_backing(image, FileLocation { host, offset: 0, len: length, sectors: Some(layout) });
         }
+        if image.extension().is_some_and(|e| e.eq_ignore_ascii_case("gdi")) {
+            let mut tracks = crate::gdi::data_tracks(&image)?.into_iter();
+            let (base, first) =
+                tracks.next().ok_or_else(|| IsoError::Unsupported("GDI: no high-density data track".into()))?;
+            let mut v = Self::from_backing_at(image, first, base)?;
+            v.extra = tracks.collect();
+            return Ok(v);
+        }
         let length = std::fs::metadata(&image)?.len();
         let plain = FileLocation { host: image.clone(), offset: 0, len: length, sectors: None };
         if let Ok(v) = Self::from_backing(image.clone(), plain) {
@@ -290,6 +307,11 @@ impl IsoVfs {
     }
 
     fn from_backing(image: PathBuf, backing: FileLocation) -> Result<Self, IsoError> {
+        Self::from_backing_at(image, backing, 0)
+    }
+
+    /// `backing` starts at disc sector `base_lba`; directory records hold absolute sector numbers.
+    fn from_backing_at(image: PathBuf, backing: FileLocation, base_lba: u64) -> Result<Self, IsoError> {
         let mut f = RangeFile::open(&backing)?;
         // Volume descriptors start at sector 16 (ECMA-119 8.1); type 255 terminates the set.
         for sector in 16u64..64 {
@@ -307,24 +329,47 @@ impl IsoVfs {
             if vd[0] == 1 {
                 let block = u16::from_le_bytes([vd[128], vd[129]]) as u64;
                 let root = parse_record(&vd[156..190]).ok_or(IsoError::NotIso)?;
-                if block != 2048 || root.lba as u64 * block + root.size > backing.len {
+                let rel = (root.lba as u64).checked_sub(base_lba).ok_or(IsoError::NotIso)?;
+                if block != 2048 || rel * block + root.size > backing.len {
                     return Err(IsoError::NotIso);
                 }
-                return Ok(Self { image, backing, block, root, dirs: Mutex::new(HashMap::new()) });
+                return Ok(Self {
+                    image,
+                    backing,
+                    base_lba,
+                    extra: Vec::new(),
+                    block,
+                    root,
+                    dirs: Mutex::new(HashMap::new()),
+                });
             }
         }
         Err(IsoError::NotIso)
+    }
+
+    /// The byte range of `size` bytes starting at disc sector `lba`, in whichever track holds it.
+    fn extent(&self, lba: u32, size: u64) -> Option<FileLocation> {
+        let tracks = std::iter::once((self.base_lba, &self.backing)).chain(self.extra.iter().map(|(b, t)| (*b, t)));
+        for (base, t) in tracks {
+            let Some(rel) = (lba as u64).checked_sub(base) else { continue };
+            let offset = rel * self.block;
+            if offset + size <= t.len {
+                return Some(FileLocation {
+                    host: t.host.clone(),
+                    offset: t.offset + offset,
+                    len: size,
+                    sectors: t.sectors.clone(),
+                });
+            }
+        }
+        None
     }
 
     fn read_dir(&self, node: &IsoNode) -> Option<Arc<Vec<IsoNode>>> {
         if let Some(d) = self.dirs.lock().unwrap().get(&node.lba) {
             return Some(d.clone());
         }
-        let mut f = RangeFile::open(&self.backing).ok()?;
-        f.seek(SeekFrom::Start(node.lba as u64 * self.block)).ok()?;
-        if node.lba as u64 * self.block + node.size > self.backing.len {
-            return None;
-        }
+        let mut f = RangeFile::open(&self.extent(node.lba, node.size)?).ok()?;
         let mut data = vec![0u8; node.size as usize];
         f.read_exact(&mut data).ok()?;
         let mut out = Vec::new();
@@ -408,17 +453,67 @@ impl Vfs for IsoVfs {
         if n.is_dir {
             return None;
         }
-        let offset = n.lba as u64 * self.block;
-        if offset + n.size > self.backing.len {
+        self.extent(n.lba, n.size)
+    }
+    fn system_area(&self) -> Option<Vec<u8>> {
+        let mut f = RangeFile::open(&FileLocation { len: 16 * 2048, ..self.backing.clone() }).ok()?;
+        let mut v = vec![0; 16 * 2048];
+        f.read_exact(&mut v).ok()?;
+        Some(v)
+    }
+}
+
+/// A single file (a cartridge ROM image) as a one-entry file system.
+pub struct SingleFileVfs {
+    path: PathBuf,
+}
+
+impl SingleFileVfs {
+    pub fn new(path: impl Into<PathBuf>) -> Self {
+        Self { path: path.into() }
+    }
+    fn name(&self) -> String {
+        self.path.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default()
+    }
+}
+
+impl Vfs for SingleFileVfs {
+    fn describe(&self) -> String {
+        self.path.display().to_string()
+    }
+    fn list(&self, dir: &str) -> Option<Vec<DirEntry>> {
+        if split(dir).next().is_some() {
             return None;
         }
-        Some(FileLocation {
-            host: self.backing.host.clone(),
-            offset,
-            len: n.size,
-            sectors: self.backing.sectors.clone(),
-        })
+        let size = std::fs::metadata(&self.path).ok()?.len();
+        Some(vec![DirEntry { name: self.name(), is_dir: false, size }])
     }
+    fn locate(&self, path: &str) -> Option<FileLocation> {
+        let mut parts = split(path);
+        let (Some(only), None) = (parts.next(), parts.next()) else { return None };
+        if !only.eq_ignore_ascii_case(&self.name()) {
+            return None;
+        }
+        let len = std::fs::metadata(&self.path).ok()?.len();
+        Some(FileLocation { host: self.path.clone(), offset: 0, len, sectors: None })
+    }
+}
+
+/// `name` in `dir`, matched case-insensitively when the exact spelling does not exist (CUE and
+/// GDI sheets written on Windows name their track files in any case).
+pub fn sibling(dir: &Path, name: &str) -> PathBuf {
+    let exact = dir.join(name);
+    if exact.exists() {
+        return exact;
+    }
+    let mut cur = dir.to_path_buf();
+    for comp in split(name) {
+        let found = std::fs::read_dir(&cur).ok().and_then(|rd| {
+            rd.flatten().map(|e| e.file_name()).find(|n| n.to_string_lossy().eq_ignore_ascii_case(comp))
+        });
+        cur = cur.join(found.map(PathBuf::from).unwrap_or_else(|| PathBuf::from(comp)));
+    }
+    cur
 }
 
 /// Every file below `dir` ("" = root) as `(path, entry)`, directories first visited in name order.
@@ -437,9 +532,22 @@ pub fn walk_files(vfs: &dyn Vfs, dir: &str) -> Vec<(String, DirEntry)> {
     out
 }
 
-/// Opens a folder or a disc image.
+/// Cartridge ROM file extensions (Game Boy / Game Boy Color / Game Boy Advance).
+pub const ROM_EXTENSIONS: &[&str] = &["gb", "gbc", "cgb", "gba", "agb"];
+
+pub fn is_rom(path: &Path) -> bool {
+    path.extension().is_some_and(|e| ROM_EXTENSIONS.iter().any(|r| e.eq_ignore_ascii_case(r)))
+}
+
+/// Opens a folder, a disc image or a cartridge ROM.
 pub fn open_path(path: &Path) -> Result<Arc<dyn Vfs>, IsoError> {
-    if path.is_dir() { Ok(Arc::new(FolderVfs::new(path))) } else { Ok(Arc::new(IsoVfs::open(path)?)) }
+    if path.is_dir() {
+        Ok(Arc::new(FolderVfs::new(path)))
+    } else if is_rom(path) {
+        Ok(Arc::new(SingleFileVfs::new(path)))
+    } else {
+        Ok(Arc::new(IsoVfs::open(path)?))
+    }
 }
 
 #[cfg(test)]

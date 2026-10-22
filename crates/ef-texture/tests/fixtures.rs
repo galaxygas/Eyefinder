@@ -105,6 +105,7 @@ fn catalog_finds_loose_and_archived_dictionaries() {
         vfs: Arc::new(FolderVfs::new(fixtures())),
         evidence: vec![],
         user_choice: false,
+        store: ef_core::Store::Unknown,
     };
     let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
     let paths: Vec<&str> = cat.sources.iter().map(|s| s.path.as_str()).collect();
@@ -128,6 +129,7 @@ fn export_writes_png_dds_and_manifest() {
         vfs: Arc::new(FolderVfs::new(fixtures())),
         evidence: vec![],
         user_choice: false,
+        store: ef_core::Store::Unknown,
     };
     let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
     let pick: Vec<usize> =
@@ -198,6 +200,7 @@ fn styles_use_normal_catalog_preview_and_png_export() {
             vfs: Arc::new(FolderVfs::new(fixtures())),
             evidence: vec![],
             user_choice: false,
+            store: ef_core::Store::Unknown,
         };
         let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
         let picked: Vec<_> = cat

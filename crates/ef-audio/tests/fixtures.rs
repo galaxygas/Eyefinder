@@ -300,7 +300,7 @@ fn gta2_pcm_banks_match_ffmpeg_and_seek_exactly() {
 }
 
 #[test]
-fn london_requires_explicit_identity_and_uses_uk_banks() {
+fn london_banks_identify_1969_and_also_serve_1961() {
     use std::sync::Arc;
     let root = temp("london");
     let audio = root.join("GTADATA/UK/AUDIO");
@@ -309,12 +309,13 @@ fn london_requires_explicit_identity_and_uses_uk_banks() {
         std::fs::copy(fixtures().join("gta1_pc/GTADATA/AUDIO").join(name), audio.join(name)).unwrap();
     }
     let vfs = Arc::new(ef_core::vfs::FolderVfs::new(&root));
-    assert!(matches!(ef_core::detect(vfs.clone()), Err(ef_core::DetectError::AmbiguousLondon)));
+    // The UK banks are London 1969's; London 1961 ships none of its own and plays them.
+    assert_eq!(ef_core::detect(vfs.clone()).unwrap().game, Game::London1969);
     for game in [Game::London1969, Game::London1961] {
         let choice = ef_core::ImportChoice { game, platform: Platform::Pc, edition: "unknown".into() };
         let install = ef_core::detect_with(vfs.clone(), Some(&choice)).unwrap();
         assert_eq!(install.game, game);
-        assert!(install.user_choice);
+        assert_eq!(install.user_choice, game == Game::London1961);
         let cat = catalog::build(&install).unwrap();
         assert_eq!(cat.assets.len(), 10);
         assert!(cat.assets.iter().all(|a| a.source.to_ascii_uppercase().starts_with("GTADATA/UK/")));

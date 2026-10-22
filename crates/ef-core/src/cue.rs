@@ -38,7 +38,7 @@ pub fn data_track(cue: &Path) -> Result<(PathBuf, SectorLayout, u64), IsoError> 
                 };
                 // Audio files may be WAV, but the selected data track must be BINARY.
                 file = Some((
-                    cue.parent().unwrap_or(Path::new(".")).join(name.replace('\\', "/")),
+                    crate::vfs::sibling(cue.parent().unwrap_or(Path::new(".")), &name.replace('\\', "/")),
                     kind.to_ascii_uppercase(),
                 ));
             }

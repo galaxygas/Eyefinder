@@ -47,6 +47,7 @@ pub fn vb_rate(game: ef_core::Game, id: &str) -> u32 {
         | ef_core::Game::Gta2
         | ef_core::Game::London1969
         | ef_core::Game::London1961
+        | ef_core::Game::GtaAdvance
         | ef_core::Game::SanAndreas => &[],
     };
     if low.contains(&id) { 16000 } else { 32000 }

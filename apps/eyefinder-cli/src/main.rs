@@ -18,10 +18,16 @@ USAGE:
     eyefinder-cli export   <game folder, asset file or disc image> <output folder> [choice] [audio options]
     eyefinder-cli textures <game folder, asset file or disc image> <output folder> [choice] [texture options]
 
-scan lists the copies found in Steam libraries and the usual Rockstar Games folders.
+scan lists the copies found in Steam libraries, the Rockstar Games Launcher and the usual Rockstar
+Games folders, with the store each belongs to.
 
-CHOICE (default: detected; the files must fit the choice):
-    --game <gta1|london1969|london1961|gta2|gta3|vc|sa>         --platform <pc|ps2|xbox>      --version <id from versions>
+Disc images: ISO, BIN/CUE, GDI (Dreamcast). Cartridge ROMs: GB, GBC, GBA.
+A folder holding several games (GTA1 with London 1969/1961 installed into it) needs --game.
+
+CHOICE (default: detected; the files must fit the choice; `versions` lists what fits):
+    --game <gta1|london1969|london1961|gta2|advance|gta3|vc|sa>
+    --platform <pc|ps1|ps2|xbox|dc|gbc|gba>
+    --version <id from versions>
 
 AUDIO OPTIONS:
     --pcm16             decode MPEG audio / Vorbis to 16-bit PCM instead of 32-bit float
@@ -40,25 +46,11 @@ fn value<'a>(args: &'a [String], flag: &str) -> Option<&'a str> {
 }
 
 fn parse_game(s: &str) -> Option<Game> {
-    match s.to_ascii_lowercase().replace([' ', '-', '_'], "").as_str() {
-        "gta1" | "1" => Some(Game::Gta1),
-        "gta2" | "2" => Some(Game::Gta2),
-        "london1969" => Some(Game::London1969),
-        "london1961" => Some(Game::London1961),
-        "gta3" | "iii" | "3" => Some(Game::Gta3),
-        "vc" | "vicecity" => Some(Game::ViceCity),
-        "sa" | "sanandreas" => Some(Game::SanAndreas),
-        _ => None,
-    }
+    Game::from_cli_id(s)
 }
 
 fn parse_platform(s: &str) -> Option<Platform> {
-    match s.to_ascii_lowercase().as_str() {
-        "pc" => Some(Platform::Pc),
-        "ps2" => Some(Platform::Ps2),
-        "xbox" => Some(Platform::Xbox),
-        _ => None,
-    }
+    Platform::from_cli_id(s)
 }
 
 /// Opens the game, applying --game / --platform / --version if given.
@@ -106,14 +98,15 @@ fn main() -> ExitCode {
         for f in found {
             match f.result {
                 Ok(i) => println!(
-                    "{}\t{}\t{}\t{}\t{}",
+                    "{}\t{}\t{}\t{}\t{}\t{}",
                     i.game.name(),
                     i.platform.name(),
                     i.edition.label,
+                    f.store.label(),
                     f.path.display(),
                     f.source
                 ),
-                Err(e) => println!("not recognised\t{}\t{}\t{e}", f.path.display(), f.source),
+                Err(e) => println!("not recognised\t{}\t{}\t{}\t{e}", f.store.label(), f.path.display(), f.source),
             }
         }
         return ExitCode::SUCCESS;
@@ -122,6 +115,27 @@ fn main() -> ExitCode {
         eprintln!("{USAGE}");
         return ExitCode::from(2);
     };
+    if cmd == "versions" {
+        let vfs = match ef_core::import::open_path(&PathBuf::from(path)) {
+            Ok(v) => v,
+            Err(e) => {
+                eprintln!("error: {e}");
+                return ExitCode::from(2);
+            }
+        };
+        let choices = ef_core::possible_choices(vfs.as_ref());
+        if choices.is_empty() {
+            eprintln!("error: no supported GTA data was found in {path}");
+            return ExitCode::from(2);
+        }
+        for (g, p) in choices {
+            println!("--game {} --platform {}\t{} ({})", g.cli_id(), p.cli_id(), g.name(), p.name());
+            for e in ef_core::edition::known(g, p) {
+                println!("    --version {:<22} {}", e.id, e.label);
+            }
+        }
+        return ExitCode::SUCCESS;
+    }
     let install = match open(path, &args) {
         Ok(i) => i,
         Err(e) => {
@@ -129,19 +143,8 @@ fn main() -> ExitCode {
             return ExitCode::from(2);
         }
     };
-    match cmd.as_str() {
-        "versions" => {
-            let vfs = install.vfs.as_ref();
-            for (g, p) in ef_core::possible_choices(vfs) {
-                println!("--game {} --platform {}", g.short(), p.short().to_lowercase());
-                for e in ef_core::edition::known(g, p) {
-                    println!("    --version {:<22} {}", e.id, e.label);
-                }
-            }
-            return ExitCode::SUCCESS;
-        }
-        "textures" => return textures(&install, &args),
-        _ => {}
+    if cmd == "textures" {
+        return textures(&install, &args);
     }
     let cat = match catalog::build(&install) {
         Ok(c) => c,
@@ -153,6 +156,9 @@ fn main() -> ExitCode {
     match cmd.as_str() {
         "info" => {
             println!("{} ({}), version: {}", install.game.name(), install.platform.name(), install.edition.label);
+            if !install.store.is_unknown() {
+                println!("store: {}", install.store.label());
+            }
             for e in &install.evidence {
                 println!("  - {e}");
             }

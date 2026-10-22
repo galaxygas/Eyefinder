@@ -163,7 +163,9 @@ pub fn build(install: &GameInstall) -> Result<Catalog> {
     }
 
     match install.game {
-        Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 => return crate::legacy::catalog(install),
+        Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 | Game::GtaAdvance => {
+            return crate::legacy::catalog(install);
+        }
         Game::Gta3 | Game::ViceCity => {
             let gxt = vfs.read_all("TEXT/AMERICAN.GXT").ok().and_then(|d| Gxt::parse(&d));
             if gxt.is_none() {

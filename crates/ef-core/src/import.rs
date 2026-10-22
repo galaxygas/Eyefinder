@@ -5,10 +5,20 @@ use crate::vfs::{DirEntry, FileLocation, FolderVfs, IsoError, Vfs};
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
+/// Files that can be selected. Selecting a game file imports the installation or data folder it
+/// belongs to; disc images and cartridge ROMs are imported as they are.
 pub const FILE_EXTENSIONS: &[&str] = &[
-    "iso", "bin", "cue", "gry", "g24", "sty", "fon", "sdt", "raw", "txd", "img", "dir", "exe", "wav", "mp3", "adf",
-    "vb",
+    // discs and cartridges
+    "iso", "bin", "cue", "gdi", "img", "gb", "gbc", "cgb", "gba", "agb",
+    // GTA III / Vice City / San Andreas
+    "txd", "dir", "exe", "wav", "mp3", "adf", "vb",
+    // GTA1 / London (DMA CityScape, Marschall inventory) and GTA2 (gta2_re, DMA GBH documents)
+    "gry", "g24", "sty", "fon", "sdt", "raw", "cmp", "fxt", "ini", "smk", "gmp", "gxt", "scr", "seq", "gci", "tga",
+    "bik",
 ];
+
+/// Extensions imported as a disc or cartridge image rather than as a file of an installation.
+pub const IMAGE_EXTENSIONS: &[&str] = &["iso", "bin", "cue", "gdi", "gb", "gbc", "cgb", "gba", "agb"];
 
 /// Selecting an asset imports its containing game/data folder, keeping companion
 /// index/palette/bank files available. Multiple selections in that folder coalesce.
@@ -20,12 +30,12 @@ pub fn resolve_path(path: &Path) -> Result<PathBuf, IsoError> {
     if path.is_file() && ext == "img" && crate::vfs::IsoVfs::open(path).is_ok() {
         return Ok(path.to_path_buf());
     }
-    if path.is_file() && matches!(ext.as_str(), "iso" | "bin" | "cue") {
+    if path.is_file() && IMAGE_EXTENSIONS.contains(&ext.as_str()) {
         return Ok(path.to_path_buf());
     }
     if path.is_file() && !FILE_EXTENSIONS.contains(&ext.as_str()) {
         return Err(IsoError::Unsupported(format!(
-            ".{ext} is not a supported asset or disc image. Select a game folder, SDT/RAW bank, GRY/G24/STY/FON texture file, TXD, or supported disc image."
+            ".{ext} files are not read by Eyefinder. Select the game's folder, one of its data files, a disc image (ISO, BIN/CUE, GDI) or a cartridge ROM (GB, GBC, GBA)."
         )));
     }
     let folder = if path.is_dir() { path } else { path.parent().unwrap_or(Path::new(".")) };
@@ -54,7 +64,8 @@ pub fn resolve_path(path: &Path) -> Result<PathBuf, IsoError> {
     let entries = fs.list("").unwrap_or_default();
     let mut candidates = Vec::new();
     for e in &entries {
-        if !e.is_dir && e.name.to_ascii_lowercase().ends_with(".cue") {
+        if !e.is_dir && (e.name.to_ascii_lowercase().ends_with(".cue") || e.name.to_ascii_lowercase().ends_with(".gdi"))
+        {
             candidates.push(folder.join(&e.name));
         }
     }
@@ -63,7 +74,7 @@ pub fn resolve_path(path: &Path) -> Result<PathBuf, IsoError> {
             !e.is_dir
                 && matches!(
                     e.name.rsplit('.').next().unwrap_or("").to_ascii_lowercase().as_str(),
-                    "bin" | "iso" | "img"
+                    "bin" | "iso" | "img" | "gdi"
                 )
         }) {
             let path = folder.join(&e.name);
@@ -121,17 +132,20 @@ fn mount_assets(fs: Arc<dyn Vfs>) -> Arc<dyn Vfs> {
     // or copying the user's files. Identity is checked separately by detection.
     let entries = fs.list("").unwrap_or_default();
     let any = |ext: &str| entries.iter().any(|e| !e.is_dir && e.name.to_ascii_lowercase().ends_with(ext));
-    let prefix = if any(".sty") || fs.exists("FSTYLE.SDT") {
-        if any(".sty") { "DATA" } else { "DATA/AUDIO" }
-    } else if any(".gry") || any(".g24") || any(".fon") {
+    const GTA1_BANKS: [&str; 6] = ["LEVEL000", "LEVEL001", "LEVEL002", "LEVEL003", "MISBRIEF", "VOCALCOM"];
+    let gta1_bank = GTA1_BANKS.iter().any(|b| fs.exists(&format!("{b}.SDT")));
+    // A GTA2 bank is any other SDT (gta2_re loads DATA/AUDIO/<style>.SDT).
+    let gta2_bank = entries.iter().any(|e| {
+        let n = e.name.to_ascii_uppercase();
+        !e.is_dir && n.ends_with(".SDT") && !GTA1_BANKS.iter().any(|b| n == format!("{b}.SDT"))
+    });
+    let prefix = if any(".sty") || any(".gxt") || any(".gmp") {
+        "DATA"
+    } else if gta2_bank && !gta1_bank {
+        "DATA/AUDIO"
+    } else if any(".gry") || any(".g24") || any(".fon") || any(".cmp") || any(".fxt") {
         "GTADATA"
-    } else if fs.exists("LEVEL000.SDT")
-        || fs.exists("LEVEL001.SDT")
-        || fs.exists("LEVEL002.SDT")
-        || fs.exists("LEVEL003.SDT")
-        || fs.exists("MISBRIEF.SDT")
-        || fs.exists("VOCALCOM.SDT")
-    {
+    } else if gta1_bank {
         "GTADATA/AUDIO"
     } else {
         return fs;
@@ -168,6 +182,9 @@ impl Vfs for PrefixVfs {
         let lower = path.to_ascii_lowercase();
         self.inner.locate(lower.strip_prefix(&(self.prefix.to_ascii_lowercase() + "/"))?)
     }
+    fn system_area(&self) -> Option<Vec<u8>> {
+        self.inner.system_area()
+    }
 }
 
 struct SubdirVfs {
@@ -183,5 +200,8 @@ impl Vfs for SubdirVfs {
     }
     fn locate(&self, path: &str) -> Option<FileLocation> {
         self.inner.locate(&format!("{}/{path}", self.directory))
+    }
+    fn system_area(&self) -> Option<Vec<u8>> {
+        self.inner.system_area()
     }
 }
