@@ -264,7 +264,7 @@ impl Raster {
         let pal = self.format & (fmt::PAL8 | fmt::PAL4) != 0;
         let entries = if self.format & fmt::PAL4 != 0 { 16 } else { 256 };
         let pixels = match self.platform {
-            NativePlatform::DmaStyle => {
+            NativePlatform::DmaStyle | NativePlatform::Targa => {
                 if lv.data.len() != (lv.width as usize) * (lv.height as usize) * 4 {
                     return Err(Error::Malformed("invalid normalized style raster"));
                 }

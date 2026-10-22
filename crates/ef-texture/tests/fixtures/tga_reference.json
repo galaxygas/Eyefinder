@@ -1,0 +1,38 @@
+{
+  "argb1555_top.tga": {
+    "width": 7,
+    "height": 5,
+    "sha256": "a11a18ce3f12461b2afe06c68f71db54bbef31c822c476e6b8d6d170df2fee8f",
+    "reference": "specification"
+  },
+  "grey8_rle.tga": {
+    "width": 13,
+    "height": 9,
+    "sha256": "8c5ffcc4255cb325557b1c032c9c0b075239fc0d5f1ec2ff7995780aec4dbdec",
+    "reference": "Pillow 12.3.0"
+  },
+  "mapped8.tga": {
+    "width": 13,
+    "height": 9,
+    "sha256": "e9791d005ed4d19f3c140254a5ae0334f98b9d003a17228ebbbfa65c72b79bc8",
+    "reference": "Pillow 12.3.0"
+  },
+  "mapped_c16.tga": {
+    "width": 7,
+    "height": 5,
+    "sha256": "64ea77bfdb083ee728cb94da1771504c6487653dc4e5270430f90a6155243d64",
+    "reference": "specification"
+  },
+  "rgb24.tga": {
+    "width": 13,
+    "height": 9,
+    "sha256": "8e0e910f12c6b9a09b8c0571712183d889dc2fe1ca1676fffd737b669ff58624",
+    "reference": "Pillow 12.3.0"
+  },
+  "rgba32_rle.tga": {
+    "width": 13,
+    "height": 9,
+    "sha256": "5b5dfffa1c5f3c597d9083706abd18677b4a78257693147abb2ec8195a8b9a7c",
+    "reference": "Pillow 12.3.0"
+  }
+}

@@ -25,10 +25,14 @@ pub fn parse(bytes: &[u8]) -> Result<TextureCollection, Error> {
     })
 }
 
-/// FON has no magic: only dispatch it using its container filename.
+/// FON and TGA have no magic: only dispatch them using their container filename.
 pub fn parse_named(bytes: &[u8], name: &str) -> Result<TextureCollection, Error> {
-    if name.to_ascii_lowercase().ends_with(".fon") {
+    let lower = name.to_ascii_lowercase();
+    if lower.ends_with(".fon") {
         return crate::fon::parse(bytes);
+    }
+    if lower.ends_with(".tga") {
+        return crate::tga::parse(bytes, name);
     }
     parse(bytes)
 }

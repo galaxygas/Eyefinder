@@ -32,6 +32,8 @@ pub const FOURCC_PS2: u32 = 0x0032_5350;
 pub enum NativePlatform {
     /// Normalized RGBA from a DMA style container, not a RenderWare native.
     DmaStyle,
+    /// Normalized RGBA from a Truevision TGA image (GTA2 frontend), not a RenderWare native.
+    Targa,
     D3d8,
     D3d9,
     Xbox,
@@ -42,6 +44,7 @@ impl NativePlatform {
     pub fn label(self) -> &'static str {
         match self {
             NativePlatform::DmaStyle => "PC (DMA style)",
+            NativePlatform::Targa => "PC (Truevision TGA)",
             NativePlatform::D3d8 => "PC (Direct3D 8)",
             NativePlatform::D3d9 => "PC (Direct3D 9)",
             NativePlatform::Xbox => "Xbox",
@@ -423,6 +426,9 @@ impl Raster {
         if self.platform == NativePlatform::DmaStyle {
             return "Indexed DMA style → RGBA8".into();
         }
+        if self.platform == NativePlatform::Targa {
+            return "Truevision TGA → RGBA8".into();
+        }
         let px = match self.format & fmt::PIXEL_MASK {
             fmt::C1555 => "ARGB1555",
             fmt::C565 => "RGB565",
@@ -450,7 +456,7 @@ impl Raster {
         let px = self.format & fmt::PIXEL_MASK;
         let pal = self.format & (fmt::PAL8 | fmt::PAL4) != 0;
         let why = match self.platform {
-            NativePlatform::DmaStyle => None,
+            NativePlatform::DmaStyle | NativePlatform::Targa => None,
             NativePlatform::D3d8 | NativePlatform::D3d9 => {
                 if self.dxt == 2 || self.dxt == 4 {
                     Some("premultiplied-alpha DXT2/DXT4 is not decoded")

@@ -10,6 +10,7 @@ pub mod img;
 pub mod import;
 pub mod locate;
 pub mod store;
+pub mod text;
 pub mod vfs;
 
 use std::fmt;

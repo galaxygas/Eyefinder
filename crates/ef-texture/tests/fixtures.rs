@@ -275,3 +275,34 @@ fn fon_images_match_reference_and_reject_truncation() {
     // No magic: unrelated containers cannot be silently treated as fonts.
     assert!(ef_texture::collection::parse(&bytes).is_err());
 }
+
+#[test]
+fn tga_images_match_their_reference() {
+    use sha2::{Digest, Sha256};
+    let refs: Value = serde_json::from_slice(&std::fs::read(fixtures().join("tga_reference.json")).unwrap()).unwrap();
+    let refs = refs.as_object().unwrap();
+    assert_eq!(refs.len(), 6);
+    for (name, want) in refs {
+        let bytes = std::fs::read(fixtures().join(name)).unwrap();
+        let c = ef_texture::collection::parse_named(&bytes, &format!("data/frontend/{name}")).unwrap();
+        assert_eq!((c.kind, c.textures.len()), ("Truevision TGA", 1));
+        let t = &c.textures[0];
+        assert_eq!(t.raster.platform, NativePlatform::Targa);
+        let image = t.raster.decode(0).unwrap();
+        assert_eq!(image.width as u64, want["width"].as_u64().unwrap(), "{name}");
+        assert_eq!(image.height as u64, want["height"].as_u64().unwrap(), "{name}");
+        let got: String = Sha256::digest(&image.pixels).iter().map(|b| format!("{b:02x}")).collect();
+        assert_eq!(got, want["sha256"].as_str().unwrap(), "{name} ({})", want["reference"]);
+        // Pillow appends the 26-byte TGA 2.0 footer ("TRUEVISION-XFILE.\0"), which the image
+        // does not need; cutting anywhere before it must fail.
+        let footer = if bytes.ends_with(b"TRUEVISION-XFILE.\0") { 26 } else { 0 };
+        for n in 0..bytes.len() - footer {
+            assert!(ef_texture::tga::parse(&bytes[..n], name).is_err(), "{name} truncated at {n}");
+        }
+    }
+    // Right-to-left order (descriptor bit 4), which Pillow does not read: a 2x1 24-bit image.
+    let mut rtl = vec![0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 24, 0x30];
+    rtl.extend([1, 2, 3, 4, 5, 6]); // stored B,G,R: first stored pixel is the rightmost
+    let image = ef_texture::tga::parse(&rtl, "x.tga").unwrap().textures[0].raster.decode(0).unwrap();
+    assert_eq!(image.pixels, [6, 5, 4, 255, 3, 2, 1, 255]);
+}

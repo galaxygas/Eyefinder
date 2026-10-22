@@ -105,7 +105,7 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
             }
             _ => {}
         }
-        if (install.game == ef_core::Game::Gta2 && lower.ends_with(".sty"))
+        if (install.game == ef_core::Game::Gta2 && (lower.ends_with(".sty") || lower.ends_with(".tga")))
             || lower.ends_with(".txd")
             || (matches!(install.game, ef_core::Game::Gta1 | ef_core::Game::London1969 | ef_core::Game::London1961)
                 && (lower.ends_with(".gry") || lower.ends_with(".g24") || lower.ends_with(".fon")))
@@ -152,7 +152,9 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
                 continue;
             }
         };
-        if !inner.to_ascii_lowercase().ends_with(".fon")
+        let named = inner.to_ascii_lowercase();
+        if !named.ends_with(".fon")
+            && !named.ends_with(".tga")
             && !txd::looks_like_txd(&data)
             && !crate::style::looks_like_style(&data)
             && !data.starts_with(b"GBST")

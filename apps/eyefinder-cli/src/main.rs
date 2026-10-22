@@ -17,6 +17,7 @@ USAGE:
     eyefinder-cli list     <game folder, asset file or disc image> [choice]
     eyefinder-cli export   <game folder, asset file or disc image> <output folder> [choice] [audio options]
     eyefinder-cli textures <game folder, asset file or disc image> <output folder> [choice] [texture options]
+    eyefinder-cli text     <game folder, asset file or disc image> [choice]
 
 scan lists the copies found in Steam libraries, the Rockstar Games Launcher and the usual Rockstar
 Games folders, with the store each belongs to.
@@ -145,6 +146,9 @@ fn main() -> ExitCode {
     };
     if cmd == "textures" {
         return textures(&install, &args);
+    }
+    if cmd == "text" {
+        return text(&install);
     }
     let cat = match catalog::build(&install) {
         Ok(c) => c,
@@ -282,4 +286,42 @@ fn textures(install: &GameInstall, args: &[String]) -> ExitCode {
             ExitCode::from(1)
         }
     }
+}
+
+/// Prints every entry of the installation's GTA1/London FXT and GTA2 GXT text files.
+fn text(install: &GameInstall) -> ExitCode {
+    let vfs = install.vfs.as_ref();
+    let mut any = false;
+    for (path, _) in ef_core::vfs::walk_files(vfs, "") {
+        let lower = path.to_ascii_lowercase();
+        if !(lower.ends_with(".fxt") || lower.ends_with(".gxt")) {
+            continue;
+        }
+        let data = match vfs.read_all(&path) {
+            Ok(d) => d,
+            Err(e) => {
+                eprintln!("{path}: {e}");
+                continue;
+            }
+        };
+        match ef_core::text::parse_named(&path, &data) {
+            Some(Ok(t)) => {
+                any = true;
+                for n in &t.notes {
+                    eprintln!("note: {path}: {n}");
+                }
+                for (k, v) in &t.entries {
+                    println!("{path}\t{k}\t{}", v.replace('\n', "\\n"));
+                }
+            }
+            Some(Err(e)) => eprintln!("{path}: {e}"),
+            None => {
+                eprintln!("{path}: not a GTA1/London FXT or GTA2 GXT file (GTA III/VC GXT is used for station names)")
+            }
+        }
+    }
+    if !any {
+        eprintln!("no GTA1/London/GTA2 text files were found");
+    }
+    ExitCode::SUCCESS
 }

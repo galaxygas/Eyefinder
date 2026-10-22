@@ -34,5 +34,6 @@ pub mod collection;
 pub mod style;
 
 pub mod sty;
+pub mod tga;
 
 pub mod fon;
