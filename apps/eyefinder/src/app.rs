@@ -37,6 +37,8 @@ pub(crate) struct Entry {
     /// Stable identity (indexes shift when entries are removed).
     pub id: u64,
     pub path: PathBuf,
+    /// The user's choice of game, platform and version; `None` = as detected.
+    pub choice: Option<ImportChoice>,
     pub state: LoadState,
     pub textures: TexState,
 }
@@ -62,15 +64,80 @@ pub(crate) enum TexFilter {
     Dict(String),
 }
 
+/// The result of identifying a selected folder, disc, ROM or file (on a worker thread).
+pub(crate) struct Detection {
+    /// The installation, disc or ROM the selection resolves to.
+    pub path: PathBuf,
+    pub detected: Result<GameInstall, String>,
+    /// Why the user has to choose (several games in one folder, a shared-format loose asset, an
+    /// unlisted console release); `None` when the files identify one game, or when nothing fits.
+    pub ambiguous: Option<String>,
+    pub choices: Vec<(Game, Platform)>,
+}
+
+/// Identifies `requested`: resolves it, detects the game and lists the choices its files support.
+pub(crate) fn detect_selection(requested: &Path) -> Detection {
+    let path = ef_core::import::resolve_path(requested).unwrap_or_else(|_| requested.to_path_buf());
+    let (detected, ambiguous) = match ef_core::open_and_detect(&path) {
+        Ok(i) => (Ok(i), None),
+        Err(ef_core::DetectError::Ambiguous { reason, .. }) => (Err(reason.clone()), Some(reason)),
+        Err(e) => (Err(e.to_string()), None),
+    };
+    let choices = match &detected {
+        Ok(i) => ef_core::possible_choices(i.vfs.as_ref()),
+        Err(_) => ef_core::import::open_path(&path).map(|v| ef_core::possible_choices(v.as_ref())).unwrap_or_default(),
+    };
+    Detection { path, detected, ambiguous, choices }
+}
+
+pub(crate) struct PendingImport {
+    pub requested: PathBuf,
+    /// The library entry (id) being changed, for "Change game or version".
+    pub replace: Option<u64>,
+    pub slot: Arc<Mutex<Option<Detection>>>,
+}
+
 pub(crate) struct ImportDialog {
     pub path: PathBuf,
-    /// Changing a game already in the library: it is replaced only when the user confirms.
-    pub replace: bool,
+    /// Changing a game already in the library (its id): it is replaced only when the user confirms.
+    pub replace: Option<u64>,
     pub detected: Result<GameInstall, String>,
+    pub ambiguous: Option<String>,
     pub choices: Vec<(Game, Platform)>,
+    /// Ambiguous selections: which choices to add (each becomes its own library entry).
+    pub picked: Vec<bool>,
     pub game: Game,
     pub platform: Platform,
     pub edition: String,
+    /// Whether the game / platform / version pickers are shown for a detected copy.
+    pub adjust: bool,
+}
+
+impl ImportDialog {
+    fn new(d: Detection, replace: Option<u64>, current: Option<ImportChoice>) -> Self {
+        let (mut game, mut platform, mut edition) = match &d.detected {
+            Ok(i) => (i.game, i.platform, i.edition.id.clone()),
+            Err(_) => {
+                d.choices.first().map_or((Game::Gta3, Platform::Pc, "unknown".into()), |c| (c.0, c.1, "unknown".into()))
+            }
+        };
+        if let Some(c) = current {
+            (game, platform, edition) = (c.game, c.platform, c.edition);
+        }
+        let picked = d.choices.iter().map(|c| (c.0, c.1) == (game, platform) && d.choices.len() == 1).collect();
+        Self {
+            path: d.path,
+            replace,
+            detected: d.detected,
+            ambiguous: d.ambiguous,
+            choices: d.choices,
+            picked,
+            game,
+            platform,
+            edition,
+            adjust: replace.is_some(),
+        }
+    }
 }
 
 pub(crate) enum ScanState {
@@ -147,6 +214,8 @@ pub struct EyefinderApp {
     pub(crate) thumbs: Thumbs,
     // files
     pub(crate) trees: HashMap<u64, FileTree>,
+    /// The decoded text of the text file shown in the file view: `(path, entries)`.
+    pub(crate) text_cache: Option<(String, Result<ef_core::text::TextTable, String>)>,
     // playback
     pub(crate) audio: Result<Audio, String>,
     pub(crate) playback: Option<Playback>,
@@ -155,7 +224,9 @@ pub struct EyefinderApp {
     pub(crate) waveform: Option<Waveform>,
     // dialogs
     pub(crate) import: Option<ImportDialog>,
-    pending_imports: Vec<PathBuf>,
+    pending_imports: Vec<PendingImport>,
+    /// The "Add a game" dialog.
+    pub(crate) show_add: bool,
     pub(crate) scan: Option<ScanState>,
     pub(crate) audio_export: Option<AudioExportDialog>,
     pub(crate) texture_export: Option<TextureExportDialog>,
@@ -214,12 +285,14 @@ impl EyefinderApp {
             tex_zoom: None,
             thumbs: Thumbs::new(ctx),
             trees: HashMap::new(),
+            text_cache: None,
             audio,
             playback: None,
             playing_entry: None,
             waveform: None,
             import: None,
             pending_imports: Vec::new(),
+            show_add: false,
             scan: None,
             audio_export: None,
             texture_export: None,
@@ -235,55 +308,75 @@ impl EyefinderApp {
         self.toast = Some((msg.into(), Instant::now()));
     }
 
-    /// Opens the import dialog for `path` (detection is quick: file lookups and one header read).
+    /// Identifies `path` on a worker thread; the import dialog opens when it is done. Selections
+    /// that resolve to the same installation open one dialog.
     pub(crate) fn begin_import(&mut self, path: PathBuf) {
-        let path = ef_core::import::resolve_path(&path).unwrap_or(path);
-        if self.import.as_ref().is_some_and(|d| d.path == path) || self.pending_imports.contains(&path) {
-            return;
-        }
-        self.open_import(path, false);
+        self.queue_import(path, None);
     }
 
-    fn open_import(&mut self, path: PathBuf, replace: bool) {
-        if self.import.is_some() {
-            self.pending_imports.push(path);
+    fn queue_import(&mut self, path: PathBuf, replace: Option<u64>) {
+        if self.pending_imports.iter().any(|p| p.requested == path && p.replace == replace) {
             return;
         }
-        if !replace && let Some(i) = self.entries.iter().position(|e| e.path == path) {
-            self.select_entry(i);
-            self.toast("This game is already in your library");
-            return;
-        }
-        let detected = ef_core::open_and_detect(&path).map_err(|e| e.to_string());
-        let choices = match &detected {
-            Ok(i) => ef_core::possible_choices(i.vfs.as_ref()),
-            Err(_) => {
-                ef_core::import::open_path(&path).map(|v| ef_core::possible_choices(v.as_ref())).unwrap_or_default()
-            }
-        };
-        let (game, platform, edition) = match &detected {
-            Ok(i) => (i.game, i.platform, i.edition.id.clone()),
-            Err(_) => (Game::Gta3, Platform::Pc, "unknown".into()),
-        };
-        let (mut game, mut platform, mut edition) = (game, platform, edition);
-        if replace && let Some(c) = self.settings.library.iter().find(|l| l.path == path).and_then(|l| l.choice.clone())
-        {
-            // start from the current choice
-            (game, platform, edition) = (c.game, c.platform, c.edition);
-        }
-        self.import = Some(ImportDialog { path, replace, detected, choices, game, platform, edition });
+        let slot = Arc::new(Mutex::new(None));
+        let (s, req) = (slot.clone(), path.clone());
+        thread::Builder::new()
+            .name("detect".into())
+            .spawn(move || {
+                let d = detect_selection(&req);
+                *s.lock().unwrap() = Some(d);
+            })
+            .expect("spawn detection");
+        self.pending_imports.push(PendingImport { requested: path, replace, slot });
     }
 
+    /// Opens the next finished detection as the import dialog (in selection order).
     fn next_import(&mut self) {
-        self.import = None;
-        if !self.pending_imports.is_empty() {
-            let p = self.pending_imports.remove(0);
-            self.begin_import(p);
+        // Selections that resolved to the installation already in the dialog are dropped.
+        if let Some(path) = self.import.as_ref().filter(|d| d.replace.is_none()).map(|d| d.path.clone()) {
+            self.pending_imports
+                .retain(|q| q.replace.is_some() || q.slot.lock().unwrap().as_ref().is_none_or(|d| d.path != path));
         }
+        while self.import.is_none() {
+            let Some(first) = self.pending_imports.first() else { return };
+            let Some(d) = first.slot.lock().unwrap().take() else { return };
+            let p = self.pending_imports.remove(0);
+            // Companion files of one installation resolve to the same path: one dialog only.
+            if p.replace.is_none() {
+                let game = d.detected.as_ref().ok().map(|i| i.game);
+                if let Some(i) = self.entries.iter().position(|e| {
+                    e.path == d.path && (game.is_none() || self.entry_game(e) == game) && d.ambiguous.is_none()
+                }) {
+                    self.select_entry(i);
+                    self.toast("This game is already in your library");
+                    continue;
+                }
+            }
+            let current =
+                p.replace.and_then(|id| self.entries.iter().find(|e| e.id == id)).and_then(|e| e.choice.clone());
+            let replace = p.replace;
+            self.import = Some(ImportDialog::new(d, replace, current));
+            if replace.is_none() {
+                let path = self.import.as_ref().map(|d| d.path.clone()).unwrap();
+                self.pending_imports
+                    .retain(|q| q.replace.is_some() || q.slot.lock().unwrap().as_ref().is_none_or(|d| d.path != path));
+            }
+        }
+    }
+
+    /// The game an entry shows: the user's choice, or the detected game once loaded.
+    fn entry_game(&self, e: &Entry) -> Option<Game> {
+        e.choice.as_ref().map(|c| c.game).or(match &e.state {
+            LoadState::Ready { install, .. } => Some(install.game),
+            _ => None,
+        })
     }
 
     pub(crate) fn add_game(&mut self, path: PathBuf, choice: Option<ImportChoice>, ctx: &egui::Context, select: bool) {
-        if let Some(i) = self.entries.iter().position(|e| e.path == path) {
+        // One folder can hold several games (GTA1 with London 1969/1961): entries are keyed by
+        // the path and the chosen game.
+        let game = choice.as_ref().map(|c| c.game);
+        if let Some(i) = self.entries.iter().position(|e| e.path == path && e.choice.as_ref().map(|c| c.game) == game) {
             if select {
                 self.select_entry(i);
             }
@@ -291,8 +384,16 @@ impl EyefinderApp {
         }
         let id = self.next_id;
         self.next_id += 1;
-        self.entries.push(Entry { id, path: path.clone(), state: LoadState::Loading, textures: TexState::Waiting });
-        if let Some(item) = self.settings.library.iter_mut().find(|l| l.path == path) {
+        self.entries.push(Entry {
+            id,
+            path: path.clone(),
+            choice: choice.clone(),
+            state: LoadState::Loading,
+            textures: TexState::Waiting,
+        });
+        if let Some(item) =
+            self.settings.library.iter_mut().find(|l| l.path == path && l.choice.as_ref().map(|c| c.game) == game)
+        {
             item.choice = choice.clone();
         } else {
             self.settings.library.push(LibraryItem { path: path.clone(), choice: choice.clone() });
@@ -348,7 +449,8 @@ impl EyefinderApp {
 
     fn remove_entry(&mut self, i: usize) {
         let e = self.entries.remove(i);
-        self.settings.library.retain(|l| l.path != e.path);
+        let game = e.choice.as_ref().map(|c| c.game);
+        self.settings.library.retain(|l| !(l.path == e.path && l.choice.as_ref().map(|c| c.game) == game));
         self.thumbs.forget(e.id);
         self.trees.remove(&e.id);
         // indexes after the removed entry shift down by one
@@ -416,6 +518,10 @@ impl EyefinderApp {
             self.tex_key = None;
         }
         self.thumbs.poll(ctx);
+        self.next_import();
+        if !self.pending_imports.is_empty() {
+            ctx.request_repaint_after(Duration::from_millis(50));
+        }
         if self.entries.iter().any(|e| matches!(e.textures, TexState::Indexing { .. })) {
             ctx.request_repaint_after(Duration::from_millis(150));
         }
@@ -610,6 +716,25 @@ pub(crate) fn category_icon(c: Category) -> &'static str {
     }
 }
 
+/// The support summary of a game on a platform (`ef_core::support_summary`).
+pub(crate) fn support_summary(game: Game, platform: Platform) -> (SupportLevel, &'static str) {
+    ef_core::support_summary(game, platform)
+}
+
+/// "What can I add?": every release, what to select for it and what Eyefinder reads from it.
+pub(crate) fn guide(ui: &mut Ui, p: &Palette) {
+    egui::Grid::new("guide").num_columns(2).striped(true).spacing(vec2(14.0, 6.0)).show(ui, |ui| {
+        for (release, select, reads) in ef_core::import::GUIDE {
+            ui.label(RichText::new(*release).family(semibold()).size(12.5));
+            ui.vertical(|ui| {
+                ui.label(RichText::new(*select).size(12.5));
+                ui.label(RichText::new(*reads).size(11.5).color(p.muted));
+            });
+            ui.end_row();
+        }
+    });
+}
+
 pub(crate) fn modal_frame(p: &Palette) -> egui::Frame {
     egui::Frame::new()
         .fill(p.panel)
@@ -709,6 +834,7 @@ impl eframe::App for EyefinderApp {
                 });
         }
 
+        self.add_modal(&p, &ctx);
         self.import_modal(&p, &ctx);
         self.scan_modal(&p, &ctx);
         self.audio_export_modal(&p, &ctx);
@@ -777,7 +903,7 @@ impl EyefinderApp {
                             apply_theme(ctx, next);
                         }
                         ui.add_space(6.0);
-                        self.add_buttons(ui, p, ctx, false);
+                        self.add_buttons(ui, p, ctx);
                     });
                 });
             });
@@ -790,44 +916,23 @@ impl EyefinderApp {
         );
     }
 
-    /// "Add game folder", "Open files" and "Find installed games".
-    fn add_buttons(&mut self, ui: &mut Ui, p: &Palette, ctx: &egui::Context, large: bool) {
-        let size = if large { vec2(196.0, 40.0) } else { vec2(0.0, 0.0) };
-        let t = |s: String| if large { RichText::new(s).size(14.5) } else { RichText::new(s) };
-        let add = egui::Button::new(
-            t(format!("{}  Add game folder", icon::FOLDER_OPEN)).color(p.on_accent).family(semibold()),
-        )
-        .fill(p.accent)
-        .min_size(size);
-        let iso = egui::Button::new(t(format!("{}  Open files", icon::DISC))).min_size(size);
-        let find = egui::Button::new(t(format!("{}  Find installed games", icon::MAGNIFYING_GLASS))).min_size(size);
-        let mut go = |ui: &mut Ui, b: egui::Button, tip: &str, which: u8| {
-            if ui.add(b).on_hover_text(tip).clicked() {
-                match which {
-                    0 => {
-                        if let Some(f) = rfd::FileDialog::new().pick_folder() {
-                            self.begin_import(f);
-                        }
-                    }
-                    1 => {
-                        if let Some(files) = rfd::FileDialog::new()
-                            .add_filter("Game assets and disc images", ef_core::import::FILE_EXTENSIONS)
-                            .add_filter("All files", &["*"])
-                            .pick_files()
-                        {
-                            for file in files {
-                                self.begin_import(file);
-                            }
-                        }
-                    }
-                    _ => self.start_scan(ctx),
-                }
-            }
-        };
-        // in the top bar's right-to-left layout this order puts "Add game folder" at the far right
-        go(ui, add, "Add an installed or extracted game folder", 0);
-        go(ui, iso, "Select multiple assets or disc images. Companion files in the same game folder are included.", 1);
-        go(ui, find, "Look in Steam libraries and the Rockstar Games folders", 2);
+    /// "Add game" (opens the add dialog) and "Find installed games".
+    fn add_buttons(&mut self, ui: &mut Ui, p: &Palette, ctx: &egui::Context) {
+        let add =
+            egui::Button::new(RichText::new(format!("{}  Add game", icon::PLUS)).color(p.on_accent).family(semibold()))
+                .fill(p.accent);
+        let find = egui::Button::new(RichText::new(format!("{}  Find installed games", icon::MAGNIFYING_GLASS)));
+        // in the top bar's right-to-left layout this order puts "Add game" at the far right
+        if ui.add(add).on_hover_text("Add a game folder, disc image, ROM or game files").clicked() {
+            self.show_add = true;
+        }
+        if ui
+            .add(find)
+            .on_hover_text("Look in Steam libraries, the Rockstar Games Launcher and the Rockstar Games folders")
+            .clicked()
+        {
+            self.start_scan(ctx);
+        }
     }
 
     fn sidebar(&mut self, ui: &mut Ui, p: &Palette, ctx: &egui::Context) {
@@ -887,6 +992,7 @@ impl EyefinderApp {
         let mut select = None;
         let mut remove = None;
         let mut change = None;
+        let mut locate = None;
         for (i, e) in self.entries.iter().enumerate() {
             let selected = self.selected_entry == Some(i);
             let r = egui::Frame::new()
@@ -903,6 +1009,11 @@ impl EyefinderApp {
                                 pill(ui, install.platform.short(), p.on_accent, p.accent);
                                 if !install.edition.is_unknown() {
                                     pill(ui, &install.edition.label, p.text, p.border);
+                                }
+                                if let ef_core::Store::Steam { .. } = install.store {
+                                    pill(ui, "Steam", p.text, p.border);
+                                } else if install.store == ef_core::Store::RockstarLauncher {
+                                    pill(ui, "Rockstar Launcher", p.text, p.border);
                                 }
                             });
                             let tex = match &e.textures {
@@ -923,8 +1034,22 @@ impl EyefinderApp {
                             });
                         }
                         LoadState::Failed(err) => {
-                            ui.label(RichText::new(format!("{} Could not open", icon::WARNING)).color(p.danger));
-                            ui.label(RichText::new(err).size(11.0).color(p.muted));
+                            ui.label(
+                                RichText::new(format!("{} Could not open", icon::WARNING))
+                                    .color(p.danger)
+                                    .family(semibold()),
+                            );
+                            ui.label(RichText::new(err).size(12.0).color(p.muted));
+                            ui.horizontal(|ui| {
+                                if !e.path.exists()
+                                    && ui.small_button(format!("{} Locate...", icon::FOLDER_OPEN)).clicked()
+                                {
+                                    locate = Some(i);
+                                }
+                                if ui.small_button(format!("{} Choose game...", icon::SLIDERS_HORIZONTAL)).clicked() {
+                                    change = Some(i);
+                                }
+                            });
                         }
                     }
                     let name = e.path.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
@@ -942,6 +1067,10 @@ impl EyefinderApp {
                     change = Some(i);
                     ui.close();
                 }
+                if ui.button(format!("{} Locate moved files...", icon::MAP_PIN)).clicked() {
+                    locate = Some(i);
+                    ui.close();
+                }
                 if ui.button(format!("{} Show in file manager", icon::FOLDER_OPEN)).clicked() {
                     open_in_file_manager(if e.path.is_dir() { &e.path } else { e.path.parent().unwrap_or(&e.path) });
                     ui.close();
@@ -957,8 +1086,20 @@ impl EyefinderApp {
             self.select_entry(i);
         }
         if let Some(i) = change {
-            let path = self.entries[i].path.clone();
-            self.open_import(path, true);
+            let (path, id) = (self.entries[i].path.clone(), self.entries[i].id);
+            self.queue_import(path, Some(id));
+        }
+        if let Some(i) = locate {
+            let pick = if self.entries[i].path.is_dir() || self.entries[i].path.extension().is_none() {
+                rfd::FileDialog::new().pick_folder()
+            } else {
+                rfd::FileDialog::new().pick_file()
+            };
+            if let Some(new_path) = pick {
+                let choice = self.entries[i].choice.clone();
+                self.remove_entry(i);
+                self.add_game(new_path, choice, ui.ctx(), true);
+            }
         }
         if let Some(i) = remove {
             self.remove_entry(i);
@@ -967,7 +1108,8 @@ impl EyefinderApp {
 
     fn asset_sections(&mut self, ui: &mut Ui, p: &Palette) {
         let Some(sel) = self.selected_entry else { return };
-        let Some((_, cat)) = self.current() else { return };
+        let Some((install, cat)) = self.current() else { return };
+        let console_2d = install.platform.is_console_2d();
         let counts: Vec<(Category, usize)> = Category::ALL
             .iter()
             .map(|&c| (c, cat.assets.iter().filter(|a| a.category == c).count()))
@@ -1062,7 +1204,13 @@ impl EyefinderApp {
             Some((n, groups)) => {
                 if *n == 0 {
                     ui.label(
-                        RichText::new("No texture dictionaries were found in this copy.").size(12.0).color(p.muted),
+                        RichText::new(if console_2d {
+                            "This platform's graphics formats are undocumented, so no textures are listed (see MISSING.md)."
+                        } else {
+                            "No textures were found in this copy."
+                        })
+                        .size(12.0)
+                        .color(p.muted),
                     );
                     return;
                 }
@@ -1113,8 +1261,12 @@ impl EyefinderApp {
     }
 
     fn welcome(&mut self, ui: &mut Ui, p: &Palette, ctx: &egui::Context) {
+        egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| self.welcome_body(ui, p, ctx));
+    }
+
+    fn welcome_body(&mut self, ui: &mut Ui, p: &Palette, ctx: &egui::Context) {
         ui.vertical_centered(|ui| {
-            ui.add_space((ui.available_height() * 0.18).max(20.0));
+            ui.add_space((ui.available_height() * 0.06).max(12.0));
             ui.label(RichText::new(icon::EYE).size(68.0).color(p.accent_text));
             ui.add_space(6.0);
             ui.label(RichText::new("WELCOME TO EYEFINDER").size(24.0).family(semibold()).extra_letter_spacing(3.0));
@@ -1128,21 +1280,17 @@ impl EyefinderApp {
             );
             ui.add_space(4.0);
             ui.label(
-                RichText::new("Audio and textures: GTA1, London 1969/1961, GTA2, GTA III, Vice City and San Andreas.")
-                    .size(14.5)
-                    .color(p.muted),
+                RichText::new(
+                    "GTA1, London 1969 / 1961, GTA2 and GTA Advance on PC, PlayStation, Dreamcast, Game Boy Color and Game Boy Advance; GTA III, Vice City and San Andreas.",
+                )
+                .size(14.0)
+                .color(p.muted),
             );
-            ui.add_space(22.0);
-            ui.horizontal(|ui| {
-                let w = 3.0 * 196.0 + 16.0;
-                ui.add_space(((ui.available_width() - w) / 2.0).max(0.0));
-                self.add_buttons(ui, p, ctx, true);
+            ui.add_space(18.0);
+            ui.scope(|ui| {
+                ui.set_max_width(720.0);
+                self.add_panel(ui, p, ctx);
             });
-            ui.add_space(14.0);
-            ui.label(
-                RichText::new("Drop folders or multiple files here. Older PC games: GRY, G24, STY, FON and SDT/RAW.")
-                    .color(p.muted),
-            );
             ui.add_space(30.0);
             egui::Frame::new()
                 .fill(p.panel)
@@ -1166,102 +1314,216 @@ impl EyefinderApp {
     // ---- dialogs -----------------------------------------------------------------------------------
 
     fn import_modal(&mut self, p: &Palette, ctx: &egui::Context) {
+        if self.import.is_none() {
+            // A selection is still being identified: say so instead of freezing the window.
+            if let Some(first) = self.pending_imports.first() {
+                let name = first.requested.display().to_string();
+                egui::Modal::new("detecting".into()).frame(modal_frame(p)).show(ctx, |ui| {
+                    ui.set_width(460.0);
+                    ui.horizontal(|ui| {
+                        ui.spinner();
+                        ui.label(RichText::new("Identifying the game...").size(16.0).family(semibold()));
+                    });
+                    ui.label(RichText::new(name).size(12.0).color(p.muted));
+                    if self.pending_imports.len() > 1 {
+                        ui.label(
+                            RichText::new(format!("{} more selections are waiting", self.pending_imports.len() - 1))
+                                .size(12.0)
+                                .color(p.muted),
+                        );
+                    }
+                });
+            }
+            return;
+        }
         let Some(d) = &mut self.import else { return };
-        let mut action: Option<Option<ImportChoice>> = None;
+        let mut action: Option<Vec<Option<ImportChoice>>> = None;
         let mut close = false;
         let m = egui::Modal::new("import".into()).frame(modal_frame(p)).show(ctx, |ui| {
-            ui.set_width(560.0);
-            let title = if d.replace { format!("{} Change game or version", icon::SLIDERS_HORIZONTAL) } else { format!("{} Add to library", icon::PLUS_CIRCLE) };
+            ui.set_width(600.0);
+            let title = if d.replace.is_some() {
+                format!("{} Change game or version", icon::SLIDERS_HORIZONTAL)
+            } else {
+                format!("{} Add to library", icon::PLUS_CIRCLE)
+            };
             ui.label(RichText::new(title).size(19.0).family(semibold()));
             ui.label(RichText::new(d.path.display().to_string()).color(p.muted).size(12.5));
             ui.add_space(10.0);
             match &d.detected {
-                Err(e) => {
-                    let label = if d.choices.is_empty() { "Cannot import this selection" } else { "Choose the game" };
-                    ui.label(RichText::new(format!("{} {label}", icon::WARNING)).color(p.danger).family(semibold()));
+                Err(e) if d.choices.is_empty() => {
+                    ui.label(
+                        RichText::new(format!("{} Eyefinder cannot read this selection", icon::WARNING))
+                            .color(p.danger)
+                            .family(semibold()),
+                    );
                     ui.label(RichText::new(e).color(p.muted));
-                    if d.choices.is_empty() {
-                        ui.label("Choose the installation folder, GTADATA/DATA folder, or supported asset files. A compressed installer/archive must be extracted first. PS1, GBC, Dreamcast and GBA asset decoders are not implemented.");
-                    }
-                    for &(game, platform) in &d.choices {
-                        if ui.button(format!("Import as {} ({})", game.name(), platform.name())).clicked() {
-                            action = Some(Some(ImportChoice { game, platform, edition: "unknown".into() }));
-                        }
-                    }
+                    ui.add_space(8.0);
+                    guide(ui, p);
                     ui.add_space(12.0);
-                    if ui.button("Close").clicked() {
+                    if ui.add(egui::Button::new("Close").min_size(vec2(90.0, 32.0))).clicked() {
                         close = true;
                     }
                 }
-                Ok(det) => {
-                    egui::Frame::new().fill(p.raised).corner_radius(CornerRadius::same(6)).inner_margin(Margin::same(10)).show(ui, |ui| {
-                        ui.set_width(ui.available_width());
-                        ui.horizontal(|ui| {
-                            ui.label(RichText::new("Detected").size(11.5).color(p.muted));
-                            ui.label(RichText::new(format!("{} · {} · {}", det.game.name(), det.platform.name(), det.edition.label)).family(semibold()));
-                        });
-                        for e in &det.evidence {
-                            ui.label(RichText::new(format!("• {e}")).size(12.0).color(p.muted));
+                Err(_) => {
+                    // The files fit more than one game: let the user pick, as cards.
+                    ui.label(RichText::new(format!("{} Choose the game", icon::QUESTION)).color(p.accent_text).family(semibold()).size(15.0));
+                    if let Some(reason) = &d.ambiguous {
+                        ui.label(RichText::new(reason).color(p.muted));
+                    }
+                    ui.add_space(8.0);
+                    let multi = d.replace.is_none();
+                    for (i, &(game, platform)) in d.choices.iter().enumerate() {
+                        let on = d.picked[i];
+                        let r = egui::Frame::new()
+                            .fill(if on { p.accent_soft } else { p.raised })
+                            .stroke(Stroke::new(1.0, if on { p.accent } else { p.border }))
+                            .corner_radius(CornerRadius::same(6))
+                            .inner_margin(Margin::symmetric(12, 9))
+                            .show(ui, |ui| {
+                                ui.set_width(ui.available_width());
+                                ui.horizontal(|ui| {
+                                    let mark = if on { icon::CHECK_SQUARE } else { icon::SQUARE };
+                                    ui.label(RichText::new(mark).size(18.0).color(if on { p.accent_text } else { p.muted }));
+                                    ui.label(RichText::new(game.name()).family(semibold()).size(14.5));
+                                    pill(ui, platform.short(), p.on_accent, p.accent);
+                                    let (level, what) = support_summary(game, platform);
+                                    support_badge(ui, p, level).on_hover_text(what);
+                                });
+                            })
+                            .response
+                            .interact(Sense::click());
+                        if r.clicked() {
+                            if !multi {
+                                d.picked.iter_mut().for_each(|x| *x = false);
+                            }
+                            d.picked[i] = !on;
                         }
-                    });
-                    ui.add_space(12.0);
-                    let games: Vec<Game> = d.choices.iter().fold(Vec::new(), |mut v, (g, _)| {
-                        if !v.contains(g) {
-                            v.push(*g);
-                        }
-                        v
-                    });
-                    egui::Grid::new("import-grid").num_columns(2).spacing(vec2(12.0, 8.0)).show(ui, |ui| {
-                        ui.label("Game");
-                        egui::ComboBox::from_id_salt("game").width(360.0).selected_text(d.game.name()).show_ui(ui, |ui| {
-                            for g in &games {
-                                if ui.selectable_value(&mut d.game, *g, g.name()).changed() {
-                                    d.platform = d.choices.iter().find(|c| c.0 == *g).map_or(d.platform, |c| c.1);
-                                    d.edition = "unknown".into();
-                                }
-                            }
-                        });
-                        ui.end_row();
-                        ui.label("Platform");
-                        let plats: Vec<Platform> = d.choices.iter().filter(|c| c.0 == d.game).map(|c| c.1).collect();
-                        egui::ComboBox::from_id_salt("platform").width(360.0).selected_text(d.platform.name()).show_ui(ui, |ui| {
-                            for pl in plats {
-                                if ui.selectable_value(&mut d.platform, pl, pl.name()).changed() {
-                                    d.edition = if (d.game, pl) == (det.game, det.platform) { det.edition.id.clone() } else { "unknown".into() };
-                                }
-                            }
-                        });
-                        ui.end_row();
-                        ui.label("Version");
-                        let editions: Vec<Edition> = ef_core::edition::known(d.game, d.platform);
-                        let cur = editions.iter().find(|e| e.id == d.edition).map_or("Unknown version".to_string(), |e| e.label.clone());
-                        egui::ComboBox::from_id_salt("edition").width(360.0).selected_text(cur).show_ui(ui, |ui| {
-                            for e in &editions {
-                                let mut label = e.label.clone();
-                                if (d.game, d.platform) == (det.game, det.platform) && e.id == det.edition.id && !e.is_unknown() {
-                                    label.push_str("  (detected)");
-                                }
-                                ui.selectable_value(&mut d.edition, e.id.clone(), label);
-                            }
-                        });
-                        ui.end_row();
-                    });
+                        ui.add_space(4.0);
+                    }
                     ui.add_space(6.0);
                     ui.label(
-                        RichText::new("Only the choices these files support are offered. The version is recorded in every export manifest; it does not change how data is decoded.")
-                            .size(11.5)
-                            .color(p.muted),
+                        RichText::new(if multi {
+                            "Each selected game is added as its own library entry. Choose a game only if you know these files belong to it."
+                        } else {
+                            "Choose a game only if you know these files belong to it."
+                        })
+                        .size(11.5)
+                        .color(p.muted),
                     );
+                    ui.add_space(12.0);
+                    ui.horizontal(|ui| {
+                        let n = d.picked.iter().filter(|x| **x).count();
+                        let label = if d.replace.is_some() { format!("{} Apply", icon::CHECK) } else { format!("{} Add {}", icon::PLUS, plural(n, "game")) };
+                        if ui.add_enabled(n > 0, accent_button(p, label).min_size(vec2(150.0, 32.0))).clicked() {
+                            action = Some(
+                                d.choices
+                                    .iter()
+                                    .zip(&d.picked)
+                                    .filter(|(_, x)| **x)
+                                    .map(|(&(game, platform), _)| Some(ImportChoice { game, platform, edition: "unknown".into() }))
+                                    .collect(),
+                            );
+                        }
+                        if ui.add(egui::Button::new("Cancel").min_size(vec2(90.0, 32.0))).clicked() {
+                            close = true;
+                        }
+                    });
+                }
+                Ok(det) => {
+                    // The identified copy, as a card: what it is, and what Eyefinder reads from it.
+                    egui::Frame::new()
+                        .fill(p.raised)
+                        .stroke(Stroke::new(1.0, p.border))
+                        .corner_radius(CornerRadius::same(8))
+                        .inner_margin(Margin::same(14))
+                        .show(ui, |ui| {
+                            ui.set_width(ui.available_width());
+                            ui.label(RichText::new("DETECTED").size(10.5).color(p.muted).extra_letter_spacing(1.5));
+                            ui.label(RichText::new(det.game.name()).size(18.0).family(semibold()));
+                            ui.horizontal_wrapped(|ui| {
+                                pill(ui, det.platform.name(), p.on_accent, p.accent);
+                                pill(ui, &det.edition.label, p.text, p.border);
+                                if !det.store.is_unknown() {
+                                    pill(ui, &det.store.label(), p.text, p.border);
+                                }
+                                let (level, _) = support_summary(det.game, det.platform);
+                                support_badge(ui, p, level);
+                            });
+                            ui.add_space(4.0);
+                            ui.label(RichText::new(support_summary(det.game, det.platform).1).size(12.5).color(p.muted));
+                            ui.add_space(4.0);
+                            egui::CollapsingHeader::new(RichText::new("Why Eyefinder thinks so").size(12.0))
+                                .id_salt("evidence")
+                                .show(ui, |ui| {
+                                    for e in &det.evidence {
+                                        ui.label(RichText::new(format!("• {e}")).size(12.0).color(p.muted));
+                                    }
+                                });
+                        });
+                    ui.add_space(8.0);
+                    let options = d.choices.len() > 1 || ef_core::edition::known(d.game, d.platform).len() > 2;
+                    if options && !d.adjust && ui.link("Not right? Choose the game, platform or version yourself").clicked() {
+                        d.adjust = true;
+                    }
+                    if d.adjust {
+                        let games: Vec<Game> = d.choices.iter().fold(Vec::new(), |mut v, (g, _)| {
+                            if !v.contains(g) {
+                                v.push(*g);
+                            }
+                            v
+                        });
+                        egui::Grid::new("import-grid").num_columns(2).spacing(vec2(12.0, 8.0)).show(ui, |ui| {
+                            ui.label("Game");
+                            egui::ComboBox::from_id_salt("game").width(380.0).selected_text(d.game.name()).show_ui(ui, |ui| {
+                                for g in &games {
+                                    if ui.selectable_value(&mut d.game, *g, g.name()).changed() {
+                                        d.platform = d.choices.iter().find(|c| c.0 == *g).map_or(d.platform, |c| c.1);
+                                        d.edition = "unknown".into();
+                                    }
+                                }
+                            });
+                            ui.end_row();
+                            ui.label("Platform");
+                            let plats: Vec<Platform> = d.choices.iter().filter(|c| c.0 == d.game).map(|c| c.1).collect();
+                            egui::ComboBox::from_id_salt("platform").width(380.0).selected_text(d.platform.name()).show_ui(ui, |ui| {
+                                for pl in plats {
+                                    if ui.selectable_value(&mut d.platform, pl, pl.name()).changed() {
+                                        d.edition = if (d.game, pl) == (det.game, det.platform) { det.edition.id.clone() } else { "unknown".into() };
+                                    }
+                                }
+                            });
+                            ui.end_row();
+                            ui.label("Version");
+                            let editions: Vec<Edition> = ef_core::edition::known(d.game, d.platform);
+                            let cur = editions.iter().find(|e| e.id == d.edition).map_or("Unknown version".to_string(), |e| e.label.clone());
+                            egui::ComboBox::from_id_salt("edition").width(380.0).selected_text(cur).show_ui(ui, |ui| {
+                                for e in &editions {
+                                    let mut label = e.label.clone();
+                                    if (d.game, d.platform) == (det.game, det.platform) && e.id == det.edition.id && !e.is_unknown() {
+                                        label.push_str("  (detected)");
+                                    }
+                                    ui.selectable_value(&mut d.edition, e.id.clone(), label);
+                                }
+                            });
+                            ui.end_row();
+                        });
+                        ui.add_space(4.0);
+                        ui.label(
+                            RichText::new("Only the choices these files support are offered. The version is recorded in every export manifest; it does not change how data is decoded.")
+                                .size(11.5)
+                                .color(p.muted),
+                        );
+                    }
                     ui.add_space(14.0);
                     ui.horizontal(|ui| {
-                        let label = if d.replace { format!("{} Apply", icon::CHECK) } else { format!("{} Add to library", icon::PLUS) };
+                        let label = if d.replace.is_some() { format!("{} Apply", icon::CHECK) } else { format!("{} Add to library", icon::PLUS) };
                         if ui.add(accent_button(p, label).min_size(vec2(150.0, 32.0))).clicked() {
                             let same = (d.game, d.platform, d.edition.as_str()) == (det.game, det.platform, det.edition.id.as_str());
-                            action = Some(if same {
+                            action = Some(vec![if same {
                                 None
                             } else {
                                 Some(ImportChoice { game: d.game, platform: d.platform, edition: d.edition.clone() })
-                            });
+                            }]);
                         }
                         if ui.add(egui::Button::new("Cancel").min_size(vec2(90.0, 32.0))).clicked() {
                             close = true;
@@ -1273,20 +1535,131 @@ impl EyefinderApp {
         if m.should_close() {
             close = true;
         }
-        if let Some(choice) = action {
-            self.confirm_import(choice, ctx);
+        if let Some(choices) = action {
+            self.confirm_import(choices, ctx);
         } else if close {
+            self.import = None;
             self.next_import();
         }
     }
 
-    fn confirm_import(&mut self, choice: Option<ImportChoice>, ctx: &egui::Context) {
-        let (path, replace) = self.import.as_ref().map(|d| (d.path.clone(), d.replace)).unwrap();
-        if replace && let Some(i) = self.entries.iter().position(|e| e.path == path) {
+    fn confirm_import(&mut self, choices: Vec<Option<ImportChoice>>, ctx: &egui::Context) {
+        let Some(d) = self.import.take() else { return };
+        if let Some(id) = d.replace
+            && let Some(i) = self.entries.iter().position(|e| e.id == id)
+        {
             self.remove_entry(i);
         }
-        self.add_game(path, choice, ctx, true);
+        for (n, choice) in choices.into_iter().enumerate() {
+            self.add_game(d.path.clone(), choice, ctx, n == 0);
+        }
         self.next_import();
+    }
+
+    /// The "Add a game" dialog: drop zone, the three ways to add, and what to select.
+    fn add_modal(&mut self, p: &Palette, ctx: &egui::Context) {
+        if !self.show_add {
+            return;
+        }
+        let m = egui::Modal::new("add".into()).frame(modal_frame(p)).show(ctx, |ui| {
+            ui.set_width(640.0);
+            ui.label(RichText::new(format!("{} Add a game", icon::PLUS_CIRCLE)).size(19.0).family(semibold()));
+            ui.label(
+                RichText::new("Eyefinder identifies the game, platform and version from the files themselves.")
+                    .color(p.muted)
+                    .size(12.5),
+            );
+            ui.add_space(10.0);
+            self.add_panel(ui, p, ctx);
+            ui.add_space(10.0);
+            ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
+                if ui.add(egui::Button::new("Close").min_size(vec2(90.0, 30.0))).clicked() {
+                    self.show_add = false;
+                }
+            });
+        });
+        if m.should_close() {
+            self.show_add = false;
+        }
+    }
+
+    /// Drop zone, "Choose folder", "Choose disc image, ROM or files", "Find installed games" and
+    /// the guide of what to select. Used by the welcome screen and the "Add a game" dialog.
+    fn add_panel(&mut self, ui: &mut Ui, p: &Palette, ctx: &egui::Context) {
+        let hovering = ctx.input(|i| !i.raw.hovered_files.is_empty());
+        egui::Frame::new()
+            .fill(if hovering { p.accent_soft } else { p.panel })
+            .stroke(Stroke::new(1.5, if hovering { p.accent } else { p.border }))
+            .corner_radius(CornerRadius::same(10))
+            .inner_margin(Margin::symmetric(18, 18))
+            .show(ui, |ui| {
+                ui.set_width(ui.available_width());
+                ui.vertical_centered(|ui| {
+                    ui.label(RichText::new(icon::DOWNLOAD_SIMPLE).size(34.0).color(p.accent_text));
+                    ui.label(RichText::new("Drop a game folder, disc image or ROM here").size(15.5).family(semibold()));
+                    ui.label(
+                        RichText::new("Folders, ISO, BIN/CUE, GDI, GB/GBC/GBA, or any of the game's own files")
+                            .size(12.0)
+                            .color(p.muted),
+                    );
+                    ui.add_space(12.0);
+                    ui.horizontal(|ui| {
+                        let w = 3.0 * 190.0 + 2.0 * ui.spacing().item_spacing.x;
+                        ui.add_space(((ui.available_width() - w) / 2.0).max(0.0));
+                        let size = vec2(190.0, 38.0);
+                        let folder = egui::Button::new(
+                            RichText::new(format!("{}  Choose folder...", icon::FOLDER_OPEN))
+                                .color(p.on_accent)
+                                .family(semibold()),
+                        )
+                        .fill(p.accent)
+                        .min_size(size);
+                        if ui.add(folder).on_hover_text("An installed or extracted game folder").clicked()
+                            && let Some(f) = rfd::FileDialog::new().pick_folder()
+                        {
+                            self.show_add = false;
+                            self.begin_import(f);
+                        }
+                        let files =
+                            egui::Button::new(RichText::new(format!("{}  Disc image, ROM or files...", icon::DISC)))
+                                .min_size(size);
+                        if ui
+                            .add(files)
+                            .on_hover_text("Disc images, cartridge ROMs, or files of a game (their folder is added)")
+                            .clicked()
+                            && let Some(files) = rfd::FileDialog::new()
+                                .add_filter("Discs, ROMs and game files", ef_core::import::FILE_EXTENSIONS)
+                                .add_filter("All files", &["*"])
+                                .pick_files()
+                        {
+                            self.show_add = false;
+                            for file in files {
+                                self.begin_import(file);
+                            }
+                        }
+                        let find = egui::Button::new(RichText::new(format!(
+                            "{}  Find installed games",
+                            icon::MAGNIFYING_GLASS
+                        )))
+                        .min_size(size);
+                        if ui
+                            .add(find)
+                            .on_hover_text(
+                                "Steam libraries, the Rockstar Games Launcher and the Rockstar Games folders",
+                            )
+                            .clicked()
+                        {
+                            self.show_add = false;
+                            self.start_scan(ctx);
+                        }
+                    });
+                });
+            });
+        ui.add_space(8.0);
+        egui::CollapsingHeader::new(RichText::new(format!("{} What can I add?", icon::QUESTION)).family(semibold()))
+            .id_salt("guide")
+            .default_open(self.entries.is_empty())
+            .show(ui, |ui| guide(ui, p));
     }
 
     fn scan_modal(&mut self, p: &Palette, ctx: &egui::Context) {
@@ -1300,7 +1673,7 @@ impl EyefinderApp {
             );
             ui.label(
                 RichText::new(
-                    "Steam libraries, and on Windows the setup registry entries and the Rockstar Games folders.",
+                    "Steam libraries, and on Windows the Rockstar Games Launcher, the setup registry entries and the Rockstar Games folders.",
                 )
                 .color(p.muted)
                 .size(12.5),
@@ -1341,6 +1714,9 @@ impl EyefinderApp {
                                                             pill(ui, i.platform.short(), p.on_accent, p.accent);
                                                             if !i.edition.is_unknown() {
                                                                 pill(ui, &i.edition.label, p.text, p.border);
+                                                            }
+                                                            if !f.store.is_unknown() {
+                                                                pill(ui, &f.store.label(), p.text, p.border);
                                                             }
                                                         });
                                                     }
@@ -1668,14 +2044,17 @@ pub(crate) fn file_icon(name: &str) -> &'static str {
     let l = name.to_ascii_lowercase();
     let ext = l.rsplit('.').next().unwrap_or("");
     match ext {
-        "txd" => icon::IMAGE,
-        "wav" | "mp3" | "adf" | "vb" | "raw" | "sdt" => icon::FILE_AUDIO,
-        "mpg" | "mpeg" | "pss" => icon::FILM_STRIP,
+        "txd" | "sty" | "gry" | "g24" | "fon" | "tga" => icon::IMAGE,
+        "wav" | "mp3" | "adf" | "vb" | "raw" | "sdt" | "str" | "cdda" => icon::FILE_AUDIO,
+        "mpg" | "mpeg" | "pss" | "smk" | "bik" => icon::FILM_STRIP,
+        "cmp" | "gmp" => icon::MAP_TRIFOLD,
+        "fxt" => icon::TEXT_AA,
+        "gb" | "gbc" | "cgb" | "gba" | "agb" => icon::GAME_CONTROLLER,
         "dff" => icon::CUBE,
         "col" => icon::SHAPES,
         "ifp" => icon::PERSON_SIMPLE_RUN,
         "gxt" => icon::TEXT_AA,
-        "dat" | "ide" | "ipl" | "cfg" | "txt" | "cnf" => icon::FILE_TEXT,
+        "dat" | "ide" | "ipl" | "cfg" | "txt" | "cnf" | "ini" | "seq" | "mmp" => icon::FILE_TEXT,
         "exe" | "dll" | "asi" | "elf" | "xbe" => icon::GEAR,
         "img" | "dir" => icon::ARCHIVE,
         _ => icon::FILE,
@@ -1769,6 +2148,18 @@ mod import_tests {
         .unwrap();
         root
     }
+    /// Waits until every selection has been identified (detection runs on worker threads).
+    fn settle(app: &mut EyefinderApp, ctx: &egui::Context) {
+        let deadline = Instant::now() + Duration::from_secs(15);
+        while app.pending_imports.iter().any(|p| p.slot.lock().unwrap().is_none())
+            || (app.import.is_none() && !app.pending_imports.is_empty())
+        {
+            app.poll(ctx);
+            assert!(Instant::now() < deadline, "detection timed out");
+            thread::sleep(Duration::from_millis(5));
+        }
+        app.poll(ctx);
+    }
     fn loaded(app: &mut EyefinderApp, ctx: &egui::Context) {
         let deadline = Instant::now() + Duration::from_secs(15);
         loop {
@@ -1802,14 +2193,15 @@ mod import_tests {
                 root.join(data).join("AUDIO").join(bank),
             ] {
                 let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test without audio device".into()));
+                // Multi-selecting companion assets opens only one dialog for the installation.
                 app.begin_import(selected);
-                let d = app.import.as_ref().expect("import dialog");
-                assert_eq!(d.detected.as_ref().expect("detected installation").game, game);
-                // Multi-selecting companion assets queues only one installation.
                 app.begin_import(root.join(data).join(style));
                 app.begin_import(root.join(data).join("AUDIO").join(bank));
-                assert!(app.pending_imports.is_empty());
-                app.confirm_import(None, &ctx);
+                settle(&mut app, &ctx);
+                let d = app.import.as_ref().expect("import dialog");
+                assert_eq!(d.detected.as_ref().expect("detected installation").game, game);
+                assert!(app.pending_imports.is_empty(), "companion selections are merged");
+                app.confirm_import(vec![None], &ctx);
                 loaded(&mut app, &ctx);
                 app.refresh_audio_view();
                 assert!(!app.audio_view.is_empty(), "audio view must have rows");
@@ -1846,15 +2238,60 @@ mod import_tests {
         .unwrap();
         let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test".into()));
         app.begin_import(path);
+        settle(&mut app, &ctx);
         let d = app.import.as_ref().unwrap();
         assert!(d.detected.is_err());
+        assert!(d.ambiguous.is_some(), "a shared format is a choice, not an error");
         assert!(d.choices.contains(&(Game::London1961, Platform::Pc)));
         app.confirm_import(
-            Some(ImportChoice { game: Game::London1961, platform: Platform::Pc, edition: "unknown".into() }),
+            vec![Some(ImportChoice { game: Game::London1961, platform: Platform::Pc, edition: "unknown".into() })],
             &ctx,
         );
         loaded(&mut app, &ctx);
         assert_eq!(app.textures_of(0).unwrap().assets.len(), 3);
         std::fs::remove_dir_all(root).unwrap();
+    }
+
+    #[test]
+    fn one_folder_with_several_games_adds_one_entry_per_game() {
+        let ctx = egui::Context::default();
+        let root = fixture_game(Game::Gta1, "multi");
+        // London 1969 installed into the same GTADATA (Marschall inventory: GTADATA/UK).
+        let uk = root.join("GTADATA/UK");
+        std::fs::create_dir_all(uk.join("AUDIO")).unwrap();
+        for f in ["LEVEL000.SDT", "LEVEL000.RAW", "LEVEL001.SDT", "LEVEL001.RAW"] {
+            std::fs::copy(root.join("GTADATA/AUDIO").join(f), uk.join("AUDIO").join(f)).unwrap();
+        }
+        for f in ["UK.CMP", "ENGUK.FXT", "MISSUK.INI"] {
+            std::fs::write(uk.join(f), b"x").unwrap();
+        }
+        let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test".into()));
+        app.begin_import(root.clone());
+        settle(&mut app, &ctx);
+        let d = app.import.as_mut().unwrap();
+        assert!(d.ambiguous.as_deref().is_some_and(|r| r.contains("Choose which to add")));
+        let choices: Vec<_> = d.choices.iter().map(|c| c.0).collect();
+        assert!(choices.contains(&Game::Gta1) && choices.contains(&Game::London1969), "{choices:?}");
+        app.confirm_import(
+            [Game::Gta1, Game::London1969]
+                .map(|game| Some(ImportChoice { game, platform: Platform::Pc, edition: "unknown".into() }))
+                .to_vec(),
+            &ctx,
+        );
+        assert_eq!(app.entries.len(), 2);
+        assert_eq!(app.settings.library.len(), 2);
+        let deadline = Instant::now() + Duration::from_secs(15);
+        while app.entries.iter().any(|e| matches!(e.state, LoadState::Loading)) {
+            app.poll(&ctx);
+            assert!(Instant::now() < deadline);
+            thread::sleep(Duration::from_millis(5));
+        }
+        let games: Vec<Game> = (0..2).map(|i| app.entry(i).unwrap().0.game).collect();
+        assert_eq!(games, [Game::Gta1, Game::London1969]);
+        // London reads its own UK subtree.
+        assert!(
+            app.entry(1).unwrap().1.assets.iter().all(|a| a.source.to_ascii_uppercase().starts_with("GTADATA/UK/"))
+        );
+        std::fs::remove_dir_all(root.parent().unwrap()).unwrap();
     }
 }

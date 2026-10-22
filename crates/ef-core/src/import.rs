@@ -218,3 +218,48 @@ impl Vfs for SubdirVfs {
         self.inner.system_area()
     }
 }
+
+/// What to select for each release, shown by the import dialogs: `(release, what to select,
+/// what Eyefinder reads from it)`. Paths follow the inventories cited in `docs/SUPPORT.md`.
+pub const GUIDE: &[(&str, &str, &str)] = &[
+    (
+        "GTA1 (PC: DOS, Windows, 3Dfx, Rockstar Classics)",
+        "The installation folder (it contains GTADATA), or the CD image (BIN/CUE).",
+        "Sample banks, cutscene speech, music WAVs or CD audio tracks, styles, fonts, text",
+    ),
+    (
+        "London 1969 / London 1961 (PC)",
+        "The GTA1 installation folder they were installed into (GTADATA/UK). Choose which game to add.",
+        "Sample banks, speech, styles, fonts, text",
+    ),
+    (
+        "GTA2 (PC: retail, freeware 9.6)",
+        "The installation folder (it contains gta2.exe and data).",
+        "Sample banks, voice clips, GTAUDIO music, styles, frontend images, text",
+    ),
+    (
+        "GTA1 / London 1969 / GTA2 (PlayStation)",
+        "The disc image: the .cue sheet of a BIN/CUE dump (keeps the audio tracks), or an ISO.",
+        "Identified by serial; CD audio tracks are decoded, game data is not yet",
+    ),
+    (
+        "GTA2 (Dreamcast)",
+        "The .gdi sheet of a GD-ROM dump, with its track files beside it.",
+        "Identified by product number; STR audio streams are decoded, other data is not yet",
+    ),
+    (
+        "GTA1 / GTA2 (Game Boy Color), GTA Advance (Game Boy Advance)",
+        "The cartridge ROM file (.gbc / .gba).",
+        "Identified by header and checksum; ROM contents are not decoded yet",
+    ),
+    (
+        "GTA III / Vice City / San Andreas (PC)",
+        "The installation folder (Steam, Rockstar Games Launcher or retail).",
+        "Audio, textures, version and store",
+    ),
+    (
+        "GTA III / Vice City / San Andreas (PS2, Xbox)",
+        "The disc image (ISO, BIN/CUE) or an extracted disc folder.",
+        "Audio streams and textures",
+    ),
+];

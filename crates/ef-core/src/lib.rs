@@ -221,6 +221,46 @@ impl SupportLevel {
     }
 }
 
+/// What Eyefinder reads from a game on a platform, for the import dialogs: the best support level
+/// of its decoded data and a one-line summary (the details are in `docs/SUPPORT.md`).
+pub fn support_summary(game: Game, platform: Platform) -> (SupportLevel, &'static str) {
+    use Platform::*;
+    match (game, platform) {
+        (Game::Gta3, Pc) => {
+            (SupportLevel::Verified, "Audio verified on real files; textures implemented from the specification.")
+        }
+        (Game::Gta3 | Game::ViceCity, Ps2) => (
+            SupportLevel::FromSpec,
+            "Audio streams and textures. SFX banks, mission audio and movies are not decoded yet.",
+        ),
+        (Game::ViceCity | Game::SanAndreas, Pc) => (SupportLevel::FromSpec, "Audio and textures."),
+        (Game::SanAndreas, Ps2) => (SupportLevel::FromSpec, "Textures. Audio is not decoded yet."),
+        (Game::Gta3 | Game::ViceCity | Game::SanAndreas, Xbox) => {
+            (SupportLevel::FromSpec, "Textures. Audio is not decoded yet.")
+        }
+        (Game::Gta1 | Game::London1969 | Game::London1961, Pc) => (
+            SupportLevel::FromSpec,
+            "Sample banks, speech and music WAVs, CD audio tracks (from BIN/CUE), styles, fonts and text.",
+        ),
+        (Game::Gta2, Pc) => {
+            (SupportLevel::FromSpec, "Sample banks, voice clips, music WAVs, styles, frontend images and text.")
+        }
+        (Game::Gta1 | Game::London1969 | Game::Gta2, Ps1) => (
+            SupportLevel::FromSpec,
+            "Identified by serial. CD audio tracks (from BIN/CUE) are decoded; the game's own data formats are undocumented (MISSING.md).",
+        ),
+        (Game::Gta2, Dreamcast) => (
+            SupportLevel::FromSpec,
+            "Identified by product number. STR audio streams are decoded; other data is undocumented (MISSING.md).",
+        ),
+        (Game::Gta1 | Game::Gta2, GameBoyColor) | (Game::GtaAdvance, GameBoyAdvance) => (
+            SupportLevel::DetectedOnly,
+            "Identified by cartridge header and checksum. The ROM's contents are undocumented (MISSING.md).",
+        ),
+        _ => (SupportLevel::DetectedOnly, "No decoder exists for this game on this platform."),
+    }
+}
+
 /// A detected game installation or disc.
 #[derive(Clone)]
 pub struct GameInstall {
