@@ -257,6 +257,8 @@ pub struct IsoVfs {
     base_lba: u64,
     /// Further data tracks holding the same filesystem: `(first LBA, track)` (GD-ROM).
     extra: Vec<(u64, FileLocation)>,
+    /// Red Book audio tracks of a CUE sheet, listed under [`CD_AUDIO_DIR`].
+    audio: Vec<crate::cue::AudioTrack>,
     block: u64,
     root: IsoNode,
     dirs: Mutex<HashMap<u32, Arc<Vec<IsoNode>>>>,
@@ -277,7 +279,11 @@ impl IsoVfs {
         let image = image.into();
         if image.extension().is_some_and(|e| e.eq_ignore_ascii_case("cue")) {
             let (host, layout, length) = crate::cue::data_track(&image)?;
-            return Self::from_backing(image, FileLocation { host, offset: 0, len: length, sectors: Some(layout) });
+            let audio = crate::cue::audio_tracks(&image).unwrap_or_default();
+            let mut v =
+                Self::from_backing(image, FileLocation { host, offset: 0, len: length, sectors: Some(layout) })?;
+            v.audio = audio;
+            return Ok(v);
         }
         if image.extension().is_some_and(|e| e.eq_ignore_ascii_case("gdi")) {
             let mut tracks = crate::gdi::data_tracks(&image)?.into_iter();
@@ -338,6 +344,7 @@ impl IsoVfs {
                     backing,
                     base_lba,
                     extra: Vec::new(),
+                    audio: Vec::new(),
                     block,
                     root,
                     dirs: Mutex::new(HashMap::new()),
@@ -432,11 +439,38 @@ fn parse_record(r: &[u8]) -> Option<IsoNode> {
     Some(IsoNode { name, is_dir: flags & 2 != 0, lba, size })
 }
 
+/// The virtual folder of a disc image that holds its CD audio tracks, one `Track NN.cdda` file
+/// (raw 2352-byte Red Book sectors) per track.
+pub const CD_AUDIO_DIR: &str = "CD Audio";
+
+impl IsoVfs {
+    fn audio_entries(&self) -> Vec<DirEntry> {
+        self.audio
+            .iter()
+            .map(|t| DirEntry { name: format!("Track {:02}.cdda", t.number), is_dir: false, size: t.bytes })
+            .collect()
+    }
+}
+
 impl Vfs for IsoVfs {
     fn describe(&self) -> String {
         self.image.display().to_string()
     }
     fn list(&self, dir: &str) -> Option<Vec<DirEntry>> {
+        if !self.audio.is_empty() {
+            let mut parts = split(dir);
+            match (parts.next(), parts.next()) {
+                (Some(d), None) if d.eq_ignore_ascii_case(CD_AUDIO_DIR) => return Some(self.audio_entries()),
+                (None, _) => {
+                    let mut v = self.find("").and_then(|n| self.read_dir(&n)).map_or_else(Vec::new, |d| {
+                        d.iter().map(|e| DirEntry { name: e.name.clone(), is_dir: e.is_dir, size: e.size }).collect()
+                    });
+                    v.push(DirEntry { name: CD_AUDIO_DIR.into(), is_dir: true, size: 0 });
+                    return Some(v);
+                }
+                _ => {}
+            }
+        }
         let n = self.find(dir)?;
         if !n.is_dir {
             return None;
@@ -449,6 +483,14 @@ impl Vfs for IsoVfs {
         )
     }
     fn locate(&self, path: &str) -> Option<FileLocation> {
+        let mut parts = split(path);
+        if let (Some(d), Some(f), None) = (parts.next(), parts.next(), parts.next())
+            && d.eq_ignore_ascii_case(CD_AUDIO_DIR)
+        {
+            let i = self.audio_entries().iter().position(|e| e.name.eq_ignore_ascii_case(f))?;
+            let t = &self.audio[i];
+            return Some(FileLocation { host: t.file.clone(), offset: t.offset, len: t.bytes, sectors: None });
+        }
         let n = self.find(path)?;
         if n.is_dir {
             return None;

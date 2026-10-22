@@ -84,7 +84,8 @@ fn london_1969_and_gta2_are_detected_without_a_choice() {
     put(&root, "data/fstyle.sty", &std::fs::read(repo().join("crates/ef-texture/tests/fixtures/style.sty")).unwrap());
     put(&root, "data/e.gxt", b"GBLE\x64\x00");
     for ext in ["sdt", "raw"] {
-        let src = repo().join(format!("crates/ef-audio/tests/fixtures/gta2_pc/DATA/AUDIO/FSTYLE.{}", ext.to_uppercase()));
+        let src =
+            repo().join(format!("crates/ef-audio/tests/fixtures/gta2_pc/DATA/AUDIO/FSTYLE.{}", ext.to_uppercase()));
         put(&root, &format!("data/audio/wil.{ext}"), &std::fs::read(src).unwrap());
     }
     let info = ok(&cli(&["info"], &root));
@@ -153,9 +154,11 @@ fn raw_mode1(plain: &[u8]) -> Vec<u8> {
 #[test]
 fn playstation_discs_are_identified_by_serial() {
     let root = temp("ps1");
-    let gta2 = iso(&[("SYSTEM.CNF", b"BOOT = cdrom:\\SLUS_007.89;1\r\nTCB = 4\r\n"), ("SLUS_007.89", b"PS-X EXE")], 0, &[]);
+    let gta2 =
+        iso(&[("SYSTEM.CNF", b"BOOT = cdrom:\\SLUS_007.89;1\r\nTCB = 4\r\n"), ("SLUS_007.89", b"PS-X EXE")], 0, &[]);
     std::fs::write(root.join("gta2.bin"), raw_mode1(&gta2)).unwrap();
-    std::fs::write(root.join("gta2.cue"), "FILE \"GTA2.BIN\" BINARY\n  TRACK 01 MODE1/2352\n    INDEX 01 00:00:00\n").unwrap();
+    std::fs::write(root.join("gta2.cue"), "FILE \"GTA2.BIN\" BINARY\n  TRACK 01 MODE1/2352\n    INDEX 01 00:00:00\n")
+        .unwrap();
     // The CUE names GTA2.BIN; the file is gta2.bin (case-insensitive track lookup).
     let info = ok(&cli(&["info"], &root.join("gta2.cue")));
     assert!(info.starts_with("Grand Theft Auto 2 (PlayStation), version: USA (SLUS-00789)"), "{info}");

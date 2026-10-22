@@ -77,8 +77,65 @@ def gta2_audio():
     open(os.path.join(base,'FSTYLE.SDT'),'wb').write(index)
     open(os.path.join(OUT,'gta2_audio_reference.json'),'w').write(json.dumps(ref,indent=2)+'\n')
 
+# ---------------- Mixed-mode PlayStation disc with Red Book audio tracks ----------------
+def iso_flat(files):
+    """A flat ECMA-119 image (root directory at sector 18) holding the given (name, bytes)."""
+    def record(name, sector, size, directory):
+        r = bytearray(33 + len(name) + (1 - len(name) % 2))
+        r[0] = len(r); r[2:6] = struct.pack('<I', sector); r[6:10] = struct.pack('>I', sector)
+        r[10:14] = struct.pack('<I', size); r[14:18] = struct.pack('>I', size)
+        r[25] = 2 if directory else 0; r[32] = len(name); r[33:33+len(name)] = name
+        return bytes(r)
+    disc = bytearray(19 * 2048)
+    d = record(b'\0', 18, 2048, True) + record(b'\x01', 18, 2048, True)
+    for name, data in files:
+        start = len(disc) // 2048
+        d += record(name.encode() + b';1', start, len(data), False)
+        disc += data
+        disc += bytes(-len(disc) % 2048)
+    disc[18*2048:18*2048+len(d)] = d
+    pvd = 16 * 2048
+    disc[pvd] = 1; disc[pvd+1:pvd+6] = b'CD001'; disc[pvd+6] = 1
+    disc[pvd+128:pvd+130] = struct.pack('<H', 2048)
+    root = record(b'\0', 18, 2048, True); disc[pvd+156:pvd+156+len(root)] = root
+    disc[17*2048] = 255; disc[17*2048+1:17*2048+6] = b'CD001'
+    return bytes(disc)
+
+def cdda_disc():
+    """BIN/CUE laid out like the GTA1 PlayStation disc (redump: one Mode 2 data track, then
+    audio tracks). Audio is ffmpeg noise; the reference is ffmpeg's s16le decode of each track."""
+    import json, hashlib
+    base = os.path.join(OUT, 'cdda_ps1'); os.makedirs(base, exist_ok=True)
+    data = iso_flat([('SYSTEM.CNF', b'BOOT = cdrom:\\SLUS_001.06;1\r\nTCB = 4\r\n'), ('SLUS_001.06', b'PS-X EXE')])
+    binary = bytearray()
+    for i in range(len(data) // 2048):
+        s = bytearray(2352); s[1:11] = b'\xff' * 10; s[15] = 2  # Mode 2
+        s[16:20] = s[20:24] = bytes([0, 0, 8, 0])  # Form 1 subheader (data), copies equal
+        s[24:24+2048] = data[i*2048:(i+1)*2048]
+        binary += s
+    data_frames = len(binary) // 2352
+    cue = 'FILE "DISC.BIN" BINARY\n  TRACK 01 MODE2/2352\n    INDEX 01 00:00:00\n'
+    ref = {}
+    for n, (frames, seed) in enumerate([(30, 41), (21, 42)], start=2):
+        pregap = 150  # two seconds of silence before INDEX 01, as on Red Book discs
+        start = len(binary) // 2352
+        binary += bytes(pregap * 2352)
+        pcm = subprocess.run(['ffmpeg', '-v', 'error', '-bitexact', '-f', 'lavfi', '-i',
+            f'anoisesrc=r=44100:d={frames*588/44100}:a=0.3:seed={seed}', '-ac', '2', '-f', 's16le', 'pipe:1'],
+            stdout=subprocess.PIPE, check=True).stdout[:frames*2352]
+        binary += pcm
+        ts = lambda f: '%02d:%02d:%02d' % (f // 4500, f // 75 % 60, f % 75)
+        cue += f'  TRACK {n:02} AUDIO\n    INDEX 00 {ts(start)}\n    INDEX 01 {ts(start + pregap)}\n'
+        decoded = subprocess.run(['ffmpeg', '-v', 'error', '-f', 's16le', '-ar', '44100', '-ac', '2', '-i', 'pipe:0',
+            '-f', 's16le', 'pipe:1'], input=pcm, stdout=subprocess.PIPE, check=True).stdout
+        ref[f'Track {n:02}'] = dict(sha256=hashlib.sha256(decoded).hexdigest(), frames=len(pcm)//4, channels=2, rate=44100)
+    open(os.path.join(base, 'disc.bin'), 'wb').write(binary)
+    open(os.path.join(base, 'disc.cue'), 'w').write(cue)
+    open(os.path.join(OUT, 'cdda_reference.json'), 'w').write(json.dumps(ref, indent=2) + '\n')
+
 legacy_audio()
 gta2_audio()
+cdda_disc()
 if '--legacy-only' in sys.argv:
     sys.exit(0)
 

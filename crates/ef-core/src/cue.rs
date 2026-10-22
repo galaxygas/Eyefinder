@@ -4,6 +4,7 @@ use crate::vfs::{IsoError, SectorLayout};
 use std::path::{Path, PathBuf};
 
 struct Track {
+    number: u32,
     file: PathBuf,
     mode: String,
     start: Option<u64>,
@@ -19,7 +20,7 @@ fn frames(s: &str) -> Result<u64, IsoError> {
     }
     Ok((v[0] * 60 + v[1]) * 75 + v[2])
 }
-pub fn data_track(cue: &Path) -> Result<(PathBuf, SectorLayout, u64), IsoError> {
+fn parse(cue: &Path) -> Result<Vec<Track>, IsoError> {
     let text = std::fs::read_to_string(cue)?;
     let mut file = None;
     let mut tracks: Vec<Track> = Vec::new();
@@ -43,13 +44,17 @@ pub fn data_track(cue: &Path) -> Result<(PathBuf, SectorLayout, u64), IsoError> 
                 ));
             }
             "TRACK" => {
-                let _number = parts.next().ok_or_else(|| bad("missing track number"))?;
+                let number = parts
+                    .next()
+                    .ok_or_else(|| bad("missing track number"))?
+                    .parse()
+                    .map_err(|_| bad("invalid track number"))?;
                 let mode = parts.next().ok_or_else(|| bad("missing track mode"))?.to_ascii_uppercase();
                 let (path, kind) = file.as_ref().ok_or_else(|| bad("TRACK before FILE"))?;
                 if mode != "AUDIO" && kind != "BINARY" {
                     return Err(bad("data FILE must be BINARY"));
                 }
-                tracks.push(Track { file: path.clone(), mode, start: None, pregap: None });
+                tracks.push(Track { number, file: path.clone(), mode, start: None, pregap: None });
             }
             "INDEX" => {
                 let index = parts.next().ok_or_else(|| bad("missing INDEX number"))?;
@@ -64,6 +69,11 @@ pub fn data_track(cue: &Path) -> Result<(PathBuf, SectorLayout, u64), IsoError> 
             _ => {} // metadata, flags and generated PREGAP do not occupy FILE bytes
         }
     }
+    Ok(tracks)
+}
+
+pub fn data_track(cue: &Path) -> Result<(PathBuf, SectorLayout, u64), IsoError> {
+    let tracks = parse(cue)?;
     let data: Vec<_> = tracks.iter().enumerate().filter(|(_, t)| t.mode != "AUDIO").collect();
     if data.len() != 1 {
         return Err(bad(
@@ -91,4 +101,35 @@ pub fn data_track(cue: &Path) -> Result<(PathBuf, SectorLayout, u64), IsoError> 
         return Err(bad("data-track range is invalid or truncated"));
     }
     Ok((t.file.clone(), SectorLayout { stride, payload, track_offset: start }, (end - start) / stride * 2048))
+}
+
+/// A Red Book audio track of a CUE sheet: `bytes` bytes of 2352-byte sectors at `offset` in
+/// `file`, from INDEX 01 to the next track's INDEX 00 (or 01) in the same FILE, or the end of the
+/// FILE. The sector bytes are 16-bit stereo PCM at 44100 Hz, in the little-endian order bchunk
+/// 1.2.0 copies unchanged into WAV files (it only swaps bytes on request, `-s`).
+#[derive(Debug, Clone)]
+pub struct AudioTrack {
+    pub number: u32,
+    pub file: PathBuf,
+    pub offset: u64,
+    pub bytes: u64,
+}
+
+pub fn audio_tracks(cue: &Path) -> Result<Vec<AudioTrack>, IsoError> {
+    let tracks = parse(cue)?;
+    let mut out = Vec::new();
+    for (i, t) in tracks.iter().enumerate().filter(|(_, t)| t.mode == "AUDIO") {
+        let Some(start) = t.start else { continue };
+        let Ok(meta) = std::fs::metadata(&t.file) else { continue };
+        let end = match tracks.get(i + 1).filter(|next| next.file == t.file) {
+            Some(next) => next.pregap.or(next.start).unwrap_or(0) * 2352,
+            None => meta.len(),
+        };
+        let start = start * 2352;
+        if end > start && end <= meta.len() {
+            let bytes = (end - start) / 2352 * 2352;
+            out.push(AudioTrack { number: t.number, file: t.file.clone(), offset: start, bytes });
+        }
+    }
+    Ok(out)
 }

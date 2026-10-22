@@ -139,7 +139,7 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
         }
         let dir = upper.rsplit_once('/').map_or("", |(d, _)| d);
         let (category, group) = if gta2 && (dir == "GTAUDIO" || dir == "DATA/GTAUDIO") {
-            (Category::Radio, Some("GTAUDIO"))
+            (Category::Music, Some("GTAUDIO"))
         } else if gta2 && dir == "DATA/AUDIO/VOCALS" {
             (Category::Announcements, Some("vocals"))
         } else if !gta2 && (dir == "GTADATA/AUDIO" || dir == "GTADATA/UK/AUDIO") {
@@ -150,9 +150,8 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
         let group = group.map(|g| if g == dir { path.rsplit_once('/').map_or("", |(d, _)| d) } else { g });
         cat.assets.push(wav(path.clone(), entry.size, category, group));
     }
-    cat.notices.push(
-        "SDT/RAW banks and WAV files are implemented. CD audio tracks are read from BIN/CUE disc images.".into(),
-    );
+    cat.notices
+        .push("SDT/RAW banks and WAV files are implemented. CD audio tracks are read from BIN/CUE disc images.".into());
     Ok(cat)
 }
 

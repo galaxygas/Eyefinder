@@ -322,3 +322,32 @@ fn london_banks_identify_1969_and_also_serve_1961() {
     }
     std::fs::remove_dir_all(root).unwrap();
 }
+
+#[test]
+fn cd_audio_tracks_match_ffmpeg_and_seek_exactly() {
+    // A mixed-mode PlayStation BIN/CUE: the CUE names DISC.BIN, the file is disc.bin.
+    let install = ef_core::open_and_detect(&fixtures().join("cdda_ps1/disc.cue")).unwrap();
+    assert_eq!((install.game, install.platform), (Game::Gta1, Platform::Ps1));
+    assert_eq!(install.edition.id, "ps1-SLUS-00106");
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("cdda_reference.json")).unwrap()).unwrap();
+    let tracks: Vec<_> = cat.assets.iter().filter(|a| a.category == Category::CdAudio).collect();
+    assert_eq!(tracks.len(), 2);
+    assert_eq!(cat.assets.len(), 2, "the PlayStation data track itself is not decoded");
+    for asset in tracks {
+        assert_eq!(asset.support, ef_core::SupportLevel::FromSpec);
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap());
+        assert_seek_exact(open, &asset.game_id);
+    }
+    let (out, report) = export_all(&fixtures().join("cdda_ps1/disc.cue"), "cdda");
+    assert_eq!(report.written, 2);
+    assert!(report.failed.is_empty());
+    std::fs::remove_dir_all(out).unwrap();
+}

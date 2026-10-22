@@ -1,0 +1,14 @@
+{
+  "Track 02": {
+    "sha256": "c929498f8065e05b545407987b85140daf347bb6db90db772255f38eac549478",
+    "frames": 17640,
+    "channels": 2,
+    "rate": 44100
+  },
+  "Track 03": {
+    "sha256": "4898bab42346f114ea4221b6839a5266459fc4d6bdffb22e9ad0dcd830edcf1e",
+    "frames": 12348,
+    "channels": 2,
+    "rate": 44100
+  }
+}

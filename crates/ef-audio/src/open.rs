@@ -87,6 +87,21 @@ pub fn open(asset: &AudioAsset, vfs: &dyn Vfs, opts: DecodeOptions) -> Result<Op
             o.extra.insert("sdt_raw_offset".into(), json!(offset));
             Ok(o)
         }
+        AssetKind::CdAudio { path } => {
+            use crate::pcm::{PcmFormat, SampleKind};
+            let size = vfs.size(path).ok_or_else(|| Error::Format(format!("{path} not found")))?;
+            if size % 2352 != 0 {
+                return Err(Error::Format("CD audio track is not a whole number of 2352-byte sectors".into()));
+            }
+            let s = ByteStream::open_range(vfs, path, 0, size, Xform::None)?;
+            let mut o = Opened::plain(Box::new(RawPcmSource::with_format(
+                s,
+                PcmFormat::new(SampleKind::I16, 2, 44100),
+                "Red Book CD audio (16-bit stereo, 44100 Hz)",
+            )));
+            o.extra.insert("cd_sectors".into(), json!(size / 2352));
+            Ok(o)
+        }
         AssetKind::Stream { path } => {
             let (source, markers) = sources::open_stream(ByteStream::open(vfs, path)?, opts.float_output)?;
             Ok(Opened { markers, ..Opened::plain(source) })

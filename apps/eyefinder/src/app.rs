@@ -604,6 +604,8 @@ pub(crate) fn category_icon(c: Category) -> &'static str {
         Category::MissionAudio => icon::CHAT_CIRCLE_TEXT,
         Category::Movies => icon::FILM_STRIP,
         Category::SfxBank => icon::WAVEFORM,
+        Category::Music => icon::MUSIC_NOTES,
+        Category::CdAudio => icon::DISC,
         Category::Other => icon::FILE_AUDIO,
     }
 }

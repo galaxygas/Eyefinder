@@ -196,9 +196,22 @@ impl Vfs for SubdirVfs {
         format!("{} / {}", self.inner.describe(), self.directory)
     }
     fn list(&self, path: &str) -> Option<Vec<DirEntry>> {
-        self.inner.list(&format!("{}/{path}", self.directory))
+        // The disc's CD audio tracks stay visible at the root of the selected installation.
+        let cd = crate::vfs::CD_AUDIO_DIR;
+        if path.trim_matches('/').eq_ignore_ascii_case(cd) {
+            return self.inner.list(cd);
+        }
+        let mut v = self.inner.list(&format!("{}/{path}", self.directory))?;
+        if path.trim_matches('/').is_empty() && self.inner.dir_exists(cd) {
+            v.push(DirEntry { name: cd.into(), is_dir: true, size: 0 });
+        }
+        Some(v)
     }
     fn locate(&self, path: &str) -> Option<FileLocation> {
+        let cd = crate::vfs::CD_AUDIO_DIR;
+        if path.len() > cd.len() && path[..cd.len()].eq_ignore_ascii_case(cd) && path.as_bytes()[cd.len()] == b'/' {
+            return self.inner.locate(path);
+        }
         self.inner.locate(&format!("{}/{path}", self.directory))
     }
     fn system_area(&self) -> Option<Vec<u8>> {

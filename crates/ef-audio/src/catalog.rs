@@ -20,6 +20,10 @@ pub enum Category {
     MissionAudio,
     Movies,
     SfxBank,
+    /// Music stored as audio files (GTA2 `GTAUDIO`).
+    Music,
+    /// Red Book audio tracks of a disc image.
+    CdAudio,
     Other,
 }
 
@@ -35,10 +39,12 @@ impl Category {
             Category::MissionAudio => "Mission Audio",
             Category::Movies => "Intro Movies",
             Category::SfxBank => "SFX Bank",
+            Category::Music => "Music",
+            Category::CdAudio => "CD Audio Tracks",
             Category::Other => "Other Audio Files",
         }
     }
-    pub const ALL: [Category; 10] = [
+    pub const ALL: [Category; 12] = [
         Category::Radio,
         Category::Streams,
         Category::PoliceAmbience,
@@ -48,6 +54,8 @@ impl Category {
         Category::MissionAudio,
         Category::Movies,
         Category::SfxBank,
+        Category::Music,
+        Category::CdAudio,
         Category::Other,
     ];
 }
@@ -82,6 +90,8 @@ pub enum AssetKind {
     Sfx { raw: String, offset: u32, size: u32, rate: u32, loop_start: u32, loop_end: i32 },
     /// GTA2 24-byte SDT record; displacement is stored verbatim, not randomized on export.
     Gta2Sfx { raw: String, offset: u32, size: u32, rate: u32, random_displacement: i32, loop_start: u32, loop_end: i32 },
+    /// A Red Book CD audio track: raw 16-bit stereo PCM at 44100 Hz ([`ef_core::vfs::CD_AUDIO_DIR`]).
+    CdAudio { path: String },
     /// San Andreas stream pack track.
     SaTrack { pack: String, offset: u32, size: u32 },
     /// San Andreas SFX bank sound.
@@ -148,11 +158,43 @@ fn level(game: Game, platform: Platform) -> SupportLevel {
     }
 }
 
+/// The CD audio tracks of a disc image (BIN/CUE), in track order.
+fn cd_audio(vfs: &dyn ef_core::vfs::Vfs) -> Vec<AudioAsset> {
+    let dir = ef_core::vfs::CD_AUDIO_DIR;
+    vfs.list(dir)
+        .unwrap_or_default()
+        .into_iter()
+        .filter(|e| !e.is_dir && e.size > 0)
+        .map(|e| {
+            let stem = e.name.trim_end_matches(".cdda").to_string();
+            AudioAsset {
+                category: Category::CdAudio,
+                group: None,
+                title: stem.clone(),
+                game_id: stem.clone(),
+                source: format!("{dir}/{}", e.name),
+                bytes: e.size,
+                file_stem: sanitize(&stem),
+                kind: AssetKind::CdAudio { path: format!("{dir}/{}", e.name) },
+                support: SupportLevel::FromSpec,
+            }
+        })
+        .collect()
+}
+
 pub fn build(install: &GameInstall) -> Result<Catalog> {
     let vfs = install.vfs.as_ref();
     let support = level(install.game, install.platform);
     let mut cat = Catalog::default();
+    let cd = cd_audio(vfs);
     if !support.can_decode() {
+        cat.assets = cd;
+        if !cat.assets.is_empty() {
+            cat.notices.push(format!(
+                "{} CD audio tracks are read from the disc image (Red Book PCM); the game's own audio files are not decoded.",
+                cat.assets.len()
+            ));
+        }
         cat.notices.push(format!(
             "{} for {} was recognised, but its audio format has no documented specification in Eyefinder yet, so nothing can be decoded. {}",
             install.game.name(),
@@ -164,7 +206,9 @@ pub fn build(install: &GameInstall) -> Result<Catalog> {
 
     match install.game {
         Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 | Game::GtaAdvance => {
-            return crate::legacy::catalog(install);
+            let mut cat = crate::legacy::catalog(install)?;
+            cat.assets.extend(cd);
+            return Ok(cat);
         }
         Game::Gta3 | Game::ViceCity => {
             let gxt = vfs.read_all("TEXT/AMERICAN.GXT").ok().and_then(|d| Gxt::parse(&d));
