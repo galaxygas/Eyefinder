@@ -5,6 +5,7 @@
 
 pub mod catalog;
 pub mod codec;
+pub mod dcstr;
 pub mod export;
 pub mod movie;
 pub mod open;

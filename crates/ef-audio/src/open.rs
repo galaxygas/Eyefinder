@@ -87,6 +87,11 @@ pub fn open(asset: &AudioAsset, vfs: &dyn Vfs, opts: DecodeOptions) -> Result<Op
             o.extra.insert("sdt_raw_offset".into(), json!(offset));
             Ok(o)
         }
+        AssetKind::DcStr { path } => {
+            let mut o = Opened::plain(Box::new(crate::dcstr::DcStrSource::new(ByteStream::open(vfs, path)?)?));
+            o.extra.insert("decoder_reference".into(), json!("vgmstream str_sega / decode_aica"));
+            Ok(o)
+        }
         AssetKind::CdAudio { path } => {
             use crate::pcm::{PcmFormat, SampleKind};
             let size = vfs.size(path).ok_or_else(|| Error::Format(format!("{path} not found")))?;

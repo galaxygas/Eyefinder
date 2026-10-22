@@ -90,6 +90,8 @@ pub enum AssetKind {
     Sfx { raw: String, offset: u32, size: u32, rate: u32, loop_start: u32, loop_end: i32 },
     /// GTA2 24-byte SDT record; displacement is stored verbatim, not randomized on export.
     Gta2Sfx { raw: String, offset: u32, size: u32, rate: u32, random_displacement: i32, loop_start: u32, loop_end: i32 },
+    /// A Sega Dreamcast `.STR` stream (GTA2 Dreamcast), see [`crate::dcstr`].
+    DcStr { path: String },
     /// A Red Book CD audio track: raw 16-bit stereo PCM at 44100 Hz ([`ef_core::vfs::CD_AUDIO_DIR`]).
     CdAudio { path: String },
     /// San Andreas stream pack track.
@@ -158,6 +160,49 @@ fn level(game: Game, platform: Platform) -> SupportLevel {
     }
 }
 
+/// Dreamcast `.STR` streams: every `.STR` file whose header matches vgmstream's `str_sega`
+/// checks. Which GTA2 files these are is not documented, so they are listed by path.
+fn dreamcast_streams(vfs: &dyn ef_core::vfs::Vfs, notices: &mut Vec<String>) -> Vec<AudioAsset> {
+    use std::io::Read;
+    let mut out = Vec::new();
+    for (path, e) in ef_core::vfs::walk_files(vfs, "") {
+        if !path.to_ascii_lowercase().ends_with(".str") {
+            continue;
+        }
+        let mut head = vec![0u8; crate::dcstr::DATA_START as usize];
+        let ok = vfs.open(&path).and_then(|mut f| f.read_exact(&mut head)).is_ok();
+        let h = match ok.then(|| crate::dcstr::header(&head, e.size)) {
+            Some(Ok(h)) => h,
+            Some(Err(err)) => {
+                notices.push(format!("{path}: {err}"));
+                continue;
+            }
+            None => continue,
+        };
+        let decodable = h.tracks == 1 && h.bits == 4;
+        if !decodable {
+            notices.push(format!(
+                "{path}: {} tracks, {} bits per sample; only single-track 4-bit streams are decoded",
+                h.tracks, h.bits
+            ));
+        }
+        let file = path.rsplit('/').next().unwrap_or(&path).to_string();
+        let stem = file.rsplit_once('.').map_or(file.as_str(), |(s, _)| s).to_string();
+        out.push(AudioAsset {
+            category: Category::Streams,
+            group: path.rsplit_once('/').map(|(d, _)| d.to_string()),
+            title: stem.clone(),
+            game_id: file.clone(),
+            source: path.clone(),
+            bytes: e.size,
+            file_stem: sanitize(&stem),
+            kind: AssetKind::DcStr { path },
+            support: if decodable { SupportLevel::FromSpec } else { SupportLevel::DetectedOnly },
+        });
+    }
+    out
+}
+
 /// The CD audio tracks of a disc image (BIN/CUE), in track order.
 fn cd_audio(vfs: &dyn ef_core::vfs::Vfs) -> Vec<AudioAsset> {
     let dir = ef_core::vfs::CD_AUDIO_DIR;
@@ -186,12 +231,15 @@ pub fn build(install: &GameInstall) -> Result<Catalog> {
     let vfs = install.vfs.as_ref();
     let support = level(install.game, install.platform);
     let mut cat = Catalog::default();
-    let cd = cd_audio(vfs);
+    let mut cd = cd_audio(vfs);
+    if install.platform == Platform::Dreamcast {
+        cd.extend(dreamcast_streams(vfs, &mut cat.notices));
+    }
     if !support.can_decode() {
         cat.assets = cd;
         if !cat.assets.is_empty() {
             cat.notices.push(format!(
-                "{} CD audio tracks are read from the disc image (Red Book PCM); the game's own audio files are not decoded.",
+                "{} streams with a documented format (CD audio tracks, Dreamcast STR) are listed; the game's other audio data is not decoded.",
                 cat.assets.len()
             ));
         }

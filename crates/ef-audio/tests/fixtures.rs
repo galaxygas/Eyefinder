@@ -351,3 +351,25 @@ fn cd_audio_tracks_match_ffmpeg_and_seek_exactly() {
     assert!(report.failed.is_empty());
     std::fs::remove_dir_all(out).unwrap();
 }
+
+#[test]
+fn dreamcast_str_streams_match_vgmstream_and_seek_exactly() {
+    let install = ef_core::open_and_detect(&fixtures().join("gta2_dc/disc.gdi")).unwrap();
+    assert_eq!((install.game, install.platform), (Game::Gta2, Platform::Dreamcast));
+    assert_eq!(install.edition.id, "dc-T-42102N");
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("dc_reference.json")).unwrap()).unwrap();
+    assert_eq!(cat.assets.len(), 2);
+    for asset in &cat.assets {
+        assert!(matches!(asset.kind, AssetKind::DcStr { .. }));
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap(), "{}", asset.game_id);
+        assert_seek_exact(open, &asset.game_id);
+    }
+}

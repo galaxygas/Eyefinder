@@ -37,6 +37,7 @@ fn format_label(a: &AudioAsset) -> String {
         AssetKind::SaTrack { .. } => "Ogg Vorbis".into(),
         AssetKind::SaSfx { .. } => "PCM (bank)".into(),
         AssetKind::CdAudio { .. } => "CD audio (PCM 16-bit / 2 ch)".into(),
+        AssetKind::DcStr { .. } => "Dreamcast STR (AICA ADPCM)".into(),
     }
 }
 
