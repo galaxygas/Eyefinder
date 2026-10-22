@@ -10,23 +10,28 @@ Every asset in Eyefinder carries one of three support levels, shown in the app n
 
 A format moves to **Verified** only when someone runs Eyefinder on a real copy and the result is confirmed (see [CONTRIBUTING.md](../CONTRIBUTING.md#reporting-a-format-result)). Each such confirmation is recorded in the table below.
 
-## Earlier games (new, unverified implementations)
+## The 2D games (new, unverified implementations)
 
-| Game/platform | Implemented from specification | Not yet covered |
-|---|---|---|
-| GTA1 PC (shared DOS/Windows asset layout) | Six documented SDT/RAW bank types, loose WAVs; GRY 325 and G24 336 tiles, tile palette variants, base sprites, stored deltas and FON images | CD tracks, standalone RAW/RAT graphics, sprite remaps and combined delta states |
-| London 1969 / 1961 PC | Explicit expansion choice; UK SDT/RAW and WAV subtree; same documented GRY/G24 and FON readers | Automatic expansion identity, CD tracks, standalone RAW/RAT graphics, sprite remaps and combined delta states |
-| GTA2 PC | 24-byte SDT/RAW banks, loose WAVs; STY 700 tiles, default sprites and stored deltas | Sprite remaps, combined delta states, standalone graphics; release-wide asset inventory validation |
-| GTA1 / London / GTA2 PlayStation | None added | Platform-specific discovery and full audio/graphics formats |
-| GTA1 / GTA2 Game Boy Color | None added | ROM asset boundaries, compression/palette mappings and music sequencer |
-| GTA2 Dreamcast | None added | Disc/archive inventory, texture/palette mapping, complete audio catalog |
-| GTA Advance Game Boy Advance | None added | Regional ROM mappings, complete graphics inventory and sequenced audio |
+Every release of GTA1, London 1969, London 1961, GTA2 and GTA Advance is **identified**. The
+**decoded** data is listed per release below. Everything without a public specification is listed in
+[MISSING.md](../MISSING.md).
 
-These additions have synthetic reference tests, **not real-file confirmation**.
-They do not establish every-platform or every-asset support. Sources and exact
-limits are recorded in [FORMATS.md](FORMATS.md). London import never guesses between
-1969 and 1961 from their shared audio paths. Use the installation root containing
-`GTADATA` (GTA1/London) or `DATA` (GTA2).
+| Release | Identified by | Implemented from specification | Not supported yet |
+|---|---|---|---|
+| GTA1 PC (DOS/Windows retail, Rockstar Classics) | Retail inventory files (maps, text, styles, banks); executable file version | Six SDT/RAW bank types, cutscene speech and music WAVs, CD audio tracks (BIN/CUE), GRY 325 / G24 336 tiles, variants, sprites and stored deltas, FON images, FXT text | Sprite remaps and combined delta states; RAT/RAW/ACT images, REP (MISSING.md); CMP maps; Smacker movie |
+| London 1969 PC | `GTADATA/UK` map, text, mission list | As GTA1 (UK subtree), CD audio tracks | As GTA1 |
+| London 1961 PC | `GTADATA/UK` `uke.cmp`, `enguke.fxt`, `missuke.ini` | As GTA1 (it plays London 1969's banks) | As GTA1 |
+| GTA2 PC (retail, freeware 9.6) | `gta2.exe`, `data/fstyle.sty`, `data/e.gxt`, `data/nyc.gci`; file version | 24-byte SDT/RAW banks, voice clips, GTAUDIO music WAVs, STY 700 tiles, sprites, stored deltas, frontend TGA images, GXT text (E/F/G/I/S) | Remaps, combined deltas; GMP maps; compiled SCR, REP, Russian/Japanese text, kanji.dat (MISSING.md); Bink movies |
+| GTA1 / London 1969 / GTA2 PlayStation | `SYSTEM.CNF` serial (redump) | CD audio tracks (GTA1, London) | Everything on the data track (MISSING.md) |
+| GTA2 Dreamcast | IP.BIN product number (redump) | Single-track 4-bit STR streams (AICA ADPCM) | Other STR variants; graphics, maps, text, SFX, movies (MISSING.md) |
+| GTA1 / GTA2 Game Boy Color | Cartridge header, No-Intro SHA-1 | — | Everything (MISSING.md) |
+| GTA Advance (Game Boy Advance) | Cartridge header (BGTE/BGTP), No-Intro SHA-1 | — | Everything (MISSING.md) |
+
+These additions have synthetic reference tests, **not real-file confirmation**. Sources and exact
+limits are recorded in [FORMATS.md](FORMATS.md).
+* A folder holding GTA1 together with the London packs offers each game, and each becomes its own library entry.
+* A loose GTA1/London file needs a choice, because its format is shared.
+* A console disc or ROM missing from the table can be added only by explicit choice.
 
 ## Audio
 
@@ -43,6 +48,12 @@ limits are recorded in [FORMATS.md](FORMATS.md). London import never guesses bet
 | San Andreas | PC | Stream packs (`AUDIO\STREAMS\*`, per-track Ogg Vorbis + beat data) | Implemented from spec | gta-reversed `Audio/Loaders/AEMP3TrackLoader`, `AETrackLoader.h`, `AEStreamTransformer`, `AEDataStream` | pending |
 | San Andreas | PC | SFX banks (`AUDIO\SFX\*`) | Implemented from spec | gta-reversed `Audio/Loaders/AEBankLoader.h`, `AEMP3BankLoader.cpp` | pending |
 | San Andreas | PS2 | All audio | Not supported yet | Only partial notes exist (vgmstream `doc/TXTH.md`) | — |
+| GTA1, London 1969 | PC, PlayStation | CD audio tracks of a BIN/CUE image | Implemented from spec | libcdio bincue (INDEX), Red Book PCM, bchunk byte order | pending |
+| GTA1, London | PC | SDT/RAW banks, WAV speech and music | Implemented from spec | Marschall SDT analysis, OpenGTA | pending |
+| GTA2 | PC | SDT/RAW banks, voice and GTAUDIO music WAVs | Implemented from spec | gta2_re `cSampleManager`, `file.cpp` | pending |
+| GTA2 | Dreamcast | Single-track 4-bit `.STR` streams | Implemented from spec | vgmstream `str_sega.c`, `yamaha_decoder.c` | pending |
+| GTA1, London, GTA2 | PlayStation, Dreamcast (other data), GBC, GBA | All other audio | Not supported yet | No specification (MISSING.md) | — |
+| GTA1, GTA2 | PC | Smacker / Bink movies | Not supported yet | Documented (FFmpeg decoders) but not implemented | — |
 | All | Xbox, mobile, Mac | All audio | Not supported yet | No documented specification | — |
 
 ## Textures
@@ -56,15 +67,37 @@ limits are recorded in [FORMATS.md](FORMATS.md). London import never guesses bet
 | All three | Xbox | Xbox natives: ARGB1555, RGB555, ARGB8888, palettes, DXT1/3/5 | Implemented from spec | librw `xbox.cpp` | pending |
 | All three | Xbox | Other Xbox pixel formats; LZO-compressed IMG entries | Not supported yet | no reference decoder / only wiki notes | — |
 
+| GTA1, London | PC | GRY 325 / G24 336 styles, FON images | Implemented from spec | DMA CityScape 12.10, OpenGTA, Marschall FON | pending |
+| GTA2 | PC | STY 700 styles; frontend TGA images | Implemented from spec | DMA GBH Style 4.6, gta2_re; Truevision TGA 2.0 | pending |
+| 2D games | PlayStation, Dreamcast, GBC, GBA | All graphics | Not supported yet | No specification (MISSING.md) | — |
+
 Textures carry the support level of their own native format, whatever the game's platform.
+
+## Text
+
+| Game | Platform | Data | Level | Specification source |
+|---|---|---|---|---|
+| GTA1, London | PC | `.FXT` (Windows-1252; Japanese shown as Shift-JIS codes) | Implemented from spec | Marschall FXT specification and converter |
+| GTA2 | PC | `.GXT` (E, F, G, I, S) | Implemented from spec | gta2_re `text_0x14`, Marschall GXT notes |
+| GTA2 | PC | `.GXT` Russian / Japanese characters above 0x7F | Not supported yet | Mapping not reliably documented (MISSING.md) |
+
+Text is shown in the file view and printed by `eyefinder-cli text`.
 
 ## Game versions
 
 | Platform | Identified by | Source |
 |---|---|---|
-| PC | One value in the game executable (1.0, 1.1 / 1.01, Steam and the San Andreas variants) | plugin-sdk `GameVersion.cpp` |
+| PC (III, VC, SA) | One value in each game executable (1.0, 1.1 / 1.01, 3.0, the Steam updates, the Rockstar Games Launcher build); every executable present is reported, with its file version | plugin-sdk `GameVersion.cpp`, SilentPatch `MemoryMgr.GTA.h` |
+| PC (GTA1, London, GTA2) | Executable file version only (no build table exists) | Microsoft `VS_FIXEDFILEINFO` |
+| PC store | Steam app manifest, Rockstar Games Launcher uninstall registration, retail setup registry | Galaxy-Plugin-Rockstar, Steam |
 | PS2 | The disc serial in `SYSTEM.CNF` | PCSX2 `GameIndex.yaml` |
+| PlayStation | The disc serial in `SYSTEM.CNF` (`BOOT`) | psx-spx, redump |
+| Dreamcast | The IP.BIN product number | makeip, redump |
+| Game Boy Color / Advance | Cartridge header and SHA-1 | Pan Docs, GBATEK, No-Intro |
 | Xbox, Mac | Not identified | — |
+
+The GTA III and Vice City Steam and Rockstar Games Launcher executables carry the same build value,
+so for them the store comes from the install location (issue #3).
 
 Users can choose the game, platform and version when adding a copy. The version is recorded in every export manifest and never changes how data is decoded.
 
@@ -85,6 +118,11 @@ These checks run in CI on every change (`crates/ef-audio/tests/fixtures.rs`, `cr
   * librw and **Pillow** stay within the documented rounding tolerance.
   * CI rebuilds librw at the pinned commit and regenerates everything to check it still matches.
 * **Windows:** the Windows build's texture export is byte-identical to the Linux build's (checked under Wine).
+* **CD audio tracks:** equal ffmpeg's `s16le` decode of each track of a mixed-mode PlayStation BIN/CUE fixture.
+* **Dreamcast STR:** bit-identical to **vgmstream-cli** (commit `f7f7641`) on random-data mono and stereo streams in a GD-ROM fixture.
+* **TGA:** equal to **Pillow 12.3.0** for the layouts Pillow writes, and to a specification reference for 16-bit images.
+* **FXT / GXT:** synthetic tables encoded independently from the specifications; the FXT header mask reproduces file(1)'s FXT signature.
+* **Release identification:** synthetic layouts of each 2D release (GTA1 with both London packs, London 1969, lower-case GTA2, PlayStation BIN/CUE, Dreamcast GDI, GBA ROM) through the command line (`apps/eyefinder-cli/tests/legacy_releases.rs`); every San Andreas build value; a Steam folder holding a downgraded `gta_sa.exe` next to `gta-sa.exe`.
 
 ## Sources
 
@@ -122,5 +160,7 @@ Report fingerprints (SHA-256, metadata only; the uploads are not committed):
 * vgmstream: `src/coding/psx_decoder.c`, `doc/TXTH.md`.
 * librw (MIT): `src/texture.cpp`, `src/d3d/*.cpp`, `src/ps2/ps2raster.cpp`, commit `18532c2e`.
 * Khronos Data Format Specification 1.3 (S3TC), Vulkan specification (normalized conversions), Microsoft `D3DFORMAT`, `PALETTEENTRY`, DDS and PE format documentation.
-* plugin-sdk `shared/GameVersion.cpp`; PCSX2 `GameIndex.yaml` and `CDVD.cpp`; Steam app info; steamlocate, Lutris and Playnite (Steam library locations).
+* plugin-sdk `shared/GameVersion.cpp`; SilentPatch `MemoryMgr.GTA.h` (MIT); PCSX2 `GameIndex.yaml` and `CDVD.cpp`; Steam app info; steamlocate, Lutris and Playnite (Steam library locations); Galaxy-Plugin-Rockstar (Rockstar Games Launcher registry).
+* redump and No-Intro DATs (libretro-database), DuckStation game database, psx-spx, Pan Docs, GBATEK, KallistiOS makeip, gditools3, libcdio, bchunk.
+* Daniel Marschall's GTA1/London pages and gta_lang_converter (Apache-2.0); gta2_re; vgmstream `str_sega.c`; Truevision TGA 2.0.
 * Microsoft *Multimedia Standards Update* (IMA ADPCM, MS ADPCM WAVE layouts), Vorbis I specification, ISO/IEC 11172 / 13818.

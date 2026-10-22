@@ -49,7 +49,7 @@ this work does **not** establish complete cross-platform support.
 | GTA1 and London PC audio | SDT/RAW and WAV implemented with ffmpeg/seek tests | CD tracks, automatic London expansion identification, real-file inventory checks |
 | GTA1 and London PC graphics | GRY/G24 tiles, tile variants, sprites and stored deltas; FON images; catalog/preview/export and synthetic reference tests | Sprite remaps, combined delta states, loose RAW/RAT graphics, real-file validation |
 | GTA2 PC audio and graphics | 24-byte SDT/RAW and WAV; STY 700 tiles, sprites and stored deltas with fixtures | Remaps, standalone graphics, release-wide inventory and real-file validation |
-| Earlier console/handheld editions, including Advance | No new support | Platform-specific asset discovery and format specifications; PC layouts must not be assumed to apply |
+| Earlier console/handheld editions, including Advance | Identified (serial, IP.BIN, cartridge header + No-Intro SHA-1); CD audio and Dreamcast STR decoded (second round) | Format specifications: see `MISSING.md` |
 
 ## Integration requirements
 
@@ -92,3 +92,24 @@ workspace Clippy and workspace tests pass. It records the exact commit in
 No real GTA1/London/GTA2/Advance/handheld/Dreamcast assets were available in this
 session. The supplied manifests cover Vice City PS2 exports only; they cannot
 validate unrelated platform layouts or inventories.
+
+## Second round (2026-10-22)
+
+Why the first round "did not work" on real installs:
+* Detection required the audio banks, or FSTYLE for GTA2.
+* London always needed a manual choice, and GTA1 was dropped whenever a UK asset existed.
+* PlayStation discs were refused outright.
+* "Find installed games" never looked for the 2D games.
+* The GUI ran detection on its UI thread and showed shared-format choices as errors.
+* GTA2's lower-case `data/audio/*.raw` paths were rebuilt in upper case.
+
+The fixes and additions are in SUPPORT.md and FORMATS.md. New evidence used:
+* Marschall's inventory gives London 1969 and London 1961 distinct files (`UK.CMP` / `uke.cmp`, `ENGUK.FXT` / `enguke.fxt`, `MISSUK.INI` / `missuke.ini`). London 1961 ships only `AUDIO/0e.wav` and plays London 1969's banks.
+* gta2_re strings: `GTA2.EXE`, `data\fstyle.sty`, `data\%c.gxt`, `data\nyc.gci`, `GTAudio\*.wav` (the CD check list with sizes), `data\gtaudio\` (9.6f).
+* Disc and ROM identities from the redump and No-Intro DATs (libretro-database `12c21cf7`), cross-checked with redump disc pages and DuckStation.
+* vgmstream `str_sega.c` names GTA2 Dreamcast as the common 4-bit case. The decoder was compared bit for bit with vgmstream-cli built at `f7f76415`.
+* Marschall's gta_lang_converter (Apache-2.0) specifies FXT and GXT. The FXT mask reproduces file(1)'s FXT signature, and gta2_re's western remap table matches Marschall's glyph chart exactly.
+
+Decision: the strict whole-bank / whole-file rejection of malformed SDT, GRY/G24, STY and FON data
+was **kept**. Accepting partial data would lower the bar without evidence that real files need it. A
+real-file report showing such a rejection would be the trigger to revisit it.

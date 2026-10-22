@@ -1,22 +1,26 @@
 # Eyefinder
 
-**A viewer and extractor for the assets of Grand Theft Auto III, Vice City and San Andreas.**
+**A viewer and extractor for the assets of Grand Theft Auto: GTA1, London 1969, London 1961,
+GTA2, GTA Advance, GTA III, Vice City and San Andreas.**
 
-Eyefinder opens a game folder or a disc image, works out which game, platform and version it is,
-and lets you browse, preview and export its contents. It currently handles **audio** (every radio
-station, cutscene, mission line, sound effect and the music of the intro movies) and **textures**
-(every texture dictionary, loose or inside IMG archives). Models and other data will follow.
+Eyefinder opens a game folder, a disc image or a cartridge ROM, works out which game, platform,
+version and store it is, and lets you browse, preview and export its contents. It handles **audio**
+(radio stations, cutscenes, mission lines, sound effects, music, CD audio tracks) and **textures**
+(texture dictionaries, loose or inside IMG archives; GTA1/GTA2 styles, fonts and images), and shows
+the **text** of the 2D games. Models and other data will follow.
 
 ![Eyefinder showing textures in dark mode](docs/screenshots/textures-dark.png)
 
 ## Features
 
-* **Add games your way:**
-  * a PC install folder, an extracted disc, or a PS2 `.iso` read directly;
-  * or let **Find installed games** look through your Steam libraries and the Rockstar Games folders and add one or all of the copies it finds.
-* **Choose the game, platform and version:** Eyefinder detects them and shows its evidence, and you can change them.
-  * Executable version on PC, disc serial on PS2.
-  * Only choices the files actually support are offered.
+* **Add games your way:** one **Add game** dialog with a drop zone, or the welcome screen.
+  * Accepted: a PC install folder, an extracted disc, a disc image read directly (ISO, BIN/CUE, Dreamcast GDI), a Game Boy Color / Advance ROM, or any of a game's own files.
+  * **Find installed games** looks through your Steam libraries, the Rockstar Games Launcher and the Rockstar Games folders.
+  * Identification runs in the background, so the window never freezes.
+* **Choose the game, platform and version:** Eyefinder detects them, shows its evidence, and lets you change them.
+  * PC: the executable build and the store (Steam, Rockstar Games Launcher, retail).
+  * Consoles and handhelds: the disc serial (PS1, PS2), the Dreamcast product number, or the cartridge ROM.
+  * Only choices the files actually support are offered. A folder holding several games (GTA1 with the London packs) lets you add each of them.
 * **Sidebar sections per asset type** (Audio by category, Textures by folder or archive), or switch to the **file tree**. IMG archives open like folders, and any file can be inspected and copied byte for byte.
 * **Textures:**
   * A thumbnail grid or a list, and a large preview with zoom, mip levels and a transparency checkerboard.
@@ -37,7 +41,7 @@ station, cutscene, mission line, sound effect and the music of the intro movies)
 * **Honest about what it knows:** every item shows a support level. Nothing is guessed.
 * **Dark and light themes.**
 
-![Choosing the game version](docs/screenshots/import.png)
+![Adding a game: Eyefinder identifies a GTA2 Dreamcast disc by its product number](docs/screenshots/import.png)
 
 ## Supported games
 
@@ -47,6 +51,14 @@ station, cutscene, mission line, sound effect and the music of the intro movies)
 | Vice City audio | 🧪 From spec | 🧪 From spec (streams) | Recognised only |
 | San Andreas audio | 🧪 From spec (streams + SFX) | Recognised only | Recognised only |
 | Textures (all three games) | 🧪 From spec | 🧪 From spec | 🧪 From spec (Xbox natives) |
+
+| 2D games | PC | PlayStation | Dreamcast | Game Boy Color / Advance |
+|---|---|---|---|---|
+| GTA1, London 1969 / 1961 | 🧪 Audio, CD audio, styles, fonts, text | 🧪 CD audio; rest recognised only | — | GTA1 GBC: recognised only |
+| GTA2 | 🧪 Audio, music, styles, frontend images, text | Recognised only | 🧪 STR audio; rest recognised only | GTA2 GBC: recognised only |
+| GTA Advance | — | — | — | Recognised only |
+
+What has no public documentation is listed in [MISSING.md](MISSING.md).
 
 **Verified** means checked against real game files. **From spec** means implemented from
 documented sources (reverse-engineered game code, librw, official specifications) and tested
@@ -77,6 +89,9 @@ eyefinder-cli export   "C:\Games\GTA Vice City" "D:\VC audio"       # all audio
 eyefinder-cli textures "C:\Games\GTA San Andreas" "D:\SA textures" --mipmaps
 eyefinder-cli export   gta3_ps2.iso out --only "Radio Stations" --pcm16
 eyefinder-cli info     sa.iso --game sa --platform ps2 --version ps2-SLUS-20946
+eyefinder-cli info     "C:\Games\GTA" --game london1969                # GTA1 folder with London installed
+eyefinder-cli export   "GTA (USA).cue" out                              # PS1: the CD audio tracks
+eyefinder-cli text     "C:\Games\GTA2"                                 # GTA2 GXT / GTA1 FXT text
 ```
 
 ## Building from source
@@ -95,7 +110,8 @@ cargo test --workspace                      # all tests
 Every change runs on Windows, macOS and Linux against synthetic fixtures. There is no game data in
 this repository. Outputs are compared with independent references:
 * **GTA III PC audio:** the original GTA III ripper, which was verified on real files (`tools/legacy-c`).
-* **PS2 audio:** vgmstream.
+* **PS2 audio, Dreamcast STR:** vgmstream.
+* **CD audio tracks:** ffmpeg.
 * **Vice City and San Andreas audio:** the de-obfuscated source streams.
 * **Textures** (`tools/txd-ref`):
   * **librw**, for the stored texture data and PS2 unswizzling;
