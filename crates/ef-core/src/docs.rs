@@ -221,7 +221,10 @@ mod tests {
 
     #[test]
     fn missing_md_is_in_sync() {
-        let file = std::fs::read_to_string(concat!(env!("CARGO_MANIFEST_DIR"), "/../../MISSING.md")).unwrap();
+        // A Windows checkout may turn the file's line endings into CRLF.
+        let file = std::fs::read_to_string(concat!(env!("CARGO_MANIFEST_DIR"), "/../../MISSING.md"))
+            .unwrap()
+            .replace("\r\n", "\n");
         assert!(
             file == missing_markdown(),
             "MISSING.md differs from crates/ef-core/data/formats.json: run `cargo run -p eyefinder-cli -- docs missing > MISSING.md`"
