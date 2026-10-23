@@ -188,6 +188,9 @@ impl Vfs for PrefixVfs {
     fn container(&self) -> Option<String> {
         self.inner.container()
     }
+    fn dump_tracks(&self) -> Vec<crate::cue::DumpTrack> {
+        self.inner.dump_tracks()
+    }
 }
 
 struct SubdirVfs {
@@ -222,6 +225,9 @@ impl Vfs for SubdirVfs {
     }
     fn container(&self) -> Option<String> {
         self.inner.container()
+    }
+    fn dump_tracks(&self) -> Vec<crate::cue::DumpTrack> {
+        self.inner.dump_tracks()
     }
 }
 

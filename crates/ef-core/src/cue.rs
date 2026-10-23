@@ -9,6 +9,8 @@ struct Track {
     mode: String,
     start: Option<u64>,
     pregap: Option<u64>,
+    /// Sectors of a `PREGAP` command: silence the sheet generates, not stored in the FILE.
+    generated: u64,
 }
 fn bad(message: &str) -> IsoError {
     IsoError::Unsupported(format!("CUE: {message}"))
@@ -54,7 +56,7 @@ fn parse(cue: &Path) -> Result<Vec<Track>, IsoError> {
                 if mode != "AUDIO" && kind != "BINARY" {
                     return Err(bad("data FILE must be BINARY"));
                 }
-                tracks.push(Track { number, file: path.clone(), mode, start: None, pregap: None });
+                tracks.push(Track { number, file: path.clone(), mode, start: None, pregap: None, generated: 0 });
             }
             "INDEX" => {
                 let index = parts.next().ok_or_else(|| bad("missing INDEX number"))?;
@@ -66,7 +68,11 @@ fn parse(cue: &Path) -> Result<Vec<Track>, IsoError> {
                     _ => {}
                 }
             }
-            _ => {} // metadata, flags and generated PREGAP do not occupy FILE bytes
+            "PREGAP" => {
+                let value = frames(parts.next().ok_or_else(|| bad("missing PREGAP time"))?)?;
+                tracks.last_mut().ok_or_else(|| bad("PREGAP before TRACK"))?.generated = value;
+            }
+            _ => {} // metadata and flags do not occupy FILE bytes
         }
     }
     Ok(tracks)
@@ -130,6 +136,46 @@ pub fn audio_tracks(cue: &Path) -> Result<Vec<AudioTrack>, IsoError> {
             let bytes = (end - start) / 2352 * 2352;
             out.push(AudioTrack { number: t.number, file: t.file.clone(), offset: start, bytes });
         }
+    }
+    Ok(out)
+}
+
+/// A track as a disc dump stores it, for comparison with redump's track files: from its INDEX 00
+/// (or INDEX 01) to the next track's in the same FILE, or the end of the FILE. A redump track file
+/// holds the track's pregap, so `generated` (sectors of a `PREGAP` command, absent from the FILE)
+/// is reported to let a dump without it be compared.
+#[derive(Debug, Clone)]
+pub struct DumpTrack {
+    pub number: u32,
+    pub audio: bool,
+    pub file: PathBuf,
+    pub offset: u64,
+    pub bytes: u64,
+    pub generated: u64,
+}
+
+pub fn dump_tracks(cue: &Path) -> Result<Vec<DumpTrack>, IsoError> {
+    let tracks = parse(cue)?;
+    let mut out = Vec::new();
+    for (i, t) in tracks.iter().enumerate() {
+        let stride = if t.mode == "MODE1/2048" { 2048 } else { 2352 };
+        let start = t.pregap.or(t.start).ok_or_else(|| bad("track has no index"))? * stride;
+        let len = std::fs::metadata(&t.file)?.len();
+        let end = match tracks.get(i + 1).filter(|next| next.file == t.file) {
+            Some(next) => next.pregap.or(next.start).ok_or_else(|| bad("next track has no index"))? * stride,
+            None => len,
+        };
+        if end < start || end > len {
+            return Err(bad("track range is invalid or truncated"));
+        }
+        out.push(DumpTrack {
+            number: t.number,
+            audio: t.mode == "AUDIO",
+            file: t.file.clone(),
+            offset: start,
+            bytes: end - start,
+            generated: t.generated,
+        });
     }
     Ok(out)
 }

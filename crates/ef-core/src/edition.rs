@@ -35,9 +35,10 @@
 use std::io::{Read, Seek, SeekFrom};
 
 use serde::{Deserialize, Serialize};
+use sha1::{Digest, Sha1};
 
 use crate::store::Store;
-use crate::vfs::Vfs;
+use crate::vfs::{RangeFile, Vfs};
 use crate::{Game, Platform};
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
@@ -110,14 +111,27 @@ fn checks(game: Game) -> &'static [ExeCheck] {
 /// * III/VC/SA: `gta3.exe`, `gta-vc.exe`, `gta_sa.exe` (retail, and the executable the Rockstar
 ///   Games Launcher starts: Galaxy-Plugin-Rockstar `game_cache.py` `launchEXE`, commit 5518f066)
 ///   and `gta-sa.exe` (the Steam release, Steam app 12120 launch configuration).
-/// * GTA1 and London (Windows): `gtawin\gtawin.exe`, `gtawin\gta_uk.exe`, `gtawin\gta_61.exe`
-///   (Daniel Marschall, `spiele/gta1/misc.html`: "gtawin\gta_uk.exe and gtawin\gta_61.exe create
-///   log files"; `patches.html`: "any GTA executable (gtawin.exe, gta_uk.exe etc.)").
+/// * GTA1 (Windows): `gtawin\gtawin.exe` (Classics / Steam: Daniel Marschall,
+///   `spiele/gta1/patches.html`: "any GTA executable (gtawin.exe, gta_uk.exe etc.)") and
+///   `GTAWIN\GRAND THEFT AUTO.EXE` (the retail disc: DiscImageCreator log of redump disc 33511,
+///   and the maintainer's disc, docs/SUPPORT.md); DOS: `GTADOS\GTA24.EXE`, `GTA8.EXE`, `GTAFX.EXE`
+///   (both discs).
+/// * London 1969 / 1961: `gtawin\gta_uk.exe`, `gtawin\gta_61.exe` (Marschall, `misc.html`:
+///   "gtawin\gta_uk.exe and gtawin\gta_61.exe create log files"); London 1969 DOS:
+///   `GTADOS\GTA24_UK.EXE`, `GTA8_UK.EXE`, `GTAFX_UK.EXE` (the disc's file list on archive.org,
+///   item `grandtheftautomissionpack1london1969pc`). That disc holds its Windows executable only
+///   inside the installer's `SETUP\DATA1.CAB`.
 /// * GTA2: `gta2.exe` (gta2_re `reccmp/96f-ascii.csv`, commit edb484d3).
 pub fn exe_names(game: Game) -> &'static [&'static str] {
     match game {
-        Game::Gta1 => &["GTAWIN/GTAWIN.EXE"],
-        Game::London1969 => &["GTAWIN/GTA_UK.EXE"],
+        Game::Gta1 => &[
+            "GTAWIN/GTAWIN.EXE",
+            "GTAWIN/GRAND THEFT AUTO.EXE",
+            "GTADOS/GTA24.EXE",
+            "GTADOS/GTA8.EXE",
+            "GTADOS/GTAFX.EXE",
+        ],
+        Game::London1969 => &["GTAWIN/GTA_UK.EXE", "GTADOS/GTA24_UK.EXE", "GTADOS/GTA8_UK.EXE", "GTADOS/GTAFX_UK.EXE"],
         Game::London1961 => &["GTAWIN/GTA_61.EXE"],
         Game::Gta2 => &["gta2.exe"],
         Game::Gta3 => &["gta3.exe"],
@@ -126,6 +140,28 @@ pub fn exe_names(game: Game) -> &'static [&'static str] {
         Game::GtaAdvance => &[],
     }
 }
+
+/// Executables identified by their size and SHA-1, from real files the maintainer reported
+/// (docs/SUPPORT.md, "Real-file observations"): `(game, path, size, SHA-1, id, label)`. The label
+/// says only what the files show.
+const REAL_FILE_BUILDS: &[(Game, &str, u64, &str, &str, &str)] = &[
+    (
+        Game::Gta2,
+        "gta2.exe",
+        1_667_072,
+        "646e1d479fa2aea12b3ff448fa23f6362f9e012f",
+        "pc-9.6-2004",
+        "9.6.0.0, Rockstar Games 2004 re-release",
+    ),
+    (
+        Game::Gta1,
+        "GTAWIN/GRAND THEFT AUTO.EXE",
+        909_824,
+        "038561860ce80eda794a491935d64878f925376e",
+        "pc-retail-909824",
+        "Retail disc, Windows executable of 909,824 bytes",
+    ),
+];
 
 /// The executable each store starts, examined first.
 fn launched_by(game: Game, store: &Store) -> Option<&'static str> {
@@ -166,7 +202,13 @@ const PS2_SERIALS: &[(&str, Game, &str)] = &[
 pub fn known(game: Game, platform: Platform) -> Vec<Edition> {
     let mut v = vec![Edition::unknown()];
     match platform {
-        Platform::Pc => v.extend(checks(game).iter().map(|c| Edition { id: c.id.into(), label: c.label.into() })),
+        Platform::Pc => {
+            v.extend(checks(game).iter().map(|c| Edition { id: c.id.into(), label: c.label.into() }));
+            v.extend(
+                REAL_FILE_BUILDS.iter().filter(|b| b.0 == game).map(|b| Edition { id: b.4.into(), label: b.5.into() }),
+            );
+            v.extend(pc_discs(game).into_iter().map(|(id, rs)| Edition { label: disc_label(&rs), id }));
+        }
         Platform::Ps2 => {
             v.extend(PS2_SERIALS.iter().filter(|s| s.1 == game).map(|(serial, _, region)| Edition {
                 id: format!("ps2-{serial}"),
@@ -294,8 +336,21 @@ fn identify_one(vfs: &dyn Vfs, game: Game, name: &str) -> Option<(Option<Edition
     let mut head = vec![0u8; 4096];
     let n = f.read(&mut head).unwrap_or(0);
     head.truncate(n);
+    if let Some(b) = REAL_FILE_BUILDS.iter().find(|b| b.0 == game && b.1.eq_ignore_ascii_case(name) && b.2 == f.len()) {
+        let mut all = Vec::with_capacity(f.len() as usize);
+        if f.seek(SeekFrom::Start(0)).is_ok() && f.read_to_end(&mut all).is_ok() {
+            let digest: String = Sha1::digest(&all).iter().map(|x| format!("{x:02x}")).collect();
+            if digest == b.3 {
+                return Some((
+                    Some(Edition { id: b.4.into(), label: b.5.into() }),
+                    format!("{name}: SHA-1 {digest}, the \"{}\" executable of a real-file report", b.5),
+                ));
+            }
+        }
+    }
     let Some(pe) = Pe::parse(&head) else {
-        return Some((None, format!("{name} is not a 32-bit Windows executable")));
+        let what = if head.starts_with(b"MZ") { "an MS-DOS executable" } else { "not a Windows executable" };
+        return Some((None, format!("{name} is {what} ({} bytes); no build table exists for it", f.len())));
     };
     let version = file_version(&mut f, &pe)
         .map(|v| format!("; file version {}.{}.{}.{}", v[0], v[1], v[2], v[3]))
@@ -341,6 +396,9 @@ pub fn identify_exe(vfs: &dyn Vfs, game: Game, store: &Store) -> (Edition, Vec<S
     }
     if evidence.is_empty() {
         evidence.push(format!("no {} was found", names.join(" or ")));
+        if game == Game::London1969 && !vfs.dump_tracks().is_empty() {
+            evidence.push("the London 1969 disc keeps its Windows executable inside SETUP/DATA1.CAB".into());
+        }
     } else if evidence.len() > 1
         && let Some(first) = launched_by(game, store)
     {
@@ -381,10 +439,106 @@ pub fn identify_ps2(vfs: &dyn Vfs, game: Game) -> (Edition, String) {
     }
 }
 
+/// The redump PC disc releases of `game` in the release index, keyed by the SHA-1 of their first
+/// track: `(edition id, label, releases)`.
+fn pc_discs(game: Game) -> Vec<(String, Vec<&'static crate::index::Release>)> {
+    let Some(g) = crate::index::index().of(game) else { return Vec::new() };
+    let mut out: Vec<(String, Vec<&crate::index::Release>)> = Vec::new();
+    for r in g.releases.iter().filter(|r| r.platform == "pc" && r.source == "redump-pc") {
+        let Some(first) = r.files.iter().find(|f| f.name.ends_with(".bin") || f.name.ends_with(".iso")) else {
+            continue;
+        };
+        let id = format!("pc-disc-{}", &first.sha1[..8]);
+        match out.iter_mut().find(|(i, _)| *i == id) {
+            Some((_, v)) => v.push(r),
+            None => out.push((id, vec![r])),
+        }
+    }
+    out
+}
+
+fn disc_label(releases: &[&crate::index::Release]) -> String {
+    let labels: Vec<String> = releases.iter().map(|r| r.label()).collect();
+    format!("{} (redump disc)", labels.join(" / "))
+}
+
+/// Whether dumped tracks `(bytes in the FILE, sectors of a generated PREGAP)` are redump's track
+/// files of these sizes.
+fn tracks_fit(redump: &[u64], dumped: &[(u64, u64)]) -> bool {
+    redump.len() == dumped.len() && redump.iter().zip(dumped).all(|(&r, &(b, g))| r == b || r == b + g * 2352)
+}
+
+/// Identifies a PC BIN/CUE image by its tracks, against redump's IBM PC DAT in the release index:
+/// every track's size must equal the redump track file's (which includes the track's pregap, so a
+/// `PREGAP` the sheet generates is added back), then the data track's SHA-1 must equal redump's.
+pub fn identify_pc_disc(vfs: &dyn Vfs, game: Game) -> Option<(Option<Edition>, Vec<String>)> {
+    let tracks = vfs.dump_tracks();
+    let data = tracks.first().filter(|t| !t.audio)?;
+    let dumped: Vec<(u64, u64)> = tracks.iter().map(|t| (t.bytes, t.generated)).collect();
+    let fits = |r: &crate::index::Release| {
+        tracks_fit(&r.files.iter().filter(|f| f.name.ends_with(".bin")).map(|f| f.size).collect::<Vec<_>>(), &dumped)
+    };
+    let sized: Vec<(String, Vec<&crate::index::Release>)> = pc_discs(game)
+        .into_iter()
+        .map(|(id, rs)| (id, rs.into_iter().filter(|r| fits(r)).collect::<Vec<_>>()))
+        .filter(|(_, rs)| !rs.is_empty())
+        .collect();
+    if sized.is_empty() {
+        return Some((
+            None,
+            vec![format!("the disc's {} track sizes match no redump PC disc of {}", tracks.len(), game.name())],
+        ));
+    }
+    let mut f = RangeFile::open(&crate::vfs::FileLocation {
+        host: data.file.clone(),
+        offset: data.offset,
+        len: data.bytes,
+        sectors: None,
+    })
+    .ok()?;
+    let mut h = Sha1::new();
+    let mut buf = vec![0u8; 1 << 20];
+    loop {
+        let n = f.read(&mut buf).ok()?;
+        if n == 0 {
+            break;
+        }
+        h.update(&buf[..n]);
+    }
+    let digest: String = h.finalize().iter().map(|x| format!("{x:02x}")).collect();
+    let hit = sized.iter().find(|(_, rs)| rs[0].files.iter().any(|f| f.sha1 == digest));
+    let mut ev = vec![format!(
+        "track sizes match redump PC disc(s): {}",
+        sized.iter().flat_map(|(_, rs)| rs.iter().map(|r| format!("\"{}\"", r.title))).collect::<Vec<_>>().join(", ")
+    )];
+    Some(match hit {
+        Some((id, rs)) => {
+            ev.push(format!("data track SHA-1 {digest} is redump's track 1 of {}", disc_label(rs)));
+            if rs.iter().any(|r| r.files.iter().filter(|f| f.name.ends_with(".bin")).skip(1).any(|f| f.size == 0)) {
+                ev.push("some audio tracks are empty in the DAT".into());
+            }
+            (Some(Edition { id: id.clone(), label: disc_label(rs) }), ev)
+        }
+        None => {
+            ev.push(format!("but the data track's SHA-1 {digest} matches none of them (a different or modified disc)"));
+            (None, ev)
+        }
+    })
+}
+
 /// Detects the edition for an already-identified game and platform.
 pub fn identify(vfs: &dyn Vfs, game: Game, platform: Platform, store: &Store) -> (Edition, Vec<String>) {
     match platform {
-        Platform::Pc => identify_exe(vfs, game, store),
+        Platform::Pc => {
+            let (mut edition, mut evidence) = identify_exe(vfs, game, store);
+            if let Some((disc, why)) = identify_pc_disc(vfs, game) {
+                evidence.extend(why);
+                if let Some(d) = disc {
+                    edition = d;
+                }
+            }
+            (edition, evidence)
+        }
         Platform::Ps2 => {
             let (e, why) = identify_ps2(vfs, game);
             (e, vec![why])
@@ -543,5 +697,41 @@ mod tests {
         let (e, _) = identify_exe(&vfs, Game::Gta3, &Store::RockstarLauncher);
         assert_eq!(e.label, "Steam / Rockstar Games Launcher");
         std::fs::remove_dir_all(dir).ok();
+    }
+
+    #[test]
+    fn pc_disc_tracks_are_compared_with_redump_track_files() {
+        // The maintainer's GTA1 disc (docs/SUPPORT.md): one BIN, track 2 with a PREGAP the sheet
+        // generates. redump "Grand Theft Auto (USA) (En,Fr,De,It)" stores that pregap in its track 2.
+        let redump = [
+            99099168, 24877104, 78855504, 102845904, 102140304, 79913904, 116605104, 34049904, 92967504, 11117904,
+            12705504,
+        ];
+        let mut dumped: Vec<(u64, u64)> = [
+            99099168u64,
+            24524304,
+            78855504,
+            102845904,
+            102140304,
+            79913904,
+            116605104,
+            34049904,
+            92967504,
+            11117904,
+            12705504,
+        ]
+        .iter()
+        .map(|&b| (b, 0))
+        .collect();
+        assert!(!tracks_fit(&redump, &dumped));
+        dumped[1].1 = 150;
+        assert!(tracks_fit(&redump, &dumped));
+        // redump "Grand Theft Auto (Australia)" has the same data track but longer audio tracks.
+        let australia = [
+            99099168, 25058208, 79213008, 103203408, 102497808, 80271408, 116962608, 34407408, 93325008, 11475408,
+            13058304,
+        ];
+        assert!(!tracks_fit(&australia, &dumped));
+        assert!(!tracks_fit(&redump[..10], &dumped));
     }
 }

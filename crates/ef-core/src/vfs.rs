@@ -71,6 +71,11 @@ pub trait Vfs: Send + Sync {
     fn container(&self) -> Option<String> {
         None
     }
+    /// The tracks of a BIN/CUE disc image as dumped (see [`crate::cue::DumpTrack`]); empty for
+    /// anything else.
+    fn dump_tracks(&self) -> Vec<crate::cue::DumpTrack> {
+        Vec::new()
+    }
     /// Reads a whole (small) file.
     fn read_all(&self, path: &str) -> io::Result<Vec<u8>> {
         let mut f = self.open(path)?;
@@ -266,6 +271,8 @@ pub struct IsoVfs {
     audio: Vec<crate::cue::AudioTrack>,
     /// The wrapping container, when it is not a plain ISO / BIN/CUE / GDI (see [`crate::discimg`]).
     container: Option<String>,
+    /// The tracks of a BIN/CUE image as dumped.
+    dump: Vec<crate::cue::DumpTrack>,
     block: u64,
     root: IsoNode,
     dirs: Mutex<HashMap<u32, Arc<Vec<IsoNode>>>>,
@@ -287,9 +294,11 @@ impl IsoVfs {
         if image.extension().is_some_and(|e| e.eq_ignore_ascii_case("cue")) {
             let (host, layout, length) = crate::cue::data_track(&image)?;
             let audio = crate::cue::audio_tracks(&image).unwrap_or_default();
+            let dump = crate::cue::dump_tracks(&image).unwrap_or_default();
             let mut v =
                 Self::from_backing(image, FileLocation { host, offset: 0, len: length, sectors: Some(layout) })?;
             v.audio = audio;
+            v.dump = dump;
             return Ok(v);
         }
         let ext = image.extension().map(|e| e.to_string_lossy().to_ascii_lowercase());
@@ -363,6 +372,7 @@ impl IsoVfs {
                     extra: Vec::new(),
                     audio: Vec::new(),
                     container: None,
+                    dump: Vec::new(),
                     block,
                     root,
                     dirs: Mutex::new(HashMap::new()),
@@ -517,6 +527,9 @@ impl Vfs for IsoVfs {
     }
     fn container(&self) -> Option<String> {
         self.container.clone()
+    }
+    fn dump_tracks(&self) -> Vec<crate::cue::DumpTrack> {
+        self.dump.clone()
     }
     fn system_area(&self) -> Option<Vec<u8>> {
         let mut f = RangeFile::open(&FileLocation { len: 16 * 2048, ..self.backing.clone() }).ok()?;

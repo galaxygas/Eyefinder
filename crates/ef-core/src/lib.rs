@@ -1,7 +1,7 @@
 //! Eyefinder core: shared types, virtual file systems, game detection and text tables.
 
 pub mod console;
-mod cue;
+pub mod cue;
 pub mod discimg;
 pub mod edition;
 mod gdi;
