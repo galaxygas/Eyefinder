@@ -102,7 +102,7 @@ pub fn parse_fxt(data: &[u8], language: &str) -> Result<TextTable, String> {
         }
         let body = &after[close + 1..];
         // The entry runs to the next line that starts with '['.
-        let end = body.find("\n[").map_or(body.len(), |e| e);
+        let end = body.find("\n[").unwrap_or(body.len());
         table.entries.push((key.to_string(), body[..end].trim_end_matches('\n').to_string()));
         rest = &body[end..];
     }
