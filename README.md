@@ -14,13 +14,16 @@ the **text** of the 2D games. Models and other data will follow.
 ## Features
 
 * **Add games your way:** one **Add game** dialog with a drop zone, or the welcome screen.
-  * Accepted: a PC install folder, an extracted disc, a disc image read directly (ISO, BIN/CUE, Dreamcast GDI), a Game Boy Color / Advance ROM, or any of a game's own files.
+  * Accepted: a PC install folder, an extracted disc, a disc image read directly (ISO, BIN/CUE, Dreamcast GDI, DiscJuggler CDI, PS2 POPStarter VCD), a Game Boy Color / Advance ROM, or any of a game's own files.
   * **Find installed games** looks through your Steam libraries, the Rockstar Games Launcher and the Rockstar Games folders.
   * Identification runs in the background, so the window never freezes.
 * **Choose the game, platform and version:** Eyefinder detects them, shows its evidence, and lets you change them.
-  * PC: the executable build and the store (Steam, Rockstar Games Launcher, retail).
-  * Consoles and handhelds: the disc serial (PS1, PS2), the Dreamcast product number, or the cartridge ROM.
+  * PC: the executable build and the store (Steam, Rockstar Games Launcher, retail); a retail disc image by its redump tracks.
+  * Consoles and handhelds: the disc serial (PS1, PS2), the Dreamcast IP.BIN fields, or the cartridge ROM.
   * Only choices the files actually support are offered. A folder holding several games (GTA1 with the London packs) lets you add each of them.
+* **A library grouped by game**, in release order, with every copy on two compact lines (platform, store, version, file, counts).
+* **Index page:** every Grand Theft Auto game, platform, regional release, edition and version that the cited sources list (redump and No-Intro DATs, redump's PC DAT, Wikipedia, titledb), with how Eyefinder identifies each one, and the gaps no source covers yet.
+* **Documentation page:** a tracker for this build. Per game, every file type with its status (verified, implemented but unverified, documented but not implemented, not supported, undocumented), sources, real-file confirmations and what is missing, plus how copies are recognised and which executables and versions are known.
 * **Sidebar sections per asset type** (Audio by category, Textures by folder or archive), or switch to the **file tree**. IMG archives open like folders, and any file can be inspected and copied byte for byte.
 * **Textures:**
   * A thumbnail grid or a list, and a large preview with zoom, mip levels and a transparency checkerboard.
@@ -39,9 +42,13 @@ the **text** of the 2D games. Models and other data will follow.
   * San Andreas beat data,
   * the untouched movie audio bitstream.
 * **Honest about what it knows:** every item shows a support level. Nothing is guessed.
-* **Dark and light themes.**
+* **Themes:** Dark, Light, Follow system, and Vice City Night (Themes menu, top-right).
 
 ![Adding a game: Eyefinder identifies a GTA2 Dreamcast disc by its product number](docs/screenshots/import.png)
+
+![The Index page: every GTA release the sources list, by game and platform](docs/screenshots/index.png)
+
+![The Documentation page in the Vice City Night theme: GTA2's platforms, recognition and executables](docs/screenshots/vice-city-night.png)
 
 ## Supported games
 

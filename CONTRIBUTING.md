@@ -11,7 +11,7 @@ Results from real game copies are the most valuable contribution: they move form
 2. Open an issue with the **Format report** template and attach the export's `manifest.json`. It contains no audio, only names, sizes, formats and durations.
 3. Say which version you have (retail, Steam, Rockstar Launcher, PS1/PS2 region and serial from `SYSTEM.CNF`, Dreamcast product number, ROM region, ...). `eyefinder-cli info` prints what Eyefinder detected.
 4. Describe anything that sounds wrong: noise, wrong speed, cut-off endings, wrong names.
-5. For the 2D console and handheld releases, a file list (`eyefinder-cli list`, or the Files view) and the first bytes of unknown files help to document the formats listed in [MISSING.md](MISSING.md).
+5. For the 2D console and handheld releases, a file list (`eyefinder-cli files`, or the Files view) and the first bytes of unknown files help to document the formats listed in [MISSING.md](MISSING.md).
 
 Never upload game files.
 

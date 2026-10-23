@@ -8,7 +8,13 @@ Every asset in Eyefinder carries one of three support levels, shown in the app n
 | **Implemented from spec** | Implemented from documented reverse-engineering sources and tested against synthetic files built from that documentation. It has **not yet been confirmed on real game files**. |
 | **Not supported yet** | Eyefinder recognises the data but has no trustworthy specification for it, so it does not decode it. Nothing is guessed. |
 
-A format moves to **Verified** only when someone runs Eyefinder on a real copy and the result is confirmed (see [CONTRIBUTING.md](../CONTRIBUTING.md#reporting-a-format-result)). Each such confirmation is recorded in the table below.
+A format moves to **Verified** only when someone runs Eyefinder on a real copy and the result is confirmed (see [CONTRIBUTING.md](../CONTRIBUTING.md#reporting-a-format-result)). Each such confirmation is recorded below.
+
+The **Documentation** page of the app shows, per game, every file type with its status
+(verified, implemented but unverified, documented but not implemented, not supported, undocumented),
+its sources and its real-file confirmations. Its data is `crates/ef-core/data/formats.json`, from
+which [MISSING.md](../MISSING.md) is generated. The **Index** page lists every release of every GTA
+game that the cited sources name (`crates/ef-core/data/release_index.json`).
 
 ## The 2D games (new, unverified implementations)
 
@@ -18,12 +24,12 @@ Every release of GTA1, London 1969, London 1961, GTA2 and GTA Advance is **ident
 
 | Release | Identified by | Implemented from specification | Not supported yet |
 |---|---|---|---|
-| GTA1 PC (DOS/Windows retail, Rockstar Classics) | Retail inventory files (maps, text, styles, banks); executable file version | Six SDT/RAW bank types, cutscene speech and music WAVs, CD audio tracks (BIN/CUE), GRY 325 / G24 336 tiles, variants, sprites and stored deltas, FON images, FXT text | Sprite remaps and combined delta states; RAT/RAW/ACT images, REP (MISSING.md); CMP maps; Smacker movie |
+| GTA1 PC (DOS/Windows retail, Rockstar Classics) | Retail inventory files (maps, text, styles, banks); retail discs by redump track sizes and data-track SHA-1; executables by file version or real-file SHA-1 | Six SDT/RAW bank types, cutscene speech and music WAVs, CD audio tracks (BIN/CUE), GRY 325 / G24 336 tiles, variants, sprites and stored deltas, FON images, FXT text | Sprite remaps and combined delta states; RAT/RAW/ACT images, REP (MISSING.md); CMP maps; Smacker movie |
 | London 1969 PC | `GTADATA/UK` map, text, mission list | As GTA1 (UK subtree), CD audio tracks | As GTA1 |
 | London 1961 PC | `GTADATA/UK` `uke.cmp`, `enguke.fxt`, `missuke.ini` | As GTA1 (it plays London 1969's banks) | As GTA1 |
-| GTA2 PC (retail, freeware 9.6) | `gta2.exe`, `data/fstyle.sty`, `data/e.gxt`, `data/nyc.gci`; file version | 24-byte SDT/RAW banks, voice clips, GTAUDIO music WAVs, STY 700 tiles, sprites, stored deltas, frontend TGA images, GXT text (E/F/G/I/S) | Remaps, combined deltas; GMP maps; compiled SCR, REP, Russian/Japanese text, kanji.dat (MISSING.md); Bink movies |
-| GTA1 / London 1969 / GTA2 PlayStation | `SYSTEM.CNF` serial (redump) | CD audio tracks (GTA1, London) | Everything on the data track (MISSING.md) |
-| GTA2 Dreamcast | IP.BIN product number (redump) | Single-track 4-bit STR streams (AICA ADPCM) | Other STR variants; graphics, maps, text, SFX, movies (MISSING.md) |
+| GTA2 PC (retail, freeware 9.6) | `gta2.exe`, `data/fstyle.sty`, `data/e.gxt`, `data/nyc.gci`; the 2004 re-release `gta2.exe` by SHA-1; discs by redump tracks | 24-byte SDT/RAW banks (signed 16-bit; police radio slots unsigned 8-bit), voice clips, GTAUDIO music WAVs, STY 700 tiles, sprites, stored deltas, frontend TGA images, GXT text (E/F/G/I/S) | Remaps, combined deltas; GMP maps; compiled SCR, REP, Russian/Japanese text, kanji.dat (MISSING.md); Bink movies |
+| GTA1 / London 1969 / GTA2 PlayStation (BIN/CUE, ISO, CDI, POPStarter VCD) | `SYSTEM.CNF` serial (redump) | CD audio tracks (GTA1, London) | Everything on the data track (MISSING.md) |
+| GTA2 Dreamcast (GDI, CDI) | IP.BIN product number, version and date (redump disc pages) | Single-track 4-bit STR streams (AICA ADPCM); STY styles and GXT text in the PC formats | Other STR variants; SDT/RAW banks (4-bit codec undocumented), PVR textures, per-level DSG/SPX/… files, maps (GMP: documented, not rendered), SFD movie (MISSING.md) |
 | GTA1 / GTA2 Game Boy Color | Cartridge header, No-Intro SHA-1 | — | Everything (MISSING.md) |
 | GTA Advance (Game Boy Advance) | Cartridge header (BGTE/BGTP), No-Intro SHA-1 | — | Everything (MISSING.md) |
 
@@ -48,10 +54,10 @@ limits are recorded in [FORMATS.md](FORMATS.md).
 | San Andreas | PC | Stream packs (`AUDIO\STREAMS\*`, per-track Ogg Vorbis + beat data) | Implemented from spec | gta-reversed `Audio/Loaders/AEMP3TrackLoader`, `AETrackLoader.h`, `AEStreamTransformer`, `AEDataStream` | pending |
 | San Andreas | PC | SFX banks (`AUDIO\SFX\*`) | Implemented from spec | gta-reversed `Audio/Loaders/AEBankLoader.h`, `AEMP3BankLoader.cpp` | pending |
 | San Andreas | PS2 | All audio | Not supported yet | Only partial notes exist (vgmstream `doc/TXTH.md`) | — |
-| GTA1, London 1969 | PC, PlayStation | CD audio tracks of a BIN/CUE image | Implemented from spec | libcdio bincue (INDEX), Red Book PCM, bchunk byte order | pending |
+| GTA1, London 1969 | PC, PlayStation | CD audio tracks of a BIN/CUE image | Implemented from spec | libcdio bincue (INDEX), Red Book PCM, bchunk byte order | Maintainer's GTA1 disc, 2026-10-23: all 10 tracks equal ffmpeg's `s16le` decode (below) |
 | GTA1, London | PC | SDT/RAW banks, WAV speech and music | Implemented from spec | Marschall SDT analysis, OpenGTA | pending |
-| GTA2 | PC | SDT/RAW banks, voice and GTAUDIO music WAVs | Implemented from spec | gta2_re `cSampleManager`, `file.cpp` | pending |
-| GTA2 | Dreamcast | Single-track 4-bit `.STR` streams | Implemented from spec | vgmstream `str_sega.c`, `yamaha_decoder.c` | pending |
+| GTA2 | PC | SDT/RAW banks (slots 69-136 unsigned 8-bit), voice and GTAUDIO music WAVs | Implemented from spec | gta2_re `cSampleManager`, `sound_obj.cpp`, `file.cpp`; Miles `mss.h` | Maintainer's 2004 release, 2026-10-23: all 960 level-bank slots decode; the radio slots equal ffmpeg's `u8` reading (below). Awaiting the maintainer's listening check |
+| GTA2 | Dreamcast | Single-track 4-bit `.STR` streams | Implemented from spec | vgmstream `str_sega.c`, `yamaha_decoder.c` | Maintainer's disc, 2026-10-23: all 16 streams bit-identical to vgmstream-cli (below). Awaiting the maintainer's listening check |
 | GTA1, London, GTA2 | PlayStation, Dreamcast (other data), GBC, GBA | All other audio | Not supported yet | No specification (MISSING.md) | — |
 | GTA1, GTA2 | PC | Smacker / Bink movies | Not supported yet | Documented (FFmpeg decoders) but not implemented | — |
 | All | Xbox, mobile, Mac | All audio | Not supported yet | No documented specification | — |
@@ -68,8 +74,8 @@ limits are recorded in [FORMATS.md](FORMATS.md).
 | All three | Xbox | Other Xbox pixel formats; LZO-compressed IMG entries | Not supported yet | no reference decoder / only wiki notes | — |
 
 | GTA1, London | PC | GRY 325 / G24 336 styles, FON images | Implemented from spec | DMA CityScape 12.10, OpenGTA, Marschall FON | pending |
-| GTA2 | PC | STY 700 styles; frontend TGA images | Implemented from spec | DMA GBH Style 4.6, gta2_re; Truevision TGA 2.0 | pending |
-| 2D games | PlayStation, Dreamcast, GBC, GBA | All graphics | Not supported yet | No specification (MISSING.md) | — |
+| GTA2 | PC, Dreamcast | STY 700 styles; frontend TGA images (PC) | Implemented from spec | DMA GBH Style 4.6, gta2_re; Truevision TGA 2.0 | The Dreamcast styles use the PC chunks (below) |
+| 2D games | PlayStation, GBC, GBA; Dreamcast PVR and per-level files | All other graphics | Not supported yet | No specification (MISSING.md) | — |
 
 Textures carry the support level of their own native format, whatever the game's platform.
 
@@ -78,7 +84,7 @@ Textures carry the support level of their own native format, whatever the game's
 | Game | Platform | Data | Level | Specification source |
 |---|---|---|---|---|
 | GTA1, London | PC | `.FXT` (Windows-1252; Japanese shown as Shift-JIS codes) | Implemented from spec | Marschall FXT specification and converter |
-| GTA2 | PC | `.GXT` (E, F, G, I, S) | Implemented from spec | gta2_re `text_0x14`, Marschall GXT notes |
+| GTA2 | PC, Dreamcast | `.GXT` (E, F, G, I, S); the string prefix codes 0x2153-0x217A are shown as marked codes | Implemented from spec | gta2_re `text_0x14`, Marschall GXT notes |
 | GTA2 | PC | `.GXT` Russian / Japanese characters above 0x7F | Not supported yet | Mapping not reliably documented (MISSING.md) |
 
 Text is shown in the file view and printed by `eyefinder-cli text`.
@@ -88,11 +94,12 @@ Text is shown in the file view and printed by `eyefinder-cli text`.
 | Platform | Identified by | Source |
 |---|---|---|
 | PC (III, VC, SA) | One value in each game executable (1.0, 1.1 / 1.01, 3.0, the Steam updates, the Rockstar Games Launcher build); every executable present is reported, with its file version | plugin-sdk `GameVersion.cpp`, SilentPatch `MemoryMgr.GTA.h` |
-| PC (GTA1, London, GTA2) | Executable file version only (no build table exists) | Microsoft `VS_FIXEDFILEINFO` |
+| PC (GTA1, London, GTA2) | Executable file version; executables from real-file reports by size and SHA-1 | Microsoft `VS_FIXEDFILEINFO`; real-file reports below |
+| PC discs (BIN/CUE) | Track sizes and data-track SHA-1 against redump's IBM PC DAT | redump.org PC DAT 2026-06-15 (release index) |
 | PC store | Steam app manifest, Rockstar Games Launcher uninstall registration, retail setup registry | Galaxy-Plugin-Rockstar, Steam |
 | PS2 | The disc serial in `SYSTEM.CNF` | PCSX2 `GameIndex.yaml` |
 | PlayStation | The disc serial in `SYSTEM.CNF` (`BOOT`) | psx-spx, redump |
-| Dreamcast | The IP.BIN product number | makeip, redump |
+| Dreamcast | IP.BIN product number, version and date | makeip; redump disc pages 19717, 61592, 22119 |
 | Game Boy Color / Advance | Cartridge header and SHA-1 | Pan Docs, GBATEK, No-Intro |
 | Xbox, Mac | Not identified | — |
 
@@ -123,6 +130,43 @@ These checks run in CI on every change (`crates/ef-audio/tests/fixtures.rs`, `cr
 * **TGA:** equal to **Pillow 12.3.0** for the layouts Pillow writes, and to a specification reference for 16-bit images.
 * **FXT / GXT:** synthetic tables encoded independently from the specifications; the FXT header mask reproduces file(1)'s FXT signature.
 * **Release identification:** synthetic layouts of each 2D release (GTA1 with both London packs, London 1969, lower-case GTA2, PlayStation BIN/CUE, Dreamcast GDI, GBA ROM) through the command line (`apps/eyefinder-cli/tests/legacy_releases.rs`); every San Andreas build value; a Steam folder holding a downgraded `gta_sa.exe` next to `gta-sa.exe`.
+
+## Real-file observations (2026-10-23)
+
+The maintainer shared real copies on 2026-10-23 for testing. They were downloaded into a temporary
+work folder, never committed, and deleted afterwards. Nothing below contains game data: only sizes,
+hashes, header fields and counts.
+
+**What the maintainer confirmed in the app** (so these are marked **Verified** on the
+Documentation page): the GTA2 PC "Rockstar Classics" folder (2004 release) loads, and the GTA1 PC
+disc registers as GTA1. The maintainer also reported that GTA2 audio sometimes played at the wrong
+speed. The cause was the player, not the decoders (rodio kept converting every track at the first track's rate; `apps/eyefinder/src/player.rs`), and it is fixed, so
+the audio decoders stay "Implemented from spec" until the maintainer has listened again.
+
+**GTA2 PC, 2004 re-release** (`readme.txt` "(c) 2004 Rockstar Games"):
+* `gta2.exe`: 1,667,072 bytes, SHA-1 `646e1d479fa2aea12b3ff448fa23f6362f9e012f`, file version 9.6.0.0.
+* `data/Audio/WIL.SDT`, `STE.SDT`, `bil.sdt`: 7680 bytes, 320 records each. Slots 69-136 are the only 5500 Hz records; 34, 34 and 36 of them have odd byte sizes; their bytes average 127.6 (the midpoint of unsigned 8-bit samples). Every other slot has an even size. Each RAW file is exactly covered by its records. All 960 slots now decode (before: none, because of the odd sizes), and the 68 radio slots of `WIL` equal ffmpeg's `u8` reading at the SDT rate.
+* Export report of Eyefinder 0.2.0 (before these fixes): 137 files (18 FSTYLE sounds, 97 voice clips, 22 music tracks), no failures.
+* `e.gxt`, `s.gxt`: every code unit of 0x100 or above is 0x2153-0x217A, at the start of a string.
+
+**GTA2 PlayStation, POPStarter VCD** (`SLES_014.04.Grand Theft Auto 2.VCD`, 547,516,960 bytes):
+* Header bytes as cue2pops writes them (`41 00 A0 … 20 … A1 … A2`), track entry `41 00 01 00 00 00 00 00 02 00`, sector count 232,342 at 1032 and 1036, version tag `kHn"` at 1024. Payload: 232,342 raw sectors.
+* `SYSTEM.CNF` boots SLES-01404: redump "Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It)". Checked with the command line, not yet in the app.
+
+**GTA2 Dreamcast, DiscJuggler CDI** (`Grand Theft Auto 2.cdi`, 439,554,332 bytes):
+* Trailer `0x80000006` (V3.5), header offset 700; two sessions; data track at LBA 11700, Mode 2/2336, at file offset 1,408,800; 296 files.
+* IP.BIN: product `T40502D 93`, version `V1.003`, date `20000702`, title "GRAND THEFT AUTO 2". These are the fields redump disc 19717 shows (its "Internal Serial : T40502D 93"; Europe, T-40502D-18 / T-40502D-61). The area (`JUE` instead of ` E`) and company (`PARADISO` instead of `SEGA LC-T-405`) differ from redump's dump: the image was rebuilt.
+* Compared with the PC 2004 release: `DATA/BIL.GMP` is byte-identical; `DATA/BIL.STY` has the same GBST 700 chunk set, with TILE, DELS, DELX, CARI, OBJI, SPEC, RECY and FONB identical and the palettes (PPAL holds every PC colour value: 34,375 shared, 7 more) and sprites (SPRG/SPRX) different. The SDT files have the same 320 slots, but each sample is about a quarter of the PC size (4 bits per sample; codec undocumented). `.PVR` files start with `GBIX` and contain `PVRT`.
+* All 16 `.STR` streams decode bit-identically to vgmstream-cli (commit `f7f7641`).
+
+**GTA1 PC disc, BIN/CUE** (one 754,825,008-byte BIN, 11 tracks, a `PREGAP` before track 2):
+* Data track: 99,099,168 bytes, SHA-1 `e0232c49cb60bbfc634bb284bad002e0c8fdf962`, which is redump's track 1 of "Grand Theft Auto (USA) (En,Fr,De,It)", "(Europe) (En,Fr,De,It)", "(Europe) (En,Fr,De,It) (Alt)" and "(Australia)". The audio track sizes (adding the generated pregap to track 2) match the first three, not Australia. The audio tracks' SHA-1 differ from redump's (a different read offset when the disc was ripped).
+* Files: `GTAWIN/GRAND THEFT AUTO.EXE` (909,824 bytes, SHA-1 `038561860ce80eda794a491935d64878f925376e`), `GTADOS/GTA24.EXE`, `GTA8.EXE`, `GTAFX.EXE`; no `GTAWIN.EXE`, which is why the disc was reported as missing its executable.
+* All 10 CD audio tracks exported by Eyefinder equal ffmpeg's `s16le` decode of the same byte ranges.
+
+**GTA2 Game Boy Color** (`Grand Theft Auto 2 (USA).gbc`): SHA-1 `6fd4b31d410ca98452ada0a1f3c0e2590e7df099`, the No-Intro dump "Grand Theft Auto 2 (USA)".
+
+**GTA III / Vice City / San Andreas executables** (issue #3): `gta3.exe` (3,418,544 bytes) is identified as 1.1, `gta-vc.exe` (4,302,264 bytes) as the Steam / Rockstar Games Launcher build, and `gta_sa.exe` and `gta-sa.exe` (both 14,383,616 bytes, different SHA-1) as 1.0 US (HOODLUM executable). These are the builds whose signature each file carries; the store of an install still comes from its location.
 
 ## Sources
 

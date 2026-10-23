@@ -244,7 +244,9 @@ Raster format bits (librw `rwobjects.h`):
   * Eyefinder reads the value from the file, mapping the address through the PE section table (Microsoft "PE Format"). Executables that are packed or encrypted on disk are reported as unknown.
   * **Every** executable present is examined and listed in the evidence. The version shown is the build of the executable the store starts: `gta-sa.exe` on Steam (Steam launch configuration), `gta_sa.exe` on the Rockstar Games Launcher (Galaxy-Plugin-Rockstar `game_cache.py` `launchEXE`, commit `5518f066`). Otherwise it is the first that matches.
   * The `VS_FIXEDFILEINFO` file version (Microsoft "VS_FIXEDFILEINFO", "VS_VERSIONINFO"; PE ".rsrc Section") is added to the evidence as stored. It is not mapped to a build.
-  * Executable names: `gta3.exe`, `gta-vc.exe`, `gta_sa.exe`, `gta-sa.exe`; GTA1/London `gtawin\gtawin.exe`, `gtawin\gta_uk.exe`, `gtawin\gta_61.exe` (Marschall `misc.html`, `patches.html`); GTA2 `gta2.exe` (gta2_re). GTA1/London/GTA2 have no build table, so only their file version is reported (see `MISSING.md`).
+  * Executable names: `gta3.exe`, `gta-vc.exe`, `gta_sa.exe`, `gta-sa.exe`; GTA1/London `gtawin\gtawin.exe`, `gtawin\gta_uk.exe`, `gtawin\gta_61.exe` (Marschall `misc.html`, `patches.html`); the GTA1 retail disc's `GTAWIN\GRAND THEFT AUTO.EXE` and `GTADOS\GTA24.EXE`, `GTA8.EXE`, `GTAFX.EXE` (DiscImageCreator log of redump disc 33511, and the maintainer's disc); London 1969 `GTADOS\GTA24_UK.EXE`, `GTA8_UK.EXE`, `GTAFX_UK.EXE` (archive.org item `grandtheftautomissionpack1london1969pc`, whose Windows executable is only inside `SETUP\DATA1.CAB`); GTA2 `gta2.exe` (gta2_re). DOS executables are reported as such.
+  * GTA1/London/GTA2 have no build table (see `MISSING.md`). Executables from real-file reports are identified by size and SHA-1 (`REAL_FILE_BUILDS`): GTA2 `gta2.exe` 1,667,072 bytes, SHA-1 `646e1d47…`, file version 9.6.0.0, labelled "Rockstar Games 2004 re-release" after its `readme.txt` ("(c) 2004 Rockstar Games … modified from its original version to enable support for modern PC's"); GTA1 `GTAWIN\GRAND THEFT AUTO.EXE` 909,824 bytes, SHA-1 `03856186…`.
+* **PC discs (BIN/CUE):** the tracks are compared with redump's IBM PC DAT in the [release index](#release-index). A redump track file holds its track's pregap, while a CUE `PREGAP` command generates silence that is not in the FILE (libcdio bincue), so a track matches when its size equals redump's or equals it after adding the generated pregap. The data track's SHA-1 must then equal redump's track 1. Releases with the same data track share one version (`pc-disc-<first 8 hex of its SHA-1>`).
 * **PS2:** the serial is the boot file named by `BOOT2` in `SYSTEM.CNF` (PCSX2 `ExecutablePathToSerial`). It is looked up in PCSX2 `GameIndex.yaml` (commit `5b6e6e23`).
 * **PS1, Dreamcast, Game Boy Color, Game Boy Advance:** see [Console releases](#console-releases).
 
@@ -306,7 +308,19 @@ no source code is copied.
 
 `DATA/AUDIO/<style>.SDT` has **24-byte** records of six little-endian signed 32-bit
 fields: offset, length, playback rate, random displacement, loop start, loop end.
-Companion RAW samples are signed 16-bit mono PCM (Miles format 1, flags 1).
+Companion RAW samples are signed 16-bit mono PCM (Miles format 1, flags 1), except slots
+**69-136**, the police radio words, which are **unsigned 8-bit mono**:
+* `sound_obj.cpp` `EnqueueRadioWord_4271B0` clamps every queued word to 69..136, and
+  `ProcessPoliceRadioWordsPlayback_427220` / `UpdateRadioChatterLoop_41FCA0` play them with
+  `cSampleManager::PlayAtIdx_58E7F0` / `PlaySampleRange_58E8C0` on `field_98_hSample`;
+* `AllocSample_58DA80` types that handle `AIL_set_sample_type(.., 0, 0)`: Miles `DIG_F_MONO_8`
+  without `DIG_PCM_SIGN` (`3rdParty/mss.h`), i.e. unsigned. Every other handle is
+  `AIL_set_sample_type(.., 1, 1)` (`AllocSamples_58D9F0`).
+* Real `WIL`, `STE` and `bil` banks of the 2004 release (docs/SUPPORT.md): slots 69-136 are the only
+  5500 Hz records, 34-36 of them have odd byte sizes, and their bytes average 127.6; all other
+  slots have even sizes. All 68 decode identically to ffmpeg's `u8` reading at the SDT rate.
+
+A record that fails validation is skipped with a notice; the rest of the bank is kept.
 Random displacement is preserved as metadata; export uses the stored playback rate.
 Loop byte offsets and the `-1` end sentinel are preserved. `DATA/FSTYLE.STY` and its
 frontend audio bank identify the PC layout. Loose WAVs in the audio subtree are
@@ -480,6 +494,21 @@ Source: AltoRetrato gditools3 `gditools3.py` (commit `79030a47`).
 * Raw 2352-byte sectors carry their 2048 bytes of user data at offset 16, as on CD images.
 * Track files are found case-insensitively.
 
+## POPStarter VCD (PlayStation discs for PS2 POPStarter)
+Source: krHACKen cue2pops v2.0 (2013-05-16), mirror makefu/cue2pops-linux commit `3f2be612`, `cue2pops.c`.
+* A 0x100000-byte header (`HEADERSIZE`, line 20), then the BIN unchanged: raw 2352-byte sectors of one `MODE2/2352` track (lines 659-737, 1088-1158). LBA *n* of the data track is at `0x100000 + n × 2352`; its user data starts 24 bytes into the sector (Mode 2 Form 1).
+* The header starts with the disc descriptors `[0]=0x41`, `[2]=0xA0`, `[8]=0x20` (CD-XA001), `[12]=0xA1`, `[22]=0xA2` (lines 590-649); 10-byte track entries follow from offset 30; the sector count is written twice as a little-endian u32 at 1032 and 1036 (lines 1072-1073). A file is read as a VCD only when all of these hold and the payload holds an ISO 9660 volume.
+* CD audio tracks are stored inline, but the header times depend on cue2pops' gap options and the pregap it may insert (lines 740-960), so Eyefinder does not map them back (`MISSING.md`).
+* Real file: the maintainer's GTA2 PS1 VCD has exactly these bytes, the track entry `41 00 01 00 00 00 00 00 02 00`, 232,342 sectors, and boots SLES-01404.
+
+## DiscJuggler CDI
+Sources: DeXT's cdirip parser in Flycast (commit `fa9d39a3`, `core/deps/chdpsr/cdipsr.cpp`, `core/imgread/cdi.cpp`), Redream (commit `ffb73022`, `src/guest/gdrom/cdi.c`, `disc.c`).
+* The last 8 bytes are `u32 version` (`0x80000004` V2, `0x80000005` V3, `0x80000006` V3.5) and `u32 header_offset`. The descriptor starts at `file_len − header_offset` for V3.5 and at `header_offset` otherwise.
+* Descriptor: `u16 sessions`; per session `u16 tracks`; per track (`CDI_read_track`) a u32 (non-zero: skip 8), the 10-byte start mark `00 00 01 00 00 00 FF FF FF FF` twice, skip 4, `u8` name length, skip name + 19, a u32 (`0x80000000`: skip 8), skip 2, `u32 pregap`, `u32 length`, skip 6, `u32 mode` (0 audio, 1 Mode 1, 2 Mode 2), skip 12, `u32 start_lba`, `u32 total_length`, skip 16, `u32` sector size code (0/1/2 = 2048/2336/2352), skip 29, and unless V2 skip 5 and a u32 (`0xFFFFFFFF`: skip 78). After each session skip 12 (13 unless V2).
+* Track data is stored back to back from offset 0, `total_length × sector_size` bytes each; index 1 starts `pregap × sector_size` into a track, at disc LBA `start_lba + pregap − 150` (Flycast reads ISO 9660 extents at LBA + 150). User data is 16 bytes into Mode 1/2352, 24 into Mode 2/2352 and 8 into Mode 2/2336 sectors (Redream `disc.c`).
+* The data track of the last session holds IP.BIN and the file system (Redream uses session 2 of a Dreamcast image). Audio tracks with 2352-byte sectors are listed as CD audio.
+* Real file: the maintainer's GTA2 Dreamcast CDI is V3.5 (`header_offset` 700), two sessions, data track at LBA 11700 in Mode 2/2336 sectors at file offset 1,408,800; 296 files.
+
 ## CD audio tracks
 * The `AUDIO` tracks of a CUE sheet are listed in a virtual `CD Audio` folder of the disc (`Track NN.cdda`). INDEX semantics follow libcdio bincue:
   * a track runs from INDEX 01 to the next track's INDEX 00 (or 01) in the same FILE, or to the FILE's end;
@@ -500,6 +529,7 @@ Source: vgmstream `src/meta/str_sega.c`, `src/coding/yamaha_decoder.c`, `src/bas
   * `sample = clamp16(hist + delta)`;
   * `step = step·{230,230,230,230,307,409,512,614}[code&7] >> 8`, clamped to 0x7F..0x6000.
 * Only single-track 4-bit streams are decoded. Fixture: a GD-ROM with random-data mono and stereo streams, whose output is bit-identical to vgmstream-cli.
+* Real file: all 16 `.STR` streams of the maintainer's GTA2 Europe disc (stereo, 22050 Hz) decode bit-identically to vgmstream-cli (2026-10-23).
 
 ## Text: GTA1 / London `.FXT`
 Source: Daniel Marschall, "GTA 1 FXT Format" (misc.daniel-marschall.de/spiele/gta1/format_fxt.html; `GTA1/gta1_fxt_format.md` and `FxtToTxt` in danielmarschall/gta_lang_converter, Apache-2.0, commit `2a6e07e5`).
@@ -518,6 +548,7 @@ Sources: gta2_re `text_0x14::Load_5B5E90`, `text_0x14.hpp`, `chunk.hpp` (commit 
 * **Chunks:** `{char type[4]; i32 size}`.
   * `TKEY` holds 12-byte `{u32 offset; char key[8]}` records.
   * `TDAT` holds NUL-terminated UTF-16LE strings.
+* **Prefix codes:** in the real western GXT files (PC 2004 `e.gxt`, `s.gxt`; Dreamcast `E.GXT`) every code unit of 0x100 or above is one of 0x2153-0x217A, at the start of a string. Nothing documents them, so they are shown as `{U+21XX}` (`MISSING.md`).
 * **Characters:** for E/F/G/I/S the code units are Unicode. gta2_re's `kExtendedWesternCharMap` maps each code point 0x80-0xFF to the glyph that Marschall's font chart lists for the same Latin-1 character (checked: 0 differences in 128 entries). Russian and Japanese code units above 0x7F are shown as `{U+XXXX}` (see `MISSING.md`).
 
 ## Truevision TGA (GTA2 `data/frontend/*.tga`)
