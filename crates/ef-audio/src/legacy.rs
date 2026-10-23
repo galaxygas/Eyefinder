@@ -6,11 +6,15 @@ use crate::{Error, Result};
 use ef_core::vfs::walk_files;
 use ef_core::{GameInstall, SupportLevel};
 
-fn bank(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAsset>> {
+/// One bank's sounds, plus a notice for every record that had to be skipped. A bad record never
+/// discards the rest of the bank.
+type Bank = (Vec<AudioAsset>, Vec<String>);
+
+fn bank(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Bank> {
     if !data.len().is_multiple_of(12) {
         return Err(Error::Format("GTA1 SDT has a truncated 12-byte record".into()));
     }
-    let mut assets = Vec::new();
+    let (mut assets, mut skipped) = (Vec::new(), Vec::new());
     for (i, row) in data.as_chunks::<12>().0.iter().enumerate() {
         let word = |n| u32::from_le_bytes(row[n..n + 4].try_into().unwrap());
         let (offset, size, rate) = (word(0), word(4), word(8));
@@ -21,7 +25,8 @@ fn bank(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAss
         let channels = if name == "LEVEL000" && i < 3 { 2 } else { 1 };
         let fb = (bits / 8) as u32 * channels as u32;
         if rate == 0 || offset as u64 + size as u64 > raw_len || !size.is_multiple_of(fb) {
-            return Err(Error::Format(format!("GTA1 SDT record {i}: invalid rate, range or frame alignment")));
+            skipped.push(format!("GTA1 SDT record {i}: invalid rate, range or frame alignment; skipped"));
+            continue;
         }
         let id = format!("{name}_{i:04}");
         assets.push(AudioAsset {
@@ -36,7 +41,7 @@ fn bank(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAss
             kind: AssetKind::LegacyPcm { raw: raw.into(), offset, size, rate, channels, bits },
         });
     }
-    Ok(assets)
+    Ok((assets, skipped))
 }
 
 /// `path` as spelled on disc: the VFS matches names case-insensitively, but asset sources and
@@ -115,7 +120,10 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
                 .map_err(Error::from)
                 .and_then(|d| if gta2 { bank_gta2(&d, len, &raw, name) } else { bank(&d, len, &raw, name) })
             {
-                Ok(a) => cat.assets.extend(a),
+                Ok((a, skipped)) => {
+                    cat.assets.extend(a);
+                    cat.notices.extend(skipped.into_iter().map(|m| format!("{path}: {m}")));
+                }
                 Err(e) => cat.notices.push(format!("{path}: {e}")),
             }
         }
@@ -155,29 +163,44 @@ pub(crate) fn catalog(install: &GameInstall) -> Result<Catalog> {
     Ok(cat)
 }
 
+/// GTA2 SDT slots played as unsigned 8-bit mono: the police radio words.
+///
+/// gta2_re edb484d3b71d5cadaf3a9ea0e435f56993c747e7, `sound_obj.cpp`: `EnqueueRadioWord_4271B0`
+/// clamps every queued word to 69..=136, and `ProcessPoliceRadioWordsPlayback_427220` /
+/// `UpdateRadioChatterLoop_41FCA0` play them through `cSampleManager::PlayAtIdx_58E7F0` /
+/// `PlaySampleRange_58E8C0` on `field_98_hSample`. `cSampleManager.cpp` `AllocSample_58DA80` sets
+/// that handle to `AIL_set_sample_type(.., 0, 0)`: Miles `DIG_F_MONO_8` without `DIG_PCM_SIGN`
+/// (`3rdParty/mss.h`), i.e. unsigned 8-bit mono. Every other sample handle is
+/// `AIL_set_sample_type(.., 1, 1)`, signed 16-bit mono (`AllocSamples_58D9F0`).
+/// Real `data/audio/WIL.SDT` (Rockstar Games 2004 release): slots 69-136 are the only 5500 Hz
+/// records, and 34 of them have odd byte sizes (docs/SUPPORT.md, 2026-10-23).
+pub const GTA2_RADIO_SLOTS: std::ops::RangeInclusive<usize> = 69..=136;
+
 // gta2_re edb484d3b71d5cadaf3a9ea0e435f56993c747e7:
-// cSampleManager.hpp sdt_entry_0x18 and cSampleManager.cpp AllocSamples_58D9F0:
-// 24-byte records; Miles sample format 1, flags 1 = signed 16-bit mono PCM.
-fn bank_gta2(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<AudioAsset>> {
+// cSampleManager.hpp sdt_entry_0x18 and cSampleManager.cpp LoadWavSdtData_58E980 (up to 320
+// 24-byte records): offset, length, playback rate, random displacement, loop start, loop end (-1 = end).
+fn bank_gta2(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Bank> {
     if !data.len().is_multiple_of(24) {
         return Err(Error::Format("truncated GTA2 SDT record".into()));
     }
-    let mut assets = Vec::new();
+    let (mut assets, mut skipped) = (Vec::new(), Vec::new());
     for (i, row) in data.as_chunks::<24>().0.iter().enumerate() {
         let word = |p| i32::from_le_bytes(row[p..p + 4].try_into().unwrap());
         let (offset, size, rate, loop_start, loop_end) = (word(0), word(4), word(8), word(16), word(20));
         if size == 0 {
             continue;
         }
+        let bits = if GTA2_RADIO_SLOTS.contains(&i) { 8 } else { 16 };
         if offset < 0
             || size < 0
             || rate <= 0
             || offset as u64 + size as u64 > raw_len
-            || size % 2 != 0
+            || (bits == 16 && size % 2 != 0)
             || loop_start < 0
             || loop_end < -1
         {
-            return Err(Error::Format(format!("invalid GTA2 SDT record {i}")));
+            skipped.push(format!("GTA2 SDT record {i}: invalid offset, size, rate or loop; skipped"));
+            continue;
         }
         let id = format!("{name}_{i:04}");
         assets.push(AudioAsset {
@@ -195,24 +218,52 @@ fn bank_gta2(data: &[u8], raw_len: u64, raw: &str, name: &str) -> Result<Vec<Aud
                 offset: offset as u32,
                 size: size as u32,
                 rate: rate as u32,
+                bits,
                 loop_start: loop_start as u32,
                 loop_end,
             },
         });
     }
-    Ok(assets)
+    Ok((assets, skipped))
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+    fn gta1(o: u32, s: u32, r: u32) -> Vec<u8> {
+        [o.to_le_bytes(), s.to_le_bytes(), r.to_le_bytes()].concat()
+    }
+    fn gta2(o: i32, s: i32, r: i32) -> Vec<u8> {
+        [o, s, r, 0, 0, -1].iter().flat_map(|v| v.to_le_bytes()).collect()
+    }
+
     #[test]
-    fn rejects_corrupt_records_without_partial_bank() {
+    fn bad_records_are_skipped_without_losing_the_bank() {
         assert!(bank(&[0; 11], 0, "x", "LEVEL000").is_err());
-        let record = |o: u32, s: u32, r: u32| [o.to_le_bytes(), s.to_le_bytes(), r.to_le_bytes()].concat();
-        for row in [record(u32::MAX, 4, 22050), record(0, 3, 22050), record(0, 4, 0)] {
-            assert!(bank(&row, 8, "x", "LEVEL000").is_err());
+        let rows =
+            [gta1(u32::MAX, 4, 22050), gta1(0, 3, 22050), gta1(0, 4, 0), gta1(0, 0, 0), gta1(4, 4, 11025)].concat();
+        let (assets, skipped) = bank(&rows, 8, "x", "LEVEL000").unwrap();
+        assert_eq!(skipped.len(), 3);
+        assert_eq!(assets.len(), 1);
+        assert_eq!(assets[0].game_id, "LEVEL000_0004");
+    }
+
+    #[test]
+    fn gta2_radio_slots_are_unsigned_8_bit_and_may_have_odd_sizes() {
+        let mut rows = Vec::new();
+        for i in 0..140 {
+            let size = if GTA2_RADIO_SLOTS.contains(&i) { 3 } else { 4 };
+            rows.extend(gta2(i as i32 * 4, size, if size == 3 { 5500 } else { 22050 }));
         }
-        assert!(bank(&record(0, 0, 0), 0, "x", "LEVEL000").unwrap().is_empty());
+        let (assets, skipped) = bank_gta2(&rows, 140 * 4, "data/audio/wil.raw", "WIL").unwrap();
+        assert!(skipped.is_empty(), "{skipped:?}");
+        assert_eq!(assets.len(), 140);
+        for (i, a) in assets.iter().enumerate() {
+            let AssetKind::Gta2Sfx { bits, .. } = a.kind else { panic!() };
+            assert_eq!(bits, if GTA2_RADIO_SLOTS.contains(&i) { 8 } else { 16 }, "slot {i}");
+        }
+        // an odd size outside the radio slots is one skipped record, not a lost bank
+        let (assets, skipped) = bank_gta2(&[gta2(0, 3, 22050), gta2(4, 4, 22050)].concat(), 8, "r", "WIL").unwrap();
+        assert_eq!((assets.len(), skipped.len()), (1, 1));
     }
 }

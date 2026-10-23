@@ -71,7 +71,8 @@ impl Iterator for ChunkSource {
 
 impl rodio::Source for ChunkSource {
     fn current_span_len(&self) -> Option<usize> {
-        None
+        // `Some(0)` = exhausted (rodio `Source` contract); otherwise one format until the end.
+        if self.finished.load(Ordering::Relaxed) { Some(0) } else { None }
     }
     fn channels(&self) -> rodio::ChannelCount {
         NonZero::new(self.channels).unwrap()
@@ -109,41 +110,76 @@ impl Drop for Playback {
     }
 }
 
+/// The output device and the player of the current track.
+///
+/// Every track gets its own [`rodio::Player`], with the track appended *before* the player is
+/// added to the mixer. rodio 0.23.0 converts a player's whole queue through one
+/// `UniformSourceIterator` that `Mixer::add` builds from the queue's format (`mixer.rs` 57-65,
+/// `queue.rs` 172-210), and that converter only re-reads the format at span boundaries
+/// (`source/uniform.rs` 49-89). A queue reused across tracks therefore kept converting every later
+/// track at the first track's sample rate and channel count, which played it too fast or too slow.
 pub struct Audio {
-    _device: rodio::MixerDeviceSink,
-    player: rodio::Player,
+    device: rodio::MixerDeviceSink,
+    /// Set by the device's error callback; the device is reopened before the next track.
+    device_failed: Arc<AtomicBool>,
+    player: Option<rodio::Player>,
+    paused: bool,
     pub volume: f32,
+}
+
+fn open_device(failed: &Arc<AtomicBool>) -> Result<rodio::MixerDeviceSink, String> {
+    let f = failed.clone();
+    let mut device = rodio::DeviceSinkBuilder::from_default_device()
+        .and_then(|b| b.with_error_callback(move |_| f.store(true, Ordering::Relaxed)).open_stream())
+        .or_else(|_| rodio::DeviceSinkBuilder::open_default_sink())
+        .map_err(|e| format!("no audio output device: {e}"))?;
+    device.log_on_drop(false);
+    failed.store(false, Ordering::Relaxed);
+    Ok(device)
 }
 
 impl Audio {
     pub fn open() -> Result<Self, String> {
-        let mut device =
-            rodio::DeviceSinkBuilder::open_default_sink().map_err(|e| format!("no audio output device: {e}"))?;
-        device.log_on_drop(false);
-        let player = rodio::Player::connect_new(device.mixer());
-        Ok(Self { _device: device, player, volume: 0.8 })
+        let device_failed = Arc::new(AtomicBool::new(false));
+        let device = open_device(&device_failed)?;
+        Ok(Self { device, device_failed, player: None, paused: false, volume: 0.8 })
     }
 
     pub fn set_volume(&mut self, v: f32) {
         self.volume = v;
-        self.player.set_volume(v);
+        if let Some(p) = &self.player {
+            p.set_volume(v);
+        }
     }
-    pub fn pause(&self) {
-        self.player.pause();
+    pub fn pause(&mut self) {
+        self.paused = true;
+        if let Some(p) = &self.player {
+            p.pause();
+        }
     }
-    pub fn resume(&self) {
-        self.player.play();
+    pub fn resume(&mut self) {
+        self.paused = false;
+        if let Some(p) = &self.player {
+            p.play();
+        }
     }
     pub fn is_paused(&self) -> bool {
-        self.player.is_paused()
+        self.paused
     }
-    pub fn stop(&self) {
-        self.player.stop();
+    pub fn stop(&mut self) {
+        if let Some(p) = self.player.take() {
+            p.stop();
+        }
     }
 
     /// Starts playing `asset` from `start_frame`. Blocks only until the stream format is known.
     pub fn play(&mut self, vfs: Arc<dyn Vfs>, asset: AudioAsset, asset_index: usize, start_frame: u64) -> Playback {
-        self.player.stop();
+        self.stop();
+        if self.device_failed.load(Ordering::Relaxed)
+            && let Ok(d) = open_device(&self.device_failed)
+        {
+            self.device = d;
+        }
         let (tx, rx) = bounded::<Vec<f32>>(16);
         let (facts_tx, facts_rx) = bounded::<Result<StreamFacts, String>>(1);
         let stop = Arc::new(AtomicBool::new(false));
@@ -196,7 +232,8 @@ impl Audio {
             facts_rx.recv_timeout(Duration::from_secs(20)).unwrap_or_else(|_| Err("decoder did not respond".into()));
         match facts {
             Ok(facts) => {
-                self.player.append(ChunkSource {
+                let (player, queue) = rodio::Player::new();
+                player.append(ChunkSource {
                     rx,
                     cur: Vec::new(),
                     idx: 0,
@@ -206,8 +243,10 @@ impl Audio {
                     finished: finished.clone(),
                     silence_left: 0,
                 });
-                self.player.set_volume(self.volume);
-                self.player.play();
+                player.set_volume(self.volume);
+                self.device.mixer().add(queue);
+                self.paused = false;
+                self.player = Some(player);
                 Playback { asset_index, facts, start_frame, consumed, finished, stop, error: None }
             }
             Err(e) => {
@@ -296,5 +335,44 @@ impl Waveform {
             })
             .expect("spawn waveform thread");
         Self { asset_index, peaks, frames_per_peak: fpp, done, cancel }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn track(rate: u32, channels: u16, frames: usize) -> ChunkSource {
+        let (tx, rx) = bounded(1);
+        tx.send(vec![0.5f32; frames * channels as usize]).unwrap();
+        ChunkSource {
+            rx,
+            cur: Vec::new(),
+            idx: 0,
+            channels,
+            rate,
+            consumed: Arc::new(AtomicU64::new(0)),
+            finished: Arc::new(AtomicBool::new(false)),
+            silence_left: 0,
+        }
+    }
+
+    /// Output samples (48 kHz stereo) carrying the track's signal, as a device mixer sees them.
+    fn converted(src: ChunkSource) -> usize {
+        let (player, queue) = rodio::Player::new();
+        player.append(src);
+        let out =
+            rodio::source::UniformSourceIterator::new(queue, NonZero::new(2).unwrap(), NonZero::new(48000).unwrap());
+        // the queue keeps the stream alive with silence after the track: count up to it
+        out.take(1_000_000).skip_while(|v| *v == 0.0).take_while(|v| *v != 0.0).count()
+    }
+
+    #[test]
+    fn every_track_is_converted_at_its_own_rate() {
+        // one second each, whatever the order: 48000 stereo frames = 96000 samples (± resampler edge)
+        for (rate, ch) in [(22050, 1), (44100, 2), (5500, 1), (48000, 2), (22050, 2)] {
+            let n = converted(track(rate, ch, rate as usize));
+            assert!((95_900..=96_100).contains(&n), "{rate} Hz {ch} ch: {n} samples");
+        }
     }
 }

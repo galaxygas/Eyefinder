@@ -89,7 +89,17 @@ pub enum AssetKind {
     /// GTA III / Vice City `SFX.SDT` entry (20 bytes) into `SFX.RAW`.
     Sfx { raw: String, offset: u32, size: u32, rate: u32, loop_start: u32, loop_end: i32 },
     /// GTA2 24-byte SDT record; displacement is stored verbatim, not randomized on export.
-    Gta2Sfx { raw: String, offset: u32, size: u32, rate: u32, random_displacement: i32, loop_start: u32, loop_end: i32 },
+    /// `bits` is 16 (signed) or 8 (unsigned, the police radio slots), see [`crate::legacy`].
+    Gta2Sfx {
+        raw: String,
+        offset: u32,
+        size: u32,
+        rate: u32,
+        bits: u8,
+        random_displacement: i32,
+        loop_start: u32,
+        loop_end: i32,
+    },
     /// A Sega Dreamcast `.STR` stream (GTA2 Dreamcast), see [`crate::dcstr`].
     DcStr { path: String },
     /// A Red Book CD audio track: raw 16-bit stereo PCM at 44100 Hz ([`ef_core::vfs::CD_AUDIO_DIR`]).

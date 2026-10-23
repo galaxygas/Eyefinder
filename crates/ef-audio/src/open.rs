@@ -141,6 +141,17 @@ pub fn open(asset: &AudioAsset, vfs: &dyn Vfs, opts: DecodeOptions) -> Result<Op
             o.more_streams = streams;
             Ok(o)
         }
+        AssetKind::Gta2Sfx { raw, offset, size, rate, bits: 8, .. } => {
+            use crate::pcm::{PcmFormat, SampleKind};
+            let s = ByteStream::open_range(vfs, raw, *offset as u64, *size as u64, Xform::None)?;
+            let mut o = Opened::plain(Box::new(RawPcmSource::with_format(
+                s,
+                PcmFormat::new(SampleKind::U8, 1, *rate),
+                "PCM 8-bit unsigned (GTA2 police radio)",
+            )));
+            o.extra.insert("sfx_raw_offset".into(), json!(offset));
+            Ok(o)
+        }
         AssetKind::Sfx { raw, offset, size, rate, loop_start, loop_end }
         | AssetKind::Gta2Sfx { raw, offset, size, rate, loop_start, loop_end, .. } => {
             let s = ByteStream::open_range(vfs, raw, *offset as u64, *size as u64, Xform::None)?;

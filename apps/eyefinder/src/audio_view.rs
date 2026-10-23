@@ -32,7 +32,7 @@ fn format_label(a: &AudioAsset) -> String {
         AssetKind::Vb { .. } => "VB (PS-ADPCM)".into(),
         AssetKind::Movie { .. } => "MPEG movie".into(),
         AssetKind::LegacyPcm { bits, channels, .. } => format!("PCM {bits}-bit / {channels} ch"),
-        AssetKind::Gta2Sfx { .. } => "PCM (GTA2 SDT)".into(),
+        AssetKind::Gta2Sfx { bits, .. } => format!("PCM {bits}-bit (GTA2 SDT)"),
         AssetKind::Sfx { .. } => "PCM (SFX.RAW)".into(),
         AssetKind::SaTrack { .. } => "Ogg Vorbis".into(),
         AssetKind::SaSfx { .. } => "PCM (bank)".into(),
@@ -112,7 +112,7 @@ impl EyefinderApp {
     }
 
     pub(crate) fn stop_playback(&mut self) {
-        if let Ok(a) = &self.audio {
+        if let Ok(a) = &mut self.audio {
             a.stop();
         }
         self.playback = None;
@@ -121,7 +121,7 @@ impl EyefinderApp {
     }
 
     pub(crate) fn toggle_pause(&mut self, ctx: &egui::Context) {
-        match (&self.audio, &self.playback) {
+        match (&mut self.audio, &self.playback) {
             (Ok(a), Some(p)) if !p.finished() => {
                 if a.is_paused() {
                     a.resume()
