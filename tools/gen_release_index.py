@@ -120,10 +120,10 @@ WIKI_PLATFORMS = [
 
 GAPS = [
     ('ps4, ps5, xone, xsx', 'Disc and digital releases for PlayStation 4/5 and Xbox One / Series X|S: no redump or No-Intro DAT for these platforms exists in libretro-database or on redump.org, so their regional releases, serials and versions are not listed.'),
-    ('ios, android, fireos, winphone', 'Mobile releases: the stores publish only the current version; no source of the version history was reachable (Google Play and Apple pages give no history; PCGamingWiki answered 403).'),
+    ('ios, android, fireos, winphone', 'Mobile releases: the iTunes Search API gives only the current version, and no source of the version history was reachable (PCGamingWiki answered 403); the stores were not used.'),
     ('pc', 'PC patches of GTA IV (1.0.0.0 to 1.0.8.0, Complete Edition 1.2.0.x) and GTA V builds: the citable lists (PCGamingWiki, gtamods.com) could not be reached (403 / 503).'),
     ('pc', 'Digital PC releases (Steam, Rockstar Games Launcher, Epic, GOG and the old Rockstar Classics downloads): store build numbers carry no version names; only the executable builds Eyefinder identifies are listed.'),
-    ('mac', 'Mac releases: no DAT of Mac discs or of the App Store versions was used.'),
+    ('mac', 'Mac releases: redump publishes a Mac disc DAT, but it has not been added to the index yet; App Store versions are not listed.'),
     ('psp, ps3, x360', 'Digital entries (PSN, Xbox Live) come from No-Intro and list licence or add-on files, not every regional storefront release.'),
 ]
 

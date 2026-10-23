@@ -11691,7 +11691,7 @@
   },
   {
    "platforms": "ios, android, fireos, winphone",
-   "text": "Mobile releases: the stores publish only the current version; no source of the version history was reachable (Google Play and Apple pages give no history; PCGamingWiki answered 403)."
+   "text": "Mobile releases: the iTunes Search API gives only the current version, and no source of the version history was reachable (PCGamingWiki answered 403); the stores were not used."
   },
   {
    "platforms": "pc",
@@ -11703,7 +11703,7 @@
   },
   {
    "platforms": "mac",
-   "text": "Mac releases: no DAT of Mac discs or of the App Store versions was used."
+   "text": "Mac releases: redump publishes a Mac disc DAT, but it has not been added to the index yet; App Store versions are not listed."
   },
   {
    "platforms": "psp, ps3, x360",

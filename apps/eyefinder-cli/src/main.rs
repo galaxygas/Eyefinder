@@ -19,6 +19,7 @@ USAGE:
     eyefinder-cli textures <game folder, asset file or disc image> <output folder> [choice] [texture options]
     eyefinder-cli text     <game folder, asset file or disc image> [choice]
     eyefinder-cli files    <game folder or disc image>
+    eyefinder-cli docs     missing
 
 scan lists the copies found in Steam libraries, the Rockstar Games Launcher and the usual Rockstar
 Games folders, with the store each belongs to.
@@ -117,6 +118,10 @@ fn main() -> ExitCode {
         eprintln!("{USAGE}");
         return ExitCode::from(2);
     };
+    if cmd == "docs" && args.get(1).map(String::as_str) == Some("missing") {
+        print!("{}", ef_core::docs::missing_markdown());
+        return ExitCode::SUCCESS;
+    }
     if cmd == "files" {
         // Every file with its size: the file list a format report asks for (CONTRIBUTING.md).
         let vfs = match ef_core::import::open_path(&PathBuf::from(path)) {

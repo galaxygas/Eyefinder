@@ -3,6 +3,7 @@
 pub mod console;
 pub mod cue;
 pub mod discimg;
+pub mod docs;
 pub mod edition;
 mod gdi;
 pub mod gxt;
@@ -475,6 +476,12 @@ const SHARED_MARKERS: &[Marker] = &[Marker {
     ],
     source: "London 1969 sample banks, which London 1961 also uses",
 }];
+
+/// The files that identify `game`: `(platform layout, files, what they are)`. Detection needs
+/// two thirds of a set (see `MARKERS`).
+pub fn detection_markers(game: Game) -> Vec<(Platform, &'static [&'static str], &'static str)> {
+    MARKERS.iter().chain(SHARED_MARKERS).filter(|m| m.game == game).map(|m| (m.layout, m.files, m.source)).collect()
+}
 
 fn console_of(vfs: &dyn Vfs) -> Option<(Platform, &'static str)> {
     // Console discs carry their boot files at the root: SYSTEM.CNF on PS2, default.xbe on Xbox.
