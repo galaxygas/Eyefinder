@@ -407,6 +407,16 @@ def main():
             for pid in pids or ['?']:
                 g['platform_dates'].append(dict(platform=pid, label=label or plain(box.get('platforms', '')),
                                                 region=region, date=date, source=sid))
+        # MS-DOS and Windows are both "pc": keep one row per platform, region and date.
+        merged = {}
+        for d in g['platform_dates']:
+            key = (d['platform'], d['region'], d['date'])
+            if key in merged:
+                if d['label'] not in merged[key]['label']:
+                    merged[key]['label'] += ', ' + d['label']
+            else:
+                merged[key] = dict(d)
+        g['platform_dates'] = list(merged.values())
         dates = sorted(d['date'] for d in g['platform_dates'])
         g['first_release'] = dates[0] if dates else None
 

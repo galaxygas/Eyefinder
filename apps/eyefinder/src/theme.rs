@@ -1,8 +1,9 @@
 //! Fonts, colours and widget styling.
 //!
 //! The look: near-black neutral greys (no blue cast), one yellow accent, sharp 4-6 px corners,
-//! accent bars and glows on whatever is selected. Every text colour meets WCAG 2.x contrast 4.5:1
-//! against every surface it is drawn on (checked in the tests below).
+//! accent bars and glows on whatever is selected. "Vice City Night" swaps the greys for a purple
+//! night and the yellow for neon pink. Every text colour meets WCAG 2.x contrast 4.5:1 against
+//! every surface it is drawn on (checked in the tests below).
 
 use std::sync::Arc;
 
@@ -77,6 +78,25 @@ pub const LIGHT: Palette = Palette {
     unsupported: Color32::from_rgb(0x5E, 0x5C, 0x58),
     danger: Color32::from_rgb(0xB5, 0x24, 0x24),
     dark: false,
+};
+
+/// "Vice City Night": the city after dark, a deep purple-navy sky with neon pink and cyan signs.
+pub const VICE_NIGHT: Palette = Palette {
+    bg: Color32::from_rgb(0x12, 0x0A, 0x22),
+    panel: Color32::from_rgb(0x1A, 0x10, 0x30),
+    raised: Color32::from_rgb(0x25, 0x18, 0x42),
+    border: Color32::from_rgb(0x3D, 0x2A, 0x66),
+    text: Color32::from_rgb(0xF6, 0xEE, 0xFF),
+    muted: Color32::from_rgb(0xB8, 0xA8, 0xDA),
+    accent: Color32::from_rgb(0xFF, 0x3E, 0xA5),
+    accent_text: Color32::from_rgb(0xFF, 0x7A, 0xC4),
+    on_accent: Color32::from_rgb(0x1C, 0x05, 0x14),
+    accent_soft: Color32::from_rgb(0x3B, 0x15, 0x3E),
+    verified: Color32::from_rgb(0x3F, 0xE6, 0xC3),
+    spec: Color32::from_rgb(0x5A, 0xD8, 0xFF),
+    unsupported: Color32::from_rgb(0xAC, 0x9C, 0xCC),
+    danger: Color32::from_rgb(0xFF, 0x8A, 0x8A),
+    dark: true,
 };
 
 impl Palette {
@@ -168,8 +188,27 @@ pub fn install(ctx: &egui::Context) {
     });
 }
 
+fn night_id() -> egui::Id {
+    egui::Id::new("eyefinder-vice-city-night")
+}
+
+/// Applies a theme choice. egui keeps one dark and one light style, so Vice City Night replaces
+/// the dark style while it is chosen, and [`palette`] is told which palette is active.
+pub fn apply(ctx: &egui::Context, t: crate::settings::ThemeChoice) {
+    use crate::settings::ThemeChoice;
+    let night = t == ThemeChoice::ViceCityNight;
+    ctx.set_visuals_of(egui::Theme::Dark, visuals(if night { &VICE_NIGHT } else { &DARK }));
+    ctx.data_mut(|d| d.insert_temp(night_id(), night));
+    ctx.set_theme(match t {
+        ThemeChoice::Dark | ThemeChoice::ViceCityNight => egui::ThemePreference::Dark,
+        ThemeChoice::Light => egui::ThemePreference::Light,
+        ThemeChoice::System => egui::ThemePreference::System,
+    });
+}
+
 pub fn palette(ctx: &egui::Context) -> Palette {
     match ctx.theme() {
+        egui::Theme::Dark if ctx.data(|d| d.get_temp::<bool>(night_id())).unwrap_or(false) => VICE_NIGHT,
         egui::Theme::Dark => DARK,
         egui::Theme::Light => LIGHT,
     }
@@ -270,7 +309,7 @@ mod tests {
 
     #[test]
     fn text_colours_meet_wcag_aa() {
-        for p in [DARK, LIGHT] {
+        for p in [DARK, LIGHT, VICE_NIGHT] {
             for surface in [p.bg, p.panel, p.raised, p.accent_soft] {
                 for (name, fg) in [
                     ("text", p.text),

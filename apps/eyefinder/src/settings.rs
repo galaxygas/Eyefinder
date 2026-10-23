@@ -11,6 +11,21 @@ pub enum ThemeChoice {
     Dark,
     Light,
     System,
+    /// Deep purple night, neon pink and cyan.
+    ViceCityNight,
+}
+
+impl ThemeChoice {
+    pub const ALL: [ThemeChoice; 4] =
+        [ThemeChoice::Dark, ThemeChoice::Light, ThemeChoice::System, ThemeChoice::ViceCityNight];
+    pub fn label(self) -> &'static str {
+        match self {
+            ThemeChoice::Dark => "Dark",
+            ThemeChoice::Light => "Light",
+            ThemeChoice::System => "Follow system",
+            ThemeChoice::ViceCityNight => "Vice City Night",
+        }
+    }
 }
 
 /// A game in the library: where it is, and the game / platform / version the user chose for it
@@ -48,6 +63,8 @@ impl From<LibraryItemRepr> for LibraryItem {
 pub struct Settings {
     pub library: Vec<LibraryItem>,
     pub out_root: Option<PathBuf>,
+    /// An unknown (newer) theme name reads as the default, so the rest of the settings survive.
+    #[serde(deserialize_with = "theme_or_default")]
     pub theme: ThemeChoice,
     pub float_output: bool,
     pub split_markers: bool,
@@ -60,6 +77,10 @@ pub struct Settings {
     pub tile_size: f32,
     pub texture_mipmaps: bool,
     pub texture_dds: bool,
+}
+
+fn theme_or_default<'de, D: serde::Deserializer<'de>>(d: D) -> Result<ThemeChoice, D::Error> {
+    Ok(ThemeChoice::deserialize(d).unwrap_or_default())
 }
 
 impl Default for Settings {
@@ -97,6 +118,17 @@ mod tests {
         let new = ron::to_string(&s).unwrap();
         let back: Settings = ron::from_str(&new).unwrap();
         assert_eq!(back.library, s.library);
+    }
+
+    #[test]
+    fn themes_round_trip_and_unknown_ones_fall_back_to_dark() {
+        for t in ThemeChoice::ALL {
+            let s = Settings { theme: t, ..Default::default() };
+            let back: Settings = ron::from_str(&ron::to_string(&s).unwrap()).unwrap();
+            assert_eq!(back.theme, t);
+        }
+        let future: Settings = ron::from_str(r#"(library: ["/g/gta3"], theme: Miami)"#).unwrap();
+        assert_eq!((future.theme, future.library.len()), (ThemeChoice::Dark, 1));
     }
 
     #[test]

@@ -49,6 +49,16 @@ enum LoadMsg {
 }
 
 /// What the centre of the window shows.
+/// The top-level page: the library with its asset browser, the release index, or the
+/// documentation tracker.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub(crate) enum Page {
+    #[default]
+    Library,
+    Index,
+    Documentation,
+}
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub(crate) enum View {
     Audio(Option<Category>),
@@ -195,6 +205,16 @@ pub struct EyefinderApp {
     load_tx: Sender<LoadMsg>,
     load_rx: Receiver<LoadMsg>,
     pub(crate) view: View,
+    pub(crate) page: Page,
+    // release index page
+    pub(crate) index_search: String,
+    /// Platform id to show, `None` = all.
+    pub(crate) index_platform: Option<String>,
+    pub(crate) index_eyefinder_only: bool,
+    // documentation page: the release-index game id of the card shown
+    pub(crate) docs_game: String,
+    /// Set by "Documentation" buttons: scroll the card list to this game once.
+    pub(crate) docs_scroll: bool,
     // audio browser
     pub(crate) search: String,
     pub(crate) audio_view: Vec<usize>,
@@ -269,6 +289,12 @@ impl EyefinderApp {
             load_tx,
             load_rx,
             view: View::Audio(None),
+            page: Page::Library,
+            index_search: String::new(),
+            index_platform: None,
+            index_eyefinder_only: false,
+            docs_game: "gta1".into(),
+            docs_scroll: false,
             search: String::new(),
             audio_view: Vec::new(),
             audio_key: None,
@@ -582,11 +608,7 @@ impl EyefinderApp {
 }
 
 pub(crate) fn apply_theme(ctx: &egui::Context, t: ThemeChoice) {
-    ctx.set_theme(match t {
-        ThemeChoice::Dark => egui::ThemePreference::Dark,
-        ThemeChoice::Light => egui::ThemePreference::Light,
-        ThemeChoice::System => egui::ThemePreference::System,
-    });
+    theme::apply(ctx, t);
 }
 
 pub(crate) fn plural(n: usize, noun: &str) -> String {
@@ -699,6 +721,60 @@ pub(crate) fn nav_row(
     resp
 }
 
+/// A collapsible section: a full-width header (rotating chevron, icon, title, count) that opens and
+/// closes `body`. The open state is remembered per `id`.
+#[allow(clippy::too_many_arguments)]
+pub(crate) fn collapsible(
+    ui: &mut Ui,
+    p: &Palette,
+    id: impl std::hash::Hash + std::fmt::Debug,
+    ic: &str,
+    title: &str,
+    count: &str,
+    default_open: bool,
+    body: impl FnOnce(&mut Ui),
+) {
+    let sid = ui.make_persistent_id(("section", id));
+    let mut state = egui::collapsing_header::CollapsingState::load_with_default_open(ui.ctx(), sid, default_open);
+    let (rect, resp) = ui.allocate_exact_size(vec2(ui.available_width(), 28.0), Sense::click());
+    if resp.clicked() {
+        state.toggle(ui);
+    }
+    let open = state.openness(ui.ctx());
+    let painter = ui.painter();
+    if resp.hovered() {
+        painter.rect_filled(rect, CornerRadius::same(4), p.raised);
+    }
+    // chevron rotates as the section opens
+    let c = rect.left_center() + vec2(9.0, 0.0);
+    let rot = egui::emath::Rot2::from_angle(std::f32::consts::FRAC_PI_2 * open);
+    let pts = [vec2(-3.0, -4.5), vec2(3.0, 0.0), vec2(-3.0, 4.5)].map(|v| c + rot * v);
+    painter.add(egui::Shape::line(pts.to_vec(), Stroke::new(1.6, p.muted)));
+    painter.text(
+        rect.left_center() + vec2(22.0, 0.0),
+        egui::Align2::LEFT_CENTER,
+        ic,
+        egui::FontId::proportional(14.0),
+        p.accent_text,
+    );
+    let count_w = 10.0 + 7.0 * count.len() as f32;
+    let galley =
+        theme::elided(painter, title, egui::FontId::new(12.0, semibold()), p.text, rect.width() - 50.0 - count_w);
+    painter.galley(egui::pos2(rect.left() + 42.0, rect.center().y - galley.size().y / 2.0), galley, p.text);
+    painter.text(
+        rect.right_center() - vec2(8.0, 0.0),
+        egui::Align2::RIGHT_CENTER,
+        count,
+        egui::FontId::proportional(11.5),
+        p.muted,
+    );
+    state.store(ui.ctx());
+    state.show_body_unindented(ui, |ui| {
+        body(ui);
+        ui.add_space(4.0);
+    });
+}
+
 pub(crate) fn category_icon(c: Category) -> &'static str {
     match c {
         Category::Radio => icon::RADIO,
@@ -773,7 +849,11 @@ impl eframe::App for EyefinderApp {
             || self.job.is_some()
             || self.import.is_some()
             || self.scan.is_some();
-        if !modal_open && !ctx.egui_wants_keyboard_input() && matches!(self.view, View::Audio(_)) {
+        if !modal_open
+            && !ctx.egui_wants_keyboard_input()
+            && self.page == Page::Library
+            && matches!(self.view, View::Audio(_))
+        {
             if ctx.input(|i| i.key_pressed(egui::Key::Space)) {
                 self.toggle_pause(&ctx);
             }
@@ -785,11 +865,14 @@ impl eframe::App for EyefinderApp {
         }
 
         self.top_bar(ui, &p, &ctx);
-        if matches!(self.view, View::Audio(_)) || self.playback.is_some() {
+        let library = self.page == Page::Library;
+        if (library && matches!(self.view, View::Audio(_))) || self.playback.is_some() {
             self.player_bar(ui, &p, &ctx);
         }
-        self.sidebar(ui, &p, &ctx);
-        if self.current().is_some() {
+        if library {
+            self.sidebar(ui, &p, &ctx);
+        }
+        if library && self.current().is_some() {
             match self.view {
                 View::Audio(_) => self.audio_details(ui, &p),
                 View::Textures(_) => self.texture_details(ui, &p),
@@ -799,7 +882,11 @@ impl eframe::App for EyefinderApp {
         egui::CentralPanel::no_frame().show(ui, |ui| {
             egui::Frame::new().fill(p.bg).inner_margin(Margin::same(16)).show(ui, |ui| {
                 ui.set_min_size(ui.available_size());
-                if self.selected_entry.is_none() {
+                if self.page == Page::Index {
+                    self.index_page(ui, &p);
+                } else if self.page == Page::Documentation {
+                    self.docs_page(ui, &p);
+                } else if self.selected_entry.is_none() {
                     self.welcome(ui, &p, &ctx);
                 } else if self.loading_or_failed(ui, &p) {
                 } else {
@@ -889,19 +976,56 @@ impl EyefinderApp {
                     ui.label(RichText::new(icon::EYE).size(22.0).color(p.accent_text));
                     ui.label(RichText::new("EYEFINDER").size(16.0).family(semibold()).extra_letter_spacing(2.0));
                     ui.label(RichText::new("GTA asset viewer & extractor").size(12.0).color(p.muted));
+                    ui.add_space(14.0);
+                    for (page, ic, label, tip) in [
+                        (Page::Library, icon::BOOKS, "Library", "Your games and their assets"),
+                        (
+                            Page::Index,
+                            icon::LIST_MAGNIFYING_GLASS,
+                            "Index",
+                            "Every GTA game, edition, release and version",
+                        ),
+                        (
+                            Page::Documentation,
+                            icon::BOOK_OPEN_TEXT,
+                            "Documentation",
+                            "What this build knows about each game's files",
+                        ),
+                    ] {
+                        let on = self.page == page;
+                        let b =
+                            egui::Button::new(RichText::new(format!("{ic} {label}")).family(semibold()).color(if on {
+                                p.on_accent
+                            } else {
+                                p.text
+                            }))
+                            .fill(if on { p.accent } else { p.raised });
+                        if ui.add(b).on_hover_text(tip).clicked() {
+                            self.page = page;
+                        }
+                    }
                     ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
                         if ui.button(RichText::new(icon::INFO).size(16.0)).on_hover_text("About Eyefinder").clicked() {
                             self.show_about = true;
                         }
-                        let (ic, tip, next) = match self.settings.theme {
-                            ThemeChoice::Dark => (icon::MOON, "Theme: dark", ThemeChoice::Light),
-                            ThemeChoice::Light => (icon::SUN, "Theme: light", ThemeChoice::System),
-                            ThemeChoice::System => (icon::DESKTOP, "Theme: follow system", ThemeChoice::Dark),
-                        };
-                        if ui.button(RichText::new(ic).size(16.0)).on_hover_text(tip).clicked() {
-                            self.settings.theme = next;
-                            apply_theme(ctx, next);
-                        }
+                        let current = self.settings.theme;
+                        ui.menu_button(RichText::new(format!("{} Themes", icon::PALETTE)).size(13.5), |ui| {
+                            for t in ThemeChoice::ALL {
+                                let ic = match t {
+                                    ThemeChoice::Dark => icon::MOON,
+                                    ThemeChoice::Light => icon::SUN,
+                                    ThemeChoice::System => icon::DESKTOP,
+                                    ThemeChoice::ViceCityNight => icon::TREE_PALM,
+                                };
+                                if ui.selectable_label(t == current, format!("{ic}  {}", t.label())).clicked() {
+                                    self.settings.theme = t;
+                                    apply_theme(ctx, t);
+                                    ui.close();
+                                }
+                            }
+                        })
+                        .response
+                        .on_hover_text("Choose the colour theme");
                         ui.add_space(6.0);
                         self.add_buttons(ui, p, ctx);
                     });
@@ -944,7 +1068,13 @@ impl EyefinderApp {
             .show(ui, |ui| {
                 section_label(ui, p, "Library");
                 ui.add_space(6.0);
-                self.library_cards(ui, p);
+                let max =
+                    if self.selected_entry.is_some() { ui.available_height() * 0.45 } else { ui.available_height() };
+                egui::ScrollArea::vertical()
+                    .id_salt("library")
+                    .max_height(max)
+                    .auto_shrink([false, true])
+                    .show(ui, |ui| self.library_cards(ui, p));
                 if self.entries.is_empty() {
                     ui.label(
                         RichText::new(
@@ -988,99 +1118,179 @@ impl EyefinderApp {
             });
     }
 
+    /// The library in display order: one group per game, games in order of first release (release
+    /// index), entries by when their platform got the game. `entries` itself keeps insertion order,
+    /// because selection, playback and dialogs refer to entries by position.
+    pub(crate) fn library_groups(&self) -> Vec<(Option<Game>, Vec<usize>)> {
+        let idx = ef_core::index::index();
+        let first = |g: Option<Game>| {
+            g.and_then(|g| idx.of(g)).and_then(|x| x.first_release.clone()).unwrap_or_else(|| "9999".into())
+        };
+        let platform_of = |e: &Entry| match (&e.choice, &e.state) {
+            (Some(c), _) => Some(c.platform),
+            (None, LoadState::Ready { install, .. }) => Some(install.platform),
+            _ => None,
+        };
+        let mut groups: Vec<(Option<Game>, Vec<usize>)> = Vec::new();
+        for (i, e) in self.entries.iter().enumerate() {
+            let g = self.entry_game(e);
+            match groups.iter_mut().find(|(x, _)| *x == g) {
+                Some((_, v)) => v.push(i),
+                None => groups.push((g, vec![i])),
+            }
+        }
+        groups.sort_by_key(|(g, _)| (g.is_none(), first(*g), g.map(|g| g.name())));
+        for (g, v) in &mut groups {
+            let game = g.and_then(|g| idx.of(g));
+            v.sort_by_key(|&i| {
+                let pl = platform_of(&self.entries[i]);
+                let date = pl
+                    .and_then(|pl| game.and_then(|x| x.first_on(ef_core::index::platform_id(pl))))
+                    .unwrap_or("9999")
+                    .to_string();
+                (date, pl.map(|pl| pl.name()), i)
+            });
+        }
+        groups
+    }
+
     fn library_cards(&mut self, ui: &mut Ui, p: &Palette) {
         let mut select = None;
         let mut remove = None;
         let mut change = None;
         let mut locate = None;
-        for (i, e) in self.entries.iter().enumerate() {
-            let selected = self.selected_entry == Some(i);
-            let r = egui::Frame::new()
-                .fill(if selected { p.accent_soft } else { p.raised })
-                .stroke(Stroke::new(1.0, if selected { p.accent } else { p.border }))
-                .corner_radius(CornerRadius::same(6))
-                .inner_margin(Margin::symmetric(10, 8))
-                .show(ui, |ui| {
-                    ui.set_width(ui.available_width());
-                    match &e.state {
-                        LoadState::Ready { install, catalog } => {
-                            ui.horizontal_wrapped(|ui| {
-                                ui.label(RichText::new(install.game.short()).family(semibold()).size(14.5));
-                                pill(ui, install.platform.short(), p.on_accent, p.accent);
-                                if !install.edition.is_unknown() {
-                                    pill(ui, &install.edition.label, p.text, p.border);
+        for (game, members) in self.library_groups() {
+            let (title, ic) = match game {
+                Some(g) => (g.name().to_string(), icon::GAME_CONTROLLER),
+                None => ("Reading or not recognised".to_string(), icon::HOURGLASS),
+            };
+            let year = game
+                .and_then(|g| ef_core::index::index().of(g))
+                .and_then(|x| x.first_release.as_deref().map(|d| d[..4].to_string()));
+            let count = match year {
+                Some(y) => format!("{y} · {}", members.len()),
+                None => members.len().to_string(),
+            };
+            collapsible(ui, p, ("library", title.as_str()), ic, &title, &count, true, |ui| {
+                for &i in &members {
+                    let e = &self.entries[i];
+                    let selected = self.selected_entry == Some(i);
+                    let r = egui::Frame::new()
+                        .fill(if selected { p.accent_soft } else { p.raised })
+                        .stroke(Stroke::new(1.0, if selected { p.accent } else { p.border }))
+                        .corner_radius(CornerRadius::same(5))
+                        .inner_margin(Margin::symmetric(8, 4))
+                        .show(ui, |ui| {
+                            ui.set_width(ui.available_width());
+                            let name = e.path.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
+                            match &e.state {
+                                LoadState::Ready { install, catalog } => {
+                                    ui.horizontal(|ui| {
+                                        ui.spacing_mut().item_spacing.x = 5.0;
+                                        pill(ui, install.platform.short(), p.on_accent, p.accent);
+                                        if let ef_core::Store::Steam { .. } = install.store {
+                                            pill(ui, "Steam", p.text, p.border);
+                                        } else if install.store == ef_core::Store::RockstarLauncher {
+                                            pill(ui, "Rockstar Launcher", p.text, p.border);
+                                        }
+                                        let label = if install.edition.is_unknown() {
+                                            "Version not identified".to_string()
+                                        } else {
+                                            install.edition.label.clone()
+                                        };
+                                        let w = ui.available_width();
+                                        let g = theme::elided(
+                                            ui.painter(),
+                                            label.clone(),
+                                            egui::FontId::proportional(11.5),
+                                            p.text,
+                                            w,
+                                        );
+                                        ui.add(egui::Label::new(g)).on_hover_text(label);
+                                    });
+                                    let tex = match &e.textures {
+                                        TexState::Ready(t) => plural(t.assets.len(), "texture"),
+                                        TexState::Indexing { .. } => "indexing textures...".into(),
+                                        TexState::Waiting => String::new(),
+                                    };
+                                    let line =
+                                        format!("{name} · {} · {tex}", plural(catalog.assets.len(), "audio item"));
+                                    let g = theme::elided(
+                                        ui.painter(),
+                                        line,
+                                        egui::FontId::proportional(10.5),
+                                        p.muted,
+                                        ui.available_width(),
+                                    );
+                                    ui.add(egui::Label::new(g)).on_hover_text(e.path.display().to_string());
                                 }
-                                if let ef_core::Store::Steam { .. } = install.store {
-                                    pill(ui, "Steam", p.text, p.border);
-                                } else if install.store == ef_core::Store::RockstarLauncher {
-                                    pill(ui, "Rockstar Launcher", p.text, p.border);
+                                LoadState::Loading => {
+                                    ui.horizontal(|ui| {
+                                        ui.spinner();
+                                        ui.label(RichText::new(format!("Reading {name}...")).size(11.5).color(p.muted));
+                                    });
                                 }
-                            });
-                            let tex = match &e.textures {
-                                TexState::Ready(t) => plural(t.assets.len(), "texture"),
-                                TexState::Indexing { .. } => "indexing textures...".into(),
-                                TexState::Waiting => String::new(),
-                            };
-                            ui.label(
-                                RichText::new(format!("{} · {tex}", plural(catalog.assets.len(), "audio item")))
-                                    .size(11.5)
-                                    .color(p.muted),
-                            );
-                        }
-                        LoadState::Loading => {
-                            ui.horizontal(|ui| {
-                                ui.spinner();
-                                ui.label("Reading game files...");
-                            });
-                        }
-                        LoadState::Failed(err) => {
-                            ui.label(
-                                RichText::new(format!("{} Could not open", icon::WARNING))
-                                    .color(p.danger)
-                                    .family(semibold()),
-                            );
-                            ui.label(RichText::new(err).size(12.0).color(p.muted));
-                            ui.horizontal(|ui| {
-                                if !e.path.exists()
-                                    && ui.small_button(format!("{} Locate...", icon::FOLDER_OPEN)).clicked()
-                                {
-                                    locate = Some(i);
+                                LoadState::Failed(err) => {
+                                    ui.horizontal(|ui| {
+                                        ui.label(
+                                            RichText::new(format!("{} Could not open", icon::WARNING))
+                                                .color(p.danger)
+                                                .size(11.5)
+                                                .family(semibold()),
+                                        )
+                                        .on_hover_text(err);
+                                        if !e.path.exists()
+                                            && ui.small_button(format!("{} Locate", icon::FOLDER_OPEN)).clicked()
+                                        {
+                                            locate = Some(i);
+                                        }
+                                        if ui.small_button(format!("{} Choose", icon::SLIDERS_HORIZONTAL)).clicked() {
+                                            change = Some(i);
+                                        }
+                                    });
+                                    let g = theme::elided(
+                                        ui.painter(),
+                                        format!("{name} · {err}"),
+                                        egui::FontId::proportional(10.5),
+                                        p.muted,
+                                        ui.available_width(),
+                                    );
+                                    ui.add(egui::Label::new(g)).on_hover_text(format!("{}\n\n{err}", e.path.display()));
                                 }
-                                if ui.small_button(format!("{} Choose game...", icon::SLIDERS_HORIZONTAL)).clicked() {
-                                    change = Some(i);
-                                }
-                            });
-                        }
+                            }
+                        });
+                    if selected {
+                        theme::glow(ui.painter(), r.response.rect, 5, p.accent, 0.8);
                     }
-                    let name = e.path.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
-                    ui.label(RichText::new(name).size(11.0).color(p.muted)).on_hover_text(e.path.display().to_string());
-                });
-            if selected {
-                theme::glow(ui.painter(), r.response.rect, 6, p.accent, 1.0);
-            }
-            let r = r.response.interact(Sense::click());
-            if r.clicked() {
-                select = Some(i);
-            }
-            r.context_menu(|ui| {
-                if ui.button(format!("{} Change game or version...", icon::SLIDERS_HORIZONTAL)).clicked() {
-                    change = Some(i);
-                    ui.close();
-                }
-                if ui.button(format!("{} Locate moved files...", icon::MAP_PIN)).clicked() {
-                    locate = Some(i);
-                    ui.close();
-                }
-                if ui.button(format!("{} Show in file manager", icon::FOLDER_OPEN)).clicked() {
-                    open_in_file_manager(if e.path.is_dir() { &e.path } else { e.path.parent().unwrap_or(&e.path) });
-                    ui.close();
-                }
-                if ui.button(format!("{} Remove from library", icon::TRASH)).clicked() {
-                    remove = Some(i);
-                    ui.close();
+                    let r = r.response.interact(Sense::click());
+                    if r.clicked() {
+                        select = Some(i);
+                    }
+                    r.context_menu(|ui| {
+                        if ui.button(format!("{} Change game or version...", icon::SLIDERS_HORIZONTAL)).clicked() {
+                            change = Some(i);
+                            ui.close();
+                        }
+                        if ui.button(format!("{} Locate moved files...", icon::MAP_PIN)).clicked() {
+                            locate = Some(i);
+                            ui.close();
+                        }
+                        if ui.button(format!("{} Show in file manager", icon::FOLDER_OPEN)).clicked() {
+                            open_in_file_manager(if e.path.is_dir() {
+                                &e.path
+                            } else {
+                                e.path.parent().unwrap_or(&e.path)
+                            });
+                            ui.close();
+                        }
+                        if ui.button(format!("{} Remove from library", icon::TRASH)).clicked() {
+                            remove = Some(i);
+                            ui.close();
+                        }
+                    });
+                    ui.add_space(3.0);
                 }
             });
-            ui.add_space(6.0);
         }
         if let Some(i) = select {
             self.select_entry(i);
@@ -1125,48 +1335,7 @@ impl EyefinderApp {
         let mut new_view = None;
 
         let section = |ui: &mut Ui, id: &str, ic: &str, title: &str, count: String, body: &mut dyn FnMut(&mut Ui)| {
-            let sid = ui.make_persistent_id(("section", id));
-            let mut state = egui::collapsing_header::CollapsingState::load_with_default_open(ui.ctx(), sid, true);
-            let (rect, resp) = ui.allocate_exact_size(vec2(ui.available_width(), 30.0), Sense::click());
-            if resp.clicked() {
-                state.toggle(ui);
-            }
-            let open = state.openness(ui.ctx());
-            let painter = ui.painter();
-            if resp.hovered() {
-                painter.rect_filled(rect, CornerRadius::same(4), p.raised);
-            }
-            // chevron rotates as the section opens
-            let c = rect.left_center() + vec2(9.0, 0.0);
-            let rot = egui::emath::Rot2::from_angle(std::f32::consts::FRAC_PI_2 * open);
-            let pts = [vec2(-3.0, -4.5), vec2(3.0, 0.0), vec2(-3.0, 4.5)].map(|v| c + rot * v);
-            painter.add(egui::Shape::line(pts.to_vec(), Stroke::new(1.6, p.muted)));
-            painter.text(
-                rect.left_center() + vec2(22.0, 0.0),
-                egui::Align2::LEFT_CENTER,
-                ic,
-                egui::FontId::proportional(14.0),
-                p.accent_text,
-            );
-            painter.text(
-                rect.left_center() + vec2(42.0, 0.0),
-                egui::Align2::LEFT_CENTER,
-                title,
-                egui::FontId::new(12.0, semibold()),
-                p.text,
-            );
-            painter.text(
-                rect.right_center() - vec2(8.0, 0.0),
-                egui::Align2::RIGHT_CENTER,
-                count,
-                egui::FontId::proportional(11.5),
-                p.muted,
-            );
-            state.store(ui.ctx());
-            state.show_body_unindented(ui, |ui| {
-                body(ui);
-                ui.add_space(6.0);
-            });
+            collapsible(ui, p, id, ic, title, &count, true, |ui| body(ui));
         };
 
         // AUDIO
@@ -2295,5 +2464,42 @@ mod import_tests {
             app.entry(1).unwrap().1.assets.iter().all(|a| a.source.to_ascii_uppercase().starts_with("GTADATA/UK/"))
         );
         std::fs::remove_dir_all(root.parent().unwrap()).unwrap();
+    }
+
+    #[test]
+    fn library_groups_follow_first_release_and_pages_render() {
+        let ctx = egui::Context::default();
+        theme::install(&ctx);
+        let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test".into()));
+        // Added newest first: GTA2 (1999) on PlayStation, GTA2 on PC, then GTA1 (1997).
+        for (game, platform) in [(Game::Gta2, Platform::Ps1), (Game::Gta2, Platform::Pc), (Game::Gta1, Platform::Pc)] {
+            let choice = ImportChoice { game, platform, edition: "unknown".into() };
+            let path = std::env::temp_dir().join(format!("ef-groups-{game:?}-{platform:?}-missing"));
+            app.add_game(path, Some(choice), &ctx, false);
+        }
+        let groups = app.library_groups();
+        assert_eq!(groups.iter().map(|g| g.0).collect::<Vec<_>>(), [Some(Game::Gta1), Some(Game::Gta2)]);
+        // Within GTA2, the release index dates PC and PlayStation both 1999-10-22: platform name breaks the tie.
+        let gta2: Vec<Platform> =
+            groups[1].1.iter().map(|&i| app.entries[i].choice.as_ref().unwrap().platform).collect();
+        assert_eq!(gta2, [Platform::Pc, Platform::Ps1]);
+        // The Index and Documentation pages render every game without panicking, in every theme.
+        for t in ThemeChoice::ALL {
+            apply_theme(&ctx, t);
+            let p = theme::palette(&ctx);
+            for g in ef_core::index::index().games.iter().map(|g| g.id.clone()) {
+                app.docs_game = g;
+                let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+                    egui::CentralPanel::default().show(ui, |ui| app.docs_page(ui, &p));
+                });
+                out.textures_delta.clear();
+            }
+            app.index_search = "europe".into();
+            let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+                egui::CentralPanel::default().show(ui, |ui| app.index_page(ui, &p));
+            });
+            out.textures_delta.clear();
+        }
+        assert_eq!(theme::palette(&ctx).accent, theme::VICE_NIGHT.accent);
     }
 }
