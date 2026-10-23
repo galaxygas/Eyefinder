@@ -180,8 +180,10 @@ fn dreamcast_gdi_and_cartridge_roms_are_identified() {
     let root = temp("dc");
     let mut ip = vec![b' '; 0x100];
     ip[..16].copy_from_slice(b"SEGA SEGAKATANA ");
-    ip[0x40..0x48].copy_from_slice(b"T-42102N");
+    // The USA disc's IP.BIN fields as redump disc 22119 shows them.
+    ip[0x40..0x47].copy_from_slice(b"T42102N");
     ip[0x4A..0x50].copy_from_slice(b"V1.002");
+    ip[0x50..0x58].copy_from_slice(b"20000425");
     let track3 = iso(&[("1ST_READ.BIN", b"boot")], 45000, &ip);
     std::fs::write(root.join("track03.bin"), raw_mode1(&track3)).unwrap();
     std::fs::write(root.join("track01.bin"), vec![0u8; 2352 * 4]).unwrap();
@@ -311,8 +313,10 @@ fn popstarter_vcd_and_discjuggler_cdi_images_are_read() {
     // whose first data sector is LBA start + pregap - 150 and whose ISO uses absolute sector numbers.
     let mut ip = vec![b' '; 0x100];
     ip[..16].copy_from_slice(b"SEGA SEGAKATANA ");
-    ip[0x40..0x48].copy_from_slice(b"T-42102N");
+    // The USA disc's IP.BIN fields as redump disc 22119 shows them.
+    ip[0x40..0x47].copy_from_slice(b"T42102N");
     ip[0x4A..0x50].copy_from_slice(b"V1.002");
+    ip[0x50..0x58].copy_from_slice(b"20000425");
     let audio: Vec<u8> = (0..2352 * 3).map(|i| (i % 251) as u8).collect();
     for (version, size_code) in [(0x8000_0006u32, 1u32), (0x8000_0005, 2), (0x8000_0004, 1)] {
         let track = iso(&[("1ST_READ.BIN", b"boot"), ("MUSIC.STR", b"str")], 11702, &ip);

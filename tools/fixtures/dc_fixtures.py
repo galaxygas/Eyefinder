@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Synthetic GTA2 Dreamcast GD-ROM fixture: a .gdi sheet, a raw high-density data track with an
-IP.BIN (KallistiOS makeip field layout) and Sega Dreamcast .STR streams (vgmstream
+IP.BIN (KallistiOS makeip field layout; the USA disc's product number, version and date as redump
+disc 22119 shows them) and Sega Dreamcast .STR streams (vgmstream
 src/meta/str_sega.c header), plus their reference decoded by vgmstream-cli.
 
     dc_fixtures.py <vgmstream-cli at f7f764155b227f683adbab25402fe8f2be0b2ec2> <fixture dir>
@@ -33,7 +34,7 @@ def iso(files, base):
     disc = bytearray(19 * 2048)
     ip = bytearray(b' ' * 0x100)
     ip[0:16] = b'SEGA SEGAKATANA '; ip[0x10:0x20] = b'SEGA ENTERPRISES'
-    ip[0x40:0x48] = b'T-42102N'; ip[0x4A:0x50] = b'V1.002'; ip[0x80:0x84] = b'GTA2'
+    ip[0x40:0x47] = b'T42102N'; ip[0x4A:0x50] = b'V1.002'; ip[0x50:0x58] = b'20000425'; ip[0x80:0x84] = b'GTA2'
     disc[:len(ip)] = ip
     d = record(b'\0', base + 18, 2048, True) + record(b'\x01', base + 18, 2048, True)
     for name, data in files:

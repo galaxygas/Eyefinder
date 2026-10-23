@@ -607,6 +607,7 @@ version = "0.2.0"
 dependencies = [
  "dirs",
  "serde",
+ "serde_json",
  "sha1",
  "thiserror 2.0.21",
  "winreg",

@@ -1,0 +1,944 @@
+<?xml version="1.0"?>
+<!DOCTYPE datafile PUBLIC "-//Logiqx//DTD ROM Management Datafile//EN" "http://www.logiqx.com/Dats/datafile.dtd">
+<datafile>
+	<header>
+		<name>IBM - PC compatible</name>
+		<description>IBM - PC compatible - Discs (58837) (2026-06-15 06-43-57)</description>
+		<version>2026-06-15 06-43-57</version>
+		<date>2026-06-15 06-43-57</date>
+		<author>redump.org</author>
+		<homepage>redump.org</homepage>
+		<url>http://redump.org/</url>
+	</header>
+	<game name="Grand Theft Auto III (World) (En,Fr,De,Es,It) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (World) (En,Fr,De,Es,It) (Install)</description>
+		<rom name="Grand Theft Auto III (World) (En,Fr,De,Es,It) (Install).cue" size="121" crc="cafc5571" md5="8ff2ac2c0ba41fc9d1879df5afcc6d65" sha1="8df77cbbe8c679db8deccfd5f5703c2a3a5e9ec1"/>
+		<rom name="Grand Theft Auto III (World) (En,Fr,De,Es,It) (Install).bin" size="788886672" crc="77d19822" md5="4aa5967bd9b9370bdfaacf054bb7f260" sha1="6c854e2f6aaff22431c5e9acc8dba9004c295bea"/>
+	</game>
+	<game name="Grand Theft Auto III (World) (En,Fr,De,Es,It) (Play)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (World) (En,Fr,De,Es,It) (Play)</description>
+		<rom name="Grand Theft Auto III (World) (En,Fr,De,Es,It) (Play).cue" size="118" crc="e14fcfa5" md5="8ba202a40d99de28dceaf2c72054a5cb" sha1="c33268538ee1049d3a3f66e5ba10badaaf3e4c45"/>
+		<rom name="Grand Theft Auto III (World) (En,Fr,De,Es,It) (Play).bin" size="788886672" crc="e972a0e6" md5="873b75c64f3a94e49153c0cf76261f10" sha1="4d5b3fb8d1176920e25262fa44b08d3879e83a6e"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (USA) (En,Es) (v2.0)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (USA) (En,Es) (v2.0)</description>
+		<rom name="Grand Theft Auto - San Andreas (USA) (En,Es) (v2.0).iso" size="4213047296" crc="c6dd788f" md5="656b43bc87004246d3189b2615a336f4" sha1="b4417a7209960f5064064097f8485d5522ed25b0"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (USA, Europe) (En,Fr,De,Es,It) (Play)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (USA, Europe) (En,Fr,De,Es,It) (Play)</description>
+		<rom name="Grand Theft Auto - Vice City (USA, Europe) (En,Fr,De,Es,It) (Play).cue" size="132" crc="5686161a" md5="1a3450e89c9054c47e98535b2d1eabcd" sha1="8843170d452711816e0dc52af9e9a054fdfe2f19"/>
+		<rom name="Grand Theft Auto - Vice City (USA, Europe) (En,Fr,De,Es,It) (Play).bin" size="792024240" crc="98ef9154" md5="d4e119292f5a35f12ba9a9d9582f1218" sha1="834be73ab375ac361d65c3f0468c7a68883aab2a"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (USA) (En,Fr,De,Es,It) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (USA) (En,Fr,De,Es,It) (Install)</description>
+		<rom name="Grand Theft Auto - Vice City (USA) (En,Fr,De,Es,It) (Install).cue" size="127" crc="288b996f" md5="47c3651e7dac67dbfb21e21f2d594b90" sha1="d5819b058c48a3fc712f890daa7133530f8262b7"/>
+		<rom name="Grand Theft Auto - Vice City (USA) (En,Fr,De,Es,It) (Install).bin" size="807500400" crc="a3f64d21" md5="a40bbda36422b6dcf5c5cc0133f4a3e1" sha1="0d550199f05a6ea88cb8ea2ec1b4f7c6ab4a943c"/>
+	</game>
+	<game name="Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Install)</description>
+		<rom name="Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Install).cue" size="119" crc="666961d6" md5="bc8e91540452b79f137eceff3bccae7d" sha1="58760d6b6f3d25add7d0a4c63b69b30a911be84c"/>
+		<rom name="Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Install).bin" size="273142464" crc="7eb3a869" md5="758c110906784a88f66746e5d60451ea" sha1="5d3f2642e2f46b4868e1676fffef525faaa8d7ad"/>
+	</game>
+	<game name="Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Play)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Play)</description>
+		<rom name="Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Play).cue" size="116" crc="cc7efe9e" md5="9a0fe668316af1d78789459a4289a763" sha1="de7f54f5d8054011dc56cb787f9d7cb3f1d5bc6b"/>
+		<rom name="Grand Theft Auto III (USA) (En,Fr,De,Es,It) (Play).bin" size="788538576" crc="5632668d" md5="db48222b8707f5c671cb05f56b89a079" sha1="801de658a568b819defc94e13276b9c71b6fb414"/>
+	</game>
+	<game name="Grand Theft Auto IV (Russia) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Russia) (Disc 1)</description>
+		<rom name="Grand Theft Auto IV (Russia) (Disc 1).iso" size="7860584448" crc="75c3a71c" md5="515010fda91291b2442d305994e5bdd5" sha1="2bff52e146deb358088667e52864ae62777c0cb3"/>
+	</game>
+	<game name="Grand Theft Auto IV (Russia) (Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Russia) (Disc 2)</description>
+		<rom name="Grand Theft Auto IV (Russia) (Disc 2).iso" size="7002357760" crc="202d1287" md5="b08db467b340aed0e709616d980bc945" sha1="a7f2c84dc6a3027590b4e648796c349f8b7dcd22"/>
+	</game>
+	<game name="Grand Theft Auto 2 (USA) (En,Es) (The Classics Collection)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (USA) (En,Es) (The Classics Collection)</description>
+		<rom name="Grand Theft Auto 2 (USA) (En,Es) (The Classics Collection).cue" size="124" crc="d27a84fa" md5="5455820231719348901b687e2b08d70c" sha1="722b99ea73320ef3746ca94fbea9f7650d089cac"/>
+		<rom name="Grand Theft Auto 2 (USA) (En,Es) (The Classics Collection).bin" size="417677568" crc="7ff6d84b" md5="e4cea4b9a6677b6c68ea9d7bb52223af" sha1="9b4e29fcc6095e895b92f41affba23fa54a35eb2"/>
+	</game>
+	<game name="Grand Theft Auto (USA) (En,Fr,De,It) (The Classics Collection)">
+		<category>Games</category>
+		<description>Grand Theft Auto (USA) (En,Fr,De,It) (The Classics Collection)</description>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (The Classics Collection).cue" size="128" crc="3e4502ca" md5="3f4c195efb78c786b4d8fbd2828b8dfa" sha1="0a45d1b4df1c5371d6f2b9763f8106d47e4d75a7"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (The Classics Collection).bin" size="427440720" crc="e3f2ab69" md5="0aaf343ccfc794a88dea7cc96e2b262f" sha1="6613948e299d456e46c14c4109742ed004ef0798"/>
+	</game>
+	<game name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (The Classics Collection)">
+		<category>Add-Ons</category>
+		<description>Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (The Classics Collection)</description>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (The Classics Collection).cue" size="159" crc="e23303f4" md5="a44fdd2effbdea3b38ea82177adb872d" sha1="4ea51595ec8e3b8cb180014b63364c0e1fcb3762"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (The Classics Collection).bin" size="370531728" crc="37bd5de4" md5="76cf3307cc837572c87285e71083c040" sha1="4efdcbc718f175ff2e4d81e928eb52f0bcfac9ca"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (USA, Canada) (En,Es)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (USA, Canada) (En,Es)</description>
+		<rom name="Grand Theft Auto - San Andreas (USA, Canada) (En,Es).iso" size="4213047296" crc="49f539a0" md5="a5132b09d9b9d2dd05a5c14b191ae234" sha1="586352dc4d96019ac7137fe99aa647524e14d669"/>
+	</game>
+	<game name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1) (Rev 1)</description>
+		<rom name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1) (Rev 1).iso" size="7553908736" crc="74e09d30" md5="6da9441e87e80ddf703fa156eeede9fc" sha1="faa67734c74abd91a6c6a19bc1d45b628fd9593c"/>
+	</game>
+	<game name="Grand Theft Auto IV (World) (En,Fr,De,Es,It) (Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (World) (En,Fr,De,Es,It) (Disc 2)</description>
+		<rom name="Grand Theft Auto IV (World) (En,Fr,De,Es,It) (Disc 2).iso" size="7314341888" crc="731baab8" md5="7b4ba2eb1281ffe5d22ce2dca183d302" sha1="d23ba8b0cc019d7a7bb437eb27afc96bce9a15e9"/>
+	</game>
+	<game name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease)</description>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease).cue" size="1588" crc="e4096773" md5="bb52f9f4178056d01159ae024f521457" sha1="287649cdf15a92ccb3f4bc04005de3c0bc3603f2"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 01).bin" size="98240688" crc="4cabc713" md5="f23eeb3e7b78139c6966bc6dca01bd49" sha1="f6783581b74b288d6cca3bf4aa3bad376ce50837"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 02).bin" size="24338496" crc="486cdefa" md5="ecad8bd02676d2f3ab4352e276bddf18" sha1="33ebef2bb3dc3bc49afd000572a1842d4996350b"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 03).bin" size="78669696" crc="58f1589d" md5="1bbd4c2bfc086edbf2f856f3dd1d4018" sha1="17229b04099c688240219651e9e774b72f664db2"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 04).bin" size="102660096" crc="d1b8e9f2" md5="ab992f15ebb555d97e48e0ae90122596" sha1="3336a797dbc9405ecae39e33501ee4b63e93949b"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 05).bin" size="101415888" crc="310f7a37" md5="06a6b8c2aa9bc8bec6bd5c2121854d4e" sha1="5a442ffaa47fbd95a1556faa714ca3f7065b48f6"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 06).bin" size="79730448" crc="5e3bf3f7" md5="3cf9f04eb6b0d59cbbb1b0570a2def4b" sha1="783507702bdc47c4763d3f7e9eda70eac807db14"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 07).bin" size="116419296" crc="93a87b53" md5="3ce9a708cfa8c6d80de057b5ed93cf49" sha1="768c1286fe02d1d31a8e45c7cd1ca2120498a1dd"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 08).bin" size="34042848" crc="2ddf9b42" md5="29fc7d06fb1bed7655cf7460811d4acf" sha1="27f4fe8a2f1d114acaa8d5255058fde534a15e78"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 09).bin" size="92602944" crc="8feabfd3" md5="60b070886af84d5b794e83e83d1b171e" sha1="e031eabf4199a258daf65aabc2a428e7a96595e0"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 10).bin" size="10932096" crc="411f31ef" md5="306767f893f2d7dcf27fb322eb3ac4c3" sha1="303ae826af583ec8b677f922aa9a3442589a81c3"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Rerelease) (Track 11).bin" size="13058304" crc="f64cb90c" md5="18cab460b23f4586a4fe7c6ee5c7eceb" sha1="cb9085501e8f2e7f291f3cafd0e048432a828b35"/>
+	</game>
+	<game name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt)</description>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt).cue" size="1742" crc="0ec350df" md5="f9ad447b62a5726381aec466956a8b4f" sha1="3f2d0b81b7e9270665802f2f9f525677c2bf16c6"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 01).bin" size="155676528" crc="a051023d" md5="8ccdfde8aa4e1e7268cc7534eab73fd4" sha1="19928fc5a5f0df495389383103b28f95cc32b144"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 02).bin" size="24296160" crc="060e55a3" md5="f7727788b6c250cdb81343a0def0793c" sha1="878d108b2c5d353cce61b270b31706cf2d029c86"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 03).bin" size="78601488" crc="e7d6cd03" md5="edd615c98317857007620e2fd22b9f5e" sha1="1df997eff3a345c2a4e87a0f8be202563a95b3c4"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 04).bin" size="102641280" crc="31585aaa" md5="1ef58f7ccd108630c3239002512ec2df" sha1="78508bdf55525af1c57000bfb6cc2151ab25d6e1"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 05).bin" size="101390016" crc="b9bb40a4" md5="23c4bab789f776890e83d651d7e020e0" sha1="0d8b027e07aec0c1083a7e2f1f0dd226062f8a36"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 06).bin" size="79650480" crc="a711139c" md5="720fb70ed8e896c2e9a20c83e1ee6a70" sha1="7b40a3ca7e7e74705151af12e51f2e6165335e83"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 07).bin" size="116257008" crc="bb874e3d" md5="0a5b215411542428643230b9ce4eaf46" sha1="e9dbbbdaf4cdd23313ee6c488360a53e7fd3ce3b"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 08).bin" size="33915840" crc="8d340c59" md5="1d98dd0614a87c5293f29b9ccea1dfbb" sha1="6243e71cb5cccbf857b278742a95346bafcc754a"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 09).bin" size="92565312" crc="ba2024c8" md5="47f74478be9d8ae74d6586128a9512c4" sha1="4a56a36cbb848eeb783e633e3f1a61bf1271174f"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 10).bin" size="10906224" crc="a09ac311" md5="a231183b648fe2665ec7907c2dedf7a6" sha1="89593548cf3c4b43647285a3c80529cb3bc755a9"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 11).bin" size="13044192" crc="babd6a17" md5="556776c1e616be526fcc19d6c3aba0b8" sha1="2cdb037585c975a1a8f4aa908b27d9096bf766d9"/>
+	</game>
+	<game name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt)">
+		<category>Add-Ons</category>
+		<description>Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt)</description>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt).cue" size="3038" crc="99a6de0e" md5="c9c65de60d7c46ff4fbe7b87c29c5e0c" sha1="72e37956de8cdfc40640cd1281cc18eea1507d88"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 01).bin" size="139591200" crc="8712b4b6" md5="5580373e1c987b0e45ee09b0cd6dcbba" sha1="a7359c74bc554ec88d50890e460f2c54916aed28"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 02).bin" size="49888272" crc="6dadbf95" md5="42b67a7dc9f1d462c36d175930faacfc" sha1="ae368663c15ce3d5193872224b194dab2e5cbbf3"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 03).bin" size="16061808" crc="99bf512e" md5="dec888c7a18e3cc812bffd3d7a80bef4" sha1="123f232101de1881564df95a74741daff8f0b920"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 04).bin" size="60933264" crc="9edb74e6" md5="8e255ef4542eed8d617d41649ffc9058" sha1="cf058ac2f867b6158124d9b4a3a9f45ec6ad7123"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 05).bin" size="20281296" crc="cf049991" md5="766496643124f71d37b4ba7b2d9b3e2e" sha1="172ed04d2bc6aeb3c4a776f1742f25b9c9926a64"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 06).bin" size="33934656" crc="88dd114c" md5="e5ec07eac6f5c445808fb20400fddc38" sha1="b412c27573995edbc8fd1a710f97143f8e50debd"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 07).bin" size="52985856" crc="8ea387c3" md5="b23166762f5c37fe3d945d933e1625f8" sha1="122c891ddbd5090c17a77f76bbbdd0e37326b382"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 08).bin" size="74219712" crc="6ef92d60" md5="bfacc876d96a353af00199bf773e6257" sha1="9f2737de6b1e81baf42e542ba228dc75c3cb9c8f"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 09).bin" size="25121712" crc="a14bf339" md5="4d2a88f86534f00d2930db59d768bd7f" sha1="8d35c77c9f2f84650faf2399dbd12ea1e526ac2b"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 10).bin" size="77310240" crc="3ae73cd2" md5="f4349b8a31ca9a9ae6f0cd877be34963" sha1="014df02b8d967474e59f52d9b2ce2b7e969cd6b0"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 11).bin" size="61448352" crc="9deab074" md5="03fd4000e473e2e15014c86d64b69c62" sha1="f8fdac14104396f17ac6e4d9bd1a742121da60c7"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 12).bin" size="33450144" crc="c31a8794" md5="5e3834bef9ec7d7f44eefa25ba9ce396" sha1="46ff88eb8a8b1323a316f393e72db7cf43e46142"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 13).bin" size="29320032" crc="8b3e7b55" md5="702c4b6bf386bfc9e880af9c693ec2ac" sha1="11da0705a335ad4e52f1f5e1d46f2f540cb97d95"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 14).bin" size="31784928" crc="cf77248c" md5="0d26aae2a4f465ea215701d1bead7baf" sha1="b81582fbba1a64161d92242ef7fbae220dcc11ed"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 15).bin" size="34155744" crc="b5dfa761" md5="25374928708797b23ee65781290bebb2" sha1="a0eab94663cd3ef9f4dcb13d13bea5a578f0ba75"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt) (Track 16).bin" size="12583200" crc="ba96d37b" md5="bdf9ba3a83257831363d0334c332d8f1" sha1="95f6a55a55e6544172a1b9eb12d989018f493076"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Canada) (En,Es)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Canada) (En,Es)</description>
+		<rom name="Grand Theft Auto 2 (Canada) (En,Es).cue" size="101" crc="779774d6" md5="7d810d2d99812626821f4bd52906c760" sha1="a28c522d5c3899ba78500ba9479653cd63510a29"/>
+		<rom name="Grand Theft Auto 2 (Canada) (En,Es).bin" size="788886672" crc="f8a8fd97" md5="3785ceda9533ed72f8f8da9ce93c47c2" sha1="c06d193060e00499f9e894598337d04b218b0d1c"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install)</description>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install).cue" size="130" crc="da60dcbe" md5="50ff15de3465fb91f17808151329be27" sha1="f75dd5af8487495e04752ebb7cc064922870a6a3"/>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install).bin" size="807500400" crc="68908ebb" md5="34ca5222a39059e3c4fb2aee53316933" sha1="5a8b7426db0ea2dde40cf4b794d78c68a4625aff"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (USA)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (USA)</description>
+		<rom name="Grand Theft Auto - San Andreas (USA).iso" size="4215537664" crc="e611680b" md5="e641382cc9afb5af97d0a58ca0bfcb9f" sha1="2323df82c43d0871d5150a6b8347b4b8c451e023"/>
+	</game>
+	<game name="Grand Theft Auto IV (Europe) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Europe) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto IV (Europe) (En,Fr,De,Es,It) (Disc 1).iso" size="7553908736" crc="7adc819b" md5="d1de74371875144ebd444b4fcf59fe8a" sha1="1b189ed7dea786eb437e15edda5ff816d9a1778b"/>
+	</game>
+	<game name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It)">
+		<category>Add-Ons</category>
+		<description>Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It)</description>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It).cue" size="2574" crc="ad9f724b" md5="e2224be3bd507e2938704057f3e75eb5" sha1="e9f3419f01d784b12aba4696fc7033737a240c66"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 01).bin" size="86367792" crc="8b70e2e4" md5="ac0c002c40b72d3a57549149a6470878" sha1="14c15e9976238f46eea0aefa79eea712a411d32e"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 02).bin" size="49530768" crc="51310095" md5="a2c877a3ef975053477b80e3a191fd8d" sha1="f2076ed0013e95a8002918cf9308c52ab9c97b81"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 03).bin" size="15704304" crc="230354b7" md5="ee5116e5d26da385a65bcdb3c1c8a2c3" sha1="5c545b0b95e1bab3c231b3993ef4a452bc261077"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 04).bin" size="60618096" crc="9e1d0913" md5="f7c6bf40b148f19c85a30daf37c2fb5e" sha1="00bd0f3946b9885c957c63e3c4d2d28e53698cbb"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 05).bin" size="19923792" crc="b7e9460e" md5="8bfa9844fb186bc94f4394f18ff64ae0" sha1="4ac89b0a5c38c62670ab176adc3b4187b0d637ab"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 06).bin" size="33577152" crc="22d0e17a" md5="9367aceaac3887220bf2ccfe3bfb228a" sha1="db90f0f7c19687d26918a16a6070b910c6088838"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 07).bin" size="52628352" crc="ef1aa51f" md5="5d15e33791c88d90c3e92fda2b8cd627" sha1="a8cb0427887aa9eaa5f6e40e3c2184fe6b1fe02d"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 08).bin" size="73862208" crc="b2004850" md5="1e21a55db062640eb6d601109b733a7a" sha1="45dd70f50028c28d1fb5eabacfecce61b40619c2"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 09).bin" size="24764208" crc="8cffde2b" md5="d2b52a1e361a0ab4122600648b6f9249" sha1="80e7cdac3c9f1e7b7a442e66da88f6e769975b35"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 10).bin" size="76952736" crc="2a951478" md5="09bcb1870d53533521363a85155fa8d8" sha1="f56600e7a85679dfbd6ff887c7cbf70ab53b4365"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 11).bin" size="61090848" crc="39d67443" md5="4989f500934b7044c315e709d38aaf7e" sha1="28937f0a3f409971aabfa8ddb92032458f6f1053"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 12).bin" size="33094992" crc="ea79e1e6" md5="1121e733c303cbc3515b0837203dd431" sha1="6bcd8f04b30ea069fe908da3ec283ea90d171d35"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 13).bin" size="28964880" crc="59c0ddb3" md5="fcb8fb1ca80d794f44e40779653c5806" sha1="cec7bfb1298a36ac0101d73abdec8eeacec6c0ed"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 14).bin" size="31425072" crc="7ae54ec8" md5="d3dc7b72ab059d6c544f9d63cad75d11" sha1="df1bed19aa82c8479a898659f527a760f8ef20f1"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 15).bin" size="33798240" crc="eb9d6828" md5="7ecdb72dabbaa32b8fc44b34bef93ed4" sha1="6d255a4ee87c5e7866f0219a8c1aa42f0fa9a59e"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (USA) (En,Fr,De,It) (Track 16).bin" size="12359760" crc="13476621" md5="f58a12253588d8d3bc253539561c28e2" sha1="66e495530b6b8561f604dc46e4fbe0850cf4d79a"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It)</description>
+		<rom name="Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It).iso" size="4216946688" crc="3df6e94b" md5="f4dbbd4a4b660851686066508a590062" sha1="fdd3a1a143f827d23ec1ca982db05a770a02f5f4"/>
+	</game>
+	<game name="Grand Theft Auto (USA) (En,Fr,De,It)">
+		<category>Games</category>
+		<description>Grand Theft Auto (USA) (En,Fr,De,It)</description>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It).cue" size="1239" crc="2e1b13a9" md5="f13e33a67c641e89b9327e2643b7ab35" sha1="a3e75de3392be2f2abbd9dc529667cc06b587103"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 01).bin" size="99099168" crc="69c082af" md5="35dea81046e8eac3053374cd637c0b2b" sha1="e0232c49cb60bbfc634bb284bad002e0c8fdf962"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 02).bin" size="24877104" crc="469da377" md5="f2c0e227d3c21da0672f45b4a312f674" sha1="dbb65c9eb00e4cdd91889b46095aa9445a764c88"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 03).bin" size="78855504" crc="52a8774a" md5="0f8f44d1062091edc5a67fdb28477e4d" sha1="9fab4170065041d569fa6ef216700ec33ae4bb23"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 04).bin" size="102845904" crc="acd853cd" md5="e1a3affcbe8568ad935cdd6b05ce2ed3" sha1="dab995b1c8612282cc4d5446db7400449eef7b1a"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 05).bin" size="102140304" crc="d6408dbb" md5="2ffa45a141c1e9877e1063cefdc5aa92" sha1="e87b02b8defa4e109e985980c7f5f677489f5c4e"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 06).bin" size="79913904" crc="7a88172a" md5="e8758b261c95f262c780acd45fe6e47f" sha1="a763e061de1781bfe09e1b84d43b4e056e136cb5"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 07).bin" size="116605104" crc="2000df14" md5="eda9085c2d4163b58c207aa1413c97eb" sha1="5be03aa30a13602634ee78a6863755c985630854"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 08).bin" size="34049904" crc="88772d84" md5="a66b7826573717b74a1c3408a32df5f7" sha1="3823e70bdcf943f3eda7a0ba97e7b146c9ddd313"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 09).bin" size="92967504" crc="61bb4131" md5="961fc3e896f905b816f22c8e5b251a50" sha1="1c0b61562c846839fe46142aeaa2e56fca801c85"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 10).bin" size="11117904" crc="18e892f2" md5="10710c5f3ab5a0b9974a2b6c1f7b21bf" sha1="3faad28ce97aa68a59d6df1878c0a4cc014c24a4"/>
+		<rom name="Grand Theft Auto (USA) (En,Fr,De,It) (Track 11).bin" size="12705504" crc="794c56c7" md5="033c8fb34665890712d509679b010b9b" sha1="9f9c15bec5ac5089d49bb2d26b73320498821b84"/>
+	</game>
+	<game name="Grand Theft Auto (USA) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto (USA) (Rev 1)</description>
+		<rom name="Grand Theft Auto (USA) (Rev 1).cue" size="1380" crc="3980b0e7" md5="bbe6af32898dace21b83cb38e2c38819" sha1="1d3a35368841ab47d78548a055b528172a806c63"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 01).bin" size="97894944" crc="70dc7905" md5="cdfeec0786070e85639fcc5303122eb5" sha1="c475629ef81a4f82e85fd878e5b6081ce7f171db"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 02).bin" size="24524304" crc="f6da0a3c" md5="6f3e76ea632e6d88be8da8e2b5cc61e8" sha1="25743e2b375ae5e0f3bf79a78b3bde5cc48381fb"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 03).bin" size="78855504" crc="7902b88d" md5="ba3f10cafaee709c6db3cbc4af750bbd" sha1="7a4257ef80e7408864ac343007662dfb8fc9d8a4"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 04).bin" size="102845904" crc="fdf83e58" md5="0f906977af4f7fcaee8659bc03c6863f" sha1="8fc135357c52886f1db27de4a0e69b7b09ed6f41"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 05).bin" size="102140304" crc="f412b8d2" md5="838593431907f18470ef2bd8258f7b62" sha1="27ce355466ebd11c32c979486c8691574b207665"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 06).bin" size="79913904" crc="6245e60a" md5="00fe1485bc752306737b8191bfd4dce3" sha1="eb7df0135d20dc15d21574dedddbd2518345b326"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 07).bin" size="116605104" crc="147890f6" md5="14c26c18ecafa51dd4f767db8527275f" sha1="44e71e7bf6654e3d9d727b27db21848882a92b38"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 08).bin" size="34049904" crc="6a5e009c" md5="ba68c2b05d5ca91eccfeb1b1588971ee" sha1="3eafecb957ba72f2fd808ab97e17c15dde32736d"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 09).bin" size="92967504" crc="691e8c33" md5="ed5fcde187691a39b5542939ea175b70" sha1="0b095adf9174d94e766147ed0ab959ddcfa050d0"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 10).bin" size="11117904" crc="424041b9" md5="7e178d9646e7792fcc558d59429502df" sha1="c7f1dc4794c64f6d11da7c2c40d51ffb62e3afb6"/>
+		<rom name="Grand Theft Auto (USA) (Rev 1) (Track 11).bin" size="13058304" crc="fbd91296" md5="78a77d75ea443b0f225859992132f424" sha1="17e85c31c352aa3447dc3a30a88f2067fe05bea1"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It) (v2.0)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It) (v2.0)</description>
+		<rom name="Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It) (v2.0).iso" size="4213833728" crc="d1c99ffc" md5="703596a4fab34642c196af7d46f062d6" sha1="88f928cae8ce93c13c4639503f037f8a61eaaa0a"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv)</description>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv).cue" size="120" crc="63ddd1e2" md5="4b9cebe13036e9e91b22e25f3912a868" sha1="6de54642dcc77bd59ff3c9165fc9ad9497c5675a"/>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv).bin" size="548244144" crc="8716bbec" md5="c8d848fae181849138a867a5e82a7cc5" sha1="bfd31bd943ff5cdb5eef218a449b819cf2e0752d"/>
+	</game>
+	<game name="Grand Theft Auto Trylogia (Poland) (En,Fr,De,Es,It,Pl)">
+		<category>Games</category>
+		<description>Grand Theft Auto Trylogia (Poland) (En,Fr,De,Es,It,Pl)</description>
+		<rom name="Grand Theft Auto Trylogia (Poland) (En,Fr,De,Es,It,Pl).iso" size="3019636736" crc="41053f76" md5="1badf522a993d8d5d9d1b5430f4234f4" sha1="b96b72bbc050af406fa80fefe0841991a6f3569e"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rerelease)</description>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rerelease).cue" size="122" crc="6e94cc92" md5="87e50a0c24ea2b896227196116e70788" sha1="8a9fc2ad209a302e08aa46a86da029f476225100"/>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rerelease).bin" size="537140352" crc="ea76f12d" md5="dbbb0306a3ed980b1696d2405d466acb" sha1="4217bbc1fa129f1f0206becd76259828065f344a"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rev 1)</description>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rev 1).cue" size="118" crc="aff5782c" md5="c21d4fcaeb149f03dd6d95a8460219e8" sha1="d2e851ec532782fad09073fe013ada2aef65039e"/>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rev 1).bin" size="788886672" crc="1cc64ac0" md5="04c2a06f9ac34ad446c4e3782b3f5b36" sha1="f75529a88d3879731cd87e709cb1e23020c85229"/>
+	</game>
+	<game name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It)">
+		<category>Add-Ons</category>
+		<description>Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It)</description>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It).cue" size="2300" crc="7641af30" md5="0bfaf524b89e5050f21cbd121ce733c9" sha1="6a4c38a3915be39e60bf98816484413900aefa35"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 01).bin" size="86367792" crc="ee86d4ad" md5="c57a16a3720481a80d87d58a41916e07" sha1="001c9e43cb10c201315c22db6bcc24db14871444"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 02).bin" size="49883568" crc="a5419abb" md5="bb458aa7a21892cefbb132a01aaf4d15" sha1="9e3d3ffa214f73cd87dabf5514730f63d3f8f60a"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 03).bin" size="15704304" crc="28fa7d3e" md5="5564921eb8611c421b444f4077bf9ded" sha1="80beb9a2d040a6f1721ce24a8e87881cd6892335"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 04).bin" size="60618096" crc="c18e0998" md5="3b6db533394dcd4eb5c5bcb6346839b8" sha1="3f7845a6e623beec88bdcf37d19f1cb2d4ae4313"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 05).bin" size="19923792" crc="7043aaa1" md5="8f22d12322a386ee5a3802a53247f407" sha1="7de5dcb68033db418a19f7398612c6a6acfea883"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 06).bin" size="33577152" crc="3048566e" md5="38d5db1680f3770da169f16aed762138" sha1="6a267f31105221eb1ca8b45f3d9988c3af650193"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 07).bin" size="52628352" crc="eb0f5bd0" md5="43bfd4c729a57c4256ddccde6ba76464" sha1="7ec386c438b8214aec8d07524d8dc612838bdcfd"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 08).bin" size="73862208" crc="867eddf3" md5="14189d623b8575e2942a8f8923a72520" sha1="9bbaf7195d97d33a946b30d94a81c487f69a2716"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 09).bin" size="24764208" crc="bb912109" md5="e2b700e306c84437bafa821e6155a55d" sha1="e38dde0bf31f1a3c376ab8f33003cf0f8378bc5e"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 10).bin" size="76952736" crc="4269359b" md5="15ca87690230fe3edd2e1f87668478e3" sha1="ce21c5c839fe7371d185d027216f8863898a872d"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 11).bin" size="61090848" crc="3723c36c" md5="15d17d62d7817d43bde642f8ce9861dc" sha1="3ad28afdab635345b4ace3a10a7fe3457b58c5a5"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 12).bin" size="33094992" crc="3e2bcbfe" md5="b1e059fdab897d827ea907013e828413" sha1="43825352ef1b6c970b64df5b9026d2669d9a56d9"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 13).bin" size="28962528" crc="faec7a5f" md5="6785ce36e0e2c322f57e2163a2251d2e" sha1="186c7ec071077519891310103654b61be1e8bad4"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 14).bin" size="31427424" crc="04e44685" md5="e5b20713c33763721aa012a8d1610fe9" sha1="6a1060b013ee3b428528d4447fe60a481607af90"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 15).bin" size="33798240" crc="25989957" md5="41ad48b11849b048d0851c9b898172a6" sha1="57f08f2551b9f74e3f54539c1c4984632b30df89"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Track 16).bin" size="12133968" crc="4fa86174" md5="fe80a7bae7ce8369f39b6b09f091d12c" sha1="9664e8def25c16c0a9ef6c564a4581921f80456e"/>
+	</game>
+	<game name="Grand Theft Auto (Europe) (En,Fr,De,It)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Europe) (En,Fr,De,It)</description>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It).cue" size="1272" crc="cd9fa506" md5="5a393a3a97033ef11e3a3515acadc2fb" sha1="2e2a18ff29031d1a132c83b610111ba2526344eb"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 01).bin" size="99099168" crc="69c082af" md5="35dea81046e8eac3053374cd637c0b2b" sha1="e0232c49cb60bbfc634bb284bad002e0c8fdf962"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 02).bin" size="24877104" crc="c16a943c" md5="a613cf53019abe64191f573eb88461aa" sha1="bf36a8ad3f891d96db946f5d7977f773d85528c2"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 03).bin" size="78855504" crc="d3ab8045" md5="3fc3d6ce0d3a66281db6ceb357be85f9" sha1="17e54144539b3abc6bb63b63a4d38e0a62e6bf90"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 04).bin" size="102845904" crc="7add9323" md5="79a40f438a2fc7b77f00d92393f06e7a" sha1="767877e5829d55e11e9bfa1b5923617d1ac4f9b7"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 05).bin" size="102140304" crc="c9065f44" md5="8f6161fc583ebfe8a19e553a779fae34" sha1="65cc07d69c61a907ba86c665230a388253aa2de3"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 06).bin" size="79913904" crc="bd0e01b5" md5="2af7b745dc511b74888f750672a77497" sha1="6ba9820162f0b4f5f14010974e99f387797e6457"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 07).bin" size="116605104" crc="eb920ff0" md5="9c1c054de73175122be2a80d2c3681fb" sha1="b430472b2a32eb83134f738f328ec857be07699e"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 08).bin" size="34049904" crc="cfbb71d5" md5="9810bef6aabcb718a0f830e39d38a5ce" sha1="3267d83107bf27ab9a320c2143af9d6f89afaac8"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 09).bin" size="92967504" crc="553dd7d5" md5="571ce34bc2ec5f102c05da0f28e2e5a6" sha1="a3ebbcec1cb04286f53fb8aa2453c1d38eb8c9da"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 10).bin" size="11117904" crc="9555f6e4" md5="1dca6e1a232194e0df02f0a491cf94b7" sha1="8f8922156a7df9a490dbcbc41bc14937a12adceb"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Track 11).bin" size="12705504" crc="fc4e4ef7" md5="769b737abd39babb1d98718c0cfccb1f" sha1="f3a51b183bf66c0f2c897863f786fc60a2b76675"/>
+	</game>
+	<game name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software)</description>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software).cue" size="1676" crc="28abc79a" md5="2ad3fa455aaf43c9595040f82012fa11" sha1="cfab19f96902817db0334a2caf2cca02a6ecd9b0"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 01).bin" size="155676528" crc="a051023d" md5="8ccdfde8aa4e1e7268cc7534eab73fd4" sha1="19928fc5a5f0df495389383103b28f95cc32b144"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 02).bin" size="24296160" crc="6183efaa" md5="f147ad3f384649635f795137a5682375" sha1="b08c8893ef54f8bb29b33e758367c6629f71c313"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 03).bin" size="78601488" crc="4cabe43d" md5="b3ed8957243a93b35138630d7625813f" sha1="ebe687454979435df772e1725c17fa8e177a203f"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 04).bin" size="102641280" crc="eed0d2ed" md5="102469876d7115386c5f4cfeb24ef564" sha1="cbf187f1f3ed38b94cc59575bb5ef90188363c08"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 05).bin" size="101390016" crc="13bdd44e" md5="bbdab9686600f67a9f6c60986dd3d288" sha1="64c75250c4e79f27f0f1e04692c90a86b06eb364"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 06).bin" size="79650480" crc="08b8ff84" md5="c0b3908ac67666e57cdee869c955ef7f" sha1="4418962ef751da82f2e1aa1546d958d6f7df306e"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 07).bin" size="116257008" crc="21d6b538" md5="cde5e7e953f5ef72761b74d4ab940f1b" sha1="6c15bdd5f6f5c07e8efbf58bda71474761c33ed1"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 08).bin" size="33915840" crc="e1014c60" md5="f5b990963589db5b6a5676b9d5081d1a" sha1="f526388373ea5962d4483269e819bb531c673831"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 09).bin" size="92565312" crc="24a8432c" md5="f537484cb05b46e602e13948459c09ea" sha1="9ef749cc9b0f0d64f82ae1b9d1c24703ae808d17"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 10).bin" size="10906224" crc="d89ebb5f" md5="af36f412c2ce4b89d31f6682fe0bcd1f" sha1="411ebbf7d33fb98dc989e654506d8712c0463c3f"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Sold Out Software) (Track 11).bin" size="13044192" crc="59d93b72" md5="0e21e9c85ff698c0729d89114ccb9514" sha1="2d25154301ae374713787386f20d124f4e602e61"/>
+	</game>
+	<game name="Grand Theft Auto (USA)">
+		<category>Games</category>
+		<description>Grand Theft Auto (USA)</description>
+		<rom name="Grand Theft Auto (USA).cue" size="1039" crc="cabf2529" md5="645c2e46802a332fc7a035b3a2162337" sha1="19b982c79b43a37e3a23d8a74e9a73c6bb0222d5"/>
+		<rom name="Grand Theft Auto (USA) (Track 01).bin" size="98247744" crc="00d16d60" md5="cd1a79d49a224b7937d85a0db2cc8223" sha1="df6b7073c302a7f7bfc8105277bbe3fedc594f79"/>
+		<rom name="Grand Theft Auto (USA) (Track 02).bin" size="24524304" crc="23f81fd2" md5="8dec0c783555df942de24cc9f234b7ff" sha1="56dd0f7f1bcaeb8ff8f872874046bd385e59f663"/>
+		<rom name="Grand Theft Auto (USA) (Track 03).bin" size="78855504" crc="82af2b8c" md5="7fe51d2eeef41d86b749569e70ab07d3" sha1="45ba17589341b2e2d7a8049bfd877bd37f2a0c2d"/>
+		<rom name="Grand Theft Auto (USA) (Track 04).bin" size="102845904" crc="9859885f" md5="3db98a97e2b0de5572df8a1a5c07899d" sha1="2532353a25bc29cae99b71f36395eefbd26666a6"/>
+		<rom name="Grand Theft Auto (USA) (Track 05).bin" size="102140304" crc="92ba66b3" md5="9dfc43b29e1f77e97e4d5dd1778d47f2" sha1="2255afefb158282ae172f4925c9185a840c846cc"/>
+		<rom name="Grand Theft Auto (USA) (Track 06).bin" size="79913904" crc="c020c0e9" md5="643ba61f876b35c4841ae74c39f4c0d7" sha1="c408319346960300ef25fc1021eeb942bf849f60"/>
+		<rom name="Grand Theft Auto (USA) (Track 07).bin" size="116605104" crc="718f00db" md5="a9a034cd94dd19f911c6fd2462631edc" sha1="735ca09e29941aae3eadac4d128c62959fba139e"/>
+		<rom name="Grand Theft Auto (USA) (Track 08).bin" size="34049904" crc="d4adbd3e" md5="feab831856af0789181eb1ae7e75cae1" sha1="c057473d86b7377b263761f23727b820ecb93c8e"/>
+		<rom name="Grand Theft Auto (USA) (Track 09).bin" size="92967504" crc="ba0a690b" md5="89400248f74043fa96aea731efbba64a" sha1="d7935423d1083d037d4c572bba5a48c0742701bd"/>
+		<rom name="Grand Theft Auto (USA) (Track 10).bin" size="11117904" crc="a0948036" md5="94178b3f173c014f435f946b5ecd2338" sha1="041a69f86e2cb4371a152a9cdb29becd469d9d80"/>
+		<rom name="Grand Theft Auto (USA) (Track 11).bin" size="12705504" crc="387dad4a" md5="855cf418ca17131ebf4c62bf60b9664c" sha1="cc0f8061364803b0edcd981e2d472f11f61d2f72"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt)</description>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt).cue" size="136" crc="f8b983ac" md5="b6eb6c64c7cfce1b7466b5bbe0335c65" sha1="800fe37d0cc5df0859dd1d91875e9cdb67f73a1f"/>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt).bin" size="807500400" crc="f6a0dd7d" md5="0c14fe9088e455cbd8259c190c1ff432" sha1="0b5ed551f2dbcc3ed7848f7f8350ce0b797a56a5"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt)</description>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt).cue" size="133" crc="ef8c04bf" md5="24a5c42f1bb1cbcdd10b08980a05e8f9" sha1="0a79e1eb2c43acb10c3213307948d84d22a075ce"/>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt).bin" size="792024240" crc="3328e0af" md5="f6800610eb262bcf8183634b10d1794e" sha1="9c34f99b2b4fa971762ea2d52d7d08a5bd8ec94a"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Netherlands) (En,Fr,De,Es,It) (v2.0) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Netherlands) (En,Fr,De,Es,It) (v2.0) (Alt)</description>
+		<rom name="Grand Theft Auto - San Andreas (Netherlands) (En,Fr,De,Es,It) (v2.0) (Alt).iso" size="4213833728" crc="82605f54" md5="76abcef517e4b08d3b45d23c64512857" sha1="3d7c7b483ab17ad1a82554c52c71699b069d24cd"/>
+	</game>
+	<game name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Europe) (En,Fr,De,It) (Alt)</description>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt).cue" size="1338" crc="de98ac6d" md5="a3c041c7f838234982767262f0da9cfd" sha1="a748e3553d4c256200d99dc52387231ced3e68ae"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 01).bin" size="99099168" crc="69c082af" md5="35dea81046e8eac3053374cd637c0b2b" sha1="e0232c49cb60bbfc634bb284bad002e0c8fdf962"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 02).bin" size="24877104" crc="469da377" md5="f2c0e227d3c21da0672f45b4a312f674" sha1="dbb65c9eb00e4cdd91889b46095aa9445a764c88"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 03).bin" size="78855504" crc="52a8774a" md5="0f8f44d1062091edc5a67fdb28477e4d" sha1="9fab4170065041d569fa6ef216700ec33ae4bb23"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 04).bin" size="102845904" crc="acd853cd" md5="e1a3affcbe8568ad935cdd6b05ce2ed3" sha1="dab995b1c8612282cc4d5446db7400449eef7b1a"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 05).bin" size="102140304" crc="d6408dbb" md5="2ffa45a141c1e9877e1063cefdc5aa92" sha1="e87b02b8defa4e109e985980c7f5f677489f5c4e"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 06).bin" size="79913904" crc="ec7831f3" md5="4a3ccbb2183bea65fbd05d07af70d930" sha1="ede12530e89ad06d8545768cc300eebc94ca2855"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 07).bin" size="116605104" crc="2000df14" md5="eda9085c2d4163b58c207aa1413c97eb" sha1="5be03aa30a13602634ee78a6863755c985630854"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 08).bin" size="34049904" crc="88772d84" md5="a66b7826573717b74a1c3408a32df5f7" sha1="3823e70bdcf943f3eda7a0ba97e7b146c9ddd313"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 09).bin" size="92967504" crc="61bb4131" md5="961fc3e896f905b816f22c8e5b251a50" sha1="1c0b61562c846839fe46142aeaa2e56fca801c85"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 10).bin" size="11117904" crc="18e892f2" md5="10710c5f3ab5a0b9974a2b6c1f7b21bf" sha1="3faad28ce97aa68a59d6df1878c0a4cc014c24a4"/>
+		<rom name="Grand Theft Auto (Europe) (En,Fr,De,It) (Alt) (Track 11).bin" size="12705504" crc="794c56c7" md5="033c8fb34665890712d509679b010b9b" sha1="9f9c15bec5ac5089d49bb2d26b73320498821b84"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It)</description>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It).cue" size="110" crc="6bf50a43" md5="dc6df24b6be7ea160f6bb5564cce4a10" sha1="dbda73fd8a5f47297d75974a9d1ff176786ae3c4"/>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It).bin" size="788886672" crc="7462f7a4" md5="9d50068a430d273f578a1aef368bf292" sha1="4b105d81a66f8448c8e00b46de572453757ff93c"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (Europe) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (Europe) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (Europe) (En,Fr,De,Es,It) (Disc 1).iso" size="8294400000" crc="0cf9c788" md5="83cf8e80b74ec72120377e98f546dc1d" sha1="67ef6bf12283866932d5bb8c70d5c1a7d04645fa"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (Europe) (En,Fr,De,Es,It) (Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (Europe) (En,Fr,De,Es,It) (Disc 2)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (Europe) (En,Fr,De,Es,It) (Disc 2).iso" size="7412514816" crc="691d44f6" md5="79f35de537d6366b8af220b47ce13ac1" sha1="967a1cafb2dfe4e76ce12cca6fe60a47c1a8f0c4"/>
+	</game>
+	<game name="Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (Install) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (Install) (Rerelease)</description>
+		<rom name="Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (Install) (Rerelease).cue" size="134" crc="121b102e" md5="18466593834c4b07985474b556d3e3a5" sha1="1df4037dfe129a3f2d74f136353e2e5d3445349b"/>
+		<rom name="Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (Install) (Rerelease).bin" size="788533872" crc="40179b6c" md5="16bdc5b88bc691610422cf56f164b081" sha1="c2aabcd6d45596a0e55cdad3ec9d0fdea3d6fc3e"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It) (v2.0) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It) (v2.0) (Alt)</description>
+		<rom name="Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It) (v2.0) (Alt).iso" size="4213833728" crc="15cf8ddf" md5="6d5ce1cf3e65c24d6e0dcd59b2847d78" sha1="f27506a74dbf2b58ba06d2c09906fdb3461c464d"/>
+	</game>
+	<game name="Grand Theft Auto IV (Europe, Asia) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Europe, Asia) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto IV (Europe, Asia) (En,Fr,De,Es,It) (Disc 1).iso" size="7553908736" crc="d650ecbd" md5="d3c7ade6d9faee6583a9b2c7d074c840" sha1="171bf8299ce19f5d5f3b0f0697c43770d2798ab1"/>
+	</game>
+	<game name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount)</description>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount).cue" size="1599" crc="4a7d0523" md5="c833c1344a2b06b4b9f0f349292a08d2" sha1="b3041154082d07459d4022a39c52bee77aca0e4c"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 01).bin" size="155676528" crc="045d19f9" md5="7c6924754b1f674ef70279be6d10c9ba" sha1="3b8afce57e30462b8407897b4691b796a7f0170e"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 02).bin" size="24296160" crc="7190b374" md5="7f575f8bc5d0d6bed6dfa76c8fcadeaf" sha1="bcf1bdf8b6a1227372c4e8aa61cc6b228c8a4e32"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 03).bin" size="78601488" crc="8bc5e4e0" md5="ab129635b6804f55e710b19a66502f16" sha1="77e68602916f1f48b41188537b9a5dd13d7ab8f0"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 04).bin" size="102641280" crc="1c8a35cf" md5="c8c1729b46e88f18d4b09b7902cd79aa" sha1="fb16138d3fd80fd96b103df188c6277eb6d6c926"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 05).bin" size="101390016" crc="2f26c06f" md5="6495e60969d1e7250b2ab245f9ac5fd5" sha1="ad7f035f60b532899e2d9b0a9ecca9fef413bb89"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 06).bin" size="79650480" crc="be92d657" md5="24af3337343ef5d7c89c8fe11372cda4" sha1="961cc48b1a3057e9ca304bef1c52953596adf960"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 07).bin" size="116257008" crc="16b42486" md5="88c0e29e2cc2f6795998586140f8677f" sha1="abba6d39a6f92ebd103d8872972403c0571b4190"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 08).bin" size="33915840" crc="b210f628" md5="f56a0c23cc4f78be104fe87fc47364a7" sha1="9dbe471dc735eab7e589c12b156f4ce13ce6b418"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 09).bin" size="92565312" crc="1a1baf3b" md5="9492dc3a909b035f77813b3e2e051846" sha1="be63413e2a594f845ae72a2897dbf45715530937"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 10).bin" size="10906224" crc="485012cc" md5="a76a2760bc05cfa692430a5f7fb0949d" sha1="a21f3d7f947adfa35bb52bd26a522fa6a7a13419"/>
+		<rom name="Grand Theft Auto (Poland) (En,Fr,De,It) (Covermount) (Track 11).bin" size="13044192" crc="cec34c08" md5="acbb596399b253612ab263718d96d772" sha1="956859f0161b61905a4f67cf4c51963c849fbea9"/>
+	</game>
+	<game name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23)">
+		<category>Add-Ons</category>
+		<description>Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23)</description>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23).cue" size="2508" crc="a62c0133" md5="470880d7e45ee89c05cfc98ef44eae69" sha1="eb1e660602881f312d13109111ba62e962b6c302"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 01).bin" size="86541840" crc="b2b34b18" md5="a851bec32c867d5696e89074b25f1125" sha1="3342faced21bd8de80df483e34d7dc5c9b60f8a6"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 02).bin" size="49707168" crc="b78d51cc" md5="67daa257288ac490536f5dd65afb0e7c" sha1="d2147f9df1ba7544537f12bca979063f61fb6126"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 03).bin" size="15704304" crc="2b67c23e" md5="5ec350da4d448c346a686de8219be9d7" sha1="b213e4f3d1efefc5e6b98b29c5f07dbe04d80f2f"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 04).bin" size="60618096" crc="40856ece" md5="c9fd7608a4daedbd41f4e6ce888fee05" sha1="9ba16317bc4da35aac7bf36e5c7849f99b2d309d"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 05).bin" size="19923792" crc="6ed5b857" md5="e462144a1d33ae6891b157e2fc92ba66" sha1="ec6c4487d3dcefc9ffa45ef2659cc26f0581a2c2"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 06).bin" size="33577152" crc="2564871f" md5="f3c825c6792be73f19bfc7843514eeb5" sha1="2441070f3cae52a03f77bb328438dde715669e8c"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 07).bin" size="52628352" crc="44a5c77c" md5="edce6ea98bc8c71ebf600a0c6bc66cc2" sha1="0f25e84a3a9517dc70f97b6a0fea36c34c0480c1"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 08).bin" size="73862208" crc="f13dca0c" md5="73a5383eb1ba3fc19793f6f2079ab692" sha1="30eeb4884a8e58daada283bdff55db5a3af39967"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 09).bin" size="24764208" crc="7e556382" md5="9941d50d0d31c55d3fa82ebc6f8fe642" sha1="fc859b588e04b2ce5166ed24798417d73dd254ab"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 10).bin" size="76952736" crc="13a40286" md5="627bd8cb9d8411ac3e59afc4f27a99f4" sha1="966964c483f2ce6d64c6280b79c0f8faf8c64b3d"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 11).bin" size="61090848" crc="b28c4bc9" md5="a85bcbadf136c4a9cae5f868c2a732c2" sha1="0ba0b60f3cc3ed435852aa38224c5f563f72a57f"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 12).bin" size="33094992" crc="579fb593" md5="99d8664cd8654c0b6f828bd714e5329b" sha1="1a7f9990e1d043e0a1f8c6b3315cd2477823bd33"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 13).bin" size="28962528" crc="ed26ade0" md5="465e5503075b775b9ad49258cb37a516" sha1="5dd3f6442acfff6ef2bb35ea952474b84493d869"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 14).bin" size="31427424" crc="366a3e8d" md5="8ccd7d1a139a02c95beef2b6d814f67d" sha1="b0717b18c458d98e20d2f305c548573be0729f39"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 15).bin" size="33798240" crc="18aaf243" md5="59be5c1edd8cd178ae1bf6d08d55cd4a" sha1="d37979a1cf571924217fc3bf858edf458c8613f7"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (1999-04-23) (Track 16).bin" size="12133968" crc="746c6daa" md5="29c25a279e6c458ce1a2dbe5db640135" sha1="e40288f8389288692a1d806096629402437b626d"/>
+	</game>
+	<game name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software)</description>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software).cue" size="1480" crc="13329c30" md5="c7cbb521554233df33aec8f2c24cdfbc" sha1="0b5df21a56ebd23ec7950e3acb142e317c31b564"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 01).bin" size="111376608" crc="d751e8d0" md5="236b0b227115569ed0a3548198189e01" sha1="d648013f4e74b85e470938808e720346ca7c27df"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 02).bin" size="24298512" crc="09fd79c3" md5="7035ea726b32a8400c2d569417811420" sha1="61bd527f867da55a545f1ec3bc305857d32f2e83"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 03).bin" size="78246336" crc="822cd82c" md5="b63edcccc99e845ff52be83bad51ce50" sha1="2bf8a239a93d3032cf15834355c170a65cd88204"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 04).bin" size="102286128" crc="0e5f4566" md5="964740e8b959c86dedcacbc7de1096e7" sha1="f781d6849b85d431f368bbe1b25ec985b39ed704"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 05).bin" size="101034864" crc="37dae80a" md5="0a90dec7f5d032dc651c0b980d056045" sha1="191cb3d0fe6bb7d920208e6c929eaba44eba51b0"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 06).bin" size="79295328" crc="3e62d015" md5="8025ca29c68257ec4376a9c03aa3c912" sha1="8f3a9728ed6af8aa3d71c63a16d2f29326b94ee4"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 07).bin" size="115904208" crc="f38005d8" md5="174d5ca69e3b59d57ca034012c0d18a1" sha1="f467e9153435b245fdfbe7720b38d67a4eb5fb85"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 08).bin" size="33560688" crc="92201cb5" md5="1ce9e41cd6b88a1a7275855740dd639c" sha1="bd677e896dca616aacbcaa3740dc15810aa8cd33"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 09).bin" size="92212512" crc="952eae7f" md5="9c8a0ddcc423770110eae3d965692b8e" sha1="4cc3a3fd5c8f31dd8a56855030b85e25daf4e39b"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 10).bin" size="10551072" crc="d6eedbd2" md5="643bebfccd9ff7f58cdb73343490d3ff" sha1="766f16feffc046dddd36521d5807a6589d49346a"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software) (Track 11).bin" size="12689040" crc="a7b2956c" md5="b9a42fe875ea65ad3dc372db037b8aab" sha1="bb174ac5b76b891a5c67016582b13da174856c58"/>
+	</game>
+	<game name="Grand Theft Auto (USA) (Original and Uncensored)">
+		<category>Games</category>
+		<description>Grand Theft Auto (USA) (Original and Uncensored)</description>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored).cue" size="1578" crc="34df3f31" md5="3a80f91472fdcce03f4da47a4085b458" sha1="f85aa5b4902651048de1d955fbedfdf61a66d3ae"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 01).bin" size="97894944" crc="70dc7905" md5="cdfeec0786070e85639fcc5303122eb5" sha1="c475629ef81a4f82e85fd878e5b6081ce7f171db"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 02).bin" size="24524304" crc="054ee883" md5="2b434707592976b3cb0e687d1090777e" sha1="662e07039da0b56f1af35441c4fce9930e94b78a"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 03).bin" size="78855504" crc="58f50993" md5="84187ae7d643d5b9f6697fa066cd9dbb" sha1="7dae6ba3f44638782a2de5e548be45ec5925acc9"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 04).bin" size="102845904" crc="36ee7082" md5="7e7467d37b1f574acc9e7b1d966f634c" sha1="457fce1c533932e7c9f7597572d6a99d0e312eb9"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 05).bin" size="102140304" crc="a670b41b" md5="89698359528095b24075c63039310785" sha1="0a40e3af0e7d0838b16e5f1678db99d447c11337"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 06).bin" size="79913904" crc="dec0e4c9" md5="1b82a6ca1e341450b2aceb04de7137cd" sha1="8cd7ab13752b9081853f0b3a80b0d51d3ca71f24"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 07).bin" size="116605104" crc="84410345" md5="7227c191bde04fdf2f1f189ab1d22ba3" sha1="94bed4b9dba2d9d8bb5b5131b406c0b6c92e8d4c"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 08).bin" size="34049904" crc="b27cec08" md5="6326fc08bd43572beb50edf301b1220f" sha1="fdc2daaf026c01adf8fac7ea3143d475feea4f48"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 09).bin" size="92967504" crc="5884d202" md5="f2ee40aff718bc5372239923605fcf7a" sha1="1881ded4ab8af4cc7fc6d8fb99168a9fda33d1b9"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 10).bin" size="11117904" crc="aa2070dc" md5="ad09f6d4c24b789c733612b8f03c7827" sha1="b0d06c6fc43fe9fba51fb41ac159732aad880941"/>
+		<rom name="Grand Theft Auto (USA) (Original and Uncensored) (Track 11).bin" size="13058304" crc="b2bbad66" md5="ef0e21e4f5b72408e4f1a8887bd68ffc" sha1="ca321dd06b7d6e3f2ec9c0dcf5b527c13e7629b6"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv) (2002-02-15)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv) (2002-02-15)</description>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv) (2002-02-15).cue" size="133" crc="38d4e425" md5="1071e0feb61030272ad3242e47025fe0" sha1="ba961360d22789b2c42132a996e4cd7b89d8ede5"/>
+		<rom name="Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Xplosiv) (2002-02-15).bin" size="549478944" crc="7fa6e113" md5="b157c806b5007cc7c1b5c54542ceffbd" sha1="bc9de73053852984971e2d18cd487454fd260d87"/>
+	</game>
+	<game name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software)">
+		<category>Add-Ons</category>
+		<description>Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software)</description>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software).cue" size="2942" crc="5a524531" md5="cd68c0d44996a4a1d5cdceee82c6be3b" sha1="5dd62b921b953ee6ec5faa23eebafc7189dd14ce"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 01).bin" size="139591200" crc="8712b4b6" md5="5580373e1c987b0e45ee09b0cd6dcbba" sha1="a7359c74bc554ec88d50890e460f2c54916aed28"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 02).bin" size="49888272" crc="548d8b09" md5="aab3eb5db9f2b9d61a591676a82dfb08" sha1="22245d139cc5e94f79152c8db31fb2c0742d98b4"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 03).bin" size="16061808" crc="2eb0e9b5" md5="0f5a8d24ee8038c0a62dd45b78720138" sha1="c8903233f9f7b6ca25b28b12b3b20a7b9aea86d2"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 04).bin" size="60933264" crc="51f13158" md5="0a964c8e12cdf83a8c2e1ca2b8892b1e" sha1="fe8fb96fe46d98dff6d619be80022521eb94233a"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 05).bin" size="20281296" crc="5348f716" md5="f093db1845db498bcfa62040aed72de5" sha1="97e6706ccc876aa33ccfde4c92a65a6d74b785e5"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 06).bin" size="33934656" crc="3357b2f8" md5="da81ff06dd1a4b2c377f63196650c836" sha1="f5c9120b2b469f67e7eebc492ed97004e20e44f4"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 07).bin" size="52985856" crc="942e244b" md5="d60c7a343a6af0c052b65c7bb83d1c9a" sha1="64f7aa9bfe122ce70c0ef23e5a684930be0b382c"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 08).bin" size="74219712" crc="fa2688f4" md5="d89d7141c0e96f826bc885cb6a0bbe99" sha1="68f2a43e8fe0fe1863464ebd69d30555d0966bc4"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 09).bin" size="25121712" crc="0bbbbb5d" md5="efdf9a1a4a650ee423d77103663fc3ec" sha1="a268c5ebe9e5207a27b2459b24b71252e630b269"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 10).bin" size="77310240" crc="4b6fe99f" md5="c0fa1e0d92a4b218d680eb499e4d6715" sha1="ddacfba8f16d38c20904f3d7a79270d8f527bd99"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 11).bin" size="61448352" crc="3ee41d63" md5="8b9f7bf922cc4134c4e56fcc28f0aea3" sha1="4829973846d4a2ce5a36f2784235bd3c5902790f"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 12).bin" size="33450144" crc="38fda1ac" md5="183a3c7d25ed0bc44025ba021d6065a4" sha1="09ed4249eb416bcfb115e65e90c5275b170062d5"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 13).bin" size="29320032" crc="f541d1da" md5="b15fc93be865a4c2cae32931646c9db2" sha1="b44e0067760bc7d39c454167fc3f42a33c73c905"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 14).bin" size="31784928" crc="4f187475" md5="d9f775738f7208ee07a7346289c3d7e3" sha1="d0f8c4a1fa7c197ba6135bcf3b2d9051edcfd6e4"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 15).bin" size="34155744" crc="b9e86796" md5="2b2a1e8b1e67304994935431f41199ab" sha1="554dd9c6171c5ac6c472a53389920123232831d4"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Track 16).bin" size="12583200" crc="1781ef92" md5="9e9df67faa58bd223050c2119653304c" sha1="78236b57ffc23d6e1cd04c0b1c3b6152c95c5602"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Germany) (En,Fr,De,Es,It) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Germany) (En,Fr,De,Es,It) (Rerelease)</description>
+		<rom name="Grand Theft Auto - Vice City (Germany) (En,Fr,De,Es,It) (Rerelease).iso" size="1483505664" crc="68234241" md5="834a2dbd0c46276648395efbfbbce3f1" sha1="34a78bb397b44640d1e6adba65cf76f3536c5f70"/>
+	</game>
+	<game name="Grand Theft Auto 2 (USA) (En,Es) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (USA) (En,Es) (Rev 1)</description>
+		<rom name="Grand Theft Auto 2 (USA) (En,Es) (Rev 1).cue" size="106" crc="c39422b4" md5="d96b00bd070c5f021cfce3664644cde7" sha1="e8dc8c1215b2d236685cfca1152a31ec98fb47bb"/>
+		<rom name="Grand Theft Auto 2 (USA) (En,Es) (Rev 1).bin" size="788886672" crc="c7ce228f" md5="c1d3172f15358ca0d15b668202519ea8" sha1="621cf20491586afb4e71731eec9926a7dcf49208"/>
+	</game>
+	<game name="Grand Theft Auto IV (Latin America) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Latin America) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto IV (Latin America) (En,Fr,De,Es,It) (Disc 1).iso" size="7553056768" crc="6e5377d2" md5="fed4e48b758ce9cbeb4ef27f8e3a34d5" sha1="3dca2d341098463c3c355b2e293aa831f12c652e"/>
+	</game>
+	<game name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 1)</description>
+		<rom name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 1).iso" size="8537767936" crc="b6e74429" md5="343f4332638364442418719d451f580b" sha1="b4340d2086ee407fdb45fcea07d21c568c154c73"/>
+	</game>
+	<game name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 2)</description>
+		<rom name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 2).iso" size="8537309184" crc="7f3c2fc9" md5="aff4df657a4d4f78f87c927a68bb373d" sha1="74e66e78d18d8137519d98007dc014f91b3f9cf6"/>
+	</game>
+	<game name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 3)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 3)</description>
+		<rom name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 3).iso" size="8537309184" crc="a7a63000" md5="a59cf021956eaa655af7d12b7b430e6b" sha1="88b611a8f9b5953035f7325a50db89001d16b77e"/>
+	</game>
+	<game name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 4)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 4)</description>
+		<rom name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 4).iso" size="8537309184" crc="9e5007c2" md5="5d2437d7be16a36f19fb09fbd4db7350" sha1="b66158916b72e9815ad90dec0d1ca8b871fe0adc"/>
+	</game>
+	<game name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 5)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 5)</description>
+		<rom name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 5).iso" size="8537309184" crc="1832f156" md5="57d342775fe07129560dd6cfd3311484" sha1="16b61789a2253a7df8ef527a35673b56717263b1"/>
+	</game>
+	<game name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 6)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 6)</description>
+		<rom name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 6).iso" size="8537309184" crc="49627c41" md5="5c80a9c21c2e1f048025c7311d2484af" sha1="7c5f8df4225ca39a5b9f29434f94cf1022aac08f"/>
+	</game>
+	<game name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 7)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 7)</description>
+		<rom name="Grand Theft Auto V (USA, Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 7).iso" size="6805061632" crc="f5d01a57" md5="2436126a212e38bf8263e1984661ca09" sha1="8b428895983a6b864fcb210d375da6b46a4a7726"/>
+	</game>
+	<game name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease)</description>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease).cue" size="135" crc="41fb8b21" md5="af1d4acf03ca458aa4eb292e8d98df67" sha1="01bef0af9da7096c3b70c490f0e416184d4ff3aa"/>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease).bin" size="304703952" crc="bbf3671c" md5="8a9a3f712a2ec7d89ede16bf0309387e" sha1="40d2b7515028528a8ddb567d8e62982f5480aa0b"/>
+	</game>
+	<game name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease)</description>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease).cue" size="132" crc="e2683d0f" md5="b974d218909982bc1e637eb5920ccfef" sha1="74d8853456c18088bdfb8c6ef30325b818623072"/>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease).bin" size="668177328" crc="5963314b" md5="6bd78fbea40bfe7f4de1b0f1dc1c1fd9" sha1="d36cf9400dcf7e019c824f1d03414e790696862e"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (USA) (En,Fr,De,Es,It) (Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (USA) (En,Fr,De,Es,It) (Disc 2)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (USA) (En,Fr,De,Es,It) (Disc 2).iso" size="7412514816" crc="ab9ef975" md5="9be1504636b423d39e4eae792e14678c" sha1="8d5b1451011dabe0752f1ae75a97d761c3dddb59"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (USA) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (USA) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (USA) (En,Fr,De,Es,It) (Disc 1).iso" size="8294400000" crc="fd0882b2" md5="ece531a4d17166b3bf56e2adda7ff0ea" sha1="e1f5ee90a766548486fb8c256ac2dff147b1497b"/>
+	</game>
+	<game name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 1) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 1) (Rev 1)</description>
+		<rom name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 1) (Rev 1).iso" size="8537767936" crc="550960c5" md5="b864e040263bf8a86eac5fb42e27424e" sha1="389a79b301e37db07c4be283a5bd19a0f362ad63"/>
+	</game>
+	<game name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 2) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 2) (Rev 1)</description>
+		<rom name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 2) (Rev 1).iso" size="8537309184" crc="350501db" md5="10ca701078f11f90c904a7c1559b8f58" sha1="7aaae628383742d7d7ff899c91870194e030168a"/>
+	</game>
+	<game name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 3) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 3) (Rev 1)</description>
+		<rom name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 3) (Rev 1).iso" size="8537309184" crc="57987de9" md5="15877376583350deb8769c830b174a4d" sha1="113039504066884dad379e9ec05e3709b14723a9"/>
+	</game>
+	<game name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 4) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 4) (Rev 1)</description>
+		<rom name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 4) (Rev 1).iso" size="8537309184" crc="e1fb7d22" md5="8bc6ea6cc222822d3264510fb557dac9" sha1="b62ebb4255f718478a1f3ec74fede8313a2b36fd"/>
+	</game>
+	<game name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 5) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 5) (Rev 1)</description>
+		<rom name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 5) (Rev 1).iso" size="8537309184" crc="10aec5cf" md5="37e3c6ac5a67a46234bff4ef7a94a819" sha1="75fdb2e9492095f95f2b20530090d6b4499de3fd"/>
+	</game>
+	<game name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 6) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 6) (Rev 1)</description>
+		<rom name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 6) (Rev 1).iso" size="8537309184" crc="37832f06" md5="47f9f97e8274b851d454fef8ae573138" sha1="443b881eff04598826f39fb9bfabfc0f8ed88e94"/>
+	</game>
+	<game name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 7) (Rev 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 7) (Rev 1)</description>
+		<rom name="Grand Theft Auto V (Europe) (En,Ja,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Install Disc 7) (Rev 1).iso" size="6803554304" crc="ed65f6b8" md5="9265df191e33bfed55c646c9cf66280f" sha1="b9687a257cd2df3f8e4111f9a9eb6a445e7f8d67"/>
+	</game>
+	<game name="Grand Theft Auto IV (Russia) (Disc 1) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Russia) (Disc 1) (Rerelease)</description>
+		<rom name="Grand Theft Auto IV (Russia) (Disc 1) (Rerelease).iso" size="7860256768" crc="87aa3276" md5="a6edd152d682b2d43899823a763dc2fe" sha1="d976a8844bb2f51f51e9cb49b8a71f9bde963a6e"/>
+	</game>
+	<game name="Grand Theft Auto IV (Russia) (Disc 2) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Russia) (Disc 2) (Rerelease)</description>
+		<rom name="Grand Theft Auto IV (Russia) (Disc 2) (Rerelease).iso" size="7002030080" crc="592f1039" md5="bd4c969d9e6d8f1c064e579aec4c7852" sha1="87b97f6f215fc92be0d08aedb59af6046761676e"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 1)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 1).iso" size="8059879424" crc="28662520" md5="5ed38b1d160982c1a949a56e7e12a9a4" sha1="6f8f2ffb59b4ccf8526cca3871362782418daa6e"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 2)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 2).iso" size="7586447360" crc="db2c84d8" md5="50bbebedcbadbce23161b1d406b75d77" sha1="0f70dbb32aecbc6f174a7a36d790f2e9f0b5f6a8"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Russia)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Russia)</description>
+		<rom name="Grand Theft Auto - Vice City (Russia).iso" size="1750302720" crc="44350d13" md5="f14bc0f55d2609c36be4b1e987c3445d" sha1="06437db0f78af2af9089eeadee3fa6a5fbb5079a"/>
+	</game>
+	<game name="Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Install)</description>
+		<rom name="Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Install).cue" size="125" crc="f49beaf5" md5="971d15fc1f2adb2fad24c9d1f39e1e2e" sha1="bfaa7bfe7ed8fc2f9e85a0f625b87917679e378b"/>
+		<rom name="Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Install).bin" size="321565440" crc="ffa8cbac" md5="2a464d8ce78e1fe49ab81f0f4f0d8e8c" sha1="8b01ae6bad895632352626e897ddb77e04b28898"/>
+	</game>
+	<game name="Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Play)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Play)</description>
+		<rom name="Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Play).cue" size="122" crc="520940fc" md5="5e97066b2c8c7c2a7dd448a4e1452813" sha1="a449af0e8e489906952479b282740a043fe21436"/>
+		<rom name="Grand Theft Auto III (Lithuania) (En,Fr,De,Es,It) (Play).bin" size="668967600" crc="ab8e085c" md5="52d7fa73a6c48be08e183c5aa1bb6ce0" sha1="ac579cdfb38790c2d9bda91d52a22c801df18393"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt 2)</description>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt 2).cue" size="138" crc="64da7121" md5="a284c8622af6a44c46aa79809c5a5ba5" sha1="c8080e785d780fdb005acb7b9a2ff14241d6113b"/>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Install) (Alt 2).bin" size="807500400" crc="ac78875f" md5="07fadd6dc152bc9ebc948929dfcaaf81" sha1="b4015ee773abcef7d7866ee6612ef49eff6d4108"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt 2)</description>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt 2).cue" size="135" crc="76e93105" md5="45c8444a58dc458f771b974e41e5ad02" sha1="f54e8b0cd1cc2a827a6580cbbd7d005872af6dc2"/>
+		<rom name="Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (Play) (Alt 2).bin" size="792024240" crc="78eed477" md5="417979d277831147ab491ee3905ab859" sha1="e6df3dc2948406a73da5e1004773db5cb5c03263"/>
+	</game>
+	<game name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2)">
+		<category>Add-Ons</category>
+		<description>Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2)</description>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2).cue" size="3070" crc="1a2bf0c5" md5="552034e9b02af39bf1cd43d56bac5267" sha1="069e74d36e538b748a7a430812fd2503f36e4ebf"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 01).bin" size="139591200" crc="8712b4b6" md5="5580373e1c987b0e45ee09b0cd6dcbba" sha1="a7359c74bc554ec88d50890e460f2c54916aed28"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 02).bin" size="49888272" crc="325e988e" md5="388810d7ab82c773be8474ccd8500453" sha1="9aa4a9355d07770354c7a62ef9b784d8583cf15b"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 03).bin" size="16061808" crc="abbf53f8" md5="d818c319d35e7f75225e2a59030f965b" sha1="b31860d147266c5f43ea81eed82aa388c63b3f37"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 04).bin" size="60933264" crc="0f7a9811" md5="f32a3970c49679b08c2ec2b8dfa4c2f9" sha1="274aa63bd086cbd5aa5a4f3842a1da05bdd4eb2d"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 05).bin" size="20281296" crc="61259509" md5="25a55b3708fb85419ef208ed52cb9157" sha1="8451025657f707302f009b3495cfcb7da220c98e"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 06).bin" size="33934656" crc="455d0118" md5="039d675b0c2e034eba0721703b9be799" sha1="03f404b78d8d95176bff63f8aeeb24884d2bc875"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 07).bin" size="52985856" crc="df5c11de" md5="8d5fee4af08e70af8e4b914e2c283eed" sha1="14ab251485de18e41540ad54d66052b3efb5b676"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 08).bin" size="74219712" crc="b36c65ee" md5="b3e9141095edeafd9bba4f10182923d2" sha1="385db11e05f45a8877e8d6b9e39c35ba3c3a4293"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 09).bin" size="25121712" crc="60868bfc" md5="31c020e6648cce06ecc4fb294e05d0d3" sha1="359ac40f47d55a122c958fde7c6f68eeae07491a"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 10).bin" size="77310240" crc="50375621" md5="7ec56b73922dbd78b5499ce08a1a3503" sha1="10417b26bcec3c5cefbe5fbef3d91cbf3b4f127c"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 11).bin" size="61448352" crc="883f910d" md5="155454d4dba7484b6ac6f3129a3dabdd" sha1="1b0f33adb888f45c344350ccd5830ababcc2a3f3"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 12).bin" size="33450144" crc="96a0f4d3" md5="3f765e6f43a129275770f1039f27d500" sha1="18d5a69ba59163739608a27dfdc8149f13b087d8"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 13).bin" size="29320032" crc="71f00386" md5="01c5bf190e15633eaffb7338a69ac4fd" sha1="c3825eac1fa7c6bfdbe1131b5c586225793136d2"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 14).bin" size="31784928" crc="3e88c0e1" md5="f0b3e5790eafceceda46fab07590a9ab" sha1="3468ad50956ab109cd6d454aa134ed60c9e640ba"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 15).bin" size="34155744" crc="9b29e240" md5="4862dea5835265c7b5d13e457f8ce0fe" sha1="c660126f5cdfc94fc77ae2d785b65e733b49faf4"/>
+		<rom name="Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Sold Out Software) (Alt 2) (Track 16).bin" size="12583200" crc="dce276a3" md5="58276fd27d574c602acbb8d4ab8f557b" sha1="affc15c69577921673c1ca1748dd02fc56d667ef"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Poland) (En,Fr,De,Es,It,Pl) (Dysk 1) (Wersja Angielska)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Poland) (En,Fr,De,Es,It,Pl) (Dysk 1) (Wersja Angielska)</description>
+		<rom name="Grand Theft Auto - Vice City (Poland) (En,Fr,De,Es,It,Pl) (Dysk 1) (Wersja Angielska).iso" size="1493532672" crc="b9f6be4e" md5="36dba7dbbfa664b5df6cfedf1772a084" sha1="cd1a44e6f575de2ede3e56dd02202889abda5dfa"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Poland) (Dysk 2) (Patch Polonizujacy)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Poland) (Dysk 2) (Patch Polonizujacy)</description>
+		<rom name="Grand Theft Auto - Vice City (Poland) (Dysk 2) (Patch Polonizujacy).cue" size="133" crc="93fc915e" md5="e49c17ebe4b72d17664beda47a783dc3" sha1="b6587b88be4373d123ed4b3d6802b1137d429d4f"/>
+		<rom name="Grand Theft Auto - Vice City (Poland) (Dysk 2) (Patch Polonizujacy).bin" size="25568592" crc="8231441a" md5="3e8813eb83a448364b844e7c0c0d56df" sha1="4824581d3a01d3c1f85b452cc5353f826a967afe"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Poland) (En,Fr,De,Es,It,Pl) (Dysk 1) (Wersja Angielska)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Poland) (En,Fr,De,Es,It,Pl) (Dysk 1) (Wersja Angielska)</description>
+		<rom name="Grand Theft Auto - San Andreas (Poland) (En,Fr,De,Es,It,Pl) (Dysk 1) (Wersja Angielska).iso" size="4213833728" crc="9de5d2a0" md5="64097c953765dca3f5774c4bf907342c" sha1="b8ffd33b84ab4e15a0da9e61d342c993af97f41e"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Poland) (Dysk 2) (Patch Polonizujacy)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Poland) (Dysk 2) (Patch Polonizujacy)</description>
+		<rom name="Grand Theft Auto - San Andreas (Poland) (Dysk 2) (Patch Polonizujacy).cue" size="135" crc="e72f0bb3" md5="dce4b9611eabf20141a0fce6f9794f1f" sha1="5801a0b73195571a84ba3cb3c9a361d730c72461"/>
+		<rom name="Grand Theft Auto - San Andreas (Poland) (Dysk 2) (Patch Polonizujacy).bin" size="12117504" crc="b94951e6" md5="49b73d59cc7240b4a42350fdd6f0c03c" sha1="51ab38b4714073178fa68be46a6e8d45f31615cb"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Russia)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Russia)</description>
+		<rom name="Grand Theft Auto - San Andreas (Russia).iso" size="4323311616" crc="ce0bbfe2" md5="b5b47d7aa922ee6d42cf06bb02e050cb" sha1="78014f7e21e6110e7d329746382d5eee5147cd02"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (Poland) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (Poland) (Disc 1)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (Poland) (Disc 1).iso" size="8294400000" crc="d36ce7b0" md5="3edfb8bbed03785d41982e9ac9fff25e" sha1="150e8244e32efba2a4b3e7312c29f8fc033f958c"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Germany) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Germany) (Install)</description>
+		<rom name="Grand Theft Auto - Vice City (Germany) (Install).cue" size="114" crc="82cd7cc1" md5="739407803e3c3bca7c4e1341fc46f476" sha1="bf17604ada4eb23a9d971790b74bbcca8595752e"/>
+		<rom name="Grand Theft Auto - Vice City (Germany) (Install).bin" size="807500400" crc="89659afd" md5="628082bab630d486d8d261a6c7ce1f99" sha1="304a92dc7b49d8ddfbcf5f20258b61c82f03c0dd"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Germany) (Play)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Germany) (Play)</description>
+		<rom name="Grand Theft Auto - Vice City (Germany) (Play).cue" size="111" crc="93584d11" md5="bd3d2b5f4a7596af2c8ac385fe4cf7ff" sha1="0de70f7f860e5de2c61cca75db83738f82fd1db5"/>
+		<rom name="Grand Theft Auto - Vice City (Germany) (Play).bin" size="792024240" crc="6a8c1b5b" md5="1cffb8e56f09b213ed7f26998e959bbf" sha1="54746475218c06ed49fb25a11a8eb83603f649e1"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (Argentina) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (Argentina) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (Argentina) (En,Fr,De,Es,It) (Disc 1).iso" size="8294400000" crc="db9037ba" md5="aaa6a4500df8bba7ea554b8fe2623361" sha1="6a21078328806862aed71350466327827807bd00"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Germany) (En,De) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Germany) (En,De) (Rerelease)</description>
+		<rom name="Grand Theft Auto - San Andreas (Germany) (En,De) (Rerelease).iso" size="4347691008" crc="b7dcaef8" md5="2e3323ddc273931f4ad05025dd5fdbc4" sha1="1e57bee85e556d28df5fb57bd7e7d8d60122abb4"/>
+	</game>
+	<game name="Grand Theft Auto IV (Russia) (Disc 1) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Russia) (Disc 1) (Alt)</description>
+		<rom name="Grand Theft Auto IV (Russia) (Disc 1) (Alt).iso" size="7860256768" crc="13eb4b00" md5="357b2d527c542d1e797dd1541a0824b3" sha1="2bf1bc7875b5f198af71476589dee8e8e70787f2"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Germany) (En,Fr,De,Es,It)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Germany) (En,Fr,De,Es,It)</description>
+		<rom name="Grand Theft Auto 2 (Germany) (En,Fr,De,Es,It).cue" size="111" crc="2d296298" md5="f65ad9b69702d27cb200569ec5b63ed8" sha1="cf5aeb21e739236b9769cc852f532ca0144e9417"/>
+		<rom name="Grand Theft Auto 2 (Germany) (En,Fr,De,Es,It).bin" size="545224176" crc="01fedb9b" md5="da0acd4d946e48dacef166ea110323cb" sha1="661bbc81c8a793b9348aa14b4abdfacbd7df88e1"/>
+	</game>
+	<game name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease) (Alt)</description>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease) (Alt).cue" size="138" crc="d35731d4" md5="63e06f2e7c44a7cf51b253efff7f0cc4" sha1="013e2ea3ab3bc95340ffaa7f461f3e9191668e3d"/>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Play) (Rerelease) (Alt).bin" size="668177328" crc="c63fe9f9" md5="aa0e77c774da001e11e2ba2a771bcf19" sha1="4a7dccde75bfb7e8bc1e0619776f4887c4cb4dc2"/>
+	</game>
+	<game name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease) (Alt)</description>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease) (Alt).cue" size="141" crc="05bd0555" md5="955cb6142e9b3fe7f0127026e4569b5d" sha1="e3f37752dd5672f0ee26f9a42633ea8fcd0bf4ee"/>
+		<rom name="Grand Theft Auto III (Germany) (En,Fr,De,Es,It) (Install) (Rerelease) (Alt).bin" size="304680432" crc="6d037448" md5="eb998718c267b9e659f6feca613ac6ad" sha1="429a8eae5506c25e29762c77b356867ed34f6a46"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Russia)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Russia)</description>
+		<rom name="Grand Theft Auto 2 (Russia).cue" size="108" crc="05467276" md5="e442509cdc0421729fc5b84c2a56bc24" sha1="aca22734bb93420d289f219c721171335fe929fe"/>
+		<rom name="Grand Theft Auto 2 (Russia).bin" size="711830448" crc="909109cc" md5="1cde0ce004b3039d43a54bfc28e5b650" sha1="a6c68e8df1438f1ee3a7ba88908423fbe864f327"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Germany) (En,Fr,De,Es,It) (Rerelease) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Germany) (En,Fr,De,Es,It) (Rerelease) (Alt)</description>
+		<rom name="Grand Theft Auto - Vice City (Germany) (En,Fr,De,Es,It) (Rerelease) (Alt).iso" size="1483505664" crc="a96a79eb" md5="5cc9529858c3042b1d4894a6dfc7e96a" sha1="ab420305fd9bf5d415ff9bab98d6d71028ee4b41"/>
+	</game>
+	<game name="Grand Theft Auto III (Russia)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Russia)</description>
+		<rom name="Grand Theft Auto III (Russia).iso" size="1721335808" crc="ad0956fd" md5="f9615558125e44bbc3c3d487051b002f" sha1="e907848517ef6f19ac525ab6a6cc81b31bd9cfe6"/>
+	</game>
+	<game name="Grand Theft Auto 2 (France)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (France)</description>
+		<rom name="Grand Theft Auto 2 (France).cue" size="93" crc="c0d9aa5e" md5="a182644c24483f04402cd8f5d1b212c5" sha1="654de3fcc847ed3651c86b8541f87dae81a5ce9f"/>
+		<rom name="Grand Theft Auto 2 (France).bin" size="560034720" crc="99cadb19" md5="207c8a5fe6bcd215ab0217815d92fa67" sha1="c874603edc13abd880ec0724ff8fdab68bd7604a"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Poland)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Poland)</description>
+		<rom name="Grand Theft Auto 2 (Poland).cue" size="116" crc="f7396ccb" md5="03b9c1ec06bbd5d9c4f776066fba12f3" sha1="82b8100debb7c5e8169a94a31cf71ee8d438bcbb"/>
+		<rom name="Grand Theft Auto 2 (Poland).bin" size="543043872" crc="d21ecb9a" md5="be3e2592e0e8aeacc9ea3bf2e5428b5b" sha1="5421e06d49cce7a1f5efbb89fbb319c1ed5614a4"/>
+	</game>
+	<game name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme)</description>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme).cue" size="1568" crc="46626a3e" md5="7c4bc7a9f2269202e976330b3ec5e028" sha1="40223abdbdd3946609f30b4fc43c59b58271b3dc"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 01).bin" size="118841856" crc="8905bc6f" md5="a4b0bdcd7f4e6561129c59dd4c5e12e1" sha1="3c66fb5893f90fcb19fee616b0b682f08e24e23e"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 02).bin" size="24296160" crc="1dd9c110" md5="3e331365501faf919a7fd15dbb716d99" sha1="dfac870c5301dab79c37276e23672b7d2a21e055"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 03).bin" size="78248688" crc="e398bd4b" md5="f351fcc4c5b7d1c948653b5bd86ebd4b" sha1="e6a6b7ac8afe68f2414b302a512a49cc1b9cd8ba"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 04).bin" size="102290832" crc="066ba895" md5="7c702ab8de17d75f3500f5b92f0c8c75" sha1="6857fc9c85a18982a88bf45e0d09f777eacb41a4"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 05).bin" size="101039568" crc="2047c8c1" md5="97d737d339347e8f6103b4783141c784" sha1="2806487cae4facc28fa0d68de549896ae0819e03"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 06).bin" size="79297680" crc="657553bb" md5="5a3192df3700cbfbe64cbc038bc0ad18" sha1="ac7dd05a96a8a47443d15d3f905e2b70f358e3b9"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 07).bin" size="115906560" crc="08b3e9be" md5="9801c131644cc481afd7d8d2299e5384" sha1="83b23b3ebb21f6ac6b6c539d6550531408d1f00a"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 08).bin" size="33563040" crc="75487b64" md5="cadd6e447b297ff81045964e00cfafd0" sha1="adeda7827821a31fea237345fab223797682bd5e"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 09).bin" size="92214864" crc="dc4d54d9" md5="fdc90502a55afed6df50cd47c27547bb" sha1="437e28a670a4a1fd7e181b33bb41b90e48839fdb"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 10).bin" size="10553424" crc="9cf60f9b" md5="adef27c9257b6ac4eb95e6551902e642" sha1="a0f1506058f38654140c670de6034cba272ee7eb"/>
+		<rom name="Grand Theft Auto (Germany) (En,Fr,De,It) (Sold Out Software Extreme) (Track 11).bin" size="12700800" crc="3bab767c" md5="dc65542f9761d7a9eb4198d1e7133ee2" sha1="5944317f2a0d8627995ee5db243a8959b4a3127a"/>
+	</game>
+	<game name="Grand Theft Auto (Japan) (En,Ja) (Taikenban)">
+		<category>Demos</category>
+		<description>Grand Theft Auto (Japan) (En,Ja) (Taikenban)</description>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Taikenban).cue" size="133" crc="2d8e17f1" md5="12c3f93e37fd45df890057b537016519" sha1="f1a392c75c66a62ffcd581e0a65940ec7a01a502"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Taikenban).bin" size="65773680" crc="0764b2f1" md5="925ff241bc413ccaebb1d12d0a445b58" sha1="43168900a04db5ac81ff6469b34d170d8aba5790"/>
+	</game>
+	<game name="Grand Theft Auto (Japan) (En,Ja)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Japan) (En,Ja)</description>
+		<rom name="Grand Theft Auto (Japan) (En,Ja).cue" size="1379" crc="48576a7d" md5="7d8b0976de92cb88dcf0c90d4a104f96" sha1="1f83255ba3dc6ec96eb22668008c4604be0f7345"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 01).bin" size="102714192" crc="d98040e3" md5="74c72183e9dc4ff5745015b278d2271a" sha1="53a681b8bcc13a90da9eae510dbec73dbb4b1b69"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 02).bin" size="24526656" crc="135033f8" md5="024bc93dc252d80bd0e794bed2f87e10" sha1="d4458ba2b7817bd987969d4fa0ad696ff086adca"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 03).bin" size="78853152" crc="37420275" md5="b377eadb8b2202d2bcdcd388a3727169" sha1="90879bb12328ef15bb00cd110335b3636cb13435"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 04).bin" size="102845904" crc="5f949593" md5="7da2cd6e632e2460c18a084d76475f24" sha1="4c36c94bf11990a334edab46fe93fda1b8724192"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 05).bin" size="102140304" crc="b32fa53b" md5="e20fe671dc8e221809d5a23006395ffb" sha1="854f1eabe2bd0c7062a3513d8318c052f72cddab"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 06).bin" size="79913904" crc="ae21635b" md5="8b6fdccb70a0a236e71b5441f8851daa" sha1="3dcd79809f2eec4221ec050dace3854038d574de"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 07).bin" size="116605104" crc="ac6bab66" md5="90ab24c178fb719374a64575a372dd5a" sha1="b13562cfb98e8e8cf0c1ebe4369b4d49d1136825"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 08).bin" size="34049904" crc="e6e9a343" md5="73efa384aff97b8b0e5c3f5bc172eeff" sha1="d2d2ca400ca24fef25f38b33563629ccd7e91daf"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 09).bin" size="92967504" crc="02ee2503" md5="0c1717813075e83318211373270006de" sha1="4651c9a150658aab449b8ccfc4509f4b6e03225f"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 10).bin" size="11117904" crc="dea8d6b7" md5="2b7a1db05693916b1186dcdc60d50937" sha1="1b9b5dbf6c9e327b337bd17837717c250a50a489"/>
+		<rom name="Grand Theft Auto (Japan) (En,Ja) (Track 11).bin" size="13055952" crc="dd03a325" md5="ccabf720eed9dc2fc31c3d0350424f2f" sha1="ee4c7789cb858e7afe2b1661aa354a7a24e061bd"/>
+	</game>
+	<game name="Grand Theft Auto - London (Japan) (En,Ja)">
+		<category>Games</category>
+		<description>Grand Theft Auto - London (Japan) (En,Ja)</description>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja).cue" size="2158" crc="5bf44cc2" md5="96cbff3c50dba1597ca081e8c2955d8f" sha1="b0ecc4e99ab664796fbe1c9919e5247d34080605"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 01).bin" size="146938848" crc="434f8d78" md5="3063c8c1b2e9c8b0da9a81d226b4c362" sha1="d7881dec589377fdc1a523891a5f95dd48224c79"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 02).bin" size="49883568" crc="ce192ee6" md5="e7ad2acaeaa5c28b77d2bce9d241d119" sha1="0e26f2adf6351bf0e8c02f8d81e80c4cbf2262ca"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 03).bin" size="16057104" crc="dd474b3a" md5="d50e8bddf0ef449a9a1ca219a2d5ad16" sha1="8cd577623975d60e00704e6afa236b1df573686d"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 04).bin" size="60970896" crc="8eacbc7e" md5="ef46d127af72929dcec12d04ca25c5f8" sha1="ed6333285981709f99b2c3f119d93f46a98ad517"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 05).bin" size="20276592" crc="a619ab78" md5="dac241db5d995d9db4965e42961e170b" sha1="c9f515100bb885511782f86c95403ea72a048a04"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 06).bin" size="33929952" crc="3b9804fd" md5="f34f5b4d0993624dea781d0b7f0bf49d" sha1="56bcb12dbab8d01c53460a38d92ad111f36f4b2a"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 07).bin" size="52981152" crc="f3904920" md5="c4fce828f654da5e59ab2fe5d4b8af09" sha1="7be35968e59cddd8de542b3ed504167304ba2204"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 08).bin" size="74215008" crc="bbcfeabe" md5="9ff0492740b4b764be08554450615c42" sha1="f42c62d67e6b27c118b2e512e7fc6437620759eb"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 09).bin" size="25117008" crc="0ec5abf0" md5="a62e97f001830418224ccf5bffd112d3" sha1="d316842ab52f405ab91dfde854c2dd50fcf2782d"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 10).bin" size="77305536" crc="cf00eb06" md5="05ac1eb2b837187a22da319946dae927" sha1="b1e06deff5422e0d900a32cfe0f62e115fc8f97a"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 11).bin" size="61443648" crc="00244d18" md5="8f446ff67676364488167eebf5c6312b" sha1="a9931d140f00365e41e93119c9395cbef48efcd2"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 12).bin" size="33447792" crc="b4b4cdf6" md5="3fc7b0fc95ea61f58a5bb3de27a6acd1" sha1="daeb01ea15fd2a853ef719ce21e7f7cb017548dc"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 13).bin" size="29315328" crc="3be3cc68" md5="34e7a99d0d3ce471c01ca45ab374b56c" sha1="df0f19b4d02ee57600d4f8b51c544e4da275fc05"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 14).bin" size="31780224" crc="e82af097" md5="25ca48a7a1d9a1544b1e2f35f742a28e" sha1="a9b2ef344ee70ef5a7ac1be52db648e0a294d7cc"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 15).bin" size="34151040" crc="4113b8ab" md5="b6a83cc65d436c205b4ba598eaa5258e" sha1="4ef5962e82966b06c283e704484b6a6adacb55b6"/>
+		<rom name="Grand Theft Auto - London (Japan) (En,Ja) (Track 16).bin" size="12486768" crc="713a9be3" md5="799021d598906392651ddd675f64820f" sha1="27db0baa7d0b269f9ac498b8348b407b43ae4183"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Japan)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Japan)</description>
+		<rom name="Grand Theft Auto 2 (Japan).cue" size="115" crc="c1794c23" md5="6b00215fc7e8875dd24a81a7d330068c" sha1="19ee36f47fa47cf977fe5e91c1aa4944ebf307af"/>
+		<rom name="Grand Theft Auto 2 (Japan).bin" size="547070496" crc="0cc250e2" md5="d38eff72610c28f748d9251ae87c64e8" sha1="b94bfbf03dc38c95ba46df293f12cde8730949c7"/>
+	</game>
+	<game name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1).iso" size="7542898688" crc="6ee0da14" md5="6d15371a8f80f7cdc4a98dfd88ae4b9b" sha1="ff2974e168a119a994e85acaf902a41d2f836c32"/>
+	</game>
+	<game name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 2)</description>
+		<rom name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 2).iso" size="7314374656" crc="dff91253" md5="cb9dce70759a625e8f4a0d6eaf75ca27" sha1="a05819a44cb76182f2d47bcf24cc27200064e3cc"/>
+	</game>
+	<game name="Grand Theft Auto III (Japan) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Japan) (Install)</description>
+		<rom name="Grand Theft Auto III (Japan) (Install).cue" size="104" crc="722fc935" md5="8f8e5c306d8bd201f83d0d81297707eb" sha1="6f6a84da1932a01d13b1566ae355d5c3cd9ad5d0"/>
+		<rom name="Grand Theft Auto III (Japan) (Install).bin" size="271409040" crc="323af1ce" md5="997efef52f9707d1bf5eb0d1a23872cb" sha1="73cbb205bf19553f859a32c3f024c1a23ceaaa35"/>
+	</game>
+	<game name="Grand Theft Auto III (Japan) (Play)">
+		<category>Games</category>
+		<description>Grand Theft Auto III (Japan) (Play)</description>
+		<rom name="Grand Theft Auto III (Japan) (Play).cue" size="101" crc="c47d6e16" md5="488c8b05e3de2665ee89ea00a1bdbaa2" sha1="0bdf41a959241b920a51d1b38dfe3001eed5413d"/>
+		<rom name="Grand Theft Auto III (Japan) (Play).bin" size="668149104" crc="d55b4265" md5="f045d60170e4af924786dd08a6355345" sha1="a1fb47f5f07a53fa73577308c54ee8b1deb5e8c1"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Japan) (Install)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Japan) (Install)</description>
+		<rom name="Grand Theft Auto - Vice City (Japan) (Install).cue" size="127" crc="a677690c" md5="a18139de6f62213a3fe7c14a8bf2cfd6" sha1="6fd39923cd9a1dc737414c7c15ef6658fa9efd96"/>
+		<rom name="Grand Theft Auto - Vice City (Japan) (Install).bin" size="804106464" crc="d6d2fabf" md5="1ff52fa172fa7dfa27786dd0e7cc3ea9" sha1="54ff429fbb36c51d98dd8acd7a75ffa9d3bb9179"/>
+	</game>
+	<game name="Grand Theft Auto - Vice City (Japan) (Play)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Vice City (Japan) (Play)</description>
+		<rom name="Grand Theft Auto - Vice City (Japan) (Play).cue" size="124" crc="bfa08015" md5="f19bfed48575ea8da055a0956f97b57e" sha1="8a3144178d547fd1445e63c8d5951bf2599c61f8"/>
+		<rom name="Grand Theft Auto - Vice City (Japan) (Play).bin" size="791266896" crc="5002662c" md5="889e0f83331f8e10755f3f6bd05593e7" sha1="48e88eb9f57f76a38f216e2b410525beea0bef0c"/>
+	</game>
+	<game name="Grand Theft Auto IV (Japan) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Japan) (Disc 1)</description>
+		<rom name="Grand Theft Auto IV (Japan) (Disc 1).iso" size="7862976512" crc="3e48e543" md5="dd8f2689c518f4ac845a1741eb1baebc" sha1="0de7f1f9949e8b7e8c4d7b0cf42babb1511f1a59"/>
+	</game>
+	<game name="Grand Theft Auto IV (Japan) (Disc 2)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Japan) (Disc 2)</description>
+		<rom name="Grand Theft Auto IV (Japan) (Disc 2).iso" size="6988234752" crc="080c29d6" md5="cb58b55f84ae4a9a10e974d11747a029" sha1="8df023d1b75734192473dcef5c8650b273535795"/>
+	</game>
+	<game name="Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 1) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 1) (Alt)</description>
+		<rom name="Grand Theft Auto - Episodes from Liberty City (Russia) (Disc 1) (Alt).iso" size="8059879424" crc="55afbded" md5="cab221ef14e2e0222d0ad7083a85e574" sha1="f2495714abb7bc85baeb5d440e558466c9bbbcf6"/>
+	</game>
+	<game name="Grand Theft Auto IV (Taiwan) (En,Fr,De,Es,It) (Disc 1)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (Taiwan) (En,Fr,De,Es,It) (Disc 1)</description>
+		<rom name="Grand Theft Auto IV (Taiwan) (En,Fr,De,Es,It) (Disc 1).iso" size="7553908736" crc="bc660cd5" md5="1d6fcd70cfb71989540bcce91db6e885" sha1="b1247a2fba27b4224baaeb65c189aa02b9afa0f0"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Poland) (Plyta Aktualizacyjna)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Poland) (Plyta Aktualizacyjna)</description>
+		<rom name="Grand Theft Auto - San Andreas (Poland) (Plyta Aktualizacyjna).cue" size="128" crc="85bb609b" md5="747caa09a887b3d31b3b26f81548539e" sha1="abc4c085e504682cb533509c842b1a29480ee9b1"/>
+		<rom name="Grand Theft Auto - San Andreas (Poland) (Plyta Aktualizacyjna).bin" size="8434272" crc="a1abe680" md5="e68c3ac24271e1db8024b8a48ec7b907" sha1="6735d0fbbd9a816447e89d9177e36d3b4752ed07"/>
+	</game>
+	<game name="Grand Theft Auto - San Andreas (Australia)">
+		<category>Games</category>
+		<description>Grand Theft Auto - San Andreas (Australia)</description>
+		<rom name="Grand Theft Auto - San Andreas (Australia).iso" size="4213833728" crc="6d27f3df" md5="b6d94a9ae0c409ec85f1bb90a1ce0c7d" sha1="e1e633e703fd64a69aa01db1dc77a4f34ee9c5ae"/>
+	</game>
+	<game name="Grand Theft Auto III (Scandinavia) (Manual)">
+		<category>Bonus Discs</category>
+		<description>Grand Theft Auto III (Scandinavia) (Manual)</description>
+		<rom name="Grand Theft Auto III (Scandinavia) (Manual).cue" size="109" crc="6d1379c1" md5="d454804f182db5004c30dc80834cc7c8" sha1="7c1abfe838b36fb932c7f6970918bac7e65c8bff"/>
+		<rom name="Grand Theft Auto III (Scandinavia) (Manual).bin" size="33259632" crc="a640b29d" md5="9c4146d3efd2704f8af5719ab4ba17a0" sha1="ed2eb4864b677359d7386197c5d539227a1816da"/>
+	</game>
+	<game name="Grand Theft Auto (Australia)">
+		<category>Games</category>
+		<description>Grand Theft Auto (Australia)</description>
+		<rom name="Grand Theft Auto (Australia).cue" size="1358" crc="f6e6fc44" md5="d31c9363230fe15ed94040df31fba8db" sha1="c6681677ac258ff45f3cb4a962a5cd01b97aee47"/>
+		<rom name="Grand Theft Auto (Australia) (Track 01).bin" size="99099168" crc="69c082af" md5="35dea81046e8eac3053374cd637c0b2b" sha1="e0232c49cb60bbfc634bb284bad002e0c8fdf962"/>
+		<rom name="Grand Theft Auto (Australia) (Track 02).bin" size="25058208" crc="e3e88ed0" md5="dcc29364818e0ef204dc6b0f1e3a6e52" sha1="fa0b106bc676fa31282f62b34ca21921656d02a4"/>
+		<rom name="Grand Theft Auto (Australia) (Track 03).bin" size="79213008" crc="b13bb3c7" md5="5b8ec35ad7fbae57e9f36fe844f6f5ad" sha1="c462686d22f7d12169097969f69f9178563ac6d8"/>
+		<rom name="Grand Theft Auto (Australia) (Track 04).bin" size="103203408" crc="0b355c8f" md5="ea38294c6669c464930bc71a87965dee" sha1="88aa5a1ba5dace3914d91f8f27c4bd998961f60b"/>
+		<rom name="Grand Theft Auto (Australia) (Track 05).bin" size="102497808" crc="6eda6e7a" md5="ee4a3f3ebbc48e769c28e7b9a694ebc3" sha1="41c93d9dea165bb38795be6fb5ade8cbb1c1220b"/>
+		<rom name="Grand Theft Auto (Australia) (Track 06).bin" size="80271408" crc="6a2cb6a3" md5="ea42f5d9c37c646e2e4dbfbfcb8cbef2" sha1="f5659dff6ee7ca42f050f5da9fccbf9b39d2273f"/>
+		<rom name="Grand Theft Auto (Australia) (Track 07).bin" size="116962608" crc="bc40e444" md5="2c03420417a191fc4aa2b7941ce2515d" sha1="4040c346c9fc1b3b90e1fbd180cfcc2452f1d441"/>
+		<rom name="Grand Theft Auto (Australia) (Track 08).bin" size="34407408" crc="0aa1403e" md5="1ca82a4cbdb3516882504689f86e3d42" sha1="871471539b6803871b5b99a4cfee456f2e433d06"/>
+		<rom name="Grand Theft Auto (Australia) (Track 09).bin" size="93325008" crc="de419eca" md5="9a439a4fb6ec7f302f417f1b63a83f99" sha1="53d2d382afde62f85ff695e46c506913f5b7ab7f"/>
+		<rom name="Grand Theft Auto (Australia) (Track 10).bin" size="11475408" crc="a4a732d4" md5="06b8ed34d2773e6518d5407fe38256f8" sha1="5aca82c58d9785fe096a3d646b630e969b032fbb"/>
+		<rom name="Grand Theft Auto (Australia) (Track 11).bin" size="13058304" crc="ba168c3a" md5="88ce5c0b6ce76738c772884a40f8fb16" sha1="5b7f63c065ee74bfb34b2eb411d025b0feb13505"/>
+	</game>
+	<game name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1) (Alt)</description>
+		<rom name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 1) (Alt).iso" size="7542898688" crc="dc2ce2e0" md5="bdf3d24f4f18b96a8988a98e2e13fa63" sha1="ada7ffc760d4219ad5b6866ad898cd50f0c2f20a"/>
+	</game>
+	<game name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 2) (Alt)">
+		<category>Games</category>
+		<description>Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 2) (Alt)</description>
+		<rom name="Grand Theft Auto IV (USA) (En,Fr,De,Es,It) (Disc 2) (Alt).iso" size="7314374656" crc="0756242e" md5="adbd78a9509a458412fd2db0e6e664e6" sha1="2210e8cfab073bab9e7e039f6406fa4775d912a3"/>
+	</game>
+	<game name="Grand Theft Auto Trylogia (Poland) (En,Fr,De,Es,It,Pl) (Rerelease)">
+		<category>Games</category>
+		<description>Grand Theft Auto Trylogia (Poland) (En,Fr,De,Es,It,Pl) (Rerelease)</description>
+		<rom name="Grand Theft Auto Trylogia (Poland) (En,Fr,De,Es,It,Pl) (Rerelease).iso" size="2954035200" crc="a1b05362" md5="d48d5b65670246be896b5c79678456db" sha1="e4ea470d571c335d69b2b7f93f06c406ba4a60fb"/>
+	</game>
+	<game name="Grand Theft Auto 2 (Scandinavia) (En,Fr,De,Es,It)">
+		<category>Games</category>
+		<description>Grand Theft Auto 2 (Scandinavia) (En,Fr,De,Es,It)</description>
+		<rom name="Grand Theft Auto 2 (Scandinavia) (En,Fr,De,Es,It).cue" size="115" crc="239fc324" md5="3b5ff1c666ef53d306b84fe7fe0420cd" sha1="b47a5cb44ee173e3655b1d7e5290f04dc173fbfa"/>
+		<rom name="Grand Theft Auto 2 (Scandinavia) (En,Fr,De,Es,It).bin" size="543914112" crc="3d4419d1" md5="f67de3eef384a742ab139dceb1c3945d" sha1="4cbe62c5641f84b96dd1935eafc9be32be932954"/>
+	</game>
+</datafile>

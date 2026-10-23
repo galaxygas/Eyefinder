@@ -45,11 +45,12 @@ tools/txd-ref/build.sh /tmp/txdref crates/ef-texture/tests/fixtures
 The texture fixtures are deterministic: CI regenerates them and checks they are unchanged. The TGA
 fixtures alone can be rebuilt with `python3 tools/txd-ref/tga_fixtures.py crates/ef-texture/tests/fixtures`.
 
-The 2D console identification table is generated from the redump / No-Intro DATs of
-libretro-database (commit in the script):
+The release index (every GTA release the redump / No-Intro DATs, redump's PC DAT, Wikipedia and
+titledb list; used for detection and shown on the Index page) is generated from pinned sources
+named in the script. The downloads go to a cache folder, so a second run works offline:
 
 ```sh
-python3 tools/gen_legacy_ids.py <libretro-database checkout> crates/ef-core/src/console_ids.rs
+python3 tools/gen_release_index.py <cache folder> crates/ef-core/data/release_index.json
 ```
 
 The Dreamcast fixture needs vgmstream-cli built at the commit named in the script:
