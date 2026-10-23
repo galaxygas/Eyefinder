@@ -9,7 +9,7 @@ use std::sync::Arc;
 /// belongs to; disc images and cartridge ROMs are imported as they are.
 pub const FILE_EXTENSIONS: &[&str] = &[
     // discs and cartridges
-    "iso", "bin", "cue", "gdi", "img", "gb", "gbc", "cgb", "gba", "agb",
+    "iso", "bin", "cue", "gdi", "cdi", "vcd", "img", "gb", "gbc", "cgb", "gba", "agb",
     // GTA III / Vice City / San Andreas
     "txd", "dir", "exe", "wav", "mp3", "adf", "vb",
     // GTA1 / London (DMA CityScape, Marschall inventory) and GTA2 (gta2_re, DMA GBH documents)
@@ -18,7 +18,7 @@ pub const FILE_EXTENSIONS: &[&str] = &[
 ];
 
 /// Extensions imported as a disc or cartridge image rather than as a file of an installation.
-pub const IMAGE_EXTENSIONS: &[&str] = &["iso", "bin", "cue", "gdi", "gb", "gbc", "cgb", "gba", "agb"];
+pub const IMAGE_EXTENSIONS: &[&str] = &["iso", "bin", "cue", "gdi", "cdi", "vcd", "gb", "gbc", "cgb", "gba", "agb"];
 
 /// Selecting an asset imports its containing game/data folder, keeping companion
 /// index/palette/bank files available. Multiple selections in that folder coalesce.
@@ -35,7 +35,7 @@ pub fn resolve_path(path: &Path) -> Result<PathBuf, IsoError> {
     }
     if path.is_file() && !FILE_EXTENSIONS.contains(&ext.as_str()) {
         return Err(IsoError::Unsupported(format!(
-            ".{ext} files are not read by Eyefinder. Select the game's folder, one of its data files, a disc image (ISO, BIN/CUE, GDI) or a cartridge ROM (GB, GBC, GBA)."
+            ".{ext} files are not read by Eyefinder. Select the game's folder, one of its data files, a disc image (ISO, BIN/CUE, GDI, CDI, VCD) or a cartridge ROM (GB, GBC, GBA)."
         )));
     }
     let folder = if path.is_dir() { path } else { path.parent().unwrap_or(Path::new(".")) };
@@ -74,7 +74,7 @@ pub fn resolve_path(path: &Path) -> Result<PathBuf, IsoError> {
             !e.is_dir
                 && matches!(
                     e.name.rsplit('.').next().unwrap_or("").to_ascii_lowercase().as_str(),
-                    "bin" | "iso" | "img" | "gdi"
+                    "bin" | "iso" | "img" | "gdi" | "cdi" | "vcd"
                 )
         }) {
             let path = folder.join(&e.name);
@@ -185,6 +185,9 @@ impl Vfs for PrefixVfs {
     fn system_area(&self) -> Option<Vec<u8>> {
         self.inner.system_area()
     }
+    fn container(&self) -> Option<String> {
+        self.inner.container()
+    }
 }
 
 struct SubdirVfs {
@@ -216,6 +219,9 @@ impl Vfs for SubdirVfs {
     }
     fn system_area(&self) -> Option<Vec<u8>> {
         self.inner.system_area()
+    }
+    fn container(&self) -> Option<String> {
+        self.inner.container()
     }
 }
 

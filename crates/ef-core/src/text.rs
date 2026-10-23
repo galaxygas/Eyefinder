@@ -145,7 +145,7 @@ pub fn parse_gxt2(data: &[u8]) -> Result<TextTable, String> {
     let (tkey, tdat) = (tkey.ok_or("no TKEY chunk")?, tdat.ok_or("no TDAT chunk")?);
     let western = matches!(lang.to_ascii_uppercase(), 'E' | 'F' | 'G' | 'I' | 'S');
     let mut table = TextTable { language: lang.to_string(), ..Default::default() };
-    let mut unmapped = 0usize;
+    let (mut unmapped, mut prefixes) = (0usize, 0usize);
     for r in tkey.as_chunks::<12>().0 {
         let off = u32::from_le_bytes(r[0..4].try_into().unwrap()) as usize;
         let key_end = r[4..12].iter().position(|&b| b == 0).unwrap_or(8);
@@ -159,8 +159,17 @@ pub fn parse_gxt2(data: &[u8]) -> Result<TextTable, String> {
             if u == 0 {
                 break;
             }
+            // Real e.gxt / s.gxt (PC 2004 release, Dreamcast T40502D 93): every code unit of 0x100
+            // or above is 0x2153-0x217A and starts its string. No source documents what these
+            // prefixes select (MISSING.md), so they stay marked codes, never characters.
+            if western && (0x2100..0x2200).contains(&u) && p == off {
+                prefixes += 1;
+                let _ = write!(s, "{{U+{u:04X}}}");
+                p += 2;
+                continue;
+            }
             match char::from_u32(u as u32) {
-                Some(c) if u < 0x80 || western => s.push(c),
+                Some(c) if u < 0x80 || (western && u < 0x100) => s.push(c),
                 _ => {
                     unmapped += 1;
                     let _ = write!(s, "{{U+{u:04X}}}");
@@ -169,6 +178,11 @@ pub fn parse_gxt2(data: &[u8]) -> Result<TextTable, String> {
             p += 2;
         }
         table.entries.push((key, s));
+    }
+    if prefixes > 0 {
+        table
+            .notes
+            .push(format!("{prefixes} strings start with an undocumented prefix code (0x21xx), shown as {{U+21XX}}"));
     }
     if unmapped > 0 {
         table.notes.push(format!(
@@ -247,7 +261,7 @@ mod tests {
     fn gxt2_tables() {
         let mut tdat = Vec::new();
         let mut tkey = Vec::new();
-        for (k, v) in [("credits", "Caf\u{e9}"), ("1001", "Hi")] {
+        for (k, v) in [("credits", "Caf\u{e9}"), ("1001", "\u{2179}Hi \u{2179}")] {
             tkey.extend((tdat.len() as u32).to_le_bytes());
             let mut key = [0u8; 8];
             key[..k.len()].copy_from_slice(k.as_bytes());
@@ -263,7 +277,9 @@ mod tests {
         }
         let t = parse_gxt2(&f).unwrap();
         assert_eq!(t.language, "E");
-        assert_eq!(t.entries, [("credits".into(), "Caf\u{e9}".into()), ("1001".into(), "Hi".into())]);
+        // a leading 0x21xx unit is a marked prefix code; elsewhere it is an unmapped character
+        assert_eq!(t.entries, [("credits".into(), "Caf\u{e9}".into()), ("1001".into(), "{U+2179}Hi {U+2179}".into())]);
+        assert_eq!(t.notes.len(), 2, "{:?}", t.notes);
         f[3] = b'R';
         let r = parse_gxt2(&f).unwrap();
         assert_eq!(r.entries[0].1, "Caf{U+00E9}");

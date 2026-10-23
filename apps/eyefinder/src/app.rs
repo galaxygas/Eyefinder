@@ -1598,9 +1598,11 @@ impl EyefinderApp {
                     ui.label(RichText::new(icon::DOWNLOAD_SIMPLE).size(34.0).color(p.accent_text));
                     ui.label(RichText::new("Drop a game folder, disc image or ROM here").size(15.5).family(semibold()));
                     ui.label(
-                        RichText::new("Folders, ISO, BIN/CUE, GDI, GB/GBC/GBA, or any of the game's own files")
-                            .size(12.0)
-                            .color(p.muted),
+                        RichText::new(
+                            "Folders, ISO, BIN/CUE, GDI, CDI, VCD, GB/GBC/GBA, or any of the game's own files",
+                        )
+                        .size(12.0)
+                        .color(p.muted),
                     );
                     ui.add_space(12.0);
                     ui.horizontal(|ui| {

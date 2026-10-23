@@ -87,6 +87,14 @@ fn rom_file(vfs: &dyn Vfs) -> Option<String> {
 /// What a console disc or ROM is: `(game, platform, edition, evidence)`. `game` is `None` when the
 /// platform is recognised but the release is not in the table.
 pub fn detect(vfs: &dyn Vfs) -> Option<(Option<Game>, Platform, Edition, Vec<String>)> {
+    let mut found = detect_release(vfs)?;
+    if let Some(c) = vfs.container() {
+        found.3.insert(0, format!("image container: {c}"));
+    }
+    Some(found)
+}
+
+fn detect_release(vfs: &dyn Vfs) -> Option<(Option<Game>, Platform, Edition, Vec<String>)> {
     if let Ok(cnf) = vfs.read_all("SYSTEM.CNF") {
         let cnf = String::from_utf8_lossy(&cnf);
         if is_ps1_config(&cnf) {

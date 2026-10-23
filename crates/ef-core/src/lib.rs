@@ -3,6 +3,7 @@
 pub mod console;
 pub mod console_ids;
 mod cue;
+pub mod discimg;
 pub mod edition;
 mod gdi;
 pub mod gxt;

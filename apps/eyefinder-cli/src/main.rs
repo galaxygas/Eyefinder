@@ -18,11 +18,12 @@ USAGE:
     eyefinder-cli export   <game folder, asset file or disc image> <output folder> [choice] [audio options]
     eyefinder-cli textures <game folder, asset file or disc image> <output folder> [choice] [texture options]
     eyefinder-cli text     <game folder, asset file or disc image> [choice]
+    eyefinder-cli files    <game folder or disc image>
 
 scan lists the copies found in Steam libraries, the Rockstar Games Launcher and the usual Rockstar
 Games folders, with the store each belongs to.
 
-Disc images: ISO, BIN/CUE, GDI (Dreamcast). Cartridge ROMs: GB, GBC, GBA.
+Disc images: ISO, BIN/CUE, GDI and CDI (Dreamcast), VCD (PS2 POPStarter). Cartridge ROMs: GB, GBC, GBA.
 A folder holding several games (GTA1 with London 1969/1961 installed into it) needs --game.
 
 CHOICE (default: detected; the files must fit the choice; `versions` lists what fits):
@@ -116,6 +117,20 @@ fn main() -> ExitCode {
         eprintln!("{USAGE}");
         return ExitCode::from(2);
     };
+    if cmd == "files" {
+        // Every file with its size: the file list a format report asks for (CONTRIBUTING.md).
+        let vfs = match ef_core::import::open_path(&PathBuf::from(path)) {
+            Ok(v) => v,
+            Err(e) => {
+                eprintln!("error: {e}");
+                return ExitCode::from(2);
+            }
+        };
+        for (p, e) in ef_core::vfs::walk_files(vfs.as_ref(), "") {
+            println!("{}\t{p}", e.size);
+        }
+        return ExitCode::SUCCESS;
+    }
     if cmd == "versions" {
         let vfs = match ef_core::import::open_path(&PathBuf::from(path)) {
             Ok(v) => v,

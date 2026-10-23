@@ -66,6 +66,11 @@ pub trait Vfs: Send + Sync {
     fn system_area(&self) -> Option<Vec<u8>> {
         None
     }
+    /// The image container wrapping the disc's sectors, when it says something about the copy,
+    /// e.g. "DiscJuggler CDI V3.5, 2 session(s), data track at LBA 11702".
+    fn container(&self) -> Option<String> {
+        None
+    }
     /// Reads a whole (small) file.
     fn read_all(&self, path: &str) -> io::Result<Vec<u8>> {
         let mut f = self.open(path)?;
@@ -259,6 +264,8 @@ pub struct IsoVfs {
     extra: Vec<(u64, FileLocation)>,
     /// Red Book audio tracks of a CUE sheet, listed under [`CD_AUDIO_DIR`].
     audio: Vec<crate::cue::AudioTrack>,
+    /// The wrapping container, when it is not a plain ISO / BIN/CUE / GDI (see [`crate::discimg`]).
+    container: Option<String>,
     block: u64,
     root: IsoNode,
     dirs: Mutex<HashMap<u32, Arc<Vec<IsoNode>>>>,
@@ -283,6 +290,16 @@ impl IsoVfs {
             let mut v =
                 Self::from_backing(image, FileLocation { host, offset: 0, len: length, sectors: Some(layout) })?;
             v.audio = audio;
+            return Ok(v);
+        }
+        let ext = image.extension().map(|e| e.to_string_lossy().to_ascii_lowercase());
+        if matches!(ext.as_deref(), Some("vcd" | "cdi")) {
+            let t =
+                if ext.as_deref() == Some("vcd") { crate::discimg::vcd(&image)? } else { crate::discimg::cdi(&image)? };
+            let (base, data) = t.data;
+            let mut v = Self::from_backing_at(image, data, base)?;
+            v.audio = t.audio;
+            v.container = Some(t.container);
             return Ok(v);
         }
         if image.extension().is_some_and(|e| e.eq_ignore_ascii_case("gdi")) {
@@ -345,6 +362,7 @@ impl IsoVfs {
                     base_lba,
                     extra: Vec::new(),
                     audio: Vec::new(),
+                    container: None,
                     block,
                     root,
                     dirs: Mutex::new(HashMap::new()),
@@ -496,6 +514,9 @@ impl Vfs for IsoVfs {
             return None;
         }
         self.extent(n.lba, n.size)
+    }
+    fn container(&self) -> Option<String> {
+        self.container.clone()
     }
     fn system_area(&self) -> Option<Vec<u8>> {
         let mut f = RangeFile::open(&FileLocation { len: 16 * 2048, ..self.backing.clone() }).ok()?;
