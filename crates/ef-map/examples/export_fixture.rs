@@ -21,6 +21,9 @@ fn main() {
         topdown: true,
         tiles: true,
         premade: true,
+        scene: true,
+        world_topdown: true,
+        world_ppu: a.get(4).and_then(|v| v.parse().ok()).unwrap_or(1.0),
         ..Default::default()
     };
     let r =

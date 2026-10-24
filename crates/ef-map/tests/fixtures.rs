@@ -127,6 +127,57 @@ fn catalogs_pair_maps_and_styles() {
 }
 
 #[test]
+fn placed_worlds_scene_and_top_down() {
+    use ef_map::{gltf, render3d, scene, world};
+    for (dir, game, key) in [("world3", Game::Gta3, "iii_world"), ("world_sa", Game::SanAndreas, "sa_world")] {
+        let inst = install(dir, game);
+        let w = world::build(&inst);
+        let r = &reference()[key];
+        assert!(w.problems.is_empty(), "{dir}: {:?}", w.problems);
+        assert_eq!(w.instances.len() as u64, r["instances"].as_u64().unwrap(), "{dir}");
+        let lods: Vec<bool> = w.instances.iter().map(|i| i.is_lod).collect();
+        assert_eq!(serde_json::json!(lods), r["lod"], "{dir}");
+        let all: Vec<usize> = (0..w.instances.len()).collect();
+        let cancel = AtomicBool::new(false);
+        let sc = scene::load(&inst, &w, &all, &|_, _| {}, &cancel);
+        assert!(sc.problems.is_empty(), "{dir}: {:?}", sc.problems);
+        assert!(sc.by_model.values().all(Option::is_some), "{dir}");
+        let detail: Vec<usize> =
+            all.iter().copied().filter(|&i| w.instances[i].area == 0 && !w.instances[i].is_lod).collect();
+        let out = std::env::temp_dir().join(format!("ef-map-world-{dir}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&out);
+        std::fs::create_dir_all(&out).unwrap();
+        let png_path = out.join("top.png");
+        let view = render3d::View { min: 0.0, size: 64.0, ppu: 1.0 };
+        render3d::render(&w, &sc, &detail, &view, &png_path, &|_, _| {}, &cancel).unwrap().unwrap();
+        let mut dec =
+            png::Decoder::new(std::io::BufReader::new(std::fs::File::open(&png_path).unwrap())).read_info().unwrap();
+        let mut px = vec![0; dec.output_buffer_size().unwrap()];
+        dec.next_frame(&mut px).unwrap();
+        let rr = &r["render"];
+        assert_eq!(fnv(&px), rr["fnv"].as_str().unwrap(), "{dir} top-down render");
+        // The glTF scene: one node per instance, its groups and the root; every accessor in range.
+        let n = gltf::write(&w, &sc, &all, &out.join("scene"), &|_, _| {}, &cancel).unwrap();
+        assert_eq!(n, w.instances.len());
+        let doc: serde_json::Value =
+            serde_json::from_slice(&std::fs::read(out.join("scene/scene.gltf")).unwrap()).unwrap();
+        let bin = std::fs::metadata(out.join("scene/scene.bin")).unwrap().len();
+        assert_eq!(doc["buffers"][0]["byteLength"].as_u64().unwrap(), bin);
+        for v in doc["bufferViews"].as_array().unwrap() {
+            assert!(v["byteOffset"].as_u64().unwrap() + v["byteLength"].as_u64().unwrap() <= bin);
+        }
+        let nodes = doc["nodes"].as_array().unwrap();
+        let groups = nodes.iter().filter(|n| n.get("children").is_some()).count();
+        assert_eq!(nodes.len(), n + groups);
+        assert!(nodes.iter().any(|n| n["name"].as_str().is_some_and(|s| s.contains("low detail"))), "{dir}");
+        for t in doc["images"].as_array().unwrap() {
+            assert!(out.join("scene").join(t["uri"].as_str().unwrap()).exists());
+        }
+        std::fs::remove_dir_all(&out).unwrap();
+    }
+}
+
+#[test]
 fn export_writes_every_output_and_a_manifest() {
     let out = std::env::temp_dir().join(format!("ef-map-export-{}", std::process::id()));
     let _ = std::fs::remove_dir_all(&out);

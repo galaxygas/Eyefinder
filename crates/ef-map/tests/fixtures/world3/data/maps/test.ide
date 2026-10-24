@@ -1,0 +1,5 @@
+objs
+1000, quad_a, quadtex, 1, 120, 0
+1001, quad_b, quadtex, 1, 120, 0
+1002, LODquad_a, quadtex, 1, 1500, 0
+end

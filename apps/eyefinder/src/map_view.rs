@@ -91,6 +91,9 @@ impl EyefinderApp {
             topdown: availability.cities.is_ok(),
             tiles: false,
             premade: availability.premade.is_ok(),
+            scene: availability.scene.is_ok(),
+            world_topdown: availability.scene.is_ok(),
+            world_ppu: 1.0,
             styles: Default::default(),
         };
         self.map_export = Some(MapExportDialog { entry, out_dir, opts, availability, catalog: slot });
@@ -148,8 +151,34 @@ impl EyefinderApp {
                 });
             }
             option(ui, &mut d.opts.premade, &a.premade, "Full map: radar and pause-menu maps", "The map the game draws its radar from, assembled from every radar tile, and the pause-menu map (Vice City: its own 3 x 3 textures; San Andreas: the radar tiles over the menu colour; GTA III has none).");
-            let mut no_scene = false;
-            option(ui, &mut no_scene, &a.scene, "Full map: 3D scene and top-down render", "Every placed model of the world as a glTF scene, and a top-down render of it.");
+            option(
+                ui,
+                &mut d.opts.scene,
+                &a.scene,
+                "Full map: 3D scene",
+                "Every placed model of the world (all areas, full and low detail) with its textures, as one glTF 2.0 scene for Blender and other 3D tools.",
+            );
+            option(
+                ui,
+                &mut d.opts.world_topdown,
+                &a.scene,
+                "Full map: top-down render of the world",
+                "The placed world seen from straight above, north up, over the area the radar covers.",
+            );
+            if d.opts.world_topdown && a.scene.is_ok() {
+                ui.indent("ppu", |ui| {
+                    ui.horizontal(|ui| {
+                        ui.label(RichText::new("Pixels per world unit").size(12.0));
+                        for v in [0.5f32, 1.0, 2.0, 4.0] {
+                            ui.selectable_value(&mut d.opts.world_ppu, v, format!("{v}"));
+                        }
+                    });
+                    let side = cat.and_then(|c| c.radar.as_ref()).map(|(g, _)| g.tile * g.side as f32 * d.opts.world_ppu);
+                    if let Some(side) = side {
+                        ui.label(RichText::new(format!("{side:.0} x {side:.0} pixels")).size(11.5).color(p.muted));
+                    }
+                });
+            }
             if let Some(c) = cat {
                 if !c.levels.is_empty() && (d.opts.topdown || d.opts.individual) {
                     ui.add_space(8.0);
@@ -192,7 +221,12 @@ impl EyefinderApp {
             destination(ui, p, &mut d.out_dir);
             ui.add_space(14.0);
             ui.horizontal(|ui| {
-                let any = d.opts.raw || d.opts.individual || d.opts.topdown || d.opts.premade;
+                let any = d.opts.raw
+                    || d.opts.individual
+                    || d.opts.topdown
+                    || d.opts.premade
+                    || d.opts.scene
+                    || d.opts.world_topdown;
                 if ui
                     .add_enabled(cat.is_some() && any, accent_button(p, format!("{} Start export", icon::EXPORT)).min_size(vec2(130.0, 32.0)))
                     .clicked()

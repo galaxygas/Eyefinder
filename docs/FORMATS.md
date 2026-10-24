@@ -701,9 +701,72 @@ At 64 pixels per block (the tiles' native size), every lid of every column is dr
     which start with *id, model, txd*.
   * The `.col` entries Vice City and San Andreas stream from IMG archives, San Andreas' `.ipl` and
     `nodes*.dat` entries (gta-reversed `Streaming.cpp`), and the radar dictionaries.
-* **Not implemented yet:** the 3D map scene and its top-down render (IPL instances, DFF models, COL).
-  * Their sources are named in the registry: re3 `LoadObjectInstance` (rotation by −2·acos *w* about
-    the instance's axis), `LoadCollisionModel`, and librw.
+
+## GTA III / Vice City / San Andreas: the placed world (PC)
+
+The 3D map scene (glTF) and the top-down render of the world.
+
+* **Object definitions (IDE):**
+  * `objs` / `tobj` lines start *id, model, txd*.
+  * GTA III / Vice City then give the number of atomics and that many draw distances (re3 / reVC
+    `FileLoader.cpp` `LoadObject`, `LoadTimeObject`).
+  * San Andreas `objs` may give the draw distance directly; its `anim` lines insert the animation
+    name (gta-reversed `LoadObject`, `LoadAnimatedClumpObject`).
+  * San Andreas `txdp` names a dictionary's parent.
+* **Placements, text IPL** (`LoadObjectInstance`; `LoadLine` turns commas into spaces):
+  * GTA III: *id, model, x y z, scale x y z, rotation x y z, w*. The scale is read but not used.
+  * Vice City: the same, optionally with the area after the model.
+  * San Andreas: *id, model, area and flags, x y z, rotation x y z w, LOD index*.
+* **Placements, San Andreas binary IPL:**
+  * `"bnry"`, six counts and six offset/size pairs (0x4C bytes, gta-reversed `tBinaryIplFile.h`).
+  * Then 40-byte `CFileObjectInstance` records (`FileObjectInstance.h`): position, quaternion x y z w,
+    model id, area code and flags (bit 9 "don't stream"), LOD index.
+* **Instance matrix** (rows: images of x, y, z; then position):
+  * GTA III / Vice City: `RwMatrixRotate(axis, −2·acos w)`; librw `Matrix::makeRotation` gives the
+    standard right-handed rotation, applied as p′ = x·right + y·up + z·at + pos.
+  * San Andreas: the quaternion's vector is negated and used (`CMatrix::SetRotate`) when |x| or |y|
+    exceeds 0.05 or the instance is "don't stream" with x and y non-zero. Otherwise the heading is
+    acos *w* × −2 (× 2 when z < 0) (`SetRotateZOnly`: right = (cos, sin, 0), forward = (−sin, cos, 0)).
+  * Both describe the conjugate of the stored quaternion, and the unit tests check that they agree.
+* **Low detail:**
+  * GTA III / Vice City: a model whose first draw distance exceeds `LOD_DISTANCE` (300, re3
+    `Renderer.h`) is a "big building" (`SimpleModelInfo.cpp` `SetupBigBuilding`).
+  * San Andreas: an instance named as LOD by another instance of its group. A group is a text IPL
+    and the `<name>_stream*` IPLs in the IMG archives (`IplStore.cpp` `SetupRelatedIpls`), and LOD
+    indices count the text IPL's `inst` lines.
+* **Models (DFF):** librw (`18532c2e`, MIT) `Clump::streamRead`, `FrameList_::streamRead` (56-byte
+  frames), `Atomic::streamReadClump`, `Geometry::streamRead`, `MaterialList::streamRead`,
+  `Material::streamRead`, `Texture::streamRead`, `findChunk`.
+  * Chunk ids: clump 0x10, frame list 0x0E, geometry list 0x1A, geometry 0x0F, atomic 0x14, material
+    list 0x08, material 0x07, texture 0x06.
+  * Geometry: flags (prelit 0x08, textured 0x04/0x80, texture sets in bits 16–23, native 0x01000000);
+    surface properties before 3.4; prelit RGBA, texture co-ordinates; triangles as two words
+    `(v0 << 16 | v1)`, `(v2 << 16 | material)`; morph target 0 positions and normals.
+  * Frame names: the Rockstar node-name extension 0x0253F2FE (re3 `NodeName.cpp`).
+  * Native (PS2 / Xbox) geometry is refused.
+* **Which atomic:** map atomics get a new, empty frame, so the DFF frame transform does not apply
+  (`SetRelatedModelInfoCB`).
+  * GTA III / Vice City put atomic *n* of a `_Ln` name in LOD slot *n*; slot 0 is full detail
+    (`GetNameAndLOD`).
+  * San Andreas uses the atomic not named `_dam` (gta-reversed `RwHelper.cpp` `GetNameAndDamage`).
+  * When several atomics qualify, the game keeps the last one RenderWare iterates. That order is not
+    established, so the model is skipped and reported.
+* **Textures:** the model's `<txd>.txd`, then (San Andreas) its `txdp` parents, then the level files'
+  `TEXDICTION` dictionaries.
+* **glTF 2.0 output** (`scene/scene.gltf`, `scene.bin`, `textures/<txd>/<name>.png`):
+  * one mesh per model, one node per instance with its matrix;
+  * nodes grouped by area and by full / low detail, under a root that turns Z-up into Y-up;
+  * prelit colours as `COLOR_0`; materials `MASK` / `BLEND` from their texture's alpha.
+  * Materials are double-sided, because the game's culling is a render state, not file data.
+* **Top-down render** (`world_topdown.png`):
+  * Covers the radar's world square, north up, at 0.5–4 pixels per world unit.
+  * Draws the full-detail instances of area 0, z-buffered (highest surface wins), with nearest
+    texels. Texels with alpha below 128 are skipped; the colour is multiplied by the prelit colour
+    and, for MODULATE geometry, the material colour.
+  * No lighting, water or sky: none of them are map files.
+  * Rendered in 512-pixel tiles on worker threads and streamed to the PNG.
+* **Not yet:** PS2 and Xbox native geometry, and COL collision as meshes (the COL files are listed
+  and copied raw).
 
 ## Tests
 
@@ -712,9 +775,17 @@ At 64 pixels per block (the tiles' native size), every lid of every column is dr
   * a GTA1 GRY and CMP;
   * a GTA2 STY, GMP and `.seq`, covering rotations, flips, flat lids, diagonals, partial blocks, a
     3-sided slope and a reserved tile;
-  * GTA III v1 and San Andreas VER2 IMG archives of radar dictionaries.
+  * GTA III v1 and San Andreas VER2 IMG archives of radar dictionaries;
+  * placed worlds for GTA III and San Andreas:
+    * DFF quads (one with a prelit tint), dictionaries in the IMG and a `TEXDICTION` global;
+    * IDE `objs` with a low-detail model;
+    * text IPL instances, one rotated, and a San Andreas binary `_stream` IPL whose LOD index marks
+      a text instance, plus a tilted instance.
 * The script computes the expected top-down and radar images in image order from the pixel patterns
-  and the corner tables above, independently of the Rust code. `crates/ef-map/tests/fixtures.rs`
+  and the corner tables above, independently of the Rust code.
+  * For the placed worlds it maps every pixel centre back into each quad (the inverse of the
+    placement) instead of rasterising.
+  * The exported fixture scenes are checked with the Khronos glTF validator in CI. `crates/ef-map/tests/fixtures.rs`
   compares hashes, parsed records, the catalog's map/style pairing and a full export with its
   manifest.
 

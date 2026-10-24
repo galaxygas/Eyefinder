@@ -53,6 +53,9 @@ MAP OPTIONS (default: everything this game supports except tiles):
     --topdown           only the full top-down maps of the 2D cities
     --tiles             also cut the top-down maps into 16 x 16-block PNG tiles
     --premade           only the radar and pause-menu maps
+    --scene             only the 3D map scene (glTF) of GTA III, Vice City or San Andreas (PC)
+    --world-topdown     only the top-down render of their placed world
+    --ppu <n>           pixels per world unit of that render (default 1)
     --style <map>=<style>  the style of a map no source pairs (paths as `maps` lists them)
 
 TEXTURE OPTIONS:
@@ -458,13 +461,17 @@ fn maps(install: &GameInstall, args: &[String]) -> ExitCode {
         );
     }
     let flag = |f: &str| args.iter().any(|a| a == f);
-    let chosen = ["--raw", "--individual", "--topdown", "--premade"].iter().any(|f| flag(f));
+    let chosen =
+        ["--raw", "--individual", "--topdown", "--premade", "--scene", "--world-topdown"].iter().any(|f| flag(f));
     let mut opts = ef_map::export::ExportOptions {
         raw: flag("--raw") || (!chosen && avail.raw.is_ok()),
         individual: flag("--individual") || (!chosen && (avail.cities.is_ok() || avail.premade.is_ok())),
         topdown: flag("--topdown") || (!chosen && avail.cities.is_ok()),
         tiles: flag("--tiles"),
         premade: flag("--premade") || (!chosen && avail.premade.is_ok()),
+        scene: flag("--scene") || (!chosen && avail.scene.is_ok()),
+        world_topdown: flag("--world-topdown") || (!chosen && avail.scene.is_ok()),
+        world_ppu: value(args, "--ppu").and_then(|v| v.parse().ok()).unwrap_or(1.0),
         styles: Default::default(),
     };
     let mut i = 0;

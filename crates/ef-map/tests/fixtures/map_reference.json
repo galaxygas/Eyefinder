@@ -52,5 +52,31 @@
       "PSXM",
       "ZONE"
     ]
+  },
+  "iii_world": {
+    "instances": 3,
+    "lod": [
+      false,
+      false,
+      true
+    ],
+    "render": {
+      "width": 64,
+      "height": 64,
+      "fnv": "b713554209328f2d"
+    }
+  },
+  "sa_world": {
+    "instances": 3,
+    "lod": [
+      true,
+      false,
+      false
+    ],
+    "render": {
+      "width": 64,
+      "height": 64,
+      "fnv": "f962e40078b8c8f5"
+    }
   }
 }

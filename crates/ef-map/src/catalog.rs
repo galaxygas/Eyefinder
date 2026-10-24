@@ -90,8 +90,6 @@ impl Availability {
 /// What the documented formats allow, before looking at the files.
 pub fn availability(game: Game, platform: Platform) -> Availability {
     let no = |s: &str| Err(s.to_string());
-    let scene =
-        no("The 3D map scene and the top-down render of GTA III, Vice City and San Andreas come in a later update.");
     match (game, platform) {
         (Game::Gta1 | Game::London1969 | Game::London1961, Platform::Pc)
         | (Game::Gta2, Platform::Pc | Platform::Dreamcast) => Availability {
@@ -100,9 +98,15 @@ pub fn availability(game: Game, platform: Platform) -> Availability {
             premade: no("The 2D games have no premade map."),
             scene: no("Top-down and data exports cover the 2D cities."),
         },
-        (Game::Gta3 | Game::ViceCity | Game::SanAndreas, Platform::Pc | Platform::Ps2 | Platform::Xbox) => {
-            Availability { raw: Ok(()), cities: no("Not a 2D game."), premade: Ok(()), scene }
+        (Game::Gta3 | Game::ViceCity | Game::SanAndreas, Platform::Pc) => {
+            Availability { raw: Ok(()), cities: no("Not a 2D game."), premade: Ok(()), scene: Ok(()) }
         }
+        (Game::Gta3 | Game::ViceCity | Game::SanAndreas, Platform::Ps2 | Platform::Xbox) => Availability {
+            raw: Ok(()),
+            cities: no("Not a 2D game."),
+            premade: Ok(()),
+            scene: no("PS2 and Xbox models store their geometry in the console's own format, which is not read yet."),
+        },
         _ => {
             let why = "The map format of this game on this platform is not documented (see MISSING.md).";
             Availability { raw: no(why), cities: no(why), premade: no(why), scene: no(why) }

@@ -100,7 +100,8 @@ Text is shown in the file view and printed by `eyefinder-cli text`.
 | GTA1, London 1969, London 1961 | PC | Raw `.CMP` and styles; `map.json` (blocks, columns, objects, cars, routes, bases, navigation zones); `overlay.svg`; full top-down map per style (64 px per block) and tiles | Implemented from spec | DMA CityScape 12.10 §2; OpenGTA (column order, lid rotation) |
 | GTA2 | PC, Dreamcast | Raw `.gmp`, styles and stage list; `map.json` (blocks, columns, zones, objects, lights, animations); `overlay.svg`; full top-down map (64 px per block) and tiles | Implemented from spec | DMA GBH Map Format 8.2; gta2_re (lid orientation and shapes, stage list) |
 | GTA III, Vice City, San Andreas | PC, PS2, Xbox | Raw map files (level files, IDE, IPL, COL, map models and textures, radar tiles); radar map and its tiles; pause-menu map (Vice City, San Andreas) | Implemented from spec | re3 / reVC, gta-reversed (Radar, Frontend, FileLoader, Streaming); textures as above |
-| GTA III, Vice City, San Andreas | PC | 3D map scene (glTF) and its top-down render | Not supported yet | Documented (re3 / reVC / gta-reversed FileLoader, librw), not implemented |
+| GTA III, Vice City, San Andreas | PC | 3D map scene (glTF 2.0: every placed model with its textures, by area and detail level); top-down render of the placed world (0.5–4 px per unit); `world.json` (models, instances, matrices) | Implemented from spec | re3 / reVC / gta-reversed FileLoader, IplStore, Matrix; librw (DFF) |
+| GTA III, Vice City, San Andreas | PS2, Xbox | 3D map scene and top-down render | Not supported yet | Native (console) geometry is not read yet; `world.json` and the raw files are written |
 | GTA1, London 1969, GTA2 | PlayStation; GBC; GTA Advance (GBA) | Everything | Not supported yet | No specification (MISSING.md) |
 
 ## Game versions
