@@ -1,0 +1,2 @@
+# Map fixtures are compared byte for byte with their generator (CI map-reference); test.seq keeps CRLF.
+crates/ef-map/tests/fixtures/** -text

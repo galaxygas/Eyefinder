@@ -6,6 +6,7 @@ mod database_view;
 mod docs_view;
 mod files_view;
 mod index_view;
+mod map_view;
 mod player;
 mod settings;
 mod table_columns;

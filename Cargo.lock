@@ -625,6 +625,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "ef-map"
+version = "0.3.0"
+dependencies = [
+ "ef-core",
+ "ef-texture",
+ "png",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.21",
+]
+
+[[package]]
 name = "ef-texture"
 version = "0.3.0"
 dependencies = [
@@ -891,6 +903,7 @@ dependencies = [
  "dirs",
  "ef-audio",
  "ef-core",
+ "ef-map",
  "ef-texture",
  "eframe",
  "egui",
@@ -909,6 +922,7 @@ version = "0.3.0"
 dependencies = [
  "ef-audio",
  "ef-core",
+ "ef-map",
  "ef-texture",
 ]
 
