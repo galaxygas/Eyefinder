@@ -2,6 +2,7 @@
 
 mod app;
 mod audio_view;
+mod database_view;
 mod docs_view;
 mod files_view;
 mod index_view;

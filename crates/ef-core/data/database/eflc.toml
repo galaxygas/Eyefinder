@@ -1,0 +1,503 @@
+# Grand Theft Auto: Episodes from Liberty City: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "7.6"
+origin = "md:1537"
+title = "7.6 PC — Episodes from Liberty City (standalone) releases & patches"
+games = ["eflc"]
+
+[[section]]
+id = "7.9"
+origin = "md:1601"
+title = "7.9 Episodes from Liberty City — The Lost and Damned, The Ballad of Gay Tony & EFLC (consoles)"
+games = ["tlad", "tbogt", "eflc"]
+
+[[entry]]
+id = "7.6-1"
+origin = "md:1541"
+section = "7.6"
+kind = "retail"
+games = ["eflc"]
+title = "EFLC retail/digital launch"
+platforms = ["pc"]
+platform_text = "PC"
+region = "NA"
+date = "2010-04-13"
+date_text = "2010-04-13"
+id_text = "Launch exe version **not documented** in sources fetched (\"1.1.0.0\" commonly assumed — unverified ❓); Steam app 12220"
+notes = "Standalone (does not require GTA IV); GFWL + SecuROM; port by Rockstar Toronto. Also purchasable in-game from GTA IV via Patch 6 (not RU/JP)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-29", "7-30", "7-31"]
+sources_text = "1, 29, 30, 31"
+
+[[entry]]
+id = "7.6-2"
+origin = "md:1542"
+section = "7.6"
+kind = "retail"
+games = ["eflc"]
+title = "EFLC launch"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EU/PAL"
+date = "2010-04-16"
+date_text = "2010-04-16"
+id_text = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-12", "7-31"]
+sources_text = "1, 12, 31"
+
+[[entry]]
+id = "7.6-3"
+origin = "md:1543"
+section = "7.6"
+kind = "retail"
+games = ["eflc"]
+title = "EFLC Russian (1C-SoftClub localisation)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "RU"
+date_text = "not documented"
+id_text = "—"
+notes = "Russian release handled by 1C-SoftClub; 1C localisation retail-only (separate patch for digital)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-30"]
+sources_text = "30"
+
+[[entry]]
+id = "7.6-4"
+origin = "md:1544"
+section = "7.6"
+kind = "retail"
+games = ["eflc"]
+title = "EFLC Japanese"
+platforms = ["pc"]
+platform_text = "PC"
+region = "JP"
+date_text = "not documented (JP fan wiki lists EFLC on 2010-04-13 without region)"
+id_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-13"]
+sources_text = "13"
+
+[[entry]]
+id = "7.6-5"
+origin = "md:1545"
+section = "7.6"
+kind = "retail"
+games = ["eflc"]
+title = "EFLC Patch 1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "All"
+date_text = "2010-04-16 (Worthplaying \"all versions\") / 2010-04-17 (Softpedia) / 2010-04-18 (PC Games DE article)"
+id_text = "**1.1.1.0**"
+notes = "Improved memory management; fixed RESC 10 error on certain hardware. ~60 MB"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-33", "7-34", "7-35"]
+sources_text = "33, 34, 35"
+
+[[entry]]
+id = "7.6-6"
+origin = "md:1546"
+section = "7.6"
+kind = "retail"
+games = ["eflc"]
+title = "EFLC Patch 2 (\"Title Update\")"
+platforms = ["pc"]
+platform_text = "PC"
+region = "All"
+date = "2010-06-01"
+date_text = "2010-06-01"
+id_text = "**1.1.2.0**"
+notes = "See-through tree leaves fixed; TBoGT music video upload fix; clip-capture slowdown near water; boat slowdown in TBoGT \"Sexy Time\"; TLAD \"detonate\" remappable; **EFLC now uses its own `SETTINGS_EFLC.CFG`** to avoid conflict with GTA IV. PCGW notes Patch 2 still needed by some mods"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-34", "7-30"]
+sources_text = "34, 30"
+
+[[entry]]
+id = "7.6-7"
+origin = "md:1547"
+section = "7.6"
+kind = "retail"
+games = ["eflc"]
+title = "EFLC Patch 3"
+platforms = ["pc"]
+platform_text = "PC"
+region = "All"
+date_text = "2016-11-29/30 (released with GTA IV Patch 8; Gamepressure upload dated 2016-12-08)"
+id_text = "**1.1.3.0**"
+notes = "Same changelog as GTA IV Patch 8 (WTV270, Win 8/8.1/10, >60 fps \"Out of Commission\" fix, >2 GB VRAM, drawlist overflow…). 139.6 MB"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-27", "7-36", "7-37", "7-41"]
+sources_text = "27, 36, 37, 41"
+
+[[entry]]
+id = "7.9-1"
+origin = "md:1605"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "Episodic content announced"
+platforms = ["x360"]
+platform_text = "X360"
+region = "—"
+date = "2006-05-09"
+date_text = "2006-05-09 (Microsoft E3 press conference)"
+id_text = "—"
+notes = "Microsoft paid US$50 million total for the first two episodes; extra content later (2008-02-20) announced for Aug 2008, then delayed"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-14"]
+sources_text = "1, 14"
+
+[[entry]]
+id = "7.9-2"
+origin = "md:1606"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "**The Lost and Damned** (DLC)"
+platforms = ["x360"]
+platform_text = "X360 (Xbox Live Marketplace)"
+region = "Worldwide"
+date = "2009-02-17"
+date_text = "**2009-02-17**"
+id_text = "1,600 Microsoft Points (~€20)"
+notes = "Xbox 360 timed exclusive; adds new in-game music (e.g. Busta Rhymes, Funkmaster Flex station). Digital Music News also reports a physical retail package (incl. GTA4 poster) — ⚠️ single source"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-14", "7-51", "7-52"]
+sources_text = "1, 14, 51, 52"
+
+[[entry]]
+id = "7.9-3"
+origin = "md:1607"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "\"Grand Theft Auto IV Second Episode\" in Take-Two filings"
+platforms = ["x360"]
+platform_text = "X360"
+region = "—"
+date_text = "reported 2009-03-12"
+id_text = "—"
+notes = "Listed only as an X360 edition in Take-Two FY Q1 2009 results"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-44"]
+sources_text = "44"
+
+[[entry]]
+id = "7.9-4"
+origin = "md:1608"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "**The Ballad of Gay Tony** (DLC)"
+platforms = ["x360"]
+platform_text = "X360"
+region = "Worldwide"
+date = "2009-10-29"
+date_text = "**2009-10-29**"
+id_text = "—"
+notes = "Release date announced ~2009-07-23 (Eurogamer ref.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-31"]
+sources_text = "1, 31"
+
+[[entry]]
+id = "7.9-5"
+origin = "md:1609"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "**Episodes from Liberty City** (disc, standalone)"
+platforms = ["x360"]
+platform_text = "X360"
+region = "Worldwide"
+date = "2009-10-29"
+date_text = "**2009-10-29**"
+serials = ["TT-2034"]
+id_text = "**TT-2034**; XeMID **TT203410W0X11**; media ID **06759F9C** (one World disc; variants dumped USA, Europe, Australia, Germany, Russia, Korea)"
+notes = "TLAD + TBoGT on disc; does **not** require GTA IV. Same disc data used as Complete Edition disc 2 and in *Rockstar Games Collection: Edition 1*"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-12", "7-31", "7-54"]
+sources_text = "1, 12, 31, 54"
+
+[[entry]]
+id = "7.9-6"
+origin = "md:1610"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "TLAD / TBoGT Xbox Live add-ons"
+platforms = ["x360"]
+platform_text = "X360"
+region = "World"
+date_text = "2009-02-17 / 2009-10-29"
+id_text = "No-Intro add-on IDs under title 545407F2: TLAD 1,915,875,328 bytes; TBoGT 2,011,172,864 bytes; also \"GTA IV – Theme Pack\" add-on"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-58"]
+sources_text = "58"
+
+[[entry]]
+id = "7.9-7"
+origin = "md:1611"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "TLAD + TBoGT (PSN download) and EFLC disc"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "NA"
+date = "2010-04-13"
+date_text = "**2010-04-13**"
+version = "1.01"
+serials = ["BLUS-30524", "NPUB30704"]
+id_text = "Disc **BLUS-30524** (also **BLUS-30524GH**, *Greatest Hits*), disc version **01.01**, PVD 2009-11-20. PSN digital EFLC: **NPUB30704** (content ID UP1004-NPUB30704_00-GTAIVEFLCDIGITAL, No-Intro \"v1.01\")"
+notes = "Delayed (IGN 2010-03-18); download version and compilation same day. The PSN NPUB/NPEB digital SKUs are dated 2021 in the libretro DB (later PSN re-release; exact date not documented)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-31", "7-56", "7-57", "7-59"]
+sources_text = "1, 31, 56, 57, 59"
+
+[[entry]]
+id = "7.9-8"
+origin = "md:1612"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "TLAD + TBoGT (PSN) and EFLC disc"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "PAL"
+date = "2010-04-16"
+date_text = "**2010-04-16**"
+version = "1.01"
+serials = ["BLES-00887", "NPEB00907"]
+id_text = "Disc **BLES-00887** (also BLES-00887/ANZ; *Essentials* reprint same data), version **01.01**, PVD 2010-03-15; BBFC VFD42215. PSN digital: **NPEB00907** (No-Intro \"v1.01\")"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-12", "7-31", "7-56", "7-59"]
+sources_text = "1, 12, 31, 56, 59"
+
+[[entry]]
+id = "7.9-9"
+origin = "md:1613"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "EFLC Asia"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Asia"
+date_text = "not documented"
+version = "01.01"
+serials = ["BLAS-50197", "BLUS-30524"]
+id_text = "**BLAS-50197**, version 01.01 (internal serial BLUS-30524, same size as USA but different checksum)"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅ (serial)"
+sources = ["7-56"]
+sources_text = "56"
+
+[[entry]]
+id = "7.9-10"
+origin = "md:1614"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "EFLC Korea"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "KR"
+date = "2010-04"
+date_text = "2010-04 (month only, libretro DB)"
+serials = ["BLKS-20198"]
+id_text = "**BLKS-20198** (libretro DB only; not in Redump)"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-57"]
+sources_text = "57"
+
+[[entry]]
+id = "7.9-11"
+origin = "md:1615"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "EFLC Japan"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "JP"
+date = "2010-06-10"
+date_text = "2010-06-10"
+version = "01.00"
+serials = ["BLJM-60235", "TT-2034", "BLJM-60459"]
+id_text = "PS3 **BLJM-60235** (version 01.00, PVD 2010-03-22); X360 **TT-2034**, XeMID **TT203414J0X11**, media ID **198350D4**, cover ID JES1 00058. Reprint: PS3 **BLJM-60459** (*Rockstar Classics*, same data)"
+notes = "Playable without base-game disc (per JP Wikipedia). libretro DB dates BLJM-60235 to 2010-06; 4Gamer's release article for the PS3/X360 versions is dated 2010-06-10; price ¥6,090 (tax incl.)"
+confidence = "confirmed"
+confidence_text = "✅ (serials; date: JP Wikipedia + 4Gamer)"
+sources = ["7-10", "7-54", "7-56", "7-57", "7-87"]
+sources_text = "10, 54, 56, 57, 87"
+
+[[entry]]
+id = "7.9-12"
+origin = "md:1616"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "EFLC on Xbox One BC"
+platforms = ["xone"]
+platform_text = "Xbox One"
+region = "Worldwide"
+date = "2017-02-09"
+date_text = "2017-02-09"
+id_text = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-14", "7-50"]
+sources_text = "14, 50"
+
+[[entry]]
+id = "7.9-13"
+origin = "md:1617"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "GTA IV: The Complete Edition"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "NA / EU"
+date_text = "2010-10-26 / 2010-10-29 (Take-Two press release dated 2010-10-27: \"now available in North America\"; Europe 2010-10-29; SRP $39.99 / £34.99 / €49.99)"
+version = "01.01"
+serials = ["BLUS-30682", "BLES-01128"]
+id_text = "X360: 2 discs (GTA IV disc + EFLC disc, same data as standalone pressings — Redump lists the CE edition on discs 6AC07221/4A53F9F6/1369E7BC and 06759F9C/198350D4); PS3: 1 disc — USA **BLUS-30682** (also **BLUS-30682GH** *Greatest Hits*, Canada case BLUS-30682GHF), version 01.01, PVD 2010-09-22; EU **BLES-01128**, version 01.01, PVD 2010-09-22, volume label \"GRAND THEFT AUTO: COMPLETE\""
+notes = "See 7.7. PS3 CE image size 18,995,871,744 (USA) / 19,656,146,944 (EU) bytes on BD-25"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-38", "7-54", "7-56", "7-86"]
+sources_text = "1, 38, 54, 56, 86"
+
+[[entry]]
+id = "7.9-14"
+origin = "md:1618"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "GTA IV & EFLC Complete Edition — Asia"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Asia"
+date_text = "not documented"
+serials = ["BLAS-50284", "BLUS-30682"]
+id_text = "**BLAS-50284** (same data as BLUS-30682)"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-56"]
+sources_text = "56"
+
+[[entry]]
+id = "7.9-15"
+origin = "md:1619"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "GTA IV Complete Edition — Japan"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "JP"
+date_text = "not documented (PVD creation 2011-02-16)"
+version = "01.00"
+serials = ["BLJM-60346", "BLJM-60525", "BLJM-61180"]
+id_text = "**BLJM-60346**, version 01.00; reprints **BLJM-60525** (*Rockstar Classics*, libretro DB 2012) and **BLJM-61180** (*Rockstar Classics*, libretro DB 2014-01) — the reprints are not in Redump"
+notes = "Inside/Game*Spark (2014-04-24): PS3 *Grand Theft Auto IV: Complete Edition* (Rockstar Classics) released **2014-04-24**, ¥2,759 + tax, CERO Z — serial not stated (which of BLJM-60525/61180 it is, is not documented; libretro's \"2014-01\" for BLJM-61180 conflicts by three months ❓)"
+confidence = "mixed"
+confidence_text = "✅ (BLJM-60346) / ⚠️ (reprints)"
+sources = ["7-56", "7-57", "7-85"]
+sources_text = "56, 57, 85"
+
+[[entry]]
+id = "7.9-16"
+origin = "md:1620"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "EFLC Xbox 360 title updates"
+platforms = ["x360"]
+platform_text = "X360"
+region = "World (disc 06759F9C)"
+date_text = "Release dates not documented"
+id_text = "TU **v1** (2,168 KB) and **v8** (2,288 KB), base version 0x0A (xboxunity); No-Intro preserves both (named \"Episodes from Liberty City (World) (v1)/(v8)\" in its Xbox 360 set, \"Grand Theft Auto IV (World)\" in its TU set)"
+notes = "Contents not documented. Conflict: GTA Wiki states \"No patches\" for EFLC and Complete Edition on X360"
+confidence = "mixed"
+confidence_text = "✅ (TU existence) / ⚠️ conflict"
+sources = ["7-58", "7-66", "7-67"]
+sources_text = "58, 66, 67"
+
+[[entry]]
+id = "7.9-17"
+origin = "md:1621"
+section = "7.9"
+kind = "retail"
+games = ["tlad", "tbogt", "eflc"]
+title = "EFLC PS3 patches 1.01 / 1.02"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "—"
+date_text = "1.02: 2014-08-26 (GTA Wiki); 1.01: see 7.8 (date ❓)"
+id_text = "1.01, 1.02 (also used by the PS3 Complete Edition)"
+notes = "Released alongside GTA IV PS3 1.07 and 1.08 respectively (GameSpy → Sony matchmaking; online rank fix). No-Intro's PSN set labels the EFLC digital licences \"v1.01\""
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-59", "7-67"]
+sources_text = "59, 67"
+
+[sources]
+7-1 = { text = "Wikipedia — \"Grand Theft Auto IV\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:1640" }
+7-10 = { text = "Japanese Wikipedia — \"グランド・セフト・オートIV\": https://ja.wikipedia.org/wiki/グランド・セフト・オートIV", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートIV", origin = "md:1649" }
+7-12 = { text = "German Wikipedia — \"Grand Theft Auto IV\": https://de.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:1651" }
+7-13 = { text = "Grand Theft Auto 4 PC Wiki (Japanese fan wiki, wikiwiki.jp): https://wikiwiki.jp/gta4pc/", url = "https://wikiwiki.jp/gta4pc/", origin = "md:1652" }
+7-14 = { text = "Wikipedia — \"Grand Theft Auto IV: The Lost and Damned\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV:_The_Lost_and_Damned", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV:_The_Lost_and_Damned", origin = "md:1653" }
+7-27 = { text = "Rockstar Support — \"Grand Theft Auto IV Patch 8 Title Update Notes (PC Only)\": https://support.rockstargames.com/articles/4DH92vTMXDygNI5nFQGoy6/grand-theft-auto-iv-patch-8-title-update-notes-pc-only", url = "https://support.rockstargames.com/articles/4DH92vTMXDygNI5nFQGoy6/grand-theft-auto-iv-patch-8-title-update-notes-pc-only", origin = "md:1666" }
+7-29 = { text = "Steam store — Grand Theft Auto: Episodes from Liberty City (app 12220): https://store.steampowered.com/app/12220", url = "https://store.steampowered.com/app/12220", origin = "md:1668" }
+7-30 = { text = "PCGamingWiki — \"Grand Theft Auto: Episodes from Liberty City\": https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_Episodes_from_Liberty_City", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_Episodes_from_Liberty_City", origin = "md:1669" }
+7-31 = { text = "Wikipedia — \"Grand Theft Auto: The Ballad of Gay Tony\": https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Ballad_of_Gay_Tony", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Ballad_of_Gay_Tony", origin = "md:1670" }
+7-33 = { text = "Worthplaying (2010-04-16) — \"Grand Theft Auto: Episodes from Liberty City (ALL) v1.1.1.0 Patch Available Now\": https://www.worthplaying.com/article/2010/4/16/patch/73730-grand-theft-auto-episodes-from-liberty-city-all-v1110-patch-available-now/", url = "https://www.worthplaying.com/article/2010/4/16/patch/73730-grand-theft-auto-episodes-from-liberty-city-all-v1110-patch-available-now/", origin = "md:1672" }
+7-34 = { text = "Softpedia — GTA 4: Episodes from Liberty City Patch changelog (1.1.1, 1.1.2.0): https://games.softpedia.com/progChangelog/Grand-Theft-Auto-4-Episodes-from-Liberty-City-Patch-Changelog-63982.html", url = "https://games.softpedia.com/progChangelog/Grand-Theft-Auto-4-Episodes-from-Liberty-City-Patch-Changelog-63982.html", origin = "md:1673" }
+7-35 = { text = "PC Games (DE, 2010-04-18) — \"GTA 4: Episodes from Liberty City: PC-Patch v1.1.1.0 zum Download\": https://www.pcgames.de/Grand-Theft-Auto-4-Episodes-from-Liberty-City-Spiel-4497/Downloads/GTA-4-Episodes-from-Liberty-City-PC-Patch-v1110-zum-Download-745359/", url = "https://www.pcgames.de/Grand-Theft-Auto-4-Episodes-from-Liberty-City-Spiel-4497/Downloads/GTA-4-Episodes-from-Liberty-City-PC-Patch-v1110-zum-Download-745359/", origin = "md:1674" }
+7-36 = { text = "Gamepressure — \"Grand Theft Auto: Episodes from Liberty City - Game Update - v.1.1.3.0\": https://www.gamepressure.com/download.asp?ID=61943", url = "https://www.gamepressure.com/download.asp?ID=61943", origin = "md:1675" }
+7-37 = { text = "KeenGamer (2016-12-02) — \"Grand Theft Auto IV receives first patch in six years\" (PC-only): https://www.keengamer.com/articles/news/grand-theft-auto-iv-receives-first-patch-in-six-years/", url = "https://www.keengamer.com/articles/news/grand-theft-auto-iv-receives-first-patch-in-six-years/", origin = "md:1676" }
+7-38 = { text = "Grand Theft Wiki — \"Grand Theft Auto IV: The Complete Edition\": https://www.grandtheftwiki.com/Grand_Theft_Auto_IV:_Complete_Edition", url = "https://www.grandtheftwiki.com/Grand_Theft_Auto_IV:_Complete_Edition", origin = "md:1677" }
+7-41 = { text = "GTA SnP help — \"Grand Theft Auto IV & Episodes From Liberty City\" (1.0.8.0/1.1.3.0, 1.2.0.32 = 2020-03-19, 1.2.0.43): https://www.gtasnp.com/help/games/gtaiv", url = "https://www.gtasnp.com/help/games/gtaiv", origin = "md:1680" }
+7-44 = { text = "The Register (2009-03-12) — Take-Two accounts list \"Grand Theft Auto IV Second Episode\": https://www.theregister.com/on-prem/2009/03/12/grand-theft-auto-iv-update-spied-in-publishers-accounts/1419310", url = "https://www.theregister.com/on-prem/2009/03/12/grand-theft-auto-iv-update-spied-in-publishers-accounts/1419310", origin = "md:1683" }
+7-50 = { text = "Xbox Wire (2017-02-09) — GTA IV and Episodes from Liberty City backward compatibility: https://news.xbox.com/en-us/2017/02/09/grand-theft-auto-iv-backward-compatibility/", url = "https://news.xbox.com/en-us/2017/02/09/grand-theft-auto-iv-backward-compatibility/", origin = "md:1689" }
+7-51 = { text = "French Wikipedia — \"Grand Theft Auto IV\" (TLAD at 1,600 Microsoft Points): https://fr.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://fr.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:1690" }
+7-52 = { text = "Digital Music News (2009-02-03) — \"The Grand Theft Auto IV Update: More Action, More Music\": https://www.digitalmusicnews.com/2009/02/03/grand/", url = "https://www.digitalmusicnews.com/2009/02/03/grand/", origin = "md:1691" }
+7-54 = { text = "Redump — Xbox 360 disc pages (serial, XeMID, ring/media IDs, editions, barcodes): GTA IV Australia http://redump.org/disc/23438/ · Europe/Asia http://redump.org/disc/7716/ · Japan http://redump.org/disc/53509/ · USA http://redump.org/disc/12492/ · EFLC Japan http://redump.org/disc/53510/ · EFLC World http://redump.org/disc/15252/", url = "http://redump.org/disc/23438/", origin = "md:1693" }
+7-56 = { text = "Redump — PS3 EFLC and Complete Edition disc pages: EFLC Asia http://redump.org/disc/115508/ · EFLC Europe/Australia http://redump.org/disc/31509/ · EFLC Japan http://redump.org/disc/61016/ · EFLC USA http://redump.org/disc/29811/ · CE Europe http://redump.org/disc/36999/ · CE Japan http://redump.org/disc/62530/ · CE USA/Asia http://redump.org/disc/29510/", url = "http://redump.org/disc/115508/", origin = "md:1695" }
+7-57 = { text = "libretro-database — `dat/Sony - PlayStation 3.dat` (libretro's own PS3 metadata: serials with year/month), extracted in `/home/claude/gta_dat_entries.md`: https://github.com/libretro/libretro-database", url = "https://github.com/libretro/libretro-database", origin = "md:1696" }
+7-58 = { text = "No-Intro DATs via libretro-database `metadat/no-intro/` — \"Microsoft - XBOX 360 (Title Updates)\", \"Microsoft - Xbox 360\", \"Microsoft - Xbox 360 (Digital)\" (see Appendix A.1–A.3): https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", url = "https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", origin = "md:1697" }
+7-59 = { text = "No-Intro DAT \"Sony - PlayStation 3 (PSN)\" via libretro-database (see Appendix A.7): https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", url = "https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", origin = "md:1698" }
+7-66 = { text = "XboxUnity title-update database, title ID 545407F2 (JSON): http://xboxunity.net/Resources/Lib/TitleUpdateInfo.php?titleid=545407F2", url = "http://xboxunity.net/Resources/Lib/TitleUpdateInfo.php?titleid=545407F2", origin = "md:1705" }
+7-67 = { text = "GTA Wiki (Fandom) — \"Grand Theft Auto IV/Title Update Notes\" and subpages (Update 2011-03-09, 2011-03-13, 2014-08-26, 2017-03-17, 2018-03-10, 2020-03-26): https://gta.fandom.com/wiki/Grand_Theft_Auto_IV/Title_Update_Notes", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_IV/Title_Update_Notes", origin = "md:1706" }
+7-85 = { text = "Inside / Game*Spark (2014-04-24) — Rockstar Classics PS3 releases (GTA IV: Complete Edition, Red Dead Redemption: Complete Edition): https://www.inside-games.jp/article/2014/04/24/76272.html", url = "https://www.inside-games.jp/article/2014/04/24/76272.html", origin = "md:1724" }
+7-86 = { text = "Take-Two Interactive press release (2010-10-27) — \"Rockstar Games Announces Grand Theft Auto IV: Complete Edition Now Available\": https://ir.take2games.com/static-files/1613c03d-4829-4bf7-a69d-34f936de0953", url = "https://ir.take2games.com/static-files/1613c03d-4829-4bf7-a69d-34f936de0953", origin = "md:1725" }
+7-87 = { text = "4Gamer.net — Xbox 360 \"グランド・セフト・オートIV\" product page (JP release, Platinum Collection 2009-08-27, EFLC 2010-06-10): https://www.4gamer.net/games/066/G006635/", url = "https://www.4gamer.net/games/066/G006635/", origin = "md:1726" }

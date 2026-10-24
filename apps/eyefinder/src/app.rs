@@ -1,6 +1,6 @@
 //! Application state, the window layout (top bar, sidebar, centre, details, player) and dialogs.
 
-use std::collections::{BTreeSet, HashMap};
+use std::collections::{BTreeSet, HashMap, HashSet};
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
@@ -211,6 +211,12 @@ pub struct EyefinderApp {
     /// Platform id to show, `None` = all.
     pub(crate) index_platform: Option<String>,
     pub(crate) index_eyefinder_only: bool,
+    /// Entry kind to show, `None` = all.
+    pub(crate) index_kind: Option<String>,
+    /// Ids of the database entries opened on the Index page.
+    pub(crate) index_open: HashSet<String>,
+    pub(crate) db_editor: Option<crate::database_view::EntryEditor>,
+    pub(crate) db_task: Option<crate::database_view::DbTask>,
     // documentation page: the release-index game id of the card shown
     pub(crate) docs_game: String,
     /// Set by "Documentation" buttons: scroll the card list to this game once.
@@ -263,6 +269,7 @@ impl EyefinderApp {
         theme::install(&cc.egui_ctx);
         let settings: Settings = cc.storage.and_then(|s| eframe::get_value(s, eframe::APP_KEY)).unwrap_or_default();
         let mut app = Self::empty(&cc.egui_ctx, settings, Audio::open());
+        crate::database_view::load_in_background(&cc.egui_ctx);
         for item in app.settings.library.clone() {
             app.add_game(item.path, item.choice, &cc.egui_ctx, false);
         }
@@ -293,6 +300,10 @@ impl EyefinderApp {
             index_search: String::new(),
             index_platform: None,
             index_eyefinder_only: false,
+            index_kind: None,
+            index_open: HashSet::new(),
+            db_editor: None,
+            db_task: None,
             docs_game: "gta1".into(),
             docs_scroll: false,
             search: String::new(),
@@ -848,7 +859,9 @@ impl eframe::App for EyefinderApp {
             || self.texture_export.is_some()
             || self.job.is_some()
             || self.import.is_some()
-            || self.scan.is_some();
+            || self.scan.is_some()
+            || self.db_editor.is_some()
+            || self.db_task.is_some();
         if !modal_open
             && !ctx.egui_wants_keyboard_input()
             && self.page == Page::Library
@@ -927,6 +940,8 @@ impl eframe::App for EyefinderApp {
         self.audio_export_modal(&p, &ctx);
         self.texture_export_modal(&p, &ctx);
         self.job_modal(&p, &ctx);
+        self.entry_editor_modal(&p, &ctx);
+        self.db_task_modal(&p, &ctx);
         self.about_modal(&p, &ctx);
         if let Some((msg, _)) = &self.toast {
             egui::Area::new("toast".into())
@@ -2484,6 +2499,8 @@ mod import_tests {
             groups[1].1.iter().map(|&i| app.entries[i].choice.as_ref().unwrap().platform).collect();
         assert_eq!(gta2, [Platform::Pc, Platform::Ps1]);
         // The Index and Documentation pages render every game without panicking, in every theme.
+        ef_core::database::configure(ef_core::database::Paths::none());
+        ef_core::database::database();
         for t in ThemeChoice::ALL {
             apply_theme(&ctx, t);
             let p = theme::palette(&ctx);
@@ -2503,8 +2520,8 @@ mod import_tests {
         assert_eq!(theme::palette(&ctx).accent, theme::VICE_NIGHT.accent);
     }
 
-    /// Every text the Index page draws for GTA III with this platform filter.
-    fn index_texts(platform: &str) -> Vec<String> {
+    /// Every text the Index page draws with this search and platform filter.
+    fn index_texts(search: &str, platform: &str) -> Vec<String> {
         fn collect(shape: &egui::Shape, out: &mut Vec<String>) {
             match shape {
                 egui::Shape::Text(t) => out.push(t.galley.text().to_string()),
@@ -2516,7 +2533,9 @@ mod import_tests {
         theme::install(&ctx);
         let p = theme::palette(&ctx);
         let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test".into()));
-        app.index_search = "Grand Theft Auto III".into();
+        ef_core::database::configure(ef_core::database::Paths::none());
+        ef_core::database::database();
+        app.index_search = search.into();
         app.index_platform = Some(platform.into());
         let mut texts = Vec::new();
         // The first frame lays out; the second draws with the sizes known.
@@ -2534,10 +2553,22 @@ mod import_tests {
     #[test]
     fn index_support_is_per_platform() {
         // GTA III is verified on PC only; the Android filter must not show that level.
-        let android = index_texts("android");
+        let android = index_texts("Grand Theft Auto III", "android");
         assert!(android.iter().any(|t| t.contains("Not read by Eyefinder")), "{android:?}");
         assert!(!android.iter().any(|t| t.contains("Verified")), "{android:?}");
-        let pc = index_texts("pc");
+        let pc = index_texts("Grand Theft Auto III", "pc");
         assert!(pc.iter().any(|t| t.contains("Verified")), "{pc:?}");
+    }
+
+    #[test]
+    fn index_shows_database_entries_by_kind() {
+        // The research file's PAL v1.60 disc of GTA III, under its kind, with its serial.
+        let ps2 = index_texts("v1.60", "ps2");
+        assert!(ps2.iter().any(|t| t == "Revised disc v1.60"), "{ps2:?}");
+        assert!(ps2.iter().any(|t| t.starts_with("Retail releases and disc revisions")), "{ps2:?}");
+        assert!(ps2.iter().any(|t| t.contains("SLES-50330")), "{ps2:?}");
+        // Android versions of GTA III come from the database too, and are not read by Eyefinder.
+        let android = index_texts("com.rockstar.gta3", "android");
+        assert!(android.iter().any(|t| t.starts_with("Mobile app versions")), "{android:?}");
     }
 }

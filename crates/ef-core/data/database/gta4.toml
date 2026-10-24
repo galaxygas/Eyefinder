@@ -1,0 +1,1840 @@
+# Grand Theft Auto IV: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "7"
+origin = "md:1456"
+title = "7. Grand Theft Auto IV & Episodes from Liberty City"
+games = ["gta4"]
+text = "Legend: ✅ confirmed by official/primary or 2+ independent sources · ⚠️ single community/secondary source · ❓ rumour/unverified · \"not documented\" = searched, no evidence found. Dates are YYYY-MM-DD. Src numbers refer to `#### Sources (Section 7)` at the end of this section."
+
+[[section]]
+id = "7.1"
+origin = "md:1460"
+title = "7.1 Development timeline, trailers & announcement milestones"
+games = ["gta4"]
+
+[[section]]
+id = "7.2"
+origin = "md:1476"
+title = "7.2 Pre-release prototype & leaked builds"
+games = ["gta4"]
+
+[[section]]
+id = "7.3"
+origin = "md:1495"
+title = "7.3 Cut / unused content documented from retail files (non-prototype)"
+games = ["gta4"]
+
+[[section]]
+id = "7.4"
+origin = "md:1503"
+title = "7.4 Base-game release dates (all platforms)"
+games = ["gta4"]
+
+[[section]]
+id = "7.5"
+origin = "md:1520"
+title = "7.5 PC patch history — Grand Theft Auto IV (GFWL era, 2008–2016)"
+games = ["gta4"]
+text = "Rockstar shipped region-specific numbering: EFIGS (English/French/Italian/German/Spanish), Russian and Japanese builds carried different version numbers for the same \"Patch N\" Patch 5 (1.0.5.0) merged the region SKUs into a single all-language executable, yet Rockstar continued to publish separate Russian and Japanese version numbers through Patch 8. The Rockstar Support page dates shown today (e.g. 2024/2026) are page-update dates, not release dates."
+
+[[section]]
+id = "7.7"
+origin = "md:1549"
+title = "7.7 PC — Complete Edition (2010 retail) and the 2020 Complete Edition conversion"
+games = ["gta4", "eflc"]
+
+[[section]]
+id = "7.8"
+origin = "md:1564"
+title = "7.8 Console versions — PS3 & Xbox 360 (base game): regional releases, serials, title updates"
+games = ["gta4"]
+
+[[section]]
+id = "7.10"
+origin = "md:1623"
+title = "7.10 Compilations (cross-reference only)"
+games = ["gta4"]
+text = "GTA IV's only first-party bundle in scope is *The Complete Edition* (7.7/7.9). Any other multi-game compilations containing GTA IV are covered in the compilations section of the master document."
+
+[[section]]
+id = "7.11"
+origin = "md:1627"
+title = "7.11 Known gaps (searched, not documented in this pass)"
+games = ["gta4", "tlad", "tbogt", "eflc"]
+text = '''
+- PC retail launch exe 1.0.0.0 rests on a single wiki statement (GTA Wiki); no primary source (e.g. exe properties from a retail disc dump) retrieved. EFLC PC launch version "1.1.0.0" still unverified ❓.
+- Complete Edition builds: release dates of 1.2.0.43 and 1.2.0.59 (1.2.0.59 only attested by a wiki editor note), the build number behind the "1.20" hotfixes (2020-03-24/31), and what "1.2.0.30" was — Rockstar Support (old articles gone, excluded from Wayback), SteamDB (bot check) and GTAForums/gtamods (bot check / offline) not retrievable.
+- Japanese and Russian PC version numbers for Patches 1–5 (JP fan wiki's front-page strings contradict Rockstar numbering and were not used).
+- Xbox 360 title updates: release dates and contents of individual TUs v1–v8 (only the list, sizes and base versions are known); mapping between TU numbers and GTA Wiki's "1.01–1.06". PS3: individual dates of 1.01–1.06 and a reliable date for 1.07 (GTA Wiki's 2011-03-13 conflicts with its GameSpy-removal content); Sony update XML (BLUS30127-ver.xml etc.) and serialstation not reachable.
+- Korean Xbox 360 release date; meaning of Hidden Palace's "KO 2012-02-15"; PS3 USA Special Edition BLUS-30149 and Korean EFLC BLKS-20198 only in the libretro DB (not in Redump); which Japanese Rockstar Classics CE serial (BLJM-60525 vs BLJM-61180) matches the 2014-04-24 release; release dates of the other budget reprints (Platinum, Greatest Hits, Classics, Essentials).
+- Exact Internet Archive upload/takedown dates of the 2007 prototype; TCRF prerelease pages (Cloudflare bot check).
+- *Audit integration:* the Xbox 360 dev/test-kit leftovers (Sep 10, 2007 and Feb 29, 2008 data, Last Area Assets) and the German EPK were added (7.2 / 7.1). Still missing: a file release date for "Last Area Assets", and which console each leftover came from (dev kit or test kit, as Hidden Palace labels them).
+- Xbox Series X|S compatibility rests on GTA Wiki only; German USK/other regional rating edits beyond Australia.'''
+
+[[entry]]
+id = "7.1-1"
+origin = "md:1464"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Preliminary work begins"
+platform_text = "—"
+region = "—"
+date = "2004-11"
+date_text = "2004-11"
+notes = "Per Wikipedia (development section)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-2"
+origin = "md:1465"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Public announcement"
+platforms = ["x360"]
+platform_text = "X360 (PS3 also)"
+region = "Worldwide"
+date_text = "E3 2006"
+notes = "Announced on stage by Microsoft's Peter Moore"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-3"
+origin = "md:1466"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Original target date"
+platforms = ["ps3", "x360"]
+platform_text = "PS3/X360"
+region = "Worldwide"
+date = "2007-10-16"
+date_text = "2007-10-16"
+notes = "Delayed in Aug 2007 by Take-Two to Feb–Apr 2008 fiscal quarter, citing PS3 technical difficulties"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-4"
+origin = "md:1467"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Trailer 1 (debut trailer)"
+platform_text = "—"
+region = "—"
+date = "2007-03-29"
+date_text = "2007-03-29"
+notes = "Debut trailer; the cut ferry model later found in the 2007 prototype matches this trailer's footage"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-4"]
+sources_text = "1, 4"
+
+[[entry]]
+id = "7.1-5"
+origin = "md:1468"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Trailer 2"
+platform_text = "—"
+region = "—"
+date = "2007-06-28"
+date_text = "2007-06-28"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-6"
+origin = "md:1469"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Cover-art reveal video"
+platform_text = "—"
+region = "—"
+date = "2007-11-28"
+date_text = "2007-11-28"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-7"
+origin = "md:1470"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Trailer 3"
+platform_text = "—"
+region = "—"
+date = "2007-12-06"
+date_text = "2007-12-06"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-8"
+origin = "md:1471"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Final release date announced"
+platforms = ["ps3", "x360"]
+platform_text = "PS3/X360"
+region = "Worldwide"
+date = "2008-01-24"
+date_text = "2008-01-24"
+notes = "Rockstar announced 29 April 2008"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-9"
+origin = "md:1472"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Official site redesign; further trailers/teasers"
+platform_text = "—"
+region = "—"
+date_text = "2008-02-08, 02-21, 03-07, 03-27, 04-11"
+notes = "GameStop TV commercial 2008-04-01"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-10"
+origin = "md:1473"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "Gold / submitted for manufacturing"
+platforms = ["ps3", "x360"]
+platform_text = "PS3/X360"
+region = "—"
+date = "2008-04-17"
+date_text = "2008-04-17"
+notes = "Development ceased when submitted for manufacturing"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.1-11"
+origin = "md:1474"
+section = "7.1"
+kind = "milestone"
+games = ["gta4"]
+title = "**\"Deutsch-Exclusive EPK\"** (German electronic press kit, preserved)"
+platforms = ["x360"]
+platform_text = "Xbox 360 (as Hidden Palace classifies it)"
+region = "DE"
+date = "2025-11-04"
+date_text = "Files dated **2007-03-28 → 2008-04-24**; released on Hidden Palace **2025-11-04** by Foulowe59 (Internet Archive item `GTA_IV_EPK`)"
+notes = "jpg, mov, pdf, psd, tif and wmv files. Hidden Palace says some of the artwork was never released publicly."
+confidence = "single-source"
+confidence_text = "⚠️ (single archive)"
+sources = ["7-89"]
+sources_text = "89"
+
+[[entry]]
+id = "7.2-1"
+origin = "md:1480"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**\"2007 beta\" / Nov 2007 prototype** (Xbox 360 XDK)"
+platforms = ["x360"]
+platform_text = "Xbox 360 development kit (labelled Rockstar North hardware)"
+region = "UK (found in Scotland)"
+date_text = "Build dated **2007-11-23**; find publicised on GTAForums by user *janmatant*; press coverage from **2026-03-29**"
+id_text = "No version string published in press coverage"
+notes = "Kit bought for £5 at a car-boot sale in Scotland. Build ~95% complete; reported as 127 GB (GTA BOOM) vs. \"118 GB\" (Notebookcheck headline) — figures conflict. Missing parts of movie data, common data files and `xbox360.rpf`, so it freezes/is unplayable as found (modders later reportedly got it running on X360 and the Xenia emulator ⚠️). Contents: early/beta character models, placeholder weapon models, early Niko aim-walk animation, different radio content, unused logos, early phone designs, ferry model from Trailer 1, references to a cut zombie mode/minigame **\"Z: Resurrection\"** Hidden Palace page \"Grand Theft Auto IV (Nov 23, 2007 prototype)\": origin Xbox 360 **Test Kit**; build date Nov 23, 2007; **build name 78** (retail EU version = 118, per Hidden Palace); files released **2026-03-28**; ~95% intact; `movies` folder contents and `xbox360.rpf`/script missing so it freezes; xex fragmented and dongle-protected (Hidden Palace hosts a defragmented xex, a dongle-removed \"GTA4Final_xenon_patched.xex\", repaired `nj_03.img` and `componentpeds.img`); status \"redump needed\". HP lists the final build date as Mar 31, 2008 (US)"
+confidence = "confirmed"
+confidence_text = "✅ (multiple outlets, all relaying the same GTAForums report; Hidden Palace hosts the files)"
+sources = ["7-2", "7-3", "7-4", "7-5", "7-83"]
+sources_text = "2, 3, 4, 5, 83"
+
+[[entry]]
+id = "7.2-2"
+origin = "md:1481"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "Internet Archive upload of the above"
+platform_text = "—"
+region = "—"
+date_text = "Uploaded late Mar 2026 (exact date not documented); removed by **≈2026-04-02**"
+id_text = "—"
+notes = "Upload disappeared, uploader account showed zero uploads; outlets describe a *presumed* DMCA takedown — no official Rockstar/Take-Two statement; Internet Archive reportedly sent no formal notice to the uploader (per videotechuk_ on X)"
+confidence = "mixed"
+confidence_text = "⚠️ (takedown cause unconfirmed ❓)"
+sources = ["7-5", "7-6"]
+sources_text = "5, 6"
+
+[[entry]]
+id = "7.2-3"
+origin = "md:1482"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**\"Leftover Sep 10, 2007 Data\"** (asset page)"
+platforms = ["x360"]
+platform_text = "Xbox 360 **Development Kit**"
+region = "—"
+date = "2026-03-28"
+date_text = "Build date 2007-09-10; files released on Hidden Palace **2026-03-28**"
+id_text = "xex `GTA4Debug_xenon.xex` (listed as \"DongleTool.xex\")"
+notes = "Partly overwritten by the Nov 23, 2007 build on the same drive. Hidden Palace says the xex has \"even older\" achievement versions than the Nov 2007 build. Console found and imaged by \"jan\", the same find as the Nov 23, 2007 build."
+confidence = "single-source"
+confidence_text = "⚠️ (single archive)"
+sources = ["7-88"]
+sources_text = "88"
+
+[[entry]]
+id = "7.2-4"
+origin = "md:1483"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**\"Leftover Feb 29, 2008 Data\"** (asset page)"
+platforms = ["x360"]
+platform_text = "Xbox 360 **Test Kit**"
+region = "—"
+date = "2026-03-28"
+date_text = "Build date 2008-02-29; files released on Hidden Palace **2026-03-28**"
+id_text = "—"
+notes = "Only 7 files: 2 cmpmap, 2 xex, 2 map and `rfs.dat`. Same console find (\"jan\")."
+confidence = "single-source"
+confidence_text = "⚠️ (single archive)"
+sources = ["7-88"]
+sources_text = "88"
+
+[[entry]]
+id = "7.2-5"
+origin = "md:1484"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**\"Last Area Assets\"** (asset page)"
+platforms = ["x360"]
+platform_text = "Xbox 360 **Test Kit**"
+region = "—"
+date_text = "Undated. Hidden Palace gives no file release date on this page; the audit's \"2026-03-28\" for it is not shown there."
+id_text = "—"
+notes = "Assets from a separate area of the drive: a mix of build files from the \"xbox360\" folder, partly corrupted. The `vehicle.img`, `weapons.img` and other img files were partly extracted (Dropoff, Starfrost, funtimeandrefoxy)."
+confidence = "single-source"
+confidence_text = "⚠️ (single archive)"
+sources = ["7-88"]
+sources_text = "88"
+
+[[entry]]
+id = "7.2-6"
+origin = "md:1485"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "Wikipedia summary"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "\"A 2007 beta build was acquired in 2026 and posted online, revealing unfinished and cut content.\""
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.2-7"
+origin = "md:1486"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**May 26, 2008 \"Patch Data\" prototype** (title update)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "—"
+date_text = "Build 2008-05-26; files surfaced 2010-08-08 (Pirate Bay torrent by \"Morck22\")"
+id_text = "Internally named \"College Hardball 2K8 Title Update #1\" but tied to GTA IV's title ID"
+notes = "Contains `default.xexp`, `update.img` (multiplayer scripts: network_main, freemode/deathmatch/races/roving \"_cr\" scripts, coop_* and tm_* scripts, MP cellphone scripts) and language GXTs. Hidden Palace: possibly an early TU1/TU2/TU3 or a test TU (theory)"
+confidence = "single-source"
+confidence_text = "⚠️ (single archive)"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.2-8"
+origin = "md:1487"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**Aug 19, 2008 DLC \"G12345E1 Eng\" prototype**"
+platforms = ["x360"]
+platform_text = "Xbox 360 (PartnerNet)"
+region = "—"
+date_text = "Build date 2008-08-19 (PartnerNet CDN package modification date — \"may be incorrect\"); released 2025-10-25 by X360_Release_Guy"
+id_text = "Origin file ID 0B0B9D8082BF65B54B776110CD513AC26F03D55254"
+notes = "Small patch-like package associated with The Lost and Damned; unreleased as such"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.2-9"
+origin = "md:1488"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**Jan 30, 2009 Patch Data prototype** (title update)"
+platforms = ["x360"]
+platform_text = "Xbox 360 (dev-kit HDD)"
+region = "—"
+date = "2009-01-30"
+date_text = "2009-01-30 (TU file modification date)"
+id_text = "—"
+notes = "Hidden Palace: possibly a version of TU5 or TU4 or an older TU"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.2-10"
+origin = "md:1489"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**Jan 30, 2009 The Lost and Damned DLC prototype**"
+platforms = ["x360"]
+platform_text = "Xbox 360 (PartnerNet)"
+region = "—"
+date_text = "Build 2009-01-30 (CDN date; may be incorrect); first released 2022-07-08 (ObscureGamers \"Terarelease 3.0\"), re-released by X360_Release_Guy"
+id_text = "**Build 143**; origin file ID AA521E7D253FF64A98BD1105A05413FB7B243CF654; found on HDD \"SAMSUNG500GB\""
+notes = "Almost final; differences mainly in animations; requires updated GTA IV TU and unlocking; dongle bypass via replacement WeaponInfo.xml (released 2009-02-17)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.2-11"
+origin = "md:1490"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**Sep 24, 2009 The Ballad of Gay Tony DLC prototype**"
+platforms = ["x360"]
+platform_text = "Xbox 360 (PartnerNet)"
+region = "—"
+date_text = "Build 2009-09-24 (CDN date; may be incorrect); released 2025-10-25"
+id_text = "**Build 252**; origin file ID 1CE92F7EC1010E0E8A7BCE4D856CA94FC3BA10A854"
+notes = "Runs on RGH/JTAG/\"Bad Update\" consoles (released 2009-10-29)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.2-12"
+origin = "md:1491"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**Sep 29, 2009 Episodes from Liberty City prototype** (executable only)"
+platforms = ["x360"]
+platform_text = "Xbox 360 (damaged disc)"
+region = "—"
+date_text = "Build 2009-09-29; released 2019"
+id_text = "Build name \"CollegeHardball2k8\""
+notes = "Only the dongle-protected executable could be dumped from a partially damaged disc (dongle removed by Colek). Reportedly contains debug code, not visible without the missing debug files"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.2-13"
+origin = "md:1492"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "**EFLC \"Patch Data\" prototype**"
+platforms = ["x360"]
+platform_text = "Xbox 360 (PartnerNet / HDD \"SAMSUNG500GB\")"
+region = "—"
+date_text = "Undated; released 2022-07-08 (Terarelease 3.0)"
+id_text = "—"
+notes = "Corresponds to the patch on the retail EFLC disc but with differing entityFx.dat and GXT hashes; contains a `545407F2.ini` not on retail; has a `default.xexp` (absent from the on-disc patch) about twice the size of the first retail TU's"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.2-14"
+origin = "md:1493"
+section = "7.2"
+kind = "prototype"
+games = ["gta4"]
+title = "Other pre-release builds (press/demo builds, PS3 or PC prototypes)"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "No PS3 or PC GTA IV prototype is listed on Hidden Palace (all GTA IV/EFLC entries are Xbox 360). Press demos existed (previews), but no build identifiers are documented. TCRF prerelease pages could not be retrieved (bot check)"
+confidence_text = "not documented"
+sources = ["7-84"]
+sources_text = "84"
+
+[[entry]]
+id = "7.3-1"
+origin = "md:1499"
+section = "7.3"
+kind = "note"
+games = ["gta4"]
+title = "TCRF page \"Grand Theft Auto IV (Windows)\""
+platforms = ["pc"]
+platform_text = "PC retail files"
+notes = "Unused content: 8 chopper models (Angel, Daemon, Diabolus, Hexer, Lycan, Nightblade, Revenant, Wolfsbane — finished for TLAD), scrapped golf cart (later TBoGT Caddy), leftover Buffalo/Majestic/Previon data, unused Packer ramp, scrapped weapons (wooden bat, baton audio, pool cue, silenced pistol; flamethrower/camera/bomb/minigun referenced in `default.ide`), unused console-style loading screens, 4 scrapped radio songs in `American.gxt`, leftover snow/winter weather flags, test maps `CJ_Test` and `AnimViewer` (`InteriorTest` referenced but won't load), a shader-compiler build log in `common\\shaders`. TCRF also documents SecuROM anti-tamper \"sabotage\" effects (drunk camera, stuck accelerator, unwinnable missions incl. Clean Getaway, Uncle Vlad, Three Leaf Clover, A Dish Served Cold; TLAD/TBoGT equivalents)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-7"]
+sources_text = "7"
+
+[[entry]]
+id = "7.3-2"
+origin = "md:1500"
+section = "7.3"
+kind = "note"
+games = ["gta4"]
+title = "Developer comment on cut content"
+platform_text = "—"
+notes = "Former Rockstar North technical director Obbe Vermeij (2026-04-03, on X): \"There really isn't a lot of cut content in GTA 4.\""
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-8"]
+sources_text = "8"
+
+[[entry]]
+id = "7.3-3"
+origin = "md:1501"
+section = "7.3"
+kind = "note"
+games = ["gta4"]
+title = "Grand Theft Wiki \"Content Changes in GTA IV Era\""
+platform_text = "—"
+notes = "Beta-vs-final differences (cut missions, character/map name changes, soundtrack removals) for IV/TLAD/TBoGT; page self-describes some info as unverified; last modified 2015-04-27"
+confidence = "mixed"
+confidence_text = "⚠️/❓"
+sources = ["7-9"]
+sources_text = "9"
+
+[[entry]]
+id = "7.4-1"
+origin = "md:1507"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Original release"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "NA, EU, AU/NZ"
+date = "2008-04-29"
+date_text = "2008-04-29"
+id_text = "Disc serials: see 7.8"
+notes = "Simultaneous worldwide (ex-Japan) launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-53"]
+sources_text = "1, 53"
+
+[[entry]]
+id = "7.4-2"
+origin = "md:1508"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Special Edition"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "—"
+date = "2008-04-29"
+date_text = "2008-04-29 (pre-order edition; exact date not separately documented)"
+id_text = "—"
+notes = "Metal safe-deposit box, art book, soundtrack CD, pre-order"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.4-3"
+origin = "md:1509"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "40 GB PS3 bundle"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "—"
+date_text = "not documented"
+id_text = "—"
+notes = "Bundle made with Sony"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.4-4"
+origin = "md:1510"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Korean release"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "KR"
+date = "2008-09-23"
+date_text = "2008-09-23"
+serials = ["BLKS-20073"]
+id_text = "BLKS-20073 (see 7.8)"
+notes = "Distributed by Wizhands; 55,000 won; PS3 only per both articles (an Asian Xbox 360 pressing exists — Redump's EU/Asia X360 disc lists Korea among regions dumped — but its Korean release date is not documented; Hidden Palace's Xbox 360 prototype infoboxes list a \"KO\" release of Feb 15, 2012, unexplained and unsourced there ❓)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-54", "7-81", "7-82", "7-84"]
+sources_text = "54, 81, 82, 84"
+
+[[entry]]
+id = "7.4-5"
+origin = "md:1511"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Japanese release (Capcom)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "JP"
+date = "2008-10-30"
+date_text = "2008-10-30"
+id_text = "—"
+notes = "Published by Capcom; JP Wikipedia says some manual pages/parts were changed. Publishing later transferred from Capcom to 2K (Take-Two Japan branch announced 2010-02-24)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-10"]
+sources_text = "1, 10"
+
+[[entry]]
+id = "7.4-6"
+origin = "md:1512"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Windows release"
+platforms = ["pc"]
+platform_text = "PC"
+region = "NA"
+date = "2008-12-02"
+date_text = "2008-12-02"
+id_text = "Retail on 2 DVDs; GFWL + SecuROM PA + SecuROM 7 disc check"
+notes = "Announced Aug 2008 for 18 Nov (NA)/21 Nov (EU) then slipped; Rockstar Toronto credited for PC"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-53", "7-11"]
+sources_text = "1, 53, 11"
+
+[[entry]]
+id = "7.4-7"
+origin = "md:1513"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Windows release"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EU, AU/NZ"
+date = "2008-12-03"
+date_text = "2008-12-03"
+id_text = "—"
+notes = "DE Wikipedia infobox says 2 Dec, body 3 Dec (internal conflict)"
+confidence = "mixed"
+confidence_text = "✅ (EU date)/⚠️ conflict"
+sources = ["7-1", "7-53", "7-12"]
+sources_text = "1, 53, 12"
+
+[[entry]]
+id = "7.4-8"
+origin = "md:1514"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Japanese PC – Japanese-manual edition"
+platforms = ["pc"]
+platform_text = "PC"
+region = "JP"
+date = "2008-12-11"
+date_text = "2008-12-11"
+id_text = "—"
+notes = "Per Japanese GTA IV PC fan wiki"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-13"]
+sources_text = "13"
+
+[[entry]]
+id = "7.4-9"
+origin = "md:1515"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Japanese PC – full Japanese localisation (Cyberfront)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "JP"
+date = "2009-03-20"
+date_text = "2009-03-20"
+id_text = "—"
+notes = "First PC game in Japan rated CERO Z (per JP Wikipedia)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-53", "7-10", "7-13"]
+sources_text = "53, 10, 13"
+
+[[entry]]
+id = "7.4-10"
+origin = "md:1516"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox 360 digital (Games on Demand)"
+platforms = ["x360"]
+platform_text = "X360"
+region = "EU, NA"
+date = "2009-10-13"
+date_text = "2009-10-13 (Delisted Games)"
+id_text = "—"
+notes = "Single source; not cross-checked"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-69"]
+sources_text = "69"
+
+[[entry]]
+id = "7.4-11"
+origin = "md:1517"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 digital (PSN)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "NA (AU/EU per Delisted Games)"
+date_text = "2012-02-14 / reported 2012-02-17"
+serials = ["NPUB30702", "NPEB00882"]
+id_text = "NPUB30702 / NPEB00882 — see 7.8"
+notes = "GTA IV and Complete Edition"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-69", "7-72"]
+sources_text = "69, 72"
+
+[[entry]]
+id = "7.4-12"
+origin = "md:1518"
+section = "7.4"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox One backward compatibility"
+platforms = ["xone"]
+platform_text = "Xbox One"
+region = "Worldwide"
+date = "2017-02-09"
+date_text = "2017-02-09"
+id_text = "X360 title + DLC"
+notes = "GTA IV and its DLC (EFLC) added to Xbox One BC"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-12", "7-14"]
+sources_text = "1, 12, 14"
+
+[[entry]]
+id = "7.5-1"
+origin = "md:1526"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Retail launch build"
+platforms = ["pc"]
+platform_text = "PC"
+region = "NA/EU"
+date_text = "2008-12-02/03"
+id_text = "**1.0.0.0** per GTA Wiki (\"Technical Issues\": error MMA10 \"seems to affect only version 1.0.0.0\"; Patch 1 notes list reduced MMA10 errors). GTA Wiki's version table calls the PC release \"Version 1.00\". **\"1.0.0.4\" is not the launch build**: it is the label Rockstar used in its 2009-11-10 announcement of Patch 5 (\"Today we released patched 1.0.0.4…\"), i.e. a mislabel of 1.0.5.0 (GTA Wiki; Cheat Code Central also reports the Nov 2009 patch as 1.0.0.4)"
+notes = "Original 2-DVD release (GFWL + SecuROM)"
+confidence = "mixed"
+confidence_text = "⚠️ (1.0.0.0: single wiki source) / ✅ (1.0.0.4 = Patch 5 label)"
+sources = ["7-11", "7-67", "7-76", "7-77"]
+sources_text = "11, 67, 76, 77"
+
+[[entry]]
+id = "7.5-2"
+origin = "md:1527"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EFIGS"
+date_text = "2008-12-12 (Worthplaying, 21:23 PST; JP fan wiki 2008-12-12) / 2008-12-14 (GTA Wiki) / 2008-12-16 (Softpedia; Game Developer article) ⚠️ conflict — earliest report 2008-12-12"
+id_text = "1.0.1.0"
+notes = "Fix crash after legal screen for some German customers; video editor improvements; bowling fix with certain mice; ATI 1900 shadow fix; memory savings; particle/mirror improvements; preserved MP character settings; DirectInput controller support; power-management fixes; Social Club data handling for MMA10 error. (v1.0.2.0 notes contain a \"PATCH 1 FIXES\" subsection, confirming Patch 1 = v1.0.1.0)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-15", "7-16", "7-78", "7-79"]
+sources_text = "15, 16, 78, 79"
+
+[[entry]]
+id = "7.5-3"
+origin = "md:1528"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EFIGS"
+date = "2009-01-26"
+date_text = "2009-01-26"
+id_text = "1.0.2.0"
+notes = "Water Quality / Shadow Quality / Reflection Resolution sliders, Definition & VSync toggles; Nvidia 7000 fix; DirectInput off by default (`-usedirectinput`); `-notimefix` option; looping-audio and benchmark sound fixes; RESC10 fixes; MP kick fix; X360 wireless pad trigger fix"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-15", "7-16", "7-17"]
+sources_text = "15, 16, 17"
+
+[[entry]]
+id = "7.5-4"
+origin = "md:1529"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 3"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EFIGS"
+date_text = "2009-03-19 (patch date) / announced 2009-03-21"
+id_text = "1.0.3.0"
+notes = "ATI 1900 interior lights; Alt-Tab fix; \"OFF\" options for reflections/shadows; physics & graphics optimisations (32-player races); NAT type detection; voice chat received with mic off; expanded key/mouse remapping and DirectInput menu toggle; two controllers; Saitek/Gravis support; **detects modified files and blocks MP**; restored hot-dog stands/props, scrolling signs, cutscene pause after Alt-Tab (fixes to TU2); MODO/Perseus clothing fix"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-15", "7-19"]
+sources_text = "15, 19"
+
+[[entry]]
+id = "7.5-5"
+origin = "md:1530"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 4"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EFIGS"
+date_text = "2009-06-19 (Worthplaying) / 2009-06-20 (Softpedia)"
+id_text = "1.0.4.0"
+notes = "Maintenance update: resource management adjusted based on detected OS"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-16", "7-19"]
+sources_text = "16, 19"
+
+[[entry]]
+id = "7.5-6"
+origin = "md:1531"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 5"
+platforms = ["pc"]
+platform_text = "PC"
+region = "All (SKU merge)"
+date_text = "2009-11-10 (Worthplaying) / 2009-11-11 (Softpedia)"
+id_text = "1.0.5.0 (announced by Rockstar as \"1.0.0.4\" — mislabel per GTA Wiki)"
+notes = "**Region SKUs merged; single executable supports all languages**; double key mapping; option to disable mouse in helicopters; hood-cam keyboard sensitivity; MP anti-cheat; host can kick immediately; Cops 'n Crooks host-drop fix"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-16", "7-20", "7-76", "7-77"]
+sources_text = "16, 20, 76, 77"
+
+[[entry]]
+id = "7.5-7"
+origin = "md:1532"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 6"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EFIGS / RU / JP"
+date_text = "2010-04-13 (Worthplaying, Shacknews) / 2010-04-14 (Softpedia)"
+id_text = "**1.0.6.0** EFIGS; **1.0.5.1** Russian (file `gta4_tu6_v1051ru.zip`); **1.0.4.2** Japanese (file `gta4_tu_1042_jp.zip`)"
+notes = "Separate Social Club app removed (login at launch); new scalable lower-memory shadow system, \"Night Shadows\" detail replaces Shadow Density; rendering/memory optimisations; MP security; **in-game purchase of TLAD/TBoGT** (not in Russian/Japanese versions); vehicle shadows 8pm–6am restored; floating street textures fixed; peds in vehicles drawn farther; Moon lunar phases; Japanese MP menu text fixed; RESC 10 fix. Released same day as PC EFLC. FilePlanet size 104.3 MB"
+confidence = "confirmed"
+confidence_text = "✅ (EFIGS; RU/JP numbers now confirmed by JP fan wiki patch page in addition to filenames + Shacknews)"
+sources = ["7-21", "7-22", "7-23", "7-24", "7-80"]
+sources_text = "21, 22, 23, 24, 80"
+
+[[entry]]
+id = "7.5-8"
+origin = "md:1533"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 7"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EFIGS / RU / JP"
+date = "2010-06-01"
+date_text = "2010-06-01"
+id_text = "**1.0.7.0** English; **1.0.6.1** Russian; **1.0.5.2** Japanese"
+notes = "Fixed partially see-through tree foliage; video upload to Rockstar blocked with certain music tracks; clip-capture slowdown near water's edge; \"detonate\" added to TLAD custom key mapping. (JP Wikipedia instead attributes \"1.0.5.2\" to 2009-11-10 as the patch that unified the JP and overseas versions — conflicts with Rockstar's own numbering; Rockstar's title used here)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-16", "7-25", "7-26", "7-10"]
+sources_text = "16, 25, 26, 10"
+
+[[entry]]
+id = "7.5-9"
+origin = "md:1534"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Patch 8"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EFIGS (Patch 8) / JP (Patch 6) / RU (Patch 7)"
+date_text = "2016-11-29 (DE Wikipedia) / reported 2016-11-30 (\"announced Wednesday\")"
+id_text = "**1.0.8.0** (EFIGS); paired with EFLC Patch 3 (1.1.3.0, see 7.6)"
+notes = "First patch in ~6 years. Added error code WTV270 (GFWL / Windows Live Sign-In Assistant failures); Windows 8/8.1/10 added to OS check; display-controller image; fix \"Out of Commission\" mission at >60 fps; fix Resource Usage indicator on >2 GB VRAM cards; removed restriction blocking settings on modern GPUs; map crosshair fix; Brief-menu scroll fix; \"drawlist overflow\" crash fix; minor performance"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-27", "7-28", "7-12"]
+sources_text = "27, 28, 12"
+
+[[entry]]
+id = "7.5-10"
+origin = "md:1535"
+section = "7.5"
+kind = "patch"
+games = ["gta4"]
+title = "Japanese PC regional patch numbers (fan wiki listing)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "JP"
+date_text = "2008-12-12 … 2010-05-28"
+id_text = "The JP fan wiki front-page news list (checked in page HTML, 2026-10) gives version strings that contradict Rockstar's own numbering (e.g. 2010-04-13 listed as \"1.0.3.0 & 1.0.1.1 & 1.0.2.1\", 2010-05-28 as \"1.0.5.0 & 1.0.4.1 & 1.0.2.2\", 2009-06-19 as \"1.0.8.0\"), so they are not used. Its separate \"パッチ情報\" (patch info) page does give correct strings: \"GTAIV v1.0.6.0 & v1.0.5.1 & v1.0.4.2\", \"GTAIV v1.0.7.0 & v1.0.6.1 & v1.0.5.2\", \"GTA: EFLC v1.1.1.0\", \"GTA: EFLC v1.1.2.0\", with Rockstar download files `title_update_7_EN.zip` (v1.0.7.0), `title_update_7_JP.zip` (v1.0.5.2, 完全日本語版 = full Japanese edition) and `eflc/update2_EN.zip` (v1.1.2.0)"
+notes = "JP fan wiki lists JP patch dates 2008-12-12, 2009-01-24, 2009-03-20/21, 2009-06-19, 2009-11-10, 2010-04-13, 2010-05-28. Japanese/Russian version numbers for Patches 1–5 remain undocumented"
+confidence = "single-source"
+confidence_text = "⚠️ (dates)"
+sources = ["7-13", "7-80"]
+sources_text = "13, 80"
+
+[[entry]]
+id = "7.7-1"
+origin = "md:1553"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "GTA IV: The Complete Edition (retail compilation)"
+platforms = ["ps3", "x360", "pc"]
+platform_text = "PS3, X360, PC"
+region = "NA"
+date = "2010-10-26"
+date_text = "2010-10-26"
+id_text = "X360 = 2 discs; PS3 single disc; PC single disc (per Grand Theft Wiki ⚠️)"
+notes = "GTA IV + EFLC; ships latest patches available at launch, otherwise \"little difference\" to standalone releases"
+confidence = "mixed"
+confidence_text = "✅ (dates) / ⚠️ (disc layout)"
+sources = ["7-1", "7-38"]
+sources_text = "1, 38"
+
+[[entry]]
+id = "7.7-2"
+origin = "md:1554"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "GTA IV: The Complete Edition (retail)"
+platforms = ["ps3", "x360", "pc"]
+platform_text = "PS3, X360, PC"
+region = "EU"
+date = "2010-10-29"
+date_text = "2010-10-29"
+id_text = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-38"]
+sources_text = "1, 38"
+
+[[entry]]
+id = "7.7-3"
+origin = "md:1555"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "Delisting of GTA IV (PC)"
+platforms = ["pc"]
+platform_text = "PC (Steam)"
+region = "Worldwide"
+date = "2020-01-10"
+date_text = "**2020-01-10** (Gamepressure, published 2020-01-11: unavailable \"since yesterday\"; Delisted Games: delisted 2020-01-10, price set to $0.00)"
+id_text = "—"
+notes = "Rockstar: no longer possible to generate the activation keys needed because GFWL was retired. EFLC (also GFWL) stayed on sale on Steam until it was replaced on 2020-03-19; PCGamesN (2020-01-13) notes third-party retailers such as Humble were still selling base-game keys at that time"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-39", "7-40", "7-69", "7-70", "7-71"]
+sources_text = "39, 40, 69, 70, 71"
+
+[[entry]]
+id = "7.7-4"
+origin = "md:1556"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "**Complete Edition conversion (\"1.2.0.32\")**"
+platforms = ["pc"]
+platform_text = "PC (Steam, Rockstar Games Launcher)"
+region = "Worldwide"
+date = "2020-03-19"
+date_text = "**2020-03-19**"
+version = "1.2.0.30"
+id_text = "**1.2.0.32** (per GTA SnP help page; PCGW calls the first upgrade \"1.20\" then \"1.2.x.x\"); a build **\"1.2.0.30\"** is referenced only as the minimum version accepted by a fan downgrader tool (LCPDFR \"GTA IV Downgrader\": installs \"at version 1.2.0.30 and up\") — its relationship to the 2020-03-19 build is not documented ⚠️"
+notes = "Replaces both GTA IV (app 12210, renamed *GTA IV: The Complete Edition*) and EFLC standalone (app 12220, no longer sold separately). **Removed GFWL, SecuROM, multiplayer and leaderboards**; added Rockstar Games Launcher DRM and Steam achievements; free upgrade (EFLC owners ~22 GB download, IV owners ~6 GB); retail/GFWL keys redeemable on Rockstar Games Launcher. RamJam FM, Self-Actualization FM and Vice City FM \"temporarily unavailable\". Save location changed; can load older saves Official Rockstar announcement (Steam, 2020-02-19) and GTA Wiki release schedule: **2020-03-19** existing Steam owners of IV or EFLC can install the Complete Edition; **2020-03-24** Complete Edition on sale on Steam and Rockstar Games Launcher, existing CD keys redeemable on the launcher; GFWL-store purchasers to link via Social Club at a later \"TBD\" date. Japanese subtitles remain for GTA IV but EFLC requires another language"
+confidence = "mixed"
+confidence_text = "✅ (⚠️ for 1.2.0.30)"
+sources = ["7-11", "7-30", "7-39", "7-40", "7-41", "7-67", "7-73", "7-75"]
+sources_text = "11, 30, 39, 40, 41, 67, 73, 75"
+
+[[entry]]
+id = "7.7-5"
+origin = "md:1557"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "Steam store release date of app 12210 (conflicting value)"
+platforms = ["pc"]
+platform_text = "PC (Steam)"
+region = "Worldwide"
+date = "2020-03-24"
+date_text = "**2020-03-24** (Steam appdetails API: `\"release_date\":{\"date\":\"Mar 24, 2020\"}`, name \"Grand Theft Auto IV: The Complete Edition\", read 2026-10-24)"
+id_text = "app 12210"
+notes = "Conflicts with the 2020-03-19 conversion date in the row above. It matches the day Rockstar's schedule put the Complete Edition on sale (and the first \"1.20\" hotfix), so it is probably the store's \"on sale\" date and not the day the conversion was installable. Both values are kept."
+confidence = "single-source"
+confidence_text = "⚠️ (conflict)"
+sources = ["7-90"]
+sources_text = "90"
+
+[[entry]]
+id = "7.7-6"
+origin = "md:1558"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "Complete Edition \"1.20\" hotfixes"
+platforms = ["pc"]
+platform_text = "PC"
+region = "Worldwide"
+date_text = "**2020-03-24** and **2020-03-31** (GTA Wiki, quoting Rockstar Support article 360045163834)"
+id_text = "\"1.20\" (GTA Wiki/PCGW naming; the corresponding 1.2.0.x build number is not documented)"
+notes = "03-24: fixed some AMD graphics cards being locked to 512 MB VRAM; fixed the game not accepting some command-line parameters. 03-31: \"fixes for ongoing stability and performance\""
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-11", "7-67"]
+sources_text = "11, 67"
+
+[[entry]]
+id = "7.7-7"
+origin = "md:1559"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "Withdrawn radio-restoration update"
+platforms = ["pc"]
+platform_text = "PC"
+region = "Worldwide"
+date_text = "≈2020-05 (reported 2020-05-29)"
+id_text = "Version not documented"
+notes = "Restored removed radio stations/songs but broke saves (missions failing to start after cutscenes/load); Rockstar withdrew the patch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-42"]
+sources_text = "42"
+
+[[entry]]
+id = "7.7-8"
+origin = "md:1560"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "**1.2.0.43**"
+platforms = ["pc"]
+platform_text = "PC"
+region = "Worldwide"
+date = "2020-06-03"
+date_text = "Date **not documented** in sources fetched (in use by 2021-01-05). GTA Wiki: the EFLC stations Vice City FM, Self-Actualization FM and RamJam FM were reinstated on **2020-06-03** (also debuting in base GTA IV) — that this reinstatement is the 1.2.0.43 update is inferred, not sourced ❓"
+id_text = "1.2.0.43"
+notes = "Added 3 radio stations (GTA SnP does not name them); can load saves from all previous versions; 1.2.0.32 can't load 1.2.0.43 saves without downgrading. Players reported Vladivostok FM song changes after this patch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-41", "7-43", "7-67", "7-74"]
+sources_text = "41, 43, 67, 74"
+
+[[entry]]
+id = "7.7-9"
+origin = "md:1561"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "1.2.0.59"
+platforms = ["pc"]
+platform_text = "PC"
+region = "—"
+date_text = "Release date not documented"
+id_text = "1.2.0.59"
+notes = "Existence attested only by GTA Wiki editors noting a TBoGT busker glitch \"Tested on PC, version 1.2.0.59\" (the same glitch is noted elsewhere on GTA Wiki as tested on 1.2.0.43). No changelog or date found; Rockstar Support, SteamDB and GTAForums not retrievable (SteamDB/GTAForums bot-checks, gtamods.com offline for maintenance)"
+confidence = "single-source"
+confidence_text = "⚠️ (existence) / date not documented"
+sources = ["7-74"]
+sources_text = "74"
+
+[[entry]]
+id = "7.7-10"
+origin = "md:1562"
+section = "7.7"
+kind = "retail"
+games = ["gta4", "eflc"]
+title = "Steam offline / launcher notes"
+platforms = ["pc"]
+platform_text = "PC"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Offline mode via Rockstar Games Launcher (\"Play on Steam\"); retail patches don't require Social Club"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-11"]
+sources_text = "11"
+
+[[entry]]
+id = "7.8-1"
+origin = "md:1568"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Retail launch"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "NA, EU, AU/NZ"
+date = "2008-04-29"
+date_text = "2008-04-29"
+id_text = "Disc serials: see the Redump rows below"
+notes = "13 million+ units shipped Apr 2008–Jan 2009 (Take-Two)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-53", "7-44"]
+sources_text = "1, 53, 44"
+
+[[entry]]
+id = "7.8-2"
+origin = "md:1569"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 disc — USA"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "USA"
+date = "2008-04-29"
+date_text = "2008-04-29"
+serials = ["BLUS-30127"]
+id_text = "**BLUS-30127**, disc version **01.01**; BD-25, 11,287,068,672 bytes; PVD creation date 2008-03-31 11:00"
+notes = "En/Fr/De/Es/It (German/Italian only via console system language). Includes PS3 firmware 2.17 update"
+confidence = "confirmed"
+confidence_text = "✅ (Redump dump; also in No-Intro/libretro PS3 DAT)"
+sources = ["7-55", "7-57"]
+sources_text = "55, 57"
+
+[[entry]]
+id = "7.8-3"
+origin = "md:1570"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 disc — USA Special Edition"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "USA"
+date = "2008-04-29"
+date_text = "2008-04-29"
+serials = ["BLUS-30149"]
+id_text = "**BLUS-30149** (listed in the libretro PS3 database as \"Special Edition (USA)\"; not in Redump)"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️ (single database)"
+sources = ["7-57"]
+sources_text = "57"
+
+[[entry]]
+id = "7.8-4"
+origin = "md:1571"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 disc — Europe"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "EU"
+date = "2008-04-29"
+date_text = "2008-04-29"
+serials = ["BLES-00229"]
+id_text = "**BLES-00229** (also **BLES-00229/P** = *Platinum: The Best of PlayStation 3* reprint, same data), disc version **01.05**; PVD 2008-03-31 11:00"
+notes = "BBFC reg. VFD 19692; Rockstar IDs 5400213/BLU. Includes firmware 2.17"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-55", "7-57"]
+sources_text = "55, 57"
+
+[[entry]]
+id = "7.8-5"
+origin = "md:1572"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 disc — Australia (edited)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "AU"
+date = "2008-04-29"
+date_text = "2008-04-29"
+serials = ["BLES-00258"]
+id_text = "**BLES-00258**, disc version **01.00**"
+notes = "Separate dump from BLES-00229 (CRC 2BE1DBFD vs 016113C2); Redump notes it is the pre-censored MA15+ version, later uncensored by patch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-55", "7-57"]
+sources_text = "55, 57"
+
+[[entry]]
+id = "7.8-6"
+origin = "md:1573"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 disc — Japan (Capcom)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "JP"
+date = "2008-10-30"
+date_text = "2008-10-30"
+serials = ["BLJM-60093", "BLJM-55011"]
+id_text = "**BLJM-60093**, disc version **01.02**; PVD 2008-09-27; reprint **BLJM-55011** (*PlayStation 3 the Best*, same data)"
+notes = "Japanese; voices English; includes firmware 2.42"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-55", "7-57"]
+sources_text = "55, 57"
+
+[[entry]]
+id = "7.8-7"
+origin = "md:1574"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 disc — Korea"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "KR"
+date = "2008-09-23"
+date_text = "**2008-09-23** (Gamemeca 2008-09-22; Korea JoongAng Daily 2008-09-21 — body text also says \"tomorrow\", internal inconsistency)"
+serials = ["BLKS-20073", "BLUS-30127"]
+id_text = "**BLKS-20073**, disc version **01.01**; internal serial BLUS-30127; PVD 2008-03-31"
+notes = "En/Fr/De/Es/It (no Korean localisation mentioned). Distributed in Korea by Wizhands; RRP 55,000 won. (libretro PS3 DB gives 2008-10, month only — conflicts)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-55", "7-57", "7-81", "7-82"]
+sources_text = "55, 57, 81, 82"
+
+[[entry]]
+id = "7.8-8"
+origin = "md:1575"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox 360 disc — USA"
+platforms = ["x360"]
+platform_text = "X360"
+region = "USA"
+date = "2008-04-29"
+date_text = "2008-04-29"
+serials = ["TT-2034"]
+id_text = "Catalogue **TT-2034** (= title ID **545407F2**, see note); XeMID **TT203405A0X11**; media ID (ring prefix) **6AC07221**"
+notes = "Editions on same data: Original, *Platinum Hits*, Complete Edition disc 1. Hologram ASP5181, spine RCK 39012"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-54", "7-58"]
+sources_text = "54, 58"
+
+[[entry]]
+id = "7.8-9"
+origin = "md:1576"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox 360 disc — Europe/Asia"
+platforms = ["x360"]
+platform_text = "X360"
+region = "EU, Asia (Korea dumped)"
+date = "2008-04-29"
+date_text = "2008-04-29"
+serials = ["TT-2034"]
+id_text = "**TT-2034**; XeMID **TT203406H0X11**; media ID **4A53F9F6**"
+notes = "Editions: Original, *Classics*, *Classics: Best Sellers*, Complete Edition. BBFC reg. VFD 19692"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-54", "7-58"]
+sources_text = "54, 58"
+
+[[entry]]
+id = "7.8-10"
+origin = "md:1577"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox 360 disc — Australia (edited)"
+platforms = ["x360"]
+platform_text = "X360"
+region = "AU"
+date = "2008-04-29"
+date_text = "2008-04-29"
+serials = ["TT-2034"]
+id_text = "**TT-2034**; XeMID **TT203407E0X11**; media ID **7CF4679F**"
+notes = "Editions: Original, *Classics*"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-54", "7-58"]
+sources_text = "54, 58"
+
+[[entry]]
+id = "7.8-11"
+origin = "md:1578"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox 360 disc — Japan (Capcom)"
+platforms = ["x360"]
+platform_text = "X360"
+region = "JP"
+date = "2008-10-30"
+date_text = "2008-10-30"
+serials = ["TT-2034"]
+id_text = "**TT-2034**; XeMID **TT203409J0X11**; media ID **1369E7BC**; cover/disc ID NJA-00015"
+notes = "Also used in the JP Complete Edition"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-54", "7-58"]
+sources_text = "54, 58"
+
+[[entry]]
+id = "7.8-12"
+origin = "md:1579"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Note on Xbox 360 IDs"
+platforms = ["x360"]
+platform_text = "X360"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "The Xbox 360 title ID **545407F2** appears in the No-Intro IDs of the TLAD/TBoGT add-ons and Theme Pack; \"TT-2034\" is Redump's catalogue code (0x5454 = \"TT\", 0x07F2 = 2034 — arithmetic equivalence, not a separately sourced statement). Redump lists TT-2034 for both GTA IV and EFLC discs"
+confidence = "confirmed"
+confidence_text = "✅ (IDs)"
+sources = ["7-54", "7-58"]
+sources_text = "54, 58"
+
+[[entry]]
+id = "7.8-13"
+origin = "md:1580"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Australian edited version (MA15+)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "AU (and NZ per Wikipedia)"
+date = "2008-04-29"
+date_text = "2008-04-29"
+id_text = "—"
+notes = "OFLC classified MA15+ (Dec 2007, per Rockstar via GamesRadar). Australia had no R18+ for games, so Rockstar edited the game: prostitute services auto-select most expensive option & locked camera; blood pools, bloody footprints and wound blood removed/reduced. Rockstar called changes \"not significant\". BBFC/NZ OFLC/German board rated the uncut game 18, ESRB M. Wikipedia says the AU **and NZ** versions were censored (NZ was rated R18 uncut — conflict on whether NZ copies were the edited build)"
+confidence = "mixed"
+confidence_text = "✅ (AU) / ⚠️ (NZ)"
+sources = ["7-1", "7-7", "7-45", "7-46", "7-47"]
+sources_text = "1, 7, 45, 46, 47"
+
+[[entry]]
+id = "7.8-14"
+origin = "md:1581"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Australian uncut restoration"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "AU"
+date_text = "≈2009-02-17 (with TLAD release; exact TU not documented)"
+id_text = "—"
+notes = "TCRF: a later title update restored uncut content on PS3/X360 and the DLC was uncut from release; Censorship Wiki: uncut version arrived with TLAD; newer AU releases uncensored"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-7", "7-47"]
+sources_text = "7, 47"
+
+[[entry]]
+id = "7.8-15"
+origin = "md:1582"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "European censorship bug in TLAD-era update"
+platforms = ["x360"]
+platform_text = "X360"
+region = "EU"
+date = "2009-02-20"
+date_text = "2009-02-20 (reported)"
+id_text = "Title update number not documented"
+notes = "After installing the TLAD download, some European players saw AU-style censorship (no blood on shot police, prostitute camera controls removed); Rockstar acknowledged and promised a fix \"within the next few hours\""
+confidence = "confirmed"
+confidence_text = "✅ (The Register citing Rockstar via VG247)"
+sources = ["7-48"]
+sources_text = "48"
+
+[[entry]]
+id = "7.8-16"
+origin = "md:1583"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Japanese release (Capcom)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "JP"
+date = "2008-10-30"
+date_text = "2008-10-30"
+id_text = "Serials not documented"
+notes = "Capcom-published; JP Wikipedia: earlier content/behaviour restrictions were removed, but some manual pages/parts changed. JP Wikipedia also mentions a PS3 patch fixing freezes linked to Rockstar's servers (workaround: log out of PSN / unplug LAN); patch number/date not documented"
+confidence = "mixed"
+confidence_text = "✅ (date) / ⚠️ (PS3 patch)"
+sources = ["7-1", "7-53", "7-10"]
+sources_text = "1, 53, 10"
+
+[[entry]]
+id = "7.8-17"
+origin = "md:1584"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox 360 Platinum Collection (Japan)"
+platforms = ["x360"]
+platform_text = "X360"
+region = "JP"
+date = "2009-08-27"
+date_text = "2009-08-27"
+id_text = "Redump has no separate JP Platinum entry"
+notes = "4Gamer product list: \"グランド・セフト・オートIV Xbox 360 プラチナコレクション\" released 2009-08-27; original JP X360 version ¥8,390 (tax incl.)"
+confidence = "single-source"
+confidence_text = "⚠️ (single source)"
+sources = ["7-87"]
+sources_text = "87"
+
+[[entry]]
+id = "7.8-18"
+origin = "md:1585"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PSN digital edition (GTA IV and *Complete Edition*)"
+platforms = ["ps3"]
+platform_text = "PS3 (PSN)"
+region = "NA (also AU/EU per Delisted Games)"
+date = "2012-02-14"
+date_text = "**2012-02-14** (Delisted Games; PSU headline \"North American PSN update Feb 14 2012\") / reported available 2012-02-17 (Exophase, citing Rockstar)"
+serials = ["NPUB30702", "NPEB00882"]
+id_text = "USA **NPUB30702** (content ID UP1017-NPUB30702_00-GTAIVDIGITAL0001; No-Intro holds v1.00 licence and a v2.01 package of 10,920,240,400 bytes); EU **NPEB00882** (EP1017-NPEB00882_00-GTAIVDIGITAL0001; No-Intro \"v2.00\")"
+notes = "Prices (NA): GTA IV $19.99; Complete Edition $29.99 ($23.99 for PS Plus until 2012-02-21). The libretro DB gives year \"2021\" for the NPUB/NPEB IDs — conflicts with the 2012 press reports ❓"
+confidence = "confirmed"
+confidence_text = "✅ (IDs) / ✅ (date: 2 sources)"
+sources = ["7-57", "7-59", "7-69", "7-72"]
+sources_text = "57, 59, 69, 72"
+
+[[entry]]
+id = "7.8-19"
+origin = "md:1586"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Thailand ban"
+platform_text = "—"
+region = "TH"
+date = "2008"
+date_text = "2008"
+id_text = "—"
+notes = "Banned after a taxi-hijacking murder in Bangkok"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1"]
+sources_text = "1"
+
+[[entry]]
+id = "7.8-20"
+origin = "md:1587"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Saudi Arabia ban"
+platform_text = "—"
+region = "SA"
+date_text = "not dated"
+id_text = "—"
+notes = "Per Censorship Wiki only"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-47"]
+sources_text = "47"
+
+[[entry]]
+id = "7.8-21"
+origin = "md:1588"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Early console online patch (GameSpy load)"
+platforms = ["ps3"]
+platform_text = "PS3 (context)"
+region = "—"
+date_text = "reported 2008-05-15"
+id_text = "Version not stated"
+notes = "HEXUS: Rockstar released a GTA IV patch, applied at game start, reducing load on GameSpy's servers that had been causing stuttering/lock-ups (same article: Sony's May 2008 PS3 firmware update did not affect GTA IV)"
+confidence = "single-source"
+confidence_text = "⚠️ (single source)"
+sources = ["7-63"]
+sources_text = "63"
+
+[[entry]]
+id = "7.8-22"
+origin = "md:1589"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "First multiplayer title update"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "Worldwide"
+date = "2008-06-23"
+date_text = "**2008-06-23** (Shacknews, Gaming Nexus) / reported 2008-06-24 (GamesRadar, PC-Welt)"
+id_text = "Version not stated (GTA Wiki's cumulative notes call the console fixes \"1.01 – 1.06\")"
+notes = "Auto-downloads at game start. Fixes: enter/exit vehicles in GTA Race; scripted-vehicle crash; PS3 leaderboard reliability; rare Race/GTA Race lobby hang; team-switch countdown hang; Cops 'n Crooks score exploit; last player in GTA Race/Race always gets $250; spectators preventing game end; spectating in Cops 'n Crooks Round 2; lobby countdown no longer resets; kicked players not returned to single player. (Gematsu carries the same notes dated 2008-11-15 — conflicting date, likely a later re-post ❓)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-60", "7-61", "7-62", "7-64", "7-65"]
+sources_text = "60, 61, 62, 64, 65"
+
+[[entry]]
+id = "7.8-23"
+origin = "md:1590"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox 360 title updates (per disc media ID)"
+platforms = ["x360"]
+platform_text = "X360"
+region = "per disc"
+date_text = "Release dates per TU **not documented** (xboxunity \"UploadDate\" values 2011–2015 are database upload dates, not release dates)"
+id_text = "Title ID 545407F2. TU versions held by xboxunity (size): **USA disc 6AC07221** (base version 5): v4 (3,512 KB), v5 (3,700 KB), v6 (3,640 KB), v8 (3,628 KB). **EU/Asia disc 4A53F9F6** (base 6): v1 (3,364 KB), v4 (3,464 KB), v5 (3,512 KB), v6 (3,696 KB), v7 (3,640 KB), v8 (3,624 KB). **AU disc 7CF4679F** (base 7): v5 (3,696 KB). **JP disc 1369E7BC** (base 9): v3 (3,212 KB), v8 (3,692 KB). No-Intro's \"XBOX 360 (Title Updates)\" set preserves USA v4/v5/v6/v8, EU v4–v8, AU v5, JP v3 (file names, sizes and CRCs: Appendix A.1/A.3)"
+notes = "Contents of individual TUs not documented. GTA Wiki gives the latest X360 GTA IV version as \"1.06\" (cumulative notes \"1.01–1.06\" = the 2008 multiplayer fixes above); how that maps to TU v1–v8 is not documented"
+confidence = "mixed"
+confidence_text = "✅ (TU list: xboxunity + No-Intro) / ⚠️ (GTA Wiki \"1.06\")"
+sources = ["7-58", "7-66", "7-67"]
+sources_text = "58, 66, 67"
+
+[[entry]]
+id = "7.8-24"
+origin = "md:1591"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 patches 1.01 – 1.06"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "—"
+date_text = "not documented individually"
+id_text = "1.01–1.06"
+notes = "GTA Wiki cumulative notes for 1.01–1.06 = the 2008 multiplayer fixes (row above); GTA Wiki attaches the date 2011-03-09 (linked to Rockstar's \"Xbox 360 and PlayStation 3 past patch fixes\" support article), but the same fixes were reported in June 2008, so that date is not their release date ❓"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-67"]
+sources_text = "67"
+
+[[entry]]
+id = "7.8-25"
+origin = "md:1592"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 patch 1.07 (with EFLC 1.01, Complete Edition 1.01)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "—"
+date_text = "GTA Wiki: 2011-03-13 ❓ (conflicts with content: GameSpy closure was only announced in April 2014 and took effect 2014-05-31)"
+id_text = "**1.07** (GTA IV), **1.01** (EFLC, CE)"
+notes = "\"Removal of GameSpy online service, which has been replaced by Sony Matchmaking Service\" (per GTA Wiki quoting Rockstar Support \"Grand Theft Auto IV Title Update 1.07 (PS3 Only)\"; original article no longer online, and Rockstar Support is excluded from the Wayback Machine). Rockstar (Apr 2014): GTA IV/CE/EFLC PS3 online play unaffected by GameSpy shutdown; Social Club stats and PS3 in-game MP leaderboards removed"
+confidence = "mixed"
+confidence_text = "⚠️ (version) / ❓ (date)"
+sources = ["7-67", "7-68"]
+sources_text = "67, 68"
+
+[[entry]]
+id = "7.8-26"
+origin = "md:1593"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "PS3 patch 1.08 (with EFLC 1.02, Complete Edition 1.02)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "—"
+date = "2014-08-26"
+date_text = "**2014-08-26** (GTA Wiki)"
+id_text = "**1.08** / **1.02**"
+notes = "\"Fix for GTAIV Online ranks displaying as 0 and not updating\" (Rockstar Support article \"Grand Theft Auto IV Title Update 1.08 (PS3 Only)\", via GTA Wiki). Last PS3 patch per GTA Wiki"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-67"]
+sources_text = "67"
+
+[[entry]]
+id = "7.8-27"
+origin = "md:1594"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Budget reprints (GTA IV)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "EU / JP / USA"
+date_text = "dates not documented"
+serials = ["BLES-00229", "BLJM-55011"]
+id_text = "PS3: BLES-00229/P (*Platinum*), BLJM-55011 (*PlayStation 3 the Best*); X360: *Platinum Hits* (USA, 6AC07221), *Classics* and *Classics: Best Sellers* (EU, 4A53F9F6), *Classics* (AU, 7CF4679F)"
+notes = "All reprints share data with the original pressing per Redump (same checksums)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-54", "7-55"]
+sources_text = "54, 55"
+
+[[entry]]
+id = "7.8-28"
+origin = "md:1595"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "2018 music licence update"
+platforms = ["x360", "ps3", "pc"]
+platform_text = "X360, PS3, PC (all versions incl. episodes)"
+region = "Worldwide"
+date_text = "2018-04-26 (DE Wikipedia) / \"April 2018\" (PCGW)"
+id_text = "—"
+notes = "Removed 50+ licensed songs whose licences expired, mostly from Vladivostok FM"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-11", "7-12"]
+sources_text = "11, 12"
+
+[[entry]]
+id = "7.8-29"
+origin = "md:1596"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox One BC update #1 (unnumbered)"
+platforms = ["xone"]
+platform_text = "Xbox One (BC)"
+region = "Worldwide"
+date = "2017-03-17"
+date_text = "2017-03-17 (GTA Wiki)"
+id_text = "Unnumbered"
+notes = "\"General fixes and improvements for GTAIV on Xbox One via the Backwards Compatibility program\" (Rockstar Support article 115004494827, via GTA Wiki)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-67"]
+sources_text = "67"
+
+[[entry]]
+id = "7.8-30"
+origin = "md:1597"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox One BC mystery update"
+platforms = ["xone"]
+platform_text = "Xbox One (BC version only)"
+region = "Worldwide"
+date_text = "≈2018-03-01 (tweet) / reported 2018-03-05 (LevelUp) / 2018-03-10 (GTA Wiki) ⚠️ conflict"
+id_text = "~579.35 MB; unnumbered"
+notes = "Unannounced update to the BC version of GTA IV and EFLC; X360 and PS3 didn't receive it; song removal only speculated at the time. GTA Wiki (quoting Rockstar Support article 360000682468): \"general performance updates for the Backwards Compatibility emulator as well as support for additional Xbox One system features\""
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["7-49", "7-67"]
+sources_text = "49, 67"
+
+[[entry]]
+id = "7.8-31"
+origin = "md:1598"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox Series X\\|S backward compatibility"
+platforms = ["xsx"]
+platform_text = "Xbox Series X\\|S"
+region = "Worldwide"
+date = "2020-11-10"
+date_text = "2020-11-10 (console launch; per GTA Wiki version table)"
+id_text = "—"
+notes = "GTA Wiki lists the Complete Edition as available on Series X from 2020-11-10 with \"No patches\""
+confidence = "single-source"
+confidence_text = "⚠️ (single source)"
+sources = ["7-67"]
+sources_text = "67"
+
+[[entry]]
+id = "7.8-32"
+origin = "md:1599"
+section = "7.8"
+kind = "retail"
+games = ["gta4"]
+title = "Xbox One backward compatibility"
+platforms = ["xone"]
+platform_text = "Xbox One"
+region = "Worldwide"
+date = "2017-02-09"
+date_text = "2017-02-09"
+id_text = "—"
+notes = "Xbox Wire: GTA IV, TLAD, TBoGT playable; all versions incl. *The Complete Edition* compatible; disc owners insert X360 disc to download; saves via Cloud Saved Games; game + episodes sold on Xbox Store"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["7-1", "7-14", "7-50"]
+sources_text = "1, 14, 50"
+
+[sources]
+7-1 = { text = "Wikipedia — \"Grand Theft Auto IV\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:1640" }
+7-2 = { text = "Notebookcheck — \"Gamer buys old Xbox 360 dev kit for £5, discovering massive 118GB GTA IV beta…\" (headline only; page fetch failed): https://notebookcheck.net/gamer-buys-old-xbox-360-dev-kit-for-pound5-discovering-massive-118gb-gta-iv-beta-with-cut-out-features.1263790.0.html", url = "https://notebookcheck.net/gamer-buys-old-xbox-360-dev-kit-for-pound5-discovering-massive-118gb-gta-iv-beta-with-cut-out-features.1263790.0.html", origin = "md:1641" }
+7-3 = { text = "OnMSFT — \"£5 Xbox 360 dev kit contains GTA IV prototype build\": https://onmsft.com/news/5-xbox-360-dev-kit-contains-gta-iv-prototype-build/", url = "https://onmsft.com/news/5-xbox-360-dev-kit-contains-gta-iv-prototype-build/", origin = "md:1642" }
+7-4 = { text = "GTA BOOM (2026-03-29) — \"A £5 Car Boot Sale Console Just Exposed Cut GTA 4 Content\": https://www.gtaboom.com/cut-gta-4-content-found-from-a-bargain-bin-console-nobody-was-supposed-to-have-cf5f", url = "https://www.gtaboom.com/cut-gta-4-content-found-from-a-bargain-bin-console-nobody-was-supposed-to-have-cf5f", origin = "md:1643" }
+7-5 = { text = "GTA BOOM (2026-04-02) — \"Rockstar has officially killed the GTA IV prototype upload\": https://www.gtaboom.com/rockstar-has-officially-killed-the-gta-iv-prototype-upload-4345", url = "https://www.gtaboom.com/rockstar-has-officially-killed-the-gta-iv-prototype-upload-4345", origin = "md:1644" }
+7-6 = { text = "Gameranx (2026-04-02) — \"Rumor: Did Rockstar take action against the GTA IV beta leak?\": https://gameranx.com/updates/id/562064/article/rumor-did-rockstar-take-action-against-the-gta-iv-beta-leak-and-why/", url = "https://gameranx.com/updates/id/562064/article/rumor-did-rockstar-take-action-against-the-gta-iv-beta-leak-and-why/", origin = "md:1645" }
+7-7 = { text = "The Cutting Room Floor — \"Grand Theft Auto IV (Windows)\": https://tcrf.net/Grand_Theft_Auto_IV_(Windows)", url = "https://tcrf.net/Grand_Theft_Auto_IV_(Windows", origin = "md:1646" }
+7-8 = { text = "GTA BOOM (2026-04-03) — \"GTA IV Prototype Hype Gets Reality Check from Ex Rockstar Dev\": https://www.gtaboom.com/gta-iv-prototype-hype-gets-reality-check-from-ex-rockstar-dev-0470", url = "https://www.gtaboom.com/gta-iv-prototype-hype-gets-reality-check-from-ex-rockstar-dev-0470", origin = "md:1647" }
+7-9 = { text = "Grand Theft Wiki — \"Content Changes in GTA IV Era\": https://www.grandtheftwiki.com/Content_Changes_in_GTA_IV_Era", url = "https://www.grandtheftwiki.com/Content_Changes_in_GTA_IV_Era", origin = "md:1648" }
+7-10 = { text = "Japanese Wikipedia — \"グランド・セフト・オートIV\": https://ja.wikipedia.org/wiki/グランド・セフト・オートIV", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートIV", origin = "md:1649" }
+7-11 = { text = "PCGamingWiki — \"Grand Theft Auto IV\": https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_IV", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_IV", origin = "md:1650" }
+7-12 = { text = "German Wikipedia — \"Grand Theft Auto IV\": https://de.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:1651" }
+7-13 = { text = "Grand Theft Auto 4 PC Wiki (Japanese fan wiki, wikiwiki.jp): https://wikiwiki.jp/gta4pc/", url = "https://wikiwiki.jp/gta4pc/", origin = "md:1652" }
+7-14 = { text = "Wikipedia — \"Grand Theft Auto IV: The Lost and Damned\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV:_The_Lost_and_Damned", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV:_The_Lost_and_Damned", origin = "md:1653" }
+7-15 = { text = "Worthplaying (2009-03-21) — \"Grand Theft Auto IV v1.0.3.0 Patch Available Now\" (also lists 1.0.2.0, 1.0.1.0, Patch 1): https://www.worthplaying.com/article/2009/3/21/news/60068-grand-theft-auto-iv-v1030-patch-available-now/", url = "https://www.worthplaying.com/article/2009/3/21/news/60068-grand-theft-auto-iv-v1030-patch-available-now/", origin = "md:1654" }
+7-16 = { text = "Softpedia — GTA IV Patch changelog (Patch 1 → 1.0.7.0 with dates): https://games.softpedia.com/progChangelog/Grand-Theft-Auto-IV-Patch-Changelog-30489.html", url = "https://games.softpedia.com/progChangelog/Grand-Theft-Auto-IV-Patch-Changelog-30489.html", origin = "md:1655" }
+7-17 = { text = "Co-Optimus (2009-01-26) — \"Grand Theft Auto IV Patched on the PC\" (1.0.2.0): https://www.co-optimus.com/article/1177/Grand_Theft_Auto_IV_Patched_on_the_PC.html", url = "https://www.co-optimus.com/article/1177/Grand_Theft_Auto_IV_Patched_on_the_PC.html", origin = "md:1656" }
+7-18 = { text = "(number not used)", origin = "md:1657" }
+7-19 = { text = "Worthplaying (2009-06-19) — \"Grand Theft Auto IV v1.0.4.0 Patch Available Now\": https://worthplaying.com/article/2009/6/19/news/62659-grand-theft-auto-iv-v1040-patch-available-now/", url = "https://worthplaying.com/article/2009/6/19/news/62659-grand-theft-auto-iv-v1040-patch-available-now/", origin = "md:1658" }
+7-20 = { text = "Worthplaying (2009-11-10) — \"Grand Theft Auto IV v1.0.5.0 Patch Available Now\": https://www.worthplaying.com/article/2009/11/10/news/70103-grand-theft-auto-iv-v1050-patch-available-now/", url = "https://www.worthplaying.com/article/2009/11/10/news/70103-grand-theft-auto-iv-v1050-patch-available-now/", origin = "md:1659" }
+7-21 = { text = "Worthplaying (2010-04-13) — \"Grand Theft Auto IV v1.0.6.0 Patch Available Now\": https://worthplaying.com/article/2010/4/13/patch/73634-grand-theft-auto-iv-v1060-patch-available-now/", url = "https://worthplaying.com/article/2010/4/13/patch/73634-grand-theft-auto-iv-v1060-patch-available-now/", origin = "md:1660" }
+7-22 = { text = "Shacknews (2010-04-13) — \"Grand Theft Auto 4 PC Patch Improves Shadows, Removes Social Club App\" (mentions 1.0.5.1 / 1.0.4.2): https://www.shacknews.com/article/63282/grand-theft-auto-4-pc", url = "https://www.shacknews.com/article/63282/grand-theft-auto-4-pc", origin = "md:1661" }
+7-23 = { text = "PCGamingWiki Community files — \"Grand Theft Auto IV Patch 6\" (EFIGS 1.0.6.0, RU `gta4_tu6_v1051ru.zip`, JP `gta4_tu_1042_jp.zip`): https://community.pcgamingwiki.com/files/file/1054-grand-theft-auto-iv-patch-6/", url = "https://community.pcgamingwiki.com/files/file/1054-grand-theft-auto-iv-patch-6/", origin = "md:1662" }
+7-24 = { text = "FilePlanet archive — \"Grand Theft Auto 4 - Patch #6\": https://www.fileplanet.com/archive/p-55981/Grand-Theft-Auto-4-Patch-6", url = "https://www.fileplanet.com/archive/p-55981/Grand-Theft-Auto-4-Patch-6", origin = "md:1663" }
+7-25 = { text = "Rockstar Support — \"Grand Theft Auto IV Patch 7 - Title Update v. 1.0.7.0 (English) / 1.0.6.1 (Russian) / 1.0.5.2 (Japanese)\": https://support.rockstargames.com/en-US/articles/3ZuYzphzZbVyGEQRLZP9RV/grand-theft-auto-iv-patch-7-title-update-v-1-0-7-0-english-1-0-6-1-russian-1-0-5-2-japanese", url = "https://support.rockstargames.com/en-US/articles/3ZuYzphzZbVyGEQRLZP9RV/grand-theft-auto-iv-patch-7-title-update-v-1-0-7-0-english-1-0-6-1-russian-1-0-5-2-japanese", origin = "md:1664" }
+7-26 = { text = "Worthplaying (2010-06-01) — \"Grand Theft Auto IV v1.0.7.0 Patch Available Now\": https://worthplaying.com/article/2010/6/1/patch/74617-grand-theft-auto-iv-v1070-patch-available-now/", url = "https://worthplaying.com/article/2010/6/1/patch/74617-grand-theft-auto-iv-v1070-patch-available-now/", origin = "md:1665" }
+7-27 = { text = "Rockstar Support — \"Grand Theft Auto IV Patch 8 Title Update Notes (PC Only)\": https://support.rockstargames.com/articles/4DH92vTMXDygNI5nFQGoy6/grand-theft-auto-iv-patch-8-title-update-notes-pc-only", url = "https://support.rockstargames.com/articles/4DH92vTMXDygNI5nFQGoy6/grand-theft-auto-iv-patch-8-title-update-notes-pc-only", origin = "md:1666" }
+7-28 = { text = "International Business Times (2016-11-30) — \"'GTA IV' Receives Patch 8 After 6 Years…\": https://www.ibtimes.com/gta-iv-receives-patch-8-after-6-years-comes-windows-8-81-10-support-bug-fixes-2453060", url = "https://www.ibtimes.com/gta-iv-receives-patch-8-after-6-years-comes-windows-8-81-10-support-bug-fixes-2453060", origin = "md:1667" }
+7-30 = { text = "PCGamingWiki — \"Grand Theft Auto: Episodes from Liberty City\": https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_Episodes_from_Liberty_City", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_Episodes_from_Liberty_City", origin = "md:1669" }
+7-32 = { text = "(number not used)", origin = "md:1671" }
+7-38 = { text = "Grand Theft Wiki — \"Grand Theft Auto IV: The Complete Edition\": https://www.grandtheftwiki.com/Grand_Theft_Auto_IV:_Complete_Edition", url = "https://www.grandtheftwiki.com/Grand_Theft_Auto_IV:_Complete_Edition", origin = "md:1677" }
+7-39 = { text = "GTA BASE (2020-02-19) — \"GTA IV on Steam returns as Complete Edition but without multiplayer\": https://www.gtabase.com/news/gta-iv-on-steam-returns-as-complete-edition-but-without-multiplayer", url = "https://www.gtabase.com/news/gta-iv-on-steam-returns-as-complete-edition-but-without-multiplayer", origin = "md:1678" }
+7-40 = { text = "Neowin — \"GTA IV is returning to Steam with free Complete Edition upgrades for all owners\": https://www.neowin.net/news/gta-iv-is-returning-to-steam-with-free-complete-edition-upgrades-for-all-owners", url = "https://www.neowin.net/news/gta-iv-is-returning-to-steam-with-free-complete-edition-upgrades-for-all-owners", origin = "md:1679" }
+7-41 = { text = "GTA SnP help — \"Grand Theft Auto IV & Episodes From Liberty City\" (1.0.8.0/1.1.3.0, 1.2.0.32 = 2020-03-19, 1.2.0.43): https://www.gtasnp.com/help/games/gtaiv", url = "https://www.gtasnp.com/help/games/gtaiv", origin = "md:1680" }
+7-42 = { text = "Gamepressure (2020-05-29) — \"GTA 4 Update Brought Back Songs, but Broke Saves\": https://www.gamepressure.com/S013-amp.asp?ID=7526", url = "https://www.gamepressure.com/S013-amp.asp?ID=7526", origin = "md:1681" }
+7-43 = { text = "Steam Community discussion (2021-01-05) — Vladivostok FM after patch 1.2.0.43: https://steamcommunity.com/app/12210/discussions/0/2993171625209190433", url = "https://steamcommunity.com/app/12210/discussions/0/2993171625209190433", origin = "md:1682" }
+7-44 = { text = "The Register (2009-03-12) — Take-Two accounts list \"Grand Theft Auto IV Second Episode\": https://www.theregister.com/on-prem/2009/03/12/grand-theft-auto-iv-update-spied-in-publishers-accounts/1419310", url = "https://www.theregister.com/on-prem/2009/03/12/grand-theft-auto-iv-update-spied-in-publishers-accounts/1419310", origin = "md:1683" }
+7-45 = { text = "Game Developer/Gamasutra (2008-04-04) — \"Rockstar To Release Edited GTA IV For Australia\": https://gamedeveloper.com/game-platforms/rockstar-to-release-edited-i-gta-iv-i-for-australia", url = "https://gamedeveloper.com/game-platforms/rockstar-to-release-edited-i-gta-iv-i-for-australia", origin = "md:1684" }
+7-46 = { text = "GamesRadar (2008-04-10) — \"Rockstar talks censored GTA IV\": https://gamesradar.com/rockstar-talks-censored-gta-iv", url = "https://gamesradar.com/rockstar-talks-censored-gta-iv", origin = "md:1685" }
+7-47 = { text = "Censorship Wiki (Fandom) — \"Grand Theft Auto IV\": https://censorship.fandom.com/wiki/Grand_Theft_Auto_IV", url = "https://censorship.fandom.com/wiki/Grand_Theft_Auto_IV", origin = "md:1686" }
+7-48 = { text = "The Register (2009-02-20) — \"Grand Theft Auto IV add-in censors original game\": https://www.theregister.com/2009/02/20/rockstar_tlad_patch/", url = "https://www.theregister.com/2009/02/20/rockstar_tlad_patch/", origin = "md:1687" }
+7-49 = { text = "LevelUp (2018-03-05) — \"GTA IV recibe misteriosa actualización en Xbox One\": https://www.levelup.com/noticias/466573/GTA-IV-recibe-misteriosa-actualizacion-en-Xbox-One", url = "https://www.levelup.com/noticias/466573/GTA-IV-recibe-misteriosa-actualizacion-en-Xbox-One", origin = "md:1688" }
+7-50 = { text = "Xbox Wire (2017-02-09) — GTA IV and Episodes from Liberty City backward compatibility: https://news.xbox.com/en-us/2017/02/09/grand-theft-auto-iv-backward-compatibility/", url = "https://news.xbox.com/en-us/2017/02/09/grand-theft-auto-iv-backward-compatibility/", origin = "md:1689" }
+7-53 = { text = "Grand Theft Wiki — \"Grand Theft Auto IV\" (per-region release table): https://www.grandtheftwiki.com/Grand_Theft_Auto_IV", url = "https://www.grandtheftwiki.com/Grand_Theft_Auto_IV", origin = "md:1692" }
+7-54 = { text = "Redump — Xbox 360 disc pages (serial, XeMID, ring/media IDs, editions, barcodes): GTA IV Australia http://redump.org/disc/23438/ · Europe/Asia http://redump.org/disc/7716/ · Japan http://redump.org/disc/53509/ · USA http://redump.org/disc/12492/ · EFLC Japan http://redump.org/disc/53510/ · EFLC World http://redump.org/disc/15252/", url = "http://redump.org/disc/23438/", origin = "md:1693" }
+7-55 = { text = "Redump — PS3 GTA IV disc pages (serial, version, PVD date, edition): Australia http://redump.org/disc/31506/ · Europe http://redump.org/disc/18596/ · Japan http://redump.org/disc/60722/ · Korea http://redump.org/disc/77752/ · USA http://redump.org/disc/16201/", url = "http://redump.org/disc/31506/", origin = "md:1694" }
+7-57 = { text = "libretro-database — `dat/Sony - PlayStation 3.dat` (libretro's own PS3 metadata: serials with year/month), extracted in `/home/claude/gta_dat_entries.md`: https://github.com/libretro/libretro-database", url = "https://github.com/libretro/libretro-database", origin = "md:1696" }
+7-58 = { text = "No-Intro DATs via libretro-database `metadat/no-intro/` — \"Microsoft - XBOX 360 (Title Updates)\", \"Microsoft - Xbox 360\", \"Microsoft - Xbox 360 (Digital)\" (see Appendix A.1–A.3): https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", url = "https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", origin = "md:1697" }
+7-59 = { text = "No-Intro DAT \"Sony - PlayStation 3 (PSN)\" via libretro-database (see Appendix A.7): https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", url = "https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", origin = "md:1698" }
+7-60 = { text = "Shacknews (2008-06-23) — \"Grand Theft Auto 4 Patch Released\": https://www.shacknews.com/article/53265/grand-theft-auto-4-patch", url = "https://www.shacknews.com/article/53265/grand-theft-auto-4-patch", origin = "md:1699" }
+7-61 = { text = "Gaming Nexus (2008-06-23) — \"Rockstar patches up Nikko and GTA IV\": https://www.gamingnexus.com/News/9034/Rockstar-patches-up-Nikko-and-GTA-IV", url = "https://www.gamingnexus.com/News/9034/Rockstar-patches-up-Nikko-and-GTA-IV", origin = "md:1700" }
+7-62 = { text = "GamesRadar (2008-06-24) — \"GTA IV fixed on both platforms\": https://gamesradar.com/gta-iv-fixed-on-both-platforms", url = "https://gamesradar.com/gta-iv-fixed-on-both-platforms", origin = "md:1701" }
+7-63 = { text = "HEXUS (2008-05-15) — \"PS3 patch fixes game stability issues, GTA IV fixed?\": https://HEXUS.net/qam72", url = "https://HEXUS.net/qam72", origin = "md:1702" }
+7-64 = { text = "PC-Welt (2008-06-24) — \"Konsolen: Erster Patch für Grand Theft Auto IV\": https://www.pcwelt.de/article/1120056/konsolen-erster-patch-fuer-grand-theft-auto-iv.html", url = "https://www.pcwelt.de/article/1120056/konsolen-erster-patch-fuer-grand-theft-auto-iv.html", origin = "md:1703" }
+7-65 = { text = "Gematsu (dated 2008-11-15) — \"Grand Theft Auto IV multiplayer patch released\": https://www.gematsu.com/2008/11/grand-theft-auto-iv-multiplayer-patch-released", url = "https://www.gematsu.com/2008/11/grand-theft-auto-iv-multiplayer-patch-released", origin = "md:1704" }
+7-66 = { text = "XboxUnity title-update database, title ID 545407F2 (JSON): http://xboxunity.net/Resources/Lib/TitleUpdateInfo.php?titleid=545407F2", url = "http://xboxunity.net/Resources/Lib/TitleUpdateInfo.php?titleid=545407F2", origin = "md:1705" }
+7-67 = { text = "GTA Wiki (Fandom) — \"Grand Theft Auto IV/Title Update Notes\" and subpages (Update 2011-03-09, 2011-03-13, 2014-08-26, 2017-03-17, 2018-03-10, 2020-03-26): https://gta.fandom.com/wiki/Grand_Theft_Auto_IV/Title_Update_Notes", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_IV/Title_Update_Notes", origin = "md:1706" }
+7-68 = { text = "MP1st (2014-04-29) — \"Rockstar Details The Effects Of GameSpy Shutdown On Their PlayStation 3 Titles\": https://mp1st.com/2014/04/29/rockstar-details-effects-gamespy-shutdown-playstation-3-titles/", url = "https://mp1st.com/2014/04/29/rockstar-details-effects-gamespy-shutdown-playstation-3-titles/", origin = "md:1707" }
+7-69 = { text = "Delisted Games — \"Grand Theft Auto IV\" (Steam delisting 2020-01-10; EFLC until 2020-03-19; X360/PS3 digital release dates): https://delistedgames.com/grand-theft-auto-iv/", url = "https://delistedgames.com/grand-theft-auto-iv/", origin = "md:1708" }
+7-70 = { text = "Gamepressure (2020-01-11) — \"We Will no Longer Buy GTA 4 on Steam\": https://www.gamepressure.com/newsroom/we-will-no-longer-buy-gta-4-on-steam/z11655", url = "https://www.gamepressure.com/newsroom/we-will-no-longer-buy-gta-4-on-steam/z11655", origin = "md:1709" }
+7-71 = { text = "PCGamesN (2020-01-13) — \"Rockstar removed GTA 4 from Steam because of Games for Windows Live\": https://www.pcgamesn.com/grand-theft-auto-iv/steam", url = "https://www.pcgamesn.com/grand-theft-auto-iv/steam", origin = "md:1710" }
+7-72 = { text = "Exophase (2012-02-17) — \"Grand Theft Auto IV Hits PSN As Digital Download\": https://www.exophase.com/35725/grand-theft-auto-iv-hits-psn-as-digital-download/", url = "https://www.exophase.com/35725/grand-theft-auto-iv-hits-psn-as-digital-download/", origin = "md:1711" }
+7-73 = { text = "Steam (official Rockstar announcement, 2020-02-19) — \"Important Updates To Grand Theft Auto IV and Episodes from Liberty City\" (retrieved via Steam Web API ISteamNews for app 12210): https://store.steampowered.com/news/app/12210", url = "https://store.steampowered.com/news/app/12210", origin = "md:1712" }
+7-74 = { text = "GTA Wiki (Fandom) — \"Grand Theft Auto IV: The Complete Edition\" (PC radio stations reinstated 2020-06-03), \"Buskers\" (version 1.2.0.59 mention), \"Glitches in GTA IV\" (1.2.0.43 mention): https://gta.fandom.com/wiki/Grand_Theft_Auto_IV:_The_Complete_Edition · https://gta.fandom.com/wiki/Buskers · https://gta.fandom.com/wiki/Glitches_in_GTA_IV", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_IV:_The_Complete_Edition", origin = "md:1713" }
+7-75 = { text = "LCPDFR.com — \"GTA IV Downgrader\" file page (supports installs \"at version 1.2.0.30 and up\"): https://www.lcpdfr.com/files/file/38986-gta-iv-downgrader/", url = "https://www.lcpdfr.com/files/file/38986-gta-iv-downgrader/", origin = "md:1714" }
+7-76 = { text = "GTA Wiki (Fandom) — \"Grand Theft Auto IV/Technical Issues\" (MMA10 \"seems to affect only version 1.0.0.0\") and \"Grand Theft Auto IV/Title Update Notes/Update 2009-11-10\" (Rockstar quote \"Today we released patched 1.0.0.4…\"; \"mislabelled as 1.0.0.4\"): https://gta.fandom.com/wiki/Grand_Theft_Auto_IV/Technical_Issues · https://gta.fandom.com/wiki/Grand_Theft_Auto_IV/Title_Update_Notes/Update_2009-11-10", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_IV/Technical_Issues", origin = "md:1715" }
+7-77 = { text = "Cheat Code Central (≈2009-11-11) — GTA IV PC patch 1.0.0.4 news item: https://www.cheatcc.com/?p=48374", url = "https://www.cheatcc.com/?p=48374", origin = "md:1716" }
+7-78 = { text = "Worthplaying (2008-12-12) — \"Grand Theft Auto IV PC Patch Available Now\" (Patch #1): https://www.worthplaying.com/article/2008/12/12/news/57356-grand-theft-auto-iv-pc-patch-available-now/", url = "https://www.worthplaying.com/article/2008/12/12/news/57356-grand-theft-auto-iv-pc-patch-available-now/", origin = "md:1717" }
+7-79 = { text = "Game Developer (2008-12-16) — \"Rockstar Patches Grand Theft Auto IV PC\": https://gamedeveloper.com/game-platforms/rockstar-patches-i-grand-theft-auto-iv-i-pc", url = "https://gamedeveloper.com/game-platforms/rockstar-patches-i-grand-theft-auto-iv-i-pc", origin = "md:1718" }
+7-80 = { text = "Grand Theft Auto 4 PC Wiki (wikiwiki.jp) — \"パッチ情報\" (patch info) page: https://wikiwiki.jp/gta4pc/パッチ情報", url = "https://wikiwiki.jp/gta4pc/パッチ情報", origin = "md:1719" }
+7-81 = { text = "Gamemeca (2008-09-22) — GTA IV PS3 Korean release on 23 September (Wizhands, 55,000 won): https://www.gamemeca.com/view.php?gid=73745", url = "https://www.gamemeca.com/view.php?gid=73745", origin = "md:1720" }
+7-82 = { text = "Korea JoongAng Daily (2008-09-21) — \"Not for kids, GTA4 is the whole package\": https://www.koreajoongangdaily.com/business/not-for-kids-gta4-is-the-whole-package/11802732", url = "https://www.koreajoongangdaily.com/business/not-for-kids-gta4-is-the-whole-package/11802732", origin = "md:1721" }
+7-83 = { text = "Hidden Palace — \"Grand Theft Auto IV (Nov 23, 2007 prototype)\": https://hiddenpalace.org/Grand_Theft_Auto_IV_(Nov_23,_2007_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_IV_(Nov_23,_2007_prototype", origin = "md:1722" }
+7-84 = { text = "Hidden Palace — GTA IV / EFLC prototype pages: \"Grand Theft Auto IV (May 26, 2008 Patch Data prototype)\", \"(Aug 19, 2008 DLC G12345E1 Eng prototype)\", \"(Jan 30, 2009 Patch Data prototype)\", \"(Jan 30, 2009 DLC The Lost and Damned prototype)\", \"(Sep 24, 2009 DLC The Ballad of Gay Tony prototype)\", \"Grand Theft Auto: Episodes from Liberty City (Sep 29, 2009 prototype)\", \"Grand Theft Auto: Episodes from Liberty City (Patch Data prototype)\": https://hiddenpalace.org/Grand_Theft_Auto_IV_(Jan_30,_2009_DLC_The_Lost_and_Damned_prototype) (others at the same site under the titles given)", url = "https://hiddenpalace.org/Grand_Theft_Auto_IV_(Jan_30,_2009_DLC_The_Lost_and_Damned_prototype", origin = "md:1723" }
+7-87 = { text = "4Gamer.net — Xbox 360 \"グランド・セフト・オートIV\" product page (JP release, Platinum Collection 2009-08-27, EFLC 2010-06-10): https://www.4gamer.net/games/066/G006635/", url = "https://www.4gamer.net/games/066/G006635/", origin = "md:1726" }
+7-88 = { text = "Hidden Palace — GTA IV asset pages (MediaWiki API, read 2026-10-24): https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Leftover_Sep_10,_2007_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Leftover_Feb_29,_2008_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Last_Area_Assets", url = "https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Leftover_Sep_10,_2007_Data", origin = "md:1727" }
+7-89 = { text = "Hidden Palace — \"Assets/Grand Theft Auto IV/Deutsch-Exclusive EPK\" (external copy: https://archive.org/details/GTA_IV_EPK): https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Deutsch-Exclusive_EPK", url = "https://archive.org/details/GTA_IV_EPK", origin = "md:1728" }
+7-90 = { text = "Steam Store appdetails API, app 12210 (read 2026-10-24): https://store.steampowered.com/api/appdetails?appids=12210", url = "https://store.steampowered.com/api/appdetails?appids=12210", origin = "md:1729" }

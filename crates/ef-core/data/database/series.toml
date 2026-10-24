@@ -1,0 +1,1311 @@
+# The whole series: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "intro"
+origin = "md:8"
+title = "How to read this document"
+games = ["series"]
+text = '''
+- **Every entry is sourced.** Each section ends with a numbered source list; bracketed numbers such as `[3]` point to it.
+- **No guessing.** Where sources conflict, both values are given and the conflict is flagged. Where a build or version is known to exist but its exact number/date was not found in any source, the field reads **"not documented"** rather than an estimate.
+- **Confidence markers:**
+  - ✅ = confirmed by a primary source (publisher/developer patch notes, platform databases, disc dumps, official press) or multiple independent secondary sources.
+  - ⚠️ = reported by a single secondary/community source, or details conflict between sources.
+  - ❓ = rumoured/claimed but unverified; included only so it is not "missing", clearly labelled.
+- **Dates** use ISO format (YYYY-MM-DD) where the day is known; otherwise YYYY-MM or YYYY.
+- **Research limits (read this):** "not documented" means the item was searched for and no source was found. It does not mean the item doesn't exist. During research these sites were wholly or partly unreachable: gtamods.com (offline for maintenance), TCRF, MobyGames game pages, SteamDB, SerialStation, psdevwiki, GTAForums (bot checks), Schnittberichte (server error), and the Wayback Machine (one approved page load at a time). The largest remaining gaps are PC executable sizes and timestamps (gtamods), individual Xbox 360 / PS3 title-update dates, Android per-version dates for the classic mobile ports, release dates for most PC hotfix builds of GTA V, and some German cut reports. Each section ends with its own list of known gaps.
+- **Inferences:** where an entry says "inferred", the reasoning is shown and the entry carries ❓ or ⚠️. Inferences are never presented as facts.
+- **Regions:** NA = North America, EU/PAL = Europe & PAL territories, JP = Japan, KR = South Korea, AU = Australia, DE = Germany, BR = Brazil, RU = Russia, etc.'''
+
+[[section]]
+id = "toc"
+origin = "md:21"
+title = "Table of contents"
+games = ["series"]
+text = '''
+1. Origins & Grand Theft Auto (1997) — *Race'n'Chase* prototypes, GTA 1, London 1969 / London 1961
+2. Grand Theft Auto 2 (1999)
+3. Grand Theft Auto III (2001)
+4. Grand Theft Auto: Vice City (2002)
+5. Grand Theft Auto: San Andreas (2004)
+6. Handheld & spin-off era — GTA Advance, Liberty City Stories, Vice City Stories, Chinatown Wars
+7. Grand Theft Auto IV & Episodes from Liberty City (2008–2010)
+8. Grand Theft Auto V — platforms, editions, title updates & PC builds (2013–present)
+9. GTA Online — every update & DLC (2013–present)
+10. Grand Theft Auto: The Trilogy – The Definitive Edition (2021–present) & Netflix versions
+11. Grand Theft Auto VI, leaks, cancelled & lost projects
+12. Compilations, collections, bundles & special editions (all eras)
+13. Country-specific releases, censorship & localisation (all eras)
+14. Completeness audit notes
+15. Appendix A — Preserved retail disc & cartridge dumps (Redump / No-Intro): every GTA disc/cartridge/digital package with serials, revisions, sizes and checksums
+
+---'''
+
+[[section]]
+id = "6"
+origin = "md:1114"
+title = "6. Handheld & Spin-off Era"
+games = ["advance", "lcs", "vcs", "ctw"]
+text = '''
+> Scope: Grand Theft Auto Advance (GBA), Liberty City Stories, Vice City Stories, Chinatown Wars, cancelled handheld projects, and the PSN and mobile ports of the handheld games. Compilations are cross-referenced only (see Section 12). Earlier handheld ports (GTA 1 and GTA 2 on Game Boy Color) belong in Sections 1–2.
+>
+> **How the disc and cartridge data was gathered:** serials and version strings marked "dat" come from the No-Intro (cartridge, PSN) and Redump (UMD, DVD) DAT files as mirrored in the libretro-database GitHub repository (DAT versions dated 2026-10). The redump.org and datomatic.no-intro.org websites refused automated access during this research, so the individual disc pages could not be opened. Each DAT entry is one verified dump of a physical or digital copy. Where Redump lists the same serial more than once, the entries are different pressings (different hashes); the table shows the suffix printed on the disc (e.g. `/P` = Platinum, `GH` = Greatest Hits).'''
+
+[[section]]
+id = "6.6"
+origin = "md:1377"
+title = "6.6 Gaps and open items (Section 6)"
+games = ["advance", "lcs", "vcs", "ctw"]
+text = '''
+- **Redump and No-Intro web pages** (disc pages with EXE dates, barcodes, EDC, ring codes) could not be opened; serials, version strings, sizes and CRCs come from the DAT files mirrored on GitHub. On-sale dates per LCS pressing (v2.00, v3.00) remain **not documented**; only their build dates (Hidden Palace) are known. Most reissue dates added in the second pass (Platinum, Greatest Hits, Best Price, Rockstar Classics, PSN Store dates) come from GameFAQs (user-contributed) alone and are flagged ⚠️; only the LCS PSP Best Price! date (2008-07-24) is confirmed by a second source (Kakaku.com).
+- **LCS launch dates conflict:** Wikipedia and others give 2005-10-25 (NA) / 2005-11-04 (EU); Hidden Palace and GameFAQs give 2005-10-24 / 2005-10-28. Unresolved.
+- **Japanese serial roles** are now attributed via GameFAQs (original vs Best Price / Best Hits for LCS PSP & PS2, VCS PSP & PS2, CTW PSP); apart from the LCS PSP Best Price date, these are single-source.
+- **Hidden Palace** pages give build dates, UMD labels, dumpers/leakers and original filenames but **no hashes**. Several LCS, VCS and CTW prototypes are listed as "Dumped, not released". The VCS Sep 24, 2006 prototype's releaser is unrecorded on HP.
+- **TCRF** (tcrf.net and new.tcrf.net) could not be opened (Cloudflare challenge / navigation refused), so TCRF's VCS `Proto:` page and the CTW pages remain unchecked.
+- **Chinatown Wars:** the iPad HD app ID (id386183589) is found, but its version history is not (the App Store page returns an error). The Fire OS ASIN is still not documented. The HD app's retirement date conflicts (Dec 2014 vs the store text's 3 Apr 2015). The Korean PSP release (ULKS-46223, 2009-11-02) and the Japanese publisher (CyberFront) rest on GameFAQs only.
+- **LCS/VCS on PS4/PS5:** no release found (US PlayStation Store search, web search); GameFAQs marks the VCS PS4 Store entry "Canceled". This shows absence only, not proof.
+- **Korean releases:** LCS Korea (ULKS-46157) still has no documented date. VCS Korea (2007-02-28) has no known serial.
+- **Android versions:** now documented from Rockstar's own update notes (LCS from v1.9, 2016; CTW from v1.01, 2015). Launch-day version numbers and the gaps between the 2016–2019 and 2023+ builds are not documented.'''
+
+[[section]]
+id = "11"
+origin = "md:2907"
+title = "11. Grand Theft Auto VI, Leaks, Cancelled & Lost Projects"
+games = ["series"]
+text = "> Scope: Grand Theft Auto VI (status as researched on 2026-10-24, i.e. **before** its scheduled 2026-11-19 launch), the major leaks affecting the series (2022 Rockstar hack, 2023 trailer leak, 2023 GTA V source-code leak, 2026 \"CyberLeek\" leaks), an index of known leaked prototype/debug builds across all games, and cancelled / unreleased / lost projects. Legend: ✅ confirmed by official source or multiple reputable outlets; ⚠️ single community source, secondhand report, or fan-site only; ❓ rumour / unverified claim. \"Not documented\" = searched for but no evidence found."
+
+[[section]]
+id = "11.7"
+origin = "md:3111"
+title = "11.7 Index of known leaked / preserved prototype & debug builds (all games — cross-reference)"
+games = ["series"]
+text = '''
+Detailed rows live in each game's section; this index only points to them. "Leaked" = surfaced without publisher authorisation.
+
+*(Refreshed in the audit-integration pass, 2026-10-24.)* This index lists every prototype, pre-release, demo, test-sample and dev-kit leftover entry now in Sections 1–8, plus the GTA VI items in this section. Build dates are those the cited section gives. Most come from Hidden Palace infoboxes, where a date can be a file or package modification date (the section rows say which). "Dumped, not released" means Hidden Palace records a dump that is not public. "Surfaced" is the public release or leak date where documented. Retail discs that Hidden Palace merely labels "beta" are marked as such.
+
+
+Note: TCRF calls the 2025 LCS leaks the first time a 3D-era GTA prototype was leaked in full [42]. Hidden Palace's GTA 2 Dreamcast, GTA (1997) PS1 and GTA 2 PS1 builds are older leaks of 2D-era games.'''
+
+[[section]]
+id = "11.10"
+origin = "md:3229"
+title = "11.10 Gaps & caveats (Section 11)"
+games = ["series"]
+text = '''
+- GTA VI is **unreleased** at research date (2026-10-24): no retail build numbers, day-one patch, PC version or GTA Online-for-VI details exist publicly.
+- **GTA VI development build numbers (§11.3a)** come from one community document [70]. A web search found no second source listing the same numbers, and the document does not say where each number was read from. Treat them as ⚠️ until a second source confirms them. The 32 leaked clips the document does not name are not covered.
+- Web-search quota was exhausted partway through research; the following could not be further verified and are flagged accordingly: GTA Tokyo, any GTA IV third episode, alien/zombie GTA V DLC, official J2ME GTA, PEGI/USK/CERO ratings, CyberLeek identity.
+- TCRF prototype pages for GTA 2, London 1969 and Vice City, and GTA Wiki (Fandom) pages, could not be retrieved (site errors); per-game sections hold what was found.
+- 30 fps frame-rate claim for GTA VI is secondhand (YouTuber account), not a Rockstar statement.
+- **Audit integration (2026-10-24):** added the GTA VI Ultimate Edition Upgrade, the GTA+ month for digital pre-orders, the lack of a physical Ultimate Edition and the PlayStation code region locks (all from Rockstar Support); the Barking Dog *GTA: Online* proposal (2001); the "GTA 2.5" description, shown next to the Miami "expansion" wording as a conflict; the unofficial J2ME jars; the 1.0.2699.0 source build; and the leaked GTA V Oct 13, 2014 build. The stale §11.6 statement is corrected, and the 11.7 index was rebuilt from Sections 1–8. Still open: Obbe Vermeij's 2023-11-11 blog post (the primary source for "GTA 2.5") could not be loaded, and the Barking Dog design document itself was not seen, only GTA Wiki's citation of it.'''
+
+[[entry]]
+id = "11.7-1"
+origin = "md:3119"
+section = "11.7"
+kind = "prototype"
+games = ["gta1"]
+title = "\"GTA ProtoType 1\": Mike Dailly's side-on \"cube array\" engine test"
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+date = "1994-11-11"
+date_text = "**1994-11-11**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-47"]
+sources_text = "[47], (§1)"
+game_text = "GTA (Race'n'Chase)"
+[entry.fields]
+Surfaced = "released by Mike Dailly; on Hidden Palace"
+"Detail in" = "§1.1"
+
+[[entry]]
+id = "11.7-2"
+origin = "md:3120"
+section = "11.7"
+kind = "prototype"
+games = ["gta1"]
+title = "\"GTA ProtoType 2\" (`DINO.EXE`, top-down proof of concept)"
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+date = "1995-02-02"
+date_text = "**1995-02-02**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-47"]
+sources_text = "[47], (§1)"
+game_text = "GTA (Race'n'Chase)"
+[entry.fields]
+Surfaced = "released by Mike Dailly; on Hidden Palace"
+"Detail in" = "§1.1"
+
+[[entry]]
+id = "11.7-3"
+origin = "md:3121"
+section = "11.7"
+kind = "prototype"
+games = ["gta1"]
+title = "Magazine demo (8-bit + 24-bit) and \"ECTS Competition Version\" 3Dfx demo"
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+date = "1997-09-01"
+date_text = "**1997-09-01** (Hidden Palace)"
+confidence = "mixed"
+confidence_text = "✅ (exists) / ⚠️ (date)"
+sources_text = "(§1)"
+game_text = "GTA (1997)"
+[entry.fields]
+Surfaced = "1997 (official demos)"
+"Detail in" = "§1.2"
+
+[[entry]]
+id = "11.7-4"
+origin = "md:3122"
+section = "11.7"
+kind = "prototype"
+games = ["gta1"]
+title = "\"Hot Bitch Teaser Version\" demos: 8-bit, 24-bit, 3Dfx"
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+date = "1997-11-11"
+date_text = "**1997-11-11** (Hidden Palace; the pages were titled \"Aug 29, 1997\" until Apr 2025)"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (date)"
+sources_text = "(§1)"
+game_text = "GTA (1997)"
+[entry.fields]
+Surfaced = "1997 (official download)"
+"Detail in" = "§1.2"
+
+[[entry]]
+id = "11.7-5"
+origin = "md:3123"
+section = "11.7"
+kind = "prototype"
+games = ["gta1"]
+title = "Demo build \"Mar 4, 1998\" (probably the same build as the Japanese PC trial disc ZOO-0003D; that link is inferred, not sourced)"
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+date = "1998-03-04"
+date_text = "**1998-03-04**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§1)"
+game_text = "GTA (1997)"
+[entry.fields]
+Surfaced = "Hidden Palace, 2024-01-14"
+"Detail in" = "§1.2"
+
+[[entry]]
+id = "11.7-6"
+origin = "md:3124"
+section = "11.7"
+kind = "prototype"
+games = ["gta1"]
+title = "PS1 demo discs SLED-01093 (FR) and SLED-01295 (FR sampler)"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+date_text = "EXE 1997-10-25 / 1998-03-30"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources_text = "(§1)"
+game_text = "GTA (1997)"
+[entry.fields]
+Surfaced = "retail cover/promo discs"
+"Detail in" = "§1.2"
+
+[[entry]]
+id = "11.7-7"
+origin = "md:3125"
+section = "11.7"
+kind = "prototype"
+games = ["gta1"]
+title = "PlayStation pre-release \"Beta\" (US data)"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+date = "1998-05-23"
+date_text = "**1998-05-23**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§1)"
+game_text = "GTA (1997)"
+[entry.fields]
+Surfaced = "Hidden Palace, 2017-06-03"
+"Detail in" = "§1.4"
+
+[[entry]]
+id = "11.7-8"
+origin = "md:3126"
+section = "11.7"
+kind = "prototype"
+games = ["london1969"]
+title = "PS1 pre-release CD-R \"PAL PSX BETA 37\" (**undumped**). This is the only London 1969 pre-release build Hidden Palace knows of; the older \"TCRF Prototype page (Windows)\" entry here is superseded."
+platforms = ["ps1"]
+platform_text = "PlayStation"
+date = "1999-04-11"
+date_text = "**1999-04-11**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-47"]
+sources_text = "[47], (§1)"
+game_text = "GTA: London 1969"
+[entry.fields]
+Surfaced = "not released"
+"Detail in" = "§1.7"
+
+[[entry]]
+id = "11.7-9"
+origin = "md:3127"
+section = "11.7"
+kind = "prototype"
+games = ["gta1", "gta2"]
+title = "Palm OS demos (cancelled port): colour \"Nov 26, 2001\" and monochrome \"Nov 19, 2001\""
+platforms = ["palm"]
+platform_text = "Palm OS"
+date_text = "2001-11-26 / 2001-11-19 (file modification dates)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§2)"
+game_text = "GTA / GTA 2"
+[entry.fields]
+Surfaced = "2001 (official web demos)"
+"Detail in" = "§1.2, §2.1"
+
+[[entry]]
+id = "11.7-10"
+origin = "md:3128"
+section = "11.7"
+kind = "prototype"
+games = ["gta2"]
+title = "GameStar magazine preview footage (build not preserved)"
+platforms = ["pc"]
+platform_text = "PC"
+date = "1999-09"
+date_text = "Sep 1999"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§2)"
+game_text = "GTA 2"
+[entry.fields]
+Surfaced = "magazine video"
+"Detail in" = "§2.1"
+
+[[entry]]
+id = "11.7-11"
+origin = "md:3129"
+section = "11.7"
+kind = "prototype"
+games = ["gta2"]
+title = "PlayStation \"Preview\" CD-R, \"GTA 2 9-13-99 For Preview Only\""
+platforms = ["ps1"]
+platform_text = "PlayStation (PAL per Hidden Palace)"
+date = "1999-09-10"
+date_text = "**1999-09-10**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources_text = "(§2)"
+game_text = "GTA 2"
+[entry.fields]
+Surfaced = "Hidden Palace, 2021-04-17"
+"Detail in" = "§2.1"
+
+[[entry]]
+id = "11.7-12"
+origin = "md:3130"
+section = "11.7"
+kind = "prototype"
+games = ["gta2"]
+title = "PC demo v8.9 (Hidden Palace \"Sep 22, 1999 demo\"; the date comes from file modification times and is called \"inaccurate\")"
+platforms = ["pc"]
+platform_text = "Windows"
+date = "1999-09-22"
+date_text = "1999-09-22 (HP)"
+version = "8.9"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (date)"
+sources_text = "(§2)"
+game_text = "GTA 2"
+[entry.fields]
+Surfaced = "Sep 1999 (official download)"
+"Detail in" = "§2.1"
+
+[[entry]]
+id = "11.7-13"
+origin = "md:3131"
+section = "11.7"
+kind = "prototype"
+games = ["gta2"]
+title = "PS1 prototype disc seen in MattJ155's video (undumped; may be the same as the Sep 1999 preview)"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+date_text = "not documented"
+confidence = "unverified"
+confidence_text = "❓"
+sources_text = "(§2)"
+game_text = "GTA 2"
+[entry.fields]
+Surfaced = "not released"
+"Detail in" = "§2.1"
+
+[[entry]]
+id = "11.7-14"
+origin = "md:3132"
+section = "11.7"
+kind = "prototype"
+games = ["gta2"]
+title = "TCRF \"Proto:\" page (Windows), contents not read (bot check)"
+platforms = ["pc"]
+platform_text = "Windows"
+date_text = "not documented"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-46"]
+sources_text = "[46]"
+game_text = "GTA 2"
+[entry.fields]
+Surfaced = "not documented"
+"Detail in" = "§2.1"
+
+[[entry]]
+id = "11.7-15"
+origin = "md:3133"
+section = "11.7"
+kind = "prototype"
+games = ["gta2"]
+title = "Dreamcast \"TEST VERSION\" prototype (V0.800, T42102N)"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+date = "2000-04-07"
+date_text = "**2000-04-07**"
+version = "0.800"
+confidence = "confirmed"
+confidence_text = "✅"
+sources_text = "(§2)"
+game_text = "GTA 2"
+[entry.fields]
+Surfaced = "Hidden Palace, 2021-09-18"
+"Detail in" = "§2.1"
+
+[[entry]]
+id = "11.7-16"
+origin = "md:3134"
+section = "11.7"
+kind = "prototype"
+games = ["gta3"]
+title = "Dreamcast tech demo (cancelled platform), not preserved"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+date_text = "c.1999–2000"
+confidence = "confirmed"
+confidence_text = "✅ (existence)"
+sources = ["11-49"]
+sources_text = "[49]"
+game_text = "GTA III"
+[entry.fields]
+Surfaced = "—"
+"Detail in" = "§3.1, 11.8"
+
+[[entry]]
+id = "11.7-17"
+origin = "md:3135"
+section = "11.7"
+kind = "prototype"
+games = ["gta3"]
+title = "First PAL pressing v1.40 (SLES-50330), which Hidden Palace calls a \"very late beta\" released by mistake. It is a **retail disc**."
+platforms = ["ps2"]
+platform_text = "PS2"
+date_text = "retail 2001-10-26"
+version = "1.40"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§3)"
+game_text = "GTA III"
+[entry.fields]
+Surfaced = "retail"
+"Detail in" = "§3.2"
+
+[[entry]]
+id = "11.7-18"
+origin = "md:3136"
+section = "11.7"
+kind = "prototype"
+games = ["gta3", "advance"]
+title = "Crawfish Interactive GBA GTA III prototype (**undumped**)"
+platforms = ["gba"]
+platform_text = "GBA"
+date = "2002-04-12"
+date_text = "**2002-04-12**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§3), (§6)"
+game_text = "GTA III (GBA) / GTA Advance"
+[entry.fields]
+Surfaced = "not released"
+"Detail in" = "§3.2, §6.1.1"
+
+[[entry]]
+id = "11.7-19"
+origin = "md:3137"
+section = "11.7"
+kind = "prototype"
+games = ["gta3", "advance"]
+title = "Crawfish Interactive tech demo"
+platforms = ["gba"]
+platform_text = "GBA"
+date = "2002-04-16"
+date_text = "**2002-04-16**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-41"]
+sources_text = "[41]"
+game_text = "GTA III (GBA) / GTA Advance"
+[entry.fields]
+Surfaced = "released on Hidden Palace (release date not given)"
+"Detail in" = "§3.2, §6.1.1, 11.8"
+
+[[entry]]
+id = "11.7-20"
+origin = "md:3138"
+section = "11.7"
+kind = "prototype"
+games = ["gta3"]
+title = "Debug SCM (from the mobile port), PS2 debug functions, early \"Luigi's Girls\" files in the iOS port"
+platforms = ["ps2", "ios"]
+platform_text = "PS2/iOS"
+date_text = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-48"]
+sources_text = "[48]"
+game_text = "GTA III"
+[entry.fields]
+Surfaced = "community finds"
+"Detail in" = "§3"
+
+[[entry]]
+id = "11.7-21"
+origin = "md:3139"
+section = "11.7"
+kind = "prototype"
+games = ["vc"]
+title = "\"Oct 1, 2002\" prototype, self-labelled \"v1.50\" (Hidden Palace's \"Oct 2, 2002\" page redirects here)"
+platforms = ["ps2"]
+platform_text = "PS2 (PAL)"
+date = "2002-10-01"
+date_text = "**2002-10-01**"
+version = "1.50"
+confidence = "confirmed"
+confidence_text = "✅"
+sources_text = "(§4)"
+game_text = "GTA: Vice City"
+[entry.fields]
+Surfaced = "GTAForums, 2025-02-01"
+"Detail in" = "§4.1"
+
+[[entry]]
+id = "11.7-22"
+origin = "md:3140"
+section = "11.7"
+kind = "prototype"
+games = ["sa"]
+title = "Pre-release PS2 disc-image leak (build type not stated)"
+platforms = ["ps2"]
+platform_text = "PS2"
+date_text = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources_text = "(§5)"
+game_text = "GTA: San Andreas"
+[entry.fields]
+Surfaced = "P2P, c. 2004-10-20"
+"Detail in" = "§5.1"
+
+[[entry]]
+id = "11.7-23"
+origin = "md:3141"
+section = "11.7"
+kind = "prototype"
+games = ["sa"]
+title = "Partial \"beta code\" leak (executable code only)"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "—"
+confidence = "unverified"
+confidence_text = "❓"
+sources_text = "(§5)"
+game_text = "GTA: San Andreas"
+[entry.fields]
+Surfaced = "GTAForums, c. 2025-02-15"
+"Detail in" = "§5.1"
+
+[[entry]]
+id = "11.7-24"
+origin = "md:3142"
+section = "11.7"
+kind = "prototype"
+games = ["sa"]
+title = "Xbox debug prototype (dev-kit HDD)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+date = "2005-03-08"
+date_text = "**2005-03-08**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§5)"
+game_text = "GTA: San Andreas"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§5.1"
+
+[[entry]]
+id = "11.7-25"
+origin = "md:3143"
+section = "11.7"
+kind = "prototype"
+games = ["sa"]
+title = "Unreleased Steam \"beta\" branch builds (two depot manifests)"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+date_text = "exe **2014-08-28**; manifests **2014-09-02**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§5)"
+game_text = "GTA: San Andreas"
+[entry.fields]
+Surfaced = "Hidden Palace (Rain0x06)"
+"Detail in" = "§5.1"
+
+[[entry]]
+id = "11.7-26"
+origin = "md:3144"
+section = "11.7"
+kind = "prototype"
+games = ["sa"]
+title = "Leftover dev material (uncompiled mission scripts) in the Definitive Edition"
+platform_text = "—"
+date_text = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§5)"
+game_text = "GTA: San Andreas"
+[entry.fields]
+Surfaced = "2021 (retail DE)"
+"Detail in" = "§5.1, §10"
+
+[[entry]]
+id = "11.7-27"
+origin = "md:3145"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype, pre-production UMD ULET-00003/0.02 (early assets; unplayable SDK-sample EBOOT). The UMD label is dated 22 May 2005, and Hidden Palace's download is named \"(May 28, 2005 prototype)\"."
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2005-05-29"
+date_text = "**2005-05-29**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-42", "11-43"]
+sources_text = "[42][43]"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "Hidden Palace, 2025-01-31"
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-28"
+origin = "md:3146"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype \"26/7\" (placeholder SDK executable; runs with a community patch)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2005-07-26"
+date_text = "**2005-07-26**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-42", "11-44"]
+sources_text = "[42][44]"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "leaked 2025"
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-29"
+origin = "md:3147"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype \"1/9\" (debug-enabled)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2005-09-01"
+date_text = "**2005-09-01**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-42", "11-45"]
+sources_text = "[42][45]"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "leaked 2025"
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-30"
+origin = "md:3148"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype v1.02"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2005-09-11"
+date_text = "**2005-09-11**"
+version = "1.02"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-31"
+origin = "md:3149"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype v0.03"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2005-09-23"
+date_text = "**2005-09-23**"
+version = "0.03"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-32"
+origin = "md:3150"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype v1.04 (ULUS-10041)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2005-10-07"
+date_text = "**2005-10-07**"
+version = "1.04"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-33"
+origin = "md:3151"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Pre-production 1.00, German (ULES-00182)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2005-10-22"
+date_text = "**2005-10-22**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-34"
+origin = "md:3152"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Pre-production 0.02 (ULET-00361)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2006-03-22"
+date_text = "**2006-03-22** 16:09"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-35"
+origin = "md:3153"
+section = "11.7"
+kind = "prototype"
+games = ["lcs"]
+title = "Pre-production 0.02, German (ULET-00362)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2006-03-22"
+date_text = "**2006-03-22** 16:20"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+Surfaced = "ObscureGamers \"Terarelease 3.0\", 2022-07-08"
+"Detail in" = "§6.2.1"
+
+[[entry]]
+id = "11.7-36"
+origin = "md:3154"
+section = "11.7"
+kind = "prototype"
+games = ["vcs"]
+title = "Pre-production 0.01 (ULET-00417)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2006-08-08"
+date_text = "**2006-08-08**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Vice City Stories"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§6.3.1"
+
+[[entry]]
+id = "11.7-37"
+origin = "md:3155"
+section = "11.7"
+kind = "prototype"
+games = ["vcs"]
+title = "Test Sample 1.01 (ULUS-10160)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2006-09-01"
+date_text = "**2006-09-01**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Vice City Stories"
+[entry.fields]
+Surfaced = "\"Dumped, not released\""
+"Detail in" = "§6.3.1"
+
+[[entry]]
+id = "11.7-38"
+origin = "md:3156"
+section = "11.7"
+kind = "prototype"
+games = ["vcs"]
+title = "Pre-production 0.06 \"AD'S LIGHTING MODEL\" (ULET-00417)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2006-09-24"
+date_text = "**2006-09-24**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Vice City Stories"
+[entry.fields]
+Surfaced = "Hidden Palace (released)"
+"Detail in" = "§6.3.1"
+
+[[entry]]
+id = "11.7-39"
+origin = "md:3157"
+section = "11.7"
+kind = "prototype"
+games = ["vcs"]
+title = "Pre-production 0.07 (ULET-00417)"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2006-10-04"
+date_text = "**2006-10-04**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§6)"
+game_text = "GTA: Vice City Stories"
+[entry.fields]
+Surfaced = "Hidden Palace, 2025-01-25"
+"Detail in" = "§6.3.1"
+
+[[entry]]
+id = "11.7-40"
+origin = "md:3158"
+section = "11.7"
+kind = "prototype"
+games = ["gta4"]
+title = "\"Leftover Sep 10, 2007 Data\" (`GTA4Debug_xenon.xex`, partly overwritten)"
+platforms = ["x360"]
+platform_text = "Xbox 360 (dev kit)"
+date = "2007-09-10"
+date_text = "**2007-09-10**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA IV"
+[entry.fields]
+Surfaced = "Hidden Palace, 2026-03-28"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-41"
+origin = "md:3159"
+section = "11.7"
+kind = "prototype"
+games = ["gta4"]
+title = "\"2007 beta\" / Nov 23, 2007 prototype, build 78 (Xbox 360 kit from a car-boot sale; references the cut zombie mode \"Z: Resurrection\")"
+platforms = ["x360"]
+platform_text = "Xbox 360 (test kit)"
+date = "2007-11-23"
+date_text = "**2007-11-23**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources_text = "(§7)"
+game_text = "GTA IV"
+[entry.fields]
+Surfaced = "GTAForums Mar 2026; Hidden Palace files 2026-03-28"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-42"
+origin = "md:3160"
+section = "11.7"
+kind = "prototype"
+games = ["gta4"]
+title = "\"Leftover Feb 29, 2008 Data\" (7 files, incl. 2 xex) and \"Last Area Assets\" (undated)"
+platforms = ["x360"]
+platform_text = "Xbox 360 (test kit)"
+date = "2008-02-29"
+date_text = "**2008-02-29** / undated"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA IV"
+[entry.fields]
+Surfaced = "Hidden Palace, 2026-03-28 (Feb 29 data)"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-43"
+origin = "md:3161"
+section = "11.7"
+kind = "prototype"
+games = ["gta4"]
+title = "\"Patch Data\" prototype (TU; named \"College Hardball 2K8 Title Update #1\")"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2008-05-26"
+date_text = "**2008-05-26**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA IV"
+[entry.fields]
+Surfaced = "torrent, 2010-08-08"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-44"
+origin = "md:3162"
+section = "11.7"
+kind = "prototype"
+games = ["gta4", "tlad"]
+title = "DLC \"G12345E1 Eng\" prototype (PartnerNet)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2008-08-19"
+date_text = "**2008-08-19** (CDN date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA IV / TLAD"
+[entry.fields]
+Surfaced = "Hidden Palace, 2025-10-25"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-45"
+origin = "md:3163"
+section = "11.7"
+kind = "prototype"
+games = ["gta4"]
+title = "Patch Data prototype (TU)"
+platforms = ["x360"]
+platform_text = "Xbox 360 (dev-kit HDD)"
+date = "2009-01-30"
+date_text = "**2009-01-30** (file date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA IV"
+[entry.fields]
+Surfaced = "Hidden Palace"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-46"
+origin = "md:3164"
+section = "11.7"
+kind = "prototype"
+games = ["gta4", "tlad"]
+title = "The Lost and Damned DLC prototype, build 143 (PartnerNet)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2009-01-30"
+date_text = "**2009-01-30** (CDN date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA IV / TLAD"
+[entry.fields]
+Surfaced = "ObscureGamers \"Terarelease 3.0\", 2022-07-08"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-47"
+origin = "md:3165"
+section = "11.7"
+kind = "prototype"
+games = ["gta4", "tbogt"]
+title = "The Ballad of Gay Tony DLC prototype, build 252 (PartnerNet)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2009-09-24"
+date_text = "**2009-09-24** (CDN date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA IV / TBoGT"
+[entry.fields]
+Surfaced = "Hidden Palace, 2025-10-25"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-48"
+origin = "md:3166"
+section = "11.7"
+kind = "prototype"
+games = ["eflc"]
+title = "Episodes from Liberty City prototype (\"CollegeHardball2k8\"; executable only, from a damaged disc)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2009-09-29"
+date_text = "**2009-09-29**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA: EFLC"
+[entry.fields]
+Surfaced = "2019"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-49"
+origin = "md:3167"
+section = "11.7"
+kind = "prototype"
+games = ["eflc"]
+title = "EFLC \"Patch Data\" prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date_text = "undated"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "(§7)"
+game_text = "GTA: EFLC"
+[entry.fields]
+Surfaced = "ObscureGamers \"Terarelease 3.0\", 2022-07-08"
+"Detail in" = "§7.2"
+
+[[entry]]
+id = "11.7-50"
+origin = "md:3168"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "PartnerNet DLC prototypes: DLC Weapon 5 and 7"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2013-05-07"
+date_text = "**2013-05-07** (package date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "Hidden Palace"
+"Detail in" = "§8.1"
+
+[[entry]]
+id = "11.7-51"
+origin = "md:3169"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "PartnerNet DLC prototypes: DLC Weapon 1, 2 and 3"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2013-05-20"
+date_text = "**2013-05-20** (package date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "Hidden Palace"
+"Detail in" = "§8.1"
+
+[[entry]]
+id = "11.7-52"
+origin = "md:3170"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "PartnerNet DLC prototypes: DLC Weapon 6, Assault Sniper, Atomic Blimp"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+date = "2013-07-04"
+date_text = "**2013-07-04** (package date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "Hidden Palace"
+"Detail in" = "§8.1"
+
+[[entry]]
+id = "11.7-53"
+origin = "md:3171"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "Patch Data prototype, build 377 (TU 1.01 era; BLES01807)"
+platforms = ["ps3"]
+platform_text = "PS3 (dev-kit HDD)"
+date = "2013-09-13"
+date_text = "**2013-09-13**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "MrPinball64, 2023"
+"Detail in" = "§8.1, §8.5"
+
+[[entry]]
+id = "11.7-54"
+origin = "md:3172"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "Patch Data prototype, build 388.5 (TU 1.02; the retail 1.02 package is lost)"
+platforms = ["ps3"]
+platform_text = "PS3 (dev-kit HDD)"
+date = "2013-10-03"
+date_text = "**2013-10-03** (latest file date)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "\"the cnh\", 2024-04-14"
+"Detail in" = "§8.1, §8.5"
+
+[[entry]]
+id = "11.7-55"
+origin = "md:3173"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "PS3 dev-kit leftovers: remnants of 2010–2012 and July 2013 builds; cloud-cache files; CarsonGT assets. These are assets, not runnable builds."
+platforms = ["ps3"]
+platform_text = "PS3"
+date_text = "2010-04 → 2014-11"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "Internet Archive 2024-04-14; extractions 2025"
+"Detail in" = "§8.1"
+
+[[entry]]
+id = "11.7-56"
+origin = "md:3174"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "\"Oct 13, 2014\" development build, GTA5_NG QA Version 108 / 0.0.0.77 (contains an early GTA VI map and assets for the cut Liberty City and \"Agent Trevor\" DLC)"
+platform_text = "multi-platform build (\"Other\" on Hidden Palace)"
+date = "2014-10-13"
+date_text = "**2014-10-13**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "leaked 2026-09-18 (from the 2022 intrusion's \"Build\" directory)"
+"Detail in" = "§8.1, 11.3"
+
+[[entry]]
+id = "11.7-57"
+origin = "md:3175"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "\"GTA5 Debug.exe\" + .pdb (\"Leftover Sep 30, 2020 Data\")"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2020-09-30"
+date_text = "**2020-09-30**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "Hidden Palace"
+"Detail in" = "§8.1"
+
+[[entry]]
+id = "11.7-58"
+origin = "md:3176"
+section = "11.7"
+kind = "prototype"
+games = ["gta5"]
+title = "Source-code build **1.0.2699.0** (\"Sep 16, 2022 build\"; code only; Debug configuration compiles)"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2022-09-16"
+date_text = "c. **2022-09-16**"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-37", "11-39", "11-68"]
+sources_text = "[37][39][68]"
+game_text = "GTA V"
+[entry.fields]
+Surfaced = "Dec 2023 source leak"
+"Detail in" = "11.6, §8.1"
+
+[[entry]]
+id = "11.7-59"
+origin = "md:3177"
+section = "11.7"
+kind = "prototype"
+games = ["gta6"]
+title = "About 90 dev-build videos (PS4 dev-kit-era \"Americas\" files)"
+platform_text = "—"
+date_text = "c. 2022 and earlier"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-9"]
+sources_text = "[9]"
+game_text = "GTA VI"
+[entry.fields]
+Surfaced = "GTAForums, 2022-09-18"
+"Detail in" = "11.3"
+
+[[entry]]
+id = "11.7-60"
+origin = "md:3178"
+section = "11.7"
+kind = "prototype"
+games = ["gta6"]
+title = "47 dated development builds, **v400.0.17 (2021-03-03) to v542.0 (2022-09-12) / v533.0 (2022-09-13)**, plus an undated v270.0 in PDF screenshots. Executables `game_win64_bankrelease.exe`, `game_win64_beta.exe` and `game_win64_debug.exe`"
+platforms = ["pc"]
+platform_text = "PC (Windows; Game DVR captures)"
+date_text = "2021-03-03 → 2022-09-13"
+confidence = "single-source"
+confidence_text = "⚠️ (single community analysis)"
+sources = ["11-70"]
+sources_text = "[70]"
+game_text = "GTA VI"
+[entry.fields]
+Surfaced = "GTAForums, 2022-09-18 (clips)"
+"Detail in" = "11.3a"
+
+[[entry]]
+id = "11.7-61"
+origin = "md:3179"
+section = "11.7"
+kind = "prototype"
+games = ["gta6"]
+title = "Very early map rendition inside the GTA V Oct 13, 2014 build (`-level env_test`)"
+platform_text = "—"
+date_text = "c. 2014"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+game_text = "GTA VI"
+[entry.fields]
+Surfaced = "2026-09-18"
+"Detail in" = "§8.1"
+
+[[entry]]
+id = "11.7-62"
+origin = "md:3180"
+section = "11.7"
+kind = "prototype"
+games = ["gta6"]
+title = "CyberLeek gameplay clips from a late build"
+platform_text = "—"
+date = "2026"
+date_text = "2026"
+confidence = "confirmed"
+confidence_text = "✅ (clips)"
+sources = ["11-20"]
+sources_text = "[20]"
+game_text = "GTA VI"
+[entry.fields]
+Surfaced = "Aug 2026"
+"Detail in" = "11.5"
+
+[sources]
+6-6 = { text = "Arcade-History — Advance GTA [AGB-AG7J-JPN]: https://www.arcade-history.com/game/69530/", url = "https://www.arcade-history.com/game/69530/", origin = "md:1396" }
+6-notes = { text = "_Section 6 research date: 2026-10-24 (second pass the same day: Hidden Palace, GameFAQs, Rockstar Support, TouchArcade, PlayStation Store). Store listings (App Store, Google Play) checked on that date._", origin = "md:1453" }
+11-9 = { text = "PC Gamer — \"Huge GTA 6 leak includes gameplay footage of robbery, Vice City locations, and two playable characters\" (Sep 2022): https://www.pcgamer.com/heres-another-alleged-gta-6-leak-this-time-with-video/", url = "https://www.pcgamer.com/heres-another-alleged-gta-6-leak-this-time-with-video/", origin = "md:3248" }
+11-20 = { text = "SOCRadar — \"The GTA VI Leak by CyberLeek Explained\" (Aug 2026): https://socradar.io/blog/gta-vi-leak-cyberleek-explained/", url = "https://socradar.io/blog/gta-vi-leak-cyberleek-explained/", origin = "md:3259" }
+11-37 = { text = "Beebom — \"GTA 5 Source Code Leaked Online; Confirms 8 Scrapped DLCs\" (26 Dec 2023): https://beebom.com/gta-5-source-code-leaked-online-scrapped-dlcs/", url = "https://beebom.com/gta-5-source-code-leaked-online-scrapped-dlcs/", origin = "md:3276" }
+11-39 = { text = "Yahoo Tech — \"Report: Hackers Leak GTA 5 Source Code Alongside GTA 6 and Bully 2 Content\" (26 Dec 2023): https://tech.yahoo.com/general/articles/report-hackers-leak-gta-5-132631195.html", url = "https://tech.yahoo.com/general/articles/report-hackers-leak-gta-5-132631195.html", origin = "md:3278" }
+11-41 = { text = "TCRF — \"Proto:Grand Theft Auto Advance\": https://tcrf.net/Proto:Grand_Theft_Auto_Advance", url = "https://tcrf.net/Proto:Grand_Theft_Auto_Advance", origin = "md:3280" }
+11-42 = { text = "TCRF — \"Proto:Grand Theft Auto: Liberty City Stories\": https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", url = "https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:3281" }
+11-43 = { text = "Hidden Palace — \"Grand Theft Auto: Liberty City Stories (May 29, 2005 prototype)\": https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(May_29,_2005_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(May_29,_2005_prototype", origin = "md:3282" }
+11-44 = { text = "Hidden Palace — \"Grand Theft Auto: Liberty City Stories (Jul 26, 2005 prototype)\": https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(Jul_26,_2005_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(Jul_26,_2005_prototype", origin = "md:3283" }
+11-45 = { text = "Hidden Palace — \"Grand Theft Auto: Liberty City Stories (Sep 1, 2005 prototype)\": https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(Sep_1,_2005_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(Sep_1,_2005_prototype", origin = "md:3284" }
+11-46 = { text = "TCRF — \"Grand Theft Auto: San Andreas\" (series navigation listing prototype pages): https://tcrf.net/Grand_Theft_Auto:_San_Andreas", url = "https://tcrf.net/Grand_Theft_Auto:_San_Andreas", origin = "md:3285" }
+11-47 = { text = "TCRF — \"Grand Theft Auto (Windows)\": https://tcrf.net/Grand_Theft_Auto_(Windows)", url = "https://tcrf.net/Grand_Theft_Auto_(Windows", origin = "md:3286" }
+11-48 = { text = "TCRF — \"Grand Theft Auto III\": https://tcrf.net/Grand_Theft_Auto_III", url = "https://tcrf.net/Grand_Theft_Auto_III", origin = "md:3287" }
+11-49 = { text = "Wikipedia — \"Grand Theft Auto III\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3288" }
+11-59 = { text = "(unused)", origin = "md:3298" }
+11-60 = { text = "(unused)", origin = "md:3299" }
+11-68 = { text = "Hidden Palace — GTA V build pages (MediaWiki API, read 2026-10-24): https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_16,_2022_build) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_13,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_3,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Leftover_Sep_30,_2020_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/cnh_devkit_leftovers_assets ; Xbox 360 DLC prototype pages listed in Section 8 source [66]", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype", origin = "md:3307" }
+11-70 = { text = "\"Leakless\", *Comprehensive GTA VI Leak Analysis* v1.0 (.docx supplied by the user as `_Leakless__GTA_VI_Leak_Document_.docx`, read 2026-10-24; compiled \"with help from the extended mapping and r/GTA6 discord communities as well as GTAForums\"). Sections used: Introduction / \"What was leaked?\", RAGE Notes, New Additions, Weapons, Attention to Detail, Multiplayer, Locations, Animals, Audio, Transportation, Other Details, GTA VI Maps, Voice Lines, Rage AI Debug Options, Development Builds, PC specs used during recordings, State of the Game, The Python Leak. Links in the document include https://gtaforums.com/topic/985481-gta-6-americas-leak-90-mp4-footagevideos/ and https://www.psdevwiki.com/ps4/5.508.011", url = "https://gtaforums.com/topic/985481-gta-6-americas-leak-90-mp4-footagevideos/", origin = "md:3309" }

@@ -1,0 +1,1886 @@
+# Grand Theft Auto VI: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "11.1"
+origin = "md:2911"
+title = "11.1 Grand Theft Auto VI — development & announcement timeline"
+games = ["gta6"]
+text = "**Release-date history (summary):** 2025 window (Trailer 1, Dec 2023) → \"Fall 2025\" (Take-Two guidance, May 2024 earnings, reiterated Feb 2025) → 26 May 2026 (announced 2025-05-02) → 19 November 2026 (announced 2025-11-06). ✅ [1][10][14]"
+
+[[section]]
+id = "11.2"
+origin = "md:2947"
+title = "11.2 Grand Theft Auto VI — editions, platforms, versions (as announced, pre-release)"
+games = ["gta6"]
+
+[[section]]
+id = "11.3"
+origin = "md:2965"
+title = "11.3 The September 2022 Rockstar Games network intrusion (GTA VI development-build leak)"
+games = ["gta6"]
+
+[[section]]
+id = "11.3a"
+origin = "md:2982"
+title = "11.3a GTA VI development builds and clips in the September 2022 leak (from the \"Leakless\" leak analysis)"
+games = ["gta6"]
+text = '''
+Everything in this subsection comes from one community document: **"Comprehensive GTA VI Leak Analysis" v1.0**, released under the "Leakless" name and compiled "with help from the extended mapping and r/GTA6 discord communities as well as GTAForums" [70]. No second source was found for the build numbers, so every row is ⚠️ (one community source). Values are copied as the document gives them. Its MM/DD/YYYY dates are converted to ISO, and no number has been corrected or filled in.
+
+**What the leak contained, according to [70]:**
+
+
+**Build versions by date.** This is every entry in the document's "Development Builds" list, in its order. The document does not say where each number was read from. The clips column lists only clips that the document itself names with that recording date, and summarises what the document says about them; dates with no named clip say so.
+
+
+**Things the list itself shows** (taken directly from [70], not explanations):
+- **Out of order numbers.** On several dates the build number is lower than on an earlier date: 2022-01-11 (v470.0, after v470.0.7), 2022-05-20 (v504.0, after v506.0.8), 2022-06-14 (v510.0, after v510.0.4), 2022-08-11 (v528.0, after v531.0.4) and 2022-09-13 (v533.0, after v542.0). The document gives no explanation, and none is offered here.
+- **Clips with no listed build.** The document names clips from 18 dates that are not in its build list:
+  - 2021-05-17 (`Americas_1 … 16-38-34`, extended cover)
+  - 2021-07-09 (`Americas … 15-18-02`, the Bayfront Park amphitheatre location)
+  - 2021-09-10 (`Americas_1 … 16-37-50`: weapon wheel like 2021-06-22, dropping/picking up weapons, the Margaret Pace Park location and the Biscayne Bay / Venetian Causeway view)
+  - 2021-12-14 (`Americas_1 … 19-52-44`, Jason and Lucia's motel clip; Humble Pie, "30 Days in the Hole", at 0:28)
+  - 2022-04-13 (`Americas_1 … 09-08-46`, NPCs flee holding phones; `Americas_1 … 17-42-41`, debug inputs `INPUT_HORSE_EXIT` and `INPUT_VEH_EXIT`)
+  - 2022-05-05 (`Americas_1 … 10-00-47`, diving animations like San Andreas)
+  - 2022-05-24 (`Americas_1 … 17-19-42`, multiplayer: one avatar carries another's body, `CARRY SLOT<0>[HUMAN_CHEST]`, "PL: 2/32", "SH: PR_RSN1", "GM H: PR_RSN1")
+  - 2022-06-01 (`Americas … 17-16-15`, testbed animation clip; newest weapon wheel with no dual-wielding, quick inventory at centre-left, cigarette icon)
+  - 2022-06-17, 2022-07-08 and 2022-07-13 (`… 17-14-50`, `… 19-10-17`, `… 16-47-50`: dithered fade-in as objects load)
+  - 2022-08-02 (`Americas_1 … 18-34-23`, Lucia's alternate look; `Americas_1 … 20-20-00`, Lucia firing from the back of a truck in a police chase, a Krome Ave, Homestead–based location and a "Keys Causeway" sign)
+  - 2022-08-10 (`Americas_1 … 12-27-03`, injured tip: "Your Health will regenerate slowly, open your Weapon Wheel and use a recovery item…")
+  - 2022-08-19 (`Americas_1 … 14-40-45`, Lucia in a club with a "Sinful Sundays" poster; Egyptian Lover, "Everything She Wants", and ScHoolboy Q, "Numb Numb Juice", on iFruit Radio)
+  - 2022-08-23 (`Americas_1 … 15-56-16`, an `AmbientCollectibleHat`)
+  - 2022-08-24 (`Americas_1 … 07-48-28`, a `Collectibles_Car_Parts` / `WymanCarPartsBoxedGenericUsed` box with the Classique logo)
+  - 2022-08-29 (`Americas_1 … 12-44-36`, debug `Interior:157 … ss15lok_1_gfa_bespoke`, so at least 157 interiors; a Grassrivers wildlife placard reading "A new alpha"; Youth Brigade, "Blown Away" (Channel X), at 0:09)
+  - 2022-09-01 (`Americas_1 … 14-37-21`, Jason aims a rifle out of a car window at tennis courts, at the Margaret Pace Park location)
+- **Listed builds with no named clip.** 17 dated entries have no clip named in the document: 2021-03-03, 04-15, 05-18, 05-28, 06-04, 11-05, 11-23; 2022-01-11, 03-11, 03-21, 03-23, 04-05, 04-27, 06-08, 08-05, 08-08 and 08-11. The document names only 58 of the 90 clips.'''
+
+[[section]]
+id = "11.4"
+origin = "md:3076"
+title = "11.4 December 2023 GTA VI Trailer 1 leak"
+games = ["gta6"]
+
+[[section]]
+id = "11.5"
+origin = "md:3084"
+title = "11.5 2026 \"CyberLeek\" GTA VI leaks (pre-launch)"
+games = ["gta6"]
+text = "**Other GTA VI leak-related events:** October 2025 dismissal of 34 Rockstar staff for alleged leaking (see 11.1) ✅ [1][13]. No other leaked GTA VI *build* is documented."
+
+[[entry]]
+id = "11.1-1"
+origin = "md:2915"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Preliminary work on the next GTA reportedly began after GTA V's release (Bloomberg reporting, as summarised by Wikipedia)."
+date = "2014"
+date_text = "2014"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "11.1-2"
+origin = "md:2916"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Early development reportedly began after Red Dead Redemption 2 shipped."
+date_text = "Late 2018"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "11.1-3"
+origin = "md:2917"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Principal production began; internal codename reported as **\"Project Americas\"** (leaked 2022 file names also contained \"Americas\")."
+date = "2020"
+date_text = "2020"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1", "11-9"]
+sources_text = "[1][9]"
+
+[[entry]]
+id = "11.1-4"
+origin = "md:2918"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar confirms, in a Newswire post about GTA V next-gen/GTA Online and on Twitter: \"active development for the next entry in the Grand Theft Auto series is well underway.\" First official acknowledgement."
+date = "2022-02-04"
+date_text = "2022-02-04"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "11.1-5"
+origin = "md:2919"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar network intrusion: ~90 development videos of GTA VI posted on GTAForums by \"teapotuberhacker\" (see 11.3)."
+date = "2022-09-18"
+date_text = "2022-09-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-7", "11-8", "11-9"]
+sources_text = "[7][8][9]"
+
+[[entry]]
+id = "11.1-6"
+origin = "md:2920"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar statement confirms the \"network intrusion\" and that development footage was stolen; says development will continue as planned."
+date = "2022-09-19"
+date_text = "2022-09-19"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-8"]
+sources_text = "[8]"
+
+[[entry]]
+id = "11.1-7"
+origin = "md:2921"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar (statement by Sam Houser) announces the first trailer of the next GTA for early December 2023, Rockstar's 25th anniversary."
+date = "2023-11-08"
+date_text = "2023-11-08"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1", "11-35"]
+sources_text = "[1][35]"
+
+[[entry]]
+id = "11.1-8"
+origin = "md:2922"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Take-Two FY2024 results: GTA VI targeted for **Fall (calendar) 2025**."
+date = "2024-05-16"
+date_text = "2024-05-16"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-36"]
+sources_text = "[36]"
+
+[[entry]]
+id = "11.1-9"
+origin = "md:2923"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "**Trailer 1** leaked online (low-quality copy); Rockstar released it early on YouTube (\"Our trailer has leaked… watch the real thing\"). Planned premiere had been 2023-12-05 09:00 ET. Revealed title *Grand Theft Auto VI*, setting (Leonida / Vice City), release window **2025**, platforms **PS5 and Xbox Series X\\|S**. Rockstar's own site dates Trailer 1 as **4 December 2023**; Newswire post is dated 5 December 2023 in some listings."
+date = "2023-12-04"
+date_text = "2023-12-04 (evening ET)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-3", "11-4", "11-5"]
+sources_text = "[3][4][5]"
+
+[[entry]]
+id = "11.1-10"
+origin = "md:2924"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar ordered staff back to offices five days a week from April 2024, citing productivity and security (Bloomberg/IGN)."
+date = "2024-02"
+date_text = "2024-02"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "11.1-11"
+origin = "md:2925"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "**Delay #1**: Rockstar announces release date **26 May 2026** (\"We are very sorry that this is later than you expected\")."
+date = "2025-05-02"
+date_text = "2025-05-02"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-10", "11-11"]
+sources_text = "[10][11]"
+
+[[entry]]
+id = "11.1-12"
+origin = "md:2926"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "**Trailer 2** released (recorded on PS5), plus website update with ~70 screenshots and character/location profiles. (Note: Trailer 2 is **2025-05-06**, not 2026.)"
+date = "2025-05-06"
+date_text = "2025-05-06"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-4", "11-12"]
+sources_text = "[4][12]"
+
+[[entry]]
+id = "11.1-13"
+origin = "md:2927"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar dismisses 34 staff (31 Rockstar North, 3 Rockstar Toronto) for allegedly leaking confidential information; IWGB union alleges union-busting."
+date = "2025-10"
+date_text = "2025-10"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1", "11-13"]
+sources_text = "[1][13]"
+
+[[entry]]
+id = "11.1-14"
+origin = "md:2928"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "**Delay #2**: Rockstar announces new release date **19 November 2026**, citing extra polish."
+date = "2025-11-06"
+date_text = "2025-11-06"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-14", "11-15"]
+sources_text = "[14][15]"
+
+[[entry]]
+id = "11.1-15"
+origin = "md:2929"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Official cover art and new logo revealed; pre-order date (25 June) announced."
+date = "2026-06-18"
+date_text = "2026-06-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-16", "11-17"]
+sources_text = "[16][17]"
+
+[[entry]]
+id = "11.1-16"
+origin = "md:2930"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Pricing revealed: Standard **US$79.99**, Ultimate Edition **US$99.99**; pre-load from 2026-11-12."
+date = "2026-06-24"
+date_text = "2026-06-24"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-18"]
+sources_text = "[18]"
+
+[[entry]]
+id = "11.1-17"
+origin = "md:2931"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Pre-orders open (PS5 / Xbox Series X\\|S, digital storefronts and retail)."
+date = "2026-06-25"
+date_text = "2026-06-25"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-17", "11-18"]
+sources_text = "[17][18]"
+
+[[entry]]
+id = "11.1-18"
+origin = "md:2932"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar announces *Grand Theft Auto VI: An Extended Look* to premiere on Netflix."
+date = "2026-08-06"
+date_text = "2026-08-06"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-17", "11-19"]
+sources_text = "[17][19]"
+
+[[entry]]
+id = "11.1-19"
+origin = "md:2933"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "\"CyberLeek\" leaks of gameplay clips and alleged map (see 11.5)."
+date_text = "2026-08-18 → 08-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-20", "11-21"]
+sources_text = "[20][21]"
+
+[[entry]]
+id = "11.1-20"
+origin = "md:2934"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Rockstar statement on leaks: \"heartbreaking for our team\"; release date reaffirmed."
+date = "2026-08-26"
+date_text = "2026-08-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-21"]
+sources_text = "[21]"
+
+[[entry]]
+id = "11.1-21"
+origin = "md:2935"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "*Grand Theft Auto VI: An Extended Look* premieres on Netflix (15:00 ET), then YouTube / rockstargames.com (21:00 ET); captured on PS5; Netflix suffered an outage at launch."
+date = "2026-08-27"
+date_text = "2026-08-27"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-17", "11-19", "11-22"]
+sources_text = "[17][19][22]"
+
+[[entry]]
+id = "11.1-22"
+origin = "md:2936"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "30 fps on PS5 / PS5 Pro / Xbox Series reported — secondhand, via a YouTuber who visited Rockstar North (attributed to Rockstar's Rob Nelson). No direct Rockstar statement found."
+date = "2026-08-28"
+date_text = "2026-08-28"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-23"]
+sources_text = "[23]"
+
+[[entry]]
+id = "11.1-23"
+origin = "md:2937"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "*Grand Theft Auto VI: The Album* (with Atlantic Records) announced for 2026-11-19."
+date = "2026-09-17"
+date_text = "2026-09-17"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-17", "11-24"]
+sources_text = "[17][24]"
+
+[[entry]]
+id = "11.1-24"
+origin = "md:2938"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "\"The Goodtime State – Vice City Collection\" collectible set pre-orders announced."
+date = "2026-09-24"
+date_text = "2026-09-24"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "11.1-25"
+origin = "md:2939"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "ESRB **M (Mature 17+)** rating appears on store pages (descriptors reported: Blood and Gore, Intense Violence, Mature Humor, Nudity, Strong Language, Strong Sexual Content, Use of Drugs and Alcohol; In-Game Purchases). PEGI 18 (provisional on some storefronts), Australia R18+ (classification record 2026-08-27), NZ R18 (2026-10-02) per fan-site compilation."
+date_text = "~2026-10-02"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-25", "11-26"]
+sources_text = "[25][26]"
+
+[[entry]]
+id = "11.1-26"
+origin = "md:2940"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Newswire: in-game radio stations feature; GTA VI merchandise at Rockstar Store."
+date = "2026-10-08"
+date_text = "2026-10-08"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "11.1-27"
+origin = "md:2941"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "**Launch Trailer** released."
+date = "2026-10-15"
+date_text = "2026-10-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-27", "11-28"]
+sources_text = "[27][28]"
+
+[[entry]]
+id = "11.1-28"
+origin = "md:2942"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "Scheduled: pre-load opens; physical (code-in-box) copies at retail."
+date = "2026-11-12"
+date_text = "2026-11-12"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-18"]
+sources_text = "[18]"
+
+[[entry]]
+id = "11.1-29"
+origin = "md:2943"
+section = "11.1"
+kind = "milestone"
+games = ["gta6"]
+title = "**Scheduled worldwide release, PS5 & Xbox Series X\\|S.** As of 2026-10-24 no further delay announced."
+date = "2026-11-19"
+date_text = "**2026-11-19**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-14", "11-18", "11-27"]
+sources_text = "[14][18][27]"
+
+[[entry]]
+id = "11.2-1"
+origin = "md:2951"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Platforms at launch"
+notes = "PlayStation 5, Xbox Series X\\|S. \"Plays best on PS5\" marketing. No PC version announced as of Oct 2026."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1", "11-18", "11-27"]
+sources_text = "[1][18][27]"
+
+[[entry]]
+id = "11.2-2"
+origin = "md:2952"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Standard Edition"
+notes = "US$79.99"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-18"]
+sources_text = "[18]"
+
+[[entry]]
+id = "11.2-3"
+origin = "md:2953"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Ultimate Edition"
+notes = "US$99.99; digital extras (vehicles, weapons, clothing, hairstyles, tattoos, extra missions/locations). Sensor Tower estimated ~89% of pre-orders were Ultimate (via Wikipedia)."
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (share)"
+sources = ["11-1", "11-18"]
+sources_text = "[1][18]"
+
+[[entry]]
+id = "11.2-4"
+origin = "md:2954"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Pre-order / early-purchase bonus"
+notes = "\"Vintage Vice City Pack\" ('55 Vapid Stanier + garage, 80s outfits/hairstyles, pastel weapon skin) for purchases before 2026-11-20."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-18"]
+sources_text = "[18]"
+
+[[entry]]
+id = "11.2-5"
+origin = "md:2955"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Physical edition"
+notes = "Box containing a download code — no disc. Pre-load from 2026-11-12."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1", "11-18"]
+sources_text = "[1][18]"
+
+[[entry]]
+id = "11.2-6"
+origin = "md:2956"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "**Ultimate Edition Upgrade** (separate SKU)"
+notes = "Rockstar Support: the Ultimate Edition is the game plus the \"GTAVI: Ultimate Edition Upgrade\" ('95 Grotti Cheetah, Hawk & Little Morgan revolvers, personalised weapon variants, Vice City Styles, Jason's safehouse vehicles, Ganado Retro Build, Rideout Customs mod shop, Sara's Unisex Salon, Shitzu Squalo, Stock 305 clothing store, '67 Vapid Dominator Buggy and garage, Electric Fang tattoo parlour, One-Eyed Willie's mod shop, Goodtime Gear, PTT Youngin$ compound, Classic Car Collection). The Upgrade is also sold separately as a digital add-on on the PlayStation and Microsoft stores. Standard Edition owners, including physical-code owners, can buy it once their code has been redeemed."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["11-65"]
+sources_text = "[65]"
+
+[[entry]]
+id = "11.2-7"
+origin = "md:2957"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "**No physical Ultimate Edition**"
+notes = "\"A physical version of the Grand Theft Auto VI: Ultimate Edition is not available\"; physical Standard owners can buy the Upgrade instead."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["11-65"]
+sources_text = "[65]"
+
+[[entry]]
+id = "11.2-8"
+origin = "md:2958"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Digital vs physical pre-order bonus"
+notes = "Digital pre-orders or purchases of either edition before **2026-11-20** get the Vintage Vice City Pack ('55 Vapid Stanier Sedan and garage, outfits and hairstyles, exclusive weapon pattern) **plus one month of GTA+ membership**. The physical code includes the Vintage Vice City Pack only, with no GTA+ month. Digital pre-load starts at local midnight on 2026-11-12; physical copies ship from 2026-11-12."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["11-65"]
+sources_text = "[65]"
+
+[[entry]]
+id = "11.2-9"
+origin = "md:2959"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Code region locks"
+notes = "Code redemption follows the region of the platform account. **PlayStation** codes are locked to these region groups: Brazil; LATAM (15 countries); North America (Canada, US); Korea; Japan; United Kingdom; Saudi Arabia & UAE; Rest of Asia (HK, Indonesia, Malaysia, Singapore, Taiwan, Thailand); Rest of EMEA and Asia (Australia, India, New Zealand, South Africa, Turkey, Ukraine and most European countries). **Xbox codes are not region-locked.** Japanese product codes expire 170 days after issuance, the issuance date being the 2026-11-19 launch (\"due to regional regulations\")."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["11-65"]
+sources_text = "[65]"
+
+[[entry]]
+id = "11.2-10"
+origin = "md:2960"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Monetisation"
+notes = "Rockstar stated no microtransactions at launch and no generative AI (per Wikipedia summary)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "11.2-11"
+origin = "md:2961"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Frame rate"
+notes = "30 fps on consoles at launch (secondhand report)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-23"]
+sources_text = "[23]"
+
+[[entry]]
+id = "11.2-12"
+origin = "md:2962"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "Build / version numbers"
+notes = "No retail build or day-one patch numbers published as of 2026-10-24."
+confidence_text = "—"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.2-13"
+origin = "md:2963"
+section = "11.2"
+kind = "edition"
+games = ["gta6"]
+title = "GTA Online for GTA VI"
+notes = "No official announcement found."
+confidence_text = "—"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.3-1"
+origin = "md:2969"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Date posted"
+notes = "18 September 2022 (Sunday), on GTAForums, user \"teapotuberhacker\" (PC Gamer dates the posts 19 Sept)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-7", "11-9", "11-29"]
+sources_text = "[7][9][29]"
+
+[[entry]]
+id = "11.3-2"
+origin = "md:2970"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Material"
+notes = "~90 videos (~3 GB; ~50 min to \"over an hour\" of footage) of an early GTA VI development build; videos taken from Rockstar's internal Slack. A source told PC Gamer most clips were likely attached to QA bug reports."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-7", "11-8", "11-9", "11-29"]
+sources_text = "[7][8][9][29]"
+
+[[entry]]
+id = "11.3-3"
+origin = "md:2971"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Visible build details"
+notes = "Placeholder/debug content: on-screen \"Time Until Cops Dispatched\" countdown; placeholder subtitle \"Jason: GENERIC_CURSE_TO_SELF\"; \"WhatUp! message received\" notification; recycled GTA V police car marked \"V.C.P.D.\"; NPC clipping. Earlier leaked files carried \"Americas\" in their names, some showing the build running on a **PS4 dev kit**."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-9"]
+sources_text = "[9]"
+
+[[entry]]
+id = "11.3-4"
+origin = "md:2972"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Content"
+notes = "Vice City (Vice City Metro), playable female (Lucia) and male (Jason) protagonists, diner robbery, strip club, shootouts."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-9", "11-29"]
+sources_text = "[9][29]"
+
+[[entry]]
+id = "11.3-5"
+origin = "md:2973"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Hacker claims"
+notes = "Claimed GTA V and GTA VI source code, assets and a test build; posted source-code snippets; threatened release (\"start releasing the source code\" if no contact within 24 h)."
+confidence = "confirmed"
+confidence_text = "✅ (claim)"
+sources = ["11-29", "11-30"]
+sources_text = "[29][30]"
+
+[[entry]]
+id = "11.3-6"
+origin = "md:2974"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Later leak of the stolen \"Build\" directory"
+notes = "Hidden Palace says the GTA V \"Oct 13, 2014\" development build (QA Version 108 / 0.0.0.77) comes from the 2022 leak's \"Build\" directory. That part was not published by the hacker but sold to private buyers, and an unknown buyer leaked it on **2026-09-18**, the fourth anniversary. It contains a very early GTA VI map rendition. See §8.1."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+
+[[entry]]
+id = "11.3-7"
+origin = "md:2975"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Rockstar response"
+notes = "19 Sept 2022 statement (\"extremely disappointed\"); Take-Two DMCA takedowns. Rockstar later told court the incident cost **US$5 million** and thousands of staff hours."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-8", "11-31"]
+sources_text = "[8][31]"
+
+[[entry]]
+id = "11.3-8"
+origin = "md:2976"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Perpetrator"
+notes = "**Arion Kurtaj** (b. c.2005, Oxford), Lapsus$ member; carried out the hack from a Travelodge hotel where police had placed him while on bail, using an Amazon Fire TV Stick, hotel TV and phone; posted in Rockstar's Slack \"I am not a Rockstar employee, I am an attacker.\""
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-30", "11-31", "11-32"]
+sources_text = "[30][31][32]"
+
+[[entry]]
+id = "11.3-9"
+origin = "md:2977"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Arrest"
+notes = "22 September 2022 (City of London Police)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "11.3-10"
+origin = "md:2978"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Trial"
+notes = "Southwark Crown Court, ~7-week trial, 2023. Found unfit to stand trial (autism); jury found on **23 August 2023** that he had committed all 12 alleged acts (incl. Rockstar, Uber, Nvidia, BT/EE, Revolut)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-30", "11-32"]
+sources_text = "[30][32]"
+
+[[entry]]
+id = "11.3-11"
+origin = "md:2979"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "Sentence"
+notes = "December 2023 (reported 21–22 Dec 2023): indefinite hospital order (secure hospital)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-31", "11-32"]
+sources_text = "[31][32]"
+
+[[entry]]
+id = "11.3-12"
+origin = "md:2980"
+section = "11.3"
+kind = "leak"
+games = ["gta6"]
+title = "2026 developments"
+notes = "Moved from secure hospital to prison, reported by BBC's Joe Tidy on 2026-07-14; assessed fit to plead; criminal trial set for **9 November 2026 at Woolwich Crown Court** (per defence chambers)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-33", "11-34"]
+sources_text = "[33][34]"
+
+[[entry]]
+id = "11.3a-1"
+origin = "md:2990"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "Video clips"
+notes = "90 clips, from under 10 seconds to over 3 minutes long, recorded March 2021 to September 2022. Filenames use the project codename **\"Americas\"** in two forms, `Americas YYYY-MM-DD HH-MM-SS` and `Americas_1 YYYY-MM-DD HH-MM-SS`. The document does not explain the `_1` suffix. It refers to 58 clips by filename (listed in the second table below)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-2"
+origin = "md:2991"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "Python code"
+notes = "`GTA6MENU.py`, a menu script rather than game code, containing the comment \"#americas is purple background with white text\" (hex `#800080`)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-3"
+origin = "md:2992"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "C++ code"
+notes = "\"GameHeaders_Tasks\": AI task code that \"specifically referred to GTA V features\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-4"
+origin = "md:2993"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "Other data"
+notes = "GTA V vehicle handling data from GTA V's source code."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-5"
+origin = "md:2994"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "PDF screenshots"
+notes = "2 screenshots of an \"Americas\" PDF about camera controls and build previews for developers. The build shown is listed as **\"PDF Screenshot v270.0\"**, the lowest build number in the document, with no date."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-6"
+origin = "md:2995"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "Executables"
+notes = "Clips dated 12 and 13 Sep 2022 carry `game_win64_bankrelease.exe` in their file metadata tags. Other clips show `game_win64_beta.exe`, and one shows `game_win64_debug.exe`. The document reads \"bankrelease\" as aiming at \"feature complete\" and \"beta\" as aiming at \"content complete\"; that is its own interpretation."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-7"
+origin = "md:2996"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "Sample clip metadata"
+notes = "Quoted for one `Americas_1` clip dated 2022-09-13: recorded with Microsoft Game DVR; `startTime` 2022-09-13T15:24:00Z, `endTime` 2022-09-13T15:24:43Z, 43 seconds; `game_win64_bankrelease.exe`; Intel Core i9-10980XE @ 3.00 GHz; NVIDIA GeForce RTX 2080 SUPER, driver 31.0.15.1659; VMware Horizon Indirect Display Driver 1.4.18.0."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-8"
+origin = "md:2997"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "PCs used for recordings"
+notes = "13 CPU/GPU combinations: Xeon E5-1650 v3 + GTX 1080; Xeon W-2135 + GTX 1080; Threadripper 3970X + RTX 2080 SUPER; Threadripper PRO 3975WX + RTX 2080 SUPER; Threadripper 2950X + GTX TITAN X; Xeon W-2135 + RTX 2070 SUPER; Xeon W-2135 + RTX 2080 SUPER; Threadripper PRO 3955WX + RTX 3080; Core i9-10980XE + RTX 2080 SUPER; Threadripper PRO 3955WX + RTX 2080 SUPER; Threadripper PRO 3975WX + RTX 3060 Ti; Threadripper PRO 3955WX + RTX 3060 Ti; Threadripper PRO 3975WX + RTX 3080."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-9"
+origin = "md:2998"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "PS4 dev kit"
+notes = "Under \"Useful Links\", the document labels psdevwiki's page for PS4 system software **5.508.011** as \"The PS4 Dev Kit used in the leaks\" (https://www.psdevwiki.com/ps4/5.508.011)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-10"
+origin = "md:2999"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "Engine / debug details"
+notes = "RAGE with RDR2's lighting and volumetric-cloud skybox; a C++ user-interface library the document names \"Dear ImUI\". Debug character labels `PLAYER_LUCIA_PLAYER_STORY000_00` and `PLAYER_JASON_PLAYER_STORY000_01`, numbered by story stage. World Events show **Passing**/**NotPassing** rule states (e.g. *isPlayableCharacter*, *isWantedRule*). Some clips use low-detail `[low_int]` character models. The document also lists 190 \"Rage AI Debug Options\" menu entries (e.g. HorseAvoidance, DecisionMaker, Stealth, Robbery, Jacking)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-11"
+origin = "md:3000"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "Original leak thread"
+notes = "Linked in the document as GTAForums topic 985481, \"GTA 6 Americas leak 90 mp4 footage/videos\" (archived): https://gtaforums.com/topic/985481-gta-6-americas-leak-90-mp4-footagevideos/"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+
+[[entry]]
+id = "11.3a-12"
+origin = "md:3006"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "undated"
+notes = "\"PDF Screenshot\": the two PDF screenshots about camera controls and build previews."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "0"
+"Build (as listed)" = "**v270.0**"
+
+[[entry]]
+id = "11.3a-13"
+origin = "md:3007"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-03-03"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "1"
+"Build (as listed)" = "**v400.0.17**"
+
+[[entry]]
+id = "11.3a-14"
+origin = "md:3008"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-03-23"
+notes = "`Americas 2021-03-23 09-58-52`: at 0:12 Deep Purple's \"Smoke on the Water\" plays. The document says it is the only placeholder song not taken from GTA V/Online."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "2"
+"Build (as listed)" = "**v404.0.4**"
+
+[[entry]]
+id = "11.3a-15"
+origin = "md:3009"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-04-15"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "3"
+"Build (as listed)" = "**v409.8.7**"
+
+[[entry]]
+id = "11.3a-16"
+origin = "md:3010"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-05-18"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "4"
+"Build (as listed)" = "**v414.0**"
+
+[[entry]]
+id = "11.3a-17"
+origin = "md:3011"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-05-19"
+notes = "`Americas_1 2021-05-19 14-07-04`: extended cover; a test NPC moves to the other side of a wall while staying in cover."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "5"
+"Build (as listed)" = "**v415.0**"
+
+[[entry]]
+id = "11.3a-18"
+origin = "md:3012"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-05-28"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "6"
+"Build (as listed)" = "**v418.0.11**"
+
+[[entry]]
+id = "11.3a-19"
+origin = "md:3013"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-06-04"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "7"
+"Build (as listed)" = "**v420.04**"
+
+[[entry]]
+id = "11.3a-20"
+origin = "md:3014"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-06-22"
+notes = "`Americas 2021-06-22 20-24-48`: weapon wheel split into **Weapons, Equipment and Gear** sections (compared to RDR2), with a large carrying capacity."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "8"
+"Build (as listed)" = "**v423.0**"
+
+[[entry]]
+id = "11.3a-21"
+origin = "md:3015"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-07-12"
+notes = "`Americas 2021-07-12 12-19-51`, the **Hank's Waffles robbery** (Port Gellhorn). Objectives \"Rob The Diner\", \"Rob the cash register (0/2 → 2/2)\", \"Escape the diner\", \"Lose the Cops\". Witness and police tags \"Full Description\", \"No Vehicle Description → Full Vehicle Description\" and \"Any vehicle you are seen entering will be known by the Law\". Lucia can tell Jason to surrender or follow (\"check in with Jason, or hold for more options\"). Lucia restrains an NPC (apparently zip ties). \"Examine - Stranger SUV\" prompt; D-pad vehicle controls. Money-laundering icon (washing machine with $) at a car wash. Police wait outside instead of rushing in. Customer line \"Jesus, finally\". The music is the GTA Online *Diamond Casino Heist* track with added synths. Jason and Lucia have different car-entry animations, and Lucia crawls over the passenger seat while wanted. The document transcribes the full dialogue."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "9"
+"Build (as listed)" = "**v428.0**"
+
+[[entry]]
+id = "11.3a-22"
+origin = "md:3016"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-09-01"
+notes = "`Americas 2021-09-01 14-44-53`: an NPC taking a selfie near Ocean Beach; realistic wind."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "10"
+"Build (as listed)" = "**v440.0**"
+
+[[entry]]
+id = "11.3a-23"
+origin = "md:3017"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-10-29"
+notes = "`Americas 2021-10-29 20-21-10`: Jason opens shipping containers (\"stash gold\", \"stash cash stack\") and puts loot in a duffle bag. Cash is picked up one stack at a time, and there is a duffle-bag pickup animation. Items are shared with Lucia. Riding a Maibatsu Sanchez shows a \"new livery found\" notification, the minimap appears on the bike, and Jason squeezes the brake before starting it. At 2:20 Megan Thee Stallion ft. DaBaby, \"Cash Shit\" (iFruit Radio)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "11"
+"Build (as listed)" = "**v456.0.1**"
+
+[[entry]]
+id = "11.3a-24"
+origin = "md:3018"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-11-05"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "12"
+"Build (as listed)" = "**v457.0.13**"
+
+[[entry]]
+id = "11.3a-25"
+origin = "md:3019"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-11-23"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "13"
+"Build (as listed)" = "**v462.0**"
+
+[[entry]]
+id = "11.3a-26"
+origin = "md:3020"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-11-29"
+notes = "`Americas 2021-11-29 16-23-34`: `KneelingDesired` in the PlayerPed animation set (kneel position changes while crouching)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "14"
+"Build (as listed)" = "**v464.0.6**"
+
+[[entry]]
+id = "11.3a-27"
+origin = "md:3021"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-12-02"
+notes = "`Americas 2021-12-02 10-38-02`: extended cover mechanics."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "15"
+"Build (as listed)" = "**v465.0**"
+
+[[entry]]
+id = "11.3a-28"
+origin = "md:3022"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2021-12-17"
+notes = "`Americas 2021-12-17 10-31-22`: Jason enters a pawn shop (the document says it is called Joyeria Empenos, the name of a real Miami pawn shop), with scuff marks on the carpet. At 0:10 Future, \"Codeine Crazy\" (Blonded LS)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "16"
+"Build (as listed)" = "**v470.0.7**"
+
+[[entry]]
+id = "11.3a-29"
+origin = "md:3023"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-01-11"
+notes = "No clip from this date is named. The document adds \"(development likely halted during holidays)\", which is its own comment."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "17"
+"Build (as listed)" = "**v470.0**"
+
+[[entry]]
+id = "11.3a-30"
+origin = "md:3024"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-01-20"
+notes = "`Americas 2022-01-20 11-18-26`: a different weapon wheel, with a separate weapon in each hand, a quick-item inventory at bottom left (trauma kits, pills, cigarettes) and limited carrying capacity."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "18"
+"Build (as listed)" = "**v474.0.4**"
+
+[[entry]]
+id = "11.3a-31"
+origin = "md:3025"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-02-07"
+notes = "`Americas 2022-02-07 14-18-40`: enemy AI shoots Lucia when she turns her back."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "19"
+"Build (as listed)" = "**v479.0**"
+
+[[entry]]
+id = "11.3a-32"
+origin = "md:3026"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-02-10"
+notes = "`Americas 2022-02-10 20-25-15`, the **S4S Import Garage scope-out mission** in the San 4 San hood (Little Haiti). Debug text \"DoorPanel: Locked\" and \"Door: Unlocked\". CCTV detection with lines \"Citizen's reporting.\" and \"The fuck?\"; a San 4 San goon says \"Oh nah, that ain't it at all.\" Shows the San 4 San – Little Haiti Memorial location. At 0:17 Little Dragon, \"Wanderer\" (The Lab)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "20"
+"Build (as listed)" = "**v480.0.8**"
+
+[[entry]]
+id = "11.3a-33"
+origin = "md:3027"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-03-11"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "21"
+"Build (as listed)" = "**v486.0**"
+
+[[entry]]
+id = "11.3a-34"
+origin = "md:3028"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-03-21"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "22"
+"Build (as listed)" = "**v490.1**"
+
+[[entry]]
+id = "11.3a-35"
+origin = "md:3029"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-03-23"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "23"
+"Build (as listed)" = "**v491.0**"
+
+[[entry]]
+id = "11.3a-36"
+origin = "md:3030"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-04-05"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "24"
+"Build (as listed)" = "**v494.0.4**"
+
+[[entry]]
+id = "11.3a-37"
+origin = "md:3031"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-04-06"
+notes = "`Americas 2022-04-06 15-42-03`: a cop uniform based on the Miami Beach PD. `Americas 2022-04-06 15-55-26`: Lucia's shootout with police in Rockridge, with heavy fog, night lighting as she walks away from the nightclub, a cop in a bulletproof helmet, and wounded cops struggling to get up."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "25"
+"Build (as listed)" = "**v495.0.7**"
+
+[[entry]]
+id = "11.3a-38"
+origin = "md:3032"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-04-11 – 2022-04-12"
+notes = "`Americas_1 2022-04-12 10-28-55`, **\"The DJ's Party\"** (South Beach): NPCs drinking at a bar, pedestrian and DJ lines transcribed, and at 0:33 The Dirtbombs' \"Sharivari\" (Moodymann set from Music Locker Radio). `Americas 2022-04-12 18-36-00`: Jason shoots from a boat; particles float on the water, lily pads react to waves, and a dropped magazine stays on the ground."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "26"
+"Build (as listed)" = "**v496.0**"
+
+[[entry]]
+id = "11.3a-39"
+origin = "md:3033"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-04-21"
+notes = "`Americas 2022-04-21 16-26-26`: Jason is startled in a cutscene called \"animal_scare\" by a small animal that fits in a container. The document's Animals list ties this clip to the \"Skunk Ape\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "27"
+"Build (as listed)" = "**v498.0**"
+
+[[entry]]
+id = "11.3a-40"
+origin = "md:3034"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-04-27"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "28"
+"Build (as listed)" = "**v501.0.1**"
+
+[[entry]]
+id = "11.3a-41"
+origin = "md:3035"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-04-28"
+notes = "`Americas 2022-04-28 13-08-47`: \"Downed Self Revive\" (revive yourself after a heavy hit)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "29"
+"Build (as listed)" = "**v501.0.4**"
+
+[[entry]]
+id = "11.3a-42"
+origin = "md:3036"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-05-03"
+notes = "`Americas 2022-05-03 11-20-11`: Jason at a gas station; items picked up and split with Lucia (4× Soda, 2× Wine each)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "30"
+"Build (as listed)" = "**v502.0**"
+
+[[entry]]
+id = "11.3a-43"
+origin = "md:3037"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-05-13"
+notes = "`Americas 2022-05-13 08-48-26`: a Metromover, at a location based on Miami Airport Station, with \"Vice City Metro Mule\" and \"VCIA\" trains."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "31"
+"Build (as listed)" = "**v502.1**"
+
+[[entry]]
+id = "11.3a-44"
+origin = "md:3038"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-05-19"
+notes = "Clip written in the document as `Americas 2022-05-19-15-18-13`: the player wears Arthur's (RDR2) hat and cargo shorts with a holster belt."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "32"
+"Build (as listed)" = "**v506.0.8**"
+
+[[entry]]
+id = "11.3a-45"
+origin = "md:3039"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-05-20"
+notes = "`Americas_1 2022-05-20 11-20-13`: same location as the building where Jason picks up an assault rifle (`Americas_1 2021-09-10 16-37-50`) and the apartment bedroom (`Americas_1 2022-08-23 15-56-16`)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "33"
+"Build (as listed)" = "**v504.0**"
+
+[[entry]]
+id = "11.3a-46"
+origin = "md:3040"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-05-25"
+notes = "`Americas 2022-05-25 13-29-33`: delivery-van event spawn in a Port Gellhorn industrial area, next to a security-camera warning poster."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "34"
+"Build (as listed)" = "**v508.0.6**"
+
+[[entry]]
+id = "11.3a-47"
+origin = "md:3041"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-06-08"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "35"
+"Build (as listed)" = "**v510.0.4**"
+
+[[entry]]
+id = "11.3a-48"
+origin = "md:3042"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-06-14"
+notes = "`Americas 2022-06-14 19-28-07`: bullets scratch vehicles and throw sparks."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "36"
+"Build (as listed)" = "**v510.0**"
+
+[[entry]]
+id = "11.3a-49"
+origin = "md:3043"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-06-27"
+notes = "`Americas 2022-06-27 14-52-04`, a highway crash test: Lucia drives Jason's personal vehicle and crashes into the edge of an unfinished bridge, showing heavier handling, parts breaking away and sparks. Road signs read \"North Beaches – Lake Leonida\", \"Washington Beach, Ekanfinaka\" and (partly legible) \"Bellville Ekanfinaka\". The road passes over a Wynwood-based area (the S4S hood). The document names the highway both \"Interstate 95\" and \"Interstate 97\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "37"
+"Build (as listed)" = "**v515.0**"
+
+[[entry]]
+id = "11.3a-50"
+origin = "md:3044"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-07-20"
+notes = "`Americas 2022-07-20 08-34-27`: a group taking selfies in Ocean Beach. `Americas_1 2022-07-20 17-59-49`: buying gumballs; Lucia at a Port Gellhorn Quickshop with a \"Sorry! WE'RE CLOSED\" sign; a chips-bag collision box outside. At 0:01 The Ramones, \"Time Bomb\" (Kult FM)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "38"
+"Build (as listed)" = "**v524.0**"
+
+[[entry]]
+id = "11.3a-51"
+origin = "md:3045"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-07-22"
+notes = "`Americas 2022-07-22 15-33-32`: police AI adjusts its stance to cover height and lowers itself to reload; protagonist hit-reaction animations."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "39"
+"Build (as listed)" = "**v526.0.11**"
+
+[[entry]]
+id = "11.3a-52"
+origin = "md:3046"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-08-03"
+notes = "`Americas 2022-08-03 10-02-00`: Skepta ft. Nafe Smallz, \"Greaze Mode\" (iFruit Radio). `Americas 2022-08-03 10-05-49`, **Jack of Hearts nightclub**: Lucia follows Dre; lines by Dre, Tit, Sam and a stripper are transcribed (Boobie and Dre's music studio, Tit gets fired); Jason is sweaty; at 1:18 DaBaby ft. Kevin Gates, \"POP STAR\" (iFruit Radio). `Americas_1 2022-08-03 12-19-05`: Lucia with a different look (Rockridge)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "40"
+"Build (as listed)" = "**v529.0.6**"
+
+[[entry]]
+id = "11.3a-53"
+origin = "md:3047"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-08-05"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "41"
+"Build (as listed)" = "**v530.0**"
+
+[[entry]]
+id = "11.3a-54"
+origin = "md:3048"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-08-08"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "42"
+"Build (as listed)" = "**v531.0.4**"
+
+[[entry]]
+id = "11.3a-55"
+origin = "md:3049"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-08-11"
+notes = "No clip from this date is named."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "43"
+"Build (as listed)" = "**v528.0**"
+
+[[entry]]
+id = "11.3a-56"
+origin = "md:3050"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-09-06"
+notes = "`Americas 2022-09-06 17-13-34`, **\"Wyman's Rant\"** at the motel pool (broken chairs, swampy water). Transcript includes a mention of Jay Norris (GTA V), which the document takes as confirmation of the HD universe."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "44"
+"Build (as listed)" = "**v541.0.4**"
+
+[[entry]]
+id = "11.3a-57"
+origin = "md:3051"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-09-07"
+notes = "`Americas 2022-09-07 13-04-13`: the Crandon Park Tennis Stadium location."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "45"
+"Build (as listed)" = "**v541.0.6**"
+
+[[entry]]
+id = "11.3a-58"
+origin = "md:3052"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-09-12"
+notes = "`Americas_1 2022-09-12 14-42-12`: Jason's clothes are dirty, with dead leaves on the ground in Rockridge. `Americas_1 2022-09-12 16-42-30`: the locomotion team testing partner AI. Clips from this date run `game_win64_bankrelease.exe`."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "46"
+"Build (as listed)" = "**v542.0**"
+
+[[entry]]
+id = "11.3a-59"
+origin = "md:3053"
+section = "11.3a"
+kind = "leak"
+games = ["gta6"]
+title = "2022-09-13"
+notes = "`Americas_1 2022-09-13 16-24-02`: Lucia with make-up and straight, differently coloured hair. `Americas_1 2022-09-13 16-32-43`: a LoanDepot Park–based Vice City Mambas stadium. `Americas 2022-09-13 17-17-43`: more detailed car interiors. Clips from this date run `game_win64_bankrelease.exe` (see the sample metadata above)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-70"]
+sources_text = "[70]"
+[entry.fields]
+"#" = "47"
+"Build (as listed)" = "**v533.0**"
+
+[[entry]]
+id = "11.4-1"
+origin = "md:3080"
+section = "11.4"
+kind = "leak"
+games = ["gta6"]
+title = "Date"
+notes = "4 December 2023 (evening, US time) — ~15 hours before the planned 2023-12-05 09:00 ET premiere."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-3", "11-5"]
+sources_text = "[3][5]"
+
+[[entry]]
+id = "11.4-2"
+origin = "md:3081"
+section = "11.4"
+kind = "leak"
+games = ["gta6"]
+title = "Nature"
+notes = "Low-quality copy of the official trailer circulated on X/Twitter; Rockstar responded by publishing the full trailer immediately. Viewed ~60 million times on YouTube by next morning (Axios); ~101 million within two days (Wikipedia)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-3", "11-5"]
+sources_text = "[3][5]"
+
+[[entry]]
+id = "11.4-3"
+origin = "md:3082"
+section = "11.4"
+kind = "leak"
+games = ["gta6"]
+title = "Source of leak"
+notes = "Not officially disclosed."
+confidence_text = "—"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.5-1"
+origin = "md:3088"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "\"CyberLeek\" website, backup domains and a Solana-based **$CYBERLEEK** meme token reportedly set up."
+date_text = "08-14 / 08-15"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-20"]
+sources_text = "[20]"
+
+[[entry]]
+id = "11.5-2"
+origin = "md:3089"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "First gameplay clips published (basketball, roadside confrontation) with a \"consumer-rights\" manifesto (against digital-only/code-in-box physical release, paid edition content, and for keeping single-player games playable after support ends); alleged Leonida map images circulate."
+date_text = "08-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-20", "11-21", "11-62"]
+sources_text = "[20][21][62]"
+
+[[entry]]
+id = "11.5-3"
+origin = "md:3090"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "Further clips (taser, \"Junkies\", plane clip with \"LEEK\" shot into a wall — read as evidence of hands-on access to a playable build; club, beach, store, death screen, first on-screen Lucia mention); token-gated polls; fake \"leaked build\" torrents circulate. Wikipedia counts at least 16 videos over nine days by 26 Aug."
+date_text = "08-19 → 08-25"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (counts)"
+sources = ["11-1", "11-20"]
+sources_text = "[1][20]"
+
+[[entry]]
+id = "11.5-4"
+origin = "md:3091"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "Take-Two legal action reportedly targets Microsoft and Discord (subpoenas to identify accounts); Wikipedia also lists X Corp. Xbox CTO publicly said Microsoft was cooperating."
+date_text = "08-21 onward"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-1", "11-20", "11-61"]
+sources_text = "[1][20][61]"
+
+[[entry]]
+id = "11.5-5"
+origin = "md:3092"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "Rockstar statement: leaks \"heartbreaking for our team\"; game nearly finished; Extended Look still premiering 27 Aug; release date reaffirmed."
+date_text = "08-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-21"]
+sources_text = "[21]"
+
+[[entry]]
+id = "11.5-6"
+origin = "md:3093"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "Media reported CyberLeek withdrew ~US$268,000 in token fees and the token collapsed (per Wikipedia)."
+date_text = "08-27"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "11.5-7"
+origin = "md:3094"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "Never established publicly; no playable build distributed. Suggested late-stage build (SOCRadar analysis)."
+date_text = "Build provenance"
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["11-20"]
+sources_text = "[20]"
+
+[[entry]]
+id = "11.5-8"
+origin = "md:3095"
+section = "11.5"
+kind = "leak"
+games = ["gta6"]
+title = "Not publicly identified as of 2026-10-24 (no arrest found in sources consulted)."
+date_text = "Identity"
+confidence_text = "—"
+sources_text = "not documented"
+
+[sources]
+11-1 = { text = "Wikipedia — \"Grand Theft Auto VI\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI (incl. cited Bloomberg https://www.bloomberg.com/news/articles/2024-12-09/-gta-6-release-date-will-decide-much-of-the-2025-game-calendar ; IGN https://www.ign.com/articles/gta-6-development-began-in-earnest-in-2020-following-the-massive-success-of-red-dead-redemption-2-take-two-says ; IGN https://www.ign.com/articles/rockstar-games-is-asking-employees-to-return-to-office-amid-gta-security-concerns)", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI", origin = "md:3240" }
+11-2 = { text = "TechRadar — \"GTA 6 is in active development and 'well underway', Rockstar confirms\" (4 Feb 2022): https://www.techradar.com/news/gta-6-is-in-active-development-and-well-underway-according-to-rockstar", url = "https://www.techradar.com/news/gta-6-is-in-active-development-and-well-underway-according-to-rockstar", origin = "md:3241" }
+11-3 = { text = "Axios — \"Grand Theft Auto VI is official, launches in 2025\" (5 Dec 2023): https://www.axios.com/2023/12/05/grand-theft-auto-vi-trailer-early", url = "https://www.axios.com/2023/12/05/grand-theft-auto-vi-trailer-early", origin = "md:3242" }
+11-4 = { text = "Rockstar Games — GTA VI Launch Trailer page (lists Trailer 1 4 Dec 2023, Trailer 2 6 May 2025, Extended Look 27 Aug 2026, Launch Trailer 15 Oct 2026): https://www.rockstargames.com/VI/launch-trailer", url = "https://www.rockstargames.com/VI/launch-trailer", origin = "md:3243" }
+11-5 = { text = "Kotaku — first trailer leak (cited by Wikipedia): https://kotaku.com/gta-vi-gta6-first-trailer-gameplay-footage-details-leak-1851005265", url = "https://kotaku.com/gta-vi-gta6-first-trailer-gameplay-footage-details-leak-1851005265", origin = "md:3244" }
+11-7 = { text = "The Guardian — \"Rockstar owner issues takedowns after Grand Theft Auto VI leak\" (19 Sep 2022): https://www.theguardian.com/games/2022/sep/19/rockstar-owner-issues-takedowns-after-grand-theft-auto-vi-leak", url = "https://www.theguardian.com/games/2022/sep/19/rockstar-owner-issues-takedowns-after-grand-theft-auto-vi-leak", origin = "md:3246" }
+11-8 = { text = "Variety — \"'GTA 6' Leak: Rockstar Games Confirms Hack\" (Sep 2022): https://variety.com/2022/digital/news/grand-theft-auto-6-leak-rockstar-games-hack-1235376727", url = "https://variety.com/2022/digital/news/grand-theft-auto-6-leak-rockstar-games-hack-1235376727", origin = "md:3247" }
+11-9 = { text = "PC Gamer — \"Huge GTA 6 leak includes gameplay footage of robbery, Vice City locations, and two playable characters\" (Sep 2022): https://www.pcgamer.com/heres-another-alleged-gta-6-leak-this-time-with-video/", url = "https://www.pcgamer.com/heres-another-alleged-gta-6-leak-this-time-with-video/", origin = "md:3248" }
+11-10 = { text = "Game Informer — \"Grand Theft Auto VI Delayed To May 2026\" (2 May 2025): https://www.gameinformer.com/2025/05/02/grand-theft-auto-vi-delayed-to-may-2026", url = "https://www.gameinformer.com/2025/05/02/grand-theft-auto-vi-delayed-to-may-2026", origin = "md:3249" }
+11-11 = { text = "MobileSyrup — \"Rockstar Games delays Grand Theft Auto VI to 2026\" (2 May 2025): https://mobilesyrup.com/2025/05/02/rockstar-games-delays-grand-theft-auto-vi-to-2026/", url = "https://mobilesyrup.com/2025/05/02/rockstar-games-delays-grand-theft-auto-vi-to-2026/", origin = "md:3250" }
+11-12 = { text = "Eurogamer — \"GTA 6's second trailer is here\" (6 May 2025): https://www.eurogamer.net/gta-6s-second-trailer-is-here", url = "https://www.eurogamer.net/gta-6s-second-trailer-is-here", origin = "md:3251" }
+11-13 = { text = "BBC News — Rockstar dismissals / union-busting allegation (2025): https://www.bbc.com/news/articles/c9v10rr1meeo", url = "https://www.bbc.com/news/articles/c9v10rr1meeo", origin = "md:3252" }
+11-14 = { text = "GIGAZINE — \"GTA VI release date postponed to November 19, 2026\" (7 Nov 2025): https://gigazine.net/gsc_news/en/20251107-grand-theft-auto-vi-launch-november-19-2026", url = "https://gigazine.net/gsc_news/en/20251107-grand-theft-auto-vi-launch-november-19-2026", origin = "md:3253" }
+11-15 = { text = "Guru3D — \"Rockstar Delays GTA VI Again: New Release Date Set for November 2026\": https://www.guru3d.com/story/rockstar-delays-gta-vi-again-new-release-date-set-for-november-2026/", url = "https://www.guru3d.com/story/rockstar-delays-gta-vi-again-new-release-date-set-for-november-2026/", origin = "md:3254" }
+11-16 = { text = "Forbes — \"GTA 6 Pre-Order Date Confirmed As Rockstar Reveals Official Cover Art And New Logo\" (18 Jun 2026): https://www.forbes.com/sites/brianmazique/2026/06/18/gta-6-pre-order-date-confirmed-as-rockstar-reveals-official-cover-art-and-new-logo/", url = "https://www.forbes.com/sites/brianmazique/2026/06/18/gta-6-pre-order-date-confirmed-as-rockstar-reveals-official-cover-art-and-new-logo/", origin = "md:3255" }
+11-17 = { text = "Endgame Tools — list of official Rockstar Newswire GTA VI posts (fan aggregator; used for post titles/dates, corroborated where marked ✅): https://endgametools.com/en/gta-6/newswire", url = "https://endgametools.com/en/gta-6/newswire", origin = "md:3256" }
+11-18 = { text = "Engadget — \"Rockstar finally reveals pricing for Grand Theft Auto 6\" (24 Jun 2026): https://www.engadget.com/2200483/rockstar-reveals-gta-6-pricing-launch/", url = "https://www.engadget.com/2200483/rockstar-reveals-gta-6-pricing-launch/", origin = "md:3257" }
+11-19 = { text = "Rockstar Newswire — \"Grand Theft Auto VI: An Extended Look\": https://www.rockstargames.com/newswire/article/9k2kaa1o3297k9/grand-theft-auto-vi-an-extended-look ; Wikipedia: https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI:_An_Extended_Look", url = "https://www.rockstargames.com/newswire/article/9k2kaa1o3297k9/grand-theft-auto-vi-an-extended-look", origin = "md:3258" }
+11-20 = { text = "SOCRadar — \"The GTA VI Leak by CyberLeek Explained\" (Aug 2026): https://socradar.io/blog/gta-vi-leak-cyberleek-explained/", url = "https://socradar.io/blog/gta-vi-leak-cyberleek-explained/", origin = "md:3259" }
+11-21 = { text = "LADbible — \"Rockstar Games issues GTA 6 leaks statement…\" (26 Aug 2026): https://www.ladbible.com/entertainment/gaming/rockstar-gta-leaks-grand-theft-auto-155567-20260826", url = "https://www.ladbible.com/entertainment/gaming/rockstar-gta-leaks-grand-theft-auto-155567-20260826", origin = "md:3260" }
+11-22 = { text = "TechSpot — \"GTA 6 Extended Look draws over 50 million views, crashing Netflix…\": https://www.techspot.com/news/113726-gta-6-extended-look-draws-over-50-million.html", url = "https://www.techspot.com/news/113726-gta-6-extended-look-draws-over-50-million.html", origin = "md:3261" }
+11-23 = { text = "PlayStation LifeStyle — \"GTA 6 30 FPS Support Leaves PlayStation 5 Players Torn\" (28 Aug 2026): https://www.playstationlifestyle.net/2026/08/28/gta-6-ps5-30-fps-confirmation-players-torn/", url = "https://www.playstationlifestyle.net/2026/08/28/gta-6-ps5-30-fps-confirmation-players-torn/", origin = "md:3262" }
+11-24 = { text = "Music Business World Wide — \"Atlantic Records to release Grand Theft Auto VI: The Album…\": https://www.musicbusinessworldwide.com/atlantic-records-to-release-grand-theft-auto-vi-the-album-featuring-travis-scott-pinkpantheress-morgan-wallen-and-keith-richards/ ; Digital Music News (17 Sep 2026): https://www.digitalmusicnews.com/2026/09/17/grand-theft-auto-vi-the-album-release/", url = "https://www.musicbusinessworldwide.com/atlantic-records-to-release-grand-theft-auto-vi-the-album-featuring-travis-scott-pinkpantheress-morgan-wallen-and-keith-richards/", origin = "md:3263" }
+11-25 = { text = "The Movie Blog — \"GTA 6 Officially Rated M for Mature by ESRB\" (2 Oct 2026): https://www.themovieblog.com/2026/10/gta-6-officially-rated-m-for-mature-by-esrb/", url = "https://www.themovieblog.com/2026/10/gta-6-officially-rated-m-for-mature-by-esrb/", origin = "md:3264" }
+11-26 = { text = "GTAVice.net — \"GTA 6 Age Rating: ESRB, PEGI & Worldwide Ratings Explained\" (fan site): https://www.gtavice.net/news/gta-6-age-rating-esrb-pegi-and-worldwide-ratings-explained", url = "https://www.gtavice.net/news/gta-6-age-rating-esrb-pegi-and-worldwide-ratings-explained", origin = "md:3265" }
+11-27 = { text = "Rockstar Games — \"Grand Theft Auto VI – Launch Trailer\" video: https://www.rockstargames.com/videos/76orsa95 ; 9to5Toys (15 Oct 2026): https://9to5toys.com/2026/10/15/rockstar-new-grand-theft-auto-vi-launch-trailer/", url = "https://www.rockstargames.com/videos/76orsa95", origin = "md:3266" }
+11-28 = { text = "Final Weapon — \"Grand Theft Auto VI Releases Launch Trailer\" (15 Oct 2026): https://finalweapon.net/2026/10/15/grand-theft-auto-vi-releases-launch-trailer/", url = "https://finalweapon.net/2026/10/15/grand-theft-auto-vi-releases-launch-trailer/", origin = "md:3267" }
+11-29 = { text = "Video Games Chronicle — \"Huge GTA 6 leak sees over 90 alleged videos circulated\" (18 Sep 2022): https://www.videogameschronicle.com/news/huge-gta-6-leak-sees-over-90-alleged-videos-circulated/", url = "https://www.videogameschronicle.com/news/huge-gta-6-leak-sees-over-90-alleged-videos-circulated/", origin = "md:3268" }
+11-30 = { text = "PC Gamer — \"Teenager found liable for GTA 6 hack did it in a Travelodge…\" (23 Aug 2023): https://www.pcgamer.com/teenager-found-liable-for-gta-6-hack-did-it-in-a-travelodge-where-police-put-him-after-he-was-arrested-for-another-hack", url = "https://www.pcgamer.com/teenager-found-liable-for-gta-6-hack-did-it-in-a-travelodge-where-police-put-him-after-he-was-arrested-for-another-hack", origin = "md:3269" }
+11-31 = { text = "Engadget — \"Teen GTA 6 hacker sentenced to an indefinite hospitalization…\" (21 Dec 2023): https://www.engadget.com/gta-6-hacker-is-sentenced-to-an-indefinite-hospitalization-194251395.html", url = "https://www.engadget.com/gta-6-hacker-is-sentenced-to-an-indefinite-hospitalization-194251395.html", origin = "md:3270" }
+11-32 = { text = "Silicon Republic — \"Lapsu$ hacker behind GTA 6 leak sentenced to life in hospital prison\" (22 Dec 2023): https://siliconrepublic.com/enterprise/gta-6-hacker-life-hospital-prison-lapsu-arion-kurtaj", url = "https://siliconrepublic.com/enterprise/gta-6-hacker-life-hospital-prison-lapsu-arion-kurtaj", origin = "md:3271" }
+11-33 = { text = "TechSpot — Kurtaj moved from secure hospital to prison (17 Jul 2026; citing BBC's Joe Tidy, 14 Jul 2026): https://www.techspot.com/news/113156-gta-6-hacker-who-sentenced-life-secure-hospital.html", url = "https://www.techspot.com/news/113156-gta-6-hacker-who-sentenced-life-secure-hospital.html", origin = "md:3272" }
+11-34 = { text = "Red Lion Chambers — \"RLC instructed to defend in major cybercrime case\" (5 Aug 2026; trial 9 Nov 2026, Woolwich Crown Court): https://redlionchambers.co.uk/rlc-instructed-to-defend-in-major-cybercrime-case/", url = "https://redlionchambers.co.uk/rlc-instructed-to-defend-in-major-cybercrime-case/", origin = "md:3273" }
+11-35 = { text = "Pauta (8 Nov 2023) — Rockstar announces first GTA VI trailer for early December: https://www.pauta.cl/entretencion/2023/11/08/grand-theft-auto-vi-seria-anunciado-esta-semana-y-el-primer-trailer-sera-publicado-a-principios-de-diciembre.html ; Top Gear: https://www.topgear.com/car-news/gaming/mark-your-diaries-trailer-grand-theft-auto-6-will-land-december", url = "https://www.pauta.cl/entretencion/2023/11/08/grand-theft-auto-vi-seria-anunciado-esta-semana-y-el-primer-trailer-sera-publicado-a-principios-de-diciembre.html", origin = "md:3274" }
+11-36 = { text = "Yahoo/Variety — \"'Grand Theft Auto VI' Sets Fall 2025 Release as Take-Two Posts $2.9 Billion Quarterly Loss\" (May 2024): https://malaysia.news.yahoo.com/grand-theft-auto-6-sets-201500501.html", url = "https://malaysia.news.yahoo.com/grand-theft-auto-6-sets-201500501.html", origin = "md:3275" }
+11-61 = { text = "PC Gamer — \"Take-Two kicks off GTA 6 leaker hunt with subpoenas demanding records from Microsoft and Discord\" (2026; headline only, page not fetched): https://www.pcgamer.com/games/grand-theft-auto/take-two-kicks-off-gta-6-leaker-hunt-with-subpoenas-demanding-records-from-microsoft-and-discord/", url = "https://www.pcgamer.com/games/grand-theft-auto/take-two-kicks-off-gta-6-leaker-hunt-with-subpoenas-demanding-records-from-microsoft-and-discord/", origin = "md:3300" }
+11-62 = { text = "God is a Geek — \"GTA 6 Leak: Cyberleek Exposes Leonida Map\" (Aug 2026; headline only, page not fetched): https://godisageek.com/2026/08/gta-6-leak-leonida-map-cyberleek/", url = "https://godisageek.com/2026/08/gta-6-leak-leonida-map-cyberleek/", origin = "md:3301" }
+11-65 = { text = "Rockstar Support — \"Grand Theft Auto VI Platforms, Editions, and Versions\" (Last Updated: August 18, 2026; featured article on the support home page, read in a browser 2026-10-24): https://support.rockstargames.com/", url = "https://support.rockstargames.com/", origin = "md:3304" }
+11-68 = { text = "Hidden Palace — GTA V build pages (MediaWiki API, read 2026-10-24): https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_16,_2022_build) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_13,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_3,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Leftover_Sep_30,_2020_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/cnh_devkit_leftovers_assets ; Xbox 360 DLC prototype pages listed in Section 8 source [66]", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype", origin = "md:3307" }
+11-70 = { text = "\"Leakless\", *Comprehensive GTA VI Leak Analysis* v1.0 (.docx supplied by the user as `_Leakless__GTA_VI_Leak_Document_.docx`, read 2026-10-24; compiled \"with help from the extended mapping and r/GTA6 discord communities as well as GTAForums\"). Sections used: Introduction / \"What was leaked?\", RAGE Notes, New Additions, Weapons, Attention to Detail, Multiplayer, Locations, Animals, Audio, Transportation, Other Details, GTA VI Maps, Voice Lines, Rage AI Debug Options, Development Builds, PC specs used during recordings, State of the Game, The Python Leak. Links in the document include https://gtaforums.com/topic/985481-gta-6-americas-leak-90-mp4-footagevideos/ and https://www.psdevwiki.com/ps4/5.508.011", url = "https://gtaforums.com/topic/985481-gta-6-americas-leak-90-mp4-footagevideos/", origin = "md:3309" }

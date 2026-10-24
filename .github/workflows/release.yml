@@ -113,10 +113,16 @@ jobs:
           mkdir -p dist/eyefinder
           cp target/release/eyefinder target/release/eyefinder-cli README.md LICENSE dist/eyefinder/
           tar -C dist -czf "Eyefinder-${TAG}-linux-x64.tar.gz" eyefinder
+          # The build database as a pack, for "Import database file" in older or newer builds.
+          DBV="$(sed -n 's/^version = "\(.*\)"/\1/p' crates/ef-core/data/database/database.toml | head -n 1)"
+          target/release/eyefinder-cli db validate crates/ef-core/data/database
+          target/release/eyefinder-cli db pack crates/ef-core/data/database "eyefinder-database-${DBV}.zip"
       - uses: actions/upload-artifact@v6
         with:
           name: linux
-          path: Eyefinder-*-linux-x64.tar.gz
+          path: |
+            Eyefinder-*-linux-x64.tar.gz
+            eyefinder-database-*
 
   publish:
     needs: [prepare, windows, macos, linux]
@@ -134,4 +140,6 @@ jobs:
           draft: false
           body_path: docs/release-notes/${{ needs.prepare.outputs.tag }}.md
           fail_on_unmatched_files: true
-          files: Eyefinder-*
+          files: |
+            Eyefinder-*
+            eyefinder-database-*

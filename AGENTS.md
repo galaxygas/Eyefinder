@@ -47,7 +47,8 @@ All three must pass. CI runs them on Windows, macOS and Linux. On Linux the GUI 
 
 | Path | What it is |
 |---|---|
-| `crates/ef-core` | Game detection, game versions (`edition`), finding installed copies (`locate`), virtual file systems (folders, ISO 9660 images, IMG archives), GXT text, support levels |
+| `crates/ef-core` | Game detection, game versions (`edition`), finding installed copies (`locate`), virtual file systems (folders, ISO 9660 images, IMG archives), GXT text, support levels, the release index (`index`) and the build database (`database`) |
+| `crates/ef-core/data/database` | The build database (TOML, edited by hand; see docs/DATABASE.md). Every entry cites a source |
 | `crates/ef-audio` | Audio codecs, the asset catalog, decoding (`open`), export with manifests |
 | `crates/ef-audio/src/tables` | Generated stream / sample tables (do not edit by hand) |
 | `crates/ef-texture` | RenderWare texture dictionaries: natives for D3D8/9, Xbox and PS2, decoding, PNG/DDS export |
@@ -55,6 +56,7 @@ All three must pass. CI runs them on Windows, macOS and Linux. On Linux the GUI 
 | `apps/eyefinder-cli` | Headless `scan` / `info` / `versions` / `list` / `export` / `textures` |
 | `tools/legacy-c` | The original, real-file-verified GTA III ripper; reference implementation for tests |
 | `tools/fixtures` | Audio fixture generator (needs ffmpeg and genisoimage) |
+| `tools/db` | The one-off import of `docs/research/GTA_Builds_Versions_Database.md` into the build database |
 | `tools/txd-ref` | Texture fixtures and their reference (librw harness + specification decoder) |
 | `docs/` | Support matrix and format specifications |
 

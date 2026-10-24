@@ -1,0 +1,187 @@
+# Grand Theft Auto: London 1969: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "1.7"
+origin = "md:139"
+title = "1.7 Grand Theft Auto: Mission Pack #1 – London 1969"
+games = ["london1969"]
+text = "Developed by **Rockstar Canada** (later Rockstar Toronto), outsourced by DMA Design. PS1 port: the credits transcribed on GTA.wiki's London 1969 Credits page list \"**Conversion by: RuneCraft Limited**\" and \"**VisOS Programming: Visual Sciences**\" (Visual Sciences' VisOS framework, also used for the GTA PS1 port). That explains the old conflict: Wikipedia and GTA.wiki credit Runecraft, PSXDC credits Visual Sciences / DMA, and both companies are in the credits [49]. Originally due to be published by Gathering of Developers; published by Rockstar Games / Take-Two. Announced Feb 1999 (IGN 2 Feb; GameSpot 10 Feb). The PS1 version needs the original GTA disc (disc swap). TCRF: the PC release has separate Windows and DOS graphic sets; the Windows EXE contains \"gta2.exe\" debug strings (the DOS EXE doesn't); debug mode via the player name `ROMMEL`; unused Petrol Bomb. Topped the UK charts for its first two weeks. [30][32][34][36]"
+
+[[entry]]
+id = "1.7-1"
+origin = "md:145"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "PS1 pre-release \"PAL PSX BETA 37\""
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "PAL"
+date = "1999-04-11"
+date_text = "build **11 Apr 1999**"
+id_text = "—"
+notes = "CD-R owned by collector MattJ155, seen in his YouTube video next to a GTA 2 prototype disc. **Undumped** (Hidden Palace)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-47"]
+sources_text = "[47]"
+
+[[entry]]
+id = "1.7-2"
+origin = "md:146"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "Retail PC"
+platforms = ["pc"]
+platform_text = "DOS + Windows"
+region = "EU/NA"
+date = "1999-04-30"
+date_text = "**30 Apr 1999** (GameSpot \"Take-Two Ships GTA: London 1969\", 30 Apr 1999); gone to manufacturing by 22 Apr 1999 (IGN). GTA.wiki: 29 Apr 1999"
+version = "11.5"
+id_text = "Redump **version 11.5** (same number as the GTA EU disc). EU: Disctronics; one master \"GTALDN/E/S\" (volume **1999-03-18**, BBFC VFC 09688) and one \"GTALDN/FGI\" (volume 1999-04-23, barcode 5 026555 031646). US: ring \"CDA-GOD-013\", volume 1999-03-18, barcode 6 63593 17003 3, ISBN 1-892817-15-2. All En/Fr/De/It"
+notes = "Requires the base game on PC per Wikipedia (\"expansion\"); GTA.wiki says the original is needed only for mods (conflict). Redump reissues: Sold Out Software (2001, single and Double Feature), Classics Collection 2004 (v1.0.0.1, SecuROM 5.03.04.0003)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-30", "1-32", "1-46"]
+sources_text = "[30][32][46]"
+
+[[entry]]
+id = "1.7-3"
+origin = "md:147"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "Retail PC, Japan: **Grand Theft Auto: London** (グランド・セフト・オート ロンドン)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "Japan"
+date_text = "not documented"
+id_text = "Redump edition \"**Game Fan 1980**\"; barcode 4 975433 272811; volume label `GTALONDON`, volume created **1999-06-11**; En/Ja"
+notes = "Redump: \"**Stand-alone version**\" (doesn't need GTA). GTA.wiki holds Japanese PC box art"
+confidence = "confirmed"
+confidence_text = "✅ (exists) / date not documented"
+sources = ["1-32", "1-46"]
+sources_text = "[32][46]"
+
+[[entry]]
+id = "1.7-4"
+origin = "md:148"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "Mission Pack #1, PS1 (original pressing)"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "Europe"
+date_text = "30 Apr 1999 per Wikipedia and Time Extension's game profile; PSXDC: 31 Mar 1999, **ruled out** by the disc's EXE date (5 Apr 1999) and volume date (12 Apr 1999)"
+serials = ["SLES-01714"]
+id_text = "**SLES-01714**"
+notes = "Redump: **(En,De,It)**, Track 01 CRC32 79EE2BB3, **EXE date 1999-04-05**, volume 1999-04-12. 17 tracks (1 data + 16 audio); DualShock vibration supported; EAN 5026555190091 (also 5 026555 190152)"
+confidence = "mixed"
+confidence_text = "✅ serial / ⚠️ date"
+sources = ["1-8", "1-30", "1-35", "1-46", "1-50"]
+sources_text = "[8][30][35][46][50]"
+
+[[entry]]
+id = "1.7-5"
+origin = "md:149"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "Mission Pack #1, PS1 **Rev 1**"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "Europe"
+date_text = "not documented"
+serials = ["SLES-01714"]
+id_text = "**SLES-01714**"
+notes = "Redump: **(En,Fr,De,It) (Rev 1)**, Track 01 CRC32 A06FB3ED, **EXE date 1999-04-15**. The revision adds French. PSXDC lists the SKU as Multi-5 (incl. Spanish), which doesn't match Redump's language tags"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["1-8", "1-35", "1-46"]
+sources_text = "[8][35][46]"
+
+[[entry]]
+id = "1.7-6"
+origin = "md:150"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "Mission Pack #1, PS1"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "USA"
+date_text = "30 Apr 1999 per Wikipedia; PSXDC and Time Extension's game profile: 2 Apr 1999, **ruled out** by the US disc's EXE date (5 Apr 1999) and volume date (11 Apr 1999)"
+serials = ["SLUS-00846"]
+id_text = "**SLUS-00846**"
+notes = "Track 01 CRC32 8760DF1A (same data in Director's Cut and Collector's Edition, tag \"SLUS-00846CE\"). **EXE date 1999-04-05**, volume 1999-04-11. UPC 710425230318. Redump: bundled with poster and game map"
+confidence = "mixed"
+confidence_text = "✅ serial / ⚠️ date"
+sources = ["1-8", "1-30", "1-35", "1-46", "1-50"]
+sources_text = "[8][30][35][46][50]"
+
+[[entry]]
+id = "1.7-7"
+origin = "md:151"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "**Grand Theft Auto: London – Special Edition** (standalone)"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "UK/Europe"
+date_text = "2000 (Wikipedia, [citation needed]); PSXDC: 10 Mar 2000"
+serials = ["SLES-03389"]
+id_text = "**SLES-03389** (also \"SLES-03389/COLL\")"
+notes = "Redump title \"Grand Theft Auto – London 1969 (Europe) (En,Fr,De,It)\", Track 01 CRC32 6D14DB9A. **EXE date 2000-11-20** (redump.org). Boots without the GTA disc. EAN 5026555190602; came with a poster. **Conflict:** an EXE date of Nov 2000 is later than PSXDC's 10 Mar 2000 release date"
+confidence = "mixed"
+confidence_text = "✅ serial / ⚠️ date (conflict)"
+sources = ["1-8", "1-30", "1-32", "1-35", "1-46"]
+sources_text = "[8][30][32][35][46]"
+
+[[entry]]
+id = "1.7-8"
+origin = "md:152"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "PS1 press kit CD-R \"Aironauts PSX + GTA London PSX + Monkey Hero PSX + Rainbow Six PSX: Screen Shots\""
+platforms = ["pc"]
+platform_text = "PC (CD-R)"
+region = "USA"
+date_text = "volume 1999-05-24"
+id_text = "—"
+notes = "Jack of All Games-branded press-asset CD-R (screenshots)"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["1-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "1.7-9"
+origin = "md:153"
+section = "1.7"
+kind = "retail"
+games = ["london1969"]
+title = "Director's Cut bundles (PC & PS1, 1999)"
+platform_text = "—"
+region = "—"
+date = "1999-04-30"
+date_text = "30 Apr 1999 (PC/PS1, Wikipedia)"
+id_text = "—"
+notes = "→ see the Compilations section"
+confidence_text = "—"
+sources = ["1-30"]
+sources_text = "[30]"
+
+[sources]
+1-8 = { text = "Redump Sony PlayStation DAT (libretro-database mirror): https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Sony%20-%20PlayStation.dat (redump.org: http://redump.org/discs/quicksearch/grand%20theft%20auto/ refused automated access)", url = "https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Sony%20-%20PlayStation.dat", origin = "md:182" }
+1-30 = { text = "Wikipedia, \"Grand Theft Auto: London 1969\": https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1969 (cites GameSpot 10 Feb, 30 Apr, 8 Jun, 1 Jul 1999; IGN 2 Feb, 22 Apr, 28 Apr 1999)", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1969", origin = "md:204" }
+1-32 = { text = "GTA.wiki, \"Grand Theft Auto: London 1969\": https://gta.wiki/w/Grand_Theft_Auto:_London_1969", url = "https://gta.wiki/w/Grand_Theft_Auto:_London_1969", origin = "md:206" }
+1-35 = { text = "PSX DataCenter: https://psxdatacenter.com/games/P/G/SLES-01714.html ; https://psxdatacenter.com/games/U/G/SLUS-00846.html ; https://psxdatacenter.com/games/P/G/SLES-03389.html", url = "https://psxdatacenter.com/games/P/G/SLES-01714.html", origin = "md:209" }
+1-46 = { text = "redump.org, London 1969 discs: PC http://redump.org/disc/31682/ ; /disc/42717/ ; /disc/25917/ ; /disc/14645/ ; /disc/42864/ ; /disc/83963/ ; /disc/10983/ ; JP /disc/114258/ ; PS1 /disc/15795/ ; /disc/5505/ ; /disc/527/ ; /disc/1272/ ; press CD-R /disc/66379/", url = "http://redump.org/disc/31682/", origin = "md:220" }
+1-47 = { text = "Hidden Palace, \"Grand Theft Auto: London 1969 (Apr 11, 1999 prototype)\": https://hiddenpalace.org/Grand_Theft_Auto:_London_1969_(Apr_11,_1999_prototype) (video: https://www.youtube.com/watch?v=XFNPpKLNSKo)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_London_1969_(Apr_11,_1999_prototype", origin = "md:221" }
+1-50 = { text = "Time Extension, \"The Making Of: GTA London, Rockstar's Daring Detour Into The Swinging Sixties\" (Jack Yarwood), 29 Nov 2022: https://timeextension.com/features/the-making-of-gta-london-rockstars-daring-detour-into-the-swinging-sixties", url = "https://timeextension.com/features/the-making-of-gta-london-rockstars-daring-detour-into-the-swinging-sixties", origin = "md:224" }

@@ -1,0 +1,995 @@
+# Grand Theft Auto: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "1"
+origin = "md:43"
+title = "1. Origins & Grand Theft Auto (1997)"
+games = ["gta1"]
+text = "Legend: ✅ confirmed by ≥2 independent or primary sources · ⚠️ single community source, or sources conflict (conflict stated) · ❓ rumour/unverified. \"not documented\" = no source found. Disc data marked \"Redump\" comes from the Redump PlayStation DAT as mirrored in libretro-database (redump.org itself refused automated access). ROM data marked \"No-Intro\" comes from the No-Intro DAT mirrored the same way."
+
+[[section]]
+id = "1.1"
+origin = "md:47"
+title = "1.1 Pre-release: *Race'n'Chase* (DMA Design, Dundee, 1995–1997)"
+games = ["gta1"]
+text = '''
+Unused or leftover content on the retail PC disc (TCRF): a helicopter that can't fly (graphics but no name); a tram meant for San Andreas (it kept crashing); a Petrol Bomb item; a Breakdown Truck and an APC with names but no graphics; a debug mode turned on by the player name `porkcharsui`. [5] ⚠️
+
+**Preserved alpha/beta builds:** Hidden Palace (checked Oct 2026) holds the two Dailly engine prototypes above, the PC demos (see 1.2) and one PlayStation pre-release build (see 1.4). It lists no PC alpha/beta of the full game. Hidden Palace gives final (gold) build dates of **EU 16 Oct 1997** and **US 9 Feb 1998** for PC; these match the volume-creation dates of the Redump EU and US discs (see 1.3). TCRF prototype pages could not be read: tcrf.net showed a bot-check page and was not bypassed. [40][41][42][44]'''
+
+[[section]]
+id = "1.2"
+origin = "md:70"
+title = "1.2 Demo versions"
+games = ["gta1"]
+
+[[section]]
+id = "1.3"
+origin = "md:84"
+title = "1.3 Grand Theft Auto (1997): PC (MS-DOS / Windows 95)"
+games = ["gta1"]
+text = "One CD carries both DOS and Windows versions. Windows renderers are chosen in setup: 8-bit software, 24-bit software, or 3Dfx Glide (PCGW: Glide 2.42). DOS uses VESA SVGA. Windows multiplayer uses DirectPlay (TCP/UDP ports 2300–2400 and 47624). Registry key: `HKLM\\Software\\DMA Design\\Grand Theft Auto`. Saves: `GTADATA\\PLAYER_A.DAT`. Minimum spec: Pentium 75, 16 MB RAM, 80 MB HDD, 1 MB VESA SVGA. User reports (unverified) name the DOS executables/folders `GTADOS`, `GTA8`, `GTA24`, `GTAFX` and the Windows folder `GTAWIN`. [1][9][37]"
+
+[[section]]
+id = "1.4"
+origin = "md:103"
+title = "1.4 Grand Theft Auto: PlayStation (port by Visual Sciences, ViSOS framework)"
+games = ["gta1"]
+text = "The PS1 version has no trains, so the missions \"Gangsta Bang – Counthash\" and \"Heist Almighty – Itali\" are cut. Only the four male characters are selectable (PC has eight). The Japanese version adds two exclusive characters, **Bison** and **Jack**. [1][7][12][20]"
+
+[[section]]
+id = "1.5"
+origin = "md:119"
+title = "1.5 Grand Theft Auto: Game Boy Color (Tarantula Studios; published by Rockstar Games / Take-Two)"
+games = ["gta1"]
+text = '''
+Dual-mode cartridge: also runs in black and white on the original Game Boy and on Super Game Boy. 4 MiB (32 Mbit) ROM. Gore and swearing removed; trains replaced by teleports; adds an exclusive character, Kelly; new chiptune soundtrack. ESRB T. [1][7][13][29][39]
+
+
+No GBC revisions, prototypes or Japanese release are documented.'''
+
+[[section]]
+id = "1.6"
+origin = "md:130"
+title = "1.6 Re-releases and digital"
+games = ["gta1"]
+
+[[section]]
+id = "1.9"
+origin = "md:161"
+title = "1.9 Research gaps (Section 1)"
+games = ["gta1", "london1969", "london1961"]
+text = '''
+- Resolved in the Oct 2026 pass: the two Dailly prototypes (Nov 1994, Feb 1995) and the PS1 May 1998 beta (Hidden Palace); PC demo build dates and the Japanese trial disc; PC disc versions, serials and master dates (EU 11.5, US 12.0/12.1, AU, JP ZOO-0003, reissues; Redump); PS1 EXE dates, the Platinum pressing and the French demo SLED-01093; London 1969 PC/PS1 disc data, the standalone Japanese PC "Grand Theft Auto: London" and the PAL PS1 beta 37; the London PS1 porter conflict (RuneCraft conversion + Visual Sciences VisOS, per credits); Saturn planned dates.
+- PC executable version strings and any official patch: none documented. The only "versions" are Redump disc versions (11.5 / 12.0 / 12.1 / 1.1 / 1.0.0.1). What changed in US 12.1 ("GTARE1") is not documented.
+- PC demo build dates: Hidden Palace's own "Aug 29, 1997" vs "Nov 11, 1997" labels conflict. Demo exe names not documented: the Hidden Palace demo pages have no file lists, only the archive names given in 1.2 and Source 42.
+- Japanese PC release date: GTA.wiki gives 27 Apr 1999; GameFAQs release data gives 23 Jan 1998 with publisher Zoo Corporation [53]. The 23 Jan 1998 date fits the Dec 1997 disc master and the Mar 1998 trial disc better, but no primary source (publisher announcement, Famitsu listing) was found to settle it.
+- Japanese London PC ("Game Fan 1980" edition): release date and publisher not documented.
+- Rockstar Classics GTA 1 freeware: no official version number; exact launch date before 7 Mar 2003 not documented (Wayback snapshots of rockstargames.com/classics needed per-load approval and were not taken).
+- Steam: exact dates sales ended and the store page was removed (about early 2024) are not documented. SteamDB history is behind a bot check.
+- TCRF prototype/prerelease subpages and MobyGames release lists: blocked by bot checks (not bypassed).
+- PS1 SLES-03389 London Special Edition: EXE date 2000-11-20 conflicts with PSXDC's 10 Mar 2000 release date; unresolved.
+- German-specific (censored) builds: none documented.'''
+
+[[entry]]
+id = "1.1-1"
+origin = "md:51"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Original design document, \"Race'n'Chase\" (Game Design doc, **Version 1.05**)"
+date_text = "dated **22 Mar 1995**; put online by ex-DMA programmer Mike Dailly on **22 Mar 2011** (Flickr set; later hosted at gamedevs.org)"
+version = "1.05"
+notes = "Pitch for a \"fun, addictive, and fast multiplayer car racing and crashing game\"; present-day setting; three cities with different graphic styles (New York, Venice, Miami); missions incl. a straight race across the city, a free-roaming demolition derby, a bank robbery; pedestrians can be run over; car theft sets off alarms that bring police; police can leave cars and shoot; cars, maybe boats, helicopters, lorries. Planned platforms: MS-DOS, Windows 95, PlayStation, Sega Saturn, Nintendo 64. Toolchain per Wikipedia (from the doc): Visual C++ 2.0, Watcom C/C++ 10, MASM 6.1, DOS4GW 1.97. GTA.wiki shows 12 page images (cover, revision list, ToC, pp. 4–12). \"1.05\" is the document's revision, **not** a game build"
+confidence = "mixed"
+confidence_text = "✅ (doc, dates, v1.05) / ⚠️ (toolchain)"
+sources = ["1-1", "1-2", "1-3", "1-4", "1-6"]
+sources_text = "[1][2][3][4][6]"
+
+[[entry]]
+id = "1.1-2"
+origin = "md:52"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Race'n'Chase engine"
+date_text = "c. 1995"
+notes = "Unnamed in-house DMA engine written by Mike Dailly (GTA.wiki). 64×64 scaled/rotated sprites; built-in map editor with 256×256-block maps, blocks up to 5 faces (top + 4 sides), 64×64 side tiles. Reused for London 1969/1961 and GTA 2"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-4"]
+sources_text = "[4]"
+
+[[entry]]
+id = "1.1-3"
+origin = "md:53"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Development start"
+date = "1995-04-04"
+date_text = "4 Apr 1995"
+notes = "Wikipedia, citing The Guardian video \"The making of Grand Theft Auto\" (2013)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "1.1-4"
+origin = "md:54"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Planned milestones (none met)"
+date_text = "design complete 31 May 1995; engine 3 Jul 1995; look & feel 2 Oct 1995; playtesting from 3 Jan 1996; alpha 1 Apr 1996; production end 1 Jul 1996"
+notes = "From the 1995 schedule, as reported by The Guardian. GameSpot (2011): first ship date 1 Jul 1996, later moved to 28 Feb 1998 (PC) and then 30 Jun 1998 (PlayStation)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-1", "1-3"]
+sources_text = "[1][3]"
+
+[[entry]]
+id = "1.1-5"
+origin = "md:55"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Concept change"
+date_text = "1995–96 (exact date not documented)"
+notes = "Playing as a police officer tested as dull. A bug that made police try to run the player off the road went down well, so the game became about playing a criminal. Title changed from *Race'n'Chase* to *Grand Theft Auto*. Gary Penn later called the early version \"awful\" and said it was nearly cancelled"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-1", "1-3", "1-7"]
+sources_text = "[1][3][7]"
+
+[[entry]]
+id = "1.1-6"
+origin = "md:56"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Status in an early-1997 interview"
+date_text = "early 1997"
+notes = "Keith Hamilton (director and lead programmer): car handling was being rewritten and graphics were moving to 24-bit"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "1.1-7"
+origin = "md:57"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "**\"GTA ProtoType 1\"** (Mike Dailly)"
+date = "1994-11-11"
+date_text = "build **11 Nov 1994** (\"11/11/94 was the date on the CD\", per Dailly's readme)"
+notes = "Released executable (PC, DOS). Side-on / rotating-grid \"cube array\" engine written by Dailly in Pascal + assembler on a 486DX66; controls Z/X rotate, < > tilt, Space removes roofs. Readme: the game was \"going to be GTA (or 'race and chase' as it was then – cops and robbers was the other name considered)\"; dropped because *Syndicate Wars* looked too similar and Keith Hamilton's C rewrite was too slow. Once hosted on mikedailly.com (Wayback 30 May 2008); now on Hidden Palace and BetaArchive. **Note:** this date is earlier than the 22 Mar 1995 design doc and the 4 Apr 1995 development start above"
+confidence = "confirmed"
+confidence_text = "✅ (HP page + readme, mirrored from Dailly's own site)"
+sources = ["1-40"]
+sources_text = "[40]"
+
+[[entry]]
+id = "1.1-8"
+origin = "md:58"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "**\"GTA ProtoType 2\"** (Mike Dailly), exe `DINO.EXE`"
+date = "1995-02-02"
+date_text = "build **2 Feb 1995** (readme \"(2/2/95)\")"
+notes = "Released executable (PC, DOS); DINO.EXE contains debug symbols. Top-down proof of concept with zoom, pan, FOV and building-height controls. Readme: named DINO because the code came from an earlier dinosaur prototype, *ATTACK!*, and \"DINO.BAT was even shipped\" in `\\gta\\gtados`. After seeing it, Keith, \"OZ (David Ozbourn)\" and Dave Jones (readme spelling) decided to restart \"Race and Chase\" on this engine. The readme also says the 24-bit mode (via SciTech UniVBE) \"added almost a year to the project\", and that the 3Dfx renderer started as a one-week demo for a 3Dfx visit and was then kept for the final release"
+confidence = "confirmed"
+confidence_text = "✅ (HP page + readme)"
+sources = ["1-41"]
+sources_text = "[41]"
+
+[[entry]]
+id = "1.1-9"
+origin = "md:59"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Early prototypes (footage) released by Mike Dailly"
+date_text = "upload date not documented"
+notes = "TCRF: \"two very early prototypes were released by … Mike Dailly\" (marked To do). These are the two Hidden Palace builds above. GTA.wiki also has a video section, \"Early Grand Theft Auto Prototypes (Footage by Mike Dailly)\", and a \"prototype map test\" image"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-4", "1-5", "1-40", "1-41"]
+sources_text = "[4][5][40][41]"
+
+[[entry]]
+id = "1.1-10"
+origin = "md:60"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Alternate 320×200×256 graphics set (on retail PC disc)"
+date_text = "asset c. 1995"
+notes = "Uses the old DeluxePaint palette, which points to 1995. GTA.wiki suggests it matches Saturn magazine screenshots (disputed)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-5", "1-26"]
+sources_text = "[5][26]"
+
+[[entry]]
+id = "1.1-11"
+origin = "md:61"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "Race'n'Chase logo, alternative logo, prototype box art"
+date = "1997"
+date_text = "1997 (EPK)"
+notes = "Logo from a 1997 Take-Two EPK. Early alternative GTA logo and prototype box art are held on GTA.wiki"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-6", "1-7"]
+sources_text = "[6][7]"
+
+[[entry]]
+id = "1.1-12"
+origin = "md:62"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "**Sega Saturn** port (publisher BMG Interactive)"
+date_text = "planned release dates per Sega Retro, from magazines: **Oct 1996** (Intelligent Gamer Aug 1996; Sega Power Aug 1996), **Nov 1996** (Sega FY1997 Brand Review; Ultra Game Players Oct 1996), **13 Dec 1996** (C&VG Jan 1997), **Apr 1997** (Sega Power Feb 1997), **13 Jun 1997** (C&VG Jun 1997), then Dec 1997. Later cancelled; date of cancellation not documented"
+notes = "Covered in Sega Power and Saturn Power #10 previews, plus two early screenshots (csoon.com). Reason: lack of money (GTA.wiki) or \"poor sales of the console\" (Sega Retro), so sources differ. Keith Hamilton reportedly said the engine was inspired by *Clockwork Knight*, which Dailly's own Prototype 2 readme confirms (\"After seeing a Sega Saturn game called 'Clockwork knight', I started toying with side on perspective stuff\") [41]. Wikipedia: [citation needed]"
+confidence = "mixed"
+confidence_text = "✅ (existence, planned dates) / ⚠️ (reason)"
+sources = ["1-1", "1-26", "1-41", "1-52"]
+sources_text = "[1][26][41][52]"
+
+[[entry]]
+id = "1.1-13"
+origin = "md:63"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "**Nintendo 64** port (\"Grand Theft Auto 64\")"
+date_text = "IGN article 29 Mar 1999"
+notes = "Cancelled before any public showing"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-1", "1-27"]
+sources_text = "[1][27]"
+
+[[entry]]
+id = "1.1-14"
+origin = "md:64"
+section = "1.1"
+kind = "prototype"
+games = ["gta1"]
+title = "**Palm OS** port (Global Star Software)"
+date_text = "announced 26 Mar 2001 (Take-Two PR) for holiday 2001 (EU/NA); reported dead 17 Jun 2002 (Gouranga!)"
+notes = "A demo was released on Global Star's website"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "1.2-1"
+origin = "md:74"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "\"Hot Bitch Teaser Version\", 8-bit (256-colour)"
+platforms = ["pc"]
+platform_text = "PC (**DOS** executables per Hidden Palace; TCRF/GTA.wiki said Windows)"
+region = "worldwide download / cover discs"
+date = "1997-11-11"
+date_text = "Hidden Palace build date **11 Nov 1997**. **Conflict:** the same Hidden Palace pages were titled \"Aug 29, 1997 demo\" until Apr 2025, and the 24-bit download is still named `Grand Theft Auto (Aug 29, 1997 Hot Bitch demo).zip`"
+id_text = "not documented"
+notes = "First free demo. Covers level 1 (*Gangsta Bang*) with all protagonists and four phone missions from Bubby. No sound; 6-minute limit (readme: \"about 6 minutes\"; Hidden Palace: 400 s), then a score screen. Leftover strings: \"Time's up, sucker! Ya want more? Buy the real thing.\" and \"Loading Demo...\". Readme: three variants (8-bit, 24-bit, and both on magazine cover discs); minimum spec 486 DX4/100, 16 MB RAM, 512 KB VESA; uses UniVBE and Miles; ends \"Released : November 15th 1997 for PC & Playstation\" (the planned date, not the actual one)"
+confidence = "mixed"
+confidence_text = "✅ (exists, name) / ⚠️ (build date)"
+sources = ["1-5", "1-7", "1-42"]
+sources_text = "[5][7][42]"
+
+[[entry]]
+id = "1.2-2"
+origin = "md:75"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "\"Hot Bitch Teaser Version\", 24-bit colour"
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+region = "—"
+date = "1997-11-11"
+date_text = "11 Nov 1997 (Hidden Palace; see conflict above)"
+id_text = "not documented"
+notes = "Same content as the 8-bit demo, with the 24-bit renderer. Runs in DOSBox"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ date"
+sources = ["1-5", "1-7", "1-42"]
+sources_text = "[5][7][42]"
+
+[[entry]]
+id = "1.2-3"
+origin = "md:76"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "\"Hot Bitch Teaser Version\", 3Dfx"
+platforms = ["pc"]
+platform_text = "PC (DOS, Glide)"
+region = "—"
+date = "1997-11-11"
+date_text = "11 Nov 1997 (Hidden Palace)"
+id_text = "not documented"
+notes = "Same content as the 8-bit demo; runs on 3Dfx only (DOSBox-X)"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ date"
+sources = ["1-5", "1-7", "1-42"]
+sources_text = "[5][7][42]"
+
+[[entry]]
+id = "1.2-4"
+origin = "md:77"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "Magazine demo (8-bit and 24-bit combined)"
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+region = "—"
+date = "1997-09-01"
+date_text = "Hidden Palace build date **1 Sep 1997**"
+id_text = "not documented"
+notes = "Hidden Palace: \"Magazine Demo\"; \"a fusion between the 8-bit and 24-bit versions\""
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-42"]
+sources_text = "[42]"
+
+[[entry]]
+id = "1.2-5"
+origin = "md:78"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "\"ECTS Competition Version\" demo"
+platforms = ["pc"]
+platform_text = "PC (DOS, 3Dfx only)"
+region = "UK (ECTS trade show)"
+date = "1997-09-01"
+date_text = "Hidden Palace build date **1 Sep 1997** (\"Sep 1, 1997 3dfx demo\")"
+id_text = "not documented"
+notes = "Has SFX and part of the soundtrack. Modified *Tequila Slammer – Phone 3: Mission 1*: kill 5 police instead of 8; ends after the last kill in Sunview"
+confidence = "mixed"
+confidence_text = "✅ (exists) / ⚠️ date"
+sources = ["1-5", "1-7", "1-42"]
+sources_text = "[5][7][42]"
+
+[[entry]]
+id = "1.2-6"
+origin = "md:79"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "Demo build \"Mar 4, 1998\""
+platforms = ["pc"]
+platform_text = "PC (DOS)"
+region = "not stated by Hidden Palace"
+date_text = "Hidden Palace build date **4 Mar 1998 10:23:18**; file released 14 Jan 2024"
+id_text = "not documented"
+notes = "Hidden Palace gives no details. Its timestamp is identical to the volume-creation date (1998-03-04 10:23:18) of the Japanese PC trial disc **ZOO-0003D** (see 1.3), so the two are probably the same build. That match is an inference, not a sourced statement"
+confidence = "mixed"
+confidence_text = "⚠️ / ❓ (identity)"
+sources = ["1-42", "1-44"]
+sources_text = "[42][44]"
+
+[[entry]]
+id = "1.2-7"
+origin = "md:80"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "PS1 demo disc \"Grand Theft Auto\""
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "**France** (French)"
+date_text = "disc volume dated 27 Nov 1997; EXE date 1997-10-25"
+serials = ["SLED-01093"]
+id_text = "**SLED-01093**"
+notes = "Redump: Edition \"Demo\", Disc ID 5239521, pressed by DADC Austria. EXE date is the same as the retail SLES-00032"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["1-45"]
+sources_text = "[45]"
+
+[[entry]]
+id = "1.2-8"
+origin = "md:81"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "PS1 demo on the French sampler disc \"Pro Foot Contest '98 + Grand Theft Auto + Courier Crisis\""
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "France (En,Fr,De,It)"
+date_text = "Given away with **PlayMag issue 25 (05/1998)** in a white paper sleeve (Redump comment); EXE date 1998-03-30; volume dated 8 Apr 1998"
+serials = ["SLED-01295"]
+id_text = "**SLED-01295**"
+notes = "Disc ID 4283227; disc label \"pro foot gta crisis\""
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["1-8", "1-45"]
+sources_text = "[8][45]"
+
+[[entry]]
+id = "1.2-9"
+origin = "md:82"
+section = "1.2"
+kind = "demo"
+games = ["gta1"]
+title = "Palm OS demo"
+platforms = ["palm"]
+platform_text = "Palm OS"
+region = "—"
+date = "2001"
+date_text = "2001"
+id_text = "not documented"
+notes = "See 1.1"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "1.3-1"
+origin = "md:90"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Retail, BMG Interactive"
+platforms = ["pc"]
+platform_text = "DOS + Win95"
+region = "Europe/UK"
+date = "1997-11-28"
+date_text = "**28 Nov 1997**"
+version = "11.5"
+id_text = "Redump **version 11.5**; disc volume created **1997-10-16 19:23:41** (matches Hidden Palace's EU final build date of 16 Oct 1997). Original pressing as dumped: Disctronics, ring \"GTALDN- 2 01\"; serials 76896-423942 / 76896-428002 (also on the Double Feature reissue). Another pressing (Nimbus, \"1000734.101.UK\"; Sonopress) is in the Limited Edition / Extreme Action Pack; Redump lists Glide 2.43 runtime and DirectX 3.0 (4.04.00.0068) on the disc. Languages En/Fr/De/It. CD check"
+notes = "Sources for 28 Nov: Campaign (20 Nov 1997), grandtheftauto.com news (Nov 1997), Kushner's *Jacked* p. 44; GTA.wiki and Giant Bomb agree. **Conflict:** PCGamingWiki and GTA Fandom give 21 Oct 1997 without a source. Redump: \"Limited Edition: Bundled with Grand Theft Auto: The Soundtrack\""
+confidence = "mixed"
+confidence_text = "✅ 28 Nov / ⚠️ 21 Oct; ✅ disc data (Redump)"
+sources = ["1-1", "1-7", "1-9", "1-10", "1-20", "1-42", "1-44"]
+sources_text = "[1][7][9][10][20][42][44]"
+
+[[entry]]
+id = "1.3-2"
+origin = "md:91"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Retail"
+platforms = ["pc"]
+platform_text = "DOS + Win95"
+region = "**Australia**"
+date_text = "not documented"
+id_text = "Redump serial **22666026 / PET 992525** (no version recorded); volume dated 1997-10-16 (same master date as the EU disc); ring \"D.A.T.A. 22666026\""
+notes = "Not previously listed"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["1-44"]
+sources_text = "[44]"
+
+[[entry]]
+id = "1.3-3"
+origin = "md:92"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Retail, ASC Games"
+platforms = ["pc"]
+platform_text = "DOS + Win95"
+region = "North America"
+date = "1998-03-24"
+date_text = "**24 Mar 1998** (ASC press release \"Grand Theft Auto Races Into Stores\" and GameSpot \"Grand Theft Auto Available\", both 24 Mar 1998)"
+version = "12.0"
+id_text = "Redump **version 12.0**: volume created **1998-02-09 16:39:05** (matches Hidden Palace's US final build of 9 Feb 1998); ring \"2979-2-1 ALLIED DT *GTA*\"; barcode 7 29627 92017 0; English only"
+notes = "ESRB M. **Conflict:** GTA.wiki gives 28 Feb 1998, which GameSpot (2011) describes as a *planned* date"
+confidence = "mixed"
+confidence_text = "✅ 24 Mar / ⚠️ 28 Feb; ✅ disc (Redump)"
+sources = ["1-1", "1-3", "1-7", "1-42", "1-44"]
+sources_text = "[1][3][7][42][44]"
+
+[[entry]]
+id = "1.3-4"
+origin = "md:93"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Retail, ASC Games, **re-master**"
+platforms = ["pc"]
+platform_text = "DOS + Win95"
+region = "North America"
+date_text = "not documented"
+version = "12.1"
+id_text = "Redump **version 12.1**: volume created **1998-03-31 15:54:09**; ring \"3085-2-x ALLIED DT *GTARE1*\"; same barcode 7 29627 92017 0. Two pressings dumped, one with Redump edition \"Original and Uncensored\""
+notes = "A second US mastering about seven weeks after 12.0. What changed between 12.0 and 12.1 is not documented, and neither is the meaning of \"Original and Uncensored\" (probably packaging text; not verified)"
+confidence = "mixed"
+confidence_text = "✅ (exists) / ❓ (changes)"
+sources = ["1-44"]
+sources_text = "[44]"
+
+[[entry]]
+id = "1.3-5"
+origin = "md:94"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Retail, Japan (グランド・セフト・オート)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "Japan"
+date = "1998-01-23"
+date_text = "27 Apr 1999 (GTA.wiki) vs **23 Jan 1998** (GameFAQs release data, publisher Zoo Corporation) [53] ⚠️ conflict"
+id_text = "Redump serial **ZOO-0003**; barcode 4 537243 986113; volume label `JAP_GTA`, volume created **1997-12-16** (Hidden Palace also gives a JP final build date of 16 Dec 1997); languages En/Ja"
+notes = "Publisher probably **Zoo**: inferred from the ZOO- serial prefix (Zoo published the Japanese GTA 2 PC, see Section 2). Not directly sourced ❓. The Dec 1997 mastering date is hard to square with GTA.wiki's Apr 1999 release date. The release date stays single-source"
+confidence = "mixed"
+confidence_text = "✅ serial (Redump) / ⚠️ date"
+sources = ["1-7", "1-42", "1-44"]
+sources_text = "[7][42][44]"
+
+[[entry]]
+id = "1.3-6"
+origin = "md:95"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Japanese PC trial disc (体験版 \"Taikenban\")"
+platforms = ["pc"]
+platform_text = "PC"
+region = "Japan"
+date_text = "not documented"
+id_text = "Redump serial **ZOO-0003D**; volume label `GTADEMO`; volume created **1998-03-04 10:23:18**; ring \"M3-0004D\""
+notes = "Demo disc; see the \"Mar 4, 1998\" demo in 1.2"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["1-44"]
+sources_text = "[44]"
+
+[[entry]]
+id = "1.3-7"
+origin = "md:96"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Later retail reissues"
+platforms = ["pc"]
+platform_text = "PC"
+region = "UK 1999, Germany 2002, Belgium/Netherlands 2003"
+date_text = "per MyAbandonware release list"
+id_text = "not documented"
+notes = "Publishers listed include Take-Two, Sold Out Sales & Marketing, Rockstar. User comment (unverified): German magazine *Chip* gave away the freeware build in 2003"
+confidence = "mixed"
+confidence_text = "⚠️/❓"
+sources = ["1-37"]
+sources_text = "[37]"
+
+[[entry]]
+id = "1.3-8"
+origin = "md:97"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Redump-verified reissues"
+platforms = ["pc"]
+platform_text = "PC"
+region = "EU / DE / PL / US"
+date_text = "release dates not documented"
+id_text = "**Sold Out Software** (UK; v11.5; volume 2001-02-07; BBFC VFC02388; barcodes 5 037999 003021 / 003793, incl. Double Feature with London 1969). **Sold Out Software (White Label)**, Germany: serial CD-W95-V049-M10WL1, v11.5, German manual, volume 2001-09-18. **Sold Out Software Extreme**, Germany: Redump **version 1.1**, ring \"GTAUTOGER\", volume 1999-10-19. **GT Collect: The Great Race Collection** (EU, v11.5, volume 1999-05-10, barcode 5 031951 101046). **CD-Action 8/2001 (#63)** covermount, Poland (v11.5). **Director's Cut** (US, v11.5, EU master date 1997-10-16). **Grand Theft Auto: The Classics Collection** (US, 2004): **version 1.0.0.1**, **SecuROM 5.03.04.0003**, volume 2004-04-20"
+notes = "All En/Fr/De/It except the US 12.x discs"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["1-44"]
+sources_text = "[44]"
+
+[[entry]]
+id = "1.3-9"
+origin = "md:98"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Windows port technology"
+platforms = ["pc"]
+platform_text = "Win95"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Reportedly built on SciTech MGL (Wikipedia: [citation needed]). MGL error \"296.473\" appears on modern Windows (PCGW)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-1", "1-9"]
+sources_text = "[1][9]"
+
+[[entry]]
+id = "1.3-10"
+origin = "md:99"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Official patches"
+platforms = ["pc"]
+platform_text = "PC"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "**No official patch or numbered update is documented** in PCGamingWiki, Wikipedia, GTA.wiki or TCRF. 3Dfx support shipped on the disc: the 3Dfx renderer was \"added to the final release\" (Dailly readme), and Glide 2.43 runtime drivers are on the EU Limited Edition disc (Redump). A separate \"3dfx patch\" is not documented. Redump does record **disc-level versions 11.5 (EU), 12.0 and 12.1 (US), 1.1 (German Sold Out Extreme) and 1.0.0.1 (2004 Classics Collection)**; these are new masterings, not downloadable patches. Fan fixes (not official): ThirteenAG widescreen fix, GTA I Launcher, GTAFixer, dgVoodoo2 wrapper"
+confidence_text = "—"
+sources = ["1-9", "1-41", "1-44"]
+sources_text = "[9][41][44]"
+
+[[entry]]
+id = "1.3-11"
+origin = "md:100"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "German / censored versions"
+platforms = ["pc", "ps1"]
+platform_text = "PC/PS1"
+region = "Germany"
+date_text = "—"
+id_text = "—"
+notes = "No censored German build documented. Wikipedia and GTA.wiki are silent. Every Redump-verified German PC disc (Sold Out Software White Label with German manual; Sold Out Software Extreme v1.1) is the multilingual En/Fr/De/It build. Content differences are not documented"
+confidence_text = "—"
+sources = ["1-1", "1-7", "1-44"]
+sources_text = "[1][7][44]"
+
+[[entry]]
+id = "1.3-12"
+origin = "md:101"
+section = "1.3"
+kind = "retail"
+games = ["gta1"]
+title = "Ban"
+platform_text = "all"
+region = "Brazil"
+date_text = "date not documented"
+id_text = "—"
+notes = "Banned by Brazil's Ministry of Justice"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "1.4-1"
+origin = "md:109"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "Original (BMG Interactive)"
+region = "Europe (En,Fr,De,It)"
+date = "1997-12-12"
+date_text = "**12 Dec 1997** (Computer Trade Weekly #667; TCRF agrees). **Conflict:** GTA.wiki says 14 Dec 1997 (UK); PSXDC says 1 Dec 1997"
+serials = ["SLES-00032"]
+id_text = "**SLES-00032**"
+notes = "EAN 768964239521. **Platinum** reissue confirmed by redump.org: same serial, Disc ID 5190084, barcodes 5 026555 190084 / 190497 (standard pressing) and EDC pressing (Platinum + Collector's Edition)"
+confidence = "mixed"
+confidence_text = "✅ serial / ⚠️ exact day"
+sources = ["1-1", "1-8", "1-11", "1-12", "1-7", "1-43", "1-45"]
+sources_text = "[1][8][11][12][7][43][45]"
+[entry.fields]
+"Disc / dump data" = "11 tracks (1 data + 10 audio). Redump has **two pressings**: standard (Track 01 CRC32 37532070) and an **\"(EDC)\"** variant (Track 01 CRC32 4BD3D587). Serial strings recorded: \"SLES-00032\", \"SLES-000322\", \"SLES-00032/COLL.\" **EXE date 1997-10-25** on both; volume dated 1997-11-07 (redump.org). The EXE date matches Hidden Palace's EU PS1 final build date (25 Oct 1997)"
+
+[[entry]]
+id = "1.4-2"
+origin = "md:110"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "Original (ASC Games / Take-Two)"
+region = "USA"
+date = "1998-06-30"
+date_text = "**30 Jun 1998** (Wikipedia, TCRF, GTA.wiki; SteamDB uses it as \"original release\"). PSXDC's 1 Dec 1997 is **ruled out** for the US disc by its EXE date (24 May 1998)"
+serials = ["SLUS-00106"]
+id_text = "**SLUS-00106**"
+notes = "UPC 710425210167; ESRB M. Redump barcodes: 7 10425 21016 7 (original), 7 10425 23042 4 (Director's Cut), 7 10425 23180 3 (Collector's Edition, spine ID SLUS-07001CE)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-1", "1-7", "1-8", "1-11", "1-12", "1-21", "1-43", "1-45"]
+sources_text = "[1][7][8][11][12][21][43][45]"
+[entry.fields]
+"Disc / dump data" = "11 tracks; Track 01 CRC32 EC29D826, the same on every US print. **EXE date 1998-05-24**; volume dated 1998-05-25 (redump.org). Hidden Palace's US final build date is 24 May 1998"
+
+[[entry]]
+id = "1.4-3"
+origin = "md:111"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "Greatest Hits"
+region = "USA"
+date_text = "not documented"
+serials = ["SLUS-00106"]
+id_text = "SLUS-00106 (Redump tag \"SLUS-00106GH\")"
+notes = "Own GH covers and disc label"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-8", "1-11"]
+sources_text = "[8][11]"
+[entry.fields]
+"Disc / dump data" = "Same data as SLUS-00106"
+
+[[entry]]
+id = "1.4-4"
+origin = "md:112"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "**PlayStation pre-release \"Beta\"**"
+region = "(US data)"
+date_text = "build **23 May 1998 13:40:36**; released 3 Jun 2017"
+id_text = "—"
+notes = "Hidden Palace page + BetaArchive entry"
+confidence = "single-source"
+confidence_text = "⚠️ (single archive)"
+sources = ["1-43"]
+sources_text = "[43]"
+[entry.fields]
+"Disc / dump data" = "Hidden Palace: \"the files seem to be the same as the original US release\", but the music behaves differently: none on the title screen, music plays on foot and can't be switched off, the pick-up truck doesn't play \"The Ballad of Chapped-Lips Calhoun\", and some in-car music differs. Emulatable; no dongle protection. Compiled one day before the US final (24 May 1998)"
+
+[[entry]]
+id = "1.4-5"
+origin = "md:113"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "**G.T.A – Grand Theft Auto** (Syscom Entertainment)"
+region = "Japan"
+date = "1998-08-27"
+date_text = "**27 Aug 1998** (PSXDC, GTA.wiki and TCRF agree)"
+serials = ["SLPS-01554"]
+id_text = "**SLPS-01554**"
+notes = "JAN 4517120398024; Japanese text; adds Bison and Jack"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-7", "1-8", "1-11", "1-12", "1-45"]
+sources_text = "[7][8][11][12][45]"
+[entry.fields]
+"Disc / dump data" = "11 tracks; Track 01 CRC32 7A67E333. **EXE date 1998-07-19**; volume dated 1998-04-16 (redump.org; ring \"SLPS-01554 1\")"
+
+[[entry]]
+id = "1.4-6"
+origin = "md:114"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "G.T.A – Grand Theft Auto, \"Pokkiri 1400\" budget (Syscom)"
+region = "Japan"
+date = "2002-01-17"
+date_text = "17 Jan 2002 (PSXDC)"
+serials = ["SLPM-87007"]
+id_text = "**SLPM-87007**"
+notes = "JAN 4517120210012. Wikipedia cites an amazon.co.jp \"ぽっきり 1400シリーズ\" listing as its Japanese box-art source"
+confidence = "mixed"
+confidence_text = "✅ serial / ⚠️ date"
+sources = ["1-1", "1-8", "1-11"]
+sources_text = "[1][8][11]"
+[entry.fields]
+"Disc / dump data" = "Track 01 CRC32 7A67E333 (same data as SLPS-01554)"
+
+[[entry]]
+id = "1.4-7"
+origin = "md:115"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "Director's Cut, 2 discs (GTA + London 1969)"
+region = "USA"
+date = "1999-05-03"
+date_text = "3 May 1999 (PSXDC)"
+serials = ["SLUS-00106", "SLUS-00846"]
+id_text = "SLUS-00106 + SLUS-00846"
+notes = "Compilation; see the Compilations section"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-11"]
+sources_text = "[11]"
+[entry.fields]
+"Disc / dump data" = "—"
+
+[[entry]]
+id = "1.4-8"
+origin = "md:116"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "Collector's Edition (GTA + London 1969 + GTA 2)"
+region = "USA"
+date = "2002-12-17"
+date_text = "17 Dec 2002 (PSXDC)"
+id_text = "Redump tag \"SLUS-00106CE\""
+notes = "Compilation; cross-reference only"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-8", "1-11"]
+sources_text = "[8][11]"
+[entry.fields]
+"Disc / dump data" = "Same data"
+
+[[entry]]
+id = "1.4-9"
+origin = "md:117"
+section = "1.4"
+kind = "retail"
+games = ["gta1"]
+title = "**PlayStation Classic** (built-in title)"
+region = "NA, PAL, Korea, SE Asia (not Japan/Taiwan/HK)"
+date = "2018-12-03"
+date_text = "**3 Dec 2018**"
+id_text = "—"
+notes = "One of the 20 built-in games"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["1-7", "1-25"]
+sources_text = "[7][25]"
+[entry.fields]
+"Disc / dump data" = "Uses the **PAL** (50 Hz) release"
+
+[[entry]]
+id = "1.5-1"
+origin = "md:125"
+section = "1.5"
+kind = "retail"
+games = ["gta1"]
+title = "Europe (En,Fr,De,Es,It)"
+region = "Europe"
+date = "1999-10-22"
+date_text = "**22 Oct 1999** (Wikipedia, citing a Take-Two PR of 13 Oct 1999). **Conflict:** GTA.wiki says 28 Oct 1999 (UK); Nintendo UK store page says \"January 2000\""
+serials = ["DMG-AOAP"]
+id_text = "**DMG-AOAP-0** (gbhwdb only)"
+notes = "—"
+confidence = "mixed"
+confidence_text = "✅ ROM / ⚠️ date & cart ID"
+sources = ["1-1", "1-7", "1-13", "1-14", "1-28"]
+sources_text = "[1][7][13][14][28]"
+[entry.fields]
+"ROM (No-Intro)" = "`Grand Theft Auto (Europe) (En,Fr,De,Es,It) (GB Compatible).gbc`, 4,194,304 B, CRC32 25BA9231, SHA-1 B6C1693BA5BF2C914D910E94286BDA8F3FBD100E"
+
+[[entry]]
+id = "1.5-2"
+origin = "md:126"
+section = "1.5"
+kind = "retail"
+games = ["gta1"]
+title = "USA"
+region = "North America"
+date_text = "November 1999 (Wikipedia, no day given); GTA.wiki: 22 Nov 1999"
+serials = ["DMG-AOAE"]
+id_text = "**DMG-AOAE-0** (gbhwdb only)"
+notes = "IGN review 29 Nov 1999"
+confidence = "mixed"
+confidence_text = "✅ ROM / ⚠️ day & cart ID"
+sources = ["1-1", "1-7", "1-13", "1-28"]
+sources_text = "[1][7][13][28]"
+[entry.fields]
+"ROM (No-Intro)" = "`Grand Theft Auto (USA) (GB Compatible).gbc`, 4,194,304 B, CRC32 924DE366, SHA-1 A0C9D9A95BF2CCECA7922F4375555B8EDEE9EA6B"
+
+[[entry]]
+id = "1.6-1"
+origin = "md:134"
+section = "1.6"
+kind = "reissue"
+games = ["gta1"]
+title = "**Rockstar Classics freeware**"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "worldwide download (mailing-list sign-up)"
+date_text = "Available by **7 Mar 2003** (Rockstar e-mail reported on AnandTech forums) and \"recently\" freeware by 5 May 2003 (Apolyton). GTA Total: Classics launched in 2003 with GTA only; GTA 2 and Wild Metal followed in late 2004; downloads disabled **May 2013** (\"currently unavailable\"); page redirected to the Rockstar homepage in 2020. Still promoted in Sep 2009 (iGTA). **Uncorroborated dates:** Giant Bomb \"23 Dec 2004\", Internet Archive item \"2002\". Giant Bomb's date is one day after GTA 2 joined Rockstar Classics (22 Dec 2004, AnandTech thread [51]), so it probably mixes up the two games (inference ❓)"
+id_text = "Installer `GTAINSTALLER.exe` ≈328.4 MB (archive.org copy); ~336 MB zip (AnandTech). Rockstar gave no version number; OlderGeeks labels it \"1.0\""
+notes = "Readme: \"modified from its original version to enable support for modern PC's\" and Windows. Adds high resolutions (1600×1200 reported). London packs not included. CD-audio tracks are ripped to WAV with track8/9/10 mis-ordered"
+confidence = "mixed"
+confidence_text = "✅ availability 2003–2013 / ⚠️ version label"
+sources = ["1-15", "1-16", "1-17", "1-18", "1-19", "1-20", "1-38"]
+sources_text = "[15][16][17][18][19][20][38]"
+
+[[entry]]
+id = "1.6-2"
+origin = "md:135"
+section = "1.6"
+kind = "reissue"
+games = ["gta1"]
+title = "**Steam**"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "worldwide"
+date = "2008-01-04"
+date_text = "**4 Jan 2008**"
+id_text = "App ID 12170, depot 12171"
+notes = "Arrived with Rockstar's whole PC back catalogue (GamesRadar, 7–8 Jan 2008). Appears to use the Classics build: same mis-named audio files (police chatter outside cars) and radio-silence bug (PCGW). Steam Cloud saves. Later unpurchasable (\"retired\": GTA Fandom; PCGW: \"no longer officially available digitally\"). **No standalone \"Add to Cart\" button by 30 May 2019** (Steam Community thread). Replies there: \"You haven't been able to get this game on Steam in years\" (8 Jun 2019) and, unverified, that GTA 1 and GTA 2 were then only obtainable through a GTA pack (15 Oct 2019). GTAboom (30 Jul 2025): the GTA store page was delisted \"early last year\", i.e. about early 2024. So two stages: sales ended (exact date not documented; before mid-2019), then the store page went (about early 2024). SteamDB still lists the app (its pages are behind a bot check and could not be read)"
+confidence = "mixed"
+confidence_text = "✅ release / ⚠️ delist dates"
+sources = ["1-9", "1-10", "1-21", "1-22", "1-23", "1-24", "1-48"]
+sources_text = "[9][10][21][22][23][24][48]"
+
+[[entry]]
+id = "1.6-3"
+origin = "md:136"
+section = "1.6"
+kind = "reissue"
+games = ["gta1"]
+title = "Cenega Poland \"GTA trilogy\""
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Poland"
+date_text = "not documented"
+id_text = "—"
+notes = "Includes the Rockstar Classics version, no DRM (PCGW)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["1-9"]
+sources_text = "[9]"
+
+[[entry]]
+id = "1.6-4"
+origin = "md:137"
+section = "1.6"
+kind = "reissue"
+games = ["gta1"]
+title = "Compilations (Director's Cut 1999; Collector's Edition PS1 2002 / PC 2004; etc.)"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "→ see the Compilations section"
+confidence_text = "—"
+sources_text = "—"
+
+[sources]
+1-1 = { text = "Wikipedia, \"Grand Theft Auto (video game)\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game) (cites The Guardian 2013; Campaign 20 Nov 1997; ASC Games PR 24 Mar 1998; GameSpot 24 Mar 1998; CTW #667; Take-Two PR 13 Oct 1999; IGN 29 Mar 1999; Take-Two PR 26 Mar 2001; Gouranga! 17 Jun 2002)", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game", origin = "md:175" }
+1-2 = { text = "Engadget, \"Race'n'Chase: Original GTA design docs posted\", 22 Mar 2011: https://www.engadget.com/2011/03/22/race-n-chase-original-gta-design-docs-posted/", url = "https://www.engadget.com/2011/03/22/race-n-chase-original-gta-design-docs-posted/", origin = "md:176" }
+1-3 = { text = "GameSpot, \"GTA dev releases original design document\", 22 Mar 2011: https://www.gamespot.com/articles/gta-dev-releases-original-design-document/1100-6305294/", url = "https://www.gamespot.com/articles/gta-dev-releases-original-design-document/1100-6305294/", origin = "md:177" }
+1-4 = { text = "GTA.wiki, \"Race'n'Chase Game Engine\" (cites Design Document v1.05, 22 Mar 1995, gamedevs.org): https://gta.wiki/w/Race%27n%27Chase_Game_Engine", url = "https://gta.wiki/w/Race%27n%27Chase_Game_Engine", origin = "md:178" }
+1-5 = { text = "The Cutting Room Floor, \"Grand Theft Auto (PC)\": https://tcrf.net/Grand_Theft_Auto_(PC)", url = "https://tcrf.net/Grand_Theft_Auto_(PC", origin = "md:179" }
+1-6 = { text = "GTA Wiki (Fandom), \"Race'n'Chase\": https://gta.fandom.com/wiki/Race%27n%27Chase ; GTA.wiki \"Race'n'Chase\": https://gta.wiki/w/Race%27n%27Chase", url = "https://gta.fandom.com/wiki/Race%27n%27Chase", origin = "md:180" }
+1-7 = { text = "GTA.wiki, \"Grand Theft Auto (1997 game)\": https://gta.wiki/w/Grand_Theft_Auto_(1997_game)", url = "https://gta.wiki/w/Grand_Theft_Auto_(1997_game", origin = "md:181" }
+1-8 = { text = "Redump Sony PlayStation DAT (libretro-database mirror): https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Sony%20-%20PlayStation.dat (redump.org: http://redump.org/discs/quicksearch/grand%20theft%20auto/ refused automated access)", url = "https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Sony%20-%20PlayStation.dat", origin = "md:182" }
+1-9 = { text = "PCGamingWiki, \"Grand Theft Auto\": https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto", origin = "md:183" }
+1-10 = { text = "GTA Wiki (Fandom), \"Steam\": https://gta.fandom.com/wiki/Steam", url = "https://gta.fandom.com/wiki/Steam", origin = "md:184" }
+1-11 = { text = "PSX DataCenter: https://psxdatacenter.com/games/P/G/SLES-00032.html ; https://psxdatacenter.com/games/U/G/SLUS-00106.html ; https://psxdatacenter.com/games/J/G/SLPS-01554.html ; https://psxdatacenter.com/games/J/G/SLPM-87007.html ; https://psxdatacenter.com/games/U/G/SLUS-00106DC.html ; https://psxdatacenter.com/games/U/G/SLUS-00106CE.html", url = "https://psxdatacenter.com/games/P/G/SLES-00032.html", origin = "md:185" }
+1-12 = { text = "The Cutting Room Floor, \"Grand Theft Auto (PlayStation)\": https://tcrf.net/Grand_Theft_Auto_(PlayStation)", url = "https://tcrf.net/Grand_Theft_Auto_(PlayStation", origin = "md:186" }
+1-13 = { text = "No-Intro Nintendo Game Boy Color DAT (libretro-database mirror): https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/no-intro/Nintendo%20-%20Game%20Boy%20Color.dat", url = "https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/no-intro/Nintendo%20-%20Game%20Boy%20Color.dat", origin = "md:187" }
+1-14 = { text = "Nintendo UK, Grand Theft Auto (GBC): https://www.nintendo.com/en-gb/Games/Game-Boy-Color/Grand-Theft-Auto-265944.html", url = "https://www.nintendo.com/en-gb/Games/Game-Boy-Color/Grand-Theft-Auto-265944.html", origin = "md:188" }
+1-15 = { text = "AnandTech Forums, \"Free Grand Theft Auto for PC\", 7 Mar 2003: https://forums.anandtech.com/threads/free-grand-theft-auto-for-pc.1007489/post-6901739", url = "https://forums.anandtech.com/threads/free-grand-theft-auto-for-pc.1007489/post-6901739", origin = "md:189" }
+1-16 = { text = "Apolyton, \"GTA goes freeware as Rockstar Classics\", 5 May 2003: https://apolyton.net/forum/miscellaneous/archives/other-games-archive/101360-gta-goes-freeware-as-rockstar-classics", url = "https://apolyton.net/forum/miscellaneous/archives/other-games-archive/101360-gta-goes-freeware-as-rockstar-classics", origin = "md:190" }
+1-17 = { text = "GTA Total, \"Cuando GTA y GTA 2 se podían descargar gratis en Rockstar Classics\": https://www.gtatotal.com/noticia/14/cuando-gta-y-gta-2-se-podian-descargar-gratis-en-rockstar-classics", url = "https://www.gtatotal.com/noticia/14/cuando-gta-y-gta-2-se-podian-descargar-gratis-en-rockstar-classics", origin = "md:191" }
+1-18 = { text = "Internet Archive, \"Grand Theft Auto (Rockstar Freeware)\": https://archive.org/details/gta_rockstar-classics", url = "https://archive.org/details/gta_rockstar-classics", origin = "md:192" }
+1-19 = { text = "OlderGeeks, GTA 1 freeware: https://www.oldergeeks.com/downloads/file.php?id=3858", url = "https://www.oldergeeks.com/downloads/file.php?id=3858", origin = "md:193" }
+1-20 = { text = "Giant Bomb, Grand Theft Auto: https://www.giantbomb.com/wd/3030-13567", url = "https://www.giantbomb.com/wd/3030-13567", origin = "md:194" }
+1-21 = { text = "SteamDB, app 12170: https://steamdb.info/app/12170/", url = "https://steamdb.info/app/12170/", origin = "md:195" }
+1-22 = { text = "GamesRadar, \"GTA hits Steam\", Jan 2008: https://www.gamesradar.com/gta-hits-steam", url = "https://www.gamesradar.com/gta-hits-steam", origin = "md:196" }
+1-23 = { text = "GTAboom, \"Steam just removed a classic Grand Theft Auto game\", 30 Jul 2025: https://www.gtaboom.com/steam-just-removed-a-classic-grand-theft-auto-game-f271", url = "https://www.gtaboom.com/steam-just-removed-a-classic-grand-theft-auto-game-f271", origin = "md:197" }
+1-24 = { text = "SteamSpy, app 12170: https://steamspy.com/app/12170", url = "https://steamspy.com/app/12170", origin = "md:198" }
+1-25 = { text = "Wikipedia, \"PlayStation Classic\": https://en.wikipedia.org/wiki/PlayStation_Classic", url = "https://en.wikipedia.org/wiki/PlayStation_Classic", origin = "md:199" }
+1-26 = { text = "GTA.wiki, \"Grand Theft Auto (Sega Saturn)\": https://gta.wiki/w/Grand_Theft_Auto_(Sega_Saturn)", url = "https://gta.wiki/w/Grand_Theft_Auto_(Sega_Saturn", origin = "md:200" }
+1-27 = { text = "GTA.wiki, \"Grand Theft Auto 64\": https://gta.wiki/w/Grand_Theft_Auto_64", url = "https://gta.wiki/w/Grand_Theft_Auto_64", origin = "md:201" }
+1-28 = { text = "Game Boy hardware database (gbhwdb), GBC cartridges: https://gbhwdb.gekkio.fi/cartridges/gbc.html", url = "https://gbhwdb.gekkio.fi/cartridges/gbc.html", origin = "md:202" }
+1-29 = { text = "Pocket Gamer, \"History in handheld Grand Theft Auto\": https://www.pocketgamer.com/grand-theft-auto-3-10th-anniversary-edition/history-in-handheld-grand-theft-auto/", url = "https://www.pocketgamer.com/grand-theft-auto-3-10th-anniversary-edition/history-in-handheld-grand-theft-auto/", origin = "md:203" }
+1-34 = { text = "The Cutting Room Floor, \"Grand Theft Auto: London 1969\": https://tcrf.net/Grand_Theft_Auto:_London_1969", url = "https://tcrf.net/Grand_Theft_Auto:_London_1969", origin = "md:208" }
+1-36 = { text = "Vice, \"The Oral History of 'GTA: London'\", 30 Apr 2019: https://www.vice.com/en/article/oral-history-gta-london/", url = "https://www.vice.com/en/article/oral-history-gta-london/", origin = "md:210" }
+1-37 = { text = "MyAbandonware, Grand Theft Auto: https://www.myabandonware.com/game/grand-theft-auto-3w6", url = "https://www.myabandonware.com/game/grand-theft-auto-3w6", origin = "md:211" }
+1-38 = { text = "iGrandTheftAuto, \"The Original GTA For Free!\", 9 Sep 2009: https://www.igrandtheftauto.com/gta/news/the-original-gta-for-free", url = "https://www.igrandtheftauto.com/gta/news/the-original-gta-for-free", origin = "md:212" }
+1-39 = { text = "GTA.wiki, \"Game Boy Color\": https://gta.wiki/w/Game_Boy_Color", url = "https://gta.wiki/w/Game_Boy_Color", origin = "md:213" }
+1-40 = { text = "Hidden Palace, \"Grand Theft Auto (Nov 11, 1994 prototype)\" (with Mike Dailly's readme \"GTA ProtoType 1\"): https://hiddenpalace.org/Grand_Theft_Auto_(Nov_11,_1994_prototype) ; BetaArchive entry linked from it; original host https://web.archive.org/web/20080530034128/http://www.mikedailly.com/", url = "https://hiddenpalace.org/Grand_Theft_Auto_(Nov_11,_1994_prototype", origin = "md:214" }
+1-41 = { text = "Hidden Palace, \"Grand Theft Auto (Feb 2, 1995 prototype)\" (with Dailly's readme \"GTA ProtoType 2\"): https://hiddenpalace.org/Grand_Theft_Auto_(Feb_2,_1995_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_(Feb_2,_1995_prototype", origin = "md:215" }
+1-42 = { text = "Hidden Palace, GTA PC demo pages: https://hiddenpalace.org/Grand_Theft_Auto_(Nov_11,_1997_8_bits_demo) ; https://hiddenpalace.org/Grand_Theft_Auto_(Nov_11,_1997_24_bits_demo) (with demo readme) ; https://hiddenpalace.org/Grand_Theft_Auto_(Nov_11,_1997_3dfx_demo) ; https://hiddenpalace.org/Grand_Theft_Auto_(Sep_1,_1997_demo) ; https://hiddenpalace.org/Grand_Theft_Auto_(Sep_1,_1997_3dfx_demo) ; https://hiddenpalace.org/Grand_Theft_Auto_(Mar_4,_1998_demo) (page history: \"Aug 29, 1997 demo\" redirects, renamed 20 Apr 2025)", url = "https://hiddenpalace.org/Grand_Theft_Auto_(Nov_11,_1997_8_bits_demo", origin = "md:216" }
+1-43 = { text = "Hidden Palace, \"Grand Theft Auto (May 23, 1998 prototype)\" [PlayStation]: https://hiddenpalace.org/Grand_Theft_Auto_(May_23,_1998_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_(May_23,_1998_prototype", origin = "md:217" }
+1-44 = { text = "redump.org, GTA PC discs: http://redump.org/disc/35860/ (EU 11.5) ; /disc/31971/ (EU Limited Edition / Extreme Action Pack) ; /disc/130469/ (Australia) ; /disc/33511/ (US 12.0) ; /disc/30288/ and /disc/42839/ (US 12.1) ; /disc/114257/ (JP ZOO-0003) ; /disc/111276/ (JP ZOO-0003D) ; /disc/12807/ ; /disc/14644/ ; /disc/32133/ ; /disc/42718/ ; /disc/108214/ ; /disc/41252/ ; /disc/30124/ ; /disc/10982/ (all http://redump.org)", url = "http://redump.org/disc/35860/", origin = "md:218" }
+1-45 = { text = "redump.org, GTA PS1 discs: http://redump.org/disc/1143/ (SLES-00032 / Platinum) ; /disc/1296/ (EDC) ; /disc/523/ (SLUS-00106) ; /disc/36426/ (SLPS-01554 / SLPM-87007) ; /disc/107857/ (SLED-01093 demo) ; /disc/47953/ (SLED-01295)", url = "http://redump.org/disc/1143/", origin = "md:219" }
+1-48 = { text = "Steam Community, Grand Theft Auto discussion \"No Add o Cart button on Store Page\", 30 May–15 Oct 2019: https://steamcommunity.com/app/12170/discussions/0/1644290549104126006", url = "https://steamcommunity.com/app/12170/discussions/0/1644290549104126006", origin = "md:222" }
+1-49 = { text = "GTA.wiki, \"Credits for Grand Theft Auto: London 1969 and London 1961\": https://gta.wiki/w/Grand_Theft_Auto:_London_1969/Credits", url = "https://gta.wiki/w/Grand_Theft_Auto:_London_1969/Credits", origin = "md:223" }
+1-51 = { text = "AnandTech Forums, \"Grand Theft Auto 2 FREE courtesy of Rockstar\", 22 Dec 2004: https://forums.anandtech.com/threads/grand-theft-auto-2-free-courtesy-of-rockstar.1480403", url = "https://forums.anandtech.com/threads/grand-theft-auto-2-free-courtesy-of-rockstar.1480403", origin = "md:225" }
+1-52 = { text = "Sega Retro, \"Grand Theft Auto\" (Saturn; planned dates citing Intelligent Gamer, Sega Power, Sega FY1997 Brand Review, Ultra Game Players, Computer & Video Games): https://segaretro.org/Grand_Theft_Auto", url = "https://segaretro.org/Grand_Theft_Auto", origin = "md:226" }
+1-53 = { text = "GameFAQs, Grand Theft Auto (PC/PS) release data (Japanese PC row: Zoo Corporation, 1998-01-23): https://gamefaqs.gamespot.com/pc/197476-grand-theft-auto/data", url = "https://gamefaqs.gamespot.com/pc/197476-grand-theft-auto/data", origin = "md:227" }

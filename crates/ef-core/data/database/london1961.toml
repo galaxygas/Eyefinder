@@ -1,0 +1,35 @@
+# Grand Theft Auto: London 1961: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "1.8"
+origin = "md:155"
+title = "1.8 Grand Theft Auto: London 1961 (free PC add-on)"
+games = ["london1961"]
+
+[[entry]]
+id = "1.8-1"
+origin = "md:159"
+section = "1.8"
+kind = "digital"
+games = ["london1961"]
+title = "London 1961 freeware mission pack"
+platforms = ["pc"]
+platform_text = "PC (Windows)"
+region = "worldwide download (GTA-London.com / GTA2.com)"
+date_text = "**1 Jul 1999** (Wikipedia, citing GameSpot \"GTA2.com Launches\", 1 Jul 1999). Time Extension (29 Nov 2022) independently says \"In July 1999\". Announced **8 Jun 1999** (GameSpot \"GTA London Gains Free Pack\"). **Conflict:** GTA.wiki infobox says 1 Jun 1999 and its text says 11 Jun 1999"
+id_text = "~7 MB executable (GTA.wiki); version number not documented"
+notes = "Developer Rockstar Canada; director Greg Bick; producers Dan Houser and Lucien King. Needs GTA plus London 1969 installed (PCGW: \"Requires London 1969\"). 8 missions; 22 new vehicles; one new cutscene; Manchester deathmatch map; first drive-bys and armour shop; ratings BBFC 18 / ESRB M. Never released on PlayStation. An Internet Archive copy of the download dates from 2006. **Not** in the Rockstar Classics freeware package. Whether it was on Steam is not documented"
+confidence = "mixed"
+confidence_text = "✅ 1 Jul / ⚠️ Jun dates"
+sources = ["1-9", "1-18", "1-30", "1-31", "1-33", "1-50"]
+sources_text = "[9][18][30][31][33][50]"
+
+[sources]
+1-9 = { text = "PCGamingWiki, \"Grand Theft Auto\": https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto", origin = "md:183" }
+1-18 = { text = "Internet Archive, \"Grand Theft Auto (Rockstar Freeware)\": https://archive.org/details/gta_rockstar-classics", url = "https://archive.org/details/gta_rockstar-classics", origin = "md:192" }
+1-30 = { text = "Wikipedia, \"Grand Theft Auto: London 1969\": https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1969 (cites GameSpot 10 Feb, 30 Apr, 8 Jun, 1 Jul 1999; IGN 2 Feb, 22 Apr, 28 Apr 1999)", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1969", origin = "md:204" }
+1-31 = { text = "Wikipedia, \"Grand Theft Auto: London 1961\" (redirect/section): https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1961", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1961", origin = "md:205" }
+1-33 = { text = "GTA.wiki, \"Grand Theft Auto: London 1961\": https://gta.wiki/w/Grand_Theft_Auto:_London_1961", url = "https://gta.wiki/w/Grand_Theft_Auto:_London_1961", origin = "md:207" }
+1-50 = { text = "Time Extension, \"The Making Of: GTA London, Rockstar's Daring Detour Into The Swinging Sixties\" (Jack Yarwood), 29 Nov 2022: https://timeextension.com/features/the-making-of-gta-london-rockstars-daring-detour-into-the-swinging-sixties", url = "https://timeextension.com/features/the-making-of-gta-london-rockstars-daring-detour-into-the-swinging-sixties", origin = "md:224" }

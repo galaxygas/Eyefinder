@@ -1,0 +1,565 @@
+# Cancelled, unreleased and lost projects: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "6.5"
+origin = "md:1365"
+title = "6.5 Cancelled and unreleased handheld GTA projects"
+games = ["cancelled"]
+text = "> Earlier handheld ports, *Grand Theft Auto* (GBC, 1999) and *Grand Theft Auto 2* (GBC, 2000), are covered in Sections 1 and 2."
+
+[[section]]
+id = "11.8"
+origin = "md:3184"
+title = "11.8 Cancelled, unreleased & lost GTA projects (series-wide)"
+games = ["cancelled"]
+
+[[entry]]
+id = "6.5-1"
+origin = "md:1369"
+section = "6.5"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*Grand Theft Auto III* (Crawfish Interactive)"
+platforms = ["gba"]
+platform_text = "GBA"
+region = "–"
+date_text = "cancelled late 2002"
+id_text = "–"
+notes = "See §6.1.1. Became *GTA Advance* under Digital Eclipse. Tech demo dated 2002-04-16."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-2", "6-4", "6-31"]
+sources_text = "[2][4][31]"
+
+[[entry]]
+id = "6.5-2"
+origin = "md:1370"
+section = "6.5"
+kind = "cancelled"
+games = ["cancelled"]
+title = "Earlier GBA GTA III attempt (pre-Crawfish)"
+platforms = ["gba"]
+platform_text = "GBA"
+region = "–"
+date_text = "cancelled before Crawfish's version"
+id_text = "–"
+notes = "One ex-Crawfish developer's statement only."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["6-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "6.5-3"
+origin = "md:1371"
+section = "6.5"
+kind = "cancelled"
+games = ["cancelled"]
+title = "N-Gage, mobile-phone (J2ME), DS or PSP cancelled GTA"
+platform_text = "–"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "**Not documented.** Unseen64's complete GTA tag (2 pages) lists only the GBA GTA III as a cancelled handheld GTA. No other handheld GTA project was found."
+confidence = "confirmed"
+confidence_text = "✅ (absence on Unseen64)"
+sources = ["6-50"]
+sources_text = "[50]"
+
+[[entry]]
+id = "6.5-4"
+origin = "md:1372"
+section = "6.5"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*Grand Theft Auto* for Nintendo 64 (cancelled)"
+platforms = ["n64"]
+platform_text = "N64 (home console)"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "Out of scope (console); see Section 1 or 11. Listed on Unseen64 (2017-10-17)."
+confidence_text = "–"
+sources = ["6-50"]
+sources_text = "[50]"
+
+[[entry]]
+id = "6.5-5"
+origin = "md:1373"
+section = "6.5"
+kind = "cancelled"
+games = ["cancelled"]
+title = "LCS / VCS for PS4"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "–"
+date_text = "rated 2017-09-29"
+id_text = "–"
+notes = "ESRB ratings, never released (as of Oct 2018). See §6.2.3 and §6.3.3."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["6-28", "6-33"]
+sources_text = "[28][33]"
+
+[[entry]]
+id = "11.8-1"
+origin = "md:3188"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*Race'n'Chase* (working title of GTA)"
+platforms = ["pc"]
+platform_text = "PC etc."
+date_text = "1995–97"
+notes = "Original concept/title of GTA; early prototypes released by Mike Dailly. Not a cancellation — it became GTA."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-47"]
+sources_text = "§1, [47]"
+
+[[entry]]
+id = "11.8-2"
+origin = "md:3189"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA — Sega Saturn version"
+platforms = ["saturn"]
+platform_text = "Saturn"
+date_text = "c.1997"
+notes = "Halted early (weak sourcing: Wikipedia \"citation needed\", GTA Wiki)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "§1"
+
+[[entry]]
+id = "11.8-3"
+origin = "md:3190"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA — Nintendo 64 port (\"Grand Theft Auto 64\")"
+platforms = ["n64"]
+platform_text = "N64"
+date = "1999"
+date_text = "1999"
+notes = "Cancelled during DMA ownership changes (Retro Gamer via Wikipedia; IGN 29 Mar 1999)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-50"]
+sources_text = "§1, [50]"
+
+[[entry]]
+id = "11.8-4"
+origin = "md:3191"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA / GTA 2 — Palm OS ports"
+platforms = ["palm"]
+platform_text = "Palm OS"
+date_text = "2001–02"
+notes = "Announced by Take-Two 26 Mar 2001 (Global Star Software); demos released; cancelled by mid-2002."
+confidence = "mixed"
+confidence_text = "✅ / ⚠️"
+sources_text = "§1, §2"
+
+[[entry]]
+id = "11.8-5"
+origin = "md:3192"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA 2 — Miami project: \"expansion\" vs ***Grand Theft Auto 2.5*** (\"GTA Miami\")"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "c.1999–2000"
+notes = "**Two descriptions that conflict.** (a) Wikipedia, citing the book *Grand Thieves & Tomb Raiders*: DMA's Dundee office worked on a Miami-set GTA 2 *expansion*, dropped as the Edinburgh 3D project (GTA III) took priority. (b) GTA Wiki, citing Obbe Vermeij's blog post of 2023-11-11: the project was ***Grand Theft Auto 2.5***, also called the \"GTA Miami\" project. It was a separate game, named \"2.5\" because it would follow GTA 2 and used an isometric top-down 3D (\"2.5-dimensional\", SimCity-like) view. It was set in \"Miami\" and was cancelled when DMA's Dundee office closed. Vermeij's blog post itself could not be read on 2026-10-24 (Blogger returned \"page … does not exist\"), so (b) rests on GTA Wiki's citation."
+confidence = "mixed"
+confidence_text = "✅ (a: book via Wikipedia) / ⚠️ (b: wiki citing blog) / conflict on \"expansion\" vs separate game"
+sources = ["11-50", "11-67"]
+sources_text = "[50][67]"
+
+[[entry]]
+id = "11.8-6"
+origin = "md:3193"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*Grand Theft Auto: Online Crime World*"
+platforms = ["pc"]
+platform_text = "PC (online)"
+date_text = "c.1999–2000"
+notes = "In development at DMA at Take-Two's acquisition; abandoned with the dropped Broadband Studios merger (Guardian, PC Zone, Time Extension via Wikipedia)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-50"]
+sources_text = "[50]"
+
+[[entry]]
+id = "11.8-7"
+origin = "md:3194"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA III — Dreamcast development"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+date_text = "1999–2000"
+notes = "Tech demo and ~4 months of development on Dreamcast before moving to PS2; Obbe Vermeij: Dreamcast not commercially viable. No build preserved. (A fan re3-based Dreamcast port appeared 2024 — unofficial.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-49"]
+sources_text = "[49], §3"
+
+[[entry]]
+id = "11.8-8"
+origin = "md:3195"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA III — online multiplayer"
+platforms = ["ps2"]
+platform_text = "PS2"
+date_text = "2000–01"
+notes = "Planned online mode dropped for time/resources."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-49"]
+sources_text = "[49]"
+
+[[entry]]
+id = "11.8-9"
+origin = "md:3196"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "***Grand Theft Auto: Online*** (\"GTA:O\"): MMO proposal by **Barking Dog Studios** (later Rockstar Vancouver)"
+platforms = ["pc"]
+platform_text = "PC (RenderWare, per GTA Wiki infobox)"
+date_text = "c. May 2001"
+notes = "An MMORPG concept pitched to Rockstar Games around May 2001, to be made with Rockstar North: a persistent online cops-and-robbers world with player-created characters. Evidence: the *Grand Theft Auto: Online* Design Document **Version 1.20, dated 31 May 2001** (Barking Dog Studios), which researchers made public in 2024 after getting it from an unnamed Rockstar employee. Obbe Vermeij posted on X on 2024-12-25 that three Barking Dog staff visited Edinburgh and that \"None of this was greenlit or actually worked on\". It is **not** the GTA III online mode in the row above. Since 2024 outlets have mislabelled it \"GTA III Online\", because the design document uses a GTA III testbed screenshot as a placeholder."
+confidence = "single-source"
+confidence_text = "⚠️ (wiki citing the design doc and Vermeij's post)"
+sources = ["11-66"]
+sources_text = "[66]"
+
+[[entry]]
+id = "11.8-10"
+origin = "md:3197"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA III — Xbox exclusive offer"
+platforms = ["xbox"]
+platform_text = "Xbox"
+date = "2001"
+date_text = "2001"
+notes = "Rockstar offered GTA III to Microsoft as an Xbox exclusive; declined. (Later released on Xbox 2003.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-49"]
+sources_text = "[49]"
+
+[[entry]]
+id = "11.8-11"
+origin = "md:3198"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA III / Vice City — GameCube port"
+platforms = ["gc"]
+platform_text = "GameCube"
+date_text = "c.2003"
+notes = "Expected by analysts; never materialised."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-49"]
+sources_text = "[49], §3"
+
+[[entry]]
+id = "11.8-12"
+origin = "md:3199"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "\"Z\" — zombie survival game"
+platforms = ["ps2"]
+platform_text = "PS2"
+date_text = "c. late 2002"
+notes = "Rockstar North project on a Scottish island reusing Vice City code; dropped after ~1 month (Obbe Vermeij via Eurogamer/RPS, cited by Wikipedia). Not GTA-branded."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-50"]
+sources_text = "[50]"
+
+[[entry]]
+id = "11.8-13"
+origin = "md:3200"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA III GBA port by Crawfish Interactive (original *GTA Advance*)"
+platforms = ["gba"]
+platform_text = "GBA"
+date = "2002"
+date_text = "2002"
+notes = "Started as a GTA III port by Crawfish; tech demo dated 2002-04-16 survives; Crawfish closed Nov 2002; game rebuilt by Digital Eclipse and released Oct 2004. No Rockstar Leeds involvement documented."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-41", "11-57"]
+sources_text = "[41][57], §6"
+
+[[entry]]
+id = "11.8-14"
+origin = "md:3201"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*Agent* (Rockstar North)"
+platforms = ["ps3"]
+platform_text = "PS3"
+date_text = "2007–2018"
+notes = "Teased E3 2007, announced 2 Jun 2009 as PS3 exclusive; Cold War spy setting; staff moved to GTA V; USPTO trademark declared abandoned 19 Nov 2018; site redirected by Oct 2021. Material purportedly from *Agent* appeared in the Dec 2023 leak. Not GTA, listed for cross-reference."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-52", "11-39"]
+sources_text = "[52][39]"
+
+[[entry]]
+id = "11.8-15"
+origin = "md:3202"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA IV — cut features"
+platforms = ["x360", "ps3"]
+platform_text = "X360/PS3"
+date_text = "2007–08"
+notes = "In-game record shop/MP3 player cut; SA-style RPG elements removed; co-op story campaign considered and rejected."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-63"]
+sources_text = "[63]"
+
+[[entry]]
+id = "11.8-16"
+origin = "md:3203"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA IV — zombie mode \"Z: Resurrection\""
+platforms = ["x360"]
+platform_text = "X360"
+date = "2007"
+date_text = "2007"
+notes = "Referenced in the Nov 2007 Xbox 360 prototype."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources_text = "§7"
+
+[[entry]]
+id = "11.8-17"
+origin = "md:3204"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA IV — third episode / further episodes"
+platforms = ["x360"]
+platform_text = "X360"
+date = "2009"
+date_text = "2009"
+notes = "No planned third episode found in Wikipedia's GTA IV / EFLC articles. Microsoft paid US$50m for the two episodes."
+confidence_text = "—"
+sources = ["11-54", "11-63"]
+sources_text = "**not documented**; [54][63]"
+
+[[entry]]
+id = "11.8-18"
+origin = "md:3205"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA V — cancelled single-player DLC (8 sets)"
+platforms = ["ps3", "x360", "ps4"]
+platform_text = "PS3/X360/PS4…"
+date_text = "c.2013–2015"
+notes = "Names from 2023 source leak: SP Assassination Pack, SP Manhunt Pack, SP Norman Pack, **Agent Trevor**, Relationship Pack, Enterprise Pack, Prologue DLC, **LibertyV** (Liberty City). Scrapped to focus on GTA Online & RDR2."
+confidence = "confirmed"
+confidence_text = "✅ (names)"
+sources = ["11-6", "11-37", "11-38", "11-40"]
+sources_text = "11.6, [37][38][40]"
+
+[[entry]]
+id = "11.8-19"
+origin = "md:3206"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA V — \"alien/zombie\" story DLC"
+platform_text = "—"
+date_text = "—"
+notes = "No documentation found linking a specific alien or zombie SP DLC to GTA V beyond the names above."
+confidence = "unverified"
+confidence_text = "❓"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.8-20"
+origin = "md:3207"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*GTA Tokyo*"
+platform_text = "—"
+date_text = "—"
+notes = "No reliable source found in the material consulted (not mentioned in Wikipedia articles on GTA, Rockstar North, Rockstar Leeds)."
+confidence = "unverified"
+confidence_text = "❓"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.8-21"
+origin = "md:3208"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*GTA: Liberty City Stories* early concepts"
+platforms = ["psp"]
+platform_text = "PSP"
+date_text = "2005–06"
+notes = "No separate concept or cancelled version found. Hidden Palace documents nine LCS pre-release builds, from 2005-05-29 to 2006-03-22 (see 11.7 and §6.2.1); all are builds of the released game. Multiplayer was on PSP but removed from the PS2 and mobile versions."
+confidence = "confirmed"
+confidence_text = "✅ (prototypes)"
+sources = ["11-42", "11-58"]
+sources_text = "[42][58], (§6)"
+
+[[entry]]
+id = "11.8-22"
+origin = "md:3209"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*GTA: Vice City Online*"
+platform_text = "—"
+date_text = "—"
+notes = "No evidence found."
+confidence_text = "—"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.8-23"
+origin = "md:3210"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "\"GTA: Online Bonus Pack\""
+platform_text = "—"
+date_text = "—"
+notes = "No evidence found."
+confidence_text = "—"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.8-24"
+origin = "md:3211"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "Official J2ME / feature-phone GTA"
+platform_text = "Mobile"
+date_text = "—"
+notes = "No official Java/J2ME GTA found; official mobile releases are iOS/Android/Fire OS/Windows Phone ports (GTA III, VC, SA, LCS, CW)."
+confidence_text = "—"
+sources = ["11-53"]
+sources_text = "not documented; [53]"
+
+[[entry]]
+id = "11.8-25"
+origin = "md:3212"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "Unofficial J2ME \".jar\" games named \"GTA\""
+platforms = ["j2me"]
+platform_text = "J2ME (CLDC/MIDP)"
+date_text = "—"
+notes = "libretro's J2ME DAT lists GTA-named jars. The vendor named in each filename's parentheses is never Rockstar or Take-Two: **\"GTA (Auer Media)\"** v1.20.02 / v1.32.02 (3 dumps) and **\"GTA_lo (Auer Media)\"** v1.20.02 (2 dumps); **\"GTA Vice city (Tag Games Limited)\"** v0.2.2; **\"GTA IV Mobile [sefan.ru] (Tag Games Limited)\"** v0.2.15; **\"GTA Soviet Russia (F.M.R)\"** v0.2.15 / v1.1.0 and \"(Tag Games, F.M.R)\" v0.2.2 / v0.2.3; **\"GTA4 BY DJ27 (DJ27 MASTER-T)\"** v1.0.9. The DAT has no publisher or year field. The \"[sefan.ru]\" tag (a download-site tag), the \"F.M.R\" and \"DJ27\" credits, and Tag Games and F.M.R jars that share version numbers all suggest unofficial or bootleg remakes; that is an inference, not stated by the DAT. These jars support, and do not contradict, the conclusion above that no official J2ME GTA exists."
+confidence = "single-source"
+confidence_text = "⚠️ (single list; status inferred from the vendor names)"
+sources = ["11-69"]
+sources_text = "[69]"
+
+[[entry]]
+id = "11.8-26"
+origin = "md:3213"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "*Chinatown Wars* for iPod (click-wheel)"
+platforms = ["ios"]
+platform_text = "iPod"
+date_text = "—"
+notes = "No evidence found (the game was released on iOS — see §6)."
+confidence_text = "—"
+sources_text = "not documented"
+
+[[entry]]
+id = "11.8-27"
+origin = "md:3214"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "GTA film adaptation"
+platform_text = "Film"
+date_text = "—"
+notes = "No official GTA film produced; Take-Two states it owns film rights and will act against any film titled *Grand Theft Auto* (Wikipedia; Roger Corman's 1977 film *Grand Theft Auto* is unrelated)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "11.8-28"
+origin = "md:3215"
+section = "11.8"
+kind = "cancelled"
+games = ["cancelled"]
+title = "Rockstar Leeds cancelled projects"
+platform_text = "—"
+date_text = "2000–2010"
+notes = "Non-GTA: *Titanium Angels* (PS2), *Necroscope* (PS2/Xbox), *The Warriors* GBA, *Bully* DS. No cancelled GTA project at Rockstar Leeds documented."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-51"]
+sources_text = "[51]"
+
+[sources]
+6-2 = { text = "Unseen64 — \"GTA 3 [GBA – Cancelled]\" (2018-01-31): https://www.unseen64.net/2018/01/31/gta-3-gba-cancelled/", url = "https://www.unseen64.net/2018/01/31/gta-3-gba-cancelled/", origin = "md:1392" }
+6-4 = { text = "Lost Media Archive — Grand Theft Auto III (Cancelled Game Boy Advance Port; 2001): https://lostmediaarchive.fandom.com/wiki/Grand_Theft_Auto_III_(Cancelled_Game_Boy_Advance_Port:_2001)", url = "https://lostmediaarchive.fandom.com/wiki/Grand_Theft_Auto_III_(Cancelled_Game_Boy_Advance_Port:_2001", origin = "md:1394" }
+6-28 = { text = "LevelUp (2017-09-29) — Listan GTA: Liberty City Stories y Vice City Stories para PS4 (ESRB): https://www.levelup.com/noticias/listan-gta-liberty-city-stories-y-vice-city-stories-para-ps4/", url = "https://www.levelup.com/noticias/listan-gta-liberty-city-stories-y-vice-city-stories-para-ps4/", origin = "md:1418" }
+6-31 = { text = "The Cutting Room Floor — Proto: Grand Theft Auto Advance: https://tcrf.net/Proto:Grand_Theft_Auto_Advance", url = "https://tcrf.net/Proto:Grand_Theft_Auto_Advance", origin = "md:1421" }
+6-33 = { text = "Delisted Games — Grand Theft Auto: Vice City Stories: https://delistedgames.com/grand-theft-auto-vice-city-stories/", url = "https://delistedgames.com/grand-theft-auto-vice-city-stories/", origin = "md:1423" }
+6-50 = { text = "Unseen64 — GTA tag (pages 1–2): https://www.unseen64.net/tag/gta/ and https://www.unseen64.net/tag/gta/page/2/", url = "https://www.unseen64.net/tag/gta/", origin = "md:1440" }
+11-6 = { text = "(unused)", origin = "md:3245" }
+11-37 = { text = "Beebom — \"GTA 5 Source Code Leaked Online; Confirms 8 Scrapped DLCs\" (26 Dec 2023): https://beebom.com/gta-5-source-code-leaked-online-scrapped-dlcs/", url = "https://beebom.com/gta-5-source-code-leaked-online-scrapped-dlcs/", origin = "md:3276" }
+11-38 = { text = "Insider Gaming — GTA 5 leak DLCs (Dec 2023): https://insider-gaming.com/gta-5-leak-dlcs", url = "https://insider-gaming.com/gta-5-leak-dlcs", origin = "md:3277" }
+11-39 = { text = "Yahoo Tech — \"Report: Hackers Leak GTA 5 Source Code Alongside GTA 6 and Bully 2 Content\" (26 Dec 2023): https://tech.yahoo.com/general/articles/report-hackers-leak-gta-5-132631195.html", url = "https://tech.yahoo.com/general/articles/report-hackers-leak-gta-5-132631195.html", origin = "md:3278" }
+11-40 = { text = "Wikipedia — \"Grand Theft Auto V\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:3279" }
+11-41 = { text = "TCRF — \"Proto:Grand Theft Auto Advance\": https://tcrf.net/Proto:Grand_Theft_Auto_Advance", url = "https://tcrf.net/Proto:Grand_Theft_Auto_Advance", origin = "md:3280" }
+11-42 = { text = "TCRF — \"Proto:Grand Theft Auto: Liberty City Stories\": https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", url = "https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:3281" }
+11-47 = { text = "TCRF — \"Grand Theft Auto (Windows)\": https://tcrf.net/Grand_Theft_Auto_(Windows)", url = "https://tcrf.net/Grand_Theft_Auto_(Windows", origin = "md:3286" }
+11-49 = { text = "Wikipedia — \"Grand Theft Auto III\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3288" }
+11-50 = { text = "Wikipedia — \"Rockstar North\" (cites Retro Gamer \"From the Archives: DMA Design\", No. 62, 2009; *Grand Thieves & Tomb Raiders*; The Guardian; PC Zone; Time Extension; Eurogamer/RPS on Obbe Vermeij): https://en.wikipedia.org/wiki/Rockstar_North", url = "https://en.wikipedia.org/wiki/Rockstar_North", origin = "md:3289" }
+11-51 = { text = "Wikipedia — \"Rockstar Leeds\": https://en.wikipedia.org/wiki/Rockstar_Leeds", url = "https://en.wikipedia.org/wiki/Rockstar_Leeds", origin = "md:3290" }
+11-52 = { text = "Wikipedia — \"Agent (video game)\": https://en.wikipedia.org/wiki/Agent_(video_game) ; Business Wire (2 Jun 2009): https://www.businesswire.com/news/home/20090602006559/en/Rockstar-Games-Announces-Agent-Exclusively-PLAYSTATION%C2%AE3-System ; GameSpot (Nov 2018): https://www.gamespot.com/articles/take-two-appears-to-have-abandoned-agent-trademark/1100-6463424/ ; IGN (Oct 2021): https://www.ign.com/articles/rockstar-agent-website-disappears-no-trademark", url = "https://en.wikipedia.org/wiki/Agent_(video_game", origin = "md:3291" }
+11-53 = { text = "Wikipedia — \"Grand Theft Auto\" (series): https://en.wikipedia.org/wiki/Grand_Theft_Auto", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto", origin = "md:3292" }
+11-54 = { text = "Wikipedia — \"Grand Theft Auto: Episodes from Liberty City\": https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Episodes_from_Liberty_City", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Episodes_from_Liberty_City", origin = "md:3293" }
+11-57 = { text = "Wikipedia — \"Grand Theft Auto Advance\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_Advance", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_Advance", origin = "md:3296" }
+11-58 = { text = "Wikipedia — \"Grand Theft Auto: Liberty City Stories\": https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:3297" }
+11-63 = { text = "Wikipedia — \"Grand Theft Auto IV\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:3302" }
+11-66 = { text = "GTA Wiki (Fandom) — \"Grand Theft Auto: Online (Barking Dog Studios)\" (MediaWiki API, read 2026-10-24; cites the *GTA: Online* Design Document v1.20, 31 May 2001, and https://x.com/ObbeVermeij/status/1871935518398628341): https://gta.fandom.com/wiki/Grand_Theft_Auto:_Online_(Barking_Dog_Studios)", url = "https://x.com/ObbeVermeij/status/1871935518398628341", origin = "md:3305" }
+11-67 = { text = "GTA Wiki (Fandom) — \"Grand Theft Auto 2.5\" (MediaWiki API, read 2026-10-24; cites Obbe Vermeij's blog, 2023-11-11, https://insiderockstarnorth.blogspot.com/2023/11/1999-beginnings-of-gta3.html, which returned \"does not exist\" on 2026-10-24): https://gta.fandom.com/wiki/Grand_Theft_Auto_2.5", url = "https://insiderockstarnorth.blogspot.com/2023/11/1999-beginnings-of-gta3.html", origin = "md:3306" }
+11-69 = { text = "libretro-database — `dat/Mobile - J2ME.dat` (GTA-named entries at lines ~400990–401051; cloned 2026-10-24): https://github.com/libretro/libretro-database/blob/master/dat/Mobile%20-%20J2ME.dat", url = "https://github.com/libretro/libretro-database/blob/master/dat/Mobile%20-%20J2ME.dat", origin = "md:3308" }

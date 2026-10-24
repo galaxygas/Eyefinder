@@ -1,0 +1,2510 @@
+# Grand Theft Auto Online: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "9"
+origin = "md:2254"
+title = "9. GTA Online — Every Update & DLC"
+games = ["gta-online"]
+text = '''
+**Scope.** Every titled GTA Online content update / DLC from launch (1 Oct 2013) to the present (research date 24 Oct 2026), plus the cancelled GTA V single-player DLC, GTA+, Shark Cards, the Criminal Enterprise Starter Pack and the standalone GTA Online release. Weekly bonus events are left out unless they were a titled update with new content.
+
+**Columns.**
+- **Game version / TU** gives the console title-update ("patch") number. Until 2015 GTA V and GTA Online used separate numbering on each platform family: e.g. Heists is TU 1.21 on PS3/360 but 1.07 on PS4/XB1 (GTA Wiki). GTABase's master list uses one running number, so both are shown where they differ.
+- **PC build** numbers (1.0.xxxx) come from the FiveM `sv_enforceGameBuild` table and the DurtyFree data-dump commit log, which record the PC build that shipped each DLC.
+- **Internal DLC name** is the `dlcpacks:/` folder name: from dlclist.xml (a 2019 copy on Pastebin) for the older packs, and from the `DlcName` field of the DurtyFree vehicles.json dump plus the FiveM build aliases for the newer ones.
+- **Conf.**: ✅ confirmed by ≥2 independent sources or an official Rockstar source; ⚠️ only one community source; ❓ rumour or conflicting. "not documented" means no source was found.
+
+**Platform eras.** These cover what the Online servers existed on. Which versions a given update reached is in the tables.
+- **PS3/X360**, from 1 Oct 2013. Servers closed 16 Dec 2021 [S1].
+- **PS4/XB1**, from 18 Nov 2014 [S1].
+- **PC**, from 14 Apr 2015 [S1]. The original PC version was renamed "GTA V Legacy" on 4 Mar 2025, when the free "GTA V Enhanced" upgrade launched [S1][S9].
+- **PS5/XSX/S**, from 15 Mar 2022, with standalone GTA Online on the same day [S1][S10].'''
+
+[[section]]
+id = "9.2013"
+origin = "md:2270"
+title = "2013 — Launch year (PS3 / Xbox 360 only)"
+games = ["gta-online"]
+text = '''
+Other 2013 notes:
+- The **Whale Shark** cash card was added in Dec 2013. The Red, Tiger, Bull and Great White cards were available from launch [S14] ⚠️.'''
+
+[[section]]
+id = "9.2014"
+origin = "md:2283"
+title = "2014 — Last-gen DLC run; PS4/XB1 launch; Festive Surprise"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2015"
+origin = "md:2298"
+title = "2015 — Heists, PC launch, last-gen cut-off"
+games = ["gta-online"]
+text = '''
+Notes:
+- Xbox 360's final TU was 1.29 (17 Nov 2015). PS3's final TU was 1.36 (9 Dec 2016, "PS3 Only") [S6] ⚠️.
+- Numbering: GTABase and GTA Wiki give the **Online** version (1.27, 1.28…) as the main number from 2015 on. The GTA V version on PS4/XB1 ran separately (1.11, 1.12, 1.13…).'''
+
+[[section]]
+id = "9.2016"
+origin = "md:2316"
+title = "2016 — Enhanced-only era (PS4 / XB1 / PC)"
+games = ["gta-online"]
+text = '''
+Note: dlclist also contains numbered patch packs `patchday1ng`…`patchday20ng` between the content packs (later reaching at least `patchday24ng`, per DurtyFree's Feb 2021 commit). They are fix and asset packs, not titled updates, and the sources do not map them to specific updates [S4][S5].
+
+PC builds 2015–2016 seen as patch uploads on playground.ru (Russian community file site; dates are **upload** dates, and the uploads name no update) [S96] ⚠️: 1.0.393.2 ("Update 7", 10 Jul 2015), 1.0.393.4 ("Update 8", 9 Aug 2015), 1.0.463.1 (16 Sep 2015), 1.0.573.1 (17 Dec 2015), 1.0.678.1 (28 Apr 2016), 1.0.757.2 (12 Jun 2016), 1.0.757.4 (14 Jun 2016). Upload dates fall one or two days after Freemode Events (15 Sep 2015), Executives and Other Criminals (15 Dec 2015) and Finance and Felony (7 Jun 2016), but no source ties these builds to those updates. Any such pairing is inferred from dates only ❓.'''
+
+[[section]]
+id = "9.2017"
+origin = "md:2332"
+title = "2017"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2018"
+origin = "md:2342"
+title = "2018"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2019"
+origin = "md:2352"
+title = "2019"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2020"
+origin = "md:2359"
+title = "2020"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2021"
+origin = "md:2368"
+title = "2021 — PS3/X360 shutdown"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2022"
+origin = "md:2378"
+title = "2022 — PS5 / Xbox Series release, standalone GTA Online, GTA+"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2023"
+origin = "md:2391"
+title = "2023"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2024"
+origin = "md:2401"
+title = "2024"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2025"
+origin = "md:2412"
+title = "2025 — GTA V Enhanced on PC"
+games = ["gta-online"]
+
+[[section]]
+id = "9.2026"
+origin = "md:2424"
+title = "2026 (to 24 Oct 2026)"
+games = ["gta-online"]
+text = "No titled update after The Kortz Center Heist was found as of 24 Oct 2026. The Rockstar Newswire GTA Online tag lists only weekly events, GTA+ posts and the Halloween event (1 Oct 2026) after the 14 Jul 2026 launch post, up to its latest post on 8 Oct 2026 [S90]. The next \"winter 2026\" update was not documented in any source consulted."
+
+[[section]]
+id = "9.A"
+origin = "md:2435"
+title = "9.A GTA V single-player (Story Mode) DLC: none released"
+games = ["gta5"]
+text = "No story-mode expansion for GTA V was ever released. Every DLC listed above is GTA Online content. Some packs also added cars, weapons and clothing to story mode."
+
+[[section]]
+id = "9.B"
+origin = "md:2446"
+title = "9.B GTA+ membership: overview"
+games = ["gta-online"]
+
+[[section]]
+id = "9.C"
+origin = "md:2457"
+title = "9.C Shark Cards (microtransactions)"
+games = ["gta-online"]
+text = "Exact first-sale date of cash cards: **not documented** in the sources consulted. GTA Wiki says only \"at launch\". PS3/X360 microtransactions were disabled on 15 Sep 2021 [S1]."
+
+[[section]]
+id = "9.D"
+origin = "md:2470"
+title = "9.D Criminal Enterprise Starter Pack and standalone GTA Online"
+games = ["gta-online"]
+
+[[section]]
+id = "9.E"
+origin = "md:2478"
+title = "9.E Internal DLC pack index (chronological order)"
+games = ["gta-online"]
+text = "The `_g9ec` companion packs hold content for the Gen-9 (PS5/XSX/Enhanced) builds; this reading comes from the pack names plus GTA Wiki infoboxes ⚠️. `addonpeds` and `patchdayNng` are support packs [S5]."
+
+[[section]]
+id = "9.F"
+origin = "md:2512"
+title = "9.F Gaps and conflicts"
+games = ["gta-online"]
+text = '''
+**Conflicting values** (both are shown in the tables):
+- Halloween Surprise TU: 1.30 era (GTABase; GTA Wiki TU table) vs "1.69" (GTA Wiki infobox).
+- Safehouse PC build: 3717 (DurtyFree, launch) vs 3751 (FiveM table).
+
+**Resolved in the second pass** (primary Rockstar sources): Beach Bum = 19 Nov 2013, Deathmatch & Race Creators = 11 Dec 2013, High Life = 13 May 2014, Lowriders = 20 Oct 2015, A Safehouse in the Hills = 10 Dec 2025, Kortz Center Heist = 14 Jul 2026 (Rockstar Newswire "Now Available" posts). Criminal Enterprises = TU 1.61 and Drug Wars = TU 1.64 (Rockstar Support TU notes). The other dates in each pair are wiki infobox, year-page or notes-block dates.
+
+**Not documented:**
+- PC builds for Online 1.21–1.35 except the playground.ru uploads listed under 2016 (none tied to an update), and builds 1.0.944–1.0.1365 (Cunning Stunts to SSASSS).
+- The PC build for the Diamond Casino Heist (TU 1.49/1.50). TU 1.48 = 1.0.1737.0 rests on one community source ⚠️.
+- The GTA V Enhanced (PC) build at launch.
+- Internal packs for the Content Creator, Capture and Capture Creator updates. The `file_name` field is blank on both gta.wiki and gta.fandom.com, and the 2019 dlclist names no pack for them.
+- The exact first-sale date of Shark Cards. Both GTA Wikis say only that GTA Online "launched with" the Red, Tiger, Bull and Great White cards.
+- The Criminal Enterprise Starter Pack's end of sale.
+- Whether PS4/XB1 GTA Online support has ended. As of the TU 1.73 notes (2026), PS4/XB1 are still listed.
+
+**Research limits:**
+- gta.fandom.com was readable in the second pass through the browser (MediaWiki API). Its infoboxes match gta.wiki, which is a copy, so the two are not counted as independent sources.
+- gtaforums.com (the Script Hook V topic, which logs PC build numbers) was behind a Cloudflare challenge. web.archive.org needed approval for every page load, so old Rockstar Support (Zendesk) note URLs could not be read; they now return 404.'''
+
+[[entry]]
+id = "9.2013-1"
+origin = "md:2274"
+section = "9.2013"
+kind = "dlc"
+games = ["gta-online"]
+title = "**GTA Online launch**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "1 Oct 2013, two weeks after GTA V. Server problems were followed by a technical patch on 5 Oct"
+id_text = "GTABase lists TU 1.01 as \"Game Launch\" (1 Oct). TU 1.02 (4 Oct), 1.03 (9 Oct), 1.04 (18 Oct) and 1.05 (5 Nov) were GTA Online fix patches"
+notes = "Online mode launches"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2"]
+sources_text = "S1, S2"
+[entry.fields]
+"#" = "9.0"
+"Internal DLC name" = "base game (no pack)"
+
+[[entry]]
+id = "9.2013-2"
+origin = "md:2275"
+section = "9.2013"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Beach Bum Update**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "19 Nov 2013. Rockstar Newswire's \"Beach Bum Update is Now Available\" post is dated 19 Nov 2013 [S81]; GTA Wiki's TU-notes page dates the patch 20 Nov"
+id_text = "TU 1.06"
+notes = "Off-road vehicles, a speedboat, beach clothing, SNS Pistol and Bottle"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S30", "9-S81"]
+sources_text = "S1, S2, S5, S6, S30, S81"
+[entry.fields]
+"#" = "9.1"
+"Internal DLC name" = "`mpbeach`"
+
+[[entry]]
+id = "9.2013-3"
+origin = "md:2276"
+section = "9.2013"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Deathmatch & Race Creators Update** (aka Content Creator Update)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "11 Dec 2013. Rockstar Newswire's \"Free GTA Online Deathmatch & Race Creators Update Now Available\" is dated 11 Dec 2013 [S82] (GTABase: 10 Dec)"
+id_text = "TU 1.07"
+notes = "Content Creator for Deathmatch, Team DM, Race, GTA Race and Rally"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S31", "9-S82"]
+sources_text = "S1, S2, S31, S82"
+[entry.fields]
+"#" = "9.2"
+"Internal DLC name" = "not documented (the `file_name` field is blank on both gta.wiki and gta.fandom.com)"
+
+[[entry]]
+id = "9.2013-4"
+origin = "md:2277"
+section = "9.2013"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Capture Update**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2013-12-17"
+date_text = "17 Dec 2013 (Rockstar Newswire \"GTA Online Capture Update Now Available\", 17 Dec 2013 [S83])"
+id_text = "TU 1.08"
+notes = "Capture team mode with Raid, Hold, GTA and Contend variants"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S32", "9-S83"]
+sources_text = "S1, S2, S32, S83"
+[entry.fields]
+"#" = "9.3"
+"Internal DLC name" = "not documented (`file_name` blank on gta.fandom.com too)"
+
+[[entry]]
+id = "9.2013-5"
+origin = "md:2278"
+section = "9.2013"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Holiday Gifts**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "24 Dec 2013, time-limited to 5 Jan 2014"
+id_text = "TU 1.08"
+notes = "Festive clothing, Snapmatic filters, discounts, snow"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S5", "9-S33"]
+sources_text = "S1, S5, S33"
+[entry.fields]
+"#" = "9.4"
+"Internal DLC name" = "`mpchristmas`"
+
+[[entry]]
+id = "9.2014-1"
+origin = "md:2287"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Valentine's Day Massacre Special**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "13 Feb 2014, time-limited to 3 Mar 2014 (re-purchasable later)"
+id_text = "TU 1.10 (TU 1.09, 11 Jan 2014, was a fix patch)"
+notes = "Gusenberg Sweeper, Albany Roosevelt, 1920s clothing, 10 jobs"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S34"]
+sources_text = "S1, S2, S5, S34"
+[entry.fields]
+"#" = "9.5"
+"Internal DLC name" = "`mpvalentines`"
+
+[[entry]]
+id = "9.2014-2"
+origin = "md:2288"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Business Update**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2014-03-04"
+date_text = "4 Mar 2014"
+id_text = "TU 1.11"
+notes = "Heavy Pistol, Special Carbine, high-end cars, formal clothing"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S35"]
+sources_text = "S1, S2, S5, S35"
+[entry.fields]
+"#" = "9.6"
+"Internal DLC name" = "`mpbusiness`"
+
+[[entry]]
+id = "9.2014-3"
+origin = "md:2289"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Capture Creator**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2014-04-11"
+date_text = "11 Apr 2014"
+id_text = "TU 1.12"
+notes = "Capture added to the Content Creator"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2"]
+sources_text = "S1, S2"
+[entry.fields]
+"#" = "9.7"
+"Internal DLC name" = "not documented"
+
+[[entry]]
+id = "9.2014-4"
+origin = "md:2290"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The High Life Update**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "13 May 2014. Rockstar Newswire's \"The High Life Update for GTA Online Is Now Available\" is dated 13 May 2014 [S84]. GTA Wiki's 2014 year page and the gta.fandom.com infobox say 12 May; the same Fandom article's body text says 13 May"
+id_text = "TU 1.13"
+notes = "High-end apartments, second property slot, Bullpup Rifle, Mental State"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S36", "9-S84"]
+sources_text = "S1, S2, S5, S36, S84"
+[entry.fields]
+"#" = "9.8"
+"Internal DLC name" = "`mpbusiness2`"
+
+[[entry]]
+id = "9.2014-5"
+origin = "md:2291"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The \"I'm Not a Hipster\" Update**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2014-06-17"
+date_text = "17 Jun 2014"
+id_text = "TU 1.14"
+notes = "Hipster vehicles, clothing, jobs, weapons"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S37"]
+sources_text = "S1, S2, S5, S37"
+[entry.fields]
+"#" = "9.9"
+"Internal DLC name" = "`mphipster`"
+
+[[entry]]
+id = "9.2014-6"
+origin = "md:2292"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Independence Day Special**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "1 Jul 2014, time-limited to 1 Aug 2014 (returns yearly)"
+id_text = "TU 1.15"
+notes = "Patriotic vehicles (Monster, Sovereign), weapons, costumes"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5", "9-S38"]
+sources_text = "S1, S2, S4, S5, S38"
+[entry.fields]
+"#" = "9.10"
+"Internal DLC name" = "`mpindependence`"
+
+[[entry]]
+id = "9.2014-7"
+origin = "md:2293"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The San Andreas Flight School Update**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2014-08-19"
+date_text = "19 Aug 2014"
+id_text = "TU 1.16"
+notes = "Flight School lessons, 3 aircraft (incl. Besra, Miljet), Coquette Classic"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5", "9-S39"]
+sources_text = "S1, S2, S4, S5, S39"
+[entry.fields]
+"#" = "9.11"
+"Internal DLC name" = "`mppilot`"
+
+[[entry]]
+id = "9.2014-8"
+origin = "md:2294"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Last Team Standing Update**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2014-10-02"
+date_text = "2 Oct 2014"
+id_text = "TU 1.17"
+notes = "LTS creator, 2 motorcycles, a sports car, 2 weapons"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S40"]
+sources_text = "S1, S2, S5, S40"
+[entry.fields]
+"#" = "9.12"
+"Internal DLC name" = "`mplts`"
+
+[[entry]]
+id = "9.2014-9"
+origin = "md:2295"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**PS4 / Xbox One release** (GTA V Enhanced Edition)"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+date = "2014-11-18"
+date_text = "18 Nov 2014"
+id_text = "GTABase TU 1.18"
+notes = "GTA Online arrives on current gen"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5"]
+sources_text = "S1, S2, S4, S5"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "Enhanced-edition content pack `spupgrade` is in dlclist (its vehicles include blimp2, blista2, blista3). The pack's purpose is not stated by the sources ⚠️"
+
+[[entry]]
+id = "9.2014-10"
+origin = "md:2296"
+section = "9.2014"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Festive Surprise** (2014)"
+platforms = ["ps3", "x360", "ps4", "xone"]
+platform_text = "PS3, X360, PS4, XB1"
+date_text = "18 Dec 2014 on all four consoles. Special crate drops ran to 5 Jan, with extras on 9–11 Jan 2015"
+id_text = "TU 1.19 (PS3/360), TU 1.05 (PS4/XB1). GTABase lists it as \"1.19 (Online 1.21)\". TU 1.20 followed on 23 Dec 2014"
+notes = "First update for the Enhanced Edition: Homing Launcher, Proximity Mines, 4 vehicles, snow"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S41"]
+sources_text = "S1, S2, S5, S41"
+[entry.fields]
+"#" = "9.13"
+"Internal DLC name" = "`mpchristmas2`"
+
+[[entry]]
+id = "9.2015-1"
+origin = "md:2302"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Heists** (Heists Update)"
+platforms = ["ps3", "x360", "ps4", "xone", "pc"]
+platform_text = "PS3, X360, PS4, XB1, PC"
+date_text = "10 Mar 2015 on PS3, X360, PS4 and XB1. PC version launched 14 Apr 2015 at a later build (335.1, \"online 1.24\")"
+id_text = "GTA V TU 1.21 (PS3/360), 1.07 (PS4/XB1); Online 1.23. PS4/XB1 fix TUs 1.22 (15 Mar) and 1.23 (26 Mar), then TU 1.26 (2 Apr)"
+notes = "5 co-op multi-stage heists, planning room, Adversary Modes, Daily Objectives"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S42"]
+sources_text = "S1, S2, S5, S6, S42"
+[entry.fields]
+"#" = "9.14"
+"Internal DLC name" = "`mpheist`"
+
+[[entry]]
+id = "9.2015-2"
+origin = "md:2303"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**PC release of GTA V / GTA Online**"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2015-04-14"
+date_text = "14 Apr 2015"
+id_text = "PC builds 335.1 (9/17 Apr, Online 1.24), 350.1 (30 Apr, Online 1.25), 350.2 (1 May, Online 1.26)"
+notes = "Online on PC"
+confidence = "mixed"
+confidence_text = "✅ (date) / ⚠️ (builds)"
+sources = ["9-S1", "9-S6"]
+sources_text = "S1, S6"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "`mpreplay` appears in dlclist after `mpluxe2` (see 9.17)"
+
+[[entry]]
+id = "9.2015-3"
+origin = "md:2304"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Ill-Gotten Gains Part 1**"
+platform_text = "All 5"
+date = "2015-06-10"
+date_text = "10 Jun 2015"
+id_text = "GTA V 1.24 (PS3/360), 1.11 (PS4/XB1); Online 1.27; PC build 350.3"
+notes = "Luxury vehicles and clothing, Combat PDW, weapon engravings"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S43"]
+sources_text = "S1, S2, S5, S6, S43"
+[entry.fields]
+"#" = "9.15"
+"Internal DLC name" = "`mpluxe`"
+
+[[entry]]
+id = "9.2015-4"
+origin = "md:2305"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Ill-Gotten Gains Part 2**"
+platforms = ["x360"]
+platform_text = "All 5. **Last content update for PS3/X360**"
+date = "2015-07-08"
+date_text = "8 Jul 2015"
+id_text = "GTA V 1.25 (PS3/360), 1.12 (PS4/XB1); Online 1.28; PC build 393.2, then 393.4 on 21 Jul (Online 1.28.01)"
+notes = "High-end vehicles, luxury clothing, 2 weapons, The Lab radio"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S44"]
+sources_text = "S1, S2, S5, S6, S44"
+[entry.fields]
+"#" = "9.16"
+"Internal DLC name" = "`mpluxe2`"
+
+[[entry]]
+id = "9.2015-5"
+origin = "md:2306"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Freemode Events Update**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC only. Rockstar said PS3/360 would get no further major updates"
+date = "2015-09-15"
+date_text = "15 Sep 2015"
+id_text = "Online 1.29 (PS4/XB1 GTA V 1.13)"
+notes = "Freemode Events, 2 Adversary Modes, Rockstar Editor on PS4/XB1"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S2", "9-S5", "9-S6", "9-S19", "9-S45"]
+sources_text = "S2, S5, S6, S19, S45"
+[entry.fields]
+"#" = "9.17"
+"Internal DLC name" = "`mpreplay` per GTA Wiki (the pack also carries the console Rockstar Editor)"
+
+[[entry]]
+id = "9.2015-6"
+origin = "md:2307"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Lowriders**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "20 Oct 2015. Rockstar Newswire's \"GTA Online: Lowriders Now Available\" is dated 20 Oct 2015 [S85]; GTABase and GTA Wiki agree. Wikipedia's table says 10 Oct, which conflicts with Rockstar's own post"
+id_text = "Online 1.30 (GTA V 1.14)"
+notes = "Benny's Original Motor Works, 8 Lamar missions, 2 weapons, 3 Adversary Modes"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S46", "9-S85"]
+sources_text = "S1, S2, S5, S6, S46, S85"
+[entry.fields]
+"#" = "9.18"
+"Internal DLC name" = "`mplowrider`"
+
+[[entry]]
+id = "9.2015-7"
+origin = "md:2308"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Halloween Surprise**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "29 Oct 2015, initially to 16 Nov 2015 (recurring yearly since)"
+id_text = "GTABase lists it as a continuation of TU 1.30. The GTA Wiki TU-history table (gta.fandom.com) also lists it on 29 Oct 2015 with no new TU between Online 1.30 (20 Oct) and 1.29 PS3/360 (17 Nov) [S92]. The GTA Wiki infobox (gta.wiki and gta.fandom.com) says \"1.69\", which conflicts with that wiki's own TU table ❓"
+notes = "Fränken Stange and Lurcher, Flashlight, masks, Slasher Adversary Mode"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5", "9-S47"]
+sources_text = "S1, S2, S4, S5, S47"
+[entry.fields]
+"#" = "9.19"
+"Internal DLC name" = "`mphalloween`"
+
+[[entry]]
+id = "9.2015-8"
+origin = "md:2309"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Executives and Other Criminals**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2015-12-15"
+date_text = "15 Dec 2015"
+id_text = "Online 1.31 (GTA V 1.15)"
+notes = "Stilt and custom apartments, Galaxy Super Yachts, CEO/VIP organizations, Extraction"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S48"]
+sources_text = "S1, S2, S5, S6, S48"
+[entry.fields]
+"#" = "9.20"
+"Internal DLC name" = "`mpapartment`"
+
+[[entry]]
+id = "9.2015-9"
+origin = "md:2310"
+section = "9.2015"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Festive Surprise 2015**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "21 Dec 2015, as a minor patch. Event ran 25 Dec 2015 – 1 Jan 2016"
+id_text = "GTABase groups it with TU 1.31. GTA Wiki: \"minor patch\", number not given"
+notes = "Tampa, Beast vs. Slasher mode"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5", "9-S49"]
+sources_text = "S1, S2, S4, S5, S49"
+[entry.fields]
+"#" = "9.21"
+"Internal DLC name" = "`mpxmas_604490`"
+
+[[entry]]
+id = "9.2016-1"
+origin = "md:2320"
+section = "9.2016"
+kind = "dlc"
+games = ["gta-online"]
+title = "**January 2016 Update** (aka Drop Zone Update)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2016-01-28"
+date_text = "28 Jan 2016"
+id_text = "Online 1.32"
+notes = "Drop Zone Adversary Mode, Banshee 900R and Sultan RS (Benny's)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5", "9-S50"]
+sources_text = "S1, S2, S4, S5, S50"
+[entry.fields]
+"#" = "9.22"
+"Internal DLC name" = "`mpjanuary2016`"
+
+[[entry]]
+id = "9.2016-2"
+origin = "md:2321"
+section = "9.2016"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Be My Valentine**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2016-02-10"
+date_text = "10 Feb 2016"
+id_text = "Online 1.32 (continuation)"
+notes = "Roosevelt Valor, 120+ clothing items, Til Death Do Us Part"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5", "9-S51"]
+sources_text = "S1, S2, S4, S5, S51"
+[entry.fields]
+"#" = "9.23"
+"Internal DLC name" = "`mpvalentines2`"
+
+[[entry]]
+id = "9.2016-3"
+origin = "md:2322"
+section = "9.2016"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Lowriders: Custom Classics**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2016-03-15"
+date_text = "15 Mar 2016"
+id_text = "Online 1.33 (GTA V 1.17)"
+notes = "More Benny's lowriders, 2 weapons, Sumo / Inch By Inch / In and Out"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S52"]
+sources_text = "S1, S2, S5, S6, S52"
+[entry.fields]
+"#" = "9.24"
+"Internal DLC name" = "`mplowrider2`"
+
+[[entry]]
+id = "9.2016-4"
+origin = "md:2323"
+section = "9.2016"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Further Adventures in Finance and Felony**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2016-06-07"
+date_text = "7 Jun 2016 (announced 27 May)"
+id_text = "Online 1.34 (GTA V 1.18)"
+notes = "CEO Offices, Special Cargo warehouses, Associates"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S53"]
+sources_text = "S1, S2, S5, S6, S53"
+[entry.fields]
+"#" = "9.25"
+"Internal DLC name" = "`mpexecutive`"
+
+[[entry]]
+id = "9.2016-5"
+origin = "md:2324"
+section = "9.2016"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Cunning Stunts**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "12 Jul 2016. Stunt Race Creator added 2 Aug 2016"
+id_text = "Online 1.35 (GTA V 1.19)"
+notes = "Stunt Races, racing vehicles, Entourage mode"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S54"]
+sources_text = "S1, S2, S5, S6, S54"
+[entry.fields]
+"#" = "9.26"
+"Internal DLC name" = "`mpstunt`"
+
+[[entry]]
+id = "9.2016-6"
+origin = "md:2325"
+section = "9.2016"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Bikers**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "4 Oct 2016 (announced 19 Sep). *Deadline* Adversary Mode added 8 Nov 2016 as part of the Bikers continuation, not a separate titled update"
+id_text = "Online 1.36 (GTA V 1.20). PC build 1.0.877.1: a playground.ru patch upload titled \"Update 1.36 (Online), 1.0.877.1 (SP)\" (uploaded 18 Oct 2016; an earlier 1.0.877.1 upload is dated 5 Oct 2016) [S96] ⚠️"
+notes = "Motorcycle Clubs (up to 8 players), Clubhouses, MC businesses"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S55", "9-S56", "9-S96"]
+sources_text = "S1, S2, S5, S6, S55, S56, S96"
+[entry.fields]
+"#" = "9.27"
+"Internal DLC name" = "`mpbiker`"
+
+[[entry]]
+id = "9.2016-7"
+origin = "md:2326"
+section = "9.2016"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Import/Export**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "13 Dec 2016 (announced 2 Dec). *Festive Surprise 2016* event ran 20 Dec 2016 – 5 Jan 2017"
+id_text = "Online 1.37 (GTA V 1.21)"
+notes = "CEO vehicle stealing and export, Vehicle Warehouses, Executive Office Garages"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S57"]
+sources_text = "S1, S2, S5, S6, S57"
+[entry.fields]
+"#" = "9.28"
+"Internal DLC name" = "`mpimportexport`"
+
+[[entry]]
+id = "9.2017-1"
+origin = "md:2336"
+section = "9.2017"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Cunning Stunts: Special Vehicle Circuit**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2017-03-14"
+date_text = "14 Mar 2017 (announced 2 Mar)"
+id_text = "Online 1.38. TU 1.39 (5 Apr 2017) was a fix patch"
+notes = "Special Vehicle stunt races (Ruiner 2000, Rocket Voltic, Blazer Aqua)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S6", "9-S58"]
+sources_text = "S1, S2, S5, S6, S58"
+[entry.fields]
+"#" = "9.29"
+"Internal DLC name" = "`mpspecialraces`"
+
+[[entry]]
+id = "9.2017-2"
+origin = "md:2337"
+section = "9.2017"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Gunrunning**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2017-06-13"
+date_text = "13 Jun 2017 (announced 25 May)"
+id_text = "Online 1.40"
+notes = "Bunkers, Mobile Operations Center, Mk II weapons"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S59"]
+sources_text = "S1, S2, S5, S59"
+[entry.fields]
+"#" = "9.30"
+"Internal DLC name" = "`mpgunrunning`"
+
+[[entry]]
+id = "9.2017-3"
+origin = "md:2338"
+section = "9.2017"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Smuggler's Run**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2017-08-29"
+date_text = "29 Aug 2017 (announced 24 Aug)"
+id_text = "Online 1.41"
+notes = "Hangars, Air Freight cargo, 19 vehicles, Transform Races"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S60"]
+sources_text = "S1, S2, S5, S60"
+[entry.fields]
+"#" = "9.31"
+"Internal DLC name" = "`mpsmuggler` + `mpairraces` (GTA Wiki lists both)"
+
+[[entry]]
+id = "9.2017-4"
+origin = "md:2339"
+section = "9.2017"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Doomsday Heist**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "12 Dec 2017 (announced 7 Dec). Festive Surprise returned later that month"
+id_text = "Online 1.42"
+notes = "Three-act heist. New vehicles include the Akula, Avenger and Autarch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S4", "9-S5", "9-S61"]
+sources_text = "S1, S2, S4, S5, S61"
+[entry.fields]
+"#" = "9.32"
+"Internal DLC name" = "`mpchristmas2017`"
+
+[[entry]]
+id = "9.2017-5"
+origin = "md:2340"
+section = "9.2017"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Criminal Enterprise Starter Pack** (paid bundle)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "14 Dec 2017, released without prior announcement on PS Store, Xbox Live and Steam"
+id_text = "n/a"
+notes = "US$39.99. GTA$1M plus Executive Office, Bunker, Counterfeit Cash Factory, Clubhouse, 10 vehicles, weapons and outfits (≈GTA$12.05M in assets)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S13"]
+sources_text = "S13"
+[entry.fields]
+"#" = "9.33"
+"Internal DLC name" = "n/a"
+
+[[entry]]
+id = "9.2018-1"
+origin = "md:2346"
+section = "9.2018"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Southern San Andreas Super Sport Series**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2018-03-20"
+date_text = "20 Mar 2018"
+id_text = "Online 1.43"
+notes = "Stock-car style Super Sport Series races, 5 vehicles, creator additions"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S62"]
+sources_text = "S1, S2, S5, S62"
+[entry.fields]
+"#" = "9.34"
+"Internal DLC name" = "`mpassault`"
+
+[[entry]]
+id = "9.2018-2"
+origin = "md:2347"
+section = "9.2018"
+kind = "dlc"
+games = ["gta-online"]
+title = "**GTA V: Premium Online Edition** (retail bundle with the Criminal Enterprise Starter Pack)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "20 Apr 2018 (GTA Wiki). GameFAQs dates the US PS4/XB1 Premium Online Edition to 20 Dec 2017 and the Australian PS4 \"Premium Edition\" to 20 Apr 2018 ⚠️ (see Section 12.4)"
+id_text = "—"
+notes = "Starter Pack bundled with retail GTA V"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S13", "9-S97"]
+sources_text = "S13, S97"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2018-3"
+origin = "md:2348"
+section = "9.2018"
+kind = "dlc"
+games = ["gta-online"]
+title = "**After Hours**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2018-07-24"
+date_text = "24 Jul 2018 (announced 19 Jul)"
+id_text = "Online 1.44"
+notes = "Nightclubs as business fronts, Business Battles, DJs, new vehicles"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S5", "9-S63"]
+sources_text = "S1, S2, S5, S63"
+[entry.fields]
+"#" = "9.35"
+"Internal DLC name" = "`mpbattle`"
+
+[[entry]]
+id = "9.2018-4"
+origin = "md:2349"
+section = "9.2018"
+kind = "dlc"
+games = ["gta-online"]
+title = "Title Update 1.45 (PC only)"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "16 Oct 2018 (GTA Wiki) / 19 Oct 2018 (GTABase) ❓"
+version = "1.45"
+id_text = "Online 1.45. PC build 1.0.1493.1: playground.ru upload \"Патч v1.45 \\| build 1.0.1493.1\", dated 18 Oct 2018 [S96] ⚠️"
+notes = "Fix patch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S2", "9-S6", "9-S96"]
+sources_text = "S2, S6, S96"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2018-5"
+origin = "md:2350"
+section = "9.2018"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Arena War**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "11 Dec 2018 (announced 10 Dec). Festive Surprise returned later that month"
+version = "1.46"
+id_text = "Online 1.46. **PC build 1.0.1604** (playground.ru: \"v1.46 \\| build 1.0.1604.0\" uploaded 16 Dec 2018, then \"build 1.0.1604.1\" on 5 Feb 2019 [S96])"
+notes = "Arena-based PvP modes with specialized vehicles (46 vehicles tagged with this pack in the data dump)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S5", "9-S64"]
+sources_text = "S1, S2, S3, S4, S5, S64"
+[entry.fields]
+"#" = "9.36"
+"Internal DLC name" = "`mpchristmas2018` (FiveM aliases: xm18, christmas2018)"
+
+[[entry]]
+id = "9.2019-1"
+origin = "md:2356"
+section = "9.2019"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Diamond Casino & Resort**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2019-07-23"
+date_text = "23 Jul 2019 (announced 18 Jul)"
+version = "1.48"
+id_text = "Online 1.47; TU 1.48 followed on 25 Jul 2019. PC build **1.0.1737.0** for TU 1.48: playground.ru upload \"Патч v1.48 \\| build 1.0.1737.0\", dated 25 Jul 2019 [S96] ⚠️ (single community file-site source; the FiveM table lists this update without a build number). The PC build for TU 1.47 (23 Jul) itself is not documented"
+notes = "Casino and Penthouse, casino story missions, new vehicles"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S65", "9-S96"]
+sources_text = "S1, S2, S3, S4, S65, S96"
+[entry.fields]
+"#" = "9.37"
+"Internal DLC name" = "`mpvinewood`"
+
+[[entry]]
+id = "9.2019-2"
+origin = "md:2357"
+section = "9.2019"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Diamond Casino Heist**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "12 Dec 2019 (announced 5 Dec). Festive Surprise later in December"
+id_text = "Online 1.49; TU 1.50 followed on 15 Dec 2019. PC build not documented (FiveM table lists no number)"
+notes = "Multi-approach casino heist, Arcades, iFruit Radio"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S66"]
+sources_text = "S1, S2, S3, S4, S66"
+[entry.fields]
+"#" = "9.38"
+"Internal DLC name" = "`mpheist3`"
+
+[[entry]]
+id = "9.2020-1"
+origin = "md:2363"
+section = "9.2020"
+kind = "dlc"
+games = ["gta-online"]
+title = "*Gerald's Last Play* (event-week content, not a titled update)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2020-04-23"
+date_text = "23 Apr 2020"
+id_text = "within the Casino Heist era"
+notes = "6 Gerald Contact Missions"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S67"]
+sources_text = "S1, S67"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "(no new pack documented)"
+
+[[entry]]
+id = "9.2020-2"
+origin = "md:2364"
+section = "9.2020"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Los Santos Summer Special**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2020-08-11"
+date_text = "11 Aug 2020"
+id_text = "Online 1.51 in-game / 1.50 in official patch notes. **PC build 1.0.2060**"
+notes = "Yacht missions, new Business Battles, Adversary Modes, Open Wheel races"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S68"]
+sources_text = "S1, S2, S3, S4, S68"
+[entry.fields]
+"#" = "9.39"
+"Internal DLC name" = "`mpsum` (FiveM aliases: sum)"
+
+[[entry]]
+id = "9.2020-3"
+origin = "md:2365"
+section = "9.2020"
+kind = "dlc"
+games = ["gta-online"]
+title = "Title Update"
+platform_text = "—"
+date = "2020-09-09"
+date_text = "9 Sep 2020"
+id_text = "Online 1.52 per GTA Wiki"
+notes = "Fix patch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S6"]
+sources_text = "S6"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2020-4"
+origin = "md:2366"
+section = "9.2020"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Cayo Perico Heist**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2020-12-15"
+date_text = "15 Dec 2020 (announced 20 Nov)"
+id_text = "Online 1.52. **PC build 1.0.2189**"
+notes = "Cayo Perico island heist, Kosatka submarine HQ, new vehicles, weapons, DJs and radio stations"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S69"]
+sources_text = "S1, S2, S3, S4, S69"
+[entry.fields]
+"#" = "9.40"
+"Internal DLC name" = "`mpheist4` (FiveM aliases: h4, heist4)"
+
+[[entry]]
+id = "9.2021-1"
+origin = "md:2372"
+section = "9.2021"
+kind = "dlc"
+games = ["gta-online"]
+title = "Title Updates"
+platform_text = "—"
+date_text = "10 Feb 2021 and 16 Mar 2021"
+id_text = "Online 1.53 and 1.54 per GTA Wiki. DurtyFree's 10 Feb 2021 commit names patch pack `patchday24ng`"
+notes = "Fix patches"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S4", "9-S6"]
+sources_text = "S4, S6"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "`patchday24ng`"
+
+[[entry]]
+id = "9.2021-2"
+origin = "md:2373"
+section = "9.2021"
+kind = "dlc"
+games = ["gta-online"]
+title = "Small additions: new Stunt Races (27 May), Deadline arenas (24 Jun), Survival maps (8 Jul)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2021"
+date_text = "2021"
+id_text = "—"
+notes = "Weekly-update content"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S1"]
+sources_text = "S1"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2021-3"
+origin = "md:2374"
+section = "9.2021"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Los Santos Tuners**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC. Some HSW mods came later, PS5/XSX only from Mar 2022"
+date = "2021-07-20"
+date_text = "20 Jul 2021"
+id_text = "Online 1.57 in-game / 1.54 in official notes. **PC build 1.0.2372** (\"b2372 / Online 1.57\")"
+notes = "LS Car Meet, Auto Shops, Contracts, new races and vehicles"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S70"]
+sources_text = "S1, S2, S3, S4, S70"
+[entry.fields]
+"#" = "9.41"
+"Internal DLC name" = "`mptuner`"
+
+[[entry]]
+id = "9.2021-4"
+origin = "md:2375"
+section = "9.2021"
+kind = "dlc"
+games = ["gta-online"]
+title = "**PS3/X360 GTA Online shutdown**"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "Announced 16 Jun 2021. Microtransactions disabled 15 Sep 2021, servers shut down 16 Dec 2021"
+id_text = "—"
+notes = "End of service"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1"]
+sources_text = "S1"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2021-5"
+origin = "md:2376"
+section = "9.2021"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Contract**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date = "2021-12-15"
+date_text = "15 Dec 2021"
+id_text = "Online 1.58 in-game / 1.55 in official notes. **PC build 1.0.2545** (\"mpsecurity / b2545 / 1.58\")"
+notes = "Franklin's celebrity solutions agency F. Clinton and Partner, recovering Dr. Dre's stolen unreleased music"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S71"]
+sources_text = "S1, S2, S3, S4, S71"
+[entry.fields]
+"#" = "9.42"
+"Internal DLC name" = "`mpsecurity` (GTA Wiki also lists `fixers`; FiveM alias: security)"
+
+[[entry]]
+id = "9.2022-1"
+origin = "md:2382"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "*Double Down* Adversary Mode (Franklin and Lamar playable)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+date_text = "13 Jan 2022 (Double Down Week). Short Trips co-op missions came with The Contract era"
+id_text = "—"
+notes = "7-map co-op mode"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S71"]
+sources_text = "S1, S71"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2022-2"
+origin = "md:2383"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "**GTA V and GTA Online: Expanded and Enhanced** (PS5/XSX release) **+ standalone GTA Online**"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, XSX/S"
+date_text = "15 Mar 2022 (announced 9 Sep 2021). Standalone GTA Online was free on PS5 until 14 Jun 2022 and discounted on XSX until the same date. Physical PS5/XSX release 12 Apr 2022"
+version = "1.58"
+id_text = "Launch version 1.58 per GTA Wiki. **PC build 1.0.2612** = TU 1.59 (26 Apr 2022), which carries `mpg9ec`"
+notes = "Hao's Special Works and the HSW Race Series, 5 exclusive vehicles, Career Builder (start one of 4 businesses), one-time PS4→PS5 / XB1→XSX progress transfer"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S10", "9-S11"]
+sources_text = "S1, S2, S3, S4, S10, S11"
+[entry.fields]
+"#" = "9.43"
+"Internal DLC name" = "`mpg9ec`"
+
+[[entry]]
+id = "9.2022-3"
+origin = "md:2384"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "**GTA+** membership launch"
+platforms = ["ps5", "xsx", "pc"]
+platform_text = "PS5, XSX/S. PC from the GTA V Enhanced launch (4 Mar 2025)"
+date = "2022-03-29"
+date_text = "29 Mar 2022 (announced 25 Mar)"
+id_text = "—"
+notes = "Paid monthly subscription (see GTA+ overview below)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S11", "9-S12"]
+sources_text = "S1, S11, S12"
+[entry.fields]
+"#" = "9.44"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2022-4"
+origin = "md:2385"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "Title Update 1.60"
+platform_text = "—"
+date = "2022-05-17"
+date_text = "17 May 2022"
+id_text = "**PC build 1.0.2628** (\"build 2628 / Online 1.60\")"
+notes = "Fix patch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S4", "9-S6"]
+sources_text = "S4, S6"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2022-5"
+origin = "md:2386"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Criminal Enterprises**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S. HSW Race Series additions on PS5/XSX only"
+date = "2022-07-26"
+date_text = "26 Jul 2022"
+id_text = "**Online 1.61**: Rockstar Support's \"GTAV Title Update 1.61 Notes\" opens with a \"[July 26, 2022] – New Content in Grand Theft Auto Online: The Criminal Enterprises\" block [S86]. DurtyFree, the GTA Wiki TU notes and GTABase (\"1.61/1.63\") agree. The GTA Wiki infobox's 1.65 is contradicted by Rockstar's notes. **PC build 1.0.2699** (\"mpsum2 build 2699 / Online 1.61\")"
+notes = "IAA missions, expanded businesses"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S6", "9-S72", "9-S86"]
+sources_text = "S1, S2, S3, S4, S6, S72, S86"
+[entry.fields]
+"#" = "9.45"
+"Internal DLC name" = "`mpsum2` + `mpsum2_g9ec`"
+
+[[entry]]
+id = "9.2022-6"
+origin = "md:2387"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "Title Updates 1.62 (PS4 only, 2 Sep 2022), 1.63 (PC only, 25 Oct 2022)"
+platform_text = "—"
+date = "2022"
+date_text = "2022"
+id_text = "—"
+notes = "Fix patches"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S6"]
+sources_text = "S6"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2022-7"
+origin = "md:2388"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Shark Card value increase / Red Shark delisted**"
+platform_text = "All"
+date = "2022-12-06"
+date_text = "6 Dec 2022"
+id_text = "—"
+notes = "Larger GTA$ amounts per card; GTA+ card bonus raised from 15 % to 25 %"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S14"]
+sources_text = "S14"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2022-8"
+origin = "md:2389"
+section = "9.2022"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Los Santos Drug Wars** (\"First Dose\")"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S"
+date = "2022-12-13"
+date_text = "13 Dec 2022"
+id_text = "**Online 1.64**: Rockstar Support's \"GTAV Title Update 1.64 Notes\" opens with \"[December 13, 2022] – New Content in Grand Theft Auto Online: The Los Santos Drug Wars update\" [S87]. DurtyFree (\"build 2802 / Online 1.64\"), GTABase and the GTA Wiki TU notes agree. The GTA Wiki infobox's 1.66 is contradicted by Rockstar's notes. **PC build 1.0.2802**. TU 1.65 followed on 16 Dec 2022"
+notes = "Fooliganz \"First Dose\" story, mobile Acid Lab, new vehicles"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S6", "9-S73", "9-S87"]
+sources_text = "S1, S2, S3, S4, S6, S73, S87"
+[entry.fields]
+"#" = "9.46"
+"Internal DLC name" = "`mpchristmas3` + `mpchristmas3_g9ec`"
+
+[[entry]]
+id = "9.2023-1"
+origin = "md:2395"
+section = "9.2023"
+kind = "dlc"
+games = ["gta-online"]
+title = "Title Update 1.66: PC security update (1 Feb 2023), then consoles (28 Feb 2023); Rockstar's TU 1.66 notes carry \"[February 1, 2023] – PC\" and \"[February 28, 2023]\" blocks [S88]. A multi-floor garage, street dealers and other Drug Wars additions came on 16 Feb 2023"
+platform_text = "All"
+date = "2023-02"
+date_text = "Feb 2023"
+id_text = "Online 1.66 (GTABase \"1.65 / 1.66 PC Security Update\")"
+notes = "Security fixes; drip-feed content"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S6", "9-S88"]
+sources_text = "S1, S2, S6, S88"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2023-2"
+origin = "md:2396"
+section = "9.2023"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Last Dose** (second half of Los Santos Drug Wars)"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S"
+date = "2023-03-16"
+date_text = "16 Mar 2023"
+id_text = "no separate TU documented"
+notes = "Final Drug Wars story missions"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S73"]
+sources_text = "S1, S73"
+[entry.fields]
+"#" = "9.47"
+"Internal DLC name" = "(`mpchristmas3`, no new pack documented)"
+
+[[entry]]
+id = "9.2023-3"
+origin = "md:2397"
+section = "9.2023"
+kind = "dlc"
+games = ["gta-online"]
+title = "**San Andreas Mercenaries**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S"
+date = "2023-06-13"
+date_text = "13 Jun 2023"
+id_text = "Online 1.67. **PC build 1.0.2944**"
+notes = "Mercenary crew fighting Merryweather, \"LSA Operations\", Hangar expansion. Progress transfer to PS5/XSX switched from a move to a copy"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S10", "9-S74"]
+sources_text = "S1, S2, S3, S4, S10, S74"
+[entry.fields]
+"#" = "9.48"
+"Internal DLC name" = "`mp2023_01` + `mp2023_01_g9ec`"
+
+[[entry]]
+id = "9.2023-4"
+origin = "md:2398"
+section = "9.2023"
+kind = "dlc"
+games = ["gta-online"]
+title = "Title Update (PC only)"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2023-10-03"
+date_text = "3 Oct 2023"
+id_text = "Online 1.67. DurtyFree records a PC \"patch 3028\" (23 Nov 2023)"
+notes = "Fix patch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S4", "9-S6"]
+sources_text = "S4, S6"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2023-5"
+origin = "md:2399"
+section = "9.2023"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Chop Shop**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S"
+date = "2023-12-12"
+date_text = "12 Dec 2023"
+id_text = "Online 1.68. **PC build 1.0.3095**"
+notes = "Salvage Yard business used as a front for vehicle robberies"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S75"]
+sources_text = "S1, S2, S3, S4, S75"
+[entry.fields]
+"#" = "9.49"
+"Internal DLC name" = "`mp2023_02` + `mp2023_02_g9ec`"
+
+[[entry]]
+id = "9.2024-1"
+origin = "md:2405"
+section = "9.2024"
+kind = "dlc"
+games = ["gta-online"]
+title = "TU 1.68 hotfixes: PS5 only (16 Jan 2024), PC only (16 Apr 2024)"
+platform_text = "—"
+date = "2024"
+date_text = "2024"
+id_text = "—"
+notes = "Fix patches"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S6"]
+sources_text = "S6"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2024-2"
+origin = "md:2406"
+section = "9.2024"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Cluckin' Bell Farm Raid** (drip-feed mission strand)"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S"
+date = "2024-03-07"
+date_text = "7 Mar 2024 (Cluckin' Bell Farm Raid Week)"
+id_text = "within TU 1.68"
+notes = "New multi-part raid missions"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S75"]
+sources_text = "S1, S75"
+[entry.fields]
+"#" = "9.50"
+"Internal DLC name" = "(`mp2023_02` era)"
+
+[[entry]]
+id = "9.2024-3"
+origin = "md:2407"
+section = "9.2024"
+kind = "dlc"
+games = ["gta-online"]
+title = "GTA+ price change"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, XSX/S"
+date_text = "11 Apr 2024: US$5.99 → US$7.99 per month"
+id_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S12"]
+sources_text = "S12"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2024-4"
+origin = "md:2408"
+section = "9.2024"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Bottom Dollar Bounties**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S. Some items (e.g. Stun Gun tints) PS5/XSX only"
+date = "2024-06-25"
+date_text = "25 Jun 2024"
+id_text = "Online 1.69. **PC build 1.0.3258**"
+notes = "Bail enforcement agency run with Jenette Eccles, bounty hunting"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S76"]
+sources_text = "S1, S2, S3, S4, S76"
+[entry.fields]
+"#" = "9.51"
+"Internal DLC name" = "`mp2024_01` + `mp2024_01_g9ec`"
+
+[[entry]]
+id = "9.2024-5"
+origin = "md:2409"
+section = "9.2024"
+kind = "dlc"
+games = ["gta-online"]
+title = "Drip-feeds: graffiti collectibles and a pizza-delivery job (25 Jul 2024); Ludendorff zombie Survival (10 Oct 2024); Halloween UFOs, Business Battle and Shocker (31 Oct 2024)"
+platform_text = "—"
+date = "2024"
+date_text = "2024"
+id_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S1"]
+sources_text = "S1"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2024-6"
+origin = "md:2410"
+section = "9.2024"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Agents of Sabotage**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S"
+date = "2024-12-10"
+date_text = "10 Dec 2024"
+id_text = "Online 1.70. **PC build 1.0.3407**"
+notes = "\"Clandestine infiltration\" business, The FIB Files, Dispatch Work"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S77"]
+sources_text = "S1, S2, S3, S4, S77"
+[entry.fields]
+"#" = "9.52"
+"Internal DLC name" = "`mp2024_02` + `mp2024_02_g9ec`"
+
+[[entry]]
+id = "9.2025-1"
+origin = "md:2416"
+section = "9.2025"
+kind = "dlc"
+games = ["gta-online"]
+title = "**GTA V Enhanced** (free PC upgrade; old PC version renamed \"GTA V Legacy\")"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2025-03-04"
+date_text = "4 Mar 2025 (announced 20 Feb 2025)"
+id_text = "Separate Enhanced build line (Script Hook V supports Enhanced build 1.0.1158.13 alongside Legacy 1.0.3889.0, as of 15 Jul 2026). The Enhanced launch build number is not documented"
+notes = "PS5/XSX features on PC: HSW, Career Builder, GTA+ on PC; ray tracing, DirectStorage"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S9", "9-S10", "9-S25"]
+sources_text = "S1, S9, S10, S25"
+[entry.fields]
+"#" = "9.53"
+"Internal DLC name" = "(`mpg9ec` content brought to PC)"
+
+[[entry]]
+id = "9.2025-2"
+origin = "md:2417"
+section = "9.2025"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Oscar Guzman Flies Again**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC, PS5, XSX/S"
+date_text = "4 Mar 2025 (event week 4–12 Mar), launched with GTA V Enhanced"
+id_text = "part of TU 1.70 (GTAboom links Rockstar notes for TU 1.70)"
+notes = "6 McKenzie Field Hangar missions with Oscar Guzman to steal the Titan 250 D; Arms Trafficking"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S24", "9-S77"]
+sources_text = "S1, S24, S77"
+[entry.fields]
+"#" = "9.54"
+"Internal DLC name" = "(part of `mp2024_02`; no separate pack documented)"
+
+[[entry]]
+id = "9.2025-3"
+origin = "md:2418"
+section = "9.2025"
+kind = "dlc"
+games = ["gta-online"]
+title = "**Money Fronts**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC Legacy, PC Enhanced, PS5, XSX/S. HSW, Career Progress and RT lighting options on PS5/XSX/Enhanced only"
+date = "2025-06-17"
+date_text = "17 Jun 2025"
+id_text = "Online 1.71. **PC build 1.0.3570** (\"mp2025_01 / b3570 / Money Fronts\")"
+notes = "Money-laundering fronts (Hands On Car Wash, Higgins Helitours, Smoke on the Water), Heat system, QuickiePharm courier jobs, 7 vehicles"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S16", "9-S78"]
+sources_text = "S1, S2, S3, S4, S16, S78"
+[entry.fields]
+"#" = "9.55"
+"Internal DLC name" = "`mp2025_01` + `mp2025_01_G9EC`"
+
+[[entry]]
+id = "9.2025-4"
+origin = "md:2419"
+section = "9.2025"
+kind = "dlc"
+games = ["gta-online"]
+title = "TU 1.71 follow-ups (no new TU number): Motor Wars on Cayo Perico (24 Jul), FSR/DLSS frame generation on PC Enhanced (12 Aug), Halloween content (2 Oct – 6 Nov), PS5 hotfix (22 Oct 2025)"
+platform_text = "various"
+date_text = "Jul–Oct 2025"
+id_text = "1.71"
+notes = "Drip-feed and fixes"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S16"]
+sources_text = "S16"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2025-5"
+origin = "md:2420"
+section = "9.2025"
+kind = "dlc"
+games = ["gta-online"]
+title = "GTA+ adds GTA Online itself to the GTA+ library on PS5/XSX"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, XSX/S"
+date = "2025-11-06"
+date_text = "6 Nov 2025"
+id_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S12"]
+sources_text = "S12"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2025-6"
+origin = "md:2421"
+section = "9.2025"
+kind = "dlc"
+games = ["gta-online"]
+title = "\"New Listings\" precursor mission strand (3 parts)"
+platform_text = "—"
+date = "2025-11-13"
+date_text = "13 Nov 2025"
+id_text = "—"
+notes = "Teased the Mansions update; GTA$2M Prix Luxury discount"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S1", "9-S79"]
+sources_text = "S1, S79"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2025-7"
+origin = "md:2422"
+section = "9.2025"
+kind = "dlc"
+games = ["gta-online"]
+title = "**A Safehouse in the Hills**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC Legacy, PC Enhanced, PS5, XSX/S (download sizes published for all)"
+date_text = "10 Dec 2025. Rockstar Newswire's \"GTA Online: A Safehouse in the Hills Now Available\" is dated 10 Dec 2025 [S89]; GTABase, Rockstar Intel, GTA Wiki and Wikipedia agree. Rockstar's TU 1.72 support page groups the notes under a 17 Dec 2025 block, which is the notes date, not the release date"
+id_text = "Online 1.72. **PC build 1.0.3717** at launch (DurtyFree \"mp2025_02 / b3717\") and **1.0.3751** in the FiveM table"
+notes = "Three Prix Luxury Mansions, Michael De Santa joins GTA Online, KnoWay Out missions, Rockstar Mission Creator"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S4", "9-S17", "9-S22", "9-S23", "9-S79", "9-S89"]
+sources_text = "S1, S2, S3, S4, S17, S22, S23, S79, S89"
+[entry.fields]
+"#" = "9.56"
+"Internal DLC name" = "`mp2025_02` + `mp2025_02_G9EC`"
+
+[[entry]]
+id = "9.2026-1"
+origin = "md:2428"
+section = "9.2026"
+kind = "dlc"
+games = ["gta-online"]
+title = "TU 1.72 follow-ups: Mansion Raid adversary mode (15 Jan); Mission Creator update (27 Jan); firefighter, forklift and paperboy Odd Jobs (29 Jan); PC Legacy/Enhanced security fixes (17 Mar, 7 Apr)"
+platform_text = "various"
+date_text = "Jan–Apr 2026"
+id_text = "1.72"
+notes = "Drip-feed and fixes"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S17"]
+sources_text = "S1, S17"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2026-2"
+origin = "md:2429"
+section = "9.2026"
+kind = "dlc"
+games = ["gta-online"]
+title = "GTA+ adds GTA V to its library"
+platforms = ["ps5", "xsx", "pc"]
+platform_text = "PS5, XSX/S, PC"
+date = "2026-06-11"
+date_text = "11 Jun 2026"
+id_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S12"]
+sources_text = "S12"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.2026-3"
+origin = "md:2430"
+section = "9.2026"
+kind = "dlc"
+games = ["gta-online"]
+title = "**The Kortz Center Heist**"
+platforms = ["ps4", "xone", "pc", "ps5", "xsx"]
+platform_text = "PS4, XB1, PC Legacy, PC Enhanced, PS5, XSX/S per the TU 1.73 notes title. Career Progress, awards, several creator tools and HSW items are PS5/XSX/Enhanced only"
+date_text = "14 Jul 2026. Rockstar Newswire's \"The Kortz Center Heist Now Available in GTA Online\" is dated 14 Jul 2026 [S90]; Shacknews, Insider Gaming, GTA Wiki, GTABase and Wikipedia agree. Rockstar's TU 1.73 support page and GTA Wiki's TU notes date the 1.73 notes to 16 Jul 2026 (notes date, not release date)"
+id_text = "Online 1.73. **PC Legacy build 1.0.3889**; Script Hook V supports Enhanced 1.0.1158.13 from 15 Jul 2026"
+notes = "Art-theft heist at the Kortz Center, unlocked by adding an Art Studio to a Mansion; 7 new vehicles"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S2", "9-S3", "9-S18", "9-S20", "9-S21", "9-S25", "9-S80", "9-S90"]
+sources_text = "S1, S2, S3, S18, S20, S21, S25, S80, S90"
+[entry.fields]
+"#" = "9.57"
+"Internal DLC name" = "`mp2026_01` + `mp2026_01_G9EC`"
+
+[[entry]]
+id = "9.2026-4"
+origin = "md:2431"
+section = "9.2026"
+kind = "dlc"
+games = ["gta-online"]
+title = "Halloween 2026 events"
+platform_text = "—"
+date_text = "weekly from 1 Oct 2026 (Rockstar notes mention later 1.73 patches for Halloween content, page updated 1 Oct 2026)"
+id_text = "1.73"
+notes = "Seasonal event, not a titled update"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S18", "9-S26"]
+sources_text = "S18, S26"
+[entry.fields]
+"#" = "—"
+"Internal DLC name" = "—"
+
+[[entry]]
+id = "9.A-1"
+origin = "md:2441"
+section = "9.A"
+kind = "cancelled"
+games = ["gta5"]
+title = "Promised story updates"
+notes = "A Rockstar Newswire post of 9 Dec 2013 teased Story Mode additions for 2014. In Nov 2014 a Rockstar representative (Videogames Gameblog, via CVG, 12 Nov 2014) said the expansion would be \"at least on the level of\" *The Lost and Damned* / *The Ballad of Gay Tony*, with 12–20 hours of missions"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S15"]
+sources_text = "S15"
+
+[[entry]]
+id = "9.A-2"
+origin = "md:2442"
+section = "9.A"
+kind = "cancelled"
+games = ["gta5"]
+title = "Cancellation"
+notes = "Imran Sarwar, then Rockstar's director of design, confirmed in a Game Informer interview on 23 Oct 2017 that single-player DLC was dropped to focus on GTA Online and Red Dead Redemption 2. Wikipedia says plans \"were later scrapped\" to focus on GTA Online and RDR2"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S8", "9-S15"]
+sources_text = "S8, S15"
+
+[[entry]]
+id = "9.A-3"
+origin = "md:2443"
+section = "9.A"
+kind = "cancelled"
+games = ["gta5"]
+title = "**\"Agent Trevor\"** (cancelled espionage episode starring Trevor)"
+notes = "Script references (`dlc_agenttrevor`, a mission list with codenames) were found in the TU 1.13/1.14 files and updated by the Dec 2023 source-code leak. The leak also used the name \"Clifford\", which GTA Wiki says was later debunked. Steven Ogg said (Apr 2024 podcast) that he recorded some work before it \"just disappeared\". Joe Rubino said about half was finished. Dan Houser said in an Oct 2025 interview that it was half complete and was abandoned for RDR2. GTA Wiki says parts of the content were reused in Online (e.g. the Stromberg in The Doomsday Heist, Valkyrie and Insurgent in Heists)"
+confidence = "single-source"
+confidence_text = "⚠️ (one wiki citing several interviews; parts marked unverified)"
+sources = ["9-S15"]
+sources_text = "S15"
+
+[[entry]]
+id = "9.A-4"
+origin = "md:2444"
+section = "9.A"
+kind = "cancelled"
+games = ["gta5"]
+title = "Other cancelled packs"
+notes = "After the 24 Dec 2023 source-code leak, \"dataminers found at least eight sets of single-player DLC were in development but cancelled, including a Liberty City expansion\" (Wikipedia). GTA Wiki lists a Zombie/\"Norman\" episode, an Alien Invasion episode, \"LibertyV\" (a Liberty City map), a North Yankton \"Prologue\" expansion, and Relationships and Manhunt packs"
+confidence = "mixed"
+confidence_text = "⚠️ / ❓ (leak-derived)"
+sources = ["9-S8", "9-S15"]
+sources_text = "S8, S15"
+
+[[entry]]
+id = "9.B-1"
+origin = "md:2450"
+section = "9.B"
+kind = "note"
+games = ["gta-online"]
+title = "Launch"
+notes = "29 Mar 2022 (announced 25 Mar 2022). Exclusive to the PS5/XSX (Expanded & Enhanced) versions of GTA Online"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S11", "9-S12"]
+sources_text = "S1, S11, S12"
+
+[[entry]]
+id = "9.B-2"
+origin = "md:2451"
+section = "9.B"
+kind = "note"
+games = ["gta-online"]
+title = "PC"
+notes = "Available on PC with GTA V Enhanced, from 4 Mar 2025"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S12"]
+sources_text = "S1, S12"
+
+[[entry]]
+id = "9.B-3"
+origin = "md:2452"
+section = "9.B"
+kind = "note"
+games = ["gta-online"]
+title = "Price"
+notes = "US$5.99/month at launch; US$7.99/month from 11 Apr 2024"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S11", "9-S12"]
+sources_text = "S11, S12"
+
+[[entry]]
+id = "9.B-4"
+origin = "md:2453"
+section = "9.B"
+kind = "note"
+games = ["gta-online"]
+title = "Recurring monthly benefits"
+notes = "GTA$500,000 deposited each month. A rotating free vehicle and member discounts. Shark Card bonus (+15 % at launch, +25 % from Dec 2022). Extra Lucky Wheel spin. Later expansions: Vinewood Car Club access, Vinewood Club Garage (Pillbox Hill, up to 100 cars), Vinewood Club Workshop and Vinewood Club App (free destroyed-vehicle claims, no ammo fees)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S12", "9-S14"]
+sources_text = "S12, S14"
+
+[[entry]]
+id = "9.B-5"
+origin = "md:2454"
+section = "9.B"
+kind = "note"
+games = ["gta-online"]
+title = "Games library"
+notes = "GTA: The Trilogy – Definitive Edition (21 Sep 2023); GTA LCS and Chinatown Wars, mobile (19 Oct 2023); Red Dead Redemption + Undead Nightmare (26 Mar 2024); L.A. Noire (2 May 2024); Bully (20 Aug 2024; mobile 1 May 2025); GTA III DE mobile (17 Jul 2025); Vice City DE mobile (11 Sep 2025); GTA Online on PS5/XSX (6 Nov 2025); GTA V on PS5/XSX/PC (11 Jun 2026)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S12"]
+sources_text = "S12"
+
+[[entry]]
+id = "9.B-6"
+origin = "md:2455"
+section = "9.B"
+kind = "note"
+games = ["gta-online"]
+title = "Month-by-month perks"
+notes = "Rockstar changes the monthly perks on the Newswire. A month-by-month list is outside this table's scope and was not compiled"
+confidence_text = "—"
+sources_text = "—"
+
+[[entry]]
+id = "9.C-1"
+origin = "md:2461"
+section = "9.C"
+kind = "note"
+games = ["gta-online"]
+title = "Red Shark"
+date_text = "at launch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S14"]
+sources_text = "S14"
+[entry.fields]
+"GTA$ (before → after 6 Dec 2022)" = "100,000; **delisted 6 Dec 2022**"
+USD = "2.99"
+
+[[entry]]
+id = "9.C-2"
+origin = "md:2462"
+section = "9.C"
+kind = "note"
+games = ["gta-online"]
+title = "Tiger Shark"
+date_text = "at launch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S14"]
+sources_text = "S14"
+[entry.fields]
+"GTA$ (before → after 6 Dec 2022)" = "200,000 → 250,000"
+USD = "4.99"
+
+[[entry]]
+id = "9.C-3"
+origin = "md:2463"
+section = "9.C"
+kind = "note"
+games = ["gta-online"]
+title = "Bull Shark"
+date_text = "at launch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S14"]
+sources_text = "S14"
+[entry.fields]
+"GTA$ (before → after 6 Dec 2022)" = "500,000 → 600,000"
+USD = "9.99"
+
+[[entry]]
+id = "9.C-4"
+origin = "md:2464"
+section = "9.C"
+kind = "note"
+games = ["gta-online"]
+title = "Great White Shark"
+date_text = "at launch"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S14"]
+sources_text = "S14"
+[entry.fields]
+"GTA$ (before → after 6 Dec 2022)" = "1,250,000 → 1,500,000"
+USD = "19.99"
+
+[[entry]]
+id = "9.C-5"
+origin = "md:2465"
+section = "9.C"
+kind = "note"
+games = ["gta-online"]
+title = "Whale Shark"
+date = "2013-12"
+date_text = "Dec 2013"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S14"]
+sources_text = "S14"
+[entry.fields]
+"GTA$ (before → after 6 Dec 2022)" = "3,500,000 → 4,250,000"
+USD = "49.99"
+
+[[entry]]
+id = "9.C-6"
+origin = "md:2466"
+section = "9.C"
+kind = "note"
+games = ["gta-online"]
+title = "Megalodon Shark"
+date = "2014-03"
+date_text = "Mar 2014"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S14"]
+sources_text = "S14"
+[entry.fields]
+"GTA$ (before → after 6 Dec 2022)" = "8,000,000 → 10,000,000"
+USD = "99.99"
+
+[[entry]]
+id = "9.D-1"
+origin = "md:2474"
+section = "9.D"
+kind = "edition"
+games = ["gta-online"]
+title = "**Criminal Enterprise Starter Pack**"
+notes = "Released 14 Dec 2017 on PS4, XB1 and PC without prior announcement, at US$39.99. Contents: GTA$1,000,000 plus properties (Executive Office, Bunker, Counterfeit Cash Factory, Biker Clubhouse, 2-car apartment, 10-car garage), 10 vehicles, weapons, 31 outfits and 61 tattoos, about GTA$12.05M in asset value. Bundled with retail GTA V as the **Premium Online Edition** from 20 Apr 2018. By 21 Dec 2017 three further store bundles pairing the pack with a Great White, Whale or Megalodon Shark Card were on the Microsoft, Sony and Steam stores (GTAboom, 21 Dec 2017) [S95] ⚠️. Discontinuation or replacement: **not documented**. On PS5/XSX the **Career Builder** fills the starter role (pick one of four businesses and get GTA$4M)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S10", "9-S13"]
+sources_text = "S10, S13"
+
+[[entry]]
+id = "9.D-2"
+origin = "md:2475"
+section = "9.D"
+kind = "edition"
+games = ["gta-online"]
+title = "**Standalone GTA Online**"
+notes = "Released 15 Mar 2022 for PS5 and XSX/S alongside Expanded & Enhanced GTA V. Free on PS5 for the first three months (until 14 Jun 2022). On Xbox Series X it cost US$9.99 / £8.99 for the first three months (GINX). Standard price after 14 Jun 2022: **US$19.99 / £17.99** on both PS5 (Push Square, 7–8 Mar 2022) and Xbox Series X (GINX, 10 Mar 2022). For comparison, the PS5 story-mode-only GTA V was US$9.99 until 14 Jun 2022 and the combined package US$39.99 afterwards (Push Square)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["9-S1", "9-S11", "9-S93", "9-S94"]
+sources_text = "S1, S11, S93, S94"
+
+[[entry]]
+id = "9.D-3"
+origin = "md:2476"
+section = "9.D"
+kind = "edition"
+games = ["gta-online"]
+title = "Progress transfer"
+notes = "One-time PS4→PS5 / XB1→XSX transfer. From San Andreas Mercenaries (13 Jun 2023) the profile is copied rather than moved. There is no cross-family transfer"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["9-S1", "9-S10"]
+sources_text = "S1, S10"
+
+[[entry]]
+id = "9.E-1"
+origin = "md:2482"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpbeach`"
+[entry.fields]
+Update = "Finance and Felony"
+Pack = "`mpexecutive`"
+
+[[entry]]
+id = "9.E-2"
+origin = "md:2483"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpchristmas`"
+[entry.fields]
+Update = "Cunning Stunts"
+Pack = "`mpstunt`"
+
+[[entry]]
+id = "9.E-3"
+origin = "md:2484"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpvalentines`"
+[entry.fields]
+Update = "Bikers"
+Pack = "`mpbiker`"
+
+[[entry]]
+id = "9.E-4"
+origin = "md:2485"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpbusiness`"
+[entry.fields]
+Update = "Import/Export"
+Pack = "`mpimportexport`"
+
+[[entry]]
+id = "9.E-5"
+origin = "md:2486"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpbusiness2`"
+[entry.fields]
+Update = "Special Vehicle Circuit"
+Pack = "`mpspecialraces`"
+
+[[entry]]
+id = "9.E-6"
+origin = "md:2487"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mphipster`"
+[entry.fields]
+Update = "Gunrunning"
+Pack = "`mpgunrunning`"
+
+[[entry]]
+id = "9.E-7"
+origin = "md:2488"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpindependence`"
+[entry.fields]
+Update = "Smuggler's Run"
+Pack = "`mpsmuggler`, `mpairraces`"
+
+[[entry]]
+id = "9.E-8"
+origin = "md:2489"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mppilot`"
+[entry.fields]
+Update = "Doomsday Heist"
+Pack = "`mpchristmas2017`"
+
+[[entry]]
+id = "9.E-9"
+origin = "md:2490"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`spupgrade`"
+[entry.fields]
+Update = "SA Super Sport Series"
+Pack = "`mpassault`"
+
+[[entry]]
+id = "9.E-10"
+origin = "md:2491"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mplts`"
+[entry.fields]
+Update = "After Hours"
+Pack = "`mpbattle`"
+
+[[entry]]
+id = "9.E-11"
+origin = "md:2492"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpheist`"
+[entry.fields]
+Update = "Arena War"
+Pack = "`mpchristmas2018`"
+
+[[entry]]
+id = "9.E-12"
+origin = "md:2493"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mppatchesng`"
+[entry.fields]
+Update = "Diamond Casino & Resort"
+Pack = "`mpvinewood`"
+
+[[entry]]
+id = "9.E-13"
+origin = "md:2494"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpchristmas2`"
+[entry.fields]
+Update = "Diamond Casino Heist"
+Pack = "`mpheist3`"
+
+[[entry]]
+id = "9.E-14"
+origin = "md:2495"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpluxe`"
+[entry.fields]
+Update = "LS Summer Special"
+Pack = "`mpsum`"
+
+[[entry]]
+id = "9.E-15"
+origin = "md:2496"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpluxe2`"
+[entry.fields]
+Update = "Cayo Perico Heist"
+Pack = "`mpheist4`"
+
+[[entry]]
+id = "9.E-16"
+origin = "md:2497"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpreplay`"
+[entry.fields]
+Update = "LS Tuners"
+Pack = "`mptuner`"
+
+[[entry]]
+id = "9.E-17"
+origin = "md:2498"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mplowrider`"
+[entry.fields]
+Update = "The Contract"
+Pack = "`mpsecurity`"
+
+[[entry]]
+id = "9.E-18"
+origin = "md:2499"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mphalloween`"
+[entry.fields]
+Update = "Expanded & Enhanced (PS5/XSX)"
+Pack = "`mpg9ec`"
+
+[[entry]]
+id = "9.E-19"
+origin = "md:2500"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpapartment`"
+[entry.fields]
+Update = "Criminal Enterprises"
+Pack = "`mpsum2` (+`_g9ec`)"
+
+[[entry]]
+id = "9.E-20"
+origin = "md:2501"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpxmas_604490`"
+[entry.fields]
+Update = "LS Drug Wars"
+Pack = "`mpchristmas3` (+`_g9ec`)"
+
+[[entry]]
+id = "9.E-21"
+origin = "md:2502"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mplowrider2`"
+[entry.fields]
+Update = "SA Mercenaries"
+Pack = "`mp2023_01` (+`_g9ec`)"
+
+[[entry]]
+id = "9.E-22"
+origin = "md:2503"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpjanuary2016`"
+[entry.fields]
+Update = "The Chop Shop"
+Pack = "`mp2023_02` (+`_g9ec`)"
+
+[[entry]]
+id = "9.E-23"
+origin = "md:2504"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+title = "`mpvalentines2`"
+[entry.fields]
+Update = "Bottom Dollar Bounties"
+Pack = "`mp2024_01` (+`_g9ec`)"
+
+[[entry]]
+id = "9.E-24"
+origin = "md:2505"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+[entry.fields]
+Pack = "`mp2024_02` (+`_g9ec`)"
+Update = "Agents of Sabotage"
+
+[[entry]]
+id = "9.E-25"
+origin = "md:2506"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+[entry.fields]
+Pack = "`mp2025_01` (+`_G9EC`)"
+Update = "Money Fronts"
+
+[[entry]]
+id = "9.E-26"
+origin = "md:2507"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+[entry.fields]
+Pack = "`mp2025_02` (+`_G9EC`)"
+Update = "A Safehouse in the Hills"
+
+[[entry]]
+id = "9.E-27"
+origin = "md:2508"
+section = "9.E"
+kind = "dlc"
+games = ["gta-online"]
+[entry.fields]
+Pack = "`mp2026_01` (+`_G9EC`)"
+Update = "The Kortz Center Heist"
+
+[sources]
+9-S1 = { text = "Wikipedia, \"Grand Theft Auto Online\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_Online", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_Online", origin = "md:2534" }
+9-S2 = { text = "GTABase, \"GTA Online Title Updates Full List\": https://www.gtabase.com/grand-theft-auto-v/title-updates/", url = "https://www.gtabase.com/grand-theft-auto-v/title-updates/", origin = "md:2535" }
+9-S3 = { text = "FiveM docs, server commands (`sv_enforceGameBuild` build table): https://docs.fivem.net/docs/server-manual/server-commands/ (source: https://github.com/citizenfx/fivem-docs/blob/master/content/docs/server-manual/server-commands.md)", url = "https://docs.fivem.net/docs/server-manual/server-commands/", origin = "md:2536" }
+9-S4 = { text = "DurtyFree, gta-v-data-dumps (commit log \"Update for GTA: Online DLC mpXXXX / bNNNN / Name\" and `vehicles.json` DlcName field): https://github.com/DurtyFree/gta-v-data-dumps (raw: https://raw.githubusercontent.com/DurtyFree/gta-v-data-dumps/master/vehicles.json)", url = "https://github.com/DurtyFree/gta-v-data-dumps", origin = "md:2537" }
+9-S5 = { text = "Pastebin \"dlclist\" (GTA V dlclist.xml, posted 5 Mar 2019): https://pastebin.com/XY8F6Syb", url = "https://pastebin.com/XY8F6Syb", origin = "md:2538" }
+9-S6 = { text = "GTA Wiki (gta.wiki), \"Grand Theft Auto V/Title Update Notes\": https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes", origin = "md:2539" }
+9-S8 = { text = "Wikipedia, \"Grand Theft Auto V\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:2540" }
+9-S9 = { text = "Rockstar Newswire, \"Free Upgrade for Grand Theft Auto V on PC Coming March 4\": https://www.rockstargames.com/newswire/article/akk98a4o755825/free-upgrade-for-grand-theft-auto-v-on-pc-coming-march-4", url = "https://www.rockstargames.com/newswire/article/akk98a4o755825/free-upgrade-for-grand-theft-auto-v-on-pc-coming-march-4", origin = "md:2541" }
+9-S10 = { text = "GTA Wiki, \"Grand Theft Auto V and Online: Expanded and Enhanced Edition\": https://gta.wiki/w/Grand_Theft_Auto_V_and_Online:_Expanded_and_Enhanced_Edition", url = "https://gta.wiki/w/Grand_Theft_Auto_V_and_Online:_Expanded_and_Enhanced_Edition", origin = "md:2542" }
+9-S11 = { text = "GTA Wiki, \"2022\": https://gta.wiki/w/2022", url = "https://gta.wiki/w/2022", origin = "md:2543" }
+9-S12 = { text = "GTA Wiki, \"GTA+\": https://gta.wiki/w/GTA%2B", url = "https://gta.wiki/w/GTA%2B", origin = "md:2544" }
+9-S13 = { text = "GTA Wiki, \"Criminal Enterprise Starter Pack\": https://gta.wiki/w/Criminal_Enterprise_Starter_Pack", url = "https://gta.wiki/w/Criminal_Enterprise_Starter_Pack", origin = "md:2545" }
+9-S14 = { text = "GTA Wiki, \"Shark Cards\": https://gta.wiki/w/Shark_Cards", url = "https://gta.wiki/w/Shark_Cards", origin = "md:2546" }
+9-S15 = { text = "GTA Wiki, \"Agent Trevor\": https://gta.wiki/w/Agent_Trevor", url = "https://gta.wiki/w/Agent_Trevor", origin = "md:2547" }
+9-S16 = { text = "Rockstar Support, \"GTAV Title Update 1.71 Notes\": https://support.rockstargames.com/articles/5IxfVX33w3X8fKooGKswfj/", url = "https://support.rockstargames.com/articles/5IxfVX33w3X8fKooGKswfj/", origin = "md:2548" }
+9-S17 = { text = "Rockstar Support, \"GTAV Title Update 1.72 Notes\": https://support.rockstargames.com/articles/0ExWSr9Bvq5Putzsn5w54/", url = "https://support.rockstargames.com/articles/0ExWSr9Bvq5Putzsn5w54/", origin = "md:2549" }
+9-S18 = { text = "Rockstar Support, \"GTAV Title Update 1.73 Notes\": https://support.rockstargames.com/articles/4vRqEDvjUs9h7nqRUgc8YO/gtav-title-update-1-73-notes-ps5-ps4-xbox-series-x-or-s-xbox-one-pc-enhanced-legacy", url = "https://support.rockstargames.com/articles/4vRqEDvjUs9h7nqRUgc8YO/gtav-title-update-1-73-notes-ps5-ps4-xbox-series-x-or-s-xbox-one-pc-enhanced-legacy", origin = "md:2550" }
+9-S19 = { text = "Stevivor, \"Freemode Events coming to GTA Online current-gen only…\": https://stevivor.com/news/freemode-events-coming-to-gta-online-current-gen-only-rockstar-reveals-the-end-of-support-for-last-gen-editions", url = "https://stevivor.com/news/freemode-events-coming-to-gta-online-current-gen-only-rockstar-reveals-the-end-of-support-for-last-gen-editions", origin = "md:2551" }
+9-S20 = { text = "Shacknews, \"GTA Online: The Kortz Center Heist gets mid-July release date\" (9 Jul 2026): https://www.shacknews.com/article/149946/gta-online-kortz-center-heist-release-date", url = "https://www.shacknews.com/article/149946/gta-online-kortz-center-heist-release-date", origin = "md:2552" }
+9-S21 = { text = "Insider Gaming, \"GTA 5 update 1.73 patch notes\" (14 Jul 2026): https://insider-gaming.com/gta-5-update-1-73-patch-notes/", url = "https://insider-gaming.com/gta-5-update-1-73-patch-notes/", origin = "md:2553" }
+9-S22 = { text = "Rockstar Intel, \"A Safehouse in the Hills update released, download sizes\" (10 Dec 2025): https://rockstarintel.com/gta-online-a-safehouse-in-the-hills-update-released-download-sizes-revealed/", url = "https://rockstarintel.com/gta-online-a-safehouse-in-the-hills-update-released-download-sizes-revealed/", origin = "md:2554" }
+9-S23 = { text = "GTABase, \"GTA Online Mansions DLC Update 1.72 Patch Notes\": https://www.gtabase.com/articles/grand-theft-auto-v/title-updates/gta-online-mansions-dlc-update-1-72-patch-notes-features", url = "https://www.gtabase.com/articles/grand-theft-auto-v/title-updates/gta-online-mansions-dlc-update-1-72-patch-notes-features", origin = "md:2555" }
+9-S24 = { text = "GTAboom, \"GTA Online Update DLC History\": https://www.gtaboom.com/gta-online-update-dlc-history/", url = "https://www.gtaboom.com/gta-online-update-dlc-history/", origin = "md:2556" }
+9-S25 = { text = "Alexander Blade, Script Hook V download page (v3889.0 / 1158.13, released 15 Jul 2026): http://www.dev-c.com/gtav/scripthookv/", url = "http://www.dev-c.com/gtav/scripthookv/", origin = "md:2557" }
+9-S26 = { text = "GTA Wiki year pages: https://gta.wiki/w/2013 · https://gta.wiki/w/2014 · https://gta.wiki/w/2015 · https://gta.wiki/w/2016 · https://gta.wiki/w/2017 · https://gta.wiki/w/2018 · https://gta.wiki/w/2019 · https://gta.wiki/w/2020 · https://gta.wiki/w/2021 · https://gta.wiki/w/2023 · https://gta.wiki/w/2024 · https://gta.wiki/w/2025 · https://gta.wiki/w/2026", url = "https://gta.wiki/w/2013", origin = "md:2558" }
+9-S30 = { text = "GTA Wiki, Beach Bum Update: https://gta.wiki/w/Beach_Bum_Update", url = "https://gta.wiki/w/Beach_Bum_Update", origin = "md:2559" }
+9-S31 = { text = "GTA Wiki, Deathmatch & Race Creators Update: https://gta.wiki/w/Deathmatch_%26_Race_Creators_Update", url = "https://gta.wiki/w/Deathmatch_%26_Race_Creators_Update", origin = "md:2560" }
+9-S32 = { text = "GTA Wiki, Capture Update: https://gta.wiki/w/Capture_Update", url = "https://gta.wiki/w/Capture_Update", origin = "md:2561" }
+9-S33 = { text = "GTA Wiki, Holiday Gifts: https://gta.wiki/w/Holiday_Gifts", url = "https://gta.wiki/w/Holiday_Gifts", origin = "md:2562" }
+9-S34 = { text = "GTA Wiki, Valentine's Day Massacre Special: https://gta.wiki/w/Valentine%27s_Day_Massacre_Special", url = "https://gta.wiki/w/Valentine%27s_Day_Massacre_Special", origin = "md:2563" }
+9-S35 = { text = "GTA Wiki, The Business Update: https://gta.wiki/w/The_Business_Update", url = "https://gta.wiki/w/The_Business_Update", origin = "md:2564" }
+9-S36 = { text = "GTA Wiki, The High Life Update: https://gta.wiki/w/The_High_Life_Update", url = "https://gta.wiki/w/The_High_Life_Update", origin = "md:2565" }
+9-S37 = { text = "GTA Wiki, The \"I'm Not a Hipster\" Update: https://gta.wiki/w/The_%22I%27m_Not_a_Hipster%22_Update", url = "https://gta.wiki/w/The_%22I%27m_Not_a_Hipster%22_Update", origin = "md:2566" }
+9-S38 = { text = "GTA Wiki, Independence Day Special: https://gta.wiki/w/Independence_Day_Special", url = "https://gta.wiki/w/Independence_Day_Special", origin = "md:2567" }
+9-S39 = { text = "GTA Wiki, San Andreas Flight School Update: https://gta.wiki/w/San_Andreas_Flight_School_Update", url = "https://gta.wiki/w/San_Andreas_Flight_School_Update", origin = "md:2568" }
+9-S40 = { text = "GTA Wiki, The Last Team Standing Update: https://gta.wiki/w/The_Last_Team_Standing_Update", url = "https://gta.wiki/w/The_Last_Team_Standing_Update", origin = "md:2569" }
+9-S41 = { text = "GTA Wiki, Festive Surprise: https://gta.wiki/w/Festive_Surprise", url = "https://gta.wiki/w/Festive_Surprise", origin = "md:2570" }
+9-S42 = { text = "GTA Wiki, GTA Online: Heists: https://gta.wiki/w/GTA_Online:_Heists", url = "https://gta.wiki/w/GTA_Online:_Heists", origin = "md:2571" }
+9-S43 = { text = "GTA Wiki, Ill-Gotten Gains Part 1: https://gta.wiki/w/Ill-Gotten_Gains_Part_1", url = "https://gta.wiki/w/Ill-Gotten_Gains_Part_1", origin = "md:2572" }
+9-S44 = { text = "GTA Wiki, Ill-Gotten Gains Part 2: https://gta.wiki/w/Ill-Gotten_Gains_Part_2", url = "https://gta.wiki/w/Ill-Gotten_Gains_Part_2", origin = "md:2573" }
+9-S45 = { text = "GTA Wiki, Freemode Events Update: https://gta.wiki/w/Freemode_Events_Update", url = "https://gta.wiki/w/Freemode_Events_Update", origin = "md:2574" }
+9-S46 = { text = "GTA Wiki, GTA Online: Lowriders: https://gta.wiki/w/GTA_Online:_Lowriders", url = "https://gta.wiki/w/GTA_Online:_Lowriders", origin = "md:2575" }
+9-S47 = { text = "GTA Wiki, Halloween Surprise: https://gta.wiki/w/Halloween_Surprise", url = "https://gta.wiki/w/Halloween_Surprise", origin = "md:2576" }
+9-S48 = { text = "GTA Wiki, GTA Online: Executives and Other Criminals: https://gta.wiki/w/GTA_Online:_Executives_and_Other_Criminals", url = "https://gta.wiki/w/GTA_Online:_Executives_and_Other_Criminals", origin = "md:2577" }
+9-S49 = { text = "GTA Wiki, Festive Surprise 2015: https://gta.wiki/w/Festive_Surprise_2015", url = "https://gta.wiki/w/Festive_Surprise_2015", origin = "md:2578" }
+9-S50 = { text = "GTA Wiki, January 2016 Update: https://gta.wiki/w/January_2016_Update", url = "https://gta.wiki/w/January_2016_Update", origin = "md:2579" }
+9-S51 = { text = "GTA Wiki, GTA Online: Be My Valentine: https://gta.wiki/w/GTA_Online:_Be_My_Valentine", url = "https://gta.wiki/w/GTA_Online:_Be_My_Valentine", origin = "md:2580" }
+9-S52 = { text = "GTA Wiki, Lowriders: Custom Classics: https://gta.wiki/w/Lowriders:_Custom_Classics", url = "https://gta.wiki/w/Lowriders:_Custom_Classics", origin = "md:2581" }
+9-S53 = { text = "GTA Wiki, Further Adventures in Finance and Felony: https://gta.wiki/w/GTA_Online:_Further_Adventures_in_Finance_and_Felony", url = "https://gta.wiki/w/GTA_Online:_Further_Adventures_in_Finance_and_Felony", origin = "md:2582" }
+9-S54 = { text = "GTA Wiki, GTA Online: Cunning Stunts: https://gta.wiki/w/GTA_Online:_Cunning_Stunts", url = "https://gta.wiki/w/GTA_Online:_Cunning_Stunts", origin = "md:2583" }
+9-S55 = { text = "GTA Wiki, GTA Online: Bikers: https://gta.wiki/w/GTA_Online:_Bikers", url = "https://gta.wiki/w/GTA_Online:_Bikers", origin = "md:2584" }
+9-S56 = { text = "GTA Wiki, Deadline (Adversary Mode): https://gta.wiki/w/Deadline", url = "https://gta.wiki/w/Deadline", origin = "md:2585" }
+9-S57 = { text = "GTA Wiki, GTA Online: Import/Export: https://gta.wiki/w/GTA_Online:_Import/Export", url = "https://gta.wiki/w/GTA_Online:_Import/Export", origin = "md:2586" }
+9-S58 = { text = "GTA Wiki, Cunning Stunts: Special Vehicle Circuit: https://gta.wiki/w/Cunning_Stunts:_Special_Vehicle_Circuit", url = "https://gta.wiki/w/Cunning_Stunts:_Special_Vehicle_Circuit", origin = "md:2587" }
+9-S59 = { text = "GTA Wiki, GTA Online: Gunrunning: https://gta.wiki/w/GTA_Online:_Gunrunning", url = "https://gta.wiki/w/GTA_Online:_Gunrunning", origin = "md:2588" }
+9-S60 = { text = "GTA Wiki, GTA Online: Smuggler's Run: https://gta.wiki/w/GTA_Online:_Smuggler%27s_Run", url = "https://gta.wiki/w/GTA_Online:_Smuggler%27s_Run", origin = "md:2589" }
+9-S61 = { text = "GTA Wiki, GTA Online: The Doomsday Heist: https://gta.wiki/w/GTA_Online:_The_Doomsday_Heist", url = "https://gta.wiki/w/GTA_Online:_The_Doomsday_Heist", origin = "md:2590" }
+9-S62 = { text = "GTA Wiki, Southern San Andreas Super Sport Series: https://gta.wiki/w/GTA_Online:_Southern_San_Andreas_Super_Sport_Series", url = "https://gta.wiki/w/GTA_Online:_Southern_San_Andreas_Super_Sport_Series", origin = "md:2591" }
+9-S63 = { text = "GTA Wiki, GTA Online: After Hours: https://gta.wiki/w/GTA_Online:_After_Hours", url = "https://gta.wiki/w/GTA_Online:_After_Hours", origin = "md:2592" }
+9-S64 = { text = "GTA Wiki, GTA Online: Arena War: https://gta.wiki/w/GTA_Online:_Arena_War", url = "https://gta.wiki/w/GTA_Online:_Arena_War", origin = "md:2593" }
+9-S65 = { text = "GTA Wiki, The Diamond Casino & Resort: https://gta.wiki/w/GTA_Online:_The_Diamond_Casino_%26_Resort", url = "https://gta.wiki/w/GTA_Online:_The_Diamond_Casino_%26_Resort", origin = "md:2594" }
+9-S66 = { text = "GTA Wiki, The Diamond Casino Heist: https://gta.wiki/w/GTA_Online:_The_Diamond_Casino_Heist", url = "https://gta.wiki/w/GTA_Online:_The_Diamond_Casino_Heist", origin = "md:2595" }
+9-S67 = { text = "GTA Wiki, Gerald's Last Play: https://gta.wiki/w/Gerald%27s_Last_Play", url = "https://gta.wiki/w/Gerald%27s_Last_Play", origin = "md:2596" }
+9-S68 = { text = "GTA Wiki, Los Santos Summer Special: https://gta.wiki/w/GTA_Online:_Los_Santos_Summer_Special", url = "https://gta.wiki/w/GTA_Online:_Los_Santos_Summer_Special", origin = "md:2597" }
+9-S69 = { text = "GTA Wiki, The Cayo Perico Heist: https://gta.wiki/w/GTA_Online:_The_Cayo_Perico_Heist", url = "https://gta.wiki/w/GTA_Online:_The_Cayo_Perico_Heist", origin = "md:2598" }
+9-S70 = { text = "GTA Wiki, Los Santos Tuners: https://gta.wiki/w/GTA_Online:_Los_Santos_Tuners", url = "https://gta.wiki/w/GTA_Online:_Los_Santos_Tuners", origin = "md:2599" }
+9-S71 = { text = "GTA Wiki, The Contract: https://gta.wiki/w/GTA_Online:_The_Contract", url = "https://gta.wiki/w/GTA_Online:_The_Contract", origin = "md:2600" }
+9-S72 = { text = "GTA Wiki, The Criminal Enterprises: https://gta.wiki/w/GTA_Online:_The_Criminal_Enterprises", url = "https://gta.wiki/w/GTA_Online:_The_Criminal_Enterprises", origin = "md:2601" }
+9-S73 = { text = "GTA Wiki, Los Santos Drug Wars: https://gta.wiki/w/GTA_Online:_Los_Santos_Drug_Wars", url = "https://gta.wiki/w/GTA_Online:_Los_Santos_Drug_Wars", origin = "md:2602" }
+9-S74 = { text = "GTA Wiki, San Andreas Mercenaries: https://gta.wiki/w/GTA_Online:_San_Andreas_Mercenaries", url = "https://gta.wiki/w/GTA_Online:_San_Andreas_Mercenaries", origin = "md:2603" }
+9-S75 = { text = "GTA Wiki, The Chop Shop: https://gta.wiki/w/GTA_Online:_The_Chop_Shop", url = "https://gta.wiki/w/GTA_Online:_The_Chop_Shop", origin = "md:2604" }
+9-S76 = { text = "GTA Wiki, Bottom Dollar Bounties: https://gta.wiki/w/GTA_Online:_Bottom_Dollar_Bounties", url = "https://gta.wiki/w/GTA_Online:_Bottom_Dollar_Bounties", origin = "md:2605" }
+9-S77 = { text = "GTA Wiki, Agents of Sabotage (incl. Oscar Guzman Flies Again): https://gta.wiki/w/GTA_Online:_Agents_of_Sabotage", url = "https://gta.wiki/w/GTA_Online:_Agents_of_Sabotage", origin = "md:2606" }
+9-S78 = { text = "GTA Wiki, Money Fronts: https://gta.wiki/w/GTA_Online:_Money_Fronts", url = "https://gta.wiki/w/GTA_Online:_Money_Fronts", origin = "md:2607" }
+9-S79 = { text = "GTA Wiki, A Safehouse in the Hills: https://gta.wiki/w/GTA_Online:_A_Safehouse_in_the_Hills", url = "https://gta.wiki/w/GTA_Online:_A_Safehouse_in_the_Hills", origin = "md:2608" }
+9-S80 = { text = "GTA Wiki, The Kortz Center Heist: https://gta.wiki/w/GTA_Online:_The_Kortz_Center_Heist", url = "https://gta.wiki/w/GTA_Online:_The_Kortz_Center_Heist", origin = "md:2609" }
+9-S81 = { text = "Rockstar Newswire, \"The GTA Online Beach Bum Update is Now Available\" (19 Nov 2013): https://www.rockstargames.com/newswire/article/89k8a55454a125/The-GTA-Online-Beach-Bum-Update-is-Now-Available", url = "https://www.rockstargames.com/newswire/article/89k8a55454a125/The-GTA-Online-Beach-Bum-Update-is-Now-Available", origin = "md:2610" }
+9-S82 = { text = "Rockstar Newswire, \"Free GTA Online Deathmatch & Race Creators Update Now Available\" (11 Dec 2013): https://www.rockstargames.com/newswire/article/ak14o883835ok3/Free-GTA-Online-Deathmatch-Race-Creators-Update-Now-Available", url = "https://www.rockstargames.com/newswire/article/ak14o883835ok3/Free-GTA-Online-Deathmatch-Race-Creators-Update-Now-Available", origin = "md:2611" }
+9-S83 = { text = "Rockstar Newswire, \"GTA Online Capture Update Now Available\" (17 Dec 2013): https://www.rockstargames.com/newswire/article/o349k552521317/GTA-Online-Capture-Update-Now-Available", url = "https://www.rockstargames.com/newswire/article/o349k552521317/GTA-Online-Capture-Update-Now-Available", origin = "md:2612" }
+9-S84 = { text = "Rockstar Newswire, \"The High Life Update for GTA Online Is Now Available\" (13 May 2014): https://www.rockstargames.com/newswire/article/4k412883838242/The-High-Life-Update-for-GTA-Online-Is-Now-Available", url = "https://www.rockstargames.com/newswire/article/4k412883838242/The-High-Life-Update-for-GTA-Online-Is-Now-Available", origin = "md:2613" }
+9-S85 = { text = "Rockstar Newswire, \"GTA Online: Lowriders Now Available\" (20 Oct 2015): https://www.rockstargames.com/newswire/article/75o94113198321/gta-online-lowriders-now-available", url = "https://www.rockstargames.com/newswire/article/75o94113198321/gta-online-lowriders-now-available", origin = "md:2614" }
+9-S86 = { text = "Rockstar Support, \"GTAV Title Update 1.61 Notes (PS4 / PS5 / Xbox One / Xbox Series X|S / PC)\": https://support.rockstargames.com/articles/5aud9bTiQluHnVEP6x7YRp/gtav-title-update-1-61-notes-ps4-ps5-xbox-one-xbox-series-x-s-pc", url = "https://support.rockstargames.com/articles/5aud9bTiQluHnVEP6x7YRp/gtav-title-update-1-61-notes-ps4-ps5-xbox-one-xbox-series-x-s-pc", origin = "md:2615" }
+9-S87 = { text = "Rockstar Support, \"GTAV Title Update 1.64 Notes (PS5 / PS4 / Xbox Series X|S / Xbox One / PC)\": https://support.rockstargames.com/articles/2CxAWnvruYhrsrUE3RvkYm/gtav-title-update-1-64-notes-ps5-ps4-xbox-series-x-s-xbox-one-pc", url = "https://support.rockstargames.com/articles/2CxAWnvruYhrsrUE3RvkYm/gtav-title-update-1-64-notes-ps5-ps4-xbox-series-x-s-xbox-one-pc", origin = "md:2616" }
+9-S88 = { text = "Rockstar Support, \"GTAV Title Update 1.66 Notes\": https://support.rockstargames.com/articles/4rl77oNC17PDJPIY2sisrm/gtav-title-update-1-66-notes", url = "https://support.rockstargames.com/articles/4rl77oNC17PDJPIY2sisrm/gtav-title-update-1-66-notes", origin = "md:2617" }
+9-S89 = { text = "Rockstar Newswire, \"GTA Online: A Safehouse in the Hills Now Available\" (10 Dec 2025): https://www.rockstargames.com/newswire/article/ak392a52o59o13/gta-online-a-safehouse-in-the-hills-now-available", url = "https://www.rockstargames.com/newswire/article/ak392a52o59o13/gta-online-a-safehouse-in-the-hills-now-available", origin = "md:2618" }
+9-S90 = { text = "Rockstar Newswire, \"The Kortz Center Heist Now Available in GTA Online\" (14 Jul 2026): https://www.rockstargames.com/newswire/article/2525o93834o413/the-kortz-center-heist-now-available-in-gta-online ; GTA Online newswire tag listing (read 24 Oct 2026): https://www.rockstargames.com/newswire?tag=702", url = "https://www.rockstargames.com/newswire/article/2525o93834o413/the-kortz-center-heist-now-available-in-gta-online", origin = "md:2619" }
+9-S92 = { text = "GTA Wiki (Fandom), \"Grand Theft Auto V/Title Update Notes\" (TU history table) and DLC infoboxes, read via the MediaWiki API: https://gta.fandom.com/wiki/Grand_Theft_Auto_V/Title_Update_Notes", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_V/Title_Update_Notes", origin = "md:2620" }
+9-S93 = { text = "Push Square, \"GTA 5 PS5 Price Is Just $10 Until 14th June\" (7 Mar 2022, updated 8 Mar 2022): https://www.pushsquare.com/news/2022/03/gta-5-ps5-price-is-just-usd10-until-14th-june", url = "https://www.pushsquare.com/news/2022/03/gta-5-ps5-price-is-just-usd10-until-14th-june", origin = "md:2621" }
+9-S94 = { text = "GINX, \"GTA 5 next-gen pricing on Xbox Series X and PS5 explained\" (10 Mar 2022): https://www.ginx.tv/en/gta-5-next-gen-pricing-xbox-series-ps5", url = "https://www.ginx.tv/en/gta-5-next-gen-pricing-xbox-series-ps5", origin = "md:2622" }
+9-S95 = { text = "GTAboom, \"Three new GTA Online Starter Packs made available\" (21 Dec 2017): https://www.gtaboom.com/three-new-gta-online-starter-packs-made-available-d10d", url = "https://www.gtaboom.com/three-new-gta-online-starter-packs-made-available-d10d", origin = "md:2623" }
+9-S96 = { text = "playground.ru, \"Официальные патчи для Grand Theft Auto 5\" (community patch-file index; upload titles and dates): https://www.playground.ru/gta_5/file/patch", url = "https://www.playground.ru/gta_5/file/patch", origin = "md:2624" }
+9-S97 = { text = "GameFAQs, \"Grand Theft Auto V\" release data (Premium Online Edition / Premium Edition rows): https://gamefaqs.gamespot.com/pc/805606-grand-theft-auto-v/data", url = "https://gamefaqs.gamespot.com/pc/805606-grand-theft-auto-v/data", origin = "md:2625" }

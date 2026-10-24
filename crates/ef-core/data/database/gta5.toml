@@ -1,0 +1,5952 @@
+# Grand Theft Auto V: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "8"
+origin = "md:1732"
+title = "8. Grand Theft Auto V — Platforms, Editions, Title Updates & PC Builds"
+games = ["gta5"]
+text = "> Scope: GTA V as a product (all platforms), its retail/digital editions, the console title-update (TU) numbering and the PC executable build numbers. GTA Online content-update *descriptions* live in Section 9; here each TU/build is only mapped to the name of the update it shipped with. Compilations are cross-referenced in Section 12."
+
+[[section]]
+id = "8.1"
+origin = "md:1736"
+title = "8.1 Development history & pre-release milestones"
+games = ["gta5"]
+text = '''
+**Leaked / preserved pre-release builds.** *(Corrected in the audit-integration pass: an earlier draft said no pre-release GTA V build with a documented build number had leaked. That is out of date.)* Hidden Palace documents the builds, DLC prototypes and dev-kit leftovers below. All rows rest on that one community archive, so they are ⚠️. Hidden Palace's own "build dates" are not compile dates for the DLC items (they come from the Xbox CDN package modification dates) or for the 388.5 patch (latest file modification). Full cross-game index: §11.7.
+
+
+**PS3 dev-kit leftovers (assets, not runnable builds)** ⚠️ [68]:
+- *cnh devkit leftovers assets.* A Rockstar / Team Bondi PS3 dev kit (model 1400a) was put on the Internet Archive on 2024-04-14. It held wiped remnants of builds from about April 2010 to May 2012, July 2013 "Install" builds, and two patches dated around 2013-10-03.
+- *Cloud Cache Files.* Extracted on 2025-07-14 from dev kit `1400a 2454`: 19 cloud-cache .dat files retrieved in November 2014 and related to Heists. More than 200 further files, dated around September 2013, came from dev kit `TB00022`.
+- *CarsonGT Extracted Assets.* PS3 audio, video and RPF fragments, including a June 2013 `scaleform_generic.rpf` with a different loading screen.'''
+
+[[section]]
+id = "8.2"
+origin = "md:1785"
+title = "8.2 Platform releases"
+games = ["gta5"]
+
+[[section]]
+id = "8.3"
+origin = "md:1801"
+title = "8.3 Disc serials, title IDs & digital product IDs"
+games = ["gta5"]
+
+[[section]]
+id = "8.4"
+origin = "md:1828"
+title = "8.4 Editions, bundles & promotions"
+games = ["gta5"]
+
+[[section]]
+id = "8.4b"
+origin = "md:1853"
+title = "8.4b Official companion apps"
+games = ["gta5"]
+
+[[section]]
+id = "8.5"
+origin = "md:1860"
+title = "8.5 Console title updates (game & GTA Online version numbers)"
+games = ["gta5"]
+text = '''
+**How the numbering works.** Rockstar labels each patch "Title Update 1.xx". From launch until the PS4/XB1 release, the story-mode and Online versions were the same (1.01–1.17). The PS4/XB1 re-release started its own story-mode count at 1.01 (paired with Online 1.17); the PC version also started at 1.01 but is usually identified by its executable build (§8.6). Each platform kept its own numbers until **1.29 (2015-09-15)**. From then on one TU number has covered PS4, XB1 and PC, and later PS5/XSX and PC Enhanced too. Rockstar Support's "Title Update 1.27/1.28" note pages list PS3/X360/PS4/XB1/PC together under the Online number. The GTA Wiki gives separate per-platform game versions for those two patches (e.g. 1.24 for PS3/X360, 1.11 for PS4/XB1, PC 350.3 for 1.27). [3][20][21][22][40]
+
+
+**Last-gen final versions:** Xbox 360 — TU 1.29 (2015-11-17); PS3 — TU 1.36 (2016-12-09). The GTA Wiki "Latest Versions" table gives the same two numbers. [3][27][30] ✅'''
+
+[[section]]
+id = "8.5b"
+origin = "md:1948"
+title = "8.5b PlayStation package (patch) versions — PS4 & PS5"
+games = ["gta5"]
+text = '''
+Sony's package version numbers (`01.xx` on PS4, `01.0xx.000` on PS5) are **not** the same as Rockstar's TU numbers.
+- **PS4 dates** are ORBISPatches' package **creation dates**. Packages are built a few days before release, so these are not release dates.
+- **PS5 dates** are ProsperoPatches' **"Date Added"**, the time the tracker first saw the package. The same package version is often re-issued with a new date for later hotfixes.
+- **Associated update** is ORBISPatches' own description text for each package; no mapping was inferred.
+
+ORBISPatches lists the same versions and creation dates for the US (CUSA00419) and EU (CUSA00411) PS4 SKUs; the EU list lacks some pre-2015-10 entries. [12][14][48][49] ✅
+
+
+Versions 01.01, 01.04, 01.05, 01.08 and 01.39 are not listed by ORBISPatches. The Japanese PS4 SKU **CUSA00880** uses its own numbering, three lower than the US/EU SKUs at the end. Its list runs from 01.19 (2017-04-03) to **01.54** (2026-07-09, Kortz Center Heist), and mostly the same creation dates as the matching US packages. The exceptions are a JP-only extra package on 2019-07-26 and dates one day off in 2022 (2022-08-31 and 2022-12-09). [48] ✅
+
+
+The disc-content-ID SKUs **PPSA04264** (US) and **PPSA04263** (EU) carry the same packages, but ProsperoPatches' history for them starts later: PPSA04264 from 01.005.000 (first seen 2023-10-07), PPSA04263 from 01.006.000 (2024-01-11). ProsperoPatches has no page for PPSA04265 (JP); requesting it returns the site home page. The "dates first seen" match the dates Rockstar/GTA Wiki give for the corresponding PS5 TU drops in §8.5. [14][49] ✅'''
+
+[[section]]
+id = "8.6"
+origin = "md:2030"
+title = "8.6 PC (Legacy) executable builds — `GTA5.exe` 1.0.xxx.x"
+games = ["gta5"]
+text = '''
+**Non-retail PC builds:** a leftover "GTA5 Debug.exe" + .pdb dated 2020-09-30 (not in the list below), and the leaked source code, which Hidden Palace catalogues as build **1.0.2699.0** (code c. 2022-09-16). That number is the same as the retail *Criminal Enterprises* executable 1.0.2699.0 (2022-07-26) in the list below. Hidden Palace's code date is about seven weeks after that release; the reason is not documented. Both items rest on Hidden Palace only; see §8.1. ⚠️ [65][68]
+
+**Sources and method.** The build list below is the complete set of `GTA5.exe` versions enumerated by the Script Hook V .NET `GameVersion` enum [19]. That enum mirrors the values Alexander Blade's Script Hook V returns from `getGameVersion()`, so it is effectively the modding community's canonical list of retail PC executables. It agrees with the Script Hook V readme's supported-versions list [33], and the Script Hook V download page gives the latest as 1.0.3889.0 [34].
+- **Associated update:** taken from FiveM's official `sv_enforceGameBuild` table, which maps build numbers to DLC/"marketing names" [35], or from the GTA Wiki TU pages for 2015 builds [3][20]–[25].
+- **Dates:** a build tied to a named update takes that update's release date from §8.5. "SHVDN support" is the date the build was added to the SHVDN enum (git history [19]). It is an *upper bound* on the release date, not the release date itself.
+- **Inferred mappings:** where no source ties a build to a TU, the row says "Inferred from ordering — not sourced ❓". Treat these as unverified. A second pass (2026-10) found no PC build numbers on any GTA Wiki per-update page after 2015-07-21 (all 57 post-2015 pages were checked), nor on Rockstar Support notes or news coverage. Script Hook V's readme changelog lists versions without dates.
+- **PC-only patch dates that no build is tied to.** GTA Wiki lists these PC Legacy-only patches [3]: 2015-04-14 (1.01), 2018-10-16 (1.45), 2020-09-09 (1.52), 2022-10-25 (1.63), 2023-02-01 (1.66), 2023-10-03 (1.67), 2024-04-16 (1.68), 2024-09-17, 2024-09-25, 2024-10-15, 2024-10-30 (1.69), 2024-12-13, 2025-02-19 (1.70), 2025-07-08 (1.71), 2026-03-17 (1.72), 2026-07-30 (1.73). Each hotfix build without a date below presumably matches one of these, but which one is not sourced.
+- **Steam/NoSteam:** up to 1.0.2699.0 Rockstar shipped separate Steam and non-Steam executables, and Epic had one variant (1.0.1868.4 EGS). From 1.0.2699.16 onward SHVDN lists a single executable per build [19]. ⚠️
+
+
+**FiveM-packaged builds (`GTA5.exe` sizes from FiveM's GameCache).** FiveM can switch players to these builds, and its launcher stores the matching `GTA5.exe` and `update.rpf` for each [36]. Each entry gives build, exe size in bytes, exe SHA-1 (first 8 chars):
+1604 — 72,484,280 (8939c8c7) · 2060 — 60,589,184 (741c8b91) · 2189 — 63,124,096 (fcd5fd8a) · 2372 — 59,716,912 (470235e0) · 2545 — 59,988,376 (517556bb) · 2612 — 60,351,952 (d423086f) · 2699 — 61,111,680 (b9f3960c) · 2802 — 46,709,592 (ebb6c144) · 2944 — 49,828,848 (4d968a07) · 3095 — 49,634,800 (17a074bb) · 3179 — 55,367,152 (cf2b853a) · 3258 — 56,066,032 (17183412) · 3323 — 57,496,560 (059bcf06) · 3407 — 54,341,608 (36019819) · 3570 — 49,242,152 (17d59395) · 3751 — 49,183,352 (e5fe7bd7) · 3788 — 49,221,752 (82b4575d) · 3889 — 47,467,128 (a9bff696). FiveM also supports "build 1" (base game without DLC) and RedM build 1491 (for RDR2, outside scope). ✅ [35][36]'''
+
+[[section]]
+id = "8.7"
+origin = "md:2119"
+title = "8.7 PC Enhanced executable builds (2025–present)"
+games = ["gta5"]
+text = '''
+The Enhanced edition (2025-03-04) has its own build numbering, starting at 811/812. Script Hook V describes these as **1.0.xxxx.yy** (e.g. "1.0.1158.13"). SHVDN-Enhanced's `ExeVersionConsts` reads the executable file version as **2.0.xxxx.yy** (e.g. `new(2, 0, 811, 8)`). The 811–1013 builds are listed in SHVDN-Enhanced [38]; 1013.34 is named in a commit message and 1158.13 comes from Script Hook V [34].
+
+
+FiveM for GTA V Enhanced supports only the latest gamebuild (The Kortz Center Heist), plus `sv_enforceGameBuild 1` for the base game without DLC. ✅ [35][39]'''
+
+[[section]]
+id = "8.8"
+origin = "md:2139"
+title = "8.8 Regional, censorship & content-change notes (GTA V-specific)"
+games = ["gta5"]
+text = "*(Full country-by-country ratings and censorship tables: see Section 13.)*"
+
+[[section]]
+id = "8.9"
+origin = "md:2153"
+title = "8.9 Cross-references"
+games = ["gta5"]
+text = '''
+- **GTA Online** content updates, DLC descriptions and event weeks: **Section 9**. The TU numbers above map to them.
+- **Compilations/bundles** that contain GTA V (e.g. *Grand Theft Auto V: Premium Edition* store bundles and multi-game packs): **Section 12**.
+- **Leaks** (Sept 2022 Rockstar breach, Dec 2023 source-code leak and the cut GTA V DLC it exposed): **Section 11**. Leaked and preserved GTA V builds are listed in §8.1 and indexed in §11.7.'''
+
+[[section]]
+id = "8.10"
+origin = "md:2159"
+title = "8.10 Coverage & known gaps (Section 8)"
+games = ["gta5"]
+text = '''
+- **Console TU list:** complete as a list of numbers (1.00 → 1.73) from two community sources [3][4], cross-checked against Rockstar Support note titles [21][32][40][43]–[46]. Some TUs have one-day date conflicts (flagged). **Resolved (2nd pass):**
+  - Community numbering skips 1.55/1.56, but Rockstar Support's own page numbers run 1.53→1.54→1.56→1.61 for 2021–22, offset from the community numbers. A Rockstar "1.55" page was not found.
+  - The 1.73 date conflict is resolved (07-14 launch, 07-16 follow-up).
+  - All post-2024 sub-drops (PC-only, PS5-only, Enhanced-only) were added from GTA Wiki.
+- **PlayStation package versions (new, §8.5b):** full PS4 list 01.02 → 01.57 (US/EU) and 01.54 (JP), and PS5 list 01.001.000 → 01.011.000, from ORBISPatches/ProsperoPatches. PS4 dates are package creation dates, not release dates. Xbox package versions are **not documented**.
+- **PC Legacy builds:** 69 distinct executable version numbers are documented, from 1.0.335.1 to 1.0.3889.0: the 67 in SHVDN's enum (Steam/NoSteam pairs counted once) plus 1.0.335.1 (GTA Wiki) and 1.0.1734.0 (SHVDN comment). GTA Wiki's "350.3" conflicts with this list. 1.0.331.1 is now attested by a 2015-04-20 crash report; 1.0.323.1 is still unverified. 19 builds have a sourced date or named update: 14 via FiveM's build→DLC table and 5 from the GTA Wiki 2015 pages. 1.0.2215.0 → TU 1.53 has weak support (a URL slug only). About 50 hotfix and intermediate builds still have **no documented release date**. SHVDN support dates are upper bounds only, and every TU mapping not tied to a source is now labelled "Inferred from ordering — not sourced ❓". The 2nd pass checked all 57 GTA Wiki per-update pages from 2015 on (none after 2015-07-21 gives a PC build), the Rockstar Support notes and news articles. SteamDB was not usable (bot challenge), and archive.org snapshots of the Script Hook V page were not reachable in bulk. Those snapshots remain the most promising route to date individual builds (as upper bounds).
+- **PC Enhanced builds:** 11 known (811.8 → 1158.13); release dates are mostly not documented.
+- **Serials:** PS3 (BLUS/BLES/BLAS/BLJM + PSN NPUB/NPEB), Xbox 360 (TT-2215), PS4 (CUSA00411/00419/00880/01436) and PS5 (PPSA01721/03420/03421/04263/04264/04265) documented. Microsoft Store product IDs (BPJ686W6S0NH, 9NXMBTB02ZSF, 9P8RQH67TTT1, etc.) and Steam Enhanced app 3240220 were added in the 2nd pass. **Physical Xbox One / Series disc product codes not documented.**
+- **Resolved in 2nd pass:** Epic giveaway (2020-05-14 → 05-21); PS Plus / Game Pass stints; CERO Z (X360 and PS4 confirmed).
+- **Audit integration (§14 items):** added the GTA V pre-release and prototype builds from Hidden Palace (§8.1): the Oct 13, 2014 dev build QA v108 / 0.0.0.77, the 1.0.2699.0 source build, eight Xbox 360 PartnerNet DLC prototypes, PS3 patch prototypes 377 and 388.5, GTA5 Debug.exe and the PS3 dev-kit leftovers. Also added BLKS-20442 and NPJB00516 (⚠️, single list) and the iFruit and Manual companion apps (§8.4b). The old statement that no playable pre-release GTA V build had leaked was **wrong** and has been removed: the Oct 13, 2014 build leaked on 2026-09-18.
+- **Still not documented:** confirmation of BLKS-20442 and NPJB00516 from a second source; iOS, Windows Phone, Windows and Vita version histories of the companion apps; a release date for each companion-app platform; the CERO rating stated individually for PS3/XB1/PS5/XSX; release dates for the PC Enhanced builds; the start date of the PS Now stint; Xbox package versions.
+- Research note: the shared web-search quota and the hourly fetch limit ran out during this section. Rows marked "not documented" may be fillable in a follow-up pass, e.g. from the GTA Wiki per-TU pages after 2023, Rockstar Support TU notes 1.66–1.73, and SteamDB depot history.'''
+
+[[section]]
+id = "11.6"
+origin = "md:3099"
+title = "11.6 December 2023 GTA V source-code leak"
+games = ["gta5"]
+
+[[entry]]
+id = "8.1-1"
+origin = "md:1740"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Preliminary work began around the release of *GTA IV*; full development lasted about three years."
+date_text = "c. 2008-04"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-2"
+origin = "md:1741"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Engine: proprietary RAGE (Rockstar Advanced Game Engine), overhauled for draw distance; Euphoria (animation) and Bullet (physics) middleware."
+date_text = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-3"
+origin = "md:1742"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Team: Rockstar North core team ≈360; >1,000 people across Rockstar Leeds, Lincoln, London, New England, San Diego, Toronto."
+date_text = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-4"
+origin = "md:1743"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Budget estimates: >US$137 m development (analyst Arvind Bhatia); >£170 m (US$265 m) dev + marketing (The Scotsman, Marty McLaughlin). Estimates, not official."
+date_text = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-5"
+origin = "md:1744"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Cut concepts: an early three-city San Andreas setting was dropped for Los Santos alone; three separate stories were merged into interconnected narratives."
+date_text = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-6"
+origin = "md:1745"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Rockstar confirms the game."
+date = "2011-10-25"
+date_text = "2011-10-25"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-7"
+origin = "md:1746"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Debut trailer."
+date = "2011-11-02"
+date_text = "2011-11-02"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-8"
+origin = "md:1747"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Second trailer (planned for 2 Nov, delayed by Hurricane Sandy)."
+date = "2012-11-14"
+date_text = "2012-11-14"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-9"
+origin = "md:1748"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Release moved from the projected spring (March–May) 2013 window to 2013-09-17."
+date = "2013-01-31"
+date_text = "2013-01-31"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-10"
+origin = "md:1749"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Cover-art mural in Manhattan; digital artwork released 2 Apr."
+date_text = "2013-03-31 / 2013-04-02"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-11"
+origin = "md:1750"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Three protagonist trailers."
+date = "2013-04-26"
+date_text = "2013-04-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-12"
+origin = "md:1751"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "First gameplay trailer."
+date = "2013-07-09"
+date_text = "2013-07-09"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-13"
+origin = "md:1752"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Japanese release date (2013-10-10) announced."
+date = "2013-07-15"
+date_text = "2013-07-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-16"]
+sources_text = "[16]"
+
+[[entry]]
+id = "8.1-14"
+origin = "md:1753"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "*Grand Theft Auto Online* gameplay trailer."
+date = "2013-08-15"
+date_text = "2013-08-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-15"
+origin = "md:1754"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Some European PS3 pre-order users could download parts of the game (soundtrack, dialogue) from a pre-load file; Sony removed it and apologised."
+date = "2013-08"
+date_text = "2013-08"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-16"
+origin = "md:1755"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Game submitted for manufacturing (development ceased / went gold)."
+date = "2013-08-25"
+date_text = "2013-08-25"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-17"
+origin = "md:1756"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "Final pre-launch trailer."
+date = "2013-08-29"
+date_text = "2013-08-29"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-18"
+origin = "md:1757"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "PS4 / Xbox One / PC re-release announced; pre-orders from 2014-06-10."
+date = "2014-06-09"
+date_text = "2014-06-09 (E3 2014)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1", "8-16"]
+sources_text = "[1][16]"
+
+[[entry]]
+id = "8.1-19"
+origin = "md:1758"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "PC version delayed from launching with the 2014 console re-release → 2015-01-27 → 2015-03-24 → 2015-04-14."
+date_text = "2014–2015"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "8.1-20"
+origin = "md:1759"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "PS5 / Xbox Series X\\|S version announced for \"late 2021\"; later dated 2021-11-11, then delayed to March 2022, with 2022-03-15 fixed in Feb 2022 (Wikipedia). GTA Wiki instead says the firm date was announced 2021-05-19."
+date = "2020-06-11"
+date_text = "2020-06-11"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (date-setting conflict)"
+sources = ["8-1", "8-16"]
+sources_text = "[1][16]"
+
+[[entry]]
+id = "8.1-21"
+origin = "md:1760"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "GTA V source code reportedly leaked online (alleged link to Lapsus$ members). Dataminers subsequently found at least eight cancelled single-player DLC sets incl. a Liberty City expansion."
+date = "2023-12-24"
+date_text = "2023-12-24"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "8.1-22"
+origin = "md:1766"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**DLC Weapon 5** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "\"DLC Weapon 5\""
+notes = "Contains an early Assault SMG model (\"Assault Sub Machinegun\"). Works only on the unpatched retail game. Hidden Palace's download file is labelled \"Jul 13, 2013\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-05-07"
+"Origin & release" = "PartnerNet package on the Xbox CDN; dated from the package modification date"
+
+[[entry]]
+id = "8.1-23"
+origin = "md:1767"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**DLC Weapon 7** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "—"
+notes = "Early Bullpup Shotgun model. That weapon later shipped with the Collector's Edition content."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-05-07"
+"Origin & release" = "PartnerNet / Xbox CDN"
+
+[[entry]]
+id = "8.1-24"
+origin = "md:1768"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**DLC Weapon 1** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "—"
+notes = "Heavy Rifle, which was cut and later added to current-gen GTA Online in *The Contract*."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-05-20"
+"Origin & release" = "PartnerNet / Xbox CDN"
+
+[[entry]]
+id = "8.1-25"
+origin = "md:1769"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**DLC Weapon 2** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "\"DLC Weapon 2\""
+notes = "\"Programmable Assault Rifle\" (a cut weapon; the page's quoted modder calls it the Programmable Airburst Rifle)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-05-20"
+"Origin & release" = "PartnerNet / Xbox CDN"
+
+[[entry]]
+id = "8.1-26"
+origin = "md:1770"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**DLC Weapon 3** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "\"DLC Weapon 3\""
+notes = "Assault MG (cut weapon)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-05-20"
+"Origin & release" = "PartnerNet / Xbox CDN"
+
+[[entry]]
+id = "8.1-27"
+origin = "md:1771"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**DLC Weapon 6** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "—"
+notes = "Rubber Gun (cut weapon)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-07-04"
+"Origin & release" = "PartnerNet / Xbox CDN"
+
+[[entry]]
+id = "8.1-28"
+origin = "md:1772"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**Assault Sniper DLC** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "—"
+notes = "Assault Sniper (cut weapon)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-07-04"
+"Origin & release" = "PartnerNet / Xbox CDN"
+
+[[entry]]
+id = "8.1-29"
+origin = "md:1773"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**Atomic Blimp DLC** prototype"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+id_text = "—"
+notes = "Atomic Blimp vehicle. Hidden Palace says the *retail* package was modified on 2013-07-27."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-66"]
+sources_text = "[66]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-07-04"
+"Origin & release" = "PartnerNet / Xbox CDN"
+
+[[entry]]
+id = "8.1-30"
+origin = "md:1774"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**Patch Data prototype (TU 1.01)**"
+platforms = ["ps3"]
+platform_text = "PS3 (BLES01807)"
+id_text = "**377**"
+notes = "Hidden Palace places build 377 between the base retail build **369** and the retail 1.01 build **388.2**. See §8.5."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-67"]
+sources_text = "[67]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-09-13"
+"Origin & release" = "Recovered from PS3 dev-kit HDD `TB00022`; dumped and released by MrPinball64 in 2023; extracted by funtimeandrefoxy on 2025-02-25"
+
+[[entry]]
+id = "8.1-31"
+origin = "md:1775"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**Patch Data prototype (TU 1.02)**"
+platforms = ["ps3"]
+platform_text = "PS3 (BLES01807)"
+id_text = "**388.5**"
+notes = "Corresponds to TU 1.02, whose retail version Hidden Palace says is 388.6. The retail 1.02 package itself is **lost**. The EBOOT.BIN is debug-signed. Hidden Palace notes that the build date comes from the latest file modification date and is \"inaccurate\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-67"]
+sources_text = "[67]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2013-10-03"
+"Origin & release" = "Recovered from a PS3 dev-kit HDD; dumped and released by \"the cnh\" on 2024-04-14; extracted 2025-02-12"
+
+[[entry]]
+id = "8.1-32"
+origin = "md:1776"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**\"Oct 13, 2014\" development build**: GTA5_NG QA Version 108"
+platform_text = "\"Other\" on Hidden Palace (binaries and baked assets for all platforms)"
+id_text = "**0.0.0.77**; QA version **108**"
+notes = "Predates the PC launch by about 6 months. Has debug keyboards. Contains a very early rendition of the GTA VI map (`-level env_test`), which Hidden Palace says shows Cayo Perico was partly cut GTA VI content. Also has assets for a cut Liberty City expansion and the cut \"Agent Trevor\" DLC. The newest map files were exported around 2014-12-19, later than the binary."
+confidence = "single-source"
+confidence_text = "⚠️ (single community source; recent)"
+sources = ["8-64"]
+sources_text = "[64]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2014-10-13"
+"Origin & release" = "Came from the \"Build\" directory taken in the September 2022 Rockstar intrusion (§11.3). It was sold privately and then leaked by an unknown buyer. File release date **2026-09-18** (\"four year anniversary of the 2022 leaks\")."
+
+[[entry]]
+id = "8.1-33"
+origin = "md:1777"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**\"GTA5 Debug.exe\" + \"GTA5 Debug.pdb\"** (\"Leftover Sep 30, 2020 Data\")"
+platforms = ["pc"]
+platform_text = "PC"
+id_text = "—"
+notes = "Only those two files. The date comes from the executable."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-68"]
+sources_text = "[68]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "2020-09-30"
+"Origin & release" = "Hidden Palace; origin not stated"
+
+[[entry]]
+id = "8.1-34"
+origin = "md:1778"
+section = "8.1"
+kind = "milestone"
+games = ["gta5"]
+title = "**Source-code build 1.0.2699.0** (\"Sep 16, 2022 build\")"
+platforms = ["pc"]
+platform_text = "PC"
+id_text = "**1.0.2699.0**"
+notes = "Code only; assets have to be copied from a retail copy. Rockstar's build tools were included. Only the \"Debug\" configuration is known to work (Hidden Palace also mentions a \"Bank Release\" compile). Hidden Palace treats it as separate from the Oct 13, 2014 build. The build name is the same as the retail PC executable 1.0.2699.0 (*The Criminal Enterprises*, 2022-07-26; §8.6)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-65"]
+sources_text = "[65]"
+[entry.fields]
+"Build date (per Hidden Palace)" = "c. 2022-09-16"
+"Origin & release" = "Released by \"Lapsus$\" according to Hidden Palace; this is the December 2023 source leak (§11.6)"
+
+[[entry]]
+id = "8.2-1"
+origin = "md:1789"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "Original"
+platforms = ["ps3", "x360"]
+platform_text = "PlayStation 3, Xbox 360"
+region = "WW (ex-JP)"
+date = "2013-09-17"
+date_text = "2013-09-17"
+notes = "Launch; Standard, Special and Collector's editions (editions announced 2013-05-23 via Rockstar Newswire)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2", "8-5"]
+sources_text = "[2][5]"
+
+[[entry]]
+id = "8.2-2"
+origin = "md:1790"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "Japan launch"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "JP"
+date = "2013-10-10"
+date_text = "2013-10-10"
+notes = "Japanese release (Take-Two Interactive Japan)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-15"]
+sources_text = "[15]"
+
+[[entry]]
+id = "8.2-3"
+origin = "md:1791"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "Japan launch"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, Xbox One"
+region = "JP"
+date = "2014-12-11"
+date_text = "2014-12-11"
+notes = "Japanese release of the re-release."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-15"]
+sources_text = "[15]"
+
+[[entry]]
+id = "8.2-4"
+origin = "md:1792"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "Xbox 360 digital"
+platforms = ["x360"]
+platform_text = "Xbox 360 (Games on Demand)"
+region = "WW"
+date = "2013-10-18"
+date_text = "2013-10-18"
+notes = "Digital release on Xbox 360."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "8.2-5"
+origin = "md:1793"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "GTA Online launch"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "WW"
+date = "2013-10-01"
+date_text = "2013-10-01"
+notes = "Online mode unlocked two weeks after launch (= TU 1.01 day, see 8.5)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2", "8-3", "8-4"]
+sources_text = "[2][3][4]"
+
+[[entry]]
+id = "8.2-6"
+origin = "md:1794"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "Re-release (\"enhanced\")"
+platforms = ["ps4", "xone"]
+platform_text = "PlayStation 4, Xbox One"
+region = "WW"
+date = "2014-11-18"
+date_text = "2014-11-18"
+notes = "Includes Special/Collector's content, first-person mode, returning-player bonuses."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2", "8-5"]
+sources_text = "[2][5]"
+
+[[entry]]
+id = "8.2-7"
+origin = "md:1795"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "PC"
+platforms = ["pc"]
+platform_text = "Windows (Steam; Rockstar Games Launcher; Epic Games Store; resellers incl. Gamesplanet, Green Man Gaming, Humble, GamersGate)"
+region = "WW"
+date = "2015-04-14"
+date_text = "2015-04-14"
+notes = "Retail on 7 DVDs (key also unlocks digital download). Steam app ID 271590 (now \"Grand Theft Auto V Legacy\")."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2", "8-6"]
+sources_text = "[2][6]"
+
+[[entry]]
+id = "8.2-8"
+origin = "md:1796"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "PS3/360 online shutdown"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "WW"
+date = "2021-12-16"
+date_text = "2021-12-16"
+notes = "GTA Online servers closed (microtransactions ended 2021-09-15; Social Club tracking closed 2021-09-16)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-7"]
+sources_text = "[7]"
+
+[[entry]]
+id = "8.2-9"
+origin = "md:1797"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "\"Expanded & Enhanced\""
+platforms = ["ps5", "xsx"]
+platform_text = "PlayStation 5, Xbox Series X\\|S"
+region = "WW"
+date = "2022-03-15"
+date_text = "2022-03-15"
+notes = "Next-gen version (Hao's Special Works, Career Builder, etc.)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2", "8-5"]
+sources_text = "[2][5]"
+
+[[entry]]
+id = "8.2-10"
+origin = "md:1798"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "Standalone *GTA Online*"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, Xbox Series X\\|S"
+region = "WW"
+date = "2022-03-15"
+date_text = "2022-03-15"
+notes = "Sold separately; free on PS5 for the first three months. GTA+ membership introduced March 2022 (Rockstar announcement dated 2022-03-29)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-7"]
+sources_text = "[7]"
+
+[[entry]]
+id = "8.2-11"
+origin = "md:1799"
+section = "8.2"
+kind = "retail"
+games = ["gta5"]
+title = "PC \"Enhanced\" / PC \"Legacy\" split"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2025-03-04"
+date_text = "2025-03-04"
+notes = "Free upgrade bringing PS5/XSX content and features (ray tracing etc.) to PC as a separate \"Enhanced\" product; original PC version continues as \"Legacy\". GTA+ came to PC with Enhanced."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2", "8-5", "8-7"]
+sources_text = "[2][5][7]"
+
+[[entry]]
+id = "8.3-1"
+origin = "md:1805"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail BD"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "USA, Asia"
+date = "2013-09-17"
+date_text = "2013-09-17"
+serials = ["BLUS-31156"]
+id_text = "**BLUS-31156**"
+notes = "Redump: \"(USA, Asia) (En,Fr,Es,Pt,Zh,Ko)\"; same image (CRC 70C8DD34) as BLAS-50639."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-8"]
+sources_text = "[8]"
+
+[[entry]]
+id = "8.3-2"
+origin = "md:1806"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail BD"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Asia"
+date = "2013-09-17"
+date_text = "2013-09-17"
+serials = ["BLAS-50639"]
+id_text = "**BLAS-50639**"
+notes = "Identical image to BLUS-31156."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-8"]
+sources_text = "[8]"
+
+[[entry]]
+id = "8.3-3"
+origin = "md:1807"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail BD"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Europe, Australia"
+date = "2013-09-17"
+date_text = "2013-09-17"
+serials = ["BLES-01807"]
+id_text = "**BLES-01807** (also **BLES-01807/ANZ**)"
+notes = "Redump: \"(Europe, Australia) (En,Fr,De,Es,It,Pt,Pl,Ru)\", CRC 5ACCBB3D."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-8"]
+sources_text = "[8]"
+
+[[entry]]
+id = "8.3-4"
+origin = "md:1808"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail BD"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Japan"
+date = "2013-10-10"
+date_text = "2013-10-10"
+serials = ["BLJM-61019"]
+id_text = "**BLJM-61019**"
+notes = "Two disc versions dumped: **v01.01** (CRC 73A881A2) and **v02.00** (CRC 9C26ACE4)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-8", "8-15"]
+sources_text = "[8][15]"
+
+[[entry]]
+id = "8.3-5"
+origin = "md:1809"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail BD reprint"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Japan"
+date_text = "not documented"
+serials = ["BLJM-61182"]
+id_text = "**BLJM-61182**"
+notes = "Same v02.00 image as BLJM-61019 (reprint/budget SKU; which label is not stated in the dat)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-8"]
+sources_text = "[8]"
+
+[[entry]]
+id = "8.3-6"
+origin = "md:1810"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail BD reprint"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Japan"
+date_text = "not documented"
+serials = ["BLJM-61304"]
+id_text = "**BLJM-61304**"
+notes = "Same v02.00 image."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-8"]
+sources_text = "[8]"
+
+[[entry]]
+id = "8.3-7"
+origin = "md:1811"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "PSN digital"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "USA"
+date = "2013"
+date_text = "2013"
+serials = ["NPUB31154"]
+id_text = "**NPUB31154** (content ID UP1004-NPUB31154_00-GTAVDIGITALDOWNL)"
+notes = "No-Intro PSN set."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-9"]
+sources_text = "[9]"
+
+[[entry]]
+id = "8.3-8"
+origin = "md:1812"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "PSN digital"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Europe"
+date = "2013"
+date_text = "2013"
+serials = ["NPEB01283"]
+id_text = "**NPEB01283** (content ID EP1004-NPEB01283_00-GTAVDIGITALDOWNL)"
+notes = "No-Intro PSN set."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-9"]
+sources_text = "[9]"
+
+[[entry]]
+id = "8.3-9"
+origin = "md:1813"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail BD (per serial prefix)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Korea (inferred from the BLKS prefix; the list has no region field)"
+date = "2013"
+date_text = "2013 (DAT `releaseyear`)"
+serials = ["BLKS-20442", "BLKS20442"]
+id_text = "**BLKS-20442** (listed as `BLKS20442`)"
+notes = "Only in libretro's non-Redump `dat/Sony - PlayStation 3.dat`: title \"Grand Theft Auto V\", no checksum and no region field. Not confirmed elsewhere: SerialStation was behind a Cloudflare check on 2026-10-24 and a web search found nothing."
+confidence = "single-source"
+confidence_text = "⚠️ (single list)"
+sources = ["8-69"]
+sources_text = "[69]"
+
+[[entry]]
+id = "8.3-10"
+origin = "md:1814"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "PSN digital (per serial prefix)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Japan (inferred from the NPJB prefix)"
+date = "2014"
+date_text = "2014 (DAT `releaseyear`)"
+serials = ["NPJB00516"]
+id_text = "**NPJB00516**"
+notes = "Same single list, with no checksum and no content ID. Not confirmed elsewhere."
+confidence = "single-source"
+confidence_text = "⚠️ (single list)"
+sources = ["8-69"]
+sources_text = "[69]"
+
+[[entry]]
+id = "8.3-11"
+origin = "md:1815"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail DVD (2 discs: Install + Play)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "World"
+date = "2013-09-17"
+date_text = "2013-09-17"
+serials = ["TT-2215"]
+id_text = "**TT-2215** (Disc 1 TT-2215-0, Disc 2 TT-2215-1)"
+notes = "Redump \"(World) (En,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru)\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-10"]
+sources_text = "[10]"
+
+[[entry]]
+id = "8.3-12"
+origin = "md:1816"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail DVD (2 discs)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "Japan"
+date = "2013-10-10"
+date_text = "2013-10-10"
+serials = ["TT-2215"]
+id_text = "**TT-2215** (-0 / -1)"
+notes = "Redump \"(Japan) (En,Ja)\"; original and **Rev 1** dumps exist for both discs."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-10"]
+sources_text = "[10]"
+
+[[entry]]
+id = "8.3-13"
+origin = "md:1817"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail/digital"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "Europe (EP1004)"
+date = "2014-11-18"
+date_text = "2014-11-18"
+serials = ["CUSA00411"]
+id_text = "**CUSA00411** (EP1004-CUSA00411_00-GTAVDIGITALDOWNL)"
+notes = "Orbispatches lists CUSA00411 as EU."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-11", "8-12"]
+sources_text = "[11][12]"
+
+[[entry]]
+id = "8.3-14"
+origin = "md:1818"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail/digital"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "Americas (UP1004)"
+date = "2014-11-18"
+date_text = "2014-11-18"
+serials = ["CUSA00419"]
+id_text = "**CUSA00419** (UP1004-CUSA00419_00-GTAVDIGITALDOWNL)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-11", "8-13"]
+sources_text = "[11][13]"
+
+[[entry]]
+id = "8.3-15"
+origin = "md:1819"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Retail/digital"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "Japan (JP0230)"
+date = "2014-12-11"
+date_text = "2014-12-11"
+serials = ["CUSA00880"]
+id_text = "**CUSA00880** (JP0230-CUSA00880_00-GTAVDIGITALDOWNL)"
+notes = "Japanese PS4/XB1 release 2014-12-11."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-11", "8-15"]
+sources_text = "[11][15]"
+
+[[entry]]
+id = "8.3-16"
+origin = "md:1820"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Test disc"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "Europe"
+date_text = "—"
+serials = ["CUSA01436"]
+id_text = "**CUSA01436** (EP1004-CUSA01436_00-**GTAVTESTDISCRUNN**)"
+notes = "Content ID suggests a test-disc/runner SKU; purpose not documented."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-11"]
+sources_text = "[11]"
+
+[[entry]]
+id = "8.3-17"
+origin = "md:1821"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "PS5 placeholder"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "—"
+date_text = "—"
+serials = ["CUSA29862"]
+id_text = "**CUSA29862** \"Grand Theft Auto V (PlayStation®5)\""
+notes = "Listed with no content ID (likely upgrade/placeholder entry)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-11"]
+sources_text = "[11]"
+
+[[entry]]
+id = "8.3-18"
+origin = "md:1822"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Digital \"GTA Online\" standalone / PS5"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "EU / US / JP"
+date = "2022-03-15"
+date_text = "2022-03-15"
+serials = ["PPSA01721", "PPSA03420", "PPSA03421"]
+id_text = "**PPSA01721** (EP), **PPSA03420** (UP), **PPSA03421** (JP) — content IDs *-GTAONLINEDIGITAL"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-11"]
+sources_text = "[11]"
+
+[[entry]]
+id = "8.3-19"
+origin = "md:1823"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Full game (disc SKU content ID)"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "EU / US / JP"
+date_text = "2022-03-15 (digital); disc later"
+serials = ["PPSA04263", "PPSA04264", "PPSA04265"]
+id_text = "**PPSA04263** (EP), **PPSA04264** (UP), **PPSA04265** (JP) — content IDs *-GTAVFULLGAMEDISC"
+notes = "Prosperopatches confirms PPSA04264 = US."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-11", "8-14"]
+sources_text = "[11][14]"
+
+[[entry]]
+id = "8.3-20"
+origin = "md:1824"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "Microsoft Store digital product IDs"
+platforms = ["xone", "xsx"]
+platform_text = "XB1 / XSX\\|S"
+region = "WW (en-US store)"
+date_text = "see notes"
+id_text = "**BPJ686W6S0NH** = \"Grand Theft Auto V (Xbox One)\"; **9NXMBTB02ZSF** = \"Grand Theft Auto V (Xbox Series X\\|S)\"; **9P8RQH67TTT1** = \"Grand Theft Auto V (Xbox One & Xbox Series X\\|S)\" cross-gen product, store release date 6/14/2022; **9PCCGHDBMR1P** = \"Grand Theft Auto V: Story Mode (Xbox Series X\\|S)\", release date 3/15/2022; **9P079R5LGV4T** and **9NKC1Z4Z92VN** = two store entries both titled \"Grand Theft Auto Online (Xbox Series X\\|S)\", the latter with release date 3/15/2022; **9NQ0MVSLV0G7** = \"Grand Theft Auto V and Great White Shark Card Bundle\"."
+notes = "These are Microsoft Store product IDs, read from xbox.com product pages. The release dates are as shown on the pages; the XB1 and XSX full-game pages did not render one. Physical Xbox disc product codes are still **not documented**."
+confidence = "confirmed"
+confidence_text = "✅ (IDs)"
+sources = ["8-63"]
+sources_text = "[63]"
+
+[[entry]]
+id = "8.3-21"
+origin = "md:1825"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "PC Steam"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2015-04-14"
+date_text = "2015-04-14"
+id_text = "Steam app **271590** (\"Grand Theft Auto V Legacy\")"
+notes = "Steam's own appdetails API gives the release date as \"Apr 13, 2015\", probably because it uses US time."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-6", "8-42"]
+sources_text = "[6][42]"
+
+[[entry]]
+id = "8.3-22"
+origin = "md:1826"
+section = "8.3"
+kind = "retail"
+games = ["gta5"]
+title = "PC Steam (Enhanced)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2025-03-04"
+date_text = "2025-03-04"
+id_text = "Steam app **3240220** (\"Grand Theft Auto V Enhanced\"); store package IDs 1148516, 1251933, 1229928"
+notes = "Official Steam appdetails API: release date \"Mar 4, 2025\", required age 17."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-42"]
+sources_text = "[42]"
+
+[[entry]]
+id = "8.4-1"
+origin = "md:1832"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Standard Edition"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-09-17"
+date_text = "2013-09-17"
+notes = "Base game. Editions announced 2013-05-23 (Rockstar Newswire)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-5", "8-16"]
+sources_text = "[5][16]"
+
+[[entry]]
+id = "8.4-2"
+origin = "md:1833"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Special Edition"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-09-17"
+date_text = "2013-09-17"
+notes = "Steelbook with exclusive artwork, slipcover, blueprint map; special ability boost, stunt plane trials, bonus outfits/tattoos, extra weapons."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-5", "8-16"]
+sources_text = "[5][16]"
+
+[[entry]]
+id = "8.4-3"
+origin = "md:1834"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Collector's Edition"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-09-17"
+date_text = "2013-09-17"
+notes = "Everything in Special plus security deposit bag, GTA V key, New Era cap, custom GTA Online characters, unique vehicles (Hotknife, Carbon RS, Khamelion) and garage. These vehicles + Atomic Blimp were given to all players in the 2014 re-release."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-16"]
+sources_text = "[16]"
+
+[[entry]]
+id = "8.4-4"
+origin = "md:1835"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "\"Enhanced\" re-release (standard)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1; PC"
+region = "WW"
+date_text = "2014-11-18; 2015-04-14"
+notes = "Includes Special/Collector's content, first-person mode, returning-player bonuses. Announced 2014-06-09 (pre-orders from 2014-06-10)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-5", "8-16"]
+sources_text = "[5][16]"
+
+[[entry]]
+id = "8.4-5"
+origin = "md:1836"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Criminal Enterprise Starter Pack (CESP)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC (Steam)"
+region = "WW"
+date = "2017-12-14"
+date_text = "2017-12-14"
+notes = "Released \"without prior announcement\"; US$39.99. GTA$1,000,000 + executive office, gunrunning bunker, counterfeit cash factory, biker clubhouse, apartment, 10-car garage, ten vehicles, three weapons, outfits/tattoos."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "8.4-6"
+origin = "md:1837"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Premium Online Edition (GTA V + CESP)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date_text = "from 2018-04-20 (retail bundling)"
+notes = "Base game + GTA Online + CESP."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "8.4-7"
+origin = "md:1838"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Premium Online Edition — Japan"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "JP"
+date = "2018-06-14"
+date_text = "2018-06-14"
+notes = "『グランド・セフト・オートV:プレミアムオンラインエディション』 incl. 犯罪事業スターターパック."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-15"]
+sources_text = "[15]"
+
+[[entry]]
+id = "8.4-8"
+origin = "md:1839"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Premium Edition (store SKU naming)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "PCGamingWiki lists \"Premium Edition\", \"Premium Online Edition\" and \"Standard Edition\" across PC stores."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-6"]
+sources_text = "[6]"
+
+[[entry]]
+id = "8.4-9"
+origin = "md:1840"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Epic Games Store free giveaway"
+platforms = ["pc"]
+platform_text = "PC (EGS)"
+region = "WW"
+date_text = "**2020-05-14 (11:00 ET) → 2020-05-21**"
+notes = "Free \"until May 21\" (Epic's tweet of 2020-05-14, quoted by Windows Central and HotHardware); the unlock was 11:00 am ET on 2020-05-14 (HotHardware). >7 million new users claimed it; Epic's servers temporarily crashed. PC exe variant **1.0.1868.4 (EGS)** is the Epic-specific executable listed by SHVDN."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-18", "8-19", "8-54", "8-55"]
+sources_text = "[18][19][54][55]"
+
+[[entry]]
+id = "8.4-10"
+origin = "md:1841"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "*Expanded & Enhanced* (PS5/XSX)"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, XSX\\|S"
+region = "WW"
+date = "2022-03-15"
+date_text = "2022-03-15"
+notes = "Digital at launch; Hao's Special Works, Career Builder, GTA+, Vinewood Club. PS5 disc SKU content IDs *-GTAVFULLGAMEDISC (PPSA04263/4/5)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-5", "8-11"]
+sources_text = "[5][11]"
+
+[[entry]]
+id = "8.4-11"
+origin = "md:1842"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "GTA Online standalone"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, XSX\\|S"
+region = "WW"
+date = "2022-03-15"
+date_text = "2022-03-15"
+notes = "Free on PS5 for first three months."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-7"]
+sources_text = "[7]"
+
+[[entry]]
+id = "8.4-12"
+origin = "md:1843"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "PC Enhanced (free upgrade)"
+platforms = ["pc"]
+platform_text = "PC (Steam, EGS, RGL)"
+region = "WW"
+date = "2025-03-04"
+date_text = "2025-03-04"
+notes = "Free for existing owners; PC-only options incl. ray tracing."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-5", "8-7"]
+sources_text = "[5][7]"
+
+[[entry]]
+id = "8.4-13"
+origin = "md:1844"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "PC Legacy"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2025-03-04"
+date_text = "2025-03-04 (renamed)"
+notes = "The original 2015 PC version, retained for weaker hardware."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-5"]
+sources_text = "[5]"
+
+[[entry]]
+id = "8.4-14"
+origin = "md:1845"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Saudi Arabia / UAE release"
+platform_text = "all platforms"
+region = "SA, AE"
+date = "2025-07-17"
+date_text = "2025-07-17"
+notes = "Listed in the GTA Wiki infobox as a regional release date for every platform."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-16"]
+sources_text = "[16]"
+
+[[entry]]
+id = "8.4-15"
+origin = "md:1846"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "PlayStation Now"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "—"
+date_text = "left 2020-01-02"
+notes = "VGC: GTA V joined Game Pass \"after leaving PlayStation Now on January 2, 2020\". The PS Now start date was not found."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-56"]
+sources_text = "[56]"
+
+[[entry]]
+id = "8.4-16"
+origin = "md:1847"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Xbox Game Pass (console), stint 1"
+platforms = ["xone"]
+platform_text = "XB1"
+region = "WW"
+date_text = "c. 2020-01-02/03 → 2020-05"
+notes = "VGC (2020-01-03): GTA V \"is the latest addition to Xbox Game Pass for console\". Windows Central says it first left in May 2020."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-56", "8-57"]
+sources_text = "[56][57]"
+
+[[entry]]
+id = "8.4-17"
+origin = "md:1848"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Xbox Game Pass, stint 2"
+platforms = ["xone"]
+platform_text = "XB1"
+region = "WW"
+date = "2021-08-08"
+date_text = "2021-04 → **2021-08-08**"
+notes = "Windows Central: it returned \"11 months later this April\" and \"leaves Xbox Game Pass on August 8\" [2021]. CogConnected instead says it was on the service in July 2021 and left after about three months."
+confidence = "single-source"
+confidence_text = "⚠️ (start month)"
+sources = ["8-57", "8-58"]
+sources_text = "[57][58]"
+
+[[entry]]
+id = "8.4-18"
+origin = "md:1849"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "Xbox Game Pass, stint 3"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "WW"
+date_text = "2023-07 → 2024-01-15"
+notes = "CogConnected (2024-01-02): it rejoined in July 2023 and was set to leave on January 15. The leaving date comes from a report by X user Idle Sloth; the Game Pass app showed \"Leaving Soon\" with no date. Which version (XB1 or XSX) is not stated."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-58"]
+sources_text = "[58]"
+
+[[entry]]
+id = "8.4-19"
+origin = "md:1850"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "PlayStation Plus Extra/Premium, stint 1"
+platforms = ["ps4", "ps5"]
+platform_text = "PS4, PS5"
+region = "WW"
+date = "2023-12-19"
+date_text = "**2023-12-19** → 2024-06"
+notes = "TheSixthAxis: \"Available from 19th December\" for PS4 and PS5. TrueTrophies: \"left PS Plus Extra back in June 2024\"."
+confidence = "mixed"
+confidence_text = "✅ (start) / ⚠️ (end month)"
+sources = ["8-59", "8-60"]
+sources_text = "[59][60]"
+
+[[entry]]
+id = "8.4-20"
+origin = "md:1851"
+section = "8.4"
+kind = "edition"
+games = ["gta5"]
+title = "PlayStation Plus Extra, stint 2"
+platforms = ["ps4", "ps5"]
+platform_text = "PS4, PS5"
+region = "WW"
+date_text = "**2024-11-19** → **2026-11-17** (scheduled)"
+notes = "TrueTrophies (2024-11-14): \"available to both PS5 and PS4 players on PS Plus Extra from November 19, 2024\". Push Square (2026-10-20): leaving PS Plus Extra on 17 November 2026; GodisaGeek reports the same Nov. 17 removal."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-60", "8-61", "8-62"]
+sources_text = "[60][61][62]"
+
+[[entry]]
+id = "8.4b-1"
+origin = "md:1857"
+section = "8.4b"
+kind = "app"
+games = ["gta5"]
+title = "**2013-09-16** (Rockstar Newswire: \"available for download starting today\"). GameFAQs release data for each platform: **iOS** US 2013-09-16 (App Store product ID **697056811**, rated 17+); **Android** EU 2013-10-28 (`com.rockstargames.ifruit`, 18+); a third online release, EU 2013-11-20 (18+), which by the page's platform order is the **Windows Mobile** version (not labelled on the row ⚠️); **PS Vita** 2014-04-02 on the PlayStation Store, as EU **PCSB-00444** (16+) and as **PCSE-00348**, which GameFAQs tags \"KO\" / Take-Two Interactive (18)."
+platforms = ["android", "winphone", "vita", "pc"]
+platform_text = "Rockstar's post names **iOS (App Store), Android (Google Play), Windows Phone and PlayStation Vita** (\"Now available…\" lines added to the post after launch day). GTA Wiki adds the Amazon Appstore and **Windows 8/8.1/RT/10** (Microsoft Store product **9WZDNCRFJ1ZP**). MobyGames lists a separate PS Vita entry dated 2014 (§14)."
+notes = "The in-game \"iFruit\" phone and iFruit Radio are separate things (§9). The Microsoft Store page 9WZDNCRFJ1ZP returned \"Product not found\" on 2026-10-24."
+confidence = "mixed"
+confidence_text = "✅ (launch date, platforms: primary) / ⚠️ (per-platform dates, versions, shutdown)"
+sources = ["8-70", "8-71", "8-72", "8-73", "8-74", "8-75", "8-76"]
+sources_text = "[70][71][72][73][74][75][76]"
+[entry.fields]
+App = "***Grand Theft Auto: iFruit***: Los Santos Customs (remote vehicle customisation and custom licence plates for GTA V and GTA Online) plus *Chop the Dog* (virtual pet that affects Chop in GTA V)"
+"Versions documented" = "**Android 1.11.43.2-google**: Google Play \"Current Version\", \"Updated July 11, 2019\"; requires Android 4.3+; PEGI 18; package `com.rockstargames.ifruit`. Read from a Wayback capture of 2019-10-06. **iOS 4.0** (\"adds link for Grand Theft Auto: San Andreas, bug fixes\"), reported by Softpedia on 2014-02-18. No other version numbers found."
+"End of support" = "**2022-12-12**: no longer supported and removed from the App Store and Google Play. GTA Wiki quotes a Rockstar Support notice that now redirects. Rockstar Intel adds that the app stayed on the Windows Store and had not been updated since 2019. Replaced for licence plates by the web **License Plate Creator** (announced 2023-04-13, launched 2023-04-20)."
+
+[[entry]]
+id = "8.4b-2"
+origin = "md:1858"
+section = "8.4b"
+kind = "app"
+games = ["gta5"]
+title = "**2013-09-16** (same Newswire post)"
+platforms = ["ios", "android", "winphone", "mac"]
+platform_text = "**iOS, Android, Windows Phone**, and a desktop application for **PC and Mac** (Rockstar Newswire)"
+notes = "Created instead of a printed manual: \"we literally couldn't fit everything into an old fashioned style printed booklet\" (Rockstar)."
+confidence = "mixed"
+confidence_text = "✅ (date, platforms) / ⚠️ (version)"
+sources = ["8-70", "8-71", "8-73"]
+sources_text = "[70][71][73]"
+[entry.fields]
+App = "***Grand Theft Auto V: The Manual*** (GTA Wiki title \"GTAV: The Manual\"): official digital manual, over 100 pages, with an interactive map of Los Santos and Blaine County"
+"Versions documented" = "**Android 5.0.12**: Google Play \"Current Version\", \"Updated July 31, 2018\"; requires Android 3.0+; PEGI 12; package `com.rockstargames.gtavmanual`. Read from a Wayback capture of 2019-10-06. GTA Wiki's description of the app includes sections on the first-person camera and the Rockstar Editor. Both features postdate 2013, which shows the content was updated after launch, but no version or date is attached to that. Other versions not documented."
+"End of support" = "Not documented"
+
+[[entry]]
+id = "8.5-1"
+origin = "md:1866"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.00"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-09-17"
+date_text = "2013-09-17"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Launch"
+
+[[entry]]
+id = "8.5-2"
+origin = "md:1867"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.01"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-10-01"
+date_text = "2013-10-01"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (internal builds)"
+sources = ["8-3", "8-4", "8-67"]
+sources_text = "[3][4][67]"
+[entry.fields]
+"Online ver. / internal name" = "1.01"
+"Associated update" = "GTA Online launch. Hidden Palace gives the PS3 (BLES01807) retail internal build as **388.2**, the base game as **369**, and a pre-release patch prototype as **build 377** dated 2013-09-13 (§8.1)."
+
+[[entry]]
+id = "8.5-3"
+origin = "md:1868"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.02"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-10-04"
+date_text = "2013-10-04"
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (internal builds)"
+sources = ["8-3", "8-4", "8-67"]
+sources_text = "[3][4][67]"
+[entry.fields]
+"Online ver. / internal name" = "1.02"
+"Associated update" = "Title update. Hidden Palace (citing gtamods \"Game Patches\") gives the retail PS3 internal build as **388.6**. A dev-kit prototype, **build 388.5**, dated 2013-10-03, survives (§8.1); Hidden Palace says the retail 1.02 package is lost. gtamods.com was offline (\"Back soon\") on 2026-10-24, so this could not be checked against it."
+
+[[entry]]
+id = "8.5-4"
+origin = "md:1869"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.03"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-10-09"
+date_text = "2013-10-09"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.03"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-5"
+origin = "md:1870"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.04"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-10-18"
+date_text = "2013-10-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.04"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-6"
+origin = "md:1871"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.05"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-11-05"
+date_text = "2013-11-05"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.05"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-7"
+origin = "md:1872"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.06"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date_text = "2013-11-19 (gtabase) / 2013-11-20 (GTA Wiki)"
+confidence = "single-source"
+confidence_text = "⚠️ date conflict"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.06"
+"Associated update" = "Beach Bum"
+
+[[entry]]
+id = "8.5-8"
+origin = "md:1873"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.07"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-12-10"
+date_text = "2013-12-10"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.07"
+"Associated update" = "Content Creator (Deathmatch & Race Creators)"
+
+[[entry]]
+id = "8.5-9"
+origin = "md:1874"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.08"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2013-12-17"
+date_text = "2013-12-17"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.08"
+"Associated update" = "Capture / Holiday Gifts"
+
+[[entry]]
+id = "8.5-10"
+origin = "md:1875"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.09"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-01-11"
+date_text = "2014-01-11"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.09"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-11"
+origin = "md:1876"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.10"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-02-13"
+date_text = "2014-02-13"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.10"
+"Associated update" = "Valentine's Day Massacre Special"
+
+[[entry]]
+id = "8.5-12"
+origin = "md:1877"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.11"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-03-04"
+date_text = "2014-03-04"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.11"
+"Associated update" = "The Business Update"
+
+[[entry]]
+id = "8.5-13"
+origin = "md:1878"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.12"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date_text = "2014-04-08 (GTA Wiki) / 2014-04-11 (gtabase)"
+confidence = "single-source"
+confidence_text = "⚠️ date conflict"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.12"
+"Associated update" = "Capture Creator"
+
+[[entry]]
+id = "8.5-14"
+origin = "md:1879"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.13"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-05-13"
+date_text = "2014-05-13"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.13"
+"Associated update" = "The High Life Update"
+
+[[entry]]
+id = "8.5-15"
+origin = "md:1880"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.14"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-06-17"
+date_text = "2014-06-17"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.14"
+"Associated update" = "The \"I'm Not a Hipster\" Update"
+
+[[entry]]
+id = "8.5-16"
+origin = "md:1881"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.15"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-07-01"
+date_text = "2014-07-01"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.15"
+"Associated update" = "Independence Day Special"
+
+[[entry]]
+id = "8.5-17"
+origin = "md:1882"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.16"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-08-19"
+date_text = "2014-08-19"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.16"
+"Associated update" = "San Andreas Flight School"
+
+[[entry]]
+id = "8.5-18"
+origin = "md:1883"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.17"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2014-10-02"
+date_text = "2014-10-02"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "1.17"
+"Associated update" = "Last Team Standing"
+
+[[entry]]
+id = "8.5-19"
+origin = "md:1884"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.00 (disc)"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+region = "WW"
+date = "2014-11-18"
+date_text = "2014-11-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Re-release"
+
+[[entry]]
+id = "8.5-20"
+origin = "md:1885"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.01 (PS4/XB1)"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+region = "WW"
+date = "2014-11-18"
+date_text = "2014-11-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-23"]
+sources_text = "[3][23]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.17"
+"Associated update" = "Day-one patch"
+
+[[entry]]
+id = "8.5-21"
+origin = "md:1886"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.02 (PS4/XB1) / 1.18 (PS3/X360)"
+platforms = ["ps4", "xone", "ps3", "x360"]
+platform_text = "PS4, XB1; PS3, X360"
+region = "WW"
+date = "2014-11-18"
+date_text = "2014-11-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-23"]
+sources_text = "[3][23]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.18"
+"Associated update" = "Second patch that day; also updated PS3/X360"
+
+[[entry]]
+id = "8.5-22"
+origin = "md:1887"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.03 (PS4/XB1)"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+region = "WW"
+date = "2014-11-22"
+date_text = "2014-11-22"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.19"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-23"
+origin = "md:1888"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.04 (PS4/XB1)"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+region = "WW"
+date = "2014-11-26"
+date_text = "2014-11-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.20"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-24"
+origin = "md:1889"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.05 (PS4/XB1) / 1.19 (PS3/X360)"
+platform_text = "all consoles"
+region = "WW"
+date = "2014-12-18"
+date_text = "2014-12-18"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.21"
+"Associated update" = "Festive Surprise 2014"
+
+[[entry]]
+id = "8.5-25"
+origin = "md:1890"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.06 (PS4/XB1) / 1.20 (PS3/X360)"
+platform_text = "all consoles"
+region = "WW"
+date = "2014-12-23"
+date_text = "2014-12-23"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.22"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-26"
+origin = "md:1891"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.07 (PS4/XB1) / 1.21 (PS3/X360)"
+platform_text = "all consoles"
+region = "WW"
+date = "2015-03-10"
+date_text = "2015-03-10"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.23"
+"Associated update" = "Heists"
+
+[[entry]]
+id = "8.5-27"
+origin = "md:1892"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.08 (PS4/XB1) / 1.22 (PS3/X360)"
+platform_text = "all consoles"
+region = "WW"
+date = "2015-03-15"
+date_text = "2015-03-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.24"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-28"
+origin = "md:1893"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.09 (PS4/XB1) / 1.23 (PS3/X360)"
+platform_text = "all consoles"
+region = "WW"
+date = "2015-03-26"
+date_text = "2015-03-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.25"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-29"
+origin = "md:1894"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.10 (PS4/XB1)"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+region = "WW"
+date = "2015-04-02"
+date_text = "2015-04-02"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "Online 1.26"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-30"
+origin = "md:1895"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.11 (PS4/XB1) / 1.24 (PS3/X360) / PC \"350.3\""
+platform_text = "all"
+region = "WW"
+date = "2015-06-10"
+date_text = "2015-06-10"
+confidence = "mixed"
+confidence_text = "✅ (TU) / ⚠️ (PC no.)"
+sources = ["8-3", "8-20", "8-21"]
+sources_text = "[3][20][21]"
+[entry.fields]
+"Online ver. / internal name" = "Online **1.27**; `patchday4ng`"
+"Associated update" = "Ill-Gotten Gains Part 1"
+
+[[entry]]
+id = "8.5-31"
+origin = "md:1896"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.12 (PS4/XB1) / 1.25 (PS3/X360) / PC 393.2"
+platform_text = "all"
+region = "WW"
+date = "2015-07-08"
+date_text = "2015-07-08"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-16", "8-22", "8-40"]
+sources_text = "[3][16][22][40]"
+[entry.fields]
+"Online ver. / internal name" = "Online **1.28**; `patchday5ng`"
+"Associated update" = "Ill-Gotten Gains Part 2 (The Lab radio added to consoles)"
+
+[[entry]]
+id = "8.5-32"
+origin = "md:1897"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.28.01"
+platforms = ["pc"]
+platform_text = "PC (build 393.4)"
+region = "WW"
+date = "2015-07-21"
+date_text = "2015-07-21"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-25"]
+sources_text = "[3][25]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "PC fix"
+
+[[entry]]
+id = "8.5-33"
+origin = "md:1898"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "**1.29**"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2015-09-15"
+date_text = "2015-09-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4", "8-26"]
+sources_text = "[3][4][26]"
+[entry.fields]
+"Online ver. / internal name" = "`patchday6ng`"
+"Associated update" = "Freemode Events"
+
+[[entry]]
+id = "8.5-34"
+origin = "md:1899"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "**1.29** (last-gen)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+region = "WW"
+date = "2015-11-17"
+date_text = "2015-11-17"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-27"]
+sources_text = "[3][27]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Anti-cheat + bug fixes; **last Xbox 360 update**"
+
+[[entry]]
+id = "8.5-35"
+origin = "md:1900"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.30"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2015-10-20"
+date_text = "2015-10-20"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4", "8-28"]
+sources_text = "[3][4][28]"
+[entry.fields]
+"Online ver. / internal name" = "`patchday7ng`"
+"Associated update" = "Lowriders (Halloween Surprise 2015-10-29 used the same version)"
+
+[[entry]]
+id = "8.5-36"
+origin = "md:1901"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.31"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2015-12-15"
+date_text = "2015-12-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Executives and Other Criminals (Festive Surprise 2015 on 12-21 same version)"
+
+[[entry]]
+id = "8.5-37"
+origin = "md:1902"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.32"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2016-01-28"
+date_text = "2016-01-28"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "January 2016 update (Be My Valentine 02-10/11 same version)"
+
+[[entry]]
+id = "8.5-38"
+origin = "md:1903"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.33"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2016-03-15"
+date_text = "2016-03-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Lowriders: Custom Classics"
+
+[[entry]]
+id = "8.5-39"
+origin = "md:1904"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.34"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2016-06-07"
+date_text = "2016-06-07"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Further Adventures in Finance and Felony"
+
+[[entry]]
+id = "8.5-40"
+origin = "md:1905"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.35"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2016-07-12"
+date_text = "2016-07-12"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Cunning Stunts"
+
+[[entry]]
+id = "8.5-41"
+origin = "md:1906"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.36"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2016-10-04"
+date_text = "2016-10-04"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4", "8-29"]
+sources_text = "[3][4][29]"
+[entry.fields]
+"Online ver. / internal name" = "`patchday12ng`"
+"Associated update" = "Bikers"
+
+[[entry]]
+id = "8.5-42"
+origin = "md:1907"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "**1.36** (PS3)"
+platforms = ["ps3"]
+platform_text = "PS3 only"
+region = "WW"
+date = "2016-12-09"
+date_text = "2016-12-09"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-30"]
+sources_text = "[3][30]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Server-architecture support; **final PS3 update**"
+
+[[entry]]
+id = "8.5-43"
+origin = "md:1908"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.37"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2016-12-13"
+date_text = "2016-12-13"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Import/Export"
+
+[[entry]]
+id = "8.5-44"
+origin = "md:1909"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.38"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2017-03-14"
+date_text = "2017-03-14"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Special Vehicle Circuit"
+
+[[entry]]
+id = "8.5-45"
+origin = "md:1910"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.39"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2017-04-05"
+date_text = "2017-04-05"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-46"
+origin = "md:1911"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.40"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2017-06-13"
+date_text = "2017-06-13"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Gunrunning"
+
+[[entry]]
+id = "8.5-47"
+origin = "md:1912"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.41"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2017-08-29"
+date_text = "2017-08-29"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Smuggler's Run"
+
+[[entry]]
+id = "8.5-48"
+origin = "md:1913"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.42"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2017-12-12"
+date_text = "2017-12-12"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "The Doomsday Heist"
+
+[[entry]]
+id = "8.5-49"
+origin = "md:1914"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.43"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2018-03-20"
+date_text = "2018-03-20"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Southern San Andreas Super Sport Series"
+
+[[entry]]
+id = "8.5-50"
+origin = "md:1915"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.44"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2018-07-24"
+date_text = "2018-07-24"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "After Hours"
+
+[[entry]]
+id = "8.5-51"
+origin = "md:1916"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.45"
+platforms = ["pc"]
+platform_text = "PC only"
+region = "WW"
+date_text = "2018-10-16 (GTA Wiki) / 2018-10-19 (gtabase)"
+confidence = "single-source"
+confidence_text = "⚠️ date conflict"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "PC title update"
+
+[[entry]]
+id = "8.5-52"
+origin = "md:1917"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.46"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2018-12-11"
+date_text = "2018-12-11"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Arena War"
+
+[[entry]]
+id = "8.5-53"
+origin = "md:1918"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.47"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2019-07-23"
+date_text = "2019-07-23"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "The Diamond Casino & Resort"
+
+[[entry]]
+id = "8.5-54"
+origin = "md:1919"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.48"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2019-07-25"
+date_text = "2019-07-25"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Hotfix"
+
+[[entry]]
+id = "8.5-55"
+origin = "md:1920"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.49"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2019-12-12"
+date_text = "2019-12-12"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "The Diamond Casino Heist"
+
+[[entry]]
+id = "8.5-56"
+origin = "md:1921"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.50"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2019-12-15"
+date_text = "2019-12-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Hotfix"
+
+[[entry]]
+id = "8.5-57"
+origin = "md:1922"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.51"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2020-08-11"
+date_text = "2020-08-11"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Los Santos Summer Special"
+
+[[entry]]
+id = "8.5-58"
+origin = "md:1923"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.52"
+platforms = ["pc", "ps4", "xone"]
+platform_text = "PC only (2020-09-09); PS4, XB1, PC (2020-12-15)"
+region = "WW"
+date_text = "2020-09-09 and 2020-12-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "In the GTA Wiki version-history table the 2020-09-09 \"Title Update (Online 1.52)\" sits only in the PC Legacy column, and the 2020-12-15 entry is The Cayo Perico Heist on all three. gtabase gives 1.52 = The Cayo Perico Heist (2020-12-15)."
+
+[[entry]]
+id = "8.5-59"
+origin = "md:1924"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.53"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2021-02-10"
+date_text = "2021-02-10"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-60"
+origin = "md:1925"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.54"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2021-03-16"
+date_text = "2021-03-16"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-61"
+origin = "md:1926"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.55, 1.56 (community numbering)"
+platform_text = "—"
+region = "—"
+date_text = "—"
+confidence = "mixed"
+confidence_text = "✅ (pages exist) / ❓ (Rockstar 1.55)"
+sources = ["8-3", "8-43", "8-44", "8-45", "8-46", "8-47"]
+sources_text = "[3][43][44][45][46][47]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "**Not used in the community numbering.** The GTA Wiki version history goes straight from 1.54 (2021-03-16) to 1.57 (2021-07-20). **Rockstar Support's own note-page numbers differ for 2021–22:** the page titled \"GTAV Title Update 1.53 Notes\" holds the dated entries for 2021-02-10 and 2021-03-16 (plus content drops through 2021-05-27). The page titled \"1.54 Notes\" holds Los Santos Tuners (2021-07-20), which the community calls 1.57. The page titled \"**GTAV Title Update 1.56 Notes (PS4 / PS5 / Xbox One / Xbox Series X\\|S)**\" holds the 2022-04-26 bug-fix update, which the community calls 1.59. The page titled \"1.61 Notes\" holds The Criminal Enterprises (2022-07-26), so the two numberings agree again from there. No Rockstar \"1.55\" page was found; it may be The Contract, but that is unconfirmed. Separately, **PS4 package versions 01.55 and 01.56** exist (Dec 2025 / Jan 2026, see §8.5b). MP1st's \"GTA 5 update 1.55 released on December 17 [2025]\" refers to one of those, not to a title update."
+
+[[entry]]
+id = "8.5-62"
+origin = "md:1927"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.57"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2021-07-20"
+date_text = "2021-07-20"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Los Santos Tuners"
+
+[[entry]]
+id = "8.5-63"
+origin = "md:1928"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.58"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, XB1, PC"
+region = "WW"
+date = "2021-12-15"
+date_text = "2021-12-15"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "The Contract"
+
+[[entry]]
+id = "8.5-64"
+origin = "md:1929"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.58 / 1.59 (launch)"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, XSX\\|S"
+region = "WW"
+date = "2022-03-15"
+date_text = "2022-03-15"
+confidence = "single-source"
+confidence_text = "⚠️ conflict"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "*Expanded & Enhanced* launch. GTA Wiki gives 1.58 as the launch version; gtabase lists it as \"1.59\"."
+
+[[entry]]
+id = "8.5-65"
+origin = "md:1930"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.59"
+platform_text = "all (PS4/XB1/PS5/XSX/PC)"
+region = "WW"
+date = "2022-04-26"
+date_text = "2022-04-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Bug-fix update"
+
+[[entry]]
+id = "8.5-66"
+origin = "md:1931"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.60"
+platform_text = "all"
+region = "WW"
+date = "2022-05-17"
+date_text = "2022-05-17"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-67"
+origin = "md:1932"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.61"
+platform_text = "all"
+region = "WW"
+date = "2022-07-26"
+date_text = "2022-07-26"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "The Criminal Enterprises"
+
+[[entry]]
+id = "8.5-68"
+origin = "md:1933"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.62"
+platforms = ["ps4"]
+platform_text = "PS4 only"
+region = "WW"
+date = "2022-09-02"
+date_text = "2022-09-02"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-69"
+origin = "md:1934"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.63"
+platforms = ["pc"]
+platform_text = "PC only"
+region = "WW"
+date = "2022-10-25"
+date_text = "2022-10-25"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Title update"
+
+[[entry]]
+id = "8.5-70"
+origin = "md:1935"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.64"
+platform_text = "all"
+region = "WW"
+date = "2022-12-13"
+date_text = "2022-12-13"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Los Santos Drug Wars"
+
+[[entry]]
+id = "8.5-71"
+origin = "md:1936"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.65"
+platform_text = "all"
+region = "WW"
+date = "2022-12-16"
+date_text = "2022-12-16"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-3"]
+sources_text = "[3]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Hotfix"
+
+[[entry]]
+id = "8.5-72"
+origin = "md:1937"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.66"
+platforms = ["pc"]
+platform_text = "PC only, then all"
+region = "WW"
+date_text = "2023-02-01 (PC); 2023-02-28 (all)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4", "8-31"]
+sources_text = "[3][4][31]"
+[entry.fields]
+"Online ver. / internal name" = "`patchday28g9ecng`"
+"Associated update" = "PC security update, then all-platform update"
+
+[[entry]]
+id = "8.5-73"
+origin = "md:1938"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.67"
+platform_text = "all; later PC-only hotfix"
+region = "WW"
+date_text = "2023-06-13; 2023-10-03 (PC)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "San Andreas Mercenaries"
+
+[[entry]]
+id = "8.5-74"
+origin = "md:1939"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.68"
+platform_text = "all; extra drops"
+region = "WW"
+date_text = "2023-12-12; 2024-01-16 (PS5); 2024-01-23; 2024-02-20; 2024-04-16 (PC)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "The Chop Shop + follow-up fixes"
+
+[[entry]]
+id = "8.5-75"
+origin = "md:1940"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.69"
+platform_text = "all; extra PC-only drops"
+region = "WW"
+date_text = "2024-06-25; 2024-07-17 (all); 2024-09-17, 2024-09-25, 2024-10-15, 2024-10-30 (PC Legacy only)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Bottom Dollar Bounties + follow-up fixes (GTA Wiki labels all four autumn PC patches \"Title Update (Online 1.69, PC Only)\")"
+
+[[entry]]
+id = "8.5-76"
+origin = "md:1941"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.70"
+platform_text = "all; extra drops"
+region = "WW"
+date_text = "2024-12-10 (all); 2024-12-13 (PC Legacy only); 2025-01-21 (PS5/XSX only); 2025-01-23, 2025-02-06 (all); 2025-02-19 (PC Legacy only); 2025-03-05, 03-06, 03-07 (PC Enhanced only); 2025-03-12 (all); 2025-08-12 (PC Enhanced only, still labelled \"1.70\" by GTA Wiki)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Agents of Sabotage + follow-ups; the March 2025 drops are the first PC Enhanced patches"
+
+[[entry]]
+id = "8.5-77"
+origin = "md:1942"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.71"
+platforms = ["ps5", "ps4", "xsx", "xone", "pc"]
+platform_text = "PS5, PS4, XSX\\|S, XB1, PC (Enhanced/Legacy)"
+region = "WW"
+date_text = "2025-06-17 (all); 2025-07-08 (PC Legacy + PC Enhanced); 2025-10-22 (PS5 only)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4", "8-32"]
+sources_text = "[3][4][32]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "Money Fronts"
+
+[[entry]]
+id = "8.5-78"
+origin = "md:1943"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.72"
+platform_text = "all; extra drops"
+region = "WW"
+date_text = "2025-12-10, 2025-12-17, 2026-01-27 (all); 2026-03-17 (PC Legacy + PC Enhanced); 2026-04-06 (PS5/XSX/PC Enhanced column); 2026-04-07 (PC Enhanced only)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4"]
+sources_text = "[3][4]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "A Safehouse in the Hills + follow-ups"
+
+[[entry]]
+id = "8.5-79"
+origin = "md:1944"
+section = "8.5"
+kind = "title-update"
+games = ["gta5"]
+title = "1.73"
+platform_text = "all (PS4, XB1, PC Legacy, PS5, XSX\\|S, PC Enhanced)"
+region = "WW"
+date = "2026-07-14"
+date_text = "**2026-07-14** (launch); 2026-07-16 (all, follow-up); 2026-07-30 (PC Legacy + Enhanced); 2026-08-05 (PS5 only); 2026-09-15 (PC Enhanced only)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-4", "8-7", "8-14"]
+sources_text = "[3][4][7][14]"
+[entry.fields]
+"Online ver. / internal name" = "—"
+"Associated update" = "The Kortz Center Heist. The earlier 07-14 vs 07-16 conflict is resolved. GTA Wiki's version history lists the Kortz Center Heist on 2026-07-14 and a separate follow-up patch on 2026-07-16. Its \"Latest versions\" table simply quotes the later date. ProsperoPatches first saw PS5 package 01.011.000 on 2026-07-14 (§8.5b), and gtabase and Wikipedia also give 07-14."
+
+[[entry]]
+id = "8.5b-1"
+origin = "md:1959"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.02"
+date = "2014-11-17"
+date_text = "2014-11-17"
+[entry.fields]
+"PKG size" = "1.1 GB"
+"ORBISPatches description (update)" = "Fix for GTA Online vehicle data"
+
+[[entry]]
+id = "8.5b-2"
+origin = "md:1960"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.03"
+date = "2014-11-21"
+date_text = "2014-11-21"
+[entry.fields]
+"PKG size" = "1.1 GB"
+"ORBISPatches description (update)" = "GTA Online stability + minor fixes"
+
+[[entry]]
+id = "8.5b-3"
+origin = "md:1961"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.06"
+date = "2014-12-21"
+date_text = "2014-12-21"
+[entry.fields]
+"PKG size" = "1.1 GB"
+"ORBISPatches description (update)" = "GTA Online stability"
+
+[[entry]]
+id = "8.5b-4"
+origin = "md:1962"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.07"
+date = "2015-03-04"
+date_text = "2015-03-04"
+[entry.fields]
+"PKG size" = "4.4 GB"
+"ORBISPatches description (update)" = "GTA Online Heists"
+
+[[entry]]
+id = "8.5b-5"
+origin = "md:1963"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.09"
+date = "2015-03-23"
+date_text = "2015-03-23"
+[entry.fields]
+"PKG size" = "4.4 GB"
+"ORBISPatches description (update)" = "GTA Online stability + minor fixes"
+
+[[entry]]
+id = "8.5b-6"
+origin = "md:1964"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.10"
+date = "2015-03-28"
+date_text = "2015-03-28"
+[entry.fields]
+"PKG size" = "4.4 GB"
+"ORBISPatches description (update)" = "Fix for graphical issues"
+
+[[entry]]
+id = "8.5b-7"
+origin = "md:1965"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.11"
+date = "2015-05-27"
+date_text = "2015-05-27"
+[entry.fields]
+"PKG size" = "6.1 GB"
+"ORBISPatches description (update)" = "Ill-Gotten Gains Part 1"
+
+[[entry]]
+id = "8.5b-8"
+origin = "md:1966"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.12"
+date = "2015-07-01"
+date_text = "2015-07-01"
+[entry.fields]
+"PKG size" = "6.3 GB"
+"ORBISPatches description (update)" = "Ill-Gotten Gains Part 2"
+
+[[entry]]
+id = "8.5b-9"
+origin = "md:1967"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.13"
+date = "2015-09-01"
+date_text = "2015-09-01"
+[entry.fields]
+"PKG size" = "6.6 GB"
+"ORBISPatches description (update)" = "Freemode Events + Rockstar Editor"
+
+[[entry]]
+id = "8.5b-10"
+origin = "md:1968"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.14"
+date = "2015-10-12"
+date_text = "2015-10-12"
+[entry.fields]
+"PKG size" = "7.5 GB"
+"ORBISPatches description (update)" = "Lowriders"
+
+[[entry]]
+id = "8.5b-11"
+origin = "md:1969"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.15"
+date = "2015-12-08"
+date_text = "2015-12-08"
+[entry.fields]
+"PKG size" = "8.3 GB"
+"ORBISPatches description (update)" = "\"New content update\" (Dec 2015)"
+
+[[entry]]
+id = "8.5b-12"
+origin = "md:1970"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.16"
+date = "2016-01-21"
+date_text = "2016-01-21"
+[entry.fields]
+"PKG size" = "8.5 GB"
+"ORBISPatches description (update)" = "\"New content update\" (Jan 2016)"
+
+[[entry]]
+id = "8.5b-13"
+origin = "md:1971"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.17"
+date = "2016-03-09"
+date_text = "2016-03-09"
+[entry.fields]
+"PKG size" = "8.9 GB"
+"ORBISPatches description (update)" = "Lowriders: Custom Classics"
+
+[[entry]]
+id = "8.5b-14"
+origin = "md:1972"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.18"
+date = "2016-05-30"
+date_text = "2016-05-30"
+[entry.fields]
+"PKG size" = "9.6 GB"
+"ORBISPatches description (update)" = "Further Adventures in Finance and Felony"
+
+[[entry]]
+id = "8.5b-15"
+origin = "md:1973"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.19"
+date = "2016-07-05"
+date_text = "2016-07-05"
+[entry.fields]
+"PKG size" = "10 GB"
+"ORBISPatches description (update)" = "Cunning Stunts"
+
+[[entry]]
+id = "8.5b-16"
+origin = "md:1974"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.20"
+date = "2016-09-27"
+date_text = "2016-09-27"
+[entry.fields]
+"PKG size" = "11.4 GB"
+"ORBISPatches description (update)" = "Bikers"
+
+[[entry]]
+id = "8.5b-17"
+origin = "md:1975"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.21"
+date = "2016-12-06"
+date_text = "2016-12-06"
+[entry.fields]
+"PKG size" = "12.3 GB"
+"ORBISPatches description (update)" = "Import/Export"
+
+[[entry]]
+id = "8.5b-18"
+origin = "md:1976"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.22"
+date = "2017-03-06"
+date_text = "2017-03-06"
+[entry.fields]
+"PKG size" = "12.4 GB"
+"ORBISPatches description (update)" = "Special Vehicle Circuit"
+
+[[entry]]
+id = "8.5b-19"
+origin = "md:1977"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.23"
+date = "2017-04-03"
+date_text = "2017-04-03"
+[entry.fields]
+"PKG size" = "12.4 GB"
+"ORBISPatches description (update)" = "Pegassi Infernus Classic handling fix"
+
+[[entry]]
+id = "8.5b-20"
+origin = "md:1978"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.24"
+date = "2017-06-07"
+date_text = "2017-06-07"
+[entry.fields]
+"PKG size" = "13.8 GB"
+"ORBISPatches description (update)" = "Gunrunning"
+
+[[entry]]
+id = "8.5b-21"
+origin = "md:1979"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.25"
+date = "2017-08-21"
+date_text = "2017-08-21"
+[entry.fields]
+"PKG size" = "14.7 GB"
+"ORBISPatches description (update)" = "Smuggler's Run"
+
+[[entry]]
+id = "8.5b-22"
+origin = "md:1980"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.26"
+date = "2017-12-05"
+date_text = "2017-12-05"
+[entry.fields]
+"PKG size" = "16.5 GB"
+"ORBISPatches description (update)" = "The Doomsday Heist"
+
+[[entry]]
+id = "8.5b-23"
+origin = "md:1981"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.27"
+date = "2018-03-13"
+date_text = "2018-03-13"
+[entry.fields]
+"PKG size" = "16.7 GB"
+"ORBISPatches description (update)" = "Southern San Andreas Super Sport Series"
+
+[[entry]]
+id = "8.5b-24"
+origin = "md:1982"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.28"
+date = "2018-07-20"
+date_text = "2018-07-20"
+[entry.fields]
+"PKG size" = "19.9 GB"
+"ORBISPatches description (update)" = "After Hours"
+
+[[entry]]
+id = "8.5b-25"
+origin = "md:1983"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.29"
+date = "2018-07-27"
+date_text = "2018-07-27"
+[entry.fields]
+"PKG size" = "19.9 GB"
+"ORBISPatches description (update)" = "Save-data stability"
+
+[[entry]]
+id = "8.5b-26"
+origin = "md:1984"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.30"
+date = "2018-12-05"
+date_text = "2018-12-05"
+[entry.fields]
+"PKG size" = "22.9 GB"
+"ORBISPatches description (update)" = "Arena War"
+
+[[entry]]
+id = "8.5b-27"
+origin = "md:1985"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.31"
+date = "2019-07-18"
+date_text = "2019-07-18"
+[entry.fields]
+"PKG size" = "25.2 GB"
+"ORBISPatches description (update)" = "The Diamond Casino & Resort"
+
+[[entry]]
+id = "8.5b-28"
+origin = "md:1986"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.32"
+date = "2019-07-23"
+date_text = "2019-07-23"
+[entry.fields]
+"PKG size" = "25.2 GB"
+"ORBISPatches description (update)" = "General stability"
+
+[[entry]]
+id = "8.5b-29"
+origin = "md:1987"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.33"
+date = "2019-12-11"
+date_text = "2019-12-11"
+[entry.fields]
+"PKG size" = "27.3 GB"
+"ORBISPatches description (update)" = "The Diamond Casino Heist"
+
+[[entry]]
+id = "8.5b-30"
+origin = "md:1988"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.34"
+date = "2020-08-05"
+date_text = "2020-08-05"
+[entry.fields]
+"PKG size" = "28.2 GB"
+"ORBISPatches description (update)" = "Los Santos Summer Special"
+
+[[entry]]
+id = "8.5b-31"
+origin = "md:1989"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.35"
+date = "2020-12-10"
+date_text = "2020-12-10"
+[entry.fields]
+"PKG size" = "33.5 GB"
+"ORBISPatches description (update)" = "The Cayo Perico Heist"
+
+[[entry]]
+id = "8.5b-32"
+origin = "md:1990"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.36"
+date = "2021-01-28"
+date_text = "2021-01-28"
+[entry.fields]
+"PKG size" = "33.5 GB"
+"ORBISPatches description (update)" = "General stability"
+
+[[entry]]
+id = "8.5b-33"
+origin = "md:1991"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.37"
+date = "2021-03-05"
+date_text = "2021-03-05"
+[entry.fields]
+"PKG size" = "33.5 GB"
+"ORBISPatches description (update)" = "General stability"
+
+[[entry]]
+id = "8.5b-34"
+origin = "md:1992"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.38"
+date = "2021-07-15"
+date_text = "2021-07-15"
+[entry.fields]
+"PKG size" = "35.8 GB"
+"ORBISPatches description (update)" = "Los Santos Tuners"
+
+[[entry]]
+id = "8.5b-35"
+origin = "md:1993"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.40"
+date = "2021-12-12"
+date_text = "2021-12-12"
+[entry.fields]
+"PKG size" = "38.3 GB"
+"ORBISPatches description (update)" = "The Contract"
+
+[[entry]]
+id = "8.5b-36"
+origin = "md:1994"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.41"
+date = "2022-04-13"
+date_text = "2022-04-13"
+[entry.fields]
+"PKG size" = "38.3 GB"
+"ORBISPatches description (update)" = "Maintenance update"
+
+[[entry]]
+id = "8.5b-37"
+origin = "md:1995"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.42"
+date = "2022-05-05"
+date_text = "2022-05-05"
+[entry.fields]
+"PKG size" = "38.3 GB"
+"ORBISPatches description (update)" = "General stability"
+
+[[entry]]
+id = "8.5b-38"
+origin = "md:1996"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.43"
+date = "2022-07-21"
+date_text = "2022-07-21"
+[entry.fields]
+"PKG size" = "39.7 GB"
+"ORBISPatches description (update)" = "The Criminal Enterprises"
+
+[[entry]]
+id = "8.5b-39"
+origin = "md:1997"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.44"
+date = "2022-09-01"
+date_text = "2022-09-01"
+[entry.fields]
+"PKG size" = "39.7 GB"
+"ORBISPatches description (update)" = "General stability (cf. TU 1.62 \"PS4 only\", 2022-09-02)"
+
+[[entry]]
+id = "8.5b-40"
+origin = "md:1998"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.45"
+date = "2022-12-08"
+date_text = "2022-12-08"
+[entry.fields]
+"PKG size" = "41.2 GB"
+"ORBISPatches description (update)" = "Los Santos Drug Wars"
+
+[[entry]]
+id = "8.5b-41"
+origin = "md:1999"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.46"
+date = "2023-02-15"
+date_text = "2023-02-15"
+[entry.fields]
+"PKG size" = "41.2 GB"
+"ORBISPatches description (update)" = "Security-focused TU"
+
+[[entry]]
+id = "8.5b-42"
+origin = "md:2000"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.47"
+date = "2023-06-08"
+date_text = "2023-06-08"
+[entry.fields]
+"PKG size" = "41.9 GB"
+"ORBISPatches description (update)" = "San Andreas Mercenaries"
+
+[[entry]]
+id = "8.5b-43"
+origin = "md:2001"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.48"
+date = "2023-12-08"
+date_text = "2023-12-08"
+[entry.fields]
+"PKG size" = "43.3 GB"
+"ORBISPatches description (update)" = "The Chop Shop"
+
+[[entry]]
+id = "8.5b-44"
+origin = "md:2002"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.49"
+date = "2024-02-09"
+date_text = "2024-02-09"
+[entry.fields]
+"PKG size" = "43.3 GB"
+"ORBISPatches description (update)" = "Security/stability maintenance"
+
+[[entry]]
+id = "8.5b-45"
+origin = "md:2003"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.50"
+date = "2024-06-20"
+date_text = "2024-06-20"
+[entry.fields]
+"PKG size" = "44.4 GB"
+"ORBISPatches description (update)" = "Bottom Dollar Bounties"
+
+[[entry]]
+id = "8.5b-46"
+origin = "md:2004"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.51"
+date = "2024-07-10"
+date_text = "2024-07-10"
+[entry.fields]
+"PKG size" = "44.4 GB"
+"ORBISPatches description (update)" = "Stability/security fixes"
+
+[[entry]]
+id = "8.5b-47"
+origin = "md:2005"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.52"
+date = "2024-12-05"
+date_text = "2024-12-05"
+[entry.fields]
+"PKG size" = "45.3 GB"
+"ORBISPatches description (update)" = "Agents of Sabotage"
+
+[[entry]]
+id = "8.5b-48"
+origin = "md:2006"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.53"
+date = "2025-06-12"
+date_text = "2025-06-12"
+[entry.fields]
+"PKG size" = "46.6 GB"
+"ORBISPatches description (update)" = "Money Fronts"
+
+[[entry]]
+id = "8.5b-49"
+origin = "md:2007"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.54"
+date = "2025-12-08"
+date_text = "2025-12-08"
+[entry.fields]
+"PKG size" = "48.4 GB"
+"ORBISPatches description (update)" = "A Safehouse in the Hills"
+
+[[entry]]
+id = "8.5b-50"
+origin = "md:2008"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.55"
+date = "2025-12-15"
+date_text = "2025-12-15"
+[entry.fields]
+"PKG size" = "48.5 GB"
+"ORBISPatches description (update)" = "GTA Online stability fixes"
+
+[[entry]]
+id = "8.5b-51"
+origin = "md:2009"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.56"
+date = "2026-01-22"
+date_text = "2026-01-22"
+[entry.fields]
+"PKG size" = "48.5 GB"
+"ORBISPatches description (update)" = "GTA Online stability fixes"
+
+[[entry]]
+id = "8.5b-52"
+origin = "md:2010"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "**01.57**"
+date = "2026-07-09"
+date_text = "2026-07-09"
+[entry.fields]
+"PKG size" = "49.3 GB"
+"ORBISPatches description (update)" = "The Kortz Center Heist (latest PS4 package as of 2026-10)"
+
+[[entry]]
+id = "8.5b-53"
+origin = "md:2016"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.001.000"
+date = "2022-03-07"
+date_text = "2022-03-07"
+[entry.fields]
+"PKG size" = "80.9 GB"
+"Matching update (date match with §8.5)" = "Pre-launch package for *Expanded & Enhanced* (launch 2022-03-15)"
+
+[[entry]]
+id = "8.5b-54"
+origin = "md:2017"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.002.000"
+date = "2022-04-26"
+date_text = "2022-04-26"
+[entry.fields]
+"PKG size" = "80.9 GB"
+"Matching update (date match with §8.5)" = "2022-04-26 bug-fix TU"
+
+[[entry]]
+id = "8.5b-55"
+origin = "md:2018"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.003.000"
+date = "2022-07-26"
+date_text = "2022-07-26"
+[entry.fields]
+"PKG size" = "84.6 GB"
+"Matching update (date match with §8.5)" = "The Criminal Enterprises"
+
+[[entry]]
+id = "8.5b-56"
+origin = "md:2019"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.004.000"
+date_text = "2022-12-13; 2022-12-16; 2023-02-28"
+[entry.fields]
+"PKG size" = "86.4 GB"
+"Matching update (date match with §8.5)" = "Los Santos Drug Wars + hotfixes (TU 1.64/1.65/1.66)"
+
+[[entry]]
+id = "8.5b-57"
+origin = "md:2020"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.005.000"
+date = "2023-06-13"
+date_text = "2023-06-13"
+[entry.fields]
+"PKG size" = "87.8 GB"
+"Matching update (date match with §8.5)" = "San Andreas Mercenaries"
+
+[[entry]]
+id = "8.5b-58"
+origin = "md:2021"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.006.000"
+date_text = "2023-12-12; 2024-01-16; 2024-02-20"
+[entry.fields]
+"PKG size" = "89.4 GB"
+"Matching update (date match with §8.5)" = "The Chop Shop + follow-ups"
+
+[[entry]]
+id = "8.5b-59"
+origin = "md:2022"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.007.000"
+date_text = "2024-06-25; 2024-07-17"
+[entry.fields]
+"PKG size" = "90.7 GB"
+"Matching update (date match with §8.5)" = "Bottom Dollar Bounties + follow-up"
+
+[[entry]]
+id = "8.5b-60"
+origin = "md:2023"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.008.000"
+date_text = "2024-12-10; 2025-01-21"
+[entry.fields]
+"PKG size" = "91.8 GB"
+"Matching update (date match with §8.5)" = "Agents of Sabotage + follow-up"
+
+[[entry]]
+id = "8.5b-61"
+origin = "md:2024"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.009.000"
+date_text = "2025-06-17; 2025-10-22"
+[entry.fields]
+"PKG size" = "93.4 GB"
+"Matching update (date match with §8.5)" = "Money Fronts + PS5-only follow-up"
+
+[[entry]]
+id = "8.5b-62"
+origin = "md:2025"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "01.010.000"
+date_text = "2025-12-10; 2025-12-17; 2026-01-27"
+[entry.fields]
+"PKG size" = "95.3 GB"
+"Matching update (date match with §8.5)" = "A Safehouse in the Hills + follow-ups"
+
+[[entry]]
+id = "8.5b-63"
+origin = "md:2026"
+section = "8.5b"
+kind = "title-update"
+games = ["gta5"]
+title = "**01.011.000**"
+date_text = "2026-07-14; 2026-08-05"
+[entry.fields]
+"PKG size" = "96.2 GB"
+"Matching update (date match with §8.5)" = "The Kortz Center Heist + PS5-only follow-up (latest as of 2026-10)"
+
+[[entry]]
+id = "8.6-1"
+origin = "md:2043"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.323.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "—"
+notes = "Version string sometimes cited for the pre-patch launch/pre-load executable (named in this project's research brief). **Not found** in any source, including a targeted web search for \"1.0.323.1\" with GTA5.exe crash logs. Unverified."
+confidence = "unverified"
+confidence_text = "❓"
+sources_text = "—"
+[entry.fields]
+"SHVDN support" = "—"
+
+[[entry]]
+id = "8.6-2"
+origin = "md:2044"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.331.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "in use by 2015-04-20"
+notes = "**Existence attested.** A Steam Community crash thread dated 2015-04-20 reports \"GTA5.exe (version 1.0.331.1)\" crashing after a patch, i.e. the build that preceded 335.1 (2015-04-17 per GTA Wiki). That ordering conflicts slightly: the user may simply not have updated yet. Whether 331.1 was the 2015-04-14 day-one \"Update 1.01 (PC)\" build is **inferred from ordering — not sourced** ❓. GTA Wiki gives no build number for 1.01. Script Hook V support starts at 335.2."
+confidence = "mixed"
+confidence_text = "✅ (exists) / ❓ (which patch)"
+sources = ["8-41", "8-50"]
+sources_text = "[41][50]"
+[entry.fields]
+"SHVDN support" = "—"
+
+[[entry]]
+id = "8.6-3"
+origin = "md:2045"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.335.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2015-04-17"
+date_text = "2015-04-17"
+notes = "GTA Wiki: \"Build 335.1\" (Story 1.02 / Online 1.24)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-24"]
+sources_text = "[24]"
+[entry.fields]
+"SHVDN support" = "—"
+
+[[entry]]
+id = "8.6-4"
+origin = "md:2046"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.335.2 (Steam / NoSteam)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2015-04"
+date_text = "2015-04"
+notes = "Earliest build supported by Script Hook V. 335.1 vs 335.2 is a naming discrepancy between GTA Wiki and SHV."
+confidence = "confirmed"
+confidence_text = "✅ (build)"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "2019-08-11 (bulk)"
+
+[[entry]]
+id = "8.6-5"
+origin = "md:2047"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.350.1 (Steam)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2015-04-30"
+date_text = "2015-04-30"
+notes = "GTA Wiki: Build 350.1 (Story 1.03 / Online 1.25)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-24"]
+sources_text = "[19][24]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-6"
+origin = "md:2048"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.350.2 (NoSteam)"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2015-05-01"
+date_text = "2015-05-01"
+notes = "GTA Wiki: Build 350.2 (Online 1.26)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-3", "8-19"]
+sources_text = "[3][19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-7"
+origin = "md:2049"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "\"350.3\""
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2015-06-10"
+date_text = "2015-06-10"
+notes = "GTA Wiki gives PC \"350.3\" for Ill-Gotten Gains Part 1 (Online 1.27). **Conflicts** with SHV/SHVDN, which list no 350.3; their next build is 372.2."
+confidence = "single-source"
+confidence_text = "⚠️ conflict"
+sources = ["8-20"]
+sources_text = "[20]"
+[entry.fields]
+"SHVDN support" = "—"
+
+[[entry]]
+id = "8.6-8"
+origin = "md:2050"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.372.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Next build after 350.x. Inferred from ordering — not sourced ❓: Ill-Gotten Gains Part 1 (2015-06-10), for which GTA Wiki instead prints \"350.3\"."
+confidence = "mixed"
+confidence_text = "✅ (build) / ❓ (map)"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-9"
+origin = "md:2051"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.393.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2015-07-08"
+date_text = "2015-07-08"
+notes = "Ill-Gotten Gains Part 2 (Online 1.28): \"Title Update 393.2\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-22"]
+sources_text = "[19][22]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-10"
+origin = "md:2052"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.393.4"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2015-07-21"
+date_text = "2015-07-21"
+notes = "\"Update 1.28.01 (Build 393.4)\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-25"]
+sources_text = "[19][25]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-11"
+origin = "md:2053"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.463.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.29 Freemode Events (2015-09-15)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-12"
+origin = "md:2054"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.505.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.30 Lowriders (2015-10-20)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-13"
+origin = "md:2055"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.573.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.31 Executives and Other Criminals (2015-12-15)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-14"
+origin = "md:2056"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.617.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.32 (2016-01-28)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-15"
+origin = "md:2057"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.678.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.33 Lowriders: Custom Classics (2016-03-15)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-16"
+origin = "md:2058"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.757.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.34 Finance and Felony (2016-06-07)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-17"
+origin = "md:2059"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.757.4"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Hotfix. SHVDN notes that Steam \"757.3\" does not exist and the real Steam build is 757.4."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-18"
+origin = "md:2060"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.791.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.35 Cunning Stunts (2016-07-12)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-19"
+origin = "md:2061"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.877.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.36 Bikers (2016-10-04)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-33"]
+sources_text = "[19][33]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-20"
+origin = "md:2062"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.944.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.37 Import/Export (2016-12-13)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-21"
+origin = "md:2063"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1011.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.38 Special Vehicle Circuit (2017-03-14)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-22"
+origin = "md:2064"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1032.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.39 (2017-04-05)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-23"
+origin = "md:2065"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1103.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.40 Gunrunning (2017-06-13)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-24"
+origin = "md:2066"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1180.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.41 Smuggler's Run (2017-08-29)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-25"
+origin = "md:2067"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1290.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.42 The Doomsday Heist (2017-12-12)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-26"
+origin = "md:2068"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1365.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.43 SSASSS (2018-03-20)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-27"
+origin = "md:2069"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1493.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.44 After Hours (2018-07-24)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-28"
+origin = "md:2070"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1493.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Hotfix. Inferred from ordering — not sourced ❓: TU 1.45 (PC only, 2018-10-16)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-29"
+origin = "md:2071"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1604.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2018-12-11"
+date_text = "2018-12-11"
+notes = "**Arena War** (FiveM build 1604; aliases `xm18`, `christmas2018`, `mpchristmas2018`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "bulk"
+
+[[entry]]
+id = "8.6-30"
+origin = "md:2072"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1604.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Hotfix."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2019-10-06 (NoSteam)"
+
+[[entry]]
+id = "8.6-31"
+origin = "md:2073"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1734.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "SHVDN: \"1.0.1737.0 basically works in the same way as 1.0.1734.0 but with bug fixes\". Inferred from ordering — not sourced ❓: Diamond Casino & Resort day-one build (TU 1.47, 2019-07-23)."
+confidence = "confirmed"
+confidence_text = "✅ (build)"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "—"
+
+[[entry]]
+id = "8.6-32"
+origin = "md:2074"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1737.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.48 (2019-07-25). FiveM's table lists The Diamond Casino & Resort with no build number (\"–\")."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2019-10-06"
+
+[[entry]]
+id = "8.6-33"
+origin = "md:2075"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1737.6"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Hotfix."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2019-10-18"
+
+[[entry]]
+id = "8.6-34"
+origin = "md:2076"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1868.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.49 Diamond Casino Heist (2019-12-12). FiveM lists Diamond Casino Heist with no build (\"–\")."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2019-12-22"
+
+[[entry]]
+id = "8.6-35"
+origin = "md:2077"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1868.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.50 (2019-12-15)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2020-09-04"
+
+[[entry]]
+id = "8.6-36"
+origin = "md:2078"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1868.4 (EGS)"
+platforms = ["pc"]
+platform_text = "PC (Epic Games Store)"
+region = "WW"
+date_text = "not documented"
+notes = "Epic-only executable (Epic giveaway, May 2020)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-18"]
+sources_text = "[19][18]"
+[entry.fields]
+"SHVDN support" = "2020-09-04"
+
+[[entry]]
+id = "8.6-37"
+origin = "md:2079"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2060.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2020-08-11"
+date_text = "2020-08-11"
+notes = "**Los Santos Summer Special** (FiveM 2060; `sum`, `mpsum`). SHVDN briefly listed a \"2060_0_RGS\"/\"EGS\" variant, replaced on 2020-09-15 by 2060.1."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2020-09-04"
+
+[[entry]]
+id = "8.6-38"
+origin = "md:2080"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2060.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.52 (2020-09-09)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-3"]
+sources_text = "[19][3]"
+[entry.fields]
+"SHVDN support" = "2020-09-15"
+
+[[entry]]
+id = "8.6-39"
+origin = "md:2081"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2189.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2020-12-15"
+date_text = "2020-12-15"
+notes = "**The Cayo Perico Heist** (FiveM 2189; `h4`, `heist4`, `mpheist4`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2020-12-21"
+
+[[entry]]
+id = "8.6-40"
+origin = "md:2082"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2215.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "TU 1.53 (2021-02-10). Weak evidence: the Gfinity article \"GTA 5 Update 1.53 Patch Notes (10th February)\", published 2021-02-10, has the URL slug `gta-5-online-update-2215-patch-notes…`. The article text itself gives no build number."
+confidence = "mixed"
+confidence_text = "✅ (build) / ⚠️ (map; URL slug only)"
+sources = ["8-19", "8-51"]
+sources_text = "[19][51]"
+[entry.fields]
+"SHVDN support" = "2021-08-12"
+
+[[entry]]
+id = "8.6-41"
+origin = "md:2083"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2245.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.54 (2021-03-16)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2021-08-12"
+
+[[entry]]
+id = "8.6-42"
+origin = "md:2084"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2372.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2021-07-20"
+date_text = "2021-07-20"
+notes = "**Los Santos Tuners** (FiveM 2372; `tuner`, `mptuner`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2021-08-12"
+
+[[entry]]
+id = "8.6-43"
+origin = "md:2085"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2372.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Bug-fix exe, \"works in the same way as 1.0.2372.0\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2021-09-27 (note)"
+
+[[entry]]
+id = "8.6-44"
+origin = "md:2086"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2545.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2021-12-15"
+date_text = "2021-12-15"
+notes = "**The Contract** (FiveM 2545; `security`, `mpsecurity`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2022-01-07"
+
+[[entry]]
+id = "8.6-45"
+origin = "md:2087"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2612.1"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "FiveM build 2612, alias `mpg9ec` (no marketing name; the alias suggests next-gen (\"gen9\") content brought to last-gen/PC). Inferred from ordering — not sourced ❓: TU 1.59 (2022-04-26)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2022-07-29"
+
+[[entry]]
+id = "8.6-46"
+origin = "md:2088"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2628.2"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.60 (2022-05-17)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2022-07-29"
+
+[[entry]]
+id = "8.6-47"
+origin = "md:2089"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2699.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2022-07-26"
+date_text = "2022-07-26"
+notes = "**The Criminal Enterprises** (FiveM 2699; `mpsum2`). Last build with separate Steam/NoSteam exes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2022-07-29"
+
+[[entry]]
+id = "8.6-48"
+origin = "md:2090"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2699.16"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.63 (PC only, 2022-10-25)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-3"]
+sources_text = "[19][3]"
+[entry.fields]
+"SHVDN support" = "2022-11-23"
+
+[[entry]]
+id = "8.6-49"
+origin = "md:2091"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2802.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2022-12-13"
+date_text = "2022-12-13"
+notes = "**Los Santos Drug Wars** (FiveM 2802; `mpchristmas3`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2022-12-23"
+
+[[entry]]
+id = "8.6-50"
+origin = "md:2092"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2824.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.66 PC security update (2023-02-01)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-31"]
+sources_text = "[19][31]"
+[entry.fields]
+"SHVDN support" = "2023-04-23"
+
+[[entry]]
+id = "8.6-51"
+origin = "md:2093"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2845.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.66 all-platform (2023-02-28)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-31"]
+sources_text = "[19][31]"
+[entry.fields]
+"SHVDN support" = "2023-04-23"
+
+[[entry]]
+id = "8.6-52"
+origin = "md:2094"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.2944.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2023-06-13"
+date_text = "2023-06-13"
+notes = "**San Andreas Mercenaries** (FiveM 2944; `mp2023_01`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2023-06-16"
+
+[[entry]]
+id = "8.6-53"
+origin = "md:2095"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3028.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.67 PC-only patch (2023-10-03)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-3"]
+sources_text = "[19][3]"
+[entry.fields]
+"SHVDN support" = "2024-01-12"
+
+[[entry]]
+id = "8.6-54"
+origin = "md:2096"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3095.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2023-12-12"
+date_text = "2023-12-12"
+notes = "**The Chop Shop** (FiveM 3095; `mp2023_02`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2024-01-12"
+
+[[entry]]
+id = "8.6-55"
+origin = "md:2097"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3179.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "FiveM also packages build 3179 (reusing 3095's `update.rpf`). Inferred from ordering — not sourced ❓: TU 1.68 PC patch (2024-04-16)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-36"]
+sources_text = "[19][36]"
+[entry.fields]
+"SHVDN support" = "2024-04-25"
+
+[[entry]]
+id = "8.6-56"
+origin = "md:2098"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3258.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2024-06-25"
+date_text = "2024-06-25"
+notes = "**Bottom Dollar Bounties** (FiveM 3258; `mp2024_01`). FiveM's current default/mandated build."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35", "8-37"]
+sources_text = "[19][35][37]"
+[entry.fields]
+"SHVDN support" = "2024-07-11"
+
+[[entry]]
+id = "8.6-57"
+origin = "md:2099"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3274.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: TU 1.69 follow-up (2024-07-17)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-3"]
+sources_text = "[19][3]"
+[entry.fields]
+"SHVDN support" = "2024-07-17"
+
+[[entry]]
+id = "8.6-58"
+origin = "md:2100"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3323.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Also packaged by FiveM (no marketing name)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-36"]
+sources_text = "[19][36]"
+[entry.fields]
+"SHVDN support" = "2024-09-20"
+
+[[entry]]
+id = "8.6-59"
+origin = "md:2101"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3337.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2024-09-28"
+
+[[entry]]
+id = "8.6-60"
+origin = "md:2102"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3351.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2024-10-20"
+
+[[entry]]
+id = "8.6-61"
+origin = "md:2103"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3407.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date = "2024-12-10"
+date_text = "2024-12-10"
+notes = "**Agents of Sabotage** (FiveM 3407; `mp2024_02`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35"]
+sources_text = "[19][35]"
+[entry.fields]
+"SHVDN support" = "2024-12-14"
+
+[[entry]]
+id = "8.6-62"
+origin = "md:2104"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3411.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "Hotfix."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2024-12-15"
+
+[[entry]]
+id = "8.6-63"
+origin = "md:2105"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3442.0"
+platforms = ["pc"]
+platform_text = "PC"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2025-02-20"
+
+[[entry]]
+id = "8.6-64"
+origin = "md:2106"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3504.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date_text = "not documented"
+notes = "First Legacy build supported after the 2025-03-04 Legacy/Enhanced split. Inferred from ordering — not sourced ❓: the 2025-03-12 all-platform TU 1.70 follow-up (GTA Wiki), or a Legacy patch shipped alongside Enhanced."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2025-04-14"
+
+[[entry]]
+id = "8.6-65"
+origin = "md:2107"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3521.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2025-05-15"
+
+[[entry]]
+id = "8.6-66"
+origin = "md:2108"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3570.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date = "2025-06-17"
+date_text = "2025-06-17"
+notes = "**Money Fronts** (FiveM 3570; `mp2025_01`; FiveM enum `Summer_2025`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35", "8-37"]
+sources_text = "[19][35][37]"
+[entry.fields]
+"SHVDN support" = "2025-06-26"
+
+[[entry]]
+id = "8.6-67"
+origin = "md:2109"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3586.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: follow-up in the TU 1.71 cycle; GTA Wiki lists a 2025-07-08 PC Legacy patch, the only Legacy drop between 3570 and 3751."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-19", "8-32"]
+sources_text = "[19][32]"
+[entry.fields]
+"SHVDN support" = "2025-12-12"
+
+[[entry]]
+id = "8.6-68"
+origin = "md:2110"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3717.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2025-12-12"
+
+[[entry]]
+id = "8.6-69"
+origin = "md:2111"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3725.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date_text = "not documented"
+notes = "Added to SHVDN late, though it sits numerically between 3717 and 3751."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19"]
+sources_text = "[19]"
+[entry.fields]
+"SHVDN support" = "2026-05-01"
+
+[[entry]]
+id = "8.6-70"
+origin = "md:2112"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3751.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date = "2025-12-10"
+date_text = "2025-12-10"
+notes = "**A Safehouse in the Hills** (FiveM 3751; `mp2025_02`; FiveM enum `Winter_2025`)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-35", "8-37"]
+sources_text = "[19][35][37]"
+[entry.fields]
+"SHVDN support" = "2026-05-01"
+
+[[entry]]
+id = "8.6-71"
+origin = "md:2113"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3788.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date_text = "not documented (by 2026-03-19)"
+notes = "FiveM enum `Patch_2026_1`. SHVDN-Enhanced added support on 2026-03-19, together with Enhanced 1.0.1013.33."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-37", "8-38"]
+sources_text = "[19][37][38]"
+[entry.fields]
+"SHVDN support" = "2026-05-01"
+
+[[entry]]
+id = "8.6-72"
+origin = "md:2114"
+section = "8.6"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.3889.0"
+platforms = ["pc"]
+platform_text = "PC (Legacy)"
+region = "WW"
+date = "2026-07-14"
+date_text = "2026-07-14"
+notes = "**The Kortz Center Heist** (FiveM 3889; `mp2026_01`; enum `Summer_2026`). Script Hook V v3889.0 released 2026-07-15. **Latest Legacy build as of 2026-10.**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-19", "8-34", "8-35", "8-37"]
+sources_text = "[19][34][35][37]"
+[entry.fields]
+"SHVDN support" = "2026-07-22"
+
+[[entry]]
+id = "8.7-1"
+origin = "md:2125"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.811.8 (exe 2.0.811.8)"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "Earliest Enhanced build in SHVDNE's enum (enum value 1001). Inferred from ordering — not sourced ❓: launch build (2025-03-04). GTA Wiki lists Enhanced-only patches on 2025-03-05/06/07 and 03-12, which would match 812–814."
+confidence = "confirmed"
+confidence_text = "✅ (build)"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "in SHVDNE by 2026-03-11"
+
+[[entry]]
+id = "8.7-2"
+origin = "md:2126"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.812.8"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "—"
+
+[[entry]]
+id = "8.7-3"
+origin = "md:2127"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.813.11"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "—"
+
+[[entry]]
+id = "8.7-4"
+origin = "md:2128"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.814.9"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "—"
+
+[[entry]]
+id = "8.7-5"
+origin = "md:2129"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.889.15"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: Money Fronts cycle (2025-06-17 / 2025-07-08)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "—"
+
+[[entry]]
+id = "8.7-6"
+origin = "md:2130"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.889.19"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "—"
+
+[[entry]]
+id = "8.7-7"
+origin = "md:2131"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1013.17"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "Inferred from ordering — not sourced ❓: A Safehouse in the Hills cycle (2025-12-10 onward)."
+confidence = "mixed"
+confidence_text = "✅ / ❓"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "—"
+
+[[entry]]
+id = "8.7-8"
+origin = "md:2132"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1013.29"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "not documented"
+notes = "\"Add missing game version\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "added 2026-03-20"
+
+[[entry]]
+id = "8.7-9"
+origin = "md:2133"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1013.33"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "by 2026-03-19"
+notes = "Supported together with Legacy 1.0.3788.0."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "2026-03-19"
+
+[[entry]]
+id = "8.7-10"
+origin = "md:2134"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1013.34"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date_text = "by 2026-04-07"
+notes = "Named in an SHVDNE commit as \"the latest Enhanced build (1.0.1013.34)\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-38"]
+sources_text = "[38]"
+[entry.fields]
+"Evidence date" = "2026-04-07"
+
+[[entry]]
+id = "8.7-11"
+origin = "md:2135"
+section = "8.7"
+kind = "exe-build"
+games = ["gta5"]
+title = "1.0.1158.13"
+platforms = ["pc"]
+platform_text = "PC Enhanced"
+region = "WW"
+date = "2026-07-14"
+date_text = "2026-07-14"
+notes = "Kortz Center Heist (Script Hook V lists \"Supported patches: 1.0.3889.0 / 1.0.1158.13\"). **Latest Enhanced build as of 2026-10.**"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-34", "8-38"]
+sources_text = "[34][38]"
+[entry.fields]
+"Evidence date" = "SHV 2026-07-15; SHVDNE 2026-07-14"
+
+[[entry]]
+id = "8.8-1"
+origin = "md:2143"
+section = "8.8"
+kind = "regional"
+games = ["gta5"]
+title = "Torture sequence cut"
+platforms = ["ps3", "x360"]
+platform_text = "PS3/X360 (and later)"
+region = "JP"
+date_text = "2013-10-10 →"
+notes = "The torture gameplay in the mission \"By the Book\" was removed from the Japanese release."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "8.8-2"
+origin = "md:2144"
+section = "8.8"
+kind = "regional"
+games = ["gta5"]
+title = "Japanese PC version"
+platforms = ["pc"]
+platform_text = "PC"
+region = "JP"
+date = "2015-04-14"
+date_text = "2015-04-14"
+notes = "Built on the North American version; apart from text localisation, the changes applied to the Japanese console versions were not applied. The PC version did not receive a CERO rating."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-15"]
+sources_text = "[15]"
+
+[[entry]]
+id = "8.8-3"
+origin = "md:2145"
+section = "8.8"
+kind = "regional"
+games = ["gta5"]
+title = "CERO rating (consoles)"
+platforms = ["x360", "ps4"]
+platform_text = "X360 (2013); PS4 (2018 Premium Online Edition)"
+region = "JP"
+date_text = "2013-10-10; 2018-06-14"
+notes = "**CERO Z** (18+ only). 4Gamer's Xbox 360 product page gives \"CERO Z：18歳以上のみ対象\", release 2013-10-10, publishers Take-Two Interactive Japan / Rockstar Games, ¥7,770 incl. tax. Famitsu's 2018 announcement of the PS4 *Premium Online Edition* gives \"CERO：Z\", 2018-06-14, ¥7,400 excl. tax. The PS3, XB1, PS5 and XSX ratings are presumably also Z, but no fetched page states them individually."
+confidence = "mixed"
+confidence_text = "✅ (X360, PS4) / ⚠️ (other platforms)"
+sources = ["8-52", "8-53"]
+sources_text = "[52][53]"
+
+[[entry]]
+id = "8.8-4"
+origin = "md:2146"
+section = "8.8"
+kind = "regional"
+games = ["gta5"]
+title = "Retail withdrawal"
+platforms = ["ps4", "xone"]
+platform_text = "PS4/XB1"
+region = "AU"
+date = "2014-12"
+date_text = "2014-12"
+notes = "Target and Kmart Australia pulled the game after a petition with >40,000 signatures. This was a retailer decision; the game was not reclassified."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "8.8-5"
+origin = "md:2147"
+section = "8.8"
+kind = "regional"
+games = ["gta5"]
+title = "Transgender sex-worker models removed"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5/XSX\\|S (2022 re-release)"
+region = "WW"
+date = "2022"
+date_text = "2022 (Wikipedia says April 2022, which conflicts with the 2022-03-15 launch)"
+notes = "Removed except in Director Mode."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "8.8-6"
+origin = "md:2148"
+section = "8.8"
+kind = "regional"
+games = ["gta5"]
+title = "Gambling restricted"
+platform_text = "all current-gen"
+region = "some regions (incl. some US states)"
+date_text = "2019-07-23 →"
+notes = "In-game casino gambling unavailable in certain regions (Diamond Casino & Resort)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["8-7"]
+sources_text = "[7]"
+
+[[entry]]
+id = "8.8-7"
+origin = "md:2149"
+section = "8.8"
+kind = "regional"
+games = ["gta5"]
+title = "Saudi Arabia / UAE release"
+platform_text = "all"
+region = "SA, AE"
+date = "2025-07-17"
+date_text = "2025-07-17"
+notes = "Listed as a separate regional release date. Content changes, if any, **not documented**."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["8-16"]
+sources_text = "[16]"
+
+[[entry]]
+id = "11.6-1"
+origin = "md:3103"
+section = "11.6"
+kind = "leak"
+games = ["gta5"]
+title = "Date"
+notes = "~24 December 2023 (first public claim on X by @SKizzleAXE with a screenshot; Bully 2 file screenshot shared 25 Dec). Came days after Kurtaj's sentencing."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-37", "11-39", "11-40"]
+sources_text = "[37][39][40]"
+
+[[entry]]
+id = "11.6-2"
+origin = "md:3104"
+section = "11.6"
+kind = "leak"
+games = ["gta5"]
+title = "Origin"
+notes = "Reportedly first shared in a Discord server; full contents reposted via r/GamingLeaksAndRumours. Possibly linked to Lapsus$ members (Wikipedia, hedged). Whether it derives from the 2022 intrusion is unconfirmed."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-39", "11-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "11.6-3"
+origin = "md:3105"
+section = "11.6"
+kind = "leak"
+games = ["gta5"]
+title = "Contents (reported)"
+notes = "GTA V source code; an early GTA V map and script; references to **\"Project Americas\"** (GTA VI codename); a GTA VI PC script / code snippets incl. a lock-picking mechanic; Bully 2 concepts/file; material purportedly from the cancelled PS3 game *Agent*."
+confidence = "confirmed"
+confidence_text = "✅ (reported by multiple outlets)"
+sources = ["11-37", "11-38", "11-39"]
+sources_text = "[37][38][39]"
+
+[[entry]]
+id = "11.6-4"
+origin = "md:3106"
+section = "11.6"
+kind = "leak"
+games = ["gta5"]
+title = "Cancelled GTA V single-player DLC names found"
+notes = "**SP Assassination Pack**, **SP Manhunt Pack**, **SP Norman Pack**, **Agent Trevor**, **Relationship Pack**, **Enterprise Pack**, **Prologue DLC**, **LibertyV DLC** (Liberty City). Descriptions beyond names are journalist speculation. Wikipedia: at least eight SP DLC sets in development, scrapped as the team focused on GTA Online and RDR2."
+confidence = "mixed"
+confidence_text = "✅ (names) / ❓ (content)"
+sources = ["11-37", "11-38", "11-40"]
+sources_text = "[37][38][40]"
+
+[[entry]]
+id = "11.6-5"
+origin = "md:3107"
+section = "11.6"
+kind = "leak"
+games = ["gta5"]
+title = "Rockstar response"
+notes = "No public statement found."
+confidence_text = "—"
+sources = ["11-37", "11-39"]
+sources_text = "[37][39]"
+
+[[entry]]
+id = "11.6-6"
+origin = "md:3108"
+section = "11.6"
+kind = "leak"
+games = ["gta5"]
+title = "Build number of the leaked code"
+notes = "Hidden Palace catalogues the leaked source as the PC \"Sep 16, 2022 build\", build name **1.0.2699.0**, code from about 2022-09-16, released by \"Lapsus$\". It is code only (assets come from a retail copy); Rockstar's build tools are included, and so far only the \"Debug\" configuration is known to work."
+confidence = "single-source"
+confidence_text = "⚠️ (single community source)"
+sources = ["11-68"]
+sources_text = "[68]"
+
+[[entry]]
+id = "11.6-7"
+origin = "md:3109"
+section = "11.6"
+kind = "leak"
+games = ["gta5"]
+title = "Pre-release GTA V *builds*"
+notes = "*(Corrected: an earlier draft said none with documented build numbers had leaked.)* Hidden Palace documents a GTA V development build dated **2014-10-13** (GTA5_NG QA Version 108 / 0.0.0.77). It came from the \"Build\" directory of the September 2022 intrusion and leaked publicly on **2026-09-18**. Hidden Palace also documents PS3 patch prototypes (builds 377 and 388.5), Xbox 360 PartnerNet DLC prototypes (2013) and a 2020 \"GTA5 Debug.exe\". See §8.1 and 11.7."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["11-68"]
+sources_text = "[68]"
+
+[sources]
+8-1 = { text = "Wikipedia — *Development of Grand Theft Auto V*: https://en.wikipedia.org/wiki/Development_of_Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Development_of_Grand_Theft_Auto_V", origin = "md:2176" }
+8-2 = { text = "Wikipedia — *Grand Theft Auto V*: https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:2177" }
+8-3 = { text = "GTA Wiki (gta.wiki) — *Grand Theft Auto V and Grand Theft Auto Online Title Update Notes*: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes", origin = "md:2178" }
+8-4 = { text = "GTABase — *GTA Online Title Updates Full List*: https://www.gtabase.com/grand-theft-auto-v/title-updates/", url = "https://www.gtabase.com/grand-theft-auto-v/title-updates/", origin = "md:2179" }
+8-5 = { text = "GTA BOOM — *Grand Theft Auto V Editions*: https://www.gtaboom.com/Grand_Theft_Auto_V_Editions", url = "https://www.gtaboom.com/Grand_Theft_Auto_V_Editions", origin = "md:2180" }
+8-6 = { text = "PCGamingWiki — *Grand Theft Auto V*: https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_V", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_V", origin = "md:2181" }
+8-7 = { text = "Wikipedia — *Grand Theft Auto Online*: https://en.wikipedia.org/wiki/Grand_Theft_Auto_Online", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_Online", origin = "md:2182" }
+8-8 = { text = "Redump PS3 DAT (via libretro-database): https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Sony%20-%20PlayStation%203.dat", url = "https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Sony%20-%20PlayStation%203.dat", origin = "md:2183" }
+8-9 = { text = "No-Intro PS3 PSN DAT (via libretro-database): https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN).dat", url = "https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN", origin = "md:2184" }
+8-10 = { text = "Redump Xbox 360 DAT (via libretro-database): https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Microsoft%20-%20Xbox%20360.dat", url = "https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/redump/Microsoft%20-%20Xbox%20360.dat", origin = "md:2185" }
+8-11 = { text = "andshrew — *PlayStation-Titles* (PS4/PS5 title ID & content ID dataset), All_Titles.tsv: https://github.com/andshrew/PlayStation-Titles (concept 201930)", url = "https://github.com/andshrew/PlayStation-Titles", origin = "md:2186" }
+8-12 = { text = "OrbisPatches — CUSA00411: https://orbispatches.com/CUSA00411", url = "https://orbispatches.com/CUSA00411", origin = "md:2187" }
+8-13 = { text = "GoldHEN Cheat Repository — files `json/CUSA00411_01.xx.json`, `json/CUSA00419_01.xx.json` (\"name\": \"Grand Theft Auto V\"): https://github.com/GoldHEN/GoldHEN_Cheat_Repository", url = "https://github.com/GoldHEN/GoldHEN_Cheat_Repository", origin = "md:2188" }
+8-14 = { text = "ProsperoPatches — PPSA04264: https://prosperopatches.com/PPSA04264", url = "https://prosperopatches.com/PPSA04264", origin = "md:2189" }
+8-15 = { text = "Japanese Wikipedia — 『グランド・セフト・オートV』: https://ja.wikipedia.org/wiki/グランド・セフト・オートV", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートV", origin = "md:2190" }
+8-16 = { text = "GTA Wiki (gta.wiki) — *Grand Theft Auto V*: https://gta.wiki/w/Grand_Theft_Auto_V", url = "https://gta.wiki/w/Grand_Theft_Auto_V", origin = "md:2191" }
+8-17 = { text = "GTA Wiki (gta.wiki) — *Criminal Enterprise Starter Pack*: https://gta.wiki/w/Criminal_Enterprise_Starter_Pack", url = "https://gta.wiki/w/Criminal_Enterprise_Starter_Pack", origin = "md:2192" }
+8-18 = { text = "Wikipedia — *Epic Games Store*: https://en.wikipedia.org/wiki/Epic_Games_Store", url = "https://en.wikipedia.org/wiki/Epic_Games_Store", origin = "md:2193" }
+8-19 = { text = "Script Hook V .NET — `GameVersion.cs` and its git history: https://github.com/scripthookvdotnet/scripthookvdotnet/blob/main/source/scripting_v3/GTA/GameVersion.cs", url = "https://github.com/scripthookvdotnet/scripthookvdotnet/blob/main/source/scripting_v3/GTA/GameVersion.cs", origin = "md:2194" }
+8-20 = { text = "GTA Wiki — Update 2015-06-10: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-06-10", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-06-10", origin = "md:2195" }
+8-21 = { text = "Rockstar Support — *GTAV Title Update 1.27 Notes (PS4/Xbox One/PS3/Xbox 360/PC)*: https://support.rockstargames.com/articles/2pAEQzoAjMvFybi8P96coc/gtav-title-update-1-27-notes-ps4-xbox-one-ps3-xbox-360-pc", url = "https://support.rockstargames.com/articles/2pAEQzoAjMvFybi8P96coc/gtav-title-update-1-27-notes-ps4-xbox-one-ps3-xbox-360-pc", origin = "md:2196" }
+8-22 = { text = "GTA Wiki — Update 2015-07-08: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-07-08", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-07-08", origin = "md:2197" }
+8-23 = { text = "GTA Wiki — Update 2014-11-18: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2014-11-18", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2014-11-18", origin = "md:2198" }
+8-24 = { text = "GTA Wiki — Update 2015-04-17 and Update 2015-04-30: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-04-17 ; https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-04-30", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-04-17", origin = "md:2199" }
+8-25 = { text = "GTA Wiki — Update 2015-07-21: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-07-21", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-07-21", origin = "md:2200" }
+8-26 = { text = "GTA Wiki — Update 2015-09-15: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-09-15", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-09-15", origin = "md:2201" }
+8-27 = { text = "GTA Wiki — Update 2015-11-17: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-11-17", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-11-17", origin = "md:2202" }
+8-28 = { text = "GTA Wiki — Update 2015-10-20: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-10-20", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-10-20", origin = "md:2203" }
+8-29 = { text = "GTA Wiki — Update 2016-10-04: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2016-10-04", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2016-10-04", origin = "md:2204" }
+8-30 = { text = "GTA Wiki — Update 2016-12-09: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2016-12-09", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2016-12-09", origin = "md:2205" }
+8-31 = { text = "GTA Wiki — Update 2023-02-28: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2023-02-28", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2023-02-28", origin = "md:2206" }
+8-32 = { text = "Rockstar Support — *GTAV Title Update 1.71 Notes (PS5 / PS4 / Xbox Series X|S / Xbox One / PC [Enhanced/Legacy])*: https://support.rockstargames.com/articles/5IxfVX33w3X8fKooGKswfj/gtav-title-update-1.71-notes-ps5-ps4-xbox-series-x-or-s-xbox-one-pc-enhanced", url = "https://support.rockstargames.com/articles/5IxfVX33w3X8fKooGKswfj/gtav-title-update-1.71-notes-ps5-ps4-xbox-series-x-or-s-xbox-one-pc-enhanced", origin = "md:2207" }
+8-33 = { text = "Script Hook V readme/changelog (mirror): https://github.com/aerotutorials/ScriptHookV/blob/master/README.md", url = "https://github.com/aerotutorials/ScriptHookV/blob/master/README.md", origin = "md:2208" }
+8-34 = { text = "Alexander Blade — Script Hook V download page (v3889.0 / 1158.13, released 15 Jul 2026): http://www.dev-c.com/gtav/scripthookv/", url = "http://www.dev-c.com/gtav/scripthookv/", origin = "md:2209" }
+8-35 = { text = "FiveM Docs — Server commands, `sv_enforceGameBuild` table: https://docs.fivem.net/docs/server-manual/server-commands/ (source: https://github.com/citizenfx/fivem-docs/blob/master/content/docs/server-manual/server-commands.md)", url = "https://docs.fivem.net/docs/server-manual/server-commands/", origin = "md:2210" }
+8-36 = { text = "citizenfx/fivem — `code/client/launcher/GameCache.cpp`: https://github.com/citizenfx/fivem/blob/master/code/client/launcher/GameCache.cpp", url = "https://github.com/citizenfx/fivem/blob/master/code/client/launcher/GameCache.cpp", origin = "md:2211" }
+8-37 = { text = "citizenfx/fivem — `code/client/shared/CrossBuildRuntime.h`: https://github.com/citizenfx/fivem/blob/master/code/client/shared/CrossBuildRuntime.h", url = "https://github.com/citizenfx/fivem/blob/master/code/client/shared/CrossBuildRuntime.h", origin = "md:2212" }
+8-38 = { text = "Script Hook V .NET Enhanced — `GameVersion.cs`, `ExeVersionConsts.cs` and git history: https://github.com/Chiheb-Bacha/ScriptHookVDotNetEnhanced", url = "https://github.com/Chiheb-Bacha/ScriptHookVDotNetEnhanced", origin = "md:2213" }
+8-39 = { text = "FiveM Docs — *What's Changed in FiveM for GTAV Enhanced*: https://docs.fivem.net/docs/developers/legacy-vs-enhanced/ (source: https://github.com/citizenfx/fivem-docs/blob/master/content/docs/developers/legacy-vs-enhanced.md)", url = "https://docs.fivem.net/docs/developers/legacy-vs-enhanced/", origin = "md:2214" }
+8-40 = { text = "Rockstar Support — *GTAV Title Update 1.28 Notes (PS4/Xbox One/PS3/Xbox 360/PC)*: https://support.rockstargames.com/articles/6vPbQm32DGFtOrL04DxHsd/gtav-title-update-1-28-notes-ps4-xbox-one-ps3-xbox-360-pc", url = "https://support.rockstargames.com/articles/6vPbQm32DGFtOrL04DxHsd/gtav-title-update-1-28-notes-ps4-xbox-one-ps3-xbox-360-pc", origin = "md:2215" }
+8-41 = { text = "GTA Wiki — Update 2015-04-14: https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-04-14", url = "https://gta.wiki/w/Grand_Theft_Auto_V/Title_Update_Notes/Update-2015-04-14", origin = "md:2216" }
+8-42 = { text = "Steam Store appdetails API (official Valve endpoint), apps 271590 and 3240220: https://store.steampowered.com/api/appdetails?appids=271590 ; https://store.steampowered.com/api/appdetails?appids=3240220 (Steam store page: https://store.steampowered.com/app/3240220/)", url = "https://store.steampowered.com/api/appdetails?appids=271590", origin = "md:2217" }
+8-43 = { text = "Rockstar Support — *GTAV Title Update 1.53 Notes (PS4 / Xbox One / PC)* (dated entries 2021-02-10 → 2021-05-27): https://support.rockstargames.com/articles/7e45Zlq9uwLvvSgNOiosDD/gtav-title-update-1-53-notes-ps4-xbox-one-pc", url = "https://support.rockstargames.com/articles/7e45Zlq9uwLvvSgNOiosDD/gtav-title-update-1-53-notes-ps4-xbox-one-pc", origin = "md:2218" }
+8-44 = { text = "Rockstar Support — *GTAV Title Update 1.54 Notes (PS4 / Xbox One / PC)* (entry dated 2021-07-20, Los Santos Tuners): https://support.rockstargames.com/articles/7a5MsGMCeLTCp3ek6LEWrA/gtav-title-update-1-54-notes-ps4-xbox-one-pc", url = "https://support.rockstargames.com/articles/7a5MsGMCeLTCp3ek6LEWrA/gtav-title-update-1-54-notes-ps4-xbox-one-pc", origin = "md:2219" }
+8-45 = { text = "Rockstar Support — *GTAV Title Update 1.56 Notes (PS4 / PS5 / Xbox One / Xbox Series X|S)* (entry dated 2022-04-26): https://support.rockstargames.com/articles/19RzVUJUXvOHqS9uSksYDt/gtav-title-update-1-56-notes-ps4-ps5-xbox-one-xbox-series-x-s", url = "https://support.rockstargames.com/articles/19RzVUJUXvOHqS9uSksYDt/gtav-title-update-1-56-notes-ps4-ps5-xbox-one-xbox-series-x-s", origin = "md:2220" }
+8-46 = { text = "Rockstar Support — *GTAV Title Update 1.61 Notes (PS4 / PS5 / Xbox One / Xbox Series X|S / PC)* (entry dated 2022-07-26): https://support.rockstargames.com/articles/5aud9bTiQluHnVEP6x7YRp/gtav-title-update-1-61-notes-ps4-ps5-xbox-one-xbox-series-x-s-pc", url = "https://support.rockstargames.com/articles/5aud9bTiQluHnVEP6x7YRp/gtav-title-update-1-61-notes-ps4-ps5-xbox-one-xbox-series-x-s-pc", origin = "md:2221" }
+8-47 = { text = "MP1st — \"GTA 5 Update 1.55 Released on December 17\" (2025-12-17): https://mp1st.com/title-updates-and-patches/gta-5-update-1-55-released-on-december-17", url = "https://mp1st.com/title-updates-and-patches/gta-5-update-1-55-released-on-december-17", origin = "md:2222" }
+8-48 = { text = "ORBISPatches — CUSA00419 (US) and CUSA00880 (JP) patch lists (read 2026-10-24 in a browser): https://orbispatches.com/CUSA00419 ; https://orbispatches.com/CUSA00880 (EU list: [12])", url = "https://orbispatches.com/CUSA00419", origin = "md:2223" }
+8-49 = { text = "ProsperoPatches — PPSA01721, PPSA03420, PPSA04263 patch lists (read 2026-10-24): https://prosperopatches.com/PPSA01721 ; https://prosperopatches.com/PPSA03420 ; https://prosperopatches.com/PPSA04263 (PPSA04264: [14])", url = "https://prosperopatches.com/PPSA01721", origin = "md:2224" }
+8-50 = { text = "Steam Community — GTA V discussion thread, original post 2015-04-20 (\"GTA5.exe (version 1.0.331.1)\"): https://steamcommunity.com/app/271590/discussions/0/611703999981246876", url = "https://steamcommunity.com/app/271590/discussions/0/611703999981246876", origin = "md:2225" }
+8-51 = { text = "Gfinity Esports — \"GTA 5 Update 1.53 Patch Notes (10th February) For Xbox One, PS4 And PC\" (2021-02-10): https://www.gfinityesports.com/article/gta-5-online-update-2215-patch-notes-pc-xbox-one-series-x-ps4-ps5", url = "https://www.gfinityesports.com/article/gta-5-online-update-2215-patch-notes-pc-xbox-one-series-x-ps4-ps5", origin = "md:2226" }
+8-52 = { text = "4Gamer.net — グランド・セフト・オートV (Xbox 360) product page: https://www.4gamer.net/games/190/G019092/index_special.html", url = "https://www.4gamer.net/games/190/G019092/index_special.html", origin = "md:2227" }
+8-53 = { text = "Famitsu — PS4『グランド・セフト・オートV:プレミアム・オンラインエディション』2018年6月14日発売 (2018-05-18): https://www.famitsu.com/news/201805/18157492.html", url = "https://www.famitsu.com/news/201805/18157492.html", origin = "md:2228" }
+8-54 = { text = "Windows Central — \"GTA V goes free on the Epic Games Store\" (last updated 2020-05-14): https://www.windowscentral.com/gta-v-appears-go-free-epic-games-store", url = "https://www.windowscentral.com/gta-v-appears-go-free-epic-games-store", origin = "md:2229" }
+8-55 = { text = "HotHardware — \"Heads-Up! Grand Theft Auto V Will Be Free At The Epic Games Store Today\" (2020-05-14): https://amp.hothardware.com/news/grand-theft-auto-v-free-epic-games-store", url = "https://amp.hothardware.com/news/grand-theft-auto-v-free-epic-games-store", origin = "md:2230" }
+8-56 = { text = "VGC — \"Grand Theft Auto V joins Xbox Game Pass for console\" (2020-01-03): https://www.videogameschronicle.com/news/grand-theft-auto-v-joins-xbox-game-pass-for-console", url = "https://www.videogameschronicle.com/news/grand-theft-auto-v-joins-xbox-game-pass-for-console", origin = "md:2231" }
+8-57 = { text = "Windows Central — \"GTA V leaving Xbox Game Pass on August 8\" (2021): https://www.windowscentral.com/gta-v-leave-xbox-game-pass-august-2021", url = "https://www.windowscentral.com/gta-v-leave-xbox-game-pass-august-2021", origin = "md:2232" }
+8-58 = { text = "CogConnected — \"Xbox Game Pass to Bid Farewell to Grand Theft Auto V\" (2024-01-02): https://cogconnected.com/2024/01/xbox-game-pass-to-bid-farewell-to-grand-theft-auto-v/", url = "https://cogconnected.com/2024/01/xbox-game-pass-to-bid-farewell-to-grand-theft-auto-v/", origin = "md:2233" }
+8-59 = { text = "TheSixthAxis — \"PS Plus Extra & Premium December 2023 library update – GTA V, Mega Man & more\" (2023-12-14): https://www.thesixthaxis.com/2023/12/14/ps-plus-extra-premium-december-2023-library-update-gta-v-mega-man-more/", url = "https://www.thesixthaxis.com/2023/12/14/ps-plus-extra-premium-december-2023-library-update-gta-v-mega-man-more/", origin = "md:2234" }
+8-60 = { text = "TrueTrophies — GTA V returns to PS Plus Extra (2024-11-14): https://www.truetrophies.com/news/gta-v-ps-plus-extra-ps5-november-2024", url = "https://www.truetrophies.com/news/gta-v-ps-plus-extra-ps5-november-2024", origin = "md:2235" }
+8-61 = { text = "Push Square — \"11 PS Plus Extra Game Removals for November 2026 Confirmed\" (2026-10-20): https://www.pushsquare.com/news/2026/10/11-ps-plus-extra-game-removals-for-november-2026-confirmed", url = "https://www.pushsquare.com/news/2026/10/11-ps-plus-extra-game-removals-for-november-2026-confirmed", origin = "md:2236" }
+8-62 = { text = "GodisaGeek — \"GTA 5 Exits PS Plus Extra and Premium Nov. 17, Just Ahead of GTA 6\" (2026-10): https://godisageek.com/2026/10/gta-5-ps-plus-november-removal/", url = "https://godisageek.com/2026/10/gta-5-ps-plus-november-removal/", origin = "md:2237" }
+8-63 = { text = "Xbox.com (Microsoft Store) product pages, read 2026-10-24: https://www.xbox.com/en-US/games/store/grand-theft-auto-v-xbox-one/bpj686w6s0nh ; https://www.xbox.com/en-US/games/store/grand-theft-auto-v/9NXMBTB02ZSF ; https://www.xbox.com/en-US/games/store/grand-theft-auto-v-xbox-one-xbox-series-xs/9P8RQH67TTT1 ; https://www.xbox.com/en-US/games/store/grand-theft-auto-v-story-mode-xbox-series-xs/9pccghdbmr1p ; https://www.xbox.com/en-US/games/store/grand-theft-auto-online-xbox-series-xs/9p079r5lgv4t ; https://www.xbox.com/en-US/games/store/grand-theft-auto-online-xbox-series-xs/9nkc1z4z92vn", url = "https://www.xbox.com/en-US/games/store/grand-theft-auto-v-xbox-one/bpj686w6s0nh", origin = "md:2238" }
+8-64 = { text = "Hidden Palace — *Grand Theft Auto V (Oct 13, 2014 prototype)* (read via the MediaWiki API, 2026-10-24): https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype", origin = "md:2239" }
+8-65 = { text = "Hidden Palace — *Grand Theft Auto V (Sep 16, 2022 build)* (also reached through the redirects \"Grand Theft Auto V (prototype)\" and \"(2022 prototype)\"): https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_16,_2022_build)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_16,_2022_build", origin = "md:2240" }
+8-66 = { text = "Hidden Palace — GTA V Xbox 360 PartnerNet DLC prototype pages (May 7 DLC Weapon 5 / 7; May 20 DLC Weapon 1 / 2 / 3; Jul 4 DLC Weapon 6, Assault Sniper, Atomic Blimp): https://hiddenpalace.org/Grand_Theft_Auto_V_(May_7,_2013_DLC_Weapon_5_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_7,_2013_DLC_Weapon_7_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_20,_2013_DLC_Weapon_1_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_20,_2013_DLC_Weapon_2_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_20,_2013_DLC_Weapon_3_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Jul_4,_2013_DLC_Weapon_6_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Jul_4,_2013_Assault_Sniper_DLC_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Jul_4,_2013_Atomic_Blimp_DLC_Prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(May_7,_2013_DLC_Weapon_5_Prototype", origin = "md:2241" }
+8-67 = { text = "Hidden Palace — GTA V PS3 Patch Data prototypes: https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_13,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_3,_2013_Patch_Data_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_13,_2013_Patch_Data_prototype", origin = "md:2242" }
+8-68 = { text = "Hidden Palace — GTA V leftover and asset pages: https://hiddenpalace.org/Leftover_Sep_30,_2020_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/cnh_devkit_leftovers_assets ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/Cloud_Cache_Files ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/CarsonGT_Extracted_Assets", url = "https://hiddenpalace.org/Leftover_Sep_30,_2020_Data", origin = "md:2243" }
+8-69 = { text = "libretro-database — `dat/Sony - PlayStation 3.dat` (non-Redump list; entries \"Grand Theft Auto V\" serial BLKS20442 releaseyear 2013 and NPJB00516 releaseyear 2014): https://github.com/libretro/libretro-database/blob/master/dat/Sony%20-%20PlayStation%203.dat", url = "https://github.com/libretro/libretro-database/blob/master/dat/Sony%20-%20PlayStation%203.dat", origin = "md:2244" }
+8-70 = { text = "Rockstar Newswire — \"The Free GTAV iFruit and Game Manual Companion Apps\" (2013-09-16; read 2026-10-24): https://www.rockstargames.com/newswire/article/75o941131k8o95/the-free-gtav-ifruit-and-game-manual-companion-apps", url = "https://www.rockstargames.com/newswire/article/75o941131k8o95/the-free-gtav-ifruit-and-game-manual-companion-apps", origin = "md:2245" }
+8-71 = { text = "GTA Wiki (Fandom) — *iFruit App* and *GTAV: The Manual* (MediaWiki API, read 2026-10-24): https://gta.fandom.com/wiki/IFruit_App ; https://gta.fandom.com/wiki/GTAV:_The_Manual", url = "https://gta.fandom.com/wiki/IFruit_App", origin = "md:2246" }
+8-72 = { text = "Rockstar Support — \"Grand Theft Auto: iFruit App Shutdown\" (cited by GTA Wiki; now redirects to the support home page): https://support.rockstargames.com/articles/11966031291027/Grand-Theft-Auto-iFruit-App-Shutdown", url = "https://support.rockstargames.com/articles/11966031291027/Grand-Theft-Auto-iFruit-App-Shutdown", origin = "md:2247" }
+8-73 = { text = "Google Play listings via the Wayback Machine (captures of 2019-10-06): https://web.archive.org/web/20191006191518/https://play.google.com/store/apps/details?id=com.rockstargames.ifruit ; https://web.archive.org/web/20191006191435/https://play.google.com/store/apps/details?id=com.rockstargames.gtavmanual", url = "https://web.archive.org/web/20191006191518/https://play.google.com/store/apps/details?id=com.rockstargames.ifruit", origin = "md:2248" }
+8-74 = { text = "Softpedia (Mac) — \"Download Grand Theft Auto: iFruit 4.0 for iOS\" (2014-02-18): https://mac.softpedia.com/blog/Download-Grand-Theft-Auto-iFruit-IV-for-iOS-427686.shtml", url = "https://mac.softpedia.com/blog/Download-Grand-Theft-Auto-iFruit-IV-for-iOS-427686.shtml", origin = "md:2249" }
+8-75 = { text = "Rockstar Intel — \"Rockstar Games remove GTA V iFruit app from the iOS App Store and Google Play\" (updated for 2022-12-12): https://rockstarintel.com/rockstar-games-remove-gta-v-ifruit-app-from-the-ios-app-store-and-google-play/", url = "https://rockstarintel.com/rockstar-games-remove-gta-v-ifruit-app-from-the-ios-app-store-and-google-play/", origin = "md:2250" }
+8-76 = { text = "GameFAQs — *Grand Theft Auto: iFruit* release data (IOS / AND / WINM / VITA; read 2026-10-24): https://gamefaqs.gamespot.com/iphone/731769-grand-theft-auto-ifruit/data", url = "https://gamefaqs.gamespot.com/iphone/731769-grand-theft-auto-ifruit/data", origin = "md:2251" }
+11-37 = { text = "Beebom — \"GTA 5 Source Code Leaked Online; Confirms 8 Scrapped DLCs\" (26 Dec 2023): https://beebom.com/gta-5-source-code-leaked-online-scrapped-dlcs/", url = "https://beebom.com/gta-5-source-code-leaked-online-scrapped-dlcs/", origin = "md:3276" }
+11-38 = { text = "Insider Gaming — GTA 5 leak DLCs (Dec 2023): https://insider-gaming.com/gta-5-leak-dlcs", url = "https://insider-gaming.com/gta-5-leak-dlcs", origin = "md:3277" }
+11-39 = { text = "Yahoo Tech — \"Report: Hackers Leak GTA 5 Source Code Alongside GTA 6 and Bully 2 Content\" (26 Dec 2023): https://tech.yahoo.com/general/articles/report-hackers-leak-gta-5-132631195.html", url = "https://tech.yahoo.com/general/articles/report-hackers-leak-gta-5-132631195.html", origin = "md:3278" }
+11-40 = { text = "Wikipedia — \"Grand Theft Auto V\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:3279" }
+11-68 = { text = "Hidden Palace — GTA V build pages (MediaWiki API, read 2026-10-24): https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_16,_2022_build) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_13,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_3,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Leftover_Sep_30,_2020_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/cnh_devkit_leftovers_assets ; Xbox 360 DLC prototype pages listed in Section 8 source [66]", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype", origin = "md:3307" }

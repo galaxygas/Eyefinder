@@ -1,0 +1,3973 @@
+# Preserved retail disc and cartridge dumps (research appendix A)
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "A"
+origin = "md:3985"
+title = "Appendix A. Preserved Retail Disc & Cartridge Dumps (Redump / No-Intro)"
+games = ["series"]
+text = "This appendix lists every Grand Theft Auto entry found in the Redump (optical discs) and No-Intro (cartridges, digital/PSN/XBLA packages, title updates) preservation databases, as mirrored in the libretro-database repository on GitHub (snapshot cloned 2026-10-24) [A1][A2][A3]. Each row is one verified dump of a distinct retail release, revision or digital package; the dump name carries the database's own region, language and version/revision labels (e.g. `(v1.03)`, `(Rev 1)`, `(EDC)`). Multiple serials on one row mean the same disc image was found under several catalogue numbers (reprints such as Platinum/Greatest Hits, or ANZ/regional SKUs). Size is the total of all tracks/files in bytes; CRC32 is of the first track/file. ✅ for all rows: these are checksum-verified dumps."
+
+[[section]]
+id = "A.1"
+origin = "md:3989"
+title = "A.1 Microsoft - XBOX 360 (Title Updates) (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.2"
+origin = "md:4006"
+title = "A.2 Microsoft - Xbox 360 (Digital) (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.3"
+origin = "md:4021"
+title = "A.3 Microsoft - Xbox 360 (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.4"
+origin = "md:4066"
+title = "A.4 Nintendo - Game Boy Advance (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.5"
+origin = "md:4075"
+title = "A.5 Nintendo - Game Boy Color (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.6"
+origin = "md:4084"
+title = "A.6 Nintendo - Nintendo DS (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.7"
+origin = "md:4092"
+title = "A.7 Sony - PlayStation 3 (PSN) (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.8"
+origin = "md:4123"
+title = "A.8 Sony - PlayStation Portable (PSN) (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.9"
+origin = "md:4139"
+title = "A.9 Sony - PlayStation Portable (PSX2PSP) (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.10"
+origin = "md:4145"
+title = "A.10 Sony - PlayStation Portable (UMD Video) (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.11"
+origin = "md:4151"
+title = "A.11 Sony - PlayStation Portable (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.12"
+origin = "md:4173"
+title = "A.12 Sony - PlayStation Vita (PSN) (No-Intro)"
+games = ["series"]
+
+[[section]]
+id = "A.13"
+origin = "md:4180"
+title = "A.13 Microsoft - Xbox 360 (Redump)"
+games = ["series"]
+
+[[section]]
+id = "A.14"
+origin = "md:4198"
+title = "A.14 Microsoft - Xbox (Redump)"
+games = ["series"]
+
+[[section]]
+id = "A.15"
+origin = "md:4222"
+title = "A.15 Sega - Dreamcast (Redump)"
+games = ["series"]
+
+[[section]]
+id = "A.16"
+origin = "md:4230"
+title = "A.16 Sony - PlayStation 2 (Redump)"
+games = ["series"]
+
+[[section]]
+id = "A.17"
+origin = "md:4269"
+title = "A.17 Sony - PlayStation 3 (Redump)"
+games = ["series"]
+
+[[section]]
+id = "A.18"
+origin = "md:4293"
+title = "A.18 Sony - PlayStation Portable (Redump)"
+games = ["series"]
+
+[[section]]
+id = "A.19"
+origin = "md:4317"
+title = "A.19 Sony - PlayStation (Redump)"
+games = ["series"]
+
+[[section]]
+id = "A.20"
+origin = "md:4335"
+title = "A.20 GTA-related third-party cheat discs preserved in Redump (not Rockstar products)"
+games = ["series"]
+text = "Unlicensed cheat-code discs (Action Replay, GameShark, etc.) that were sold specifically for GTA games. Listed only so they are not mistaken for official builds."
+
+[[entry]]
+id = "A.1-1"
+origin = "md:3993"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (v5)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "3,784,704"
+"CRC32 (1st track)" = "BFD47E89"
+
+[[entry]]
+id = "A.1-2"
+origin = "md:3994"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan) (v3)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "3,289,088"
+"CRC32 (1st track)" = "ED0245B4"
+
+[[entry]]
+id = "A.1-3"
+origin = "md:3995"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan, Europe) (v4)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "3,547,136"
+"CRC32 (1st track)" = "8F6F2AA0"
+
+[[entry]]
+id = "A.1-4"
+origin = "md:3996"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan, Europe) (v5)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "3,596,288"
+"CRC32 (1st track)" = "18BA006A"
+
+[[entry]]
+id = "A.1-5"
+origin = "md:3997"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan, Europe) (v6)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "3,784,704"
+"CRC32 (1st track)" = "44444835"
+
+[[entry]]
+id = "A.1-6"
+origin = "md:3998"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan, Europe) (v7)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "3,727,360"
+"CRC32 (1st track)" = "3CCB4061"
+
+[[entry]]
+id = "A.1-7"
+origin = "md:3999"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan, USA) (v8)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "3,710,976"
+"CRC32 (1st track)" = "B6164727"
+
+[[entry]]
+id = "A.1-8"
+origin = "md:4000"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v4)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "3,596,288"
+"CRC32 (1st track)" = "661DF100"
+
+[[entry]]
+id = "A.1-9"
+origin = "md:4001"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v5)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "3,788,800"
+"CRC32 (1st track)" = "DBFEB7E9"
+
+[[entry]]
+id = "A.1-10"
+origin = "md:4002"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v6)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "3,727,360"
+"CRC32 (1st track)" = "1A814035"
+
+[[entry]]
+id = "A.1-11"
+origin = "md:4003"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (World) (v1)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "2,220,032"
+"CRC32 (1st track)" = "CBACEFE2"
+
+[[entry]]
+id = "A.1-12"
+origin = "md:4004"
+section = "A.1"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (World) (v8)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "2,342,912"
+"CRC32 (1st track)" = "B8F03292"
+
+[[entry]]
+id = "A.2-1"
+origin = "md:4010"
+section = "A.2"
+kind = "dump"
+games = ["gta4"]
+title = "GTA IV - Theme Pack (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "2,400,256"
+"CRC32 (1st track)" = "CBC88153"
+
+[[entry]]
+id = "A.2-2"
+origin = "md:4011"
+section = "A.2"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online Beach Bum (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "34,680,832"
+"CRC32 (1st track)" = "9EEAAD1A"
+
+[[entry]]
+id = "A.2-3"
+origin = "md:4012"
+section = "A.2"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online Festive Surprise (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "30,056,448"
+"CRC32 (1st track)" = "5D6F0F1F"
+
+[[entry]]
+id = "A.2-4"
+origin = "md:4013"
+section = "A.2"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The Business (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "60,100,608"
+"CRC32 (1st track)" = "FE1D4C0C"
+
+[[entry]]
+id = "A.2-5"
+origin = "md:4014"
+section = "A.2"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The High Life (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "203,857,920"
+"CRC32 (1st track)" = "3ED19238"
+
+[[entry]]
+id = "A.2-6"
+origin = "md:4015"
+section = "A.2"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The I'm Not a Hipster (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "55,271,424"
+"CRC32 (1st track)" = "1D41D106"
+
+[[entry]]
+id = "A.2-7"
+origin = "md:4016"
+section = "A.2"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The San Andreas Flight School (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "37,023,744"
+"CRC32 (1st track)" = "37B10ABA"
+
+[[entry]]
+id = "A.2-8"
+origin = "md:4017"
+section = "A.2"
+kind = "dump"
+games = ["tbogt"]
+title = "Grand Theft Auto IV - The Ballad of Gay Tony (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "2,011,172,864"
+"CRC32 (1st track)" = "E6F6DB1C"
+
+[[entry]]
+id = "A.2-9"
+origin = "md:4018"
+section = "A.2"
+kind = "dump"
+games = ["tlad"]
+title = "Grand Theft Auto IV - The Lost and Damned (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "1,915,875,328"
+"CRC32 (1st track)" = "B5CC04D3"
+
+[[entry]]
+id = "A.2-10"
+origin = "md:4019"
+section = "A.2"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - Collector's Edition Pack (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "57,344"
+"CRC32 (1st track)" = "47CBDF0A"
+
+[[entry]]
+id = "A.3-1"
+origin = "md:4025"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "GTA IV - Theme Pack (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "2,400,256"
+"CRC32 (1st track)" = "CBC88153"
+
+[[entry]]
+id = "A.3-2"
+origin = "md:4026"
+section = "A.3"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online Beach Bum (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "34,680,832"
+"CRC32 (1st track)" = "9EEAAD1A"
+
+[[entry]]
+id = "A.3-3"
+origin = "md:4027"
+section = "A.3"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online Festive Surprise (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "30,056,448"
+"CRC32 (1st track)" = "5D6F0F1F"
+
+[[entry]]
+id = "A.3-4"
+origin = "md:4028"
+section = "A.3"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The Business (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "60,100,608"
+"CRC32 (1st track)" = "FE1D4C0C"
+
+[[entry]]
+id = "A.3-5"
+origin = "md:4029"
+section = "A.3"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The High Life (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "203,857,920"
+"CRC32 (1st track)" = "3ED19238"
+
+[[entry]]
+id = "A.3-6"
+origin = "md:4030"
+section = "A.3"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The I'm Not a Hipster (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "55,271,424"
+"CRC32 (1st track)" = "1D41D106"
+
+[[entry]]
+id = "A.3-7"
+origin = "md:4031"
+section = "A.3"
+kind = "dump"
+games = ["gta-online"]
+title = "GTA Online The San Andreas Flight School (World) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "37,023,744"
+"CRC32 (1st track)" = "37B10ABA"
+
+[[entry]]
+id = "A.3-8"
+origin = "md:4032"
+section = "A.3"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (World) (v1)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "2,220,032"
+"CRC32 (1st track)" = "CBACEFE2"
+
+[[entry]]
+id = "A.3-9"
+origin = "md:4033"
+section = "A.3"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (World) (v8)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "2,342,912"
+"CRC32 (1st track)" = "B8F03292"
+
+[[entry]]
+id = "A.3-10"
+origin = "md:4034"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Australia) (v5)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "3,784,704"
+"CRC32 (1st track)" = "BFD47E89"
+
+[[entry]]
+id = "A.3-11"
+origin = "md:4035"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (v4)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "3,547,136"
+"CRC32 (1st track)" = "8F6F2AA0"
+
+[[entry]]
+id = "A.3-12"
+origin = "md:4036"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (v5)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "3,596,288"
+"CRC32 (1st track)" = "18BA006A"
+
+[[entry]]
+id = "A.3-13"
+origin = "md:4037"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (v6)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "3,784,704"
+"CRC32 (1st track)" = "44444835"
+
+[[entry]]
+id = "A.3-14"
+origin = "md:4038"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (v7)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "14"
+"Size (bytes)" = "3,727,360"
+"CRC32 (1st track)" = "3CCB4061"
+
+[[entry]]
+id = "A.3-15"
+origin = "md:4039"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (v8)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "15"
+"Size (bytes)" = "3,710,976"
+"CRC32 (1st track)" = "B6164727"
+
+[[entry]]
+id = "A.3-16"
+origin = "md:4040"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan) (v3)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "16"
+"Size (bytes)" = "3,289,088"
+"CRC32 (1st track)" = "ED0245B4"
+
+[[entry]]
+id = "A.3-17"
+origin = "md:4041"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v4)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "17"
+"Size (bytes)" = "3,596,288"
+"CRC32 (1st track)" = "661DF100"
+
+[[entry]]
+id = "A.3-18"
+origin = "md:4042"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v5)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "18"
+"Size (bytes)" = "3,788,800"
+"CRC32 (1st track)" = "DBFEB7E9"
+
+[[entry]]
+id = "A.3-19"
+origin = "md:4043"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v6)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "19"
+"Size (bytes)" = "3,727,360"
+"CRC32 (1st track)" = "1A814035"
+
+[[entry]]
+id = "A.3-20"
+origin = "md:4044"
+section = "A.3"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v8)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "20"
+"Size (bytes)" = "3,715,072"
+"CRC32 (1st track)" = "3E67FDC0"
+
+[[entry]]
+id = "A.3-21"
+origin = "md:4045"
+section = "A.3"
+kind = "dump"
+games = ["tbogt"]
+title = "Grand Theft Auto IV - The Ballad of Gay Tony (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "21"
+"Size (bytes)" = "2,011,172,864"
+"CRC32 (1st track)" = "E6F6DB1C"
+
+[[entry]]
+id = "A.3-22"
+origin = "md:4046"
+section = "A.3"
+kind = "dump"
+games = ["tlad"]
+title = "Grand Theft Auto IV - The Lost and Damned (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "22"
+"Size (bytes)" = "1,915,875,328"
+"CRC32 (1st track)" = "B5CC04D3"
+
+[[entry]]
+id = "A.3-23"
+origin = "md:4047"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (World) (545408A7) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "23"
+"Size (bytes)" = "274,432"
+"CRC32 (1st track)" = "311190BE"
+
+[[entry]]
+id = "A.3-24"
+origin = "md:4048"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (World) (v27)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "24"
+"Size (bytes)" = "131,493,888"
+"CRC32 (1st track)" = "0A71C81D"
+
+[[entry]]
+id = "A.3-25"
+origin = "md:4049"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (World) (v27) (Title Update)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "25"
+"Size (bytes)" = "131,493,888"
+"CRC32 (1st track)" = "0A71C81D"
+
+[[entry]]
+id = "A.3-26"
+origin = "md:4050"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - Collector's Edition Pack (World) (Addon)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "26"
+"Size (bytes)" = "57,344"
+"CRC32 (1st track)" = "47CBDF0A"
+
+[[entry]]
+id = "A.3-27"
+origin = "md:4051"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - Beach Bum Update (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "27"
+"Size (bytes)" = "34,680,832"
+"CRC32 (1st track)" = "83EE18D8"
+
+[[entry]]
+id = "A.3-28"
+origin = "md:4052"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - Festive Surprise (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "28"
+"Size (bytes)" = "30,056,448"
+"CRC32 (1st track)" = "516825F5"
+
+[[entry]]
+id = "A.3-29"
+origin = "md:4053"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - Heists (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "29"
+"Size (bytes)" = "1,146,179,584"
+"CRC32 (1st track)" = "AAA020AA"
+
+[[entry]]
+id = "A.3-30"
+origin = "md:4054"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - Holiday Gift (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "30"
+"Size (bytes)" = "3,108,864"
+"CRC32 (1st track)" = "9A39AFE5"
+
+[[entry]]
+id = "A.3-31"
+origin = "md:4055"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - Ill-Gotten Gains Update Part 1 (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "31"
+"Size (bytes)" = "39,620,608"
+"CRC32 (1st track)" = "F74A43B3"
+
+[[entry]]
+id = "A.3-32"
+origin = "md:4056"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - Ill-Gotten Gains Update Part 2 (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "32"
+"Size (bytes)" = "166,346,752"
+"CRC32 (1st track)" = "7946CAFD"
+
+[[entry]]
+id = "A.3-33"
+origin = "md:4057"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - MP Independence (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "33"
+"Size (bytes)" = "23,052,288"
+"CRC32 (1st track)" = "B9960FEE"
+
+[[entry]]
+id = "A.3-34"
+origin = "md:4058"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - The 'I'm Not a Hipster's Update (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "34"
+"Size (bytes)" = "55,271,424"
+"CRC32 (1st track)" = "8220E604"
+
+[[entry]]
+id = "A.3-35"
+origin = "md:4059"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - The Business Update (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "35"
+"Size (bytes)" = "60,100,608"
+"CRC32 (1st track)" = "33DFC7FA"
+
+[[entry]]
+id = "A.3-36"
+origin = "md:4060"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - The High Life Update (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "36"
+"Size (bytes)" = "203,857,920"
+"CRC32 (1st track)" = "9DDBC965"
+
+[[entry]]
+id = "A.3-37"
+origin = "md:4061"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - The Last Team Standing Update (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "37"
+"Size (bytes)" = "77,127,680"
+"CRC32 (1st track)" = "F306A586"
+
+[[entry]]
+id = "A.3-38"
+origin = "md:4062"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - The San Andreas Flight School Update (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "38"
+"Size (bytes)" = "37,023,744"
+"CRC32 (1st track)" = "CAE76564"
+
+[[entry]]
+id = "A.3-39"
+origin = "md:4063"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - GTA Online - The Valentines Day Massacre Special (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "39"
+"Size (bytes)" = "13,791,232"
+"CRC32 (1st track)" = "C485AA5B"
+
+[[entry]]
+id = "A.3-40"
+origin = "md:4064"
+section = "A.3"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V - Social Club - Game Save with 1.6% progress (World) (DLC)"
+platforms = ["x360"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "40"
+"Size (bytes)" = "327,680"
+"CRC32 (1st track)" = "A802AEC9"
+
+[[entry]]
+id = "A.4-1"
+origin = "md:4070"
+section = "A.4"
+kind = "dump"
+games = ["series"]
+title = "Advance GTA (Japan) (En)"
+platforms = ["gba"]
+id_text = "AG7J"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "8,388,608"
+"CRC32 (1st track)" = "FDC82E98"
+
+[[entry]]
+id = "A.4-2"
+origin = "md:4071"
+section = "A.4"
+kind = "dump"
+games = ["series"]
+title = "Advance GTA (Japan) (En) (Rev 1)"
+platforms = ["gba"]
+id_text = "AG7J"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "8,388,608"
+"CRC32 (1st track)" = "FCA59484"
+
+[[entry]]
+id = "A.4-3"
+origin = "md:4072"
+section = "A.4"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (Europe) (En,Fr,De,Es,It)"
+platforms = ["gba"]
+id_text = "BGTP"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "16,777,216"
+"CRC32 (1st track)" = "4189E07F"
+
+[[entry]]
+id = "A.4-4"
+origin = "md:4073"
+section = "A.4"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (USA)"
+platforms = ["gba"]
+id_text = "BGTE"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "16,777,216"
+"CRC32 (1st track)" = "1FA131E8"
+
+[[entry]]
+id = "A.5-1"
+origin = "md:4079"
+section = "A.5"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (Europe) (En,Fr,De,Es,It) (GB Compatible)"
+platforms = ["gbc"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "4,194,304"
+"CRC32 (1st track)" = "25BA9231"
+
+[[entry]]
+id = "A.5-2"
+origin = "md:4080"
+section = "A.5"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (USA) (GB Compatible)"
+platforms = ["gbc"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "4,194,304"
+"CRC32 (1st track)" = "924DE366"
+
+[[entry]]
+id = "A.5-3"
+origin = "md:4081"
+section = "A.5"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It)"
+platforms = ["gbc"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "2,097,152"
+"CRC32 (1st track)" = "AD563BD9"
+
+[[entry]]
+id = "A.5-4"
+origin = "md:4082"
+section = "A.5"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (USA)"
+platforms = ["gbc"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "2,097,152"
+"CRC32 (1st track)" = "68610203"
+
+[[entry]]
+id = "A.6-1"
+origin = "md:4088"
+section = "A.6"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It)"
+platforms = ["nds"]
+id_text = "YGXP"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "134,217,728"
+"CRC32 (1st track)" = "19936579"
+
+[[entry]]
+id = "A.6-2"
+origin = "md:4089"
+section = "A.6"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Japan)"
+platforms = ["nds"]
+id_text = "YGXJ"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "134,217,728"
+"CRC32 (1st track)" = "A41E4AA8"
+
+[[entry]]
+id = "A.6-3"
+origin = "md:4090"
+section = "A.6"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (USA) (En,Fr,De,Es,It)"
+platforms = ["nds"]
+id_text = "YGXE"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "134,217,728"
+"CRC32 (1st track)" = "CC50CF7E"
+
+[[entry]]
+id = "A.7-1"
+origin = "md:4096"
+section = "A.7"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (Europe) (v1.01)"
+platforms = ["ps3"]
+version = "1.01"
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "46DD32B5"
+
+[[entry]]
+id = "A.7-2"
+origin = "md:4097"
+section = "A.7"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (USA) (v1.01)"
+platforms = ["ps3"]
+version = "1.01"
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "D66F8C9D"
+
+[[entry]]
+id = "A.7-3"
+origin = "md:4098"
+section = "A.7"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "1150E760"
+
+[[entry]]
+id = "A.7-4"
+origin = "md:4099"
+section = "A.7"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "4,017,996,224"
+"CRC32 (1st track)" = "83DF4525"
+
+[[entry]]
+id = "A.7-5"
+origin = "md:4100"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Europe)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "2,220,121,744"
+"CRC32 (1st track)" = "D6328B6F"
+
+[[entry]]
+id = "A.7-6"
+origin = "md:4101"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Europe) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "D2E9D2E1"
+
+[[entry]]
+id = "A.7-7"
+origin = "md:4102"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (France) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "4,548,981,632"
+"CRC32 (1st track)" = "E6F0230E"
+
+[[entry]]
+id = "A.7-8"
+origin = "md:4103"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Germany) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "4,526,901,280"
+"CRC32 (1st track)" = "8579ABB3"
+
+[[entry]]
+id = "A.7-9"
+origin = "md:4104"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Italy) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "0029FE7B"
+
+[[entry]]
+id = "A.7-10"
+origin = "md:4105"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "6C1441AC"
+
+[[entry]]
+id = "A.7-11"
+origin = "md:4106"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "4C0C4C3C"
+
+[[entry]]
+id = "A.7-12"
+origin = "md:4107"
+section = "A.7"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas - USK Version (Germany) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "932A5408"
+
+[[entry]]
+id = "A.7-13"
+origin = "md:4108"
+section = "A.7"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Australia) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "4,598,388,992"
+"CRC32 (1st track)" = "BE990385"
+
+[[entry]]
+id = "A.7-14"
+origin = "md:4109"
+section = "A.7"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Europe) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "14"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "09E6960B"
+
+[[entry]]
+id = "A.7-15"
+origin = "md:4110"
+section = "A.7"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (USA) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "15"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "D7A6FD4F"
+
+[[entry]]
+id = "A.7-16"
+origin = "md:4111"
+section = "A.7"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Europe) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "16"
+"Size (bytes)" = "4,168,019,584"
+"CRC32 (1st track)" = "50CC6CE0"
+
+[[entry]]
+id = "A.7-17"
+origin = "md:4112"
+section = "A.7"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (USA) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "17"
+"Size (bytes)" = "4,180,448,176"
+"CRC32 (1st track)" = "83759D81"
+
+[[entry]]
+id = "A.7-18"
+origin = "md:4113"
+section = "A.7"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Australia) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "18"
+"Size (bytes)" = "4,727,512,784"
+"CRC32 (1st track)" = "55CAA6C8"
+
+[[entry]]
+id = "A.7-19"
+origin = "md:4114"
+section = "A.7"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Germany) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "19"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "3AA52D17"
+
+[[entry]]
+id = "A.7-20"
+origin = "md:4115"
+section = "A.7"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (USA) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "20"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "DDEE24F5"
+
+[[entry]]
+id = "A.7-21"
+origin = "md:4116"
+section = "A.7"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (United Kingdom) (PS2 Classics)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "21"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "FC36806F"
+
+[[entry]]
+id = "A.7-22"
+origin = "md:4117"
+section = "A.7"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (v2.00)"
+platforms = ["ps3"]
+version = "2.00"
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "22"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "1FA1889A"
+
+[[entry]]
+id = "A.7-23"
+origin = "md:4118"
+section = "A.7"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v1.00)"
+platforms = ["ps3"]
+version = "1.00"
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "23"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "399B7551"
+
+[[entry]]
+id = "A.7-24"
+origin = "md:4119"
+section = "A.7"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (v2.01)"
+platforms = ["ps3"]
+version = "2.01"
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "24"
+"Size (bytes)" = "10,920,240,400"
+"CRC32 (1st track)" = "4A8BBDD1"
+
+[[entry]]
+id = "A.7-25"
+origin = "md:4120"
+section = "A.7"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Europe)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "25"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "81B32037"
+
+[[entry]]
+id = "A.7-26"
+origin = "md:4121"
+section = "A.7"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (USA)"
+platforms = ["ps3"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "26"
+"Size (bytes)" = "16"
+"CRC32 (1st track)" = "5D304AC3"
+
+[[entry]]
+id = "A.8-1"
+origin = "md:4127"
+section = "A.8"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Europe)"
+platforms = ["psp"]
+id_text = "EP1004-ULES01347_00-GPCGRANDTH000001"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "904,232,960"
+"CRC32 (1st track)" = "636E65DA"
+
+[[entry]]
+id = "A.8-2"
+origin = "md:4128"
+section = "A.8"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Japan)"
+platforms = ["psp"]
+id_text = "JP0230-NPJH00138_00-0000000000000000"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "883,654,656"
+"CRC32 (1st track)" = "46DFD73D"
+
+[[entry]]
+id = "A.8-3"
+origin = "md:4129"
+section = "A.8"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (USA) (En,Fr,De,Es,It)"
+platforms = ["psp"]
+id_text = "UP1004-ULUS10490_00-RCKCHINATOWNWARS"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "904,298,496"
+"CRC32 (1st track)" = "58EC4310"
+
+[[entry]]
+id = "A.8-4"
+origin = "md:4130"
+section = "A.8"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (v1.00)"
+platforms = ["psp"]
+version = "1.00"
+id_text = "EP1004-ULES00151_00-GPCGRANDTH000001"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "14CE767C"
+
+[[entry]]
+id = "A.8-5"
+origin = "md:4131"
+section = "A.8"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (v4.00)"
+platforms = ["psp"]
+version = "4.00"
+id_text = "EP1004-ULES00151_00-GPCGRANDTH000001"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "1,250,000,896"
+"CRC32 (1st track)" = "29A1F96B"
+
+[[entry]]
+id = "A.8-6"
+origin = "md:4132"
+section = "A.8"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Germany)"
+platforms = ["psp"]
+id_text = "EP1004-ULES00182_00-GPCGRANDTH000002"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "BD71BBD2"
+
+[[entry]]
+id = "A.8-7"
+origin = "md:4133"
+section = "A.8"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (v1.01)"
+platforms = ["psp"]
+version = "1.01"
+id_text = "UP1004-ULUS10041_00-GTALIBERTYCITY00"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "C5576146"
+
+[[entry]]
+id = "A.8-8"
+origin = "md:4134"
+section = "A.8"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (v4.00)"
+platforms = ["psp"]
+version = "4.00"
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "1,250,000,896"
+"CRC32 (1st track)" = "61A8AC3E"
+
+[[entry]]
+id = "A.8-9"
+origin = "md:4135"
+section = "A.8"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Europe)"
+platforms = ["psp"]
+id_text = "EP1004-ULES00502_00-GPCGRANDTH000001"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "2D2D9693"
+
+[[entry]]
+id = "A.8-10"
+origin = "md:4136"
+section = "A.8"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Germany)"
+platforms = ["psp"]
+id_text = "EP1004-ULES00503_00-GPCGRANDTH000002"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "25B2B096"
+
+[[entry]]
+id = "A.8-11"
+origin = "md:4137"
+section = "A.8"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (USA)"
+platforms = ["psp"]
+id_text = "UP1004-ULUS10160_00-GTAVICECITYST000"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "6E62F716"
+
+[[entry]]
+id = "A.9-1"
+origin = "md:4143"
+section = "A.9"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (USA) (Unl)"
+platforms = ["psp"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "717,012,641"
+"CRC32 (1st track)" = "CD9BC7F2"
+
+[[entry]]
+id = "A.10-1"
+origin = "md:4149"
+section = "A.10"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (Europe)"
+platforms = ["psp"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "1,624,670,208"
+"CRC32 (1st track)" = "1DD191E9"
+
+[[entry]]
+id = "A.11-1"
+origin = "md:4155"
+section = "A.11"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It) (v1.01)"
+platforms = ["psp"]
+version = "1.01"
+serials = ["ULES-01347"]
+id_text = "ULES-01347"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "904,232,960"
+"CRC32 (1st track)" = "3EA726F3"
+
+[[entry]]
+id = "A.11-2"
+origin = "md:4156"
+section = "A.11"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Japan) (v1.01)"
+platforms = ["psp"]
+version = "1.01"
+serials = ["ULJM-05604"]
+id_text = "ULJM-05604"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "883,654,656"
+"CRC32 (1st track)" = "6BFA2786"
+
+[[entry]]
+id = "A.11-3"
+origin = "md:4157"
+section = "A.11"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (USA) (v1.01)"
+platforms = ["psp"]
+version = "1.01"
+serials = ["ULUS-10490"]
+id_text = "ULUS-10490"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "904,298,496"
+"CRC32 (1st track)" = "B9858E32"
+
+[[entry]]
+id = "A.11-4"
+origin = "md:4158"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v1.05)"
+platforms = ["psp"]
+version = "1.05"
+serials = ["ULES-00151"]
+id_text = "ULES-00151"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "2ABCB3A6"
+
+[[entry]]
+id = "A.11-5"
+origin = "md:4159"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v2.00)"
+platforms = ["psp"]
+version = "2.00"
+serials = ["ULES-00151"]
+id_text = "ULES-00151"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "824B2938"
+
+[[entry]]
+id = "A.11-6"
+origin = "md:4160"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v3.00)"
+platforms = ["psp"]
+version = "3.00"
+serials = ["ULES-00151"]
+id_text = "ULES-00151"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "7A884C02"
+
+[[entry]]
+id = "A.11-7"
+origin = "md:4161"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Germany)"
+platforms = ["psp"]
+serials = ["ULES-00182"]
+id_text = "ULES-00182"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "7EE89C69"
+
+[[entry]]
+id = "A.11-8"
+origin = "md:4162"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Germany) (v2.00)"
+platforms = ["psp"]
+version = "2.00"
+serials = ["ULES-00182"]
+id_text = "ULES-00182"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "D0A1C0F5"
+
+[[entry]]
+id = "A.11-9"
+origin = "md:4163"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Japan) (Rockstar Classics)"
+platforms = ["psp"]
+serials = ["ULJM-05885"]
+id_text = "ULJM-05885"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "1,320,943,616"
+"CRC32 (1st track)" = "0C2E4159"
+
+[[entry]]
+id = "A.11-10"
+origin = "md:4164"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Japan) (v1.01)"
+platforms = ["psp"]
+version = "1.01"
+serials = ["ULJM-05255"]
+id_text = "ULJM-05255"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "1,320,943,616"
+"CRC32 (1st track)" = "EBF2E5F0"
+
+[[entry]]
+id = "A.11-11"
+origin = "md:4165"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (En,Fr,De,Es,It) (v1.05)"
+platforms = ["psp"]
+version = "1.05"
+serials = ["ULUS-10041"]
+id_text = "ULUS-10041"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "87E2772E"
+
+[[entry]]
+id = "A.11-12"
+origin = "md:4166"
+section = "A.11"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (En,Fr,De,Es,It) (v3.00)"
+platforms = ["psp"]
+version = "3.00"
+serials = ["ULUS-10041"]
+id_text = "ULUS-10041"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "B78703CC"
+
+[[entry]]
+id = "A.11-13"
+origin = "md:4167"
+section = "A.11"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Europe) (En,Fr,De,Es,It) (v1.02)"
+platforms = ["psp"]
+version = "1.02"
+serials = ["ULES-00502"]
+id_text = "ULES-00502"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "B44AC795"
+
+[[entry]]
+id = "A.11-14"
+origin = "md:4168"
+section = "A.11"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Germany) (v1.02)"
+platforms = ["psp"]
+version = "1.02"
+serials = ["ULES-00503"]
+id_text = "ULES-00503"
+[entry.fields]
+"#" = "14"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "BCD5E190"
+
+[[entry]]
+id = "A.11-15"
+origin = "md:4169"
+section = "A.11"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Japan) (Rockstar Classics)"
+platforms = ["psp"]
+serials = ["ULJM-05884"]
+id_text = "ULJM-05884"
+[entry.fields]
+"#" = "15"
+"Size (bytes)" = "1,750,794,240"
+"CRC32 (1st track)" = "11C768BB"
+
+[[entry]]
+id = "A.11-16"
+origin = "md:4170"
+section = "A.11"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Japan) (v1.01)"
+platforms = ["psp"]
+version = "1.01"
+serials = ["ULJM-05297"]
+id_text = "ULJM-05297"
+[entry.fields]
+"#" = "16"
+"Size (bytes)" = "1,750,794,240"
+"CRC32 (1st track)" = "B01F3CB4"
+
+[[entry]]
+id = "A.11-17"
+origin = "md:4171"
+section = "A.11"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (USA) (v1.03)"
+platforms = ["psp"]
+version = "1.03"
+serials = ["ULUS-10160"]
+id_text = "ULUS-10160"
+[entry.fields]
+"#" = "17"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "F705A610"
+
+[[entry]]
+id = "A.12-1"
+origin = "md:4177"
+section = "A.12"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto - iFruit (Europe)"
+platforms = ["vita"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "512"
+"CRC32 (1st track)" = "206B99C0"
+
+[[entry]]
+id = "A.12-2"
+origin = "md:4178"
+section = "A.12"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto - iFruit (USA) (En,Fr,Es,Pt)"
+platforms = ["vita"]
+id_text = "not listed in DAT"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "512"
+"CRC32 (1st track)" = "40F5B867"
+
+[[entry]]
+id = "A.13-1"
+origin = "md:4184"
+section = "A.13"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (Japan)"
+platforms = ["x360"]
+serials = ["TT-2034"]
+id_text = "TT-2034"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "7,838,695,424"
+"CRC32 (1st track)" = "29C23BA7"
+
+[[entry]]
+id = "A.13-2"
+origin = "md:4185"
+section = "A.13"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (World) (En,Fr,De,Es,It)"
+platforms = ["x360"]
+serials = ["TT-2034"]
+id_text = "TT-2034"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "7,838,695,424"
+"CRC32 (1st track)" = "7045DCF1"
+
+[[entry]]
+id = "A.13-3"
+origin = "md:4186"
+section = "A.13"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA, Europe) (En,Ja,Fr,De,Es,It,Ru)"
+platforms = ["x360"]
+serials = ["TT-2232"]
+id_text = "TT-2232"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "7,838,695,424"
+"CRC32 (1st track)" = "F8B79CA5"
+
+[[entry]]
+id = "A.13-4"
+origin = "md:4187"
+section = "A.13"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Australia) (En,Fr,De,Es,It)"
+platforms = ["x360"]
+serials = ["TT-2034"]
+id_text = "TT-2034"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "7,835,492,352"
+"CRC32 (1st track)" = "7E0FC6BF"
+
+[[entry]]
+id = "A.13-5"
+origin = "md:4188"
+section = "A.13"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe, Asia) (En,Fr,De,Es,It)"
+platforms = ["x360"]
+serials = ["TT-2034"]
+id_text = "TT-2034"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "7,835,492,352"
+"CRC32 (1st track)" = "1EF875E2"
+
+[[entry]]
+id = "A.13-6"
+origin = "md:4189"
+section = "A.13"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan)"
+platforms = ["x360"]
+serials = ["TT-2034"]
+id_text = "TT-2034"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "7,835,492,352"
+"CRC32 (1st track)" = "FBE8AE67"
+
+[[entry]]
+id = "A.13-7"
+origin = "md:4190"
+section = "A.13"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (En,Fr,De,Es,It)"
+platforms = ["x360"]
+serials = ["TT-2034"]
+id_text = "TT-2034"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "7,835,492,352"
+"CRC32 (1st track)" = "0A7D0E28"
+
+[[entry]]
+id = "A.13-8"
+origin = "md:4191"
+section = "A.13"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Japan) (En,Ja) (Disc 1) (Install)"
+platforms = ["x360"]
+serials = ["TT-2215"]
+id_text = "TT-2215, TT-2215-0"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "8,738,846,720"
+"CRC32 (1st track)" = "75AB424A"
+
+[[entry]]
+id = "A.13-9"
+origin = "md:4192"
+section = "A.13"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Japan) (En,Ja) (Disc 1) (Install) (Rev 1)"
+platforms = ["x360"]
+serials = ["TT-2215"]
+id_text = "TT-2215, TT-2215-0"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "8,738,846,720"
+"CRC32 (1st track)" = "039D062B"
+
+[[entry]]
+id = "A.13-10"
+origin = "md:4193"
+section = "A.13"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Japan) (En,Ja) (Disc 2) (Play)"
+platforms = ["x360"]
+serials = ["TT-2215"]
+id_text = "TT-2215, TT-2215-1"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "8,738,846,720"
+"CRC32 (1st track)" = "C31D0708"
+
+[[entry]]
+id = "A.13-11"
+origin = "md:4194"
+section = "A.13"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Japan) (En,Ja) (Disc 2) (Play) (Rev 1)"
+platforms = ["x360"]
+serials = ["TT-2215"]
+id_text = "TT-2215, TT-2215-1"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "8,738,846,720"
+"CRC32 (1st track)" = "7AFCE240"
+
+[[entry]]
+id = "A.13-12"
+origin = "md:4195"
+section = "A.13"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (World) (En,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Disc 1) (Install)"
+platforms = ["x360"]
+serials = ["TT-2215"]
+id_text = "TT-2215, TT-2215-0"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "8,738,846,720"
+"CRC32 (1st track)" = "8F488BD7"
+
+[[entry]]
+id = "A.13-13"
+origin = "md:4196"
+section = "A.13"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (World) (En,Fr,De,Es,It,Pt,Zh,Ko,Pl,Ru) (Disc 2) (Play)"
+platforms = ["x360"]
+serials = ["TT-2215"]
+id_text = "TT-2215, TT-2215-1"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "8,738,846,720"
+"CRC32 (1st track)" = "1C22B797"
+
+[[entry]]
+id = "A.14-1"
+origin = "md:4202"
+section = "A.14"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It)"
+platforms = ["xbox"]
+serials = ["TT-134"]
+id_text = "TT-134"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "91A884F1"
+
+[[entry]]
+id = "A.14-2"
+origin = "md:4203"
+section = "A.14"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It) (Rev 1)"
+platforms = ["xbox"]
+serials = ["TT-164"]
+id_text = "TT-164"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "5EC3253B"
+
+[[entry]]
+id = "A.14-3"
+origin = "md:4204"
+section = "A.14"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Germany) (En,De)"
+platforms = ["xbox"]
+serials = ["TT-149"]
+id_text = "TT-149"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "E951D1A9"
+
+[[entry]]
+id = "A.14-4"
+origin = "md:4205"
+section = "A.14"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Germany) (Rev 1)"
+platforms = ["xbox"]
+serials = ["TT-165"]
+id_text = "TT-165"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "EB73734C"
+
+[[entry]]
+id = "A.14-5"
+origin = "md:4206"
+section = "A.14"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA) (En,Es)"
+platforms = ["xbox"]
+serials = ["TT-130"]
+id_text = "TT-130"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "2378641A"
+
+[[entry]]
+id = "A.14-6"
+origin = "md:4207"
+section = "A.14"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA) (En,Es) (Rev 1)"
+platforms = ["xbox"]
+serials = ["TT-163"]
+id_text = "TT-163"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "DF7590E6"
+
+[[entry]]
+id = "A.14-7"
+origin = "md:4208"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Australia)"
+platforms = ["xbox"]
+serials = ["TT-015"]
+id_text = "TT-015"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "DB3DA117"
+
+[[entry]]
+id = "A.14-8"
+origin = "md:4209"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Australia) (Rev 1)"
+platforms = ["xbox"]
+serials = ["TT-115"]
+id_text = "TT-115"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "27A5FAA4"
+
+[[entry]]
+id = "A.14-9"
+origin = "md:4210"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Europe) (En,Fr,Es,It)"
+platforms = ["xbox"]
+serials = ["TT-015"]
+id_text = "TT-015"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "2D7CAFEF"
+
+[[entry]]
+id = "A.14-10"
+origin = "md:4211"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Europe) (En,Fr,Es,It) (Rev 1)"
+platforms = ["xbox"]
+serials = ["TT-115"]
+id_text = "TT-115"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "17401073"
+
+[[entry]]
+id = "A.14-11"
+origin = "md:4212"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Germany)"
+platforms = ["xbox"]
+serials = ["TT-015"]
+id_text = "TT-015"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "4E4D7ADC"
+
+[[entry]]
+id = "A.14-12"
+origin = "md:4213"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Japan)"
+platforms = ["xbox"]
+serials = ["TT-115"]
+id_text = "TT-115"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "DD14F681"
+
+[[entry]]
+id = "A.14-13"
+origin = "md:4214"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (USA)"
+platforms = ["xbox"]
+serials = ["TT-015"]
+id_text = "TT-015"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "34903733"
+
+[[entry]]
+id = "A.14-14"
+origin = "md:4215"
+section = "A.14"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (USA) (Rev 1)"
+platforms = ["xbox"]
+serials = ["TT-115"]
+id_text = "TT-115"
+[entry.fields]
+"#" = "14"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "47A47B2B"
+
+[[entry]]
+id = "A.14-15"
+origin = "md:4216"
+section = "A.14"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Australia)"
+platforms = ["xbox"]
+serials = ["TT-014"]
+id_text = "TT-014"
+[entry.fields]
+"#" = "15"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "A5BDBA0F"
+
+[[entry]]
+id = "A.14-16"
+origin = "md:4217"
+section = "A.14"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Europe) (En,Fr,De,Es,It)"
+platforms = ["xbox"]
+serials = ["TT-014"]
+id_text = "TT-014"
+[entry.fields]
+"#" = "16"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "06CA09D6"
+
+[[entry]]
+id = "A.14-17"
+origin = "md:4218"
+section = "A.14"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Germany)"
+platforms = ["xbox"]
+serials = ["TT-014"]
+id_text = "TT-014"
+[entry.fields]
+"#" = "17"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "E51907A9"
+
+[[entry]]
+id = "A.14-18"
+origin = "md:4219"
+section = "A.14"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Japan)"
+platforms = ["xbox"]
+serials = ["TT-014"]
+id_text = "TT-014"
+[entry.fields]
+"#" = "18"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "4A82182F"
+
+[[entry]]
+id = "A.14-19"
+origin = "md:4220"
+section = "A.14"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (USA)"
+platforms = ["xbox"]
+serials = ["TT-014"]
+id_text = "TT-014"
+[entry.fields]
+"#" = "19"
+"Size (bytes)" = "7,825,162,240"
+"CRC32 (1st track)" = "48205A94"
+
+[[entry]]
+id = "A.15-1"
+origin = "md:4226"
+section = "A.15"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It)"
+platforms = ["dc"]
+id_text = "T-40502D-18, T-40502D-61"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "745,845,072"
+"CRC32 (1st track)" = "7B50B52C"
+
+[[entry]]
+id = "A.15-2"
+origin = "md:4227"
+section = "A.15"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (France)"
+platforms = ["dc"]
+id_text = "T-40502D-09"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "1,185,760,800"
+"CRC32 (1st track)" = "F9F818A2"
+
+[[entry]]
+id = "A.15-3"
+origin = "md:4228"
+section = "A.15"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (USA)"
+platforms = ["dc"]
+id_text = "T-42102N"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "700,533,792"
+"CRC32 (1st track)" = "F215AEFC"
+
+[[entry]]
+id = "A.16-1"
+origin = "md:4234"
+section = "A.16"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe, Australia) (En,Fr,De,Es,It)"
+platforms = ["ps2"]
+serials = ["SLES-54135"]
+id_text = "SLES-54135, SLES-54135/ANZ, SLES-54135/P, SLES-54135/P-ANZ"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "4,012,277,760"
+"CRC32 (1st track)" = "F8A6C4DC"
+
+[[entry]]
+id = "A.16-2"
+origin = "md:4235"
+section = "A.16"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Germany) (En,De)"
+platforms = ["ps2"]
+serials = ["SLES-54136"]
+id_text = "SLES-54136"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "4,009,820,160"
+"CRC32 (1st track)" = "89FB68FB"
+
+[[entry]]
+id = "A.16-3"
+origin = "md:4236"
+section = "A.16"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Japan)"
+platforms = ["ps2"]
+serials = ["SLPM-55038", "SLPM-66851"]
+id_text = "SLPM-55038, SLPM-66851"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "1,870,233,600"
+"CRC32 (1st track)" = "06F5BE9C"
+
+[[entry]]
+id = "A.16-4"
+origin = "md:4237"
+section = "A.16"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA)"
+platforms = ["ps2"]
+serials = ["SLUS-21423"]
+id_text = "SLUS-21423, SLUS-21423P2"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "4,010,016,768"
+"CRC32 (1st track)" = "30784522"
+
+[[entry]]
+id = "A.16-5"
+origin = "md:4238"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Europe, Australia) (En,Fr,De,Es,It) (v1.03)"
+platforms = ["ps2"]
+version = "1.03"
+serials = ["SLES-52541"]
+id_text = "SLES-52541, SLES-52541-ANZ"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "4,502,913,024"
+"CRC32 (1st track)" = "412E2349"
+
+[[entry]]
+id = "A.16-6"
+origin = "md:4239"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Europe, Australia) (En,Fr,De,Es,It) (v2.01)"
+platforms = ["ps2"]
+version = "2.01"
+serials = ["SLES-52541"]
+id_text = "SLES-525413, SLES-52541-ANZ, SLES-52541-P, SLES-52541/ANZ-P"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "4,520,214,528"
+"CRC32 (1st track)" = "13A51F88"
+
+[[entry]]
+id = "A.16-7"
+origin = "md:4240"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Germany) (En,De) (v1.00)"
+platforms = ["ps2"]
+version = "1.00"
+serials = ["SLES-52927"]
+id_text = "SLES-52927"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "4,500,586,496"
+"CRC32 (1st track)" = "F876D6C7"
+
+[[entry]]
+id = "A.16-8"
+origin = "md:4241"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Germany) (En,De) (v2.01)"
+platforms = ["ps2"]
+version = "2.01"
+serials = ["SLES-52927"]
+id_text = "SLES-529273, SLES-52927-P"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "4,517,888,000"
+"CRC32 (1st track)" = "218461E5"
+
+[[entry]]
+id = "A.16-9"
+origin = "md:4242"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Japan)"
+platforms = ["ps2"]
+serials = ["SLPM-55092", "SLPM-65984", "SLPM-66788"]
+id_text = "SLPM-55092, SLPM-65984, SLPM-66788"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "4,495,507,456"
+"CRC32 (1st track)" = "E5542967"
+
+[[entry]]
+id = "A.16-10"
+origin = "md:4243"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Japan) (Rockstar Classics)"
+platforms = ["ps2"]
+serials = ["SLPM-55292"]
+id_text = "SLPM-55292"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "4,492,525,568"
+"CRC32 (1st track)" = "C99DFE12"
+
+[[entry]]
+id = "A.16-11"
+origin = "md:4244"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA) (v1.03)"
+platforms = ["ps2"]
+version = "1.03"
+serials = ["SLUS-20946"]
+id_text = "SLUS-20946"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "4,499,767,296"
+"CRC32 (1st track)" = "1C5E0EEE"
+
+[[entry]]
+id = "A.16-12"
+origin = "md:4245"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA) (v3.00) (Rev 1)"
+platforms = ["ps2"]
+version = "3.00"
+id_text = "SLUS-20946P3"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "4,501,209,088"
+"CRC32 (1st track)" = "D43D36D5"
+
+[[entry]]
+id = "A.16-13"
+origin = "md:4246"
+section = "A.16"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA, Canada) (v3.00)"
+platforms = ["ps2"]
+version = "3.00"
+serials = ["SLUS-20946"]
+id_text = "SLUS-20946, SLUS-20946GH, SLUS-20946P, SLUS-20946P3"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "4,517,036,032"
+"CRC32 (1st track)" = "F3884E41"
+
+[[entry]]
+id = "A.16-14"
+origin = "md:4247"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Australia)"
+platforms = ["ps2"]
+serials = ["SLES-51316"]
+id_text = "SLES-51316, SLES-51316-P"
+[entry.fields]
+"#" = "14"
+"Size (bytes)" = "4,670,455,808"
+"CRC32 (1st track)" = "91FFCC79"
+
+[[entry]]
+id = "A.16-15"
+origin = "md:4248"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (v1.50)"
+platforms = ["ps2"]
+version = "1.50"
+serials = ["SLES-51061"]
+id_text = "SLES-51061"
+[entry.fields]
+"#" = "15"
+"Size (bytes)" = "4,671,799,296"
+"CRC32 (1st track)" = "66C68FEB"
+
+[[entry]]
+id = "A.16-16"
+origin = "md:4249"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (v2.03)"
+platforms = ["ps2"]
+version = "2.03"
+serials = ["SLES-51061"]
+id_text = "SLES-51061, SLES-51061-P, SLES-51061-T"
+[entry.fields]
+"#" = "16"
+"Size (bytes)" = "4,661,805,056"
+"CRC32 (1st track)" = "5C222A03"
+
+[[entry]]
+id = "A.16-17"
+origin = "md:4250"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Europe) (En,Fr,De,Es,It) (v3.00)"
+platforms = ["ps2"]
+version = "3.00"
+serials = ["SLES-51061"]
+id_text = "SLES-510612, SLES-51061-P"
+[entry.fields]
+"#" = "17"
+"Size (bytes)" = "4,698,767,360"
+"CRC32 (1st track)" = "60DA431A"
+
+[[entry]]
+id = "A.16-18"
+origin = "md:4251"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Germany) (En,Fr,De,Es,It)"
+platforms = ["ps2"]
+serials = ["SLES-51595"]
+id_text = "SLES-51595-P, SLES-51595-T"
+[entry.fields]
+"#" = "18"
+"Size (bytes)" = "4,661,870,592"
+"CRC32 (1st track)" = "31DB9DFE"
+
+[[entry]]
+id = "A.16-19"
+origin = "md:4252"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Japan)"
+platforms = ["ps2"]
+serials = ["SLPM-65488", "SLPM-66034", "SLPM-66790"]
+id_text = "SLPM-65488, SLPM-66034, SLPM-66790"
+[entry.fields]
+"#" = "19"
+"Size (bytes)" = "4,698,767,360"
+"CRC32 (1st track)" = "EB12FCFA"
+
+[[entry]]
+id = "A.16-20"
+origin = "md:4253"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (Japan) (Rockstar Classics)"
+platforms = ["ps2"]
+serials = ["SLPM-55291"]
+id_text = "SLPM-55291"
+[entry.fields]
+"#" = "20"
+"Size (bytes)" = "4,695,523,328"
+"CRC32 (1st track)" = "7C4DD6F9"
+
+[[entry]]
+id = "A.16-21"
+origin = "md:4254"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (USA) (v1.40)"
+platforms = ["ps2"]
+version = "1.40"
+serials = ["SLUS-20552"]
+id_text = "SLUS-20552"
+[entry.fields]
+"#" = "21"
+"Size (bytes)" = "4,667,703,296"
+"CRC32 (1st track)" = "09DA2E43"
+
+[[entry]]
+id = "A.16-22"
+origin = "md:4255"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (USA) (v2.01)"
+platforms = ["ps2"]
+version = "2.01"
+serials = ["SLUS-20552"]
+id_text = "SLUS-20552, SLUS-20552GH"
+[entry.fields]
+"#" = "22"
+"Size (bytes)" = "4,657,774,592"
+"CRC32 (1st track)" = "B502D95E"
+
+[[entry]]
+id = "A.16-23"
+origin = "md:4256"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (USA) (v4.00)"
+platforms = ["ps2"]
+version = "4.00"
+id_text = "SLUS-20552P3"
+[entry.fields]
+"#" = "23"
+"Size (bytes)" = "3,837,526,016"
+"CRC32 (1st track)" = "B17BA0A2"
+
+[[entry]]
+id = "A.16-24"
+origin = "md:4257"
+section = "A.16"
+kind = "dump"
+games = ["vc"]
+title = "Grand Theft Auto - Vice City (USA, Canada) (v3.00)"
+platforms = ["ps2"]
+version = "3.00"
+id_text = "SLUS-20552GH, SLUS-20552P3"
+[entry.fields]
+"#" = "24"
+"Size (bytes)" = "4,698,767,360"
+"CRC32 (1st track)" = "7D2BFCF4"
+
+[[entry]]
+id = "A.16-25"
+origin = "md:4258"
+section = "A.16"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Europe, Australia) (En,Fr,De,Es,It)"
+platforms = ["ps2"]
+serials = ["SLES-54622"]
+id_text = "SLES-54622, SLES-54622/P, SLES-54622/P-ANZ"
+[entry.fields]
+"#" = "25"
+"Size (bytes)" = "4,140,335,104"
+"CRC32 (1st track)" = "C1A2E7E6"
+
+[[entry]]
+id = "A.16-26"
+origin = "md:4259"
+section = "A.16"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Germany) (En,De)"
+platforms = ["ps2"]
+serials = ["SLES-54623"]
+id_text = "SLES-54623, SLES-54623/P"
+[entry.fields]
+"#" = "26"
+"Size (bytes)" = "4,137,648,128"
+"CRC32 (1st track)" = "456B2D6D"
+
+[[entry]]
+id = "A.16-27"
+origin = "md:4260"
+section = "A.16"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Japan)"
+platforms = ["ps2"]
+serials = ["SLPM-55135", "SLPM-66917"]
+id_text = "SLPM-55135, SLPM-66917"
+[entry.fields]
+"#" = "27"
+"Size (bytes)" = "2,219,933,696"
+"CRC32 (1st track)" = "D11E993E"
+
+[[entry]]
+id = "A.16-28"
+origin = "md:4261"
+section = "A.16"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (USA)"
+platforms = ["ps2"]
+serials = ["SLUS-21590"]
+id_text = "SLUS-21590, SLUS-21590P2"
+[entry.fields]
+"#" = "28"
+"Size (bytes)" = "4,149,182,464"
+"CRC32 (1st track)" = "69C1139C"
+
+[[entry]]
+id = "A.16-29"
+origin = "md:4262"
+section = "A.16"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Australia) (En,Fr,De,Es,It)"
+platforms = ["ps2"]
+serials = ["SLES-50793"]
+id_text = "SLES-50793, SLES-50793-P"
+[entry.fields]
+"#" = "29"
+"Size (bytes)" = "4,698,767,360"
+"CRC32 (1st track)" = "11D25D47"
+
+[[entry]]
+id = "A.16-30"
+origin = "md:4263"
+section = "A.16"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Europe) (En,Fr,De,Es,It) (v1.40)"
+platforms = ["ps2"]
+version = "1.40"
+serials = ["SLES-50330"]
+id_text = "SLES-50330, SLES-50330/EURO"
+[entry.fields]
+"#" = "30"
+"Size (bytes)" = "4,698,767,360"
+"CRC32 (1st track)" = "B76D10AF"
+
+[[entry]]
+id = "A.16-31"
+origin = "md:4264"
+section = "A.16"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Europe, Australia) (En,Fr,De,Es,It) (v1.60)"
+platforms = ["ps2"]
+version = "1.60"
+serials = ["SLES-50330"]
+id_text = "SLES-50330, SLES-503302, SLES-50330-P, SLES-50330-T, SLES-50330/EURO, SLES-50330/UK"
+[entry.fields]
+"#" = "31"
+"Size (bytes)" = "4,698,767,360"
+"CRC32 (1st track)" = "1582E336"
+
+[[entry]]
+id = "A.16-32"
+origin = "md:4265"
+section = "A.16"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Japan)"
+platforms = ["ps2"]
+serials = ["SLPM-65382", "SLPM-65760", "SLPM-66789"]
+id_text = "SLPM-65382, SLPM-65760, SLPM-66789"
+[entry.fields]
+"#" = "32"
+"Size (bytes)" = "4,698,767,360"
+"CRC32 (1st track)" = "E8479164"
+
+[[entry]]
+id = "A.16-33"
+origin = "md:4266"
+section = "A.16"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (Japan) (Rockstar Classics)"
+platforms = ["ps2"]
+serials = ["SLPM-55293"]
+id_text = "SLPM-55293"
+[entry.fields]
+"#" = "33"
+"Size (bytes)" = "4,693,688,320"
+"CRC32 (1st track)" = "F72B5A31"
+
+[[entry]]
+id = "A.16-34"
+origin = "md:4267"
+section = "A.16"
+kind = "dump"
+games = ["gta3"]
+title = "Grand Theft Auto III (USA, Canada)"
+platforms = ["ps2"]
+serials = ["SLUS-20062"]
+id_text = "SLUS-20062, SLUS-20062GH, SLUS-20062P3"
+[entry.fields]
+"#" = "34"
+"Size (bytes)" = "4,640,997,376"
+"CRC32 (1st track)" = "431C2B33"
+
+[[entry]]
+id = "A.17-1"
+origin = "md:4273"
+section = "A.17"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (Asia) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLAS-50197"]
+id_text = "BLAS-50197"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "7,991,132,160"
+"CRC32 (1st track)" = "BB970EF8"
+
+[[entry]]
+id = "A.17-2"
+origin = "md:4274"
+section = "A.17"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (Europe, Australia) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLES-00887"]
+id_text = "BLES-00887, BLES-00887/ANZ"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "8,651,341,824"
+"CRC32 (1st track)" = "75B2AF4D"
+
+[[entry]]
+id = "A.17-3"
+origin = "md:4275"
+section = "A.17"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (Japan)"
+platforms = ["ps3"]
+serials = ["BLJM-60235", "BLJM-60459"]
+id_text = "BLJM-60235, BLJM-60459"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "7,943,356,416"
+"CRC32 (1st track)" = "94126729"
+
+[[entry]]
+id = "A.17-4"
+origin = "md:4276"
+section = "A.17"
+kind = "dump"
+games = ["eflc"]
+title = "Grand Theft Auto - Episodes from Liberty City (USA) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLUS-30524"]
+id_text = "BLUS-30524, BLUS-30524GH"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "7,991,132,160"
+"CRC32 (1st track)" = "53DBE74F"
+
+[[entry]]
+id = "A.17-5"
+origin = "md:4277"
+section = "A.17"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Europe) (En,Fr,De,Es,It,Ru)"
+platforms = ["ps3"]
+serials = ["BLES-02219"]
+id_text = "BLES-02219"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "2,489,647,104"
+"CRC32 (1st track)" = "2EDA26B0"
+
+[[entry]]
+id = "A.17-6"
+origin = "md:4278"
+section = "A.17"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (Japan)"
+platforms = ["ps3"]
+serials = ["BLJM-61327"]
+id_text = "BLJM-61327"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "2,489,647,104"
+"CRC32 (1st track)" = "127DC0FF"
+
+[[entry]]
+id = "A.17-7"
+origin = "md:4279"
+section = "A.17"
+kind = "dump"
+games = ["sa"]
+title = "Grand Theft Auto - San Andreas (USA) (En,Fr,De,Es,It,Ru)"
+platforms = ["ps3"]
+serials = ["BLUS-31584"]
+id_text = "BLUS-31584"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "2,489,647,104"
+"CRC32 (1st track)" = "8B71771B"
+
+[[entry]]
+id = "A.17-8"
+origin = "md:4280"
+section = "A.17"
+kind = "dump"
+games = ["gta4", "eflc"]
+title = "Grand Theft Auto IV & Episodes from Liberty City (Europe) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLES-01128"]
+id_text = "BLES-01128"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "19,656,146,944"
+"CRC32 (1st track)" = "EE150E83"
+
+[[entry]]
+id = "A.17-9"
+origin = "md:4281"
+section = "A.17"
+kind = "dump"
+games = ["gta4", "eflc"]
+title = "Grand Theft Auto IV & Episodes from Liberty City (Japan)"
+platforms = ["ps3"]
+serials = ["BLJM-60346"]
+id_text = "BLJM-60346"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "18,926,075,904"
+"CRC32 (1st track)" = "7A315B45"
+
+[[entry]]
+id = "A.17-10"
+origin = "md:4282"
+section = "A.17"
+kind = "dump"
+games = ["gta4", "eflc"]
+title = "Grand Theft Auto IV & Episodes from Liberty City (USA, Asia) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLAS-50284", "BLUS-30682"]
+id_text = "BLAS-50284, BLUS-30682, BLUS-30682GH"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "18,995,871,744"
+"CRC32 (1st track)" = "66F4A53D"
+
+[[entry]]
+id = "A.17-11"
+origin = "md:4283"
+section = "A.17"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Australia) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLES-00258"]
+id_text = "BLES-00258"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "11,287,068,672"
+"CRC32 (1st track)" = "2BE1DBFD"
+
+[[entry]]
+id = "A.17-12"
+origin = "md:4284"
+section = "A.17"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Europe) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLES-00229"]
+id_text = "BLES-00229, BLES-00229/P"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "11,287,068,672"
+"CRC32 (1st track)" = "016113C2"
+
+[[entry]]
+id = "A.17-13"
+origin = "md:4285"
+section = "A.17"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Japan)"
+platforms = ["ps3"]
+serials = ["BLJM-55011", "BLJM-60093"]
+id_text = "BLJM-55011, BLJM-60093"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "11,265,376,256"
+"CRC32 (1st track)" = "360F431E"
+
+[[entry]]
+id = "A.17-14"
+origin = "md:4286"
+section = "A.17"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (Korea) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLKS-20073"]
+id_text = "BLKS-20073"
+[entry.fields]
+"#" = "14"
+"Size (bytes)" = "11,287,068,672"
+"CRC32 (1st track)" = "2A45AEBD"
+
+[[entry]]
+id = "A.17-15"
+origin = "md:4287"
+section = "A.17"
+kind = "dump"
+games = ["gta4"]
+title = "Grand Theft Auto IV (USA) (En,Fr,De,Es,It)"
+platforms = ["ps3"]
+serials = ["BLUS-30127"]
+id_text = "BLUS-30127"
+[entry.fields]
+"#" = "15"
+"Size (bytes)" = "11,287,068,672"
+"CRC32 (1st track)" = "9DBF4B81"
+
+[[entry]]
+id = "A.17-16"
+origin = "md:4288"
+section = "A.17"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Europe, Australia) (En,Fr,De,Es,It,Pt,Pl,Ru)"
+platforms = ["ps3"]
+serials = ["BLES-01807"]
+id_text = "BLES-01807, BLES-01807/ANZ"
+[entry.fields]
+"#" = "16"
+"Size (bytes)" = "18,738,184,192"
+"CRC32 (1st track)" = "5ACCBB3D"
+
+[[entry]]
+id = "A.17-17"
+origin = "md:4289"
+section = "A.17"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Japan) (En,Ja) (v01.01)"
+platforms = ["ps3"]
+version = "01.01"
+serials = ["BLJM-61019"]
+id_text = "BLJM-61019"
+[entry.fields]
+"#" = "17"
+"Size (bytes)" = "18,430,230,528"
+"CRC32 (1st track)" = "73A881A2"
+
+[[entry]]
+id = "A.17-18"
+origin = "md:4290"
+section = "A.17"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (Japan) (En,Ja) (v02.00)"
+platforms = ["ps3"]
+version = "02.00"
+serials = ["BLJM-61019", "BLJM-61182", "BLJM-61304"]
+id_text = "BLJM-61019, BLJM-61182, BLJM-61304"
+[entry.fields]
+"#" = "18"
+"Size (bytes)" = "18,430,033,920"
+"CRC32 (1st track)" = "9C26ACE4"
+
+[[entry]]
+id = "A.17-19"
+origin = "md:4291"
+section = "A.17"
+kind = "dump"
+games = ["gta5"]
+title = "Grand Theft Auto V (USA, Asia) (En,Fr,Es,Pt,Zh,Ko)"
+platforms = ["ps3"]
+serials = ["BLAS-50639", "BLUS-31156"]
+id_text = "BLAS-50639, BLUS-31156"
+[entry.fields]
+"#" = "19"
+"Size (bytes)" = "18,738,249,728"
+"CRC32 (1st track)" = "70C8DD34"
+
+[[entry]]
+id = "A.18-1"
+origin = "md:4297"
+section = "A.18"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Europe) (En,Fr,De,Es,It)"
+platforms = ["psp"]
+serials = ["ULES-01347"]
+id_text = "ULES-01347"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "904,232,960"
+"CRC32 (1st track)" = "3EA726F3"
+
+[[entry]]
+id = "A.18-2"
+origin = "md:4298"
+section = "A.18"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (Japan)"
+platforms = ["psp"]
+serials = ["ULJM-05604", "ULJM-05804"]
+id_text = "ULJM-05604, ULJM-05804"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "883,654,656"
+"CRC32 (1st track)" = "6BFA2786"
+
+[[entry]]
+id = "A.18-3"
+origin = "md:4299"
+section = "A.18"
+kind = "dump"
+games = ["ctw"]
+title = "Grand Theft Auto - Chinatown Wars (USA)"
+platforms = ["psp"]
+serials = ["ULUS-10490"]
+id_text = "ULUS-10490"
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "904,298,496"
+"CRC32 (1st track)" = "B9858E32"
+
+[[entry]]
+id = "A.18-4"
+origin = "md:4300"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v1.05)"
+platforms = ["psp"]
+version = "1.05"
+serials = ["ULES-00151"]
+id_text = "ULES-00151"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "2ABCB3A6"
+
+[[entry]]
+id = "A.18-5"
+origin = "md:4301"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v2.00)"
+platforms = ["psp"]
+version = "2.00"
+serials = ["ULES-00151"]
+id_text = "ULES-00151"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "824B2938"
+
+[[entry]]
+id = "A.18-6"
+origin = "md:4302"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Europe) (En,Fr,De,Es,It) (v3.00)"
+platforms = ["psp"]
+version = "3.00"
+serials = ["ULES-00151"]
+id_text = "ULES-00151, ULES-001512, ULES-00151/P"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "7A884C02"
+
+[[entry]]
+id = "A.18-7"
+origin = "md:4303"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Germany) (v1.00)"
+platforms = ["psp"]
+version = "1.00"
+serials = ["ULES-00182"]
+id_text = "ULES-00182"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "7EE89C69"
+
+[[entry]]
+id = "A.18-8"
+origin = "md:4304"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Germany) (v2.00)"
+platforms = ["psp"]
+version = "2.00"
+serials = ["ULES-00182"]
+id_text = "ULES-00182, ULES-00182/P"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "D0A1C0F5"
+
+[[entry]]
+id = "A.18-9"
+origin = "md:4305"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Japan)"
+platforms = ["psp"]
+serials = ["ULJM-05255", "ULJM-05359"]
+id_text = "ULJM-05255, ULJM-05359"
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "1,320,943,616"
+"CRC32 (1st track)" = "EBF2E5F0"
+
+[[entry]]
+id = "A.18-10"
+origin = "md:4306"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Japan) (Rockstar Classics)"
+platforms = ["psp"]
+serials = ["ULJM-05885"]
+id_text = "ULJM-05885"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "1,320,943,616"
+"CRC32 (1st track)" = "0C2E4159"
+
+[[entry]]
+id = "A.18-11"
+origin = "md:4307"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (Korea) (En,Fr,De,Es,It)"
+platforms = ["psp"]
+serials = ["ULKS-46157"]
+id_text = "ULKS-46157"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "1DA32381"
+
+[[entry]]
+id = "A.18-12"
+origin = "md:4308"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (En,Fr,De,Es,It) (v1.05)"
+platforms = ["psp"]
+version = "1.05"
+serials = ["ULUS-10041"]
+id_text = "ULUS-10041"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "87E2772E"
+
+[[entry]]
+id = "A.18-13"
+origin = "md:4309"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (En,Fr,De,Es,It) (v2.00)"
+platforms = ["psp"]
+version = "2.00"
+serials = ["ULUS-10041"]
+id_text = "ULUS-10041"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "B8F8B576"
+
+[[entry]]
+id = "A.18-14"
+origin = "md:4310"
+section = "A.18"
+kind = "dump"
+games = ["lcs"]
+title = "Grand Theft Auto - Liberty City Stories (USA) (En,Fr,De,Es,It) (v3.00)"
+platforms = ["psp"]
+version = "3.00"
+serials = ["ULUS-10041"]
+id_text = "ULUS-10041, ULUS-10041GH"
+[entry.fields]
+"#" = "14"
+"Size (bytes)" = "1,255,243,776"
+"CRC32 (1st track)" = "B78703CC"
+
+[[entry]]
+id = "A.18-15"
+origin = "md:4311"
+section = "A.18"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Europe) (En,Fr,De,Es,It)"
+platforms = ["psp"]
+serials = ["ULES-00502"]
+id_text = "ULES-00502, ULES-00502/5236362, ULES-00502/P"
+[entry.fields]
+"#" = "15"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "B44AC795"
+
+[[entry]]
+id = "A.18-16"
+origin = "md:4312"
+section = "A.18"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Germany)"
+platforms = ["psp"]
+serials = ["ULES-00503"]
+id_text = "ULES-00503"
+[entry.fields]
+"#" = "16"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "BCD5E190"
+
+[[entry]]
+id = "A.18-17"
+origin = "md:4313"
+section = "A.18"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Japan)"
+platforms = ["psp"]
+serials = ["ULJM-05297", "ULJM-05395"]
+id_text = "ULJM-05297, ULJM-05395"
+[entry.fields]
+"#" = "17"
+"Size (bytes)" = "1,750,794,240"
+"CRC32 (1st track)" = "B01F3CB4"
+
+[[entry]]
+id = "A.18-18"
+origin = "md:4314"
+section = "A.18"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (Japan) (Rockstar Classics)"
+platforms = ["psp"]
+serials = ["ULJM-05884"]
+id_text = "ULJM-05884"
+[entry.fields]
+"#" = "18"
+"Size (bytes)" = "1,750,794,240"
+"CRC32 (1st track)" = "11C768BB"
+
+[[entry]]
+id = "A.18-19"
+origin = "md:4315"
+section = "A.18"
+kind = "dump"
+games = ["vcs"]
+title = "Grand Theft Auto - Vice City Stories (USA)"
+platforms = ["psp"]
+serials = ["ULUS-10160"]
+id_text = "ULUS-10160GH, ULUS-10160"
+[entry.fields]
+"#" = "19"
+"Size (bytes)" = "1,696,006,144"
+"CRC32 (1st track)" = "F705A610"
+
+[[entry]]
+id = "A.19-1"
+origin = "md:4321"
+section = "A.19"
+kind = "dump"
+games = ["gta1"]
+title = "G.T.A - Grand Theft Auto (Japan)"
+platforms = ["ps1"]
+serials = ["SLPM-87007", "SLPS-01554"]
+id_text = "SLPM-87007, SLPS-01554"
+[entry.fields]
+"#" = "1"
+"Size (bytes)" = "65,576,112"
+"CRC32 (1st track)" = "7A67E333"
+
+[[entry]]
+id = "A.19-2"
+origin = "md:4322"
+section = "A.19"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (Europe) (En,Fr,De,It)"
+platforms = ["ps1"]
+serials = ["SLES-00032"]
+id_text = "SLES-00032, SLES-000322"
+[entry.fields]
+"#" = "2"
+"Size (bytes)" = "93,873,024"
+"CRC32 (1st track)" = "37532070"
+
+[[entry]]
+id = "A.19-3"
+origin = "md:4323"
+section = "A.19"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (Europe) (En,Fr,De,It) (EDC)"
+platforms = ["ps1"]
+serials = ["SLES-00032"]
+id_text = "SLES-00032, SLES-000322, SLES-00032/COLL."
+[entry.fields]
+"#" = "3"
+"Size (bytes)" = "93,873,024"
+"CRC32 (1st track)" = "4BD3D587"
+
+[[entry]]
+id = "A.19-4"
+origin = "md:4324"
+section = "A.19"
+kind = "dump"
+games = ["gta1"]
+title = "Grand Theft Auto (USA)"
+platforms = ["ps1"]
+serials = ["SLUS-00106"]
+id_text = "SLUS-00106, SLUS-00106CE, SLUS-00106GH"
+[entry.fields]
+"#" = "4"
+"Size (bytes)" = "62,102,208"
+"CRC32 (1st track)" = "EC29D826"
+
+[[entry]]
+id = "A.19-5"
+origin = "md:4325"
+section = "A.19"
+kind = "dump"
+games = ["london1969"]
+title = "Grand Theft Auto - London 1969 (Europe) (En,Fr,De,It)"
+platforms = ["ps1"]
+serials = ["SLES-03389"]
+id_text = "SLES-03389, SLES-03389/COLL"
+[entry.fields]
+"#" = "5"
+"Size (bytes)" = "42,265,440"
+"CRC32 (1st track)" = "6D14DB9A"
+
+[[entry]]
+id = "A.19-6"
+origin = "md:4326"
+section = "A.19"
+kind = "dump"
+games = ["london1969"]
+title = "Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,De,It)"
+platforms = ["ps1"]
+serials = ["SLES-01714"]
+id_text = "SLES-01714"
+[entry.fields]
+"#" = "6"
+"Size (bytes)" = "43,234,464"
+"CRC32 (1st track)" = "79EE2BB3"
+
+[[entry]]
+id = "A.19-7"
+origin = "md:4327"
+section = "A.19"
+kind = "dump"
+games = ["london1969"]
+title = "Grand Theft Auto - Mission Pack 1 - London 1969 (Europe) (En,Fr,De,It) (Rev 1)"
+platforms = ["ps1"]
+serials = ["SLES-01714"]
+id_text = "SLES-01714"
+[entry.fields]
+"#" = "7"
+"Size (bytes)" = "43,236,816"
+"CRC32 (1st track)" = "A06FB3ED"
+
+[[entry]]
+id = "A.19-8"
+origin = "md:4328"
+section = "A.19"
+kind = "dump"
+games = ["london1969"]
+title = "Grand Theft Auto - Mission Pack 1 - London 1969 (USA)"
+platforms = ["ps1"]
+serials = ["SLUS-00846"]
+id_text = "SLUS-00846, SLUS-00846CE"
+[entry.fields]
+"#" = "8"
+"Size (bytes)" = "42,949,872"
+"CRC32 (1st track)" = "8760DF1A"
+
+[[entry]]
+id = "A.19-9"
+origin = "md:4329"
+section = "A.19"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It)"
+platforms = ["ps1"]
+serials = ["SLES-01404"]
+id_text = "SLES-014042, SLES-01404/COLL."
+[entry.fields]
+"#" = "9"
+"Size (bytes)" = "546,428,400"
+"CRC32 (1st track)" = "5AAD542A"
+
+[[entry]]
+id = "A.19-10"
+origin = "md:4330"
+section = "A.19"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It) (Rev 1)"
+platforms = ["ps1"]
+serials = ["SLES-01404"]
+id_text = "SLES-01404"
+[entry.fields]
+"#" = "10"
+"Size (bytes)" = "546,468,384"
+"CRC32 (1st track)" = "31485628"
+
+[[entry]]
+id = "A.19-11"
+origin = "md:4331"
+section = "A.19"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (France)"
+platforms = ["ps1"]
+serials = ["SLES-02453"]
+id_text = "SLES-02453"
+[entry.fields]
+"#" = "11"
+"Size (bytes)" = "545,842,752"
+"CRC32 (1st track)" = "EBFC694F"
+
+[[entry]]
+id = "A.19-12"
+origin = "md:4332"
+section = "A.19"
+kind = "dump"
+games = ["gta2"]
+title = "Grand Theft Auto 2 (USA)"
+platforms = ["ps1"]
+serials = ["SLUS-00789"]
+id_text = "SLUS-00789, SLUS-00789CE, SLUS-00789GH"
+[entry.fields]
+"#" = "12"
+"Size (bytes)" = "545,798,064"
+"CRC32 (1st track)" = "C1CEC2CE"
+
+[[entry]]
+id = "A.19-13"
+origin = "md:4333"
+section = "A.19"
+kind = "dump"
+games = ["gta1"]
+title = "Pro Foot Contest '98 + Grand Theft Auto + Courier Crisis (France) (En,Fr,De,It)"
+platforms = ["ps1"]
+serials = ["SLED-01295"]
+id_text = "SLED-01295"
+[entry.fields]
+"#" = "13"
+"Size (bytes)" = "75,268,704"
+"CRC32 (1st track)" = "BE0E0978"
+
+[[entry]]
+id = "A.20-1"
+origin = "md:4341"
+section = "A.20"
+kind = "third-party"
+games = ["gta3"]
+title = "Action Replay Ultimate Cheats for Grand Theft Auto III (UK)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-2"
+origin = "md:4342"
+section = "A.20"
+kind = "third-party"
+games = ["sa"]
+title = "Action Replay Ultimate Cheats for Use with Grand Theft Auto - San Andreas (UK)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-3"
+origin = "md:4343"
+section = "A.20"
+kind = "third-party"
+games = ["vc"]
+title = "Action Replay Ultimate Cheats for Use with Grand Theft Auto - Vice City (UK)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-4"
+origin = "md:4344"
+section = "A.20"
+kind = "third-party"
+games = ["sa"]
+title = "Action Replay Ultimate Cheats fuer Grand Theft Auto - San Andreas (Germany)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-5"
+origin = "md:4345"
+section = "A.20"
+kind = "third-party"
+games = ["vc"]
+title = "Action Replay Ultimate Codes Max Pack for Use with Grand Theft Auto Vice City & Grand Theft Auto III (USA)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-6"
+origin = "md:4346"
+section = "A.20"
+kind = "third-party"
+games = ["sa"]
+title = "Action Replay Ultimate Codes for Use with Grand Theft Auto - San Andreas (USA)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-7"
+origin = "md:4347"
+section = "A.20"
+kind = "third-party"
+games = ["vc"]
+title = "Action Replay Ultimate Codes for Use with Grand Theft Auto - Vice City (USA)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-8"
+origin = "md:4348"
+section = "A.20"
+kind = "third-party"
+games = ["vc"]
+title = "Action Replay Ultimate Codes for Use with Grand Theft Auto - Vice City (USA) (Rev 1)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-9"
+origin = "md:4349"
+section = "A.20"
+kind = "third-party"
+games = ["sa"]
+title = "CD avec les codes Action Replay exclusivement pour le jeu Grand Theft Auto - San Andreas (France)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-10"
+origin = "md:4350"
+section = "A.20"
+kind = "third-party"
+games = ["vc"]
+title = "CD avec les codes Action Replay exclusivement pour les jeux Grand Theft Auto III et Grand Theft Auto - Vice City (France)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-11"
+origin = "md:4351"
+section = "A.20"
+kind = "third-party"
+games = ["vc"]
+title = "CD avec les codes exclusifs et inedits de Grand Theft Auto - Vice City (France)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-12"
+origin = "md:4352"
+section = "A.20"
+kind = "third-party"
+games = ["vc"]
+title = "GTA Cheat Master - III & Vice City (USA)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[[entry]]
+id = "A.20-13"
+origin = "md:4353"
+section = "A.20"
+kind = "third-party"
+games = ["gta3"]
+title = "GameShark 2 Ultimate Cheats for Grand Theft Auto III (USA)"
+platforms = ["ps2"]
+platform_text = "Sony - PlayStation 2"
+id_text = "—"
+
+[sources]
+A-A1 = { text = "libretro-database, Redump DAT mirror: https://github.com/libretro/libretro-database/tree/master/metadat/redump", url = "https://github.com/libretro/libretro-database/tree/master/metadat/redump", origin = "md:4357" }
+A-A2 = { text = "libretro-database, No-Intro DAT mirror: https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", url = "https://github.com/libretro/libretro-database/tree/master/metadat/no-intro", origin = "md:4358" }
+A-A3 = { text = "Redump.org disc database (original source of optical disc dumps): http://redump.org/ ; No-Intro / DAT-o-MATIC: https://datomatic.no-intro.org/", url = "http://redump.org/", origin = "md:4359" }

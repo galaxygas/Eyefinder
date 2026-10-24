@@ -22,7 +22,9 @@ the **text** of the 2D games. Models and other data will follow.
   * Consoles and handhelds: the disc serial (PS1, PS2), the Dreamcast IP.BIN fields, or the cartridge ROM.
   * Only choices the files actually support are offered. A folder holding several games (GTA1 with the London packs) lets you add each of them.
 * **A library grouped by game**, in release order, with every copy on two compact lines (platform, store, version, file, counts).
-* **Index page:** every Grand Theft Auto game, platform, regional release, edition and version that the cited sources list (redump and No-Intro DATs, redump's PC DAT, Wikipedia, titledb), with how Eyefinder identifies each one, and the gaps no source covers yet.
+* **Index page:** every Grand Theft Auto game with every documented build, version, patch, title update, edition, port, demo, prototype and leak, per platform and with its sources (the [build database](docs/DATABASE.md)), next to the disc, ROM and store records (redump and No-Intro DATs, redump's PC DAT, titledb) that Eyefinder identifies copies by.
+  * Add, correct or hide entries in the app; they are saved in your own database file.
+  * The database updates without a new Eyefinder build: **Database → Check for a database update**, or import a pack.
 * **Documentation page:** a tracker for this build. Per game, every file type with its status (verified, implemented but unverified, documented but not implemented, not supported, undocumented), sources, real-file confirmations and what is missing, plus how copies are recognised and which executables and versions are known.
 * **Sidebar sections per asset type** (Audio by category, Textures by folder or archive), or switch to the **file tree**. IMG archives open like folders, and any file can be inspected and copied byte for byte.
 * **Textures:**

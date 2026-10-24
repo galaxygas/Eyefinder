@@ -1,0 +1,539 @@
+# Completeness audit notes of the research (section 14)
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "14"
+origin = "md:3867"
+title = "14. Completeness Audit Notes"
+games = ["series"]
+text = "> Independent audit pass carried out on 2026-10-24 after sections 1–13 and 15 were drafted. This section does **not** change sections 1–13. It lists items that those sections leave out, and errors in them, so they can be fixed. Every row below was checked against at least one source (cited by number). Confidence markers follow the header legend."
+
+[[section]]
+id = "14.1"
+origin = "md:3871"
+title = "14.1 Method & master lists used"
+games = ["series"]
+text = '''
+1. **Series and platform master lists:** the English Wikipedia *Grand Theft Auto* series article (the games tables for main series, expansions, handhelds, compilations) [1]. Each title and platform was checked against the section files with keyword and serial greps.
+2. **Prototype / beta builds:** Hidden Palace. Its MediaWiki API was queried for the terms "Grand Theft Auto", "GTA", "Liberty City", "Vice City", "San Andreas", "Chinatown Wars", "Rockstar North" and "DMA Design" [2]. That gave 119+ pages. Redirects were resolved to their canonical pages, then the build date of each page was looked up in sections 1–13.
+3. **Retail disc / digital dumps:** every serial or content ID in `/home/claude/gta_dat_entries.md` was extracted (214 unique IDs from the libretro Redump, No-Intro and "dat" mirrors [12][13][14][15]) and searched for in sections 1–13, allowing for hyphenated and unhyphenated forms. Variants that are only a box-code suffix of a serial already present (for example `SLES-50330-P`, `SLUS-20062GH`) count as present. Appendix A (section 15) was checked as well.
+4. **Other master lists:** see 14.4 for GTA Wiki, MobyGames, GTA Online updates and mobile platforms.'''
+
+[[section]]
+id = "14.2"
+origin = "md:3878"
+title = "14.2 Items missing from sections 1–13 (verified)"
+games = ["series"]
+
+[[section]]
+id = "14.3"
+origin = "md:3898"
+title = "14.3 Errors found"
+games = ["series"]
+text = "No wrong release date, serial or version number was found in the ~150 values spot-checked (see 14.4). The problems below are out-of-date statements, internal inconsistencies between sections, and one conflicting data point."
+
+[[section]]
+id = "14.4"
+origin = "md:3911"
+title = "14.4 Checked and confirmed present"
+games = ["series"]
+text = '''
+**Completeness, per master list**
+
+- **Wikipedia series tables** [1]: all 8 main-series games, 4 expansions, 4 handhelds and 8 compilations/remasters (24 titles), and every platform named in those tables, are covered.
+- **GTA Wiki** [11]: the series article's game list (17 titles incl. London 1969/1961 and EFLC), the GTA V / GTA Online / SA "Editions" pages, and the cancelled-project pages (Sega Saturn GTA, Grand Theft Auto 64, Online Crime World, GTA III GBA) are present. Missing: the Barking Dog *GTA: Online* proposal and the "GTA 2.5" description (14.2 / 14.3), plus the iFruit and Manual apps (14.2).
+- **GTA Online updates (GTA Wiki "Updates in GTA Online")** [11]: all **46** titled updates from Beach Bum (2013-11-19) to The Kortz Center Heist (2026-07-14) are in §9, and their dates agree. The one difference is Capture: §9 has 17 Dec 2013 from Rockstar Newswire, GTA Wiki has 18 Dec. §9 also has entries GTA Wiki's list lacks (Festive Surprise 2016, Deadline, GTA+, shutdown).
+- **MobyGames group** [20]: 50 entries. All are present except the 6 compilation/SKU listings and the iFruit (PS Vita) entry given in 14.2.
+- **Hidden Palace** [2]: 56 canonical build pages. **46 present** in sections 1–7: all GTA 1, London 1969, GTA 2, GTA III (GBA and PAL v1.40), VC, SA, LCS, VCS, CW and GTA IV/EFLC builds. The VC Oct 2, 2002 and CW Sep 16, 2009 pages are redirects to the Oct 1 / Sep 15 pages, which are present. Missing: every GTA V page and the GTA IV leftover/EPK asset pages (14.2).
+- **TCRF** category could not be read (Cloudflare bot check in the browser; WebFetch returned only the heading). Sections 1–7 already cite many TCRF pages directly.
+- **DAT serials** (`gta_dat_entries.md`) [12][13][14][15]: **214** unique IDs. 160 matched directly on the first pass. Another 44 are present in a different form: box-code suffixes, PSN content IDs of serials already listed, or `TT-` serials the pattern missed. That left 10 absent from the per-game sections. During this audit the section editors added 8 of them: NPUD20062, NPED00063, NPUD20552, SLPM-55291, TT-014, TT-015, TT-115 (incl. VC Xbox Rev 1) and BLUS-41019 (now in §3, §4, §12, §13). **2 remain missing**: BLKS-20442 and NPJB00516 (14.2). The J2ME jars have no serials (see 14.2).
+- **Mobile platforms per game** (Wikipedia infobox platforms [1][22]): GTA III (iOS, Android, Fire OS), VC (iOS, Android, Fire OS), SA (iOS, Android, Windows Phone, Fire OS), LCS (iOS, Android, Fire OS), CW (iOS, iPad HD, Android, Fire OS) and Trilogy DE (iOS, Android via Netflix and standalone) are all covered, with release dates matching Wikipedia. No official J2ME/Java GTA exists (see the J2ME row in 14.2).
+- **Backward compatibility / subscriptions:** GTA IV + EFLC on Xbox One BC (2017-02-09) and SA X360 on Xbox One BC (2018-06-07) are both in their sections and match the Wikipedia BC list [23]. GTA V on PS Now, Game Pass and PS Plus is in §8.4.
+
+**Error spot-check (Task B), all consistent with the cited source**
+
+- **Release dates vs Wikipedia infoboxes** [22]: 60 values (GTA III 4, VC 7, SA 11, GTA IV/TLAD/TBoGT/EFLC/CE 10, CW 9, LCS 8, VCS 6, GTA Advance 2, GTA 2 3). All 60 present and matching. Where sections give two dates, Wikipedia's value is one of them (e.g. LCS PSP NA 24/25 Oct 2005; VCS PS2 NA 5/6 Mar 2007).
+- **GTA Online update dates vs GTA Wiki**: 46 checked, as above.
+- **GTA V PC builds vs FiveM `sv_enforceGameBuild` table** [24]: 17 build→update mappings (1604 Arena War … 3889 Kortz Center Heist, plus 2612 `mpg9ec` and the Casino/Casino Heist "–" rows). All match §8.6.
+- **Steam store API** [21]: GTA V Legacy 271590 "13 Apr, 2015" (matches §8.3 note); GTA V Enhanced 3240220 "Mar 4, 2025", age 17 (matches); Trilogy DE SA 1547000 "Jan 19, 2023" (matches §10.1 / §12.5); GTA IV CE 12210 "Mar 24, 2020" (extra data point, 14.3).
+- **Cartridge codes vs gbhwdb** [25]: GTA GBC DMG-AOAE-0 / DMG-AOAP-0 and GTA 2 GBC CGB-BGAE-0 / CGB-BGTP-0 match §1.5 / §2.2.
+- **Serial/version labels vs Redump/No-Intro DATs** [14]: SA PS2 (SLUS-20946 v1.03/v3.00/Rev 1, SLES-52541 v1.03/v2.01, SLES-52927 v1.00/v2.01, SLPM-65984/66788/55292), CW DS (YGXE/YGXP/YGXJ) and GTA Advance (BGTE/BGTP) match §5.2 / §6.
+
+Total spot-checked: **≈150 values; 0 factual errors found** in dates, serials or versions. The errors in 14.3 are stale or inconsistent statements.'''
+
+[[section]]
+id = "14.5"
+origin = "md:3936"
+title = "14.5 Resolution status (final pass, 2026-10-24)"
+games = ["series"]
+text = '''
+Every item in 14.2 and every correction in 14.3 has since been re-verified against its source and **integrated into the section files**; the tables above are kept as the audit trail. Where each one went:
+
+
+Additional consistency fixes made by the coordinator in the final pass: the GTA (1997) Japanese PC release date now shows both 27 Apr 1999 (GTA.wiki) and 23 Jan 1998 (GameFAQs) in §1, matching §13; Google Play `.de` package suffixes were confirmed to mean "Definitive" (not German) in §10; PC executable builds recognised by Plugin-SDK were added for GTA III (§3.4a) and Vice City (§4.3a).'''
+
+[[entry]]
+id = "14.2-1"
+origin = "md:3882"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "**GTA V \"Oct 13, 2014\" prototype (GTA5_NG QA Version 108 / version 0.0.0.77)**: full multi-platform development build"
+version = "0.0.0.77"
+notes = "Build date 2014-10-13. Hidden Palace lists the file release date as **2026-09-18** (\"four year anniversary of the 2022 leaks\"). It came from the \"Build\" directory taken in the Sept 2022 intrusion, was sold privately, and was then leaked by an unknown buyer. Binaries and baked assets for all platforms; debug keyboards. Contains a very early rendition of the GTA VI map (`-level env_test`). Hidden Palace says this shows Cayo Perico was partly cut GTA VI content. Also has assets for a cut Liberty City expansion and the cut \"Agent Trevor\" DLC. Map files last exported c. 2014-12-19. §8.1 currently says no pre-release GTA V build was found; §11.6 says \"none … leaked\". Both are now out of date."
+confidence = "single-source"
+confidence_text = "⚠️ (single community source; recent)"
+sources = ["14-3"]
+sources_text = "[3]"
+[entry.fields]
+"Belongs in section" = "§8.1 (leaked builds) + §11.7 index"
+
+[[entry]]
+id = "14.2-2"
+origin = "md:3883"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "**GTA V \"Sep 16, 2022 build\" (source-code build 1.0.2699.0)**"
+notes = "Hidden Palace treats the leaked GTA V source as a PC \"prototype\" with build name **1.0.2699.0** and code dated about **2022-09-16**, released by \"Lapsus$\". It comes with Rockstar's own build tools, contains code only (assets must be copied from a retail copy), and only the Debug configuration is known to compile. This ties the Dec 2023 source leak to a specific build number, which §11.6 does not give."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-4"]
+sources_text = "[4]"
+[entry.fields]
+"Belongs in section" = "§11.6 / §11.7"
+
+[[entry]]
+id = "14.2-3"
+origin = "md:3884"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA V Xbox 360 **PartnerNet DLC prototypes** (2013)"
+notes = "Packages on the Xbox CDN, dated by package modification date: **DLC Weapon 5** (2013-05-07, Assault SMG), **DLC Weapon 7** (2013-05-07, Bullpup Shotgun), **DLC Weapon 1** (2013-05-20, Heavy Rifle), **DLC Weapon 2** (2013-05-20, \"Programmable Assault Rifle\"), **DLC Weapon 3** (2013-05-20, Assault MG), **DLC Weapon 6** (2013-07-04, Rubber Gun), **Assault Sniper DLC** (2013-07-04), **Atomic Blimp DLC** (2013-07-04; Hidden Palace says the retail package was modified 2013-07-27)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-5"]
+sources_text = "[5]"
+[entry.fields]
+"Belongs in section" = "§8.1 / §9.A (cut SP DLC) / §11.7"
+
+[[entry]]
+id = "14.2-4"
+origin = "md:3885"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA V PS3 **Patch Data prototypes** (dev-kit HDD recoveries, BLES01807)"
+notes = "**Build 377** (date 2013-09-13), a 1.01 prototype that sits between retail base build 369 and retail 1.01 build 388.2; dumped by MrPinball64 in 2023. **Build 388.5** (date 2013-10-03), corresponding to TU **1.02**; released 2024-04-14 and extracted 2025-02-12. Hidden Palace notes that the retail 1.02 package itself is lost."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-6"]
+sources_text = "[6]"
+[entry.fields]
+"Belongs in section" = "§8.5 (PS3 TU 1.01/1.02)"
+
+[[entry]]
+id = "14.2-5"
+origin = "md:3886"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA V PC **\"GTA5 Debug.exe\" + .pdb**"
+notes = "Executable date 2020-09-30 (Hidden Palace \"Leftover Sep 30, 2020 Data\")."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-7"]
+sources_text = "[7]"
+[entry.fields]
+"Belongs in section" = "§8.6 / §11.7"
+
+[[entry]]
+id = "14.2-6"
+origin = "md:3887"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA V PS3 dev-kit leftover assets (Rockstar / Team Bondi PS3 dev kit 1400a), \"Cloud Cache Files\", \"CarsonGT Extracted Assets\""
+notes = "Dev-kit image put on the Internet Archive on 2024-04-14. Cloud cache files were extracted on 2025-07-14. These are assets, not runnable builds."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-7"]
+sources_text = "[7]"
+[entry.fields]
+"Belongs in section" = "§8.1 (note)"
+
+[[entry]]
+id = "14.2-7"
+origin = "md:3888"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA IV Xbox 360 dev/test-kit **leftover data**: \"Leftover Sep 10, 2007 Data\" (`GTA4Debug_xenon.xex`, partly overwritten), \"Leftover Feb 29, 2008 Data\" (7 files incl. 2 xex), \"Last Area Assets\""
+notes = "Released on Hidden Palace 2026-03-28 from the same consoles as the Nov 23, 2007 build that §7.2 already lists."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-8"]
+sources_text = "[8]"
+[entry.fields]
+"Belongs in section" = "§7.2"
+
+[[entry]]
+id = "14.2-8"
+origin = "md:3889"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA IV \"Deutsch-Exclusive EPK\" (Xbox 360 press kit; files dated 2007-03-28 to 2008-04-24) and GTA Double Pack Xbox EPK (\"Xbox Collection Edition\", files c. 2003-09-09 to 2003-10-17, released 2021-10-07)"
+notes = "Hidden Palace assets pages. §4.1 mentions the Double Pack Xbox item only in passing in a note; the GTA IV EPK is not mentioned anywhere."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-8"]
+sources_text = "[8]"
+[entry.fields]
+"Belongs in section" = "§7.1 / §12.2 (press material)"
+
+[[entry]]
+id = "14.2-9"
+origin = "md:3890"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA V PS3 extra IDs"
+notes = "**BLKS-20442** (Korea retail, 2013) and **NPJB00516** (Japan PSN, 2014). (**BLUS-41019**, \"Special Edition\" USA 2014, from the same list has since been added to §12.) These appear only in libretro's non-Redump `dat/Sony - PlayStation 3.dat`; there is no checksum entry and they could not be confirmed elsewhere (SerialStation is behind a bot check)."
+confidence = "single-source"
+confidence_text = "⚠️ (single list)"
+sources = ["14-13"]
+sources_text = "[13]"
+[entry.fields]
+"Belongs in section" = "§8.3"
+
+[[entry]]
+id = "14.2-10"
+origin = "md:3891"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "**Grand Theft Auto: iFruit** (official GTA V / GTA Online companion app: Los Santos Customs + Chop the Dog)"
+notes = "Released **2013-09-16** (Rockstar Newswire, \"available for download starting today\"). Platforms named by Rockstar: **iOS (App Store), Android (Google Play), Windows Phone, PlayStation Vita**. GTA Wiki adds Amazon Appstore and Windows 8/8.1/RT/10 (Microsoft Store product 9WZDNCRFJ1ZP). MobyGames lists a separate PS Vita entry dated 2014. Support ended **2022-12-12** and the app was delisted from the App Store and Google Play; the web \"License Plate Creator\" replaced it on 2023-04-20. App version numbers are not documented. §9 mentions only the in-game \"iFruit Radio\"."
+confidence = "mixed"
+confidence_text = "✅ (date/platforms: primary) / ⚠️ (shutdown: GTA Wiki citing a now-removed Rockstar Support article)"
+sources = ["14-16", "14-17", "14-18"]
+sources_text = "[16][17][18]"
+[entry.fields]
+"Belongs in section" = "§8 (new subsection \"Companion apps\") or §11.9"
+
+[[entry]]
+id = "14.2-11"
+origin = "md:3892"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "**Grand Theft Auto V: The Manual** (official digital manual app)"
+notes = "Released **2013-09-16** for iOS, Android, Windows Phone and as a desktop application for PC and Mac (Rockstar Newswire). Over 100 pages, with an interactive map. Version history is not documented."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["14-16", "14-17"]
+sources_text = "[16][17]"
+[entry.fields]
+"Belongs in section" = "§8 (companion apps)"
+
+[[entry]]
+id = "14.2-12"
+origin = "md:3893"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "GTA VI — **Ultimate Edition Upgrade** (separate digital add-on), the **one month of GTA+** bundled with digital pre-orders, and **no physical Ultimate Edition**"
+notes = "Rockstar Support \"Grand Theft Auto VI Platforms, Editions, and Versions\" (last updated 2026-08-18). Ultimate Edition = game + \"GTAVI: Ultimate Edition Upgrade\" ('95 Grotti Cheetah, Hawk & Little Morgan revolvers, Rideout Customs, Classic Car Collection and more). Standard owners, including physical-code owners, can buy the Upgrade on PS/Microsoft stores after redeeming. Digital pre-orders before 2026-11-20 get the Vintage Vice City Pack **plus one month of GTA+**; the physical code includes the Vintage Vice City Pack only. PlayStation codes are region-locked (Brazil / LATAM / NA / Korea / Japan / UK / Saudi Arabia & UAE / Rest of Asia / Rest of EMEA & Asia); Xbox codes are not region-locked. Japanese product codes expire 170 days after the 2026-11-19 launch. §11.2 lacks the Upgrade SKU, the GTA+ bonus and the region-lock detail."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["14-19"]
+sources_text = "[19]"
+[entry.fields]
+"Belongs in section" = "§11.2"
+
+[[entry]]
+id = "14.2-13"
+origin = "md:3894"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "MobyGames-listed compilations/SKUs not in §8/§9/§12"
+notes = "MobyGames \"Grand Theft Auto series\" group (snapshot 2026-01-10) lists: \"Grand Theft Auto Complete Package\" (2013, Windows), \"Grand Theft Auto: Collection\" (2008, Windows), \"Grand Theft Auto: Complete Pack\" (2010, Windows; §12.7 mentions a Steam \"Complete Pack\" as unverified), \"Grand Theft Auto: Online – Shark: Extortionate Value\" (2015, Windows), and \"Grand Theft Auto V & Megalodon Shark Cash Card Bundle\" / \"& Whale Shark Cash Card Bundle\" (2016, PS3). Only the listing was seen. The game pages could not be opened (MobyGames bot check), so contents and IDs are not documented."
+confidence = "single-source"
+confidence_text = "⚠️ (listing only)"
+sources = ["14-20"]
+sources_text = "[20]"
+[entry.fields]
+"Belongs in section" = "§12"
+
+[[entry]]
+id = "14.2-14"
+origin = "md:3895"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "***Grand Theft Auto: Online*** (2001 MMO proposal by Barking Dog Studios, later Rockstar Vancouver)"
+notes = "GTA Wiki: an MMORPG concept pitched to Rockstar Games around May 2001, to be built with Rockstar North (RenderWare, PC). It was never approved or developed. Evidence cited: *Grand Theft Auto: Online* Design Document **Version 1.20, 31 May 2001** (Barking Dog Studios), and an Obbe Vermeij post on X dated 2024-12-25. Outlets have since mislabelled it \"GTA III Online\"; it is a different thing from the GTA III online mode §11.8 already lists."
+confidence = "single-source"
+confidence_text = "⚠️ (wiki citing design doc)"
+sources = ["14-9"]
+sources_text = "[9]"
+[entry.fields]
+"Belongs in section" = "§11.8"
+
+[[entry]]
+id = "14.2-15"
+origin = "md:3896"
+section = "14.2"
+kind = "note"
+games = ["series"]
+title = "J2ME \".jar\" files named \"GTA\" in libretro's J2ME DAT: \"GTA (Auer Media) 1.20.02 / 1.32.02\", \"GTA Vice city (Tag Games Limited) 0.2.2\", \"GTA IV Mobile [sefan.ru] (Tag Games Limited) 0.2.15\", \"GTA Soviet Russia (F.M.R)\""
+notes = "The DAT lists these files but has no publisher field. The \"sefan.ru\" tag and \"Soviet Russia\" names point to unofficial or bootleg games. No Rockstar or Take-Two J2ME GTA was found, so the §11.8 conclusion stands. A note that these unofficial jars exist would stop readers mistaking them for missing official releases."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["14-13"]
+sources_text = "[13]"
+[entry.fields]
+"Belongs in section" = "§11.8 (\"Official J2ME GTA: not documented\")"
+
+[[entry]]
+id = "14.3-1"
+origin = "md:3904"
+section = "14.3"
+kind = "note"
+games = ["series"]
+title = "§8.1 (\"Leaked / preserved pre-release builds\"), §8.10 gaps (\"Still not documented: a playable leaked GTA V pre-release dev build\") and §11.6 (\"Pre-release GTA V builds: None with documented build numbers leaked\")"
+sources = ["14-3", "14-4", "14-6"]
+sources_text = "[3][4][6]"
+[entry.fields]
+"Existing value" = "No pre-release GTA V build with a documented build number has leaked"
+"Correct value" = "Out of date. Hidden Palace documents a GTA V development build dated 2014-10-13 (GTA5_NG QA Version 108 / 0.0.0.77), released 2026-09-18; PS3 patch prototypes, builds 377 and 388.5; and the leaked source as build 1.0.2699.0 (code c. 2022-09-16)."
+
+[[entry]]
+id = "14.3-2"
+origin = "md:3905"
+section = "14.3"
+kind = "note"
+games = ["series"]
+title = "§11.7 index, row \"Race'n'Chase / GTA (1997) — two very early prototypes\""
+sources = ["14-2"]
+sources_text = "[2] (and §1 sources)"
+[entry.fields]
+"Existing value" = "Build date \"not documented\""
+"Correct value" = "§1.1 already gives the dates **11 Nov 1994** (GTA ProtoType 1) and **2 Feb 1995** (ProtoType 2, `DINO.EXE`), both on Hidden Palace."
+
+[[entry]]
+id = "14.3-3"
+origin = "md:3906"
+section = "14.3"
+kind = "note"
+games = ["series"]
+title = "§11.7 index, row \"GTA (1997) PC demos\""
+sources = ["14-2"]
+sources_text = "[2]"
+[entry.fields]
+"Existing value" = "Build date \"not documented\""
+"Correct value" = "§1.2 gives Hidden Palace build dates of **1 Sep 1997** (ECTS/magazine demos), **11 Nov 1997** (8-bit / 24-bit / 3dfx \"Hot Bitch Teaser\") and **4 Mar 1998** (DOS demo)."
+
+[[entry]]
+id = "14.3-4"
+origin = "md:3907"
+section = "14.3"
+kind = "note"
+games = ["series"]
+title = "§11.7 index, row \"GTA: London 1969 — TCRF 'Prototype' page (Windows), contents not retrievable\""
+sources = ["14-2"]
+sources_text = "[2]"
+[entry.fields]
+"Existing value" = "Platform Windows; date not documented"
+"Correct value" = "The only preserved London 1969 pre-release build Hidden Palace knows of is a **PlayStation** PAL CD-R, \"PAL PSX BETA 37\", built **11 Apr 1999** and undumped (already in §1.7)."
+
+[[entry]]
+id = "14.3-5"
+origin = "md:3908"
+section = "14.3"
+kind = "note"
+games = ["series"]
+title = "§11.7 index (whole table) and §11.8 row \"*GTA: Liberty City Stories* early concepts: only the three 2005 prototypes (11.7) are documented\""
+sources = ["14-2"]
+sources_text = "[2]"
+[entry.fields]
+"Existing value" = "The index lists 3 LCS prototypes and no VCS, CW, GTA 2 PS1/Palm, GTA PS1, SA, GTA IV DLC/patch or GTA V builds"
+"Correct value" = "Sections 1–7 now document many more Hidden Palace builds: LCS 2005-05-28/29, 07-26, 09-01, 09-11, 09-23, 10-07, 10-22 and 2006-03-22; VCS 2006-08-08, 09-01, 09-24, 10-04; CW PSP 2009-07-28, 08-26, 08-28, 08-31, 09-15; GTA 2 PS1 1999-09-10 and Palm OS demos; GTA PS1 1998-05-23; SA Xbox 2005-03-08 and Steam 2014-08-28/09-02; GTA IV 2008-05-26, 2008-08-19, 2009-01-30 (×2), 2009-09-24; EFLC 2009-09-29. Add the GTA V builds from 14.2 as well. The index and the 11.8 wording are stale."
+
+[[entry]]
+id = "14.3-6"
+origin = "md:3909"
+section = "14.3"
+kind = "note"
+games = ["series"]
+title = "§11.8 row \"GTA 2 — Miami expansion\""
+sources = ["14-10"]
+sources_text = "[10]"
+[entry.fields]
+"Existing value" = "Described as a Miami-set GTA 2 *expansion*"
+"Correct value" = "GTA Wiki, citing Obbe Vermeij's blog (2023-11-11), describes the Dundee project as ***Grand Theft Auto 2.5*** (\"GTA Miami\"): a separate game with an isometric \"2.5-dimensional\" top-down 3D view, cancelled when DMA's Dundee office closed. Show both descriptions and flag the conflict."
+
+[[entry]]
+id = "14.3-7"
+origin = "md:3910"
+section = "14.3"
+kind = "note"
+games = ["series"]
+title = "§7.7 \"Complete Edition conversion\" dated **2020-03-19**"
+sources = ["14-21"]
+sources_text = "[21]"
+[entry.fields]
+"Existing value" = "— (not an error; extra data point)"
+"Correct value" = "Steam's own store API gives the **release_date** of app 12210 (\"Grand Theft Auto IV: The Complete Edition\") as **Mar 24, 2020**. That is the date of the first \"1.20\" hotfix §7.7 records; the API date is probably store metadata rather than the conversion day. Add it as a conflicting value."
+
+[[entry]]
+id = "14.5-1"
+origin = "md:3942"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "GTA V development / prototype builds (Oct 13 2014 QA v108 build, source build 1.0.2699.0, X360 PartnerNet DLC prototypes, PS3 patch prototypes 377 / 388.5, GTA5 Debug.exe, PS3 dev-kit leftovers)"
+notes = "Integrated ✅"
+[entry.fields]
+"Now in" = "§8.1 (new build table), §8.5, §8.6, §11.6"
+
+[[entry]]
+id = "14.5-2"
+origin = "md:3943"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "GTA IV dev/test-kit leftover data; German press kit; Complete Edition Steam date 2020-03-24"
+notes = "Integrated (Steam date shown as conflicting value next to 2020-03-19)"
+[entry.fields]
+"Now in" = "§7.1, §7.2, §7.7"
+
+[[entry]]
+id = "14.5-3"
+origin = "md:3944"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "BLKS-20442 / NPJB00516"
+notes = "Integrated, still ⚠️ (single list; region inferred from serial prefix)"
+[entry.fields]
+"Now in" = "§8.3"
+
+[[entry]]
+id = "14.5-4"
+origin = "md:3945"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "iFruit and *GTA V: The Manual* companion apps"
+notes = "Integrated; iOS/Windows/Vita version histories not documented"
+[entry.fields]
+"Now in" = "§8.4b"
+
+[[entry]]
+id = "14.5-5"
+origin = "md:3946"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "GTA VI edition details (Ultimate Edition Upgrade, GTA+ month, no physical Ultimate, PlayStation code regions)"
+notes = "Integrated ✅"
+[entry.fields]
+"Now in" = "§11.2"
+
+[[entry]]
+id = "14.5-6"
+origin = "md:3947"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "2001 *Grand Theft Auto: Online* MMO proposal (Barking Dog)"
+notes = "Integrated, ⚠️ (design document seen only via GTA Wiki)"
+[entry.fields]
+"Now in" = "§11.8"
+
+[[entry]]
+id = "14.5-7"
+origin = "md:3948"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "MobyGames-only compilation/bundle entries"
+notes = "Megalodon/Whale Shark bundles confirmed as Xbox One (conflicts with MobyGames' \"PS3\" ⚠️); Steam \"Complete Pack\" partly confirmed; \"Collection (2008)\" and \"Shark: Extortionate Value (2015)\" remain MobyGames-only ⚠️"
+[entry.fields]
+"Now in" = "§12"
+
+[[entry]]
+id = "14.5-8"
+origin = "md:3949"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "Unofficial J2ME \"GTA\" titles"
+notes = "Integrated; none attributed to Rockstar/Take-Two by the DAT"
+[entry.fields]
+"Now in" = "§11.8"
+
+[[entry]]
+id = "14.5-9"
+origin = "md:3950"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "Stale \"no pre-release GTA V build leaked\" statements (§8.1, §8.10, §11.6)"
+notes = "Corrected"
+[entry.fields]
+"Now in" = "§8.1, §8.10, §11.6"
+
+[[entry]]
+id = "14.5-10"
+origin = "md:3951"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "Stale §11.7 prototype index"
+notes = "Rebuilt: 62 rows covering every prototype, demo and dev-kit entry in §1–§8"
+[entry.fields]
+"Now in" = "§11.7"
+
+[[entry]]
+id = "14.5-11"
+origin = "md:3952"
+section = "14.5"
+kind = "note"
+games = ["series"]
+title = "Miami project \"expansion\" vs \"GTA 2.5\""
+notes = "Shown as a conflict ⚠️"
+[entry.fields]
+"Now in" = "§11.8"
+
+[sources]
+14-1 = { text = "Wikipedia — Grand Theft Auto (series): https://en.wikipedia.org/wiki/Grand_Theft_Auto", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto", origin = "md:3958" }
+14-2 = { text = "Hidden Palace MediaWiki API search (queried 2026-10-24): https://hiddenpalace.org/w/api.php?action=query&list=search&srsearch=Grand%20Theft%20Auto&srlimit=500&format=json", url = "https://hiddenpalace.org/w/api.php?action=query&list=search&srsearch=Grand%20Theft%20Auto&srlimit=500&format=json", origin = "md:3959" }
+14-3 = { text = "Hidden Palace — Grand Theft Auto V (Oct 13, 2014 prototype): https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_13,_2014_prototype", origin = "md:3960" }
+14-4 = { text = "Hidden Palace — Grand Theft Auto V (Sep 16, 2022 build): https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_16,_2022_build)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_16,_2022_build", origin = "md:3961" }
+14-5 = { text = "Hidden Palace — GTA V Xbox 360 DLC prototypes: https://hiddenpalace.org/Grand_Theft_Auto_V_(May_7,_2013_DLC_Weapon_5_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_7,_2013_DLC_Weapon_7_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_20,_2013_DLC_Weapon_1_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_20,_2013_DLC_Weapon_2_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(May_20,_2013_DLC_Weapon_3_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Jul_4,_2013_DLC_Weapon_6_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Jul_4,_2013_Assault_Sniper_DLC_Prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Jul_4,_2013_Atomic_Blimp_DLC_Prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(May_7,_2013_DLC_Weapon_5_Prototype", origin = "md:3962" }
+14-6 = { text = "Hidden Palace — GTA V PS3 Patch Data prototypes: https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_13,_2013_Patch_Data_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_V_(Oct_3,_2013_Patch_Data_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_V_(Sep_13,_2013_Patch_Data_prototype", origin = "md:3963" }
+14-7 = { text = "Hidden Palace — GTA V leftover/asset pages: https://hiddenpalace.org/Leftover_Sep_30,_2020_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/cnh_devkit_leftovers_assets ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/Cloud_Cache_Files ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_V/CarsonGT_Extracted_Assets", url = "https://hiddenpalace.org/Leftover_Sep_30,_2020_Data", origin = "md:3964" }
+14-8 = { text = "Hidden Palace — GTA IV / Double Pack asset pages: https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Leftover_Sep_10,_2007_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Leftover_Feb_29,_2008_Data ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Last_Area_Assets ; https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Deutsch-Exclusive_EPK ; https://hiddenpalace.org/Grand_Theft_Auto_Double_Pack_Xbox_EPK", url = "https://hiddenpalace.org/Assets/Grand_Theft_Auto_IV/Leftover_Sep_10,_2007_Data", origin = "md:3965" }
+14-9 = { text = "GTA Wiki — \"Grand Theft Auto: Online (Barking Dog Studios)\" (cites the GTA:O Design Document v1.20, 31 May 2001, and https://x.com/ObbeVermeij/status/1871935518398628341): https://gta.fandom.com/wiki/Grand_Theft_Auto:_Online_(Barking_Dog_Studios)", url = "https://x.com/ObbeVermeij/status/1871935518398628341", origin = "md:3966" }
+14-10 = { text = "GTA Wiki — \"Grand Theft Auto 2.5\" (cites Obbe Vermeij's blog, 2023-11-11, https://insiderockstarnorth.blogspot.com/2023/11/1999-beginnings-of-gta3.html): https://gta.fandom.com/wiki/Grand_Theft_Auto_2.5", url = "https://insiderockstarnorth.blogspot.com/2023/11/1999-beginnings-of-gta3.html", origin = "md:3967" }
+14-11 = { text = "GTA Wiki — \"Updates in GTA Online\"; \"Grand Theft Auto\" (series); \"Grand Theft Auto V/Editions\"; \"Grand Theft Auto Online/Editions\" (MediaWiki API, read 2026-10-24): https://gta.fandom.com/wiki/Updates_in_GTA_Online ; https://gta.fandom.com/wiki/Grand_Theft_Auto ; https://gta.fandom.com/wiki/Grand_Theft_Auto_V/Editions", url = "https://gta.fandom.com/wiki/Updates_in_GTA_Online", origin = "md:3968" }
+14-12 = { text = "No-Intro — Sony PlayStation 3 (PSN) DAT (libretro mirror): https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN", origin = "md:3969" }
+14-13 = { text = "libretro-database — dat/Sony - PlayStation 3.dat and dat/Mobile - J2ME.dat: https://github.com/libretro/libretro-database/blob/master/dat/Sony%20-%20PlayStation%203.dat ; https://github.com/libretro/libretro-database/blob/master/dat/Mobile%20-%20J2ME.dat", url = "https://github.com/libretro/libretro-database/blob/master/dat/Sony%20-%20PlayStation%203.dat", origin = "md:3970" }
+14-14 = { text = "Redump — Sony PlayStation 2 DAT (libretro mirror): https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", origin = "md:3971" }
+14-15 = { text = "Redump — Microsoft Xbox DAT (libretro mirror): https://github.com/libretro/libretro-database/blob/master/metadat/redump/Microsoft%20-%20Xbox.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Microsoft%20-%20Xbox.dat", origin = "md:3972" }
+14-16 = { text = "Rockstar Newswire — \"The Free GTAV iFruit and Game Manual Companion Apps\" (2013-09-16): https://www.rockstargames.com/newswire/article/75o941131k8o95/the-free-gtav-ifruit-and-game-manual-companion-apps", url = "https://www.rockstargames.com/newswire/article/75o941131k8o95/the-free-gtav-ifruit-and-game-manual-companion-apps", origin = "md:3973" }
+14-17 = { text = "GTA Wiki — iFruit App / GTAV: The Manual (MediaWiki API, read 2026-10-24): https://gta.fandom.com/wiki/IFruit_App ; https://gta.fandom.com/wiki/GTAV:_The_Manual", url = "https://gta.fandom.com/wiki/IFruit_App", origin = "md:3974" }
+14-18 = { text = "Rockstar Support — \"Grand Theft Auto: iFruit App Shutdown\" (cited by GTA Wiki; URL now redirects to the support home page): https://support.rockstargames.com/articles/11966031291027/Grand-Theft-Auto-iFruit-App-Shutdown", url = "https://support.rockstargames.com/articles/11966031291027/Grand-Theft-Auto-iFruit-App-Shutdown", origin = "md:3975" }
+14-19 = { text = "Rockstar Support — \"Grand Theft Auto VI Platforms, Editions, and Versions\" (last updated 2026-08-18; featured article on https://support.rockstargames.com/)", url = "https://support.rockstargames.com/", origin = "md:3976" }
+14-20 = { text = "MobyGames — Grand Theft Auto series group (Wayback snapshot 2026-01-10): https://web.archive.org/web/20260110104639/https://www.mobygames.com/group/167/grand-theft-auto-series/", url = "https://web.archive.org/web/20260110104639/https://www.mobygames.com/group/167/grand-theft-auto-series/", origin = "md:3977" }
+14-21 = { text = "Steam Store API appdetails (read 2026-10-24): https://store.steampowered.com/api/appdetails?appids=271590 ; https://store.steampowered.com/api/appdetails?appids=3240220 ; https://store.steampowered.com/api/appdetails?appids=1547000 ; https://store.steampowered.com/api/appdetails?appids=12210", url = "https://store.steampowered.com/api/appdetails?appids=271590", origin = "md:3978" }
+14-22 = { text = "Wikipedia game articles used for the date spot-check: https://en.wikipedia.org/wiki/Grand_Theft_Auto_III ; https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City ; https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas ; https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV ; https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars ; https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories ; https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories ; https://en.wikipedia.org/wiki/Grand_Theft_Auto_Advance ; https://en.wikipedia.org/wiki/Grand_Theft_Auto_2", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3979" }
+14-23 = { text = "Wikipedia — List of backward-compatible games for Xbox One and Series X/S: https://en.wikipedia.org/wiki/List_of_backward-compatible_games_for_Xbox_One_and_Series_X/S", url = "https://en.wikipedia.org/wiki/List_of_backward-compatible_games_for_Xbox_One_and_Series_X/S", origin = "md:3980" }
+14-24 = { text = "FiveM documentation — server commands, `sv_enforceGameBuild` build table (GitHub citizenfx/fivem-docs, cloned 2026-10-24): https://github.com/citizenfx/fivem-docs/blob/master/content/docs/server-manual/server-commands.md", url = "https://github.com/citizenfx/fivem-docs/blob/master/content/docs/server-manual/server-commands.md", origin = "md:3981" }
+14-25 = { text = "Game Boy hardware database (gekkio) — GBC cartridge list: https://gbhwdb.gekkio.fi/cartridges/gbc.html", url = "https://gbhwdb.gekkio.fi/cartridges/gbc.html", origin = "md:3982" }

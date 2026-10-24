@@ -1,0 +1,2823 @@
+# Country-specific releases, censorship, localisation and ratings (research section 13)
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "13"
+origin = "md:3539"
+title = "13. Country-specific Releases, Censorship & Localisation"
+games = ["series"]
+text = "Cross-game view of what differs per country/region. Confidence: ✅ confirmed by an official/primary or multiple independent sources · ⚠️ single community source (wiki/forum/fan cut report) · ❓ rumour / unverified. \"Not documented\" = searched, nothing found. Src numbers refer to `#### Sources (Section 13)` at the end."
+
+[[section]]
+id = "13.1"
+origin = "md:3543"
+title = "13.1 Germany (USK / BPjS-BPjM indexing)"
+games = ["series"]
+text = '''
+**System notes.** German releases from GTA III onwards were typically edited to obtain a USK 16 rating ("Deutsche Version"). On the first PS2/PC editions of GTA III and Vice City the cuts were tied to the German language setting — switching the console/PC to another language gave the uncut game; later German releases removed this loophole [S3][S5]. A Vice City PS2 first edition was indexed by the Bundesprüfstelle für jugendgefährdende Schriften (BPjS) in March 2003 precisely because the uncut English version was reachable through the language setting [S4]. Foreign (Austrian/Swiss/UK) versions have no region lock and play uncut on German systems [S6].
+
+
+**Indexing summary (Germany).** Documented BPjS/BPjM listings: Vice City (first PS2 edition, Mar 2003; delisted Oct 2014, re-rated uncut USK 18 Dec 2014); Vice City Stories (EU PS2, Nov 2007; delisted Oct 2015); Liberty City Stories (EU PS2, Dec 2007; delisted Sep 2015); San Andreas (EU PC, 7 Jan 2009; delisting session 3 Sep 2015). Schnittberichte headline "Drei Grand Theft Auto-Teile rehabilitiert" ("Three GTA parts rehabilitated", news 9573) and "Nach Listenstreichung: GTA-Teile unzensiert geprüft" (ticker 2118) refer to a delisting/uncut re-rating batch — page bodies could not be fetched; the 2015 trio (SA, LCS, VCS) plausibly matches "three parts", but this is ❓ unverified. GTA III was *not* indexed according to Schnittberichte's VC report [S5].'''
+
+[[section]]
+id = "13.2"
+origin = "md:3570"
+title = "13.2 Japan (CERO; Syscom / Capcom / CyberFront / Take-Two Japan)"
+games = ["series"]
+text = "**Background.** Rockstar/Take-Two chose Capcom for GTA III in 2003 over the smaller publishers that had handled GTA 1 and 2 (Time Extension names Syscom Entertainment and Zoo Corporation) [S23]. Japan had no mature rating until CERO (est. June 2002); CERO later introduced the adults-only \"Z\" rating; grandtheftwiki states all GTA games in Japan were rated CERO Z/18 [S23][S25]. Kanagawa Prefecture's child-welfare council moved on 30 May 2005 to designate GTA III a \"harmful\" product (no sale/rental under 18, separate display) — first such action in Japan over violence (not sex); approved the following month [S23][S26]. Game Developer (Aug 2008) states two of Japan's 47 prefectures banned GTA III (PS2) from sale [S28]."
+
+[[section]]
+id = "13.3"
+origin = "md:3597"
+title = "13.3 Australia (OFLC / Classification Board; no R18+ for games until 2013 [S18])"
+games = ["series"]
+text = "Rockstar statement (4 Feb 2008, quoted by Refused-Classification): \"No GTA has been censored since VICE CITY\" — reversed in April 2008 when it confirmed an edited GTA IV [S43c]. Edits were performed by the distributor/developer before submission; the Board stated (6 May 2008) \"The board did not make any changes\" [S43c]."
+
+[[section]]
+id = "13.4"
+origin = "md:3626"
+title = "13.4 New Zealand (OFLC NZ — R18 available)"
+games = ["series"]
+
+[[section]]
+id = "13.5"
+origin = "md:3633"
+title = "13.5 United States / North America (ESRB) — rating changes and region-specific edits"
+games = ["series"]
+
+[[section]]
+id = "13.6"
+origin = "md:3645"
+title = "13.6 Thailand"
+games = ["series"]
+
+[[section]]
+id = "13.7"
+origin = "md:3651"
+title = "13.7 Brazil"
+games = ["series"]
+
+[[section]]
+id = "13.8"
+origin = "md:3662"
+title = "13.8 Middle East (Saudi Arabia, UAE)"
+games = ["series"]
+
+[[section]]
+id = "13.9"
+origin = "md:3671"
+title = "13.9 South Korea (KMRB → GRAC)"
+games = ["series"]
+
+[[section]]
+id = "13.10"
+origin = "md:3686"
+title = "13.10 China, Hong Kong, Taiwan & Asia English editions"
+games = ["series"]
+
+[[section]]
+id = "13.11"
+origin = "md:3694"
+title = "13.11 Other bans / calls for bans"
+games = ["series"]
+
+[[section]]
+id = "13.12"
+origin = "md:3703"
+title = "13.12 Russia / CIS, Poland and other European localisations"
+games = ["series"]
+text = '''
+Russian, Polish and Czech data now come from the ru/pl/cs Wikipedia infoboxes, read through the MediaWiki API in the second pass, plus redump disc records. Russian localisations were text-only; ru.wiki says the EFLC localisation translated subtitles and interface only.
+
+
+Italian and Spanish distributors: **not documented**. The it.wiki and es.wiki infoboxes name only Rockstar Games and digital stores.'''
+
+[[section]]
+id = "13.13"
+origin = "md:3733"
+title = "13.13 Languages supported per game (official)"
+games = ["series"]
+text = "No GTA game has ever had an official foreign-language **dub**: every Steam listing marks only English as \"full audio\". Translations are text/subtitles only."
+
+[[section]]
+id = "13.14"
+origin = "md:3750"
+title = "13.14 Rating snapshot (documented values only)"
+games = ["series"]
+
+[[section]]
+id = "13.15"
+origin = "md:3766"
+title = "13.15 Known gaps / unresolved items (Section 13)"
+games = ["series"]
+text = '''
+- **Schnittberichte pages not readable**: in the first pass, server errors and then the fetch quota stopped access. In the second pass, schnittberichte.com returned Cloudflare "521: Web server is down" for every page tried (24 Oct 2026, 03:06–03:10 UTC). Affected pages: GTA 1 USK 16 report (ID 3164), GTA III report (ID 3239), London 1969 (ID 3165), GTA IV Australian-version report (ID 984017), "Drei GTA-Teile rehabilitiert" (news 9573), "Nach Listenstreichung…" (ticker 2118), "GTA 4 und die USK" (news 1014), "GTA: Chinatown Wars kommt unzensiert" (news 1223), and the rejected GTA IV indexing application (special 224). Whether the German GTA IV was cut is still the biggest open question.
+- **Japan:** the GTA V Japanese cut list beyond the torture-gameplay removal. The Japanese corporate publisher of GTA V and EFLC: GameFAQs says only "Rockstar Games", and Take-Two Interactive Japan is not confirmed. The GTA 2 Japanese publisher and release date: the Zoo link is an inference, and GameFAQs lists no Japanese GTA 2. GTA 1 (PC: Zoo, 23 Jan 1998; PS1: Syscom, 27 Aug 1998) and the Chinatown Wars platforms (DS and PSP, CyberFront) are now documented.
+- **Russia/CIS:** Vice City's Russian release date. The GTA IV "Russian version" patch 1.0.4.2 (not documented). Noviy Disk: no GTA title found in the sources read. Publishers per game are now documented from ru.wiki (Buka, 1C-SoftClub, SoftClub, 1C).
+- **Poland/Czech/Italy/Spain/France:** Polish (CD Projekt, Play-It, Cenega), Czech (Cenega, GTA III only) and French (Take-Two) distributors are now listed from wiki infoboxes and are single-source ⚠️. Italian and Spanish distributors are not documented, and local content differences are not documented.
+- **Venezuela:** no GTA-specific ban found. **Mainland China:** no official release found. **Hong Kong/Taiwan:** no Asia-English edition SKUs documented beyond GTA V's Traditional Chinese text (GameFAQs lists Asian GTA V PS3 BLAS-50639 and PS4 PLAS-07010 SKUs, Section 12 sources).
+- **Brazil:** ClassInd ratings are not documented. The EFLC injunction is dated 18 Oct 2010 (Kotaku), but Canaltech says 2013. The lift is dated "later in 2010" (Terra) or 2012 (Wikipedia), while Canaltech says the outcome was never made public, so no lift date is documented. The 2026 Digital ECA store suspension has two possible start dates (16 vs 17 Mar 2026 for the law taking effect).
+- **Saudi Arabia/UAE:** the 17 Jul 2025 approval with a 21+ rating is now press-sourced. The start date and scope of the original bans are still uncited.
+- **South Korea:** the dates and a citation for the GTA III/VC bans could not be found. A Korean-language search (GameMeca, brunch) gave nothing on a ban. ko.wiki contradicts itself on which game was the "first official Korean localisation" (VC mobile 2012 vs GTA V 2013).'''
+
+[[entry]]
+id = "13.1-1"
+origin = "md:3549"
+section = "13.1"
+kind = "regional"
+games = ["gta1"]
+title = "German release"
+platforms = ["pc", "ps1"]
+platform_text = "PC (DOS/Win), PS1"
+date = "1997"
+date_text = "1997"
+notes = "German Wikipedia: \"nahezu unzensiert\" (almost uncensored) — only the four female playable characters removed. Schnittberichte holds a USK 16 cut report (ID 3164, 14 Sep 2006) — page could not be fetched during research."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S1", "13-S2"]
+sources_text = "S1, S2"
+game_text = "GTA (1997)"
+[entry.fields]
+"Publisher/distributor" = "Take-Two (re-release) / BMG Interactive (orig.)"
+
+[[entry]]
+id = "13.1-2"
+origin = "md:3550"
+section = "13.1"
+kind = "regional"
+games = ["london1969"]
+title = "German release"
+platforms = ["pc"]
+platform_text = "PC"
+date = "1999"
+date_text = "1999"
+notes = "Schnittberichte cut report \"USK 16 (Deutsch)\" exists (ID 3165) — content could not be fetched; not documented here."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["13-S2"]
+sources_text = "S2"
+game_text = "GTA: London 1969"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.1-3"
+origin = "md:3551"
+section = "13.1"
+kind = "regional"
+games = ["gta2"]
+title = "German PC re-release (Take-Two), USK 16 vs US ESRB M"
+platforms = ["pc"]
+platform_text = "PC (also DC, PS1 German releases listed)"
+date = "1999"
+date_text = "1999 (report 26 Sep 2006)"
+notes = "Only documented difference: blood puddles under killed people absent. Running over pedestrians possible. Reader comments dispute whether puddles are also hidden in other versions (cheat-unlockable)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S7"]
+sources_text = "S7"
+game_text = "GTA 2"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Interactive"
+
+[[entry]]
+id = "13.1-4"
+origin = "md:3552"
+section = "13.1"
+kind = "regional"
+games = ["gta3"]
+title = "German edition (cuts active only with German language setting)"
+platforms = ["ps2", "pc"]
+platform_text = "PS2, PC"
+date_text = "2001–2002"
+notes = "No blood; no money from killed pedestrians; no dismemberment; no kicking people on the ground; Rampage missions removed. Gameswelt (Oct 2004): GTA III \"received no youth rating\" (keine Jugendfreigabe). grandtheftwiki lists USK 18. Not indexed per Schnittberichte (VC report)."
+confidence = "single-source"
+confidence_text = "⚠️ (de.wiki + Schnittberichte)"
+sources = ["13-S3", "13-S5", "13-S8", "13-S9"]
+sources_text = "S3, S5, S8, S9"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Take-Two / Rockstar"
+
+[[entry]]
+id = "13.1-5"
+origin = "md:3553"
+section = "13.1"
+kind = "regional"
+games = ["vc"]
+title = "German USK 16 (\"Deutsche Version\")"
+platforms = ["ps2", "pc"]
+platform_text = "PS2 (first ed.), PC re-release"
+date_text = "PS2 EU 8 Nov 2002; Schnittberichte report 14 Sep 2006"
+notes = "Cuts: no attacking downed enemies (bat/baton/chainsaw swing into air); all blood removed (spurts, fountains, camera droplets, pools); no sniper/assault-rifle decapitation; no money drops; all Rampages removed; missions \"Messing with the Man\" (DE \"Chaos-City\") and \"Dirty Lickin's\" (DE \"Schmutzige Methoden\") removed."
+confidence = "confirmed"
+confidence_text = "✅ (Schnittberichte + de.wiki agree)"
+sources = ["13-S4", "13-S5"]
+sources_text = "S4, S5"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "Take-Two"
+
+[[entry]]
+id = "13.1-6"
+origin = "md:3554"
+section = "13.1"
+kind = "regional"
+games = ["vc"]
+title = "First PS2 edition indexed by BPjS"
+platforms = ["ps2"]
+platform_text = "PS2"
+date = "2003-03"
+date_text = "March 2003"
+notes = "Indexed despite USK 16, because uncut English version selectable via console language. Post-index edition still USK 16 with loophole removed."
+confidence = "single-source"
+confidence_text = "⚠️ (de.wiki; Schnittberichte confirms indexing)"
+sources = ["13-S4", "13-S5"]
+sources_text = "S4, S5"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "Take-Two"
+
+[[entry]]
+id = "13.1-7"
+origin = "md:3555"
+section = "13.1"
+kind = "regional"
+games = ["vc"]
+title = "Delisted from index; uncut version re-rated \"Keine Jugendfreigabe\" (USK 18)"
+platform_text = "—"
+date_text = "Delisted Oct 2014; USK re-rating reported 20 Dec 2014"
+notes = "Take-Two resubmitted uncut version after removal from the list of media harmful to minors."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S10"]
+sources_text = "S10"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "Take-Two"
+
+[[entry]]
+id = "13.1-8"
+origin = "md:3556"
+section = "13.1"
+kind = "regional"
+games = ["vc"]
+title = "Mobile release"
+platforms = ["ios", "android"]
+platform_text = "iOS / Android"
+date_text = "6 Dec 2012 (iOS), 12 Dec 2012 (Android)"
+notes = "\"Almost completely uncensored\"; USK \"Keine Jugendfreigabe\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S4"]
+sources_text = "S4"
+game_text = "GTA: Vice City 10th Anniversary"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.1-9"
+origin = "md:3557"
+section = "13.1"
+kind = "regional"
+games = ["sa"]
+title = "German USK 16"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2, PC, Xbox"
+date_text = "PS2 29 Oct 2004; PC/Xbox 10 Jun 2005"
+notes = "Rated USK 16 (announced 8 Oct 2004). Cuts (PC first ed. vs Austrian uncut): no kicking/hitting downed enemies; no head removal by sniper/shotgun/assault rifle; no money drops. Blood kept. Rating unchanged after Hot Coffee; German version reportedly still allowed unlocking the sex scenes."
+confidence = "confirmed"
+confidence_text = "✅ (Schnittberichte + Gameswelt + de.wiki)"
+sources = ["13-S6", "13-S8", "13-S11"]
+sources_text = "S6, S8, S11"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Interactive (DE) / Rockstar (AT)"
+
+[[entry]]
+id = "13.1-10"
+origin = "md:3558"
+section = "13.1"
+kind = "regional"
+games = ["lcs"]
+title = "German USK 16 vs UK BBFC 18"
+platforms = ["psp"]
+platform_text = "PSP (later PS2)"
+date = "2005"
+date_text = "2005 (report 15 Apr 2007)"
+notes = "No kicking downed enemies; chainsaw swings into air; no extra blood on dead targets; no decapitation (sniper/AR/katana); chauffeur head not shot off in cutscene \"Love & Lead\"; no bloody tyre tracks; no money drops; Karmageddon gives no reward for pedestrians; run-over snap sound removed; 2 bodycount stats removed; 7 pedestrian Rampages removed. Gang missions and prostitute health kept."
+confidence = "single-source"
+confidence_text = "⚠️ (Schnittberichte; censorship wiki concurs)"
+sources = ["13-S12", "13-S13"]
+sources_text = "S12, S13"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+"Publisher/distributor" = "Take-Two"
+
+[[entry]]
+id = "13.1-11"
+origin = "md:3559"
+section = "13.1"
+kind = "regional"
+games = ["lcs"]
+title = "BPjM indexing / delisting"
+platforms = ["ps2"]
+platform_text = "PS2 (EU uncut version)"
+date_text = "Indexed Dec 2007; delisted Sep 2015"
+notes = "EU (uncut) PS2 version placed on index; removed Sep 2015. DE PSP release early Dec 2005; DE PS2 release 23 Jun 2006."
+confidence = "single-source"
+confidence_text = "⚠️ (de.wiki)"
+sources = ["13-S64"]
+sources_text = "S64"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.1-12"
+origin = "md:3560"
+section = "13.1"
+kind = "regional"
+games = ["vcs"]
+title = "BPjM indexing / delisting"
+platforms = ["ps2"]
+platform_text = "PS2 (EU uncut version)"
+date_text = "Indexed Nov 2007; delisted Oct 2015"
+notes = "EU (uncut) PS2 version placed on index; removed Oct 2015."
+confidence = "single-source"
+confidence_text = "⚠️ (de.wiki)"
+sources = ["13-S65"]
+sources_text = "S65"
+game_text = "GTA: Vice City Stories"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.1-13"
+origin = "md:3561"
+section = "13.1"
+kind = "regional"
+games = ["vcs"]
+title = "German USK 16 vs AT/CH uncut (PEGI 18)"
+platforms = ["psp", "ps2"]
+platform_text = "PSP, PS2 (identical)"
+date_text = "Report 8 Apr 2007; cut port to PS2 reported 2 Feb 2007"
+notes = "No kicking/finishing downed enemies; chainsaw air-swing; targeting ends on death; all blood/pools/footprints removed; no bloody tyre tracks; no decapitation; blood removed from in-game cutscenes; no money drops; 3 stats entries removed. Rampages (gang), missions and prostitution/empire building kept."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S14"]
+sources_text = "S14"
+game_text = "GTA: Vice City Stories"
+[entry.fields]
+"Publisher/distributor" = "Take-Two"
+
+[[entry]]
+id = "13.1-14"
+origin = "md:3562"
+section = "13.1"
+kind = "regional"
+games = ["sa"]
+title = "EU PC version placed on the BPjM index (List Part A)"
+platforms = ["pc"]
+platform_text = "PC (EU DVD-ROM)"
+date_text = "Decision No. 8519 (V), 7 Jan 2009; published Bundesanzeiger No. 16, 31 Jan 2009"
+notes = "Indexed (uncut EU version). Delisting requested 1 Jul 2015 by rights holder's counsel; 12-member panel session 3 Sep 2015 found it no longer harmful by current standards, citing the 2014 Vice City delisting (dated, stylised graphics; earlier findings on chainsaw/\"bursting heads\" judged overstated)."
+confidence = "confirmed"
+confidence_text = "✅ (BPjM decision document via FOI)"
+sources = ["13-S15"]
+sources_text = "S15"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Rockstar / Take-Two"
+
+[[entry]]
+id = "13.1-15"
+origin = "md:3563"
+section = "13.1"
+kind = "regional"
+games = ["gta4"]
+title = "German release, USK \"Keine Jugendfreigabe\" (18)"
+platforms = ["x360", "ps3", "pc"]
+platform_text = "X360, PS3, PC"
+date = "2008-04-29"
+date_text = "29 Apr 2008"
+notes = "taz (30 Apr 2008): no youth rating, 18+ only; summary claims \"less violence\" but lists no GTA IV-specific cuts. German Wikipedia claims \"Rampage missions removed to avoid indexing\" (no date/source detail; GTA IV has no Rampage side-missions in other versions — claim unverified). GamesRadar (Apr 2008) lists Germany as 18 and reports no German edits. Schnittberichte pages on GTA IV/USK (news 1014) and a rejected BPjM indexing application for GTA IV (special 224) exist but could not be fetched."
+confidence = "mixed"
+confidence_text = "⚠️ (rating ✅; cut status unresolved)"
+sources = ["13-S16", "13-S17", "13-S18", "13-S2"]
+sources_text = "S16, S17, S18, S2"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Take-Two / Rockstar"
+
+[[entry]]
+id = "13.1-16"
+origin = "md:3564"
+section = "13.1"
+kind = "regional"
+games = ["ctw"]
+title = "German release"
+platforms = ["nds", "psp"]
+platform_text = "DS / PSP"
+date = "2009"
+date_text = "2009"
+notes = "grandtheftwiki lists USK 18. Schnittberichte news headline \"GTA: Chinatown Wars kommt unzensiert\" (\"comes uncensored\") — body not fetched."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S9", "13-S2"]
+sources_text = "S9, S2"
+game_text = "GTA: Chinatown Wars"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.1-17"
+origin = "md:3565"
+section = "13.1"
+kind = "regional"
+games = ["gta5"]
+title = "German release, USK 18, uncut"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360 (later PS4/XB1/PC/PS5/XSX)"
+date_text = "USK announcement Aug 2013 (PCGH thread 21 Aug 2013 citing Rockstar tweet); release 17 Sep 2013"
+notes = "Identical to international version. Casino content (The Diamond Casino) noted as still permitted in D-A-CH while blocked in 53 countries (de.wiki)."
+confidence = "confirmed"
+confidence_text = "✅ (de.wiki + PCGH)"
+sources = ["13-S19", "13-S20"]
+sources_text = "S19, S20"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar / Take-Two"
+
+[[entry]]
+id = "13.1-18"
+origin = "md:3566"
+section = "13.1"
+kind = "regional"
+games = ["trilogy-de"]
+title = "German release, all three games USK 18 uncut"
+platforms = ["ps4", "ps5", "xone", "xsx", "switch", "pc"]
+platform_text = "PS4, PS5, XB1, XSX, Switch, PC"
+date = "2021-11-11"
+date_text = "11 Nov 2021"
+notes = "Rockstar told GamePro all three remasters would be USK 18 and uncut, matching English versions (first time III/VC/SA sold uncut at retail in Germany)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S21"]
+sources_text = "S21"
+game_text = "GTA: The Trilogy – The Definitive Edition"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.2-1"
+origin = "md:3576"
+section = "13.2"
+kind = "regional"
+games = ["gta1"]
+title = "Japanese release"
+platforms = ["pc", "ps1"]
+platform_text = "PC, PS1"
+date_text = "PC: 23 Jan 1998, Zoo Corporation (GameFAQs; redump lists the Japanese PC disc as serial ZOO-0003, plus a \"Taikenban\" trial disc ZOO-0003D). PS1: 27 Aug 1998, Syscom, SLPS-01554 (GameFAQs)"
+notes = "\"Some violent content revised to avoid a publication ban\"; idiosyncratic localisation (e.g. \"ナムアミダブツ\", \"メッタ殺しタイム\"). Budget \"Pokkiri 1400 Series\" edition \"G.T.A: Grand Theft Auto\": Syscom, SLPM-87007, 17 Jan 2002 (GameFAQs; redump lists SLPM 87007)"
+confidence = "mixed"
+confidence_text = "✅ (dates/publishers: GameFAQs + redump) / ⚠️ (content)"
+sources = ["13-S22", "13-S24", "13-S68", "13-S73"]
+sources_text = "S22, S24, S68, S73"
+game_text = "GTA (1997)"
+[entry.fields]
+"Publisher/distributor" = "PC: Zoo Corporation; PS1: Syscom Entertainment (ja.wiki says \"former publisher\" Syscom)"
+
+[[entry]]
+id = "13.2-2"
+origin = "md:3577"
+section = "13.2"
+kind = "regional"
+games = ["london1969"]
+title = "Japanese release \"Grand Theft Auto: London\""
+platforms = ["pc"]
+platform_text = "PC"
+date = "1999-07-09"
+date_text = "9 Jul 1999 (GameFAQs)"
+notes = "Redump lists a Japanese PC disc (グランド・セフト・オート ロンドン) in a \"Game Fan 1980\" edition"
+confidence = "single-source"
+confidence_text = "⚠️ (GameFAQs only for publisher/date)"
+sources = ["13-S68", "13-S73"]
+sources_text = "S68, S73"
+game_text = "GTA: London 1969"
+[entry.fields]
+"Publisher/distributor" = "M3 (GameFAQs)"
+
+[[entry]]
+id = "13.2-3"
+origin = "md:3578"
+section = "13.2"
+kind = "regional"
+games = ["gta1"]
+title = "Digital re-release"
+platforms = ["ps3", "psp"]
+platform_text = "PS3/PSP (PS1 Game Archives)"
+date_text = "23 Apr 2014 – delisted 12 Aug 2014"
+notes = "First game on PS Game Archives with CERO Z; credit-card purchase only; distribution ended with other ex-Syscom titles."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S22"]
+sources_text = "S22"
+game_text = "GTA (1997)"
+[entry.fields]
+"Publisher/distributor" = "GungHo Online Entertainment"
+
+[[entry]]
+id = "13.2-4"
+origin = "md:3579"
+section = "13.2"
+kind = "regional"
+games = ["gta2"]
+title = "Japanese release"
+platforms = ["pc"]
+platform_text = "PC (Windows 95 JP version)"
+date_text = "not documented"
+notes = "ja.wiki: rated \"R-18\"; corpses produce no blood (cheat restores); longer live-action intro. Publisher not named on ja.wiki; Zoo Corporation per Time Extension (link GTA2↔Zoo is an inference, unconfirmed)."
+confidence = "mixed"
+confidence_text = "⚠️/❓"
+sources = ["13-S27", "13-S23", "13-S73"]
+sources_text = "S27, S23, S73"
+game_text = "GTA 2"
+[entry.fields]
+"Publisher/distributor" = "Zoo Corporation? (inference only; GameFAQs lists no Japanese GTA 2 release; redump has a Japanese PC disc, v10.5, but names no publisher)"
+
+[[entry]]
+id = "13.2-5"
+origin = "md:3580"
+section = "13.2"
+kind = "regional"
+games = ["gta3"]
+title = "Japanese release"
+platforms = ["ps2", "pc"]
+platform_text = "PS2, PC"
+date_text = "Announced 18 Jun 2003; released 25 Sep 2003 (PS2 & PC)"
+notes = "CERO 18+. Time Extension: reportedly only notable difference was Japanese subtitles; ja.wiki: \"some expressions censored\" (unofficial uncensor patch circulated). Sales 122,899 first week; ~300,000 by 7 Dec 2003; ~350,000 by mid-2005. Budget \"Capcolle\" Dec 2004 (GameFAQs: SLPM-65760, 16 Dec 2004); PS2 reissue SLPM-66789 12 Jul 2007; Rockstar Classics SLPM-55293 29 Sep 2011; PC reissue 7 Jul 2007. GameFAQs also lists a Japanese PC release by **Zoo Corporation on 28 Jun 2002**, before Capcom's 2003 edition ⚠️ (single source). Original PS2 serial SLPM-65382 (GameFAQs, redump). PS3 PS2-Classic (2012) never released in Japan."
+confidence = "mixed"
+confidence_text = "✅ (dates/publisher); cuts ⚠️ conflicting"
+sources = ["13-S23", "13-S24", "13-S26", "13-S29", "13-S69", "13-S73"]
+sources_text = "S23, S24, S26, S29, S69, S73"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Capcom"
+
+[[entry]]
+id = "13.2-6"
+origin = "md:3581"
+section = "13.2"
+kind = "regional"
+games = ["gta3", "vc"]
+title = "Japanese \"Double Pack\""
+platforms = ["xbox", "ps2"]
+platform_text = "Xbox / PS2"
+date_text = "Xbox: 29 Jul 2004. PS2: 22 Feb 2007 (Dengeki Online and GameFAQs; Section 12 [19]) vs 27 Feb 2007 (earlier entry here, from grandtheftwiki) ⚠️"
+notes = "Xbox JP version of III sold only bundled with VC. Serials: Xbox A4K-00001 (discs TT-014 + TT-115); PS2 CPCS-01027 (discs SLPM-65760 + SLPM-66034)"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (PS2 day)"
+sources = ["13-S24", "13-S25", "13-S72", "13-S73"]
+sources_text = "S24, S25, S72, S73"
+game_text = "GTA III + VC Double Pack"
+[entry.fields]
+"Publisher/distributor" = "Capcom"
+
+[[entry]]
+id = "13.2-7"
+origin = "md:3582"
+section = "13.2"
+kind = "regional"
+games = ["vc"]
+title = "Japanese release"
+platforms = ["ps2"]
+platform_text = "PS2"
+date = "2004-05-20"
+date_text = "20 May 2004"
+notes = "Cuts: no head dismemberment from headshots; nude Candy Suxxx poster in Vercetti mansion replaced with an animal poster. Restrictions absent in 2012 mobile version."
+confidence = "single-source"
+confidence_text = "⚠️ (ja.wiki + censorship wiki agree)"
+sources = ["13-S30", "13-S31", "13-S25"]
+sources_text = "S30, S31, S25"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "Capcom"
+
+[[entry]]
+id = "13.2-8"
+origin = "md:3583"
+section = "13.2"
+kind = "regional"
+games = ["sa"]
+title = "Japanese release"
+platforms = ["ps2"]
+platform_text = "PS2"
+date = "2007-01-25"
+date_text = "25 Jan 2007 (deal announced 14 Nov 2006; delayed by Hot Coffee)"
+notes = "\"Substantially altered\". Documented cuts: no head destruction; no attacks on downed enemies / corpse twitching; immediate wanted level for armed attacks even without witnesses; no cash from killed NPCs; no roadkill gore; burned NPCs unchanged; pimping side-job removed; car-sex only rocks; \"Hot Coffee\"-style date scenes audio cut; drug-pipe scenes cut; combine-harvester gore removed. Additional claims (censorship wiki, uncited): two civilian-killing missions removed, Ballas reworked yakuza-like, \"narcotics\"→\"sake\", quarry corpses→mannequins. Advertising barred in magazines/near schools (LevelUp)."
+confidence = "mixed"
+confidence_text = "✅ core list (Game*Spark + LevelUp + ja.wiki); extra items ⚠️"
+sources = ["13-S32", "13-S33", "13-S34", "13-S35", "13-S36"]
+sources_text = "S32, S33, S34, S35, S36"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Capcom"
+
+[[entry]]
+id = "13.2-9"
+origin = "md:3584"
+section = "13.2"
+kind = "regional"
+games = ["sa"]
+title = "Japanese re-releases"
+platforms = ["ps3", "pc"]
+platform_text = "PS3 (PS2 Archives) / PC Steam / mobile"
+date_text = "PS3 17 Dec 2015; Steam 20 Jan 2023; smartphone Dec 2023"
+notes = "Censorship wiki says PS2/PS3 re-releases \"less censored\" (uncited)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S34", "13-S36"]
+sources_text = "S34, S36"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.2-10"
+origin = "md:3585"
+section = "13.2"
+kind = "regional"
+games = ["lcs"]
+title = "Japanese release"
+platforms = ["psp", "ps2"]
+platform_text = "PSP / PS2"
+date_text = "26 Jul 2007 (PSP); 6 Sep 2007 (PS2)"
+notes = "Censorship wiki (uncited): no sniper decapitation/blood; no money from beating people; no headshot blood; no bloody tyre tracks; no chasing downed people; civilian-killing missions removed; lower kill counts; blood in \"The Made Man\" removed; \"Slash TV\" target changed to a creature; no Karmageddon civilian bonus."
+confidence = "single-source"
+confidence_text = "⚠️ (dates); cuts ⚠️ single uncited wiki"
+sources = ["13-S25", "13-S13"]
+sources_text = "S25, S13"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+"Publisher/distributor" = "Capcom"
+
+[[entry]]
+id = "13.2-11"
+origin = "md:3586"
+section = "13.2"
+kind = "regional"
+games = ["vcs"]
+title = "Japanese release"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2007-12-06"
+date_text = "6 Dec 2007"
+notes = "Cuts not documented."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S25"]
+sources_text = "S25"
+game_text = "GTA: Vice City Stories"
+[entry.fields]
+"Publisher/distributor" = "Capcom"
+
+[[entry]]
+id = "13.2-12"
+origin = "md:3587"
+section = "13.2"
+kind = "regional"
+games = ["gta4"]
+title = "Japanese release"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2008-10-30"
+date_text = "30 Oct 2008 (Capcom announcement 18 Aug 2008; grandtheftwiki lists 10 Oct 2008 — conflict)"
+notes = "CERO Z. ja.wiki: some expression/player-behaviour restrictions carried over from SA; some manual pages changed (specifics not documented)."
+confidence = "mixed"
+confidence_text = "✅ (date/publisher) / cuts ⚠️"
+sources = ["13-S28", "13-S37"]
+sources_text = "S28, S37"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Capcom (publishing moved to 2K/Take-Two Japan after 2010)"
+
+[[entry]]
+id = "13.2-13"
+origin = "md:3588"
+section = "13.2"
+kind = "regional"
+games = ["gta4"]
+title = "Japanese PC version"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2009-03-20"
+date_text = "20 Mar 2009"
+notes = "First PC game to receive CERO \"Z\". Patch 1.0.5.2 (10 Nov 2009) unified overseas and Japanese PC builds (full Japanese text without mods)."
+confidence = "single-source"
+confidence_text = "⚠️ (ja.wiki; grandtheftwiki concurs on date)"
+sources = ["13-S37", "13-S25"]
+sources_text = "S37, S25"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "CyberFront"
+
+[[entry]]
+id = "13.2-14"
+origin = "md:3589"
+section = "13.2"
+kind = "regional"
+games = ["eflc"]
+title = "Japanese release"
+platforms = ["ps3", "x360"]
+platform_text = "PS3/X360"
+date = "2010-06-10"
+date_text = "10 Jun 2010 (ja.wiki; GameFAQs)"
+notes = "Serials: PS3 BLJM-60235, X360 JES1-00058; PS3 \"Rockstar Classics\" reprint BLJM-60459, 29 Mar 2012 (GameFAQs, redump). The Complete Edition followed on 23 Jun 2011 (PS3 BLJM-60346, X360 JES1-00145)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S37", "13-S71", "13-S73"]
+sources_text = "S37, S71, S73"
+game_text = "GTA IV: Episodes from Liberty City"
+[entry.fields]
+"Publisher/distributor" = "GameFAQs lists \"Rockstar Games\"; the Japanese corporate entity is not named"
+
+[[entry]]
+id = "13.2-15"
+origin = "md:3590"
+section = "13.2"
+kind = "regional"
+games = ["ctw"]
+title = "Japanese release"
+platforms = ["nds", "psp"]
+platform_text = "DS, PSP"
+date_text = "DS: 29 Oct 2009 (NTR-YGXJ-JPN). PSP: 11 Mar 2010 (ULJM-05604), reprint 9 Dec 2010 (ULJM-05804) (GameFAQs). Grand Theft Wiki gives 24 Sep 2009 ⚠️"
+notes = "Japanese subtitles (de.wiki). Redump lists the PSP disc ULJM 05604 with editions \"Original, Best Hit Selection\""
+confidence = "mixed"
+confidence_text = "✅ (publisher) / ⚠️ (date conflict)"
+sources = ["13-S25", "13-S38", "13-S70", "13-S73"]
+sources_text = "S25, S38, S70, S73"
+game_text = "GTA: Chinatown Wars"
+[entry.fields]
+"Publisher/distributor" = "CyberFront (GameFAQs and grandtheftwiki agree)"
+
+[[entry]]
+id = "13.2-16"
+origin = "md:3591"
+section = "13.2"
+kind = "regional"
+games = ["gta5"]
+title = "Japanese release"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2013-10-10"
+date_text = "10 Oct 2013"
+notes = "\"By the Book\" torture gameplay cut (en.wiki). en.wiki banned-games list: \"heavily edited … at the localization level only\", playable uncut by switching locale to English (uncited)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S39", "13-S40", "13-S37", "13-S71"]
+sources_text = "S39, S40, S37, S71"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Interactive Japan is **not confirmed**: GameFAQs lists the Japanese releases (PS3 BLJM-61019, X360 JES1-00290, 10 Oct 2013) under \"Rockstar Games\""
+
+[[entry]]
+id = "13.2-17"
+origin = "md:3592"
+section = "13.2"
+kind = "regional"
+games = ["gta5"]
+title = "Japanese release"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+date = "2014-12-11"
+date_text = "11 Dec 2014"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S41"]
+sources_text = "S41"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.2-18"
+origin = "md:3593"
+section = "13.2"
+kind = "regional"
+games = ["gta5"]
+title = "Japanese PC"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2015-04-14"
+date_text = "14 Apr 2015 (worldwide)"
+notes = "No CERO rating; based on NA version without CERO-mandated content changes (some text-localisation restrictions)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S41"]
+sources_text = "S41"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.2-19"
+origin = "md:3594"
+section = "13.2"
+kind = "regional"
+games = ["trilogy-de"]
+title = "Japanese release"
+platforms = ["switch", "ps4", "pc"]
+platform_text = "Switch / PS4 / PC etc."
+date = "2021-11-11"
+date_text = "11 Nov 2021"
+notes = "Game*Spark comparison: Japanese CERO console (Switch) build ≈ PC; head bursting, downed-enemy attacks, cash drops, bloody tyre tracks, charred corpses, coffee-date voices all present — i.e. essentially uncensored vs the 2007 PS2 version."
+confidence = "confirmed"
+confidence_text = "✅ (detailed hands-on comparison)"
+sources = ["13-S32"]
+sources_text = "S32"
+game_text = "GTA: The Trilogy – DE"
+[entry.fields]
+"Publisher/distributor" = "Rockstar / Take-Two Japan"
+
+[[entry]]
+id = "13.2-20"
+origin = "md:3595"
+section = "13.2"
+kind = "regional"
+games = ["gta6"]
+title = "CERO rating"
+platform_text = "—"
+date_text = "reported 18 Oct 2026"
+notes = "GameBusiness.jp headline: CERO Z like past titles; \"no Japan-specific expression changes announced at this time\". Body not fetched."
+confidence = "single-source"
+confidence_text = "⚠️ (headline only)"
+sources = ["13-S42"]
+sources_text = "S42"
+game_text = "GTA VI"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.3-1"
+origin = "md:3603"
+section = "13.3"
+kind = "regional"
+games = ["gta3"]
+title = "Original release (shipped before classification, expecting MA)"
+platforms = ["ps2"]
+platform_text = "PS2"
+date_text = "late 2001"
+notes = "Classification Board 28 Nov 2001: **Refused Classification** — majority linked beating a prostitute after sex to \"sexualised violence\". Review Board 11 Dec 2001 upheld RC (noted lack of R rating; sex workers only group giving health/money). Take 2 recalled stock ~13 Dec 2001. (Fred Nile NSW speech 14 Mar 2002 claimed it was first MA15+ — unresolved discrepancy.)"
+confidence = "confirmed"
+confidence_text = "✅ (Refused-Classification citing Board reports + GameSpot)"
+sources = ["13-S43a", "13-S45"]
+sources_text = "S43a, S45"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Take 2 Interactive"
+
+[[entry]]
+id = "13.3-2"
+origin = "md:3604"
+section = "13.3"
+kind = "regional"
+games = ["gta3"]
+title = "Modified Australian version"
+platforms = ["ps2"]
+platform_text = "PS2"
+date = "2002-01"
+date_text = "Jan 2002"
+notes = "MA (\"High level animated violence\"); prostitute scene removed."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43a"]
+sources_text = "S43a"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Take 2 Interactive"
+
+[[entry]]
+id = "13.3-3"
+origin = "md:3605"
+section = "13.3"
+kind = "regional"
+games = ["gta3"]
+title = "Mobile"
+platforms = ["ios", "android"]
+platform_text = "iOS / Android"
+date_text = "Dec 2011; IARC MA15+ May 2015"
+notes = "Australian mobile build still the 2002 cut version (as of Mar 2021); App Store lists \"GTA III: AUSTRALIAN EDITION\" (17+)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S43a"]
+sources_text = "S43a"
+game_text = "GTA III 10th Anniversary"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-4"
+origin = "md:3606"
+section = "13.3"
+kind = "regional"
+games = ["gta3"]
+title = "Resubmission"
+platform_text = "—"
+date = "2019-09"
+date_text = "Sep 2019"
+notes = "**R18+** \"Sexual activity related to incentives and rewards\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43a"]
+sources_text = "S43a"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-5"
+origin = "md:3607"
+section = "13.3"
+kind = "regional"
+games = ["trilogy-de"]
+title = "Definitive Edition"
+platform_text = "all"
+date = "2021-08"
+date_text = "Aug 2021"
+notes = "R18+, same advice; prostitute interactions intact."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43a"]
+sources_text = "S43a"
+game_text = "GTA III – DE"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-6"
+origin = "md:3608"
+section = "13.3"
+kind = "regional"
+games = ["vc"]
+title = "Pre-cut Australian version"
+platforms = ["ps2"]
+platform_text = "PS2"
+date = "2002-11"
+date_text = "Nov 2002"
+notes = "MA (\"Medium level animated violence\"); ~7 seconds of prostitute sex removed; cutscene \"Martha's Mug Shot\" loses Candy's moans/on-screen views; \"G-Spotlight\" loses opening conversation with Steve, sex scene and moans. Board annual report: 48 complaints objecting to the distributor's modification. PC/Xbox cut status undocumented."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43b"]
+sources_text = "S43b"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "Take 2 Interactive"
+
+[[entry]]
+id = "13.3-7"
+origin = "md:3609"
+section = "13.3"
+kind = "regional"
+games = ["vc"]
+title = "New classification"
+platform_text = "—"
+date = "2010-07"
+date_text = "Jul 2010"
+notes = "MA15+ (Strong violence) — unclear whether uncensored."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S43b"]
+sources_text = "S43b"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.3-8"
+origin = "md:3610"
+section = "13.3"
+kind = "regional"
+games = ["trilogy-de"]
+title = "Definitive Edition"
+platform_text = "all"
+date = "2021-08"
+date_text = "Aug 2021"
+notes = "R18+ \"Sexual activity related to incentives and rewards\"; prostitute interactions intact."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43b"]
+sources_text = "S43b"
+game_text = "GTA: Vice City – DE"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-9"
+origin = "md:3611"
+section = "13.3"
+kind = "regional"
+games = ["sa"]
+title = "Original"
+platforms = ["ps2"]
+platform_text = "PS2"
+date_text = "MA15+ 1 Oct 2004"
+notes = "MA15+ (\"Medium level animated violence, medium level coarse language\"); prostitute interaction acceptable at MA15+."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S44"]
+sources_text = "S44"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Australia"
+
+[[entry]]
+id = "13.3-10"
+origin = "md:3612"
+section = "13.3"
+kind = "regional"
+games = ["sa"]
+title = "Classification **revoked** (Hot Coffee)"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2/PC/Xbox"
+date_text = "Investigation 11/12 Jul 2005 (at A-G Ruddock's request); content confirmed on AU discs 22 Jul; revoked 29 Jul 2005"
+notes = "Game became unclassified (illegal to sell/hire/advertise). Coles Myer and David Jones withdrew it. 86 complaints 2005–06."
+confidence = "confirmed"
+confidence_text = "✅ (Refused-Classification + en.wiki + GameSpot 29 Jul 2005)"
+sources = ["13-S44", "13-S46"]
+sources_text = "S44, S46"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Australia"
+
+[[entry]]
+id = "13.3-11"
+origin = "md:3613"
+section = "13.3"
+kind = "regional"
+games = ["sa"]
+title = "Re-release without Hot Coffee"
+platform_text = "all"
+date = "2005-09"
+date_text = "Sep 2005"
+notes = "MA15+ \"Strong violence, Strong coarse language\". (en.wiki Hot Coffee article says \"September 2015\" — evident typo.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S44", "13-S46"]
+sources_text = "S44, S46"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Take-Two"
+
+[[entry]]
+id = "13.3-12"
+origin = "md:3614"
+section = "13.3"
+kind = "regional"
+games = ["sa"]
+title = "Re-release"
+platform_text = "Digital (PS3/X360)"
+date = "2014-11"
+date_text = "Nov 2014"
+notes = "MA15+ \"Strong violence, sexual references, drug references and coarse language\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S44"]
+sources_text = "S44"
+game_text = "GTA: SA 10th Anniversary"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-13"
+origin = "md:3615"
+section = "13.3"
+kind = "regional"
+games = ["trilogy-de"]
+title = "Definitive Edition"
+platform_text = "all"
+date = "2021-08"
+date_text = "Aug 2021"
+notes = "R18+ \"Sexual activity related to incentives and rewards\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S44"]
+sources_text = "S44"
+game_text = "GTA: SA – DE"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-14"
+origin = "md:3616"
+section = "13.3"
+kind = "regional"
+games = ["gta4"]
+title = "Edited Australian version (file T07/6147)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "MA15+ Dec 2007; release 29 Apr 2008"
+notes = "MA15+ \"Strong violence, Strong coarse language, Drug and sexual references\" (minority wanted RC). Cuts: no selectable prostitute sex services/animations; no blood pools under bodies; light blood patches on wounded removed (bloody footprints/tyre tracks disputed). 136 of 169 game complaints in 2007–08 concerned the modified version. One import seized by Customs in Perth 29 Jul 2008. Rockstar (9–10 Apr 2008): differences \"minor\"/\"not significant\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43c", "13-S17", "13-S47", "13-S48"]
+sources_text = "S43c, S17, S47, S48"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Take 2 Interactive"
+
+[[entry]]
+id = "13.3-15"
+origin = "md:3617"
+section = "13.3"
+kind = "regional"
+games = ["gta4"]
+title = "Uncut PC version"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "MA15+ Nov 2008"
+notes = "MA15+ \"Strong violence, Sex scenes, Coarse language and Drug references\"; Board: \"revised version … contains additional scenes related to … sex\"; Rockstar: \"identical in content to the international version\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43c"]
+sources_text = "S43c"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Rockstar Games"
+
+[[entry]]
+id = "13.3-16"
+origin = "md:3618"
+section = "13.3"
+kind = "regional"
+games = ["gta4"]
+title = "Console patch"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "after PC release (X360 first; PS3 reportedly >1 year later per a commenter)"
+notes = "Patch made AU console versions uncensored; unpatched offline discs remain cut. Censorship wiki: uncut from The Lost and Damned onward."
+confidence = "mixed"
+confidence_text = "✅ patch / ⚠️ timing"
+sources = ["13-S43c", "13-S49"]
+sources_text = "S43c, S49"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-17"
+origin = "md:3619"
+section = "13.3"
+kind = "regional"
+games = ["tlad"]
+title = "DLC"
+platforms = ["x360"]
+platform_text = "X360"
+date_text = "MA15+ Jan 2009"
+notes = "MA15+ (incl. \"Sex scenes\", \"Nudity\"); Kotaku 17 Feb 2009: disc gave full uncensored content."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43c"]
+sources_text = "S43c"
+game_text = "GTA IV: The Lost and Damned"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-18"
+origin = "md:3620"
+section = "13.3"
+kind = "regional"
+games = ["tbogt"]
+title = "DLC"
+platforms = ["x360"]
+platform_text = "X360"
+date_text = "MA15+ Oct 2009"
+notes = "MA15+ \"Strong violence, Sex scenes, Drug use and Coarse language\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43c"]
+sources_text = "S43c"
+game_text = "GTA IV: The Ballad of Gay Tony"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-19"
+origin = "md:3621"
+section = "13.3"
+kind = "regional"
+games = ["gta5"]
+title = "Original"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "R18+ Jul 2013"
+notes = "First GTA rated R18+ (\"Drug use\"); uncut."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43d"]
+sources_text = "S43d"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-20"
+origin = "md:3622"
+section = "13.3"
+kind = "regional"
+games = ["gta5"]
+title = "Next-gen"
+platforms = ["ps4", "xone"]
+platform_text = "PS4, XB1"
+date_text = "R18+ Oct 2014"
+notes = "\"High level themes, Drug use\". Target Australia withdrew 3 Dec 2014 and Kmart 4 Dec 2014 after change.org petition (~40,000 signatures) — retailer action, not a ban."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43d", "13-S39"]
+sources_text = "S43d, S39"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.3-21"
+origin = "md:3623"
+section = "13.3"
+kind = "regional"
+games = ["gta5"]
+title = "—"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "R18+ Jul 2015"
+notes = "\"High impact themes, Drug use, Violence and Sex, Online interactivity\". Modified version (Rockstar Editor/Director Mode) R18+ Sep 2016. GTA Online standalone R18+ Feb 2022; GTA V Enhanced R18+ Feb 2025 (applicant Take 2)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43d"]
+sources_text = "S43d"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar / Take 2"
+
+[[entry]]
+id = "13.3-22"
+origin = "md:3624"
+section = "13.3"
+kind = "regional"
+games = ["ctw"]
+title = "—"
+platforms = ["nds", "psp", "ios"]
+platform_text = "DS/PSP/iOS"
+date_text = "—"
+notes = "Not listed on Refused-Classification; AU classification not documented in fetched sources."
+confidence_text = "—"
+sources = ["13-S43"]
+sources_text = "S43"
+game_text = "GTA: Chinatown Wars"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.4-1"
+origin = "md:3630"
+section = "13.4"
+kind = "regional"
+games = ["gta4"]
+title = "NZ received the Australian edited build"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date = "2008"
+date_text = "2008"
+notes = "en.wiki: censored gameplay in AU **and NZ** versions, later removed (patch). de.wiki: NZ had to be supplied with the Australian (cut) version although R18 was possible; online retailers cancelled preorders worth five figures. GamesRadar listed NZ rating as 18."
+confidence = "single-source"
+confidence_text = "⚠️ (two wikis agree; primary NZ source not fetched)"
+sources = ["13-S48", "13-S18", "13-S17"]
+sources_text = "S48, S18, S17"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Take 2"
+
+[[entry]]
+id = "13.4-2"
+origin = "md:3631"
+section = "13.4"
+kind = "regional"
+games = ["gta5"]
+title = "Retail withdrawal"
+platforms = ["ps4", "xone"]
+platform_text = "PS4/XB1"
+date = "2014-11"
+date_text = "Nov 2014"
+notes = "The Warehouse Group dropped all R18 games/DVDs incl. GTA V after Stop Demand pressure (retailer decision)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S43d"]
+sources_text = "S43d"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.5-1"
+origin = "md:3637"
+section = "13.5"
+kind = "regional"
+games = ["gta3"]
+title = "ESRB rating"
+platforms = ["ps2"]
+platform_text = "PS2"
+date = "2001"
+date_text = "2001"
+notes = "MADD asked ESRB to rate GTA III AO over its drunk-driving feature (outcome: no AO re-rating is documented)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S50"]
+sources_text = "S50"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.5-2"
+origin = "md:3638"
+section = "13.5"
+kind = "regional"
+games = ["vc"]
+title = "North American re-edit after Haitian protests"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2 → later prints (v3.0+), PC, Xbox"
+date = "2003"
+date_text = "2003 (initial release 29 Oct 2002)"
+notes = "After a lawsuit threat from the Haitian-American Grassroots Coalition, \"Haitians\" removed from dialogue/subtitles. Censorship wiki details: \"Two Bit Hit\", \"Guardian Angels\", \"Cannon Fodder\" lines changed (\"Kill all the Haitians!\" → \"Get them all!\"). Early NA prints uncut."
+confidence = "mixed"
+confidence_text = "✅ (removal) / ⚠️ (per-mission list)"
+sources = ["13-S50", "13-S31"]
+sources_text = "S50, S31"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.5-3"
+origin = "md:3639"
+section = "13.5"
+kind = "regional"
+games = ["sa"]
+title = "Re-rated **AO** (Hot Coffee)"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2, PC, Xbox"
+date = "2005-07-20"
+date_text = "20 Jul 2005"
+notes = "ESRB changed all editions M→AO; Walmart, Target, Best Buy, Circuit City pulled stock same day; Take-Two halted production; Rockstar reported $28.8M quarterly loss. US House voted 355–21 (28 Jul 2005) for FTC probe; FTC settlement 8 Jun 2006 (no fine)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S46", "13-S51"]
+sources_text = "S46, S51"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Rockstar / Take-Two"
+
+[[entry]]
+id = "13.5-4"
+origin = "md:3640"
+section = "13.5"
+kind = "regional"
+games = ["sa"]
+title = "Anti-Hot Coffee patch (v1.01)"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2005-08-11"
+date_text = "11 Aug 2005 (de.wiki: 9 Aug 2005)"
+version = "1.01"
+notes = "Disabled Hot Coffee access; restored M eligibility."
+confidence = "confirmed"
+confidence_text = "✅ (date conflict noted)"
+sources = ["13-S46", "13-S11"]
+sources_text = "S46, S11"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.5-5"
+origin = "md:3641"
+section = "13.5"
+kind = "regional"
+games = ["sa"]
+title = "M-rated edited re-release"
+platforms = ["pc", "xbox"]
+platform_text = "PC, Xbox"
+date_text = "by Sep 2005"
+notes = "Hot Coffee content inaccessible."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S46"]
+sources_text = "S46"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.5-6"
+origin = "md:3642"
+section = "13.5"
+kind = "regional"
+games = ["sa"]
+title = "\"Special Edition\" (M)"
+platforms = ["ps2"]
+platform_text = "PS2"
+date = "2005-11"
+date_text = "Nov 2005"
+notes = "PS2 reissue without Hot Coffee."
+confidence = "confirmed"
+confidence_text = "✅ (release)"
+sources = ["13-S46"]
+sources_text = "S46"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.5-7"
+origin = "md:3643"
+section = "13.5"
+kind = "regional"
+games = ["ctw"]
+title = "ESRB M"
+platforms = ["nds"]
+platform_text = "DS"
+date = "2009-03"
+date_text = "Mar 2009"
+notes = "M rating \"contested\"; Dan Houser: Nintendo did not want a kid-targeted version."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S50"]
+sources_text = "S50"
+game_text = "GTA: Chinatown Wars"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.6-1"
+origin = "md:3649"
+section = "13.6"
+kind = "regional"
+games = ["gta4", "series"]
+title = "Withdrawal / ban"
+platform_text = "all"
+date = "2008-08"
+date_text = "Aug 2008 (murder 2 Aug 2008; sales stop reported 5 Aug 2008)"
+notes = "19-year-old Polwat Chinno killed Bangkok taxi driver (Khuan Phokaeng) trying to rob a cab, allegedly \"copying\" GTA IV. Officials ordered GTA IV banned, later the entire series; distributor **New Era Interactive Media** withdrew GTA IV from shops. Victim's son later sued the distributor. Wikipedia: ban still in effect but does not extend to digital PC versions of GTA V (uncited in fetched text)."
+confidence = "mixed"
+confidence_text = "✅ (multiple Wikipedia articles, consistent) / ⚠️ (digital exception)"
+sources = ["13-S50", "13-S52", "13-S18", "13-S53"]
+sources_text = "S50, S52, S18, S53"
+game_text = "GTA IV → whole series"
+[entry.fields]
+"Publisher/distributor" = "New Era Interactive Media"
+
+[[entry]]
+id = "13.7-1"
+origin = "md:3655"
+section = "13.7"
+kind = "regional"
+games = ["gta1"]
+title = "National ban"
+platforms = ["pc", "ps1"]
+platform_text = "PC/PS1"
+date_text = "late 1990s (date not documented)"
+notes = "Banned outright by Brazil's Justice Ministry (Wikipedia)."
+confidence = "single-source"
+confidence_text = "⚠️ (en.wiki, primary not fetched)"
+sources = ["13-S50", "13-S54"]
+sources_text = "S50, S54"
+game_text = "GTA (1997)"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.7-2"
+origin = "md:3656"
+section = "13.7"
+kind = "regional"
+games = ["eflc", "tbogt"]
+title = "Court injunction"
+platforms = ["x360", "ps3", "pc"]
+platform_text = "X360 / PS3 / PC"
+date = "2010-10-18"
+date_text = "18 Oct 2010"
+notes = "Civil Court of Barueri (São Paulo) barred sale/distribution of EFLC (\"worldwide\", reportedly incl. digital) over the track \"Conga Kid\" (Daniel Haaksman feat. MC Miltinho), alleged unauthorised sample of \"Bota o Dedinho pro Alto\" by Hamilton Lourenço da Silva; R$5,000/day penalty; targeted Rockstar and Synergex Brazil. Lifted: Terra says resolved later in 2010; Wikipedia says lifted 2012. Canaltech (21 Sep 2025) dates the Barueri order to 2013 and says the expansion was later released but the outcome of the case \"was never made public\" (three-way conflict; no lift date documented)."
+confidence = "mixed"
+confidence_text = "✅ (injunction) / ⚠️ (lift date)"
+sources = ["13-S55", "13-S56", "13-S53", "13-S78"]
+sources_text = "S55, S56, S53, S78"
+game_text = "GTA IV: Episodes from Liberty City / The Ballad of Gay Tony"
+[entry.fields]
+"Publisher/distributor" = "Synergex Brazil (distributor)"
+
+[[entry]]
+id = "13.7-3"
+origin = "md:3657"
+section = "13.7"
+kind = "regional"
+games = ["gta5"]
+title = "Brazilian Portuguese subtitles"
+platform_text = "—"
+date_text = "—"
+notes = "Brazilian Portuguese listed in GTA V Legacy/Enhanced Steam languages (date added not documented)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57"]
+sources_text = "S57"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.7-4"
+origin = "md:3658"
+section = "13.7"
+kind = "regional"
+games = ["trilogy-de"]
+title = "Brazilian Portuguese subtitles"
+platform_text = "—"
+date = "2021-11-11"
+date_text = "11 Nov 2021 (Steam 19 Jan 2023)"
+notes = "First time III/VC/SA received Brazilian Portuguese (originals on Steam: EN/FR/DE/IT/ES only)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57"]
+sources_text = "S57"
+game_text = "GTA Trilogy – DE"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.7-5"
+origin = "md:3659"
+section = "13.7"
+kind = "regional"
+games = ["gta5"]
+title = "Direct digital sales suspended in Brazil"
+platforms = ["pc"]
+platform_text = "PC (Rockstar Games Store / Launcher)"
+date_text = "Reported 17 Mar 2026 (GTAboom; Canaltech). The Digital ECA (Law 15,211/2025, nicknamed \"Lei Felca\") took effect 16 Mar 2026 per GTAboom, 17 Mar 2026 per Canaltech ⚠️"
+notes = "Rockstar stopped selling full games through its own store and launcher in Brazil after the child-protection law took effect. Shark Cards and Gold Bars remained on Rockstar's store (GTAboom); the games stayed available via Steam, Epic, PlayStation Store and Xbox Store. Rockstar gave no public reason (both sources); GTAboom links a Rockstar Support article \"Latest information on the Digital ECA for Brazilian players\""
+confidence = "confirmed"
+confidence_text = "✅ (two sources)"
+sources = ["13-S79", "13-S80"]
+sources_text = "S79, S80"
+game_text = "GTA V, Red Dead Redemption 2 and other Rockstar titles"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.7-6"
+origin = "md:3660"
+section = "13.7"
+kind = "regional"
+games = ["series"]
+title = "—"
+platform_text = "—"
+date_text = "—"
+notes = "Brazilian ClassInd ratings per title: not documented in fetched sources."
+confidence_text = "—"
+sources_text = "—"
+game_text = "ClassInd ratings"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.8-1"
+origin = "md:3666"
+section = "13.8"
+kind = "regional"
+games = ["vc", "sa", "lcs", "gta4"]
+title = "Saudi Arabia ban"
+platform_text = "—"
+date_text = "not documented"
+notes = "Censorship wiki: each \"banned due to violent content\" (uncited)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S31", "13-S36", "13-S13", "13-S49"]
+sources_text = "S31, S36, S13, S49"
+game_text = "GTA: Vice City, San Andreas, Liberty City Stories, GTA IV"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.8-2"
+origin = "md:3667"
+section = "13.8"
+kind = "regional"
+games = ["gta5", "gta-online"]
+title = "Saudi Arabia ban → approved for release"
+platform_text = "all"
+date = "2025-07-17"
+date_text = "Ban start date not documented (headlines speak of a ban of \"12 years\", i.e. since launch; inferred, not sourced ❓). Approved for release **17 Jul 2025**, physical and digital (Tbreak, 6 Jul 2025; The New Arab, 21 Jul 2025, \"last week\")"
+notes = "Previously banned for violence, drug use and sexual content (Wikipedia, citation needed; The New Arab). Released with a new **21+** age rating set by the General Authority for Media Regulation (GMRA); described as uncensored (The New Arab). GTA Online casino features, blocked since 2019, stay blocked (Tbreak)"
+confidence = "mixed"
+confidence_text = "✅ (lifting: two press sources) / ❓ (ban start)"
+sources = ["13-S53", "13-S81", "13-S82"]
+sources_text = "S53, S81, S82"
+game_text = "GTA V + GTA Online"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.8-3"
+origin = "md:3668"
+section = "13.8"
+kind = "regional"
+games = ["series", "gta5"]
+title = "UAE ban → GTA V approved"
+platform_text = "—"
+date_text = "Approved for release 17 Jul 2025 (Tbreak)"
+notes = "Wikipedia (citation needed): series banned; SA and GTA V nevertheless purchasable on Steam (dirham pricing introduced 10 Nov 2015). Tbreak names the UAE National Media Council as the approving body, with a 21+ rating"
+confidence = "mixed"
+confidence_text = "✅ (2025 approval) / ❓ (earlier ban scope)"
+sources = ["13-S53", "13-S81", "13-S82"]
+sources_text = "S53, S81, S82"
+game_text = "GTA series / GTA V"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.8-4"
+origin = "md:3669"
+section = "13.8"
+kind = "regional"
+games = ["gta-online"]
+title = "Casino features geo-blocked"
+platform_text = "all"
+date_text = "Since 2019 (Tbreak: casino features \"blocked since 2019\" in Saudi Arabia/UAE; the Diamond Casino & Resort launched 23 Jul 2019)"
+notes = "de.wiki: Casino DLC blocked in 53 countries considered to promote gambling (list not given); allowed in D-A-CH. Still blocked in Saudi Arabia and the UAE after the July 2025 approval (Tbreak)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S19", "13-S81"]
+sources_text = "S19, S81"
+game_text = "GTA Online (Diamond Casino)"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.9-1"
+origin = "md:3675"
+section = "13.9"
+kind = "regional"
+games = ["gta3", "vc"]
+title = "Banned, later lifted"
+platforms = ["ps2", "pc"]
+platform_text = "PS2/PC"
+date_text = "dates not documented"
+notes = "Wikipedia: \"were previously banned, but the bans were later lifted\" (citation not retrievable). ko.wiki pages do not mention a ban."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S53"]
+sources_text = "S53"
+game_text = "GTA III, GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.9-2"
+origin = "md:3676"
+section = "13.9"
+kind = "regional"
+games = ["gta3"]
+title = "Korean localisation (mobile)"
+platforms = ["ios", "android"]
+platform_text = "iOS/Android"
+date_text = "2012 (T Store); Korean subtitles patched into Android/iOS 2013"
+notes = "Localised by Joymoa (조이모아); Rockstar never shipped Korean text for PC/console GTA III (fan patch only)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S58"]
+sources_text = "S58"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Joymoa"
+
+[[entry]]
+id = "13.9-3"
+origin = "md:3677"
+section = "13.9"
+kind = "regional"
+games = ["vc"]
+title = "Korean"
+platforms = ["ios", "android"]
+platform_text = "iOS/Android"
+date = "2012-12"
+date_text = "Dec 2012"
+notes = "ko.wiki: first official Korean localisation in the series (contradicts ko.wiki GTA V claim — see below); Google Play country restriction blocked purchase in Korea for a time."
+confidence = "single-source"
+confidence_text = "⚠️ (internal conflict)"
+sources = ["13-S59"]
+sources_text = "S59"
+game_text = "GTA: Vice City 10th Anniv."
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.9-4"
+origin = "md:3678"
+section = "13.9"
+kind = "regional"
+games = ["sa"]
+title = "GRAC rating"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2007-10"
+date_text = "Oct 2007"
+notes = "청소년 이용불가 (\"not for minors\"); Xbox Originals on Xbox Live Marketplace 20 Oct 2008 (1,200 MSP)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S60"]
+sources_text = "S60"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "not named"
+
+[[entry]]
+id = "13.9-5"
+origin = "md:3679"
+section = "13.9"
+kind = "regional"
+games = ["gta4"]
+title = "Korean release"
+platforms = ["ps3"]
+platform_text = "PS3"
+date = "2008-09-23"
+date_text = "23 Sep 2008"
+notes = "Officially distributed by WizHands (위즈핸즈). Redump lists a Korean PS3 disc BLKS-20073 (v01.01)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S61", "13-S73"]
+sources_text = "S61, S73"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "WizHands"
+
+[[entry]]
+id = "13.9-6"
+origin = "md:3680"
+section = "13.9"
+kind = "regional"
+games = ["eflc", "gta4"]
+title = "Korean releases"
+platforms = ["ps3", "x360", "pc"]
+platform_text = "PS3, X360, PC"
+date_text = "EFLC: X360 2 Nov 2009, PS3 16 Apr 2010 (BLKS-20198), PC 3 Jun 2010. Complete Edition: PS3 9 Dec 2010, X360 13 Dec 2010, PC 7 Dec 2011 (GameFAQs)"
+notes = "Korean rating 18 (GameFAQs)"
+confidence = "single-source"
+confidence_text = "⚠️ (GameFAQs only)"
+sources = ["13-S71"]
+sources_text = "S71"
+game_text = "GTA IV: Episodes from Liberty City / Complete Edition"
+[entry.fields]
+"Publisher/distributor" = "not named"
+
+[[entry]]
+id = "13.9-7"
+origin = "md:3681"
+section = "13.9"
+kind = "regional"
+games = ["ctw"]
+title = "Korean release"
+platforms = ["psp"]
+platform_text = "PSP"
+date = "2009-11-02"
+date_text = "2 Nov 2009 (GameFAQs)"
+notes = "ULKS-46223; rating 18"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S70"]
+sources_text = "S70"
+game_text = "GTA: Chinatown Wars"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Interactive (GameFAQs)"
+
+[[entry]]
+id = "13.9-8"
+origin = "md:3682"
+section = "13.9"
+kind = "regional"
+games = ["lcs"]
+title = "Korean \"Greatest Hits\" reprint"
+platforms = ["psp"]
+platform_text = "PSP"
+date_text = "not documented"
+notes = "Redump lists a Korean disc ULKS-46157 (Korean title ＧＴＡ： 리버티 시티 스토리, v3.00)"
+confidence = "single-source"
+confidence_text = "⚠️ (redump only)"
+sources = ["13-S73"]
+sources_text = "S73"
+game_text = "GTA: Liberty City Stories"
+[entry.fields]
+"Publisher/distributor" = "not named"
+
+[[entry]]
+id = "13.9-9"
+origin = "md:3683"
+section = "13.9"
+kind = "regional"
+games = ["gta3"]
+title = "Korean digital release"
+platforms = ["ps3"]
+platform_text = "PS3 (PS2 Classics)"
+date = "2013-02-06"
+date_text = "6 Feb 2013 (GameFAQs)"
+notes = "NPUD-20062; rating 18"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S69"]
+sources_text = "S69"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Interactive (GameFAQs)"
+
+[[entry]]
+id = "13.9-10"
+origin = "md:3684"
+section = "13.9"
+kind = "regional"
+games = ["gta5"]
+title = "Korean subtitles"
+platforms = ["ps3", "x360"]
+platform_text = "PS3/X360 (later all)"
+date = "2013-09-17"
+date_text = "17 Sep 2013"
+notes = "ko.wiki: \"first in the series with official Korean subtitles\"; mistranslations later patched. PC 14 Apr 2015 08:00 KST."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S62"]
+sources_text = "S62"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.10-1"
+origin = "md:3690"
+section = "13.10"
+kind = "regional"
+games = ["gta5"]
+title = "Traditional Chinese text"
+platforms = ["ps3", "x360"]
+platform_text = "PS3 (NA & Asia versions), X360 (international)"
+date_text = "announced 9 Aug 2013"
+notes = "First GTA with Traditional Chinese content."
+confidence = "single-source"
+confidence_text = "⚠️ (zh.wiki)"
+sources = ["13-S63"]
+sources_text = "S63"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.10-2"
+origin = "md:3691"
+section = "13.10"
+kind = "regional"
+games = ["gta5"]
+title = "Simplified + Traditional Chinese"
+platforms = ["pc"]
+platform_text = "PC / Enhanced"
+date_text = "13/14 Apr 2015 (Legacy); 4 Mar 2025 (Enhanced)"
+notes = "Both Chinese scripts listed on Steam."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57"]
+sources_text = "S57"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.10-3"
+origin = "md:3692"
+section = "13.10"
+kind = "regional"
+games = ["series"]
+title = "Mainland China official release"
+platform_text = "—"
+date_text = "—"
+notes = "No official mainland China release documented in fetched sources; China banned consoles Jun 2000–Jan 2014 and bans red blood display (general rules, not GTA-specific)."
+confidence_text = "—"
+sources = ["13-S52"]
+sources_text = "S52"
+game_text = "Any GTA"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.11-1"
+origin = "md:3698"
+section = "13.11"
+kind = "regional"
+games = ["series"]
+title = "Malaysia"
+date = "2008-08"
+date_text = "Aug 2008"
+notes = "A consumer-rights head called for a series ban after the Thai ban — a call, not an enacted ban."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S53"]
+sources_text = "S53"
+game_text = "entire series"
+
+[[entry]]
+id = "13.11-2"
+origin = "md:3699"
+section = "13.11"
+kind = "regional"
+games = ["series"]
+title = "Tajikistan"
+date = "2024-11"
+date_text = "Nov 2024"
+notes = "Ministry of Interior banned GTA and Counter-Strike as inciting crime."
+confidence = "single-source"
+confidence_text = "⚠️ (citations not retrievable)"
+sources = ["13-S53"]
+sources_text = "S53"
+game_text = "GTA (series)"
+
+[[entry]]
+id = "13.11-3"
+origin = "md:3700"
+section = "13.11"
+kind = "regional"
+games = ["series"]
+title = "Venezuela"
+date_text = "—"
+notes = "Venezuela's 2009 law banning \"bélicos\" (war-like) video games is often cited, but **no fetched source names a GTA title** — not documented."
+confidence_text = "—"
+sources_text = "—"
+game_text = "—"
+
+[[entry]]
+id = "13.11-4"
+origin = "md:3701"
+section = "13.11"
+kind = "regional"
+games = ["gta1"]
+title = "United Kingdom / France / Germany"
+date = "1997"
+date_text = "1997"
+notes = "Condemned for \"extreme violence\" (House of Lords debate 20 May 1997 cited by en.wiki). No ban."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S50", "13-S54"]
+sources_text = "S50, S54"
+game_text = "GTA (1997)"
+
+[[entry]]
+id = "13.12-1"
+origin = "md:3709"
+section = "13.12"
+kind = "regional"
+games = ["gta1"]
+title = "Polish distribution"
+platforms = ["pc"]
+platform_text = "PC"
+date = "1998"
+date_text = "1998"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S75"]
+sources_text = "S75"
+game_text = "GTA (1997)"
+[entry.fields]
+"Publisher/distributor" = "CD Projekt (pl.wiki, citing *Gry Komputerowe* 02/1998)"
+
+[[entry]]
+id = "13.12-2"
+origin = "md:3710"
+section = "13.12"
+kind = "regional"
+games = ["gta2"]
+title = "Russian edition **\"GTA 2: Беспредел\"**"
+platforms = ["pc"]
+platform_text = "PC"
+date = "1999-11-04"
+date_text = "4 Nov 1999 (ru.wiki infobox)"
+notes = "Localised and published by Buka (ru.wiki, citing buka.ru). Redump lists the Russian PC disc (v10.1), which also carries Buka demos. Schnittberichte also lists a \"Russian PC version\""
+confidence = "confirmed"
+confidence_text = "✅ (ru.wiki + redump)"
+sources = ["13-S66", "13-S7", "13-S73"]
+sources_text = "S66, S7, S73"
+game_text = "GTA 2"
+[entry.fields]
+"Publisher/distributor" = "Buka"
+
+[[entry]]
+id = "13.12-3"
+origin = "md:3711"
+section = "13.12"
+kind = "regional"
+games = ["gta2"]
+title = "Polish distribution; \"GTA2: Złota Edycja\""
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "Polish release 15 Jul 2000 (pl.wiki, citing Gry-Online)"
+notes = "Redump lists a Polish \"Złota Edycja\" (\"Gold Edition\") disc with a Polish manual; its in-game FR/DE/IT/ES text wrongly shows Polish characters"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S75", "13-S73"]
+sources_text = "S75, S73"
+game_text = "GTA 2"
+[entry.fields]
+"Publisher/distributor" = "Play-It (pl.wiki, citing *Gry Komputerowe* 10/1999)"
+
+[[entry]]
+id = "13.12-4"
+origin = "md:3712"
+section = "13.12"
+kind = "regional"
+games = ["gta3"]
+title = "Russian editions"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "10 Sep 2002 (Buka); 26 Mar 2010 (1C-SoftClub) (ru.wiki infobox)"
+notes = "Russian text listed among the languages (ru.wiki). Redump lists a Russian \"Bestseller\" PC disc (v1.1)"
+confidence = "single-source"
+confidence_text = "⚠️ (ru.wiki + redump)"
+sources = ["13-S74", "13-S73"]
+sources_text = "S74, S73"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Buka; later 1C-SoftClub"
+
+[[entry]]
+id = "13.12-5"
+origin = "md:3713"
+section = "13.12"
+kind = "regional"
+games = ["gta3"]
+title = "Polish / Czech distribution"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2002"
+date_text = "2002 (PL)"
+notes = "Polish text-only translation (pl.wiki language field)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S75", "13-S76"]
+sources_text = "S75, S76"
+game_text = "GTA III"
+[entry.fields]
+"Publisher/distributor" = "Poland: Play-It (pl.wiki, citing *Click!* 1/2002). Czech Republic: Cenega (cs.wiki)"
+
+[[entry]]
+id = "13.12-6"
+origin = "md:3714"
+section = "13.12"
+kind = "regional"
+games = ["gta1", "london1969", "gta2", "gta3"]
+title = "Polish compilation \"Grand Theft Auto: Trylogia\""
+platforms = ["pc"]
+platform_text = "PC"
+date = "2007-05-18"
+date_text = "18 May 2007 (Section 12)"
+notes = "All four games with Polish text"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S73"]
+sources_text = "S73"
+game_text = "GTA, London 1969, GTA 2, GTA III"
+[entry.fields]
+"Publisher/distributor" = "Cenega, \"Kolekcja Klasyki\" line, CENEGA 568/PCDVD-ROM/2007 (redump)"
+
+[[entry]]
+id = "13.12-7"
+origin = "md:3715"
+section = "13.12"
+kind = "regional"
+games = ["vc"]
+title = "Russian localisation"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "not documented"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S74", "13-S73"]
+sources_text = "S74, S73"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "1C-SoftClub (ru.wiki localiser field). Redump lists a Russian \"Bestseller\" PC disc (v1.01)"
+
+[[entry]]
+id = "13.12-8"
+origin = "md:3716"
+section = "13.12"
+kind = "regional"
+games = ["vc"]
+title = "Polish distribution"
+platforms = ["pc"]
+platform_text = "PC"
+date_text = "2003 (Play-It); Cenega reissue"
+notes = "Polish subtitles. Redump: Cenega \"Kolekcja Klasyki\" set = English game disc CENEGA 577A/DVD/2007 + \"Patch Polonizujący\" (Polonisation patch) disc CENEGA 688/PCCD-ROM/2008"
+confidence = "confirmed"
+confidence_text = "✅ (pl.wiki + redump)"
+sources = ["13-S75", "13-S73"]
+sources_text = "S75, S73"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "Play-It (pl.wiki, citing *Click!* 1/2003), Cenega (pl.wiki)"
+
+[[entry]]
+id = "13.12-9"
+origin = "md:3717"
+section = "13.12"
+kind = "regional"
+games = ["sa"]
+title = "Russian localisation"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2010-02-12"
+date_text = "12 Feb 2010 (ru.wiki infobox)"
+notes = "Redump lists a Russian \"Original, Bestseller\" PC disc (v1.01)"
+confidence = "single-source"
+confidence_text = "⚠️ (ru.wiki + redump)"
+sources = ["13-S74", "13-S73"]
+sources_text = "S74, S73"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "1C-SoftClub"
+
+[[entry]]
+id = "13.12-10"
+origin = "md:3718"
+section = "13.12"
+kind = "regional"
+games = ["sa"]
+title = "First Polish edition"
+platforms = ["pc"]
+platform_text = "PC"
+date = "2007-05-31"
+date_text = "31 May 2007 (pl.wiki, citing GRY-Online 22 May 2007; the Polish launch had been delayed)"
+notes = "Redump: \"Premium Games\" set = English game disc CENEGA 576A/DVD/2007 + \"Patch Polonizujący\" disc CENEGA 576B/DVD/2007; later \"Nowe Premium Games\" reissue with an update disc"
+confidence = "confirmed"
+confidence_text = "✅ (pl.wiki + redump)"
+sources = ["13-S75", "13-S73"]
+sources_text = "S75, S73"
+game_text = "GTA: San Andreas"
+[entry.fields]
+"Publisher/distributor" = "Cenega Poland"
+
+[[entry]]
+id = "13.12-11"
+origin = "md:3719"
+section = "13.12"
+kind = "regional"
+games = ["lcs", "vcs"]
+title = "Russian distribution"
+platforms = ["psp"]
+platform_text = "PSP (VCS also PS2)"
+date_text = "not documented"
+notes = "VCS was published in Russia in English (ru.wiki, citing softclub.ru)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S74"]
+sources_text = "S74"
+game_text = "GTA: Liberty City Stories / Vice City Stories"
+[entry.fields]
+"Publisher/distributor" = "SoftClub"
+
+[[entry]]
+id = "13.12-12"
+origin = "md:3720"
+section = "13.12"
+kind = "regional"
+games = ["gta4"]
+title = "Russian distribution"
+platforms = ["x360", "ps3", "pc"]
+platform_text = "X360, PS3, PC"
+date_text = "Consoles 29 Apr 2008; Russian-localised PC version 19 Dec 2008 (ru.wiki)"
+notes = "Russian text. The \"Russian version patch 1.0.4.2\" named in the brief is still **not documented**. The current Steam *GTA IV: The Complete Edition* (24 Mar 2020) lists only EN/FR/IT/DE/ES. Redump lists a Russian PC \"Полное издание\" (Complete Edition) disc set"
+confidence = "single-source"
+confidence_text = "⚠️ (ru.wiki + redump)"
+sources = ["13-S74", "13-S57", "13-S73"]
+sources_text = "S74, S57, S73"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "SoftClub (X360/PS3), 1C (PC)"
+
+[[entry]]
+id = "13.12-13"
+origin = "md:3721"
+section = "13.12"
+kind = "regional"
+games = ["gta4"]
+title = "Polish distribution"
+platform_text = "all"
+date = "2008"
+date_text = "2008"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S75"]
+sources_text = "S75"
+game_text = "GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Cenega Poland (pl.wiki)"
+
+[[entry]]
+id = "13.12-14"
+origin = "md:3722"
+section = "13.12"
+kind = "regional"
+games = ["eflc"]
+title = "Russian release"
+platforms = ["pc"]
+platform_text = "consoles/PC"
+date_text = "\"21 May\" (year not given; ru.wiki body text)"
+notes = "Subtitles and interface localised, voices unchanged (ru.wiki). ru.wiki is inconsistent: the infobox names Soft Club as publisher/localiser, the body text names 1C"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S74"]
+sources_text = "S74"
+game_text = "GTA: Episodes from Liberty City"
+[entry.fields]
+"Publisher/distributor" = "Soft Club / 1C ⚠️"
+
+[[entry]]
+id = "13.12-15"
+origin = "md:3723"
+section = "13.12"
+kind = "regional"
+games = ["ctw"]
+title = "Russian and Polish distribution"
+platforms = ["nds", "psp"]
+platform_text = "DS/PSP"
+date_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S74", "13-S75"]
+sources_text = "S74, S75"
+game_text = "GTA: Chinatown Wars"
+[entry.fields]
+"Publisher/distributor" = "Russia: Soft Club holds the distribution rights (ru.wiki). Poland: Cenega Poland (pl.wiki)"
+
+[[entry]]
+id = "13.12-16"
+origin = "md:3724"
+section = "13.12"
+kind = "regional"
+games = ["gta5"]
+title = "Russian distribution"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, X360"
+date_text = "Distributor announced 15 Nov 2012; release 17 Sep 2013"
+notes = "1C-SoftClub official distributor for X360/PS3 in Russia & CIS; interface/subtitles include Russian"
+confidence = "mixed"
+confidence_text = "⚠️ (ru.wiki) + ✅ (Russian on Steam list)"
+sources = ["13-S67", "13-S57"]
+sources_text = "S67, S57"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "1C-SoftClub"
+
+[[entry]]
+id = "13.12-17"
+origin = "md:3725"
+section = "13.12"
+kind = "regional"
+games = ["gta5"]
+title = "Polish distribution"
+platform_text = "all"
+date = "2013"
+date_text = "2013"
+notes = "Polish text (pl.wiki; Steam)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S75", "13-S57"]
+sources_text = "S75, S57"
+game_text = "GTA V"
+[entry.fields]
+"Publisher/distributor" = "Cenega Poland (pl.wiki)"
+
+[[entry]]
+id = "13.12-18"
+origin = "md:3726"
+section = "13.12"
+kind = "regional"
+games = ["gta5", "trilogy-de"]
+title = "Polish subtitles"
+platform_text = "all"
+date_text = "V: by 2015 PC release (exact date added not documented); DE: 2021"
+notes = "Polish listed for GTA V Legacy/Enhanced and all three Definitive Editions"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57"]
+sources_text = "S57"
+game_text = "GTA V, Trilogy DE"
+[entry.fields]
+"Publisher/distributor" = "Rockstar"
+
+[[entry]]
+id = "13.12-19"
+origin = "md:3727"
+section = "13.12"
+kind = "regional"
+games = ["trilogy-de"]
+title = "Russian localisation"
+platform_text = "all"
+date = "2021-11-11"
+date_text = "11 Nov 2021"
+notes = "Russian text (ru.wiki)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S74"]
+sources_text = "S74"
+game_text = "GTA: The Trilogy – DE"
+[entry.fields]
+"Publisher/distributor" = "SoftClub (ru.wiki localiser field)"
+
+[[entry]]
+id = "13.12-20"
+origin = "md:3728"
+section = "13.12"
+kind = "regional"
+games = ["vc", "sa", "gta4"]
+title = "French distribution"
+platform_text = "—"
+date_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S77"]
+sources_text = "S77"
+game_text = "GTA: Vice City, San Andreas, GTA IV"
+[entry.fields]
+"Publisher/distributor" = "Take-Two Interactive (fr.wiki \"distributeur\" fields; VC also lists Capcom for Japan)"
+
+[[entry]]
+id = "13.12-21"
+origin = "md:3729"
+section = "13.12"
+kind = "regional"
+games = ["vc"]
+title = "French version"
+platforms = ["ps2"]
+platform_text = "PS2?"
+date_text = "—"
+notes = "Schnittberichte commenter: the lap-dance stripper wears pink underwear in the French version vs a black corset in German/UK versions (single user comment)."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["13-S5"]
+sources_text = "S5"
+game_text = "GTA: Vice City"
+[entry.fields]
+"Publisher/distributor" = "—"
+
+[[entry]]
+id = "13.13-1"
+origin = "md:3739"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA III (2001 PC)"
+platforms = ["pc"]
+platform_text = "Steam app 12100"
+notes = "Japanese text only in Capcom's 2003 JP edition; Korean only in 2012–13 mobile (Joymoa)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57", "13-S24", "13-S58"]
+sources_text = "S57, S24, S58"
+[entry.fields]
+"Official text languages" = "EN (audio), FR, DE, IT, ES"
+
+[[entry]]
+id = "13.13-2"
+origin = "md:3740"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA: Vice City (PC)"
+platforms = ["pc"]
+platform_text = "Steam app 12110"
+notes = "Japanese in Capcom JP edition (2004); Korean in 2012 mobile edition."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57", "13-S59"]
+sources_text = "S57, S59"
+[entry.fields]
+"Official text languages" = "EN, FR, DE, IT, ES"
+
+[[entry]]
+id = "13.13-3"
+origin = "md:3741"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA: San Andreas (PC)"
+platforms = ["pc"]
+platform_text = "Steam app 12120 (current build)"
+notes = "Current Steam build lists English only (original 2005 retail language set not documented here). Japanese in Capcom PS2 (2007)."
+confidence = "confirmed"
+confidence_text = "✅ (current)"
+sources = ["13-S57", "13-S34"]
+sources_text = "S57, S34"
+[entry.fields]
+"Official text languages" = "English only"
+
+[[entry]]
+id = "13.13-4"
+origin = "md:3742"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA: Vice City Stories"
+platforms = ["ps2"]
+platform_text = "PS2"
+notes = "Full list not documented."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["13-S65"]
+sources_text = "S65"
+[entry.fields]
+"Official text languages" = "Subtitles incl. German (multi-language)"
+
+[[entry]]
+id = "13.13-5"
+origin = "md:3743"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA IV / Complete Edition"
+platforms = ["pc"]
+platform_text = "Steam app 12210"
+notes = "Japanese text: Capcom console (2008) and CyberFront PC (2009); PC patch 1.0.5.2 (10 Nov 2009) unified JP and international PC builds."
+confidence = "mixed"
+confidence_text = "✅ / ⚠️"
+sources = ["13-S57", "13-S37"]
+sources_text = "S57, S37"
+[entry.fields]
+"Official text languages" = "EN (audio), FR, IT, DE, ES"
+
+[[entry]]
+id = "13.13-6"
+origin = "md:3744"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA IV: Episodes from Liberty City"
+platforms = ["pc"]
+platform_text = "Steam app 12220"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57"]
+sources_text = "S57"
+[entry.fields]
+"Official text languages" = "EN (audio), FR, DE, IT, ES"
+
+[[entry]]
+id = "13.13-7"
+origin = "md:3745"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA: Chinatown Wars"
+platforms = ["nds", "psp"]
+platform_text = "DS/PSP"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️ (de.wiki)"
+sources = ["13-S38"]
+sources_text = "S38"
+[entry.fields]
+"Official text languages" = "DE, EN, FR, IT, JA, ES subtitles"
+
+[[entry]]
+id = "13.13-8"
+origin = "md:3746"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA V (Legacy, PC 13/14 Apr 2015)"
+platforms = ["pc"]
+platform_text = "Steam app 271590"
+notes = "First GTA with Traditional Chinese (announced 9 Aug 2013 for NA/Asia PS3 & intl. X360) and, per ko.wiki, first with official Korean subtitles (console 17 Sep 2013). Dates when PL/PT-BR/zh-Hans/ES-LatAm were added: not documented."
+confidence = "confirmed"
+confidence_text = "✅ (list)"
+sources = ["13-S57", "13-S63", "13-S62"]
+sources_text = "S57, S63, S62"
+[entry.fields]
+"Official text languages" = "EN (audio), FR, IT, DE, ES (Spain), KO, PL, PT-BR, RU, zh-Hant, JA, zh-Hans, ES (Latin America) — 13"
+
+[[entry]]
+id = "13.13-9"
+origin = "md:3747"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA V Enhanced (PC, 4 Mar 2025)"
+platforms = ["pc"]
+platform_text = "Steam app 3240220"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57"]
+sources_text = "S57"
+[entry.fields]
+"Official text languages" = "same 13 as Legacy"
+
+[[entry]]
+id = "13.13-10"
+origin = "md:3748"
+section = "13.13"
+kind = "languages"
+games = ["series"]
+title = "GTA III / VC / SA – The Definitive Edition"
+platforms = ["pc"]
+platform_text = "Steam apps 1546970 / 1546990 / 1547000 (19 Jan 2023)"
+notes = "First official JP/KO/PL/PT-BR/RU/zh text for SA on PC."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["13-S57"]
+sources_text = "S57"
+[entry.fields]
+"Official text languages" = "same 13 as GTA V"
+
+[[entry]]
+id = "13.14-1"
+origin = "md:3754"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA (1997)"
+sources = ["13-S2", "13-S9", "13-S54"]
+sources_text = "S2, S9, S54"
+[entry.fields]
+"ESRB (US)" = "—"
+"PEGI / BBFC (EU/UK)" = "UK: condemned, no ban"
+"USK (DE)" = "USK 16 (cut report exists)"
+"CERO (JP)" = "not documented"
+"OFLC/ACB (AU)" = "—"
+Other = "Brazil: banned"
+
+[[entry]]
+id = "13.14-2"
+origin = "md:3755"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA 2"
+sources = ["13-S7", "13-S27"]
+sources_text = "S7, S27"
+[entry.fields]
+"ESRB (US)" = "M (US PC)"
+"PEGI / BBFC (EU/UK)" = "BBFC 18 (UK disc, per comment)"
+"USK (DE)" = "16 (cut)"
+"CERO (JP)" = "\"R-18\" (ja.wiki)"
+"OFLC/ACB (AU)" = "—"
+Other = "—"
+
+[[entry]]
+id = "13.14-3"
+origin = "md:3756"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA III"
+sources = ["13-S8", "13-S21", "13-S24", "13-S43a", "13-S53"]
+sources_text = "S8, S21, S24, S43a, S53"
+[entry.fields]
+"ESRB (US)" = "not documented (MADD sought AO)"
+"PEGI / BBFC (EU/UK)" = "—"
+"USK (DE)" = "Keine Jugendfreigabe / 18 (cut via language)"
+"CERO (JP)" = "18+ (2003)"
+"OFLC/ACB (AU)" = "RC (2001) → MA cut (2002) → R18+ (2019)"
+Other = "KR: banned then lifted"
+
+[[entry]]
+id = "13.14-4"
+origin = "md:3757"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA: Vice City"
+sources = ["13-S5", "13-S10", "13-S43b"]
+sources_text = "S5, S10, S43b"
+[entry.fields]
+"ESRB (US)" = "not documented"
+"PEGI / BBFC (EU/UK)" = "BBFC 18"
+"USK (DE)" = "16 cut → 18 uncut (Dec 2014)"
+"CERO (JP)" = "Z/18 (series-wide per grandtheftwiki)"
+"OFLC/ACB (AU)" = "MA cut (2002) → MA15+ (2010) → R18+ DE (2021)"
+Other = "KR: banned then lifted"
+
+[[entry]]
+id = "13.14-5"
+origin = "md:3758"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA: San Andreas"
+sources = ["13-S46", "13-S6", "13-S15", "13-S35", "13-S44", "13-S60"]
+sources_text = "S46, S6, S15, S35, S44, S60"
+[entry.fields]
+"ESRB (US)" = "M → **AO (20 Jul 2005)** → M"
+"PEGI / BBFC (EU/UK)" = "—"
+"USK (DE)" = "16 (cut); EU PC indexed 2009–2015"
+"CERO (JP)" = "Z (2007, expected per Game Developer)"
+"OFLC/ACB (AU)" = "MA15+ (2004) → revoked (29 Jul 2005) → MA15+ (Sep 2005) → R18+ DE (2021)"
+Other = "KR: 청소년 이용불가 (2007)"
+
+[[entry]]
+id = "13.14-6"
+origin = "md:3759"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA: LCS"
+sources = ["13-S12", "13-S64"]
+sources_text = "S12, S64"
+[entry.fields]
+"ESRB (US)" = "—"
+"PEGI / BBFC (EU/UK)" = "BBFC 18"
+"USK (DE)" = "16 (cut); EU PS2 indexed 2007–2015"
+"CERO (JP)" = "not documented"
+"OFLC/ACB (AU)" = "—"
+Other = "—"
+
+[[entry]]
+id = "13.14-7"
+origin = "md:3760"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA: VCS"
+sources = ["13-S14", "13-S65"]
+sources_text = "S14, S65"
+[entry.fields]
+"ESRB (US)" = "—"
+"PEGI / BBFC (EU/UK)" = "PEGI 18 (AT)"
+"USK (DE)" = "16 (cut); EU PS2 indexed 2007–2015"
+"CERO (JP)" = "not documented"
+"OFLC/ACB (AU)" = "—"
+Other = "—"
+
+[[entry]]
+id = "13.14-8"
+origin = "md:3761"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA IV"
+sources = ["13-S17", "13-S16", "13-S37", "13-S43c"]
+sources_text = "S17, S16, S37, S43c"
+[entry.fields]
+"ESRB (US)" = "M"
+"PEGI / BBFC (EU/UK)" = "18 (UK)"
+"USK (DE)" = "18"
+"CERO (JP)" = "Z (PC: first PC title rated Z)"
+"OFLC/ACB (AU)" = "MA15+ edited (Dec 2007) → uncut MA15+ PC (Nov 2008)"
+Other = "NZ 18 (but AU build supplied)"
+
+[[entry]]
+id = "13.14-9"
+origin = "md:3762"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA: Chinatown Wars"
+sources = ["13-S50", "13-S9"]
+sources_text = "S50, S9"
+[entry.fields]
+"ESRB (US)" = "M (contested)"
+"PEGI / BBFC (EU/UK)" = "—"
+"USK (DE)" = "18"
+"CERO (JP)" = "not documented"
+"OFLC/ACB (AU)" = "not documented"
+Other = "—"
+
+[[entry]]
+id = "13.14-10"
+origin = "md:3763"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA V"
+sources = ["13-S19", "13-S25", "13-S39", "13-S43d", "13-S53", "13-S81", "13-S82"]
+sources_text = "S19, S25, S39, S43d, S53, S81, S82"
+[entry.fields]
+"ESRB (US)" = "—"
+"PEGI / BBFC (EU/UK)" = "—"
+"USK (DE)" = "18 uncut (Aug 2013)"
+"CERO (JP)" = "Z per grandtheftwiki (torture gameplay cut)"
+"OFLC/ACB (AU)" = "R18+ (Jul 2013, first in series)"
+Other = "Saudi/UAE: banned → approved 17 Jul 2025 with a 21+ rating ✅ (ban start ❓)"
+
+[[entry]]
+id = "13.14-11"
+origin = "md:3764"
+section = "13.14"
+kind = "rating"
+games = ["series"]
+title = "GTA VI"
+sources = ["13-S42"]
+sources_text = "S42"
+[entry.fields]
+"ESRB (US)" = "—"
+"PEGI / BBFC (EU/UK)" = "—"
+"USK (DE)" = "—"
+"CERO (JP)" = "Z (reported Oct 2026)"
+"OFLC/ACB (AU)" = "—"
+Other = "—"
+
+[sources]
+13-S1 = { text = "German Wikipedia, \"Grand Theft Auto (Computerspiel)\": https://de.wikipedia.org/wiki/Grand_Theft_Auto_(Computerspiel)", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_(Computerspiel", origin = "md:3779" }
+13-S2 = { text = "Schnittberichte.com site search results (cut-report titles/IDs: GTA 1 USK 16 ID 3164; GTA III ID 3239; London 1969 ID 3165; GTA IV AU ID 984017; news 9573, 1014, 1223; ticker 2118; special 224): https://www.schnittberichte.com/schnittbericht.php?ID=3164 · https://www.schnittberichte.com/schnittbericht.php?ID=3239 · https://www.schnittberichte.com/schnittbericht.php?ID=3165 · https://www.schnittberichte.com/news.php?ID=9573 · https://www.schnittberichte.com/ticker.php?ID=2118 · https://www.schnittberichte.com/news.php?ID=1014 · https://www.schnittberichte.com/news.php?ID=1223 · https://www.schnittberichte.com/special.php?ID=224&Seite=11", url = "https://www.schnittberichte.com/schnittbericht.php?ID=3164", origin = "md:3780" }
+13-S3 = { text = "German Wikipedia, \"Grand Theft Auto III\": https://de.wikipedia.org/wiki/Grand_Theft_Auto_III", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3781" }
+13-S4 = { text = "German Wikipedia, \"Grand Theft Auto: Vice City\": https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", origin = "md:3782" }
+13-S5 = { text = "Schnittberichte, GTA: Vice City cut report, USK 16 vs UK (14 Sep 2006): https://www.schnittberichte.com/schnittbericht.php?ID=3240", url = "https://www.schnittberichte.com/schnittbericht.php?ID=3240", origin = "md:3783" }
+13-S6 = { text = "Schnittberichte, GTA: San Andreas cut report, USK 16 vs Austria: https://www.schnittberichte.com/schnittbericht.php?ID=3163", url = "https://www.schnittberichte.com/schnittbericht.php?ID=3163", origin = "md:3784" }
+13-S7 = { text = "Schnittberichte, GTA 2 cut report, USK 16 vs US (26 Sep 2006): https://www.schnittberichte.com/schnittbericht.php?ID=3242", url = "https://www.schnittberichte.com/schnittbericht.php?ID=3242", origin = "md:3785" }
+13-S8 = { text = "Gameswelt, \"Das neue GTA bereits ab 16 Jahren freigegeben\" (8 Oct 2004): https://www.gameswelt.de/grand-theft-auto-san-andreas/news/das-neue-gta-bereits-ab-16-jahren-freigegeben-78041", url = "https://www.gameswelt.de/grand-theft-auto-san-andreas/news/das-neue-gta-bereits-ab-16-jahren-freigegeben-78041", origin = "md:3786" }
+13-S9 = { text = "Grand Theft Wiki, \"USK\": https://www.grandtheftwiki.com/USK", url = "https://www.grandtheftwiki.com/USK", origin = "md:3787" }
+13-S10 = { text = "Schnittberichte ticker, \"GTA: Vice City mit Keine Jugendfreigabe neu geprüft\" (20 Dec 2014): https://www.schnittberichte.com/ticker.php?ID=1342", url = "https://www.schnittberichte.com/ticker.php?ID=1342", origin = "md:3788" }
+13-S11 = { text = "German Wikipedia, \"Grand Theft Auto: San Andreas\": https://de.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", origin = "md:3789" }
+13-S12 = { text = "Schnittberichte, GTA: Liberty City Stories cut report, USK 16 vs UK (15 Apr 2007): https://www.schnittberichte.com/schnittbericht.php?ID=3867", url = "https://www.schnittberichte.com/schnittbericht.php?ID=3867", origin = "md:3790" }
+13-S13 = { text = "Censorship Wiki (Fandom), \"Grand Theft Auto: Liberty City Stories\": https://censorship.fandom.com/wiki/Grand_Theft_Auto:_Liberty_City_Stories", url = "https://censorship.fandom.com/wiki/Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:3791" }
+13-S14 = { text = "Schnittberichte, GTA: Vice City Stories cut report, USK 16 (8 Apr 2007): https://www.schnittberichte.com/schnittbericht.php?ID=3859", url = "https://www.schnittberichte.com/schnittbericht.php?ID=3859", origin = "md:3792" }
+13-S15 = { text = "BPjM decision on the San Andreas delisting (E 6077, 3 Sep 2015; FOI release, redacted): https://media.frag-den-staat.de/files/foi/590334/E6077vom03.09.15GrandTheftAutoSanAndreasListenstreichung_geschwrzt.pdf", url = "https://media.frag-den-staat.de/files/foi/590334/E6077vom03.09.15GrandTheftAutoSanAndreasListenstreichung_geschwrzt.pdf", origin = "md:3793" }
+13-S16 = { text = "taz, \"GTA IV nur für Erwachsene\" (30 Apr 2008): https://taz.de/GTA-IV-nur-fuer-Erwachsene/!5182782/", url = "https://taz.de/GTA-IV-nur-fuer-Erwachsene/!5182782/", origin = "md:3794" }
+13-S17 = { text = "GamesRadar, \"GTA IV censored\" (5 Apr 2008) and \"Rockstar talks censored GTA IV\" (10 Apr 2008): https://gamesradar.com/gta-iv-censored · https://gamesradar.com/rockstar-talks-censored-gta-iv", url = "https://gamesradar.com/gta-iv-censored", origin = "md:3795" }
+13-S18 = { text = "German Wikipedia, \"Grand Theft Auto IV\": https://de.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:3796" }
+13-S19 = { text = "German Wikipedia, \"Grand Theft Auto V\": https://de.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:3797" }
+13-S20 = { text = "PCGH Extreme forum, \"Grand Theft Auto V erscheint unzensiert in Deutschland\" (21 Aug 2013): https://extreme.pcgameshardware.de/threads/grand-theft-auto-v-erscheint-unzensiert-in-deutschland.290293/", url = "https://extreme.pcgameshardware.de/threads/grand-theft-auto-v-erscheint-unzensiert-in-deutschland.290293/", origin = "md:3798" }
+13-S21 = { text = "GamePro, \"GTA Trilogy ab 18 ungeschnitten\": https://www.gamepro.de/artikel/gta-trilogy-ab-18-ungeschnitten-uncut,3374722.html", url = "https://www.gamepro.de/artikel/gta-trilogy-ab-18-ungeschnitten-uncut,3374722.html", origin = "md:3799" }
+13-S22 = { text = "Japanese Wikipedia, \"グランド・セフト・オート\" (GTA 1997): https://ja.wikipedia.org/wiki/グランド・セフト・オート", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート", origin = "md:3800" }
+13-S23 = { text = "Time Extension, \"The inside story behind Grand Theft Auto III's Japanese release\": https://www.timeextension.com/features/the-inside-story-behind-grand-theft-auto-iiis-japanese-release", url = "https://www.timeextension.com/features/the-inside-story-behind-grand-theft-auto-iiis-japanese-release", origin = "md:3801" }
+13-S24 = { text = "Japanese Wikipedia, \"グランド・セフト・オートIII\": https://ja.wikipedia.org/wiki/グランド・セフト・オートIII", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートIII", origin = "md:3802" }
+13-S25 = { text = "Grand Theft Wiki, \"Japan\": https://www.grandtheftwiki.com/Japan", url = "https://www.grandtheftwiki.com/Japan", origin = "md:3803" }
+13-S26 = { text = "NBC News/AP, \"'Grand Theft Auto' restricted in Japan\" (2005): https://www.nbcnews.com/id/wbna8045722", url = "https://www.nbcnews.com/id/wbna8045722", origin = "md:3804" }
+13-S27 = { text = "Japanese Wikipedia, \"グランド・セフト・オート2\": https://ja.wikipedia.org/wiki/グランド・セフト・オート2", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート2", origin = "md:3805" }
+13-S28 = { text = "Game Developer, \"Capcom to publish Grand Theft Auto IV in Japan\" (18 Aug 2008): https://gamedeveloper.com/game-platforms/capcom-to-publish-i-grand-theft-auto-iv-i-in-japan", url = "https://gamedeveloper.com/game-platforms/capcom-to-publish-i-grand-theft-auto-iv-i-in-japan", origin = "md:3806" }
+13-S29 = { text = "Capcom IR press release (18 Jun 2003): https://www.capcom.co.jp/ir/english/news/pdf/e030618b.pdf", url = "https://www.capcom.co.jp/ir/english/news/pdf/e030618b.pdf", origin = "md:3807" }
+13-S30 = { text = "Japanese Wikipedia, \"グランド・セフト・オート・バイスシティ\": https://ja.wikipedia.org/wiki/グランド・セフト・オート・バイスシティ", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート・バイスシティ", origin = "md:3808" }
+13-S31 = { text = "Censorship Wiki (Fandom), \"Grand Theft Auto: Vice City\": https://censorship.fandom.com/wiki/Grand_Theft_Auto:_Vice_City", url = "https://censorship.fandom.com/wiki/Grand_Theft_Auto:_Vice_City", origin = "md:3809" }
+13-S32 = { text = "Game*Spark, Japanese comparison of GTA:SA Definitive Edition vs PS2 vs PC/Switch (24 Nov 2021): https://www.gamespark.jp/article/2021/11/24/113783.html", url = "https://www.gamespark.jp/article/2021/11/24/113783.html", origin = "md:3810" }
+13-S33 = { text = "LevelUp, \"GTA: San Andreas llega a Japón, pero con censura\" (25 Jan 2007): https://www.levelup.com/noticias/gta-san-andreas-llega-a-japon-pero-con-censura/", url = "https://www.levelup.com/noticias/gta-san-andreas-llega-a-japon-pero-con-censura/", origin = "md:3811" }
+13-S34 = { text = "Japanese Wikipedia, \"グランド・セフト・オート・サンアンドレアス\": https://ja.wikipedia.org/wiki/グランド・セフト・オート・サンアンドレアス", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート・サンアンドレアス", origin = "md:3812" }
+13-S35 = { text = "Game Developer, \"Capcom To Bring GTA: San Andreas To Japan\" (14 Nov 2006): https://gamedeveloper.com/game-platforms/capcom-to-bring-i-gta-san-andreas-i-to-japan", url = "https://gamedeveloper.com/game-platforms/capcom-to-bring-i-gta-san-andreas-i-to-japan", origin = "md:3813" }
+13-S36 = { text = "Censorship Wiki (Fandom), \"Grand Theft Auto: San Andreas\": https://censorship.fandom.com/wiki/Grand_Theft_Auto:_San_Andreas", url = "https://censorship.fandom.com/wiki/Grand_Theft_Auto:_San_Andreas", origin = "md:3814" }
+13-S37 = { text = "Japanese Wikipedia, \"グランド・セフト・オートIV\": https://ja.wikipedia.org/wiki/グランド・セフト・オートIV", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートIV", origin = "md:3815" }
+13-S38 = { text = "German Wikipedia, \"Grand Theft Auto: Chinatown Wars\": https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars", origin = "md:3816" }
+13-S39 = { text = "English Wikipedia, \"Grand Theft Auto V\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:3817" }
+13-S40 = { text = "English Wikipedia, \"List of banned video games\" (Japan / GTA V entry): https://en.wikipedia.org/wiki/List_of_banned_video_games", url = "https://en.wikipedia.org/wiki/List_of_banned_video_games", origin = "md:3818" }
+13-S41 = { text = "Japanese Wikipedia, \"グランド・セフト・オートV\": https://ja.wikipedia.org/wiki/グランド・セフト・オートV", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートV", origin = "md:3819" }
+13-S42 = { text = "GameBusiness.jp, GTA6 CERO Z article (18 Oct 2026; headline only): https://www.gamebusiness.jp/article/2026/10/18/28364.html", url = "https://www.gamebusiness.jp/article/2026/10/18/28364.html", origin = "md:3820" }
+13-S43 = { text = "Refused-Classification.com, game index: https://www.refused-classification.com/censorship/game/", url = "https://www.refused-classification.com/censorship/game/", origin = "md:3821" }
+13-S43a = { text = "\"Banned Games of 2001-2002\" (GTA III): https://www.refused-classification.com/censorship/game/banned-05/", url = "https://www.refused-classification.com/censorship/game/banned-05/", origin = "md:3822" }
+13-S43b = { text = "\"Pre-censored\" (GTA: Vice City): https://www.refused-classification.com/censorship/game/precensored/", url = "https://www.refused-classification.com/censorship/game/precensored/", origin = "md:3823" }
+13-S43c = { text = "\"Pre-censored\" (GTA IV, TLAD, TBoGT): https://www.refused-classification.com/censorship/game/precensored/", url = "https://www.refused-classification.com/censorship/game/precensored/", origin = "md:3824" }
+13-S43d = { text = "\"Controversial\" (GTA V): https://www.refused-classification.com/censorship/game/controversial-04/", url = "https://www.refused-classification.com/censorship/game/controversial-04/", origin = "md:3825" }
+13-S44 = { text = "Refused-Classification.com, \"Classification Revoked Games\" (San Andreas): https://www.refused-classification.com/censorship/game/classification-revoked/", url = "https://www.refused-classification.com/censorship/game/classification-revoked/", origin = "md:3826" }
+13-S45 = { text = "GameSpot, \"GTAIII banned in Australia?\" (dated 2001 event; page timestamp 17 May 2006): https://www.gamespot.com/articles/gtaiii-banned-in-australia/1100-2831007/", url = "https://www.gamespot.com/articles/gtaiii-banned-in-australia/1100-2831007/", origin = "md:3827" }
+13-S46 = { text = "English Wikipedia, \"Hot Coffee mod\": https://en.wikipedia.org/wiki/Hot_Coffee_mod ; GameSpot, \"San Andreas banned down under\" (29 Jul 2005): https://www.gamespot.com/news/2005/07/29/news_6130025.html", url = "https://en.wikipedia.org/wiki/Hot_Coffee_mod", origin = "md:3828" }
+13-S47 = { text = "iTWire, \"Rockstar give their view on GTA IV Aussie edits\" (9 Apr 2008): https://itwire.com/opinion-and-analysis-sp-481/radioactive-it/rockstar-give-their-view-on-gta-iv-aussie-edits", url = "https://itwire.com/opinion-and-analysis-sp-481/radioactive-it/rockstar-give-their-view-on-gta-iv-aussie-edits", origin = "md:3829" }
+13-S48 = { text = "English Wikipedia, \"Grand Theft Auto IV\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:3830" }
+13-S49 = { text = "Censorship Wiki (Fandom), \"Grand Theft Auto IV\": https://censorship.fandom.com/wiki/Grand_Theft_Auto_IV", url = "https://censorship.fandom.com/wiki/Grand_Theft_Auto_IV", origin = "md:3831" }
+13-S50 = { text = "English Wikipedia, \"Grand Theft Auto\" (series; incl. the controversies section, also reached via \"Grand Theft Auto controversies\"): https://en.wikipedia.org/wiki/Grand_Theft_Auto · https://en.wikipedia.org/wiki/Grand_Theft_Auto_controversies", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto", origin = "md:3832" }
+13-S51 = { text = "English Wikipedia, \"Censorship of video games\": https://en.wikipedia.org/wiki/Censorship_of_video_games", url = "https://en.wikipedia.org/wiki/Censorship_of_video_games", origin = "md:3833" }
+13-S52 = { text = "English Wikipedia, \"Video game controversies\": https://en.wikipedia.org/wiki/Video_game_controversies", url = "https://en.wikipedia.org/wiki/Video_game_controversies", origin = "md:3834" }
+13-S53 = { text = "English Wikipedia, \"List of banned video games by country\" (and \"List of banned video games\"): https://en.wikipedia.org/wiki/List_of_banned_video_games_by_country · https://en.wikipedia.org/wiki/List_of_banned_video_games", url = "https://en.wikipedia.org/wiki/List_of_banned_video_games_by_country", origin = "md:3835" }
+13-S54 = { text = "English Wikipedia, \"Grand Theft Auto (video game)\": https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game)", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game", origin = "md:3836" }
+13-S55 = { text = "Kotaku, \"Brazilian Court Forbids The Sale Of Episodes From Liberty City Worldwide\" (18 Oct 2010): https://kotaku.com/brazilian-court-forbids-the-sale-of-episodes-from-liber-5666949", url = "https://kotaku.com/brazilian-court-forbids-the-sale-of-episodes-from-liber-5666949", origin = "md:3837" }
+13-S56 = { text = "Terra, \"GTA e outros jogos que já foram proibidos no Brasil\" (19 Dec 2023): https://www.terra.com.br/gameon/plataformas-e-consoles/gta-e-outros-jogos-que-ja-foram-proibidos-no-brasil,bf27884c2f410d857e742690ddb28399l3l00rzx.html", url = "https://www.terra.com.br/gameon/plataformas-e-consoles/gta-e-outros-jogos-que-ja-foram-proibidos-no-brasil,bf27884c2f410d857e742690ddb28399l3l00rzx.html", origin = "md:3838" }
+13-S57 = { text = "Steam Store API, `supported_languages` per app (GTA III 12100, VC 12110, SA 12120, IV CE 12210, EFLC 12220, GTA V Legacy 271590, GTA V Enhanced 3240220, III DE 1546970, VC DE 1546990, SA DE 1547000): https://store.steampowered.com/api/appdetails?appids=271590 (substitute the app ID for each)", url = "https://store.steampowered.com/api/appdetails?appids=271590", origin = "md:3839" }
+13-S58 = { text = "Korean Wikipedia, \"그랜드 테프트 오토 III\": https://ko.wikipedia.org/wiki/그랜드_테프트_오토_III", url = "https://ko.wikipedia.org/wiki/그랜드_테프트_오토_III", origin = "md:3840" }
+13-S59 = { text = "Korean Wikipedia, \"그랜드 테프트 오토: 바이스 시티\": https://ko.wikipedia.org/wiki/그랜드_테프트_오토:_바이스_시티", url = "https://ko.wikipedia.org/wiki/그랜드_테프트_오토:_바이스_시티", origin = "md:3841" }
+13-S60 = { text = "Korean Wikipedia, \"그랜드 테프트 오토: 산 안드레아스\": https://ko.wikipedia.org/wiki/그랜드_테프트_오토:_산_안드레아스", url = "https://ko.wikipedia.org/wiki/그랜드_테프트_오토:_산_안드레아스", origin = "md:3842" }
+13-S61 = { text = "Korean Wikipedia, \"그랜드 테프트 오토 IV\": https://ko.wikipedia.org/wiki/그랜드_테프트_오토_IV", url = "https://ko.wikipedia.org/wiki/그랜드_테프트_오토_IV", origin = "md:3843" }
+13-S62 = { text = "Korean Wikipedia, \"그랜드 테프트 오토 V\": https://ko.wikipedia.org/wiki/그랜드_테프트_오토_V", url = "https://ko.wikipedia.org/wiki/그랜드_테프트_오토_V", origin = "md:3844" }
+13-S63 = { text = "Chinese Wikipedia, \"俠盜獵車手V\": https://zh.wikipedia.org/wiki/俠盜獵車手V", url = "https://zh.wikipedia.org/wiki/俠盜獵車手V", origin = "md:3845" }
+13-S64 = { text = "German Wikipedia, \"Grand Theft Auto: Liberty City Stories\": https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:3846" }
+13-S65 = { text = "German Wikipedia, \"Grand Theft Auto: Vice City Stories\": https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories", origin = "md:3847" }
+13-S66 = { text = "Russian Wikipedia, \"Grand Theft Auto 2\": https://ru.wikipedia.org/wiki/Grand_Theft_Auto_2", url = "https://ru.wikipedia.org/wiki/Grand_Theft_Auto_2", origin = "md:3848" }
+13-S67 = { text = "Russian Wikipedia, \"Grand Theft Auto V\": https://ru.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://ru.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:3849" }
+13-S68 = { text = "GameFAQs, Grand Theft Auto (PC/PS) and London 1969 release data (Japanese publishers, dates, serials): https://gamefaqs.gamespot.com/pc/197476-grand-theft-auto/data", url = "https://gamefaqs.gamespot.com/pc/197476-grand-theft-auto/data", origin = "md:3850" }
+13-S69 = { text = "GameFAQs, Grand Theft Auto III / Vice City / San Andreas release data (Japanese and Korean rows): https://gamefaqs.gamespot.com/pc/548931-grand-theft-auto-iii/data · https://gamefaqs.gamespot.com/pc/561641-grand-theft-auto-vice-city/data · https://gamefaqs.gamespot.com/pc/924362-grand-theft-auto-san-andreas/data", url = "https://gamefaqs.gamespot.com/pc/548931-grand-theft-auto-iii/data", origin = "md:3851" }
+13-S70 = { text = "GameFAQs, Grand Theft Auto: Chinatown Wars release data: https://gamefaqs.gamespot.com/iphone/971721-grand-theft-auto-chinatown-wars/data", url = "https://gamefaqs.gamespot.com/iphone/971721-grand-theft-auto-chinatown-wars/data", origin = "md:3852" }
+13-S71 = { text = "GameFAQs, GTA IV / Episodes from Liberty City / GTA V release data (Japanese and Korean rows): https://gamefaqs.gamespot.com/pc/952150-grand-theft-auto-iv/data · https://gamefaqs.gamespot.com/pc/987737-grand-theft-auto-episodes-from-liberty-city/data · https://gamefaqs.gamespot.com/pc/805606-grand-theft-auto-v/data", url = "https://gamefaqs.gamespot.com/pc/952150-grand-theft-auto-iv/data", origin = "md:3853" }
+13-S72 = { text = "GameFAQs, Grand Theft Auto Double Pack (PS2/Xbox) release data: https://gamefaqs.gamespot.com/xbox/468550-grand-theft-auto-double-pack/data", url = "https://gamefaqs.gamespot.com/xbox/468550-grand-theft-auto-double-pack/data", origin = "md:3854" }
+13-S73 = { text = "redump.org disc database (quick searches \"grand-theft-auto\" and \"grand-theft-auto-2\"; disc pages incl. /disc/114259/, 104121, 105800, 18061, 18062, 55478, 55479, 31387, 84816, 84817, 85062, 85063, 123179, 88767, 75671, 104789, 36331, 33239, 61016): http://redump.org/discs/quicksearch/grand-theft-auto/", url = "http://redump.org/discs/quicksearch/grand-theft-auto/", origin = "md:3855" }
+13-S74 = { text = "Russian Wikipedia infoboxes/text, read via the MediaWiki API: \"Grand Theft Auto III\", \"Grand Theft Auto: Vice City\", \"Grand Theft Auto: San Andreas\", \"Grand Theft Auto IV\", \"Grand Theft Auto: Episodes from Liberty City\", \"Grand Theft Auto: Liberty City Stories\", \"Grand Theft Auto: Vice City Stories\", \"Grand Theft Auto: Chinatown Wars\", \"Grand Theft Auto: The Trilogy — The Definitive Edition\": https://ru.wikipedia.org/wiki/Grand_Theft_Auto_III (substitute the title)", url = "https://ru.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3856" }
+13-S75 = { text = "Polish Wikipedia infoboxes/text: \"Grand Theft Auto (gra komputerowa)\", \"Grand Theft Auto 2\", \"Grand Theft Auto III\", \"Grand Theft Auto: Vice City\", \"Grand Theft Auto: San Andreas\", \"Grand Theft Auto IV\", \"Grand Theft Auto V\", \"Grand Theft Auto: Chinatown Wars\": https://pl.wikipedia.org/wiki/Grand_Theft_Auto_III (substitute the title)", url = "https://pl.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3857" }
+13-S76 = { text = "Czech Wikipedia, \"Grand Theft Auto III\" (vydavatel field): https://cs.wikipedia.org/wiki/Grand_Theft_Auto_III", url = "https://cs.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3858" }
+13-S77 = { text = "French Wikipedia, \"Grand Theft Auto: Vice City\", \"Grand Theft Auto: San Andreas\", \"Grand Theft Auto IV\" (distributeur fields): https://fr.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", url = "https://fr.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", origin = "md:3859" }
+13-S78 = { text = "Canaltech, article on games banned in Brazil (by Gabriel Cavalheiro, 21 Sep 2025): https://canaltech.com.br/games/jogos-banidos-proibidos-no-brasil/", url = "https://canaltech.com.br/games/jogos-banidos-proibidos-no-brasil/", origin = "md:3860" }
+13-S79 = { text = "GTAboom, article on Rockstar and Brazil's Digital ECA law (17 Mar 2026, updated 22 Jul 2026): https://www.gtaboom.com/rockstar-games-digital-eca-law-brazil-ae9a", url = "https://www.gtaboom.com/rockstar-games-digital-eca-law-brazil-ae9a", origin = "md:3861" }
+13-S80 = { text = "Canaltech, \"Lei Felca estreia causando alvoroço e já mexe com LoL, Fortnite e GTA\" (17 Mar 2026): https://canaltech.com.br/games/lei-felca-estreia-causando-alvoroco-e-ja-mexe-com-lol-fortnite-e-gta/", url = "https://canaltech.com.br/games/lei-felca-estreia-causando-alvoroco-e-ja-mexe-com-lol-fortnite-e-gta/", origin = "md:3862" }
+13-S81 = { text = "Tbreak, \"GTA V & GTA Online now official in Saudi Arabia & UAE\" (6 Jul 2025): https://tbreak.com/gta-v-gta-online-now-official-in-saudi-arabia-uae/", url = "https://tbreak.com/gta-v-gta-online-now-official-in-saudi-arabia-uae/", origin = "md:3863" }
+13-S82 = { text = "The New Arab, article on GTA V's release in Saudi Arabia and the UAE (21 Jul 2025): https://www.newarab.com/news/you-can-finally-play-gta-v-saudi-and-uae-theres-catch", url = "https://www.newarab.com/news/you-can-finally-play-gta-v-saudi-and-uae-theres-catch", origin = "md:3864" }

@@ -1,0 +1,1244 @@
+# Grand Theft Auto: Liberty City Stories: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "6.2"
+origin = "md:1152"
+title = "6.2 Grand Theft Auto: Liberty City Stories (PSP 2005 · PS2 2006 · PS3 PSN 2013 · iOS 2015 · Android/Fire OS 2016)"
+games = ["lcs"]
+text = "Developed by **Rockstar Leeds** with **Rockstar North**. Published by Rockstar Games, and by **Capcom** in Japan. It was the first game on Rockstar's new in-house engine, replacing RenderWare (IGN preview of 2005-09-09, cited by Wikipedia) [13][14][15]."
+
+[[section]]
+id = "6.2.1"
+origin = "md:1156"
+title = "6.2.1 Development, prototypes and pre-release"
+games = ["lcs"]
+
+[[section]]
+id = "6.2.2"
+origin = "md:1178"
+title = "6.2.2 PSP (UMD) retail versions"
+games = ["lcs"]
+
+[[section]]
+id = "6.2.3"
+origin = "md:1198"
+title = "6.2.3 PS2 versions"
+games = ["lcs"]
+
+[[section]]
+id = "6.2.4"
+origin = "md:1212"
+title = "6.2.4 PSN digital (PSP format)"
+games = ["lcs"]
+
+[[section]]
+id = "6.2.5"
+origin = "md:1222"
+title = "6.2.5 Mobile ports"
+games = ["lcs"]
+
+[[entry]]
+id = "6.2.1-1"
+origin = "md:1160"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "PSP project start"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "\"circa summer\" (year not stated)"
+id_text = "–"
+notes = "TCRF: Rockstar began work on a PSP title after Sony picked it for a PSP development kit."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "6.2.1-2"
+origin = "md:1161"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Announcement"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date = "2005-01-10"
+date_text = "2005-01-10"
+id_text = "–"
+notes = "Rockstar confirmed a PSP GTA set in Liberty City, by Rockstar Leeds, announced alongside *Midnight Club 3: DUB Edition*."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "6.2.1-3"
+origin = "md:1162"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "E3 2005 showing"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "2005-05-18 – 05-20"
+id_text = "–"
+notes = "Shown behind closed doors, with a September 2005 release then planned."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "6.2.1-4"
+origin = "md:1163"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype, **May 29, 2005**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU (ULET)"
+date = "2025-01-31"
+date_text = "build date 2005-05-29; released **2025-01-31** (HP)"
+version = "0.02"
+serials = ["ULET-00003"]
+id_text = "Pre-production UMD, label \"GTA ENGLISH PRE-PRODUCTION – NOT FOR RESALE\", creation date **22.05.2005**, product code **ULET-00003/0.02**, VERSION 0.02"
+notes = "Files from a build with very early assets, some matching the first public screenshots. TCRF calls the 2025 LCS leaks the first full prototype of any 3D-era GTA game to surface. Hidden Palace: dumped and released by **IAmNotToniCipriani**, leaked on GTAForums, original filename `lcs may.rar`; only the `USRDIR` folder was released (no `SYSDIR`), the `EBOOT.BIN` is an SDK sample, so it is unplayable and no patch exists; contains some files dated 2017–2018. HP download named \"(May 28, 2005 prototype) incomplete\". The UMD label date (22 May) differs from the build date (29 May). Hashes not shown on HP."
+confidence = "confirmed"
+confidence_text = "✅ (TCRF + HP)"
+sources = ["6-17", "6-32", "6-53"]
+sources_text = "[17][32][53]"
+
+[[entry]]
+id = "6.2.1-5"
+origin = "md:1164"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype, **July 26, 2005**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "build date 2005-07-26; leaked 2025"
+id_text = "UMD labelled \"26/7\""
+notes = "Non-functional as delivered (placeholder executable from the PSP SDK); can be patched to run (HP-hosted patch by MAJEST1C_R3). Hidden Palace: dumped and released by **Cumsockbandit**, \"Leaked on GTA wiki\", original filename `26.07.2005-LCS.zip`. Hashes not shown on HP."
+confidence = "confirmed"
+confidence_text = "✅ (TCRF + HP)"
+sources = ["6-32", "6-53"]
+sources_text = "[32][53]"
+
+[[entry]]
+id = "6.2.1-6"
+origin = "md:1165"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype, **September 1, 2005**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "build date 2005-09-01; leaked 2025"
+id_text = "UMD labelled \"1/9\""
+notes = "Debug-enabled build (hold L+R+↓+X). Hidden Palace: released by **Cumsockbandit**, \"Leaked on GTA wiki\", original filename `01.09.2005-LCS.zip` / `PSP_GAME.rar`; playable in PPSSPP 1.17."
+confidence = "confirmed"
+confidence_text = "✅ (TCRF + HP)"
+sources = ["6-32", "6-53"]
+sources_text = "[32][53]"
+
+[[entry]]
+id = "6.2.1-7"
+origin = "md:1166"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype v1.02, **September 11, 2005**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "build date 2005-09-11 00:34"
+version = "1.02"
+id_text = "build name 1.02"
+notes = "Hidden Palace: status **\"Dumped, not released\"**. Apart from `PARAM.SFO`, `ENTRIES.DAT` and `UMD_DATA.BIN` (same build date), all files look like the 1.05 retail release."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "6.2.1-8"
+origin = "md:1167"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype v0.03, **September 23, 2005**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "build date 2005-09-23 01:15"
+version = "0.03"
+id_text = "build name 0.03"
+notes = "Hidden Palace: \"Dumped, not released\"; same note as the Sep 11 build (only `PARAM.SFO`/`ENTRIES.DAT`/`UMD_DATA.BIN` differ from 1.05 retail)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "6.2.1-9"
+origin = "md:1168"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Prototype v1.04, **October 7, 2005**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date_text = "build date 2005-10-07 18:50"
+version = "1.04"
+id_text = "UMD label \"GTA: LIBERTY CITY 1.04 ULUS 10041\""
+notes = "Hidden Palace: \"Dumped, not released\". Built 5 days before the NA 1.05 final; `MAIN.SCM` and `EBOOT.PBP` differ (part of \"Shoot the Messenger\" removed; Avenging Angels and car-sale fixes not yet present)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "6.2.1-10"
+origin = "md:1169"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Pre-production 1.00 (German), **October 22, 2005**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "DE"
+date_text = "build date 2005-10-22 10:24"
+serials = ["ULES-00182"]
+id_text = "Pre-production UMD, product code **ULES-00182/1.00**"
+notes = "Hidden Palace: \"Dumped, not released\". Identical to German 1.00 retail apart from `SND0.AT3`, `ICON0.PNG`, `PIC1.PNG` and `ICON1.PMF`."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "6.2.1-11"
+origin = "md:1170"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Pre-production 0.02, **March 22, 2006** 16:09"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU"
+date_text = "build date 2006-03-22 16:09"
+serials = ["ULET-00361"]
+id_text = "Pre-production UMD, product code **ULET-00361/0.02**"
+notes = "Hidden Palace: \"Dumped, not released\"; very close to 3.00 retail (EBOOT differs)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "6.2.1-12"
+origin = "md:1171"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Pre-production 0.02 (German), **March 22, 2006** 16:20"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "DE"
+date = "2022-07-08"
+date_text = "build date 2006-03-22 16:20:58; released **2022-07-08** by ObscureGamers (\"Terarelease 3.0\")"
+serials = ["ULET-00362"]
+id_text = "Pre-production UMD, product code **ULET-00362/0.02**, original filename `UMD9660.ISO`"
+notes = "German pre-production disc, 9 days after the German 2.00 final; only `EBOOT.BIN` differs."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "6.2.1-13"
+origin = "md:1172"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Final build dates per retail version (HP)"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "–"
+id_text = "US/EU 1.05: **2005-10-12**; DE 1.00: **2005-10-22**; US/EU 2.00: **2005-10-27**; US 3.00: **2006-03-07**; EU 3.00 and DE 2.00: **2006-03-13**; JP: **2007-06-18**"
+notes = "Build dates of the retail discs as recorded in Hidden Palace's prototype infoboxes (these are build dates, not on-sale dates)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-53"]
+sources_text = "[53]"
+
+[[entry]]
+id = "6.2.1-14"
+origin = "md:1173"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Trailer"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date = "2005-09-09"
+date_text = "2005-09-09"
+id_text = "–"
+notes = "Trailer release."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-17"]
+sources_text = "[17]"
+
+[[entry]]
+id = "6.2.1-15"
+origin = "md:1174"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Release slip"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date = "2005-10"
+date_text = "2005-10"
+id_text = "–"
+notes = "VideoGamer headline of 2005-10-24, \"GTA: Liberty City Stories slips another week?\" (cited by Wikipedia)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-13"]
+sources_text = "[13]"
+
+[[entry]]
+id = "6.2.1-16"
+origin = "md:1175"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Source-control leftovers (`ENTRIES.DAT`)"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "all"
+date_text = "–"
+id_text = "–"
+notes = "Every retail disc version except the Japanese release and v4.00 contains an `ENTRIES.DAT` source-control log with 2005 commit dates. The latest date in TCRF's example is **2005-10-19**. It references removed tools such as `gta3-debug.exe`. Germany v1.00, EU/US v1.05, EU v2.00, DE v2.00, EU v3.00 and US v3.00 each carry a **different** `ENTRIES.DAT`."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-16"]
+sources_text = "[16]"
+
+[[entry]]
+id = "6.2.1-17"
+origin = "md:1176"
+section = "6.2.1"
+kind = "prototype"
+games = ["lcs"]
+title = "Debug leftovers"
+platforms = ["psp", "ps2"]
+platform_text = "PSP/PS2"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "Debug menu (spawns cut vehicles such as the DeadDodo, RC Goblin, RC Raider and Bus), test cutscene `cuttest`, and debug textures in PS2 `.chk` files."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-16"]
+sources_text = "[16]"
+
+[[entry]]
+id = "6.2.2-1"
+origin = "md:1182"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v1.05"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA (USA)"
+date_text = "**2005-10-25** (Wikipedia etc.); Hidden Palace infoboxes and GameFAQs give **2005-10-24** ⚠️"
+version = "1.05"
+serials = ["ULUS-10041"]
+id_text = "**ULUS-10041**, disc v1.05 (UPC 710425236969 per GameFAQs); build date 2005-10-12 (HP)"
+notes = "Launch version, languages En/Fr/De/Es/It. Early versions contain a save-file buffer-overflow exploit, fixed in later reissues that are hard to tell apart from the originals."
+confidence = "mixed"
+confidence_text = "✅ (date ⚠️)"
+sources = ["6-10", "6-13", "6-15", "6-16", "6-19", "6-53", "6-60"]
+sources_text = "[10][13][15][16][19][53][60]"
+
+[[entry]]
+id = "6.2.2-2"
+origin = "md:1183"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v2.00"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date = "2005-10-27"
+date_text = "on-sale date not documented; build date **2005-10-27** (HP)"
+version = "2.00"
+serials = ["ULUS-10041"]
+id_text = "ULUS-10041, v2.00"
+notes = "Later pressing."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10", "6-16", "6-53"]
+sources_text = "[10][16][53]"
+
+[[entry]]
+id = "6.2.2-3"
+origin = "md:1184"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v3.00"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date = "2006-03-07"
+date_text = "on-sale date not documented; build date **2006-03-07** (HP)"
+version = "3.00"
+serials = ["ULUS-10041"]
+id_text = "ULUS-10041, v3.00"
+notes = "Later pressing."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10", "6-16", "6-53"]
+sources_text = "[10][16][53]"
+
+[[entry]]
+id = "6.2.2-4"
+origin = "md:1185"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v3.00 Greatest Hits"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date = "2006"
+date_text = "**2006** (GameFAQs, year only; also a Canadian Greatest Hits, **ULUS-10041GHF**, 2006)"
+version = "3.00"
+id_text = "**ULUS-10041GH**, v3.00"
+notes = "Greatest Hits reissue, same image as v3.00."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (year)"
+sources = ["6-10", "6-60"]
+sources_text = "[10][60]"
+
+[[entry]]
+id = "6.2.2-5"
+origin = "md:1186"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v1.05"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU/PAL"
+date_text = "**2005-11-04** (Wikipedia etc.); Hidden Palace infoboxes and GameFAQs give **2005-10-28** ⚠️"
+version = "1.05"
+serials = ["ULES-00151"]
+id_text = "**ULES-00151**, v1.05; build date 2005-10-12 (HP)"
+notes = "En/Fr/De/Es/It."
+confidence = "mixed"
+confidence_text = "✅ (date ⚠️)"
+sources = ["6-10", "6-13", "6-15", "6-19", "6-53", "6-60"]
+sources_text = "[10][13][15][19][53][60]"
+
+[[entry]]
+id = "6.2.2-6"
+origin = "md:1187"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v2.00"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU"
+date = "2005-10-27"
+date_text = "on-sale date not documented; build date **2005-10-27** (HP)"
+version = "2.00"
+serials = ["ULES-00151"]
+id_text = "ULES-00151, v2.00 (2 pressings)"
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10", "6-16", "6-53"]
+sources_text = "[10][16][53]"
+
+[[entry]]
+id = "6.2.2-7"
+origin = "md:1188"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v3.00"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU"
+date = "2006-03-13"
+date_text = "on-sale date not documented; build date **2006-03-13** (HP)"
+version = "3.00"
+serials = ["ULES-00151"]
+id_text = "ULES-00151 / ULES-001512 / **ULES-00151/P** (Platinum), v3.00"
+notes = "Three pressings share one image (CRC `7A884C02`). GameFAQs dates the EU **Platinum** (ULES-00151/P) **2008-01-18**."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (Platinum date)"
+sources = ["6-10", "6-16", "6-53", "6-60"]
+sources_text = "[10][16][53][60]"
+
+[[entry]]
+id = "6.2.2-8"
+origin = "md:1189"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v1.00"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "DE"
+date = "2005-10-22"
+date_text = "2005-11 (not documented separately); build date **2005-10-22** (HP)"
+version = "1.00"
+serials = ["ULES-00182"]
+id_text = "**ULES-00182**, v1.00"
+notes = "German version with blood, kicking downed enemies, headshots, cash drops, the massacre minigame and body-count stats removed."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10", "6-16", "6-53"]
+sources_text = "[10][16][53]"
+
+[[entry]]
+id = "6.2.2-9"
+origin = "md:1190"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "v2.00"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "DE"
+date = "2006-03-13"
+date_text = "on-sale date not documented; build date **2006-03-13** (HP)"
+version = "2.00"
+serials = ["ULES-00182"]
+id_text = "ULES-00182 (2 pressings) and **ULES-00182/P** (Platinum), v2.00"
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10", "6-16", "6-53"]
+sources_text = "[10][16][53]"
+
+[[entry]]
+id = "6.2.2-10"
+origin = "md:1191"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "Australia"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "AU"
+date = "2005-12-02"
+date_text = "**2005-12-02** (TCRF release category; GameFAQs attributes this date to Australia, publisher Take-Two Interactive, rating MA)"
+id_text = "(no separate serial given)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-16", "6-60"]
+sources_text = "[16][60]"
+
+[[entry]]
+id = "6.2.2-11"
+origin = "md:1192"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "Korea"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "KR"
+date_text = "not documented (GameFAQs lists no Korean LCS release; arcade-history's ULKS-46157 entry gives no date)"
+serials = ["ULKS-46157"]
+id_text = "**ULKS-46157** (ISO 1,255,243,776 B, CRC `1DA32381`)"
+notes = "En/Fr/De/Es/It (English-language Korean release)."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10", "6-60"]
+sources_text = "[10][60]"
+
+[[entry]]
+id = "6.2.2-12"
+origin = "md:1193"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "Japan (Capcom)"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "JP"
+date = "2007-07-26"
+date_text = "**2007-07-26**"
+serials = ["ULJM-05255", "ULJM-05359"]
+id_text = "**ULJM-05255** (original; JAN 4976219022651 per GameFAQs). ULJM-05359 (same image, CRC `EBF2E5F0`) is the Best Price reissue — see next row"
+notes = "Capcom release, CERO Z, RRP ¥4,980 (Dengeki lists ¥5,229 incl. tax). Censored: no decapitation or headshot blood, no cash drops, killing-spree missions cut from 20 to 13, Japanese subtitles."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-10", "6-18", "6-19", "6-21", "6-29", "6-60"]
+sources_text = "[10][18][19][21][29][60]"
+
+[[entry]]
+id = "6.2.2-13"
+origin = "md:1194"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "Japan \"Best Price!\""
+platforms = ["psp"]
+platform_text = "PSP"
+region = "JP"
+date = "2008-07-24"
+date_text = "**2008-07-24** (Kakaku.com and GameFAQs)"
+serials = ["ULJM-05359"]
+id_text = "**ULJM-05359** (GameFAQs; JAN 4976219026253)"
+notes = "Capcom budget reissue, RRP ¥2,800. Same disc image as ULJM-05255."
+confidence = "mixed"
+confidence_text = "✅ (date) / ⚠️ (serial link, GameFAQs only)"
+sources = ["6-10", "6-30", "6-60"]
+sources_text = "[10][30][60]"
+
+[[entry]]
+id = "6.2.2-14"
+origin = "md:1195"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "Japan \"Rockstar Classics\""
+platforms = ["psp"]
+platform_text = "PSP"
+region = "JP"
+date = "2011-06-23"
+date_text = "**2011-06-23** (GameFAQs; publisher Rockstar Games, JAN 4571304477042)"
+serials = ["ULJM-05885"]
+id_text = "**ULJM-05885**"
+notes = "Different image (CRC `0C2E4159`)."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (date)"
+sources = ["6-10", "6-60"]
+sources_text = "[10][60]"
+
+[[entry]]
+id = "6.2.2-15"
+origin = "md:1196"
+section = "6.2.2"
+kind = "retail"
+games = ["lcs"]
+title = "Rockstar Custom Tracks v1.0"
+platforms = ["pc"]
+platform_text = "PC tool for PSP"
+region = "WW"
+date_text = "\"a few days after release\" (Eurogamer news, 2005-10-31)"
+version = "1.0"
+id_text = "v1.0"
+notes = "Free PC application from rockstargames.com that enables the PSP custom-soundtrack feature. Developed by Rockstar Leeds with Andre Wiethoff, creator of Exact Audio Copy."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-13", "6-14", "6-15"]
+sources_text = "[13][14][15]"
+
+[[entry]]
+id = "6.2.3-1"
+origin = "md:1202"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "Release-date announcement"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "–"
+date = "2006-04-18"
+date_text = "2006-04-18"
+id_text = "–"
+notes = "Take-Two press release announcing the PS2 date (cited by Wikipedia)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-13"]
+sources_text = "[13]"
+
+[[entry]]
+id = "6.2.3-2"
+origin = "md:1203"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "Retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date = "2006-06-06"
+date_text = "**2006-06-06**"
+serials = ["SLUS-21423"]
+id_text = "**SLUS-21423**; also **SLUS-21423P2**"
+notes = "Multiplayer removed; adds free-aim."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-11", "6-13", "6-15", "6-20"]
+sources_text = "[11][13][15][20]"
+
+[[entry]]
+id = "6.2.3-3"
+origin = "md:1204"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "Retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "EU/AU"
+date = "2006-06-23"
+date_text = "**2006-06-23** (Wikipedia, VGChartz, GameFAQs for both EU and AU); Grand Theft Wiki says 2006-06-22"
+serials = ["SLES-54135"]
+id_text = "**SLES-54135**, SLES-54135/ANZ, **SLES-54135/P** (Platinum), SLES-54135/P-ANZ"
+notes = "Redump label \"Europe, Australia\", En/Fr/De/Es/It. GameFAQs dates the EU **Platinum** (SLES-54135/P) **2007-11-23**."
+confidence = "mixed"
+confidence_text = "✅ (date ⚠️)"
+sources = ["6-11", "6-13", "6-15", "6-20", "6-60"]
+sources_text = "[11][13][15][20][60]"
+
+[[entry]]
+id = "6.2.3-4"
+origin = "md:1205"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "Retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "DE"
+date_text = "not documented"
+serials = ["SLES-54136"]
+id_text = "**SLES-54136**"
+notes = "En/De."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-11"]
+sources_text = "[11]"
+
+[[entry]]
+id = "6.2.3-5"
+origin = "md:1206"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "Japan (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2007-09-06"
+date_text = "**2007-09-06** (Dengeki data box, VGChartz); Dengeki article body says 2007-09-26"
+serials = ["SLPM-66851"]
+id_text = "**SLPM-66851** (original, JAN 4976219023078 per GameFAQs; GameFAQs date 2007-09-06)"
+notes = "¥4,179 incl. tax, CERO Z."
+confidence = "mixed"
+confidence_text = "✅ (date ⚠️)"
+sources = ["6-11", "6-18", "6-20", "6-60"]
+sources_text = "[11][18][20][60]"
+
+[[entry]]
+id = "6.2.3-6"
+origin = "md:1207"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "Japan \"Best Price!\" (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2009-05-28"
+date_text = "**2009-05-28** (GameFAQs)"
+serials = ["SLPM-55038"]
+id_text = "**SLPM-55038** (JAN 4976219026260)"
+notes = "Budget reissue."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["6-11", "6-60"]
+sources_text = "[11][60]"
+
+[[entry]]
+id = "6.2.3-7"
+origin = "md:1208"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "PS2 Classic on PS3 (PSN)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "NA"
+date = "2013-04-02"
+date_text = "**2013-04-02**"
+serials = ["NPUD-21423"]
+id_text = "**NPUD-21423** (SCEA; GameFAQs; No-Intro PS3 PSN DAT: `UP9000-NPUD21423_00-0000000000000000`, PKG 4,017,996,224 B, CRC 83DF4525)"
+notes = "PS2 Classics emulation of the **PS2** version, $9.99."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-13", "6-22", "6-23", "6-60", "6-61"]
+sources_text = "[13][22][23][60][61]"
+
+[[entry]]
+id = "6.2.3-8"
+origin = "md:1209"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "PS2 Classic on PS3 (PSN)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "EU"
+date = "2013-04-03"
+date_text = "**2013-04-03**"
+serials = ["NPED-00064"]
+id_text = "**NPED-00064** (GameFAQs; No-Intro PS3 PSN DAT licence `EP1004-NPED00064_00-GGRANDTHEF000ENG`)"
+notes = "€9.99 / £7.99."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-22", "6-23", "6-60", "6-61"]
+sources_text = "[22][23][60][61]"
+
+[[entry]]
+id = "6.2.3-9"
+origin = "md:1210"
+section = "6.2.3"
+kind = "retail"
+games = ["lcs"]
+title = "PS4 version (ESRB rating only)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "NA"
+date_text = "rated 2017-09-29"
+id_text = "–"
+notes = "ESRB rated LCS, VCS, *Max Payne 2* and *Midnight Club 3* for PS4. The listings were later removed. Delisted Games: as of Oct 2018 neither LCS nor VCS had been released on PS4. GTA Wiki: the re-release \"never came to fruition\". Check on 2026-10-24: searching the US PlayStation Store (which lists PS4/PS5 products) for \"liberty city stories\" and \"vice city stories\" returned no LCS or VCS product in the first page of results (the only GTA hit was *The Trilogy – The Definitive Edition*), and a web search found no PS4/PS5 release announcement after the 2017 ratings. **No PS4/PS5 release found** (absence, not proof)."
+confidence = "mixed"
+confidence_text = "❓ (rating) / ⚠️ (absence)"
+sources = ["6-14", "6-28", "6-33", "6-59"]
+sources_text = "[14][28][33][59]"
+
+[[entry]]
+id = "6.2.4-1"
+origin = "md:1216"
+section = "6.2.4"
+kind = "digital"
+games = ["lcs"]
+title = "PSN download v1.01"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "NA"
+date = "2009-10-22"
+date_text = "Grand Theft Wiki: PSP Go re-release 2009-10-01; GameFAQs: US PlayStation Store **2009-10-22** ⚠️"
+version = "1.01"
+id_text = "Content ID **UP1004-ULUS10041_00-GTALIBERTYCITY00**, v1.01"
+confidence = "mixed"
+confidence_text = "✅ (dat; date ⚠️)"
+sources = ["6-12", "6-15", "6-60"]
+sources_text = "[12][15][60]"
+
+[[entry]]
+id = "6.2.4-2"
+origin = "md:1217"
+section = "6.2.4"
+kind = "digital"
+games = ["lcs"]
+title = "PSN download v1.00"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "EU"
+date_text = "**2009-10-01** (GameFAQs, EU PlayStation Store); GameFAQs also lists EU and AU Store entries dated **2016-04-19** (one labelled Platinum)"
+version = "1.00"
+id_text = "**EP1004-ULES00151_00-GPCGRANDTH000001**, v1.00"
+notes = "The 2016-04-19 entries fall in the window of TCRF's v4.00 Store update (below), but no source links them."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (dates)"
+sources = ["6-12", "6-60"]
+sources_text = "[12][60]"
+
+[[entry]]
+id = "6.2.4-3"
+origin = "md:1218"
+section = "6.2.4"
+kind = "digital"
+games = ["lcs"]
+title = "PSN download (Japan)"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "JP"
+date = "2015-06-04"
+date_text = "**2015-06-04** (GameFAQs)"
+serials = ["NPJH-50825"]
+id_text = "**NPJH-50825** (publisher Capcom per GameFAQs)"
+notes = "Not in the No-Intro PSN DAT."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["6-60"]
+sources_text = "[60]"
+
+[[entry]]
+id = "6.2.4-4"
+origin = "md:1219"
+section = "6.2.4"
+kind = "digital"
+games = ["lcs"]
+title = "PSN download (DE)"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "DE"
+date_text = "not documented"
+id_text = "**EP1004-ULES00182_00-GPCGRANDTH000002**"
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-12"]
+sources_text = "[12]"
+
+[[entry]]
+id = "6.2.4-5"
+origin = "md:1220"
+section = "6.2.4"
+kind = "digital"
+games = ["lcs"]
+title = "PSN v4.00 update"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "NA, EU"
+date_text = "around 2015–2016"
+version = "4.00"
+id_text = "v4.00 (smaller image, 1,250,000,896 bytes vs 1,255,243,776)"
+notes = "TCRF: the Store version moved to 4.00 around the mobile release. Its radio files are dated **2015-11-11** and its text containers **2016-03-15**. There is no `ENTRIES.DAT`. It includes the mobile-era radio music changes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-12", "6-16"]
+sources_text = "[12][16]"
+
+[[entry]]
+id = "6.2.5-1"
+origin = "md:1226"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "iOS launch"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2015-12-17"
+date_text = "**2015-12-17**"
+id_text = "App Store **id1061802598**. Version history begins at **1.01** (2015-12-17)"
+notes = "$6.99. High-resolution textures, real-time lighting and shadows, 3D Touch, controller support, Social Club cloud saves, 60 fps on iPhone 6s, iPad Air 2 and iPad Pro. Japanese-version censorship not applied."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-13", "6-21", "6-24", "6-25"]
+sources_text = "[13][21][24][25]"
+
+[[entry]]
+id = "6.2.5-2"
+origin = "md:1227"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "iOS 1.05"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2016-01-28"
+date_text = "2016-01-28"
+id_text = "1.05"
+notes = "Fixed a crash with some system languages after Social Club login."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-25"]
+sources_text = "[25]"
+
+[[entry]]
+id = "6.2.5-3"
+origin = "md:1228"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "iOS 1.12"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2016-07-05"
+date_text = "2016-07-05"
+id_text = "1.12"
+notes = "Assorted bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-25"]
+sources_text = "[25]"
+
+[[entry]]
+id = "6.2.5-4"
+origin = "md:1229"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "iOS 1.13"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2016-07-15"
+date_text = "2016-07-15"
+id_text = "1.13"
+notes = "Stability fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-25"]
+sources_text = "[25]"
+
+[[entry]]
+id = "6.2.5-5"
+origin = "md:1230"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "iOS 1.2"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2019-03-06"
+date_text = "2019-03-06"
+id_text = "1.2"
+notes = "Full-screen support for iPhone X/XS and iPad Pro. GTA Wiki: fixed a crash in the mission \"Calm Before the Storm\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-14", "6-25"]
+sources_text = "[14][25]"
+
+[[entry]]
+id = "6.2.5-6"
+origin = "md:1231"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "iOS 2.4.145 – 2.4.154"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "2023-08-03 → 2024-11-19"
+id_text = "2.4.145 (2023-08-03), .146 (2023-10-19), .147 (2023-11-02), .148 (2023-11-20), .149 (2023-12-13), .150 (2024-02-28), .151 (2024-05-24), .152 (2024-07-02), .153 (2024-09-02), **.154 (2024-11-19, latest listed)**"
+notes = "The current listing is free to download with a 30-minute trial and a $6.99 full-game in-app purchase. Requires iOS 13 and also runs on Apple-silicon Macs. When the app changed to the trial model is not documented."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-25"]
+sources_text = "[25]"
+
+[[entry]]
+id = "6.2.5-7"
+origin = "md:1232"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Android launch"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2016-02-11"
+date_text = "**2016-02-11**"
+id_text = "package `com.rockstargames.gtalcs`"
+notes = "Launch promo: a free GTA V/Online T-shirt (GameSpot, 2016-02-11, cited by Wikipedia). The Play listing (checked 2026-10) shows \"Updated on 2026-02-23\", 10M+ downloads, the same 30-minute-trial model, and no version number."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-13", "6-26"]
+sources_text = "[13][26]"
+
+[[entry]]
+id = "6.2.5-8"
+origin = "md:1233"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Android v1.9"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2016-02-17"
+date_text = "2016-02-17"
+version = "1.9"
+id_text = "v1.9"
+notes = "Fixed a black screen after relaunching. (Rockstar's earliest listed Android entry; launch version number not given.)"
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["6-56"]
+sources_text = "[56]"
+
+[[entry]]
+id = "6.2.5-9"
+origin = "md:1234"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Android v2.1"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2016-05-20"
+date_text = "2016-05-20"
+version = "2.1"
+id_text = "v2.1"
+notes = "Immersion tactile (haptic) effects; bug fixes."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["6-56"]
+sources_text = "[56]"
+
+[[entry]]
+id = "6.2.5-10"
+origin = "md:1235"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Android v2.3"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2019-01-18"
+date_text = "2019-01-18"
+version = "2.3"
+id_text = "v2.3"
+notes = "Android 9.0 (Pie) support; stability fixes."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["6-56"]
+sources_text = "[56]"
+
+[[entry]]
+id = "6.2.5-11"
+origin = "md:1236"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Android v2.4"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2019-02-13"
+date_text = "2019-02-13"
+version = "2.4"
+id_text = "v2.4"
+notes = "Fixed the game world dropping out or turning grey at high speed."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["6-56"]
+sources_text = "[56]"
+
+[[entry]]
+id = "6.2.5-12"
+origin = "md:1237"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Android v2.4.268 → v2.4.379"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date_text = "2023-10-17 → 2026-02-23"
+id_text = "v2.4.268 (2023-10-17), v2.4.281 (2023-11-20), v2.4.339 (2024-07-02), v2.4.362 (2024-11-19), **v2.4.379 (2026-02-23)**"
+notes = "\"Bug fixes and improvements\". The last date matches the Play listing's \"Updated on 2026-02-23\"."
+confidence = "confirmed"
+confidence_text = "✅ (primary + Play date)"
+sources = ["6-56", "6-26"]
+sources_text = "[56][26]"
+
+[[entry]]
+id = "6.2.5-13"
+origin = "md:1238"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "iOS updates per Rockstar"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "2023-10-17, 2023-11-20, 2024-07-02, 2024-11-19"
+id_text = "v2.4.146 (2023-10-17), v2.4.148 (2023-11-20), internal builds **v2024.0621.1426** (2024-07-02) and **v2024.1113.1304** (2024-11-19)"
+notes = "Rockstar's dates differ from the App Store's for 2.4.146 (App Store 2023-10-19 ⚠️); the 2024 entries are given as internal build numbers, not the App Store's 2.4.152 / 2.4.154. Rockstar's other iOS entries (1.05, 1.12, 1.13, 1.2) match the App Store dates."
+confidence = "mixed"
+confidence_text = "✅ (primary) / ⚠️ (date)"
+sources = ["6-56", "6-25"]
+sources_text = "[56][25]"
+
+[[entry]]
+id = "6.2.5-14"
+origin = "md:1239"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Fire OS (Fire TV)"
+platforms = ["fireos"]
+platform_text = "Fire OS"
+region = "WW"
+date = "2016-03-11"
+date_text = "**2016-03-11**"
+id_text = "Amazon ASIN B01CJ38W0U"
+notes = "Fire TV 1st and 2nd gen; **controller required**."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-13", "6-27"]
+sources_text = "[13][27]"
+
+[[entry]]
+id = "6.2.5-15"
+origin = "md:1240"
+section = "6.2.5"
+kind = "mobile-version"
+games = ["lcs"]
+title = "Mobile content changes"
+platforms = ["ios", "android"]
+platform_text = "iOS/Android"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "Several songs replaced on Rise FM, The Liberty Jam and Radio Del Mundo (4 of 8 Del Mundo tracks). Firefighter, Paramedic and Vigilante completion lowered from level 12 to level 9. Multiplayer absent."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-13", "6-16"]
+sources_text = "[13][16]"
+
+[sources]
+6-10 = { text = "Redump DAT \"Sony - PlayStation Portable\" (libretro-database mirror, DAT version 2026.10.07): https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%20Portable.dat (origin: http://redump.org/downloads/)", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%20Portable.dat", origin = "md:1400" }
+6-11 = { text = "Redump DAT \"Sony - PlayStation 2\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", origin = "md:1401" }
+6-12 = { text = "No-Intro DAT \"Sony - PlayStation Portable (PSN)\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%20Portable%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%20Portable%20(PSN", origin = "md:1402" }
+6-13 = { text = "Wikipedia — Grand Theft Auto: Liberty City Stories: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:1403" }
+6-14 = { text = "GTA Wiki (Fandom) — Grand Theft Auto: Liberty City Stories: https://gta.fandom.com/wiki/Grand_Theft_Auto:_Liberty_City_Stories", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:1404" }
+6-15 = { text = "Grand Theft Wiki — Grand Theft Auto: Liberty City Stories: https://www.grandtheftwiki.com/Grand_Theft_Auto:_Liberty_City_Stories", url = "https://www.grandtheftwiki.com/Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:1405" }
+6-16 = { text = "The Cutting Room Floor — Grand Theft Auto: Liberty City Stories: https://tcrf.net/Grand_Theft_Auto:_Liberty_City_Stories", url = "https://tcrf.net/Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:1406" }
+6-17 = { text = "The Cutting Room Floor — Prerelease: Grand Theft Auto: Liberty City Stories: https://tcrf.net/Prerelease:Grand_Theft_Auto:_Liberty_City_Stories", url = "https://tcrf.net/Prerelease:Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:1407" }
+6-18 = { text = "Dengeki Online (2007-06-29) — GTA:LCS PSP/PS2 Japanese release (Capcom): https://dengekionline.com/data/news/2007/6/29/72ba45d208b73fb92326296c3b5e28a0.html", url = "https://dengekionline.com/data/news/2007/6/29/72ba45d208b73fb92326296c3b5e28a0.html", origin = "md:1408" }
+6-19 = { text = "VGChartz — GTA: Liberty City Stories (PSP): https://www.vgchartz.com/game/5165/grand-theft-auto-liberty-city-stories/summary", url = "https://www.vgchartz.com/game/5165/grand-theft-auto-liberty-city-stories/summary", origin = "md:1409" }
+6-20 = { text = "VGChartz — GTA: Liberty City Stories (PS2): https://www.vgchartz.com/game/893/grand-theft-auto-liberty-city-stories/summary", url = "https://www.vgchartz.com/game/893/grand-theft-auto-liberty-city-stories/summary", origin = "md:1410" }
+6-21 = { text = "Japanese Wikipedia — グランド・セフト・オート・リバティーシティ・ストーリーズ: https://ja.wikipedia.org/wiki/グランド・セフト・オート・リバティーシティ・ストーリーズ", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート・リバティーシティ・ストーリーズ", origin = "md:1411" }
+6-22 = { text = "PlayStation LifeStyle (2013-03-29) — VCS and LCS come to PS2 Classics on April 2nd/3rd: http://www.playstationlifestyle.net/2013/03/29/grand-theft-auto-vice-city-stories-and-liberty-city-stories-come-to-ps2-classics-on-april-2nd3rd/", url = "http://www.playstationlifestyle.net/2013/03/29/grand-theft-auto-vice-city-stories-and-liberty-city-stories-come-to-ps2-classics-on-april-2nd3rd/", origin = "md:1412" }
+6-23 = { text = "TheGTAPlace (2013-04-03) — Liberty City Stories & Vice City Stories Now Available On PSN: https://thegtaplace.com/gtavcs/", url = "https://thegtaplace.com/gtavcs/", origin = "md:1413" }
+6-24 = { text = "GameSpot (2015-12-17) — GTA: Liberty City Stories With 'Significant Enhancements' Hits iOS: https://www.gamespot.com/articles/gta-liberty-city-stories-with-significant-enhancem/1100-6433194/", url = "https://www.gamespot.com/articles/gta-liberty-city-stories-with-significant-enhancem/1100-6433194/", origin = "md:1414" }
+6-25 = { text = "Apple App Store — GTA: Liberty City Stories (id1061802598), version history: https://apps.apple.com/us/app/id1061802598", url = "https://apps.apple.com/us/app/id1061802598", origin = "md:1415" }
+6-26 = { text = "Google Play — GTA: Liberty City Stories (com.rockstargames.gtalcs): https://play.google.com/store/apps/details?id=com.rockstargames.gtalcs", url = "https://play.google.com/store/apps/details?id=com.rockstargames.gtalcs", origin = "md:1416" }
+6-27 = { text = "AFTVnews (2016-03-11) — GTA: Liberty City Stories released for the Amazon Fire TV: http://www.aftvnews.com/grand-theft-auto-liberty-city-stories-released-for-the-amazon-fire-tv/", url = "http://www.aftvnews.com/grand-theft-auto-liberty-city-stories-released-for-the-amazon-fire-tv/", origin = "md:1417" }
+6-28 = { text = "LevelUp (2017-09-29) — Listan GTA: Liberty City Stories y Vice City Stories para PS4 (ESRB): https://www.levelup.com/noticias/listan-gta-liberty-city-stories-y-vice-city-stories-para-ps4/", url = "https://www.levelup.com/noticias/listan-gta-liberty-city-stories-y-vice-city-stories-para-ps4/", origin = "md:1418" }
+6-29 = { text = "Kakaku.com — GTA: Liberty City Stories (PSP, Capcom, 2007-07-26): https://review.kakaku.com/review/41372510461/", url = "https://review.kakaku.com/review/41372510461/", origin = "md:1419" }
+6-30 = { text = "Kakaku.com — GTA: Liberty City Stories (Best Price!) (PSP, 2008-07-24): https://review.kakaku.com/review/41372510638/", url = "https://review.kakaku.com/review/41372510638/", origin = "md:1420" }
+6-32 = { text = "The Cutting Room Floor — Proto: Grand Theft Auto: Liberty City Stories: https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", url = "https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:1422" }
+6-33 = { text = "Delisted Games — Grand Theft Auto: Vice City Stories: https://delistedgames.com/grand-theft-auto-vice-city-stories/", url = "https://delistedgames.com/grand-theft-auto-vice-city-stories/", origin = "md:1423" }
+6-53 = { text = "Hidden Palace — Grand Theft Auto: Liberty City Stories prototype pages (May 29, Jul 26, Sep 1, Sep 11, Sep 23, Oct 7, Oct 22 2005; Mar 22 2006 16:09:00 and 16:20:58): https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(May_29,_2005_prototype) (and sibling pages with the same naming pattern)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_Liberty_City_Stories_(May_29,_2005_prototype", origin = "md:1443" }
+6-56 = { text = "Rockstar Games Support — \"Grand Theft Auto: Liberty City Stories Mobile Title Update Notes (Android/iOS)\" (last updated 2026-02-23; read 2026-10-24): https://support.rockstargames.com/articles/57QV4aeH5n83SkTZpBQhXz/grand-theft-auto-liberty-city-stories-mobile-title-update-notes-android-ios", url = "https://support.rockstargames.com/articles/57QV4aeH5n83SkTZpBQhXz/grand-theft-auto-liberty-city-stories-mobile-title-update-notes-android-ios", origin = "md:1446" }
+6-59 = { text = "PlayStation Store (US) search results for \"liberty city stories\" and \"vice city stories\" (checked 2026-10-24): https://store.playstation.com/en-us/search/liberty%20city%20stories ; https://store.playstation.com/en-us/search/vice%20city%20stories", url = "https://store.playstation.com/en-us/search/liberty%20city%20stories", origin = "md:1449" }
+6-60 = { text = "GameFAQs release-data pages (user-contributed; read 2026-10-24): LCS https://gamefaqs.gamespot.com/psp/925776-grand-theft-auto-liberty-city-stories/data ; VCS https://gamefaqs.gamespot.com/psp/933097-grand-theft-auto-vice-city-stories/data ; CTW https://gamefaqs.gamespot.com/ds/950922-grand-theft-auto-chinatown-wars/data", url = "https://gamefaqs.gamespot.com/psp/925776-grand-theft-auto-liberty-city-stories/data", origin = "md:1450" }
+6-61 = { text = "No-Intro DAT \"Sony - PlayStation 3 (PSN)\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN", origin = "md:1451" }
