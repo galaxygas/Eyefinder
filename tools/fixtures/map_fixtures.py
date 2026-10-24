@@ -368,6 +368,172 @@ def radar_reference(n, size):
     return w, w, bytes(img)
 
 
+# --- GTA III / San Andreas placed worlds ------------------------------------------------------------
+# DFF clumps as librw @ 18532c2e writes them (Clump/FrameList/Geometry/MaterialList/Material/Texture
+# streamWrite), with the Rockstar node-name extension 0x0253F2FE; IDE / IPL lines and the binary IPL as
+# the FileLoader.cpp / tBinaryIplFile.h sources read them.
+
+QUAD = 8.0  # world units per quad side
+
+
+def c8888_txd(names, ver):
+    natives = []
+    for name, texels in names:
+        s = struct.pack('<II', 8, 0x1102) + name32(name) + name32('')
+        s += struct.pack('<IIHHBBBB', 0x500, 1, 4, 4, 32, 1, 4, 0)
+        data = bytes(v for t in texels for v in (t[2], t[1], t[0], t[3]))  # BGRA
+        s += struct.pack('<I', len(data)) + data
+        natives.append(chunk(0x15, chunk(1, s, ver) + chunk(3, b'', ver), ver))
+    return txd(natives, 1, ver)
+
+
+def checker(seed):
+    """4 x 4 RGBA texels, image order; texel (3, 0) is transparent."""
+    out = []
+    for y in range(4):
+        for x in range(4):
+            out.append(((seed * 50 + x * 60) % 256, (y * 70 + seed) % 256, (x * 20 + y * 30 + 40) % 256, 0 if (x, y) == (3, 0) else 255))
+    return out
+
+
+def quad_dff(name, texture, prelit, ver):
+    """One atomic: a flat QUAD x QUAD square at z = 0, uv (0,1) at the model origin."""
+    pos = [(0, 0, 0), (QUAD, 0, 0), (QUAD, QUAD, 0), (0, QUAD, 0)]
+    uv = [(0, 1), (1, 1), (1, 0), (0, 0)]
+    tris = [(0, 1, 2), (0, 2, 3)]
+    flags = 0x02 | 0x04 | 0x08  # POSITIONS | TEXTURED | PRELIT
+    old = ver == 0x0C02FFFF  # 3.3 (before 3.4): surface properties in the geometry struct
+    g = struct.pack('<IiiI', flags, len(tris), len(pos), 1)
+    if old:
+        g += struct.pack('<3f', 1, 1, 1)
+    g += bytes(prelit) * len(pos)
+    g += b''.join(struct.pack('<2f', *t) for t in uv)
+    g += b''.join(struct.pack('<HHHH', b, a, 0, c) for a, b, c in tris)  # v1, v0 / matId, v2 (little-endian u32 pairs)
+    g += struct.pack('<4f', QUAD / 2, QUAD / 2, 0, QUAD) + struct.pack('<ii', 1, 0)
+    g += b''.join(struct.pack('<3f', *p) for p in pos)
+    tex = chunk(0x06, chunk(1, struct.pack('<I', 0x1106), ver) + chunk(2, texture.encode() + b'\0', ver)
+                + chunk(2, b'\0', ver) + chunk(3, b'', ver), ver)
+    mat = chunk(0x07, chunk(1, struct.pack('<i4Bii', 0, 255, 255, 255, 255, 0, 1) + struct.pack('<3f', 1, 1, 1), ver)
+                + tex + chunk(3, b'', ver), ver)
+    matlist = chunk(0x08, chunk(1, struct.pack('<ii', 1, -1), ver) + mat, ver)
+    geometry = chunk(0x0F, chunk(1, g, ver) + matlist + chunk(3, b'', ver), ver)
+    frame = struct.pack('<i', 1) + struct.pack('<12f', 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0) + struct.pack('<ii', -1, 0)
+    framelist = chunk(0x0E, chunk(1, frame, ver) + chunk(3, chunk(0x0253F2FE, name.encode(), ver), ver), ver)
+    geolist = chunk(0x1A, chunk(1, struct.pack('<i', 1), ver) + geometry, ver)
+    atomic = chunk(0x14, chunk(1, struct.pack('<iiii', 0, 0, 5, 0), ver) + chunk(3, b'', ver), ver)
+    return chunk(0x10, chunk(1, struct.pack('<iii', 1, 0, 0), ver) + framelist + geolist + atomic + chunk(3, b'', ver), ver)
+
+
+def rot_iii(axis, w):
+    """re3 LoadObjectInstance: RwMatrixRotate(axis, -2 acos w) (librw Matrix::makeRotation), rows."""
+    import math
+    angle = -2 * math.acos(max(-1.0, min(1.0, w)))
+    n = math.sqrt(sum(a * a for a in axis))
+    x, y, z = (a / n for a in axis) if n else (0.0, 0.0, 0.0)
+    s, c = math.sin(angle), math.cos(angle)
+    t = 1 - c
+    return [[c + x * x * t, x * y * t + z * s, z * x * t - y * s],
+            [x * y * t - z * s, c + y * y * t, y * z * t + x * s],
+            [z * x * t + y * s, y * z * t - x * s, c + z * z * t]]
+
+
+def rot_sa(q):
+    """gta-reversed LoadObjectInstance: heading branch (|x|, |y| <= 0.05) only, as used below."""
+    import math
+    x, y, z, w = q
+    h = math.acos(max(-1.0, min(1.0, w))) * (2 if z < 0 else -2)
+    return [[math.cos(h), math.sin(h), 0], [-math.sin(h), math.cos(h), 0], [0, 0, 1]]
+
+
+# GTA III: (model id, name, txd, first draw distance, texture, prelit)
+III_MODELS = [(1000, 'quad_a', 'quadtex', 120, 'checker_a', (255, 255, 255, 255)),
+              (1001, 'quad_b', 'quadtex', 120, 'checker_g', (255, 128, 64, 255)),  # texture from the global TXD
+              (1002, 'LODquad_a', 'quadtex', 1500, 'checker_a', (255, 255, 255, 255))]  # > LOD_DISTANCE
+# (model, x, y, z, axis, w)
+H = 2 ** -0.5
+III_INST = [(1000, 8, 40, 0, (0, 0, 0), 1),
+            (1001, 12, 44, 5, (0, 0, H), H),  # a quarter turn, above quad_a
+            (1002, 40, 8, 10, (0, 0, 0), 1)]
+
+
+def world_render(models, instances, region, ppu):
+    """Expected top-down picture: every pixel centre mapped back into each quad (inverse of the
+    placement), the highest wins; texel alpha < 128 skipped; prelit multiplies."""
+    x0, y0, size = region
+    n = int(size * ppu)
+    tex = {m[0]: m[4] for m in models}
+    img = bytearray(n * n * 4)
+    for py in range(n):
+        for px in range(n):
+            wx, wy = x0 + (px + 0.5) / ppu, y0 + size - (py + 0.5) / ppu
+            best = None
+            for model, rot, pos, prelit, texels in instances:
+                dx, dy = wx - pos[0], wy - pos[1]
+                lx = dx * rot[0][0] + dy * rot[0][1]
+                ly = dx * rot[1][0] + dy * rot[1][1]
+                if not (0 <= lx <= QUAD and 0 <= ly <= QUAD):
+                    continue
+                u, v = lx / QUAD, 1 - ly / QUAD
+                t = texels[min(3, int(v * 4)) * 4 + min(3, int(u * 4))]
+                if t[3] < 128:
+                    continue
+                if best is None or pos[2] > best[0]:
+                    c = [int(t[k] * prelit[k] / 255.0 + 0.5) for k in range(3)]
+                    best = (pos[2], c)
+            if best:
+                o = (py * n + px) * 4
+                img[o:o + 4] = bytes(best[1] + [255])
+    return n, bytes(img)
+
+
+def write_worlds(out):
+    v3 = 0x0C02FFFF
+    tex = {'checker_a': checker(1), 'checker_g': checker(2), 'checker_s': checker(3)}
+    entries = [(f'{name}.dff', quad_dff(name, t, prelit, v3)) for _, name, _, _, t, prelit in III_MODELS]
+    entries.append(('quadtex.txd', c8888_txd([('checker_a', tex['checker_a'])], v3)))
+    d, img = img_v1(entries)
+    root = os.path.join(out, 'world3')
+    write(os.path.join(root, 'models/gta3.dir'), d)
+    write(os.path.join(root, 'models/gta3.img'), img)
+    write(os.path.join(root, 'models/generic.txd'), c8888_txd([('checker_g', tex['checker_g'])], v3))
+    write(os.path.join(root, 'data/default.dat'), b'# nothing\r\n')
+    write(os.path.join(root, 'data/gta3.dat'), b'TEXDICTION MODELS\\GENERIC.TXD\r\nIDE DATA\\MAPS\\TEST.IDE\r\nIPL DATA\\MAPS\\TEST.IPL\r\n')
+    ide = 'objs\r\n' + ''.join(f'{i}, {n}, {t}, 1, {d}, 0\r\n' for i, n, t, d, _, _ in III_MODELS) + 'end\r\n'
+    write(os.path.join(root, 'data/maps/test.ide'), ide.encode())
+    ipl = 'inst\r\n' + ''.join(
+        f'{m}, {next(x[1] for x in III_MODELS if x[0] == m)}, {x}, {y}, {z}, 1, 1, 1, {a[0]}, {a[1]}, {a[2]}, {w}\r\n'
+        for m, x, y, z, a, w in III_INST) + 'end\r\n'
+    write(os.path.join(root, 'data/maps/test.ipl'), ipl.encode())
+    placed = []
+    for m, x, y, z, a, w in III_INST:
+        model = next(t for t in III_MODELS if t[0] == m)
+        if model[3] > 300:
+            continue  # low detail: not in the render
+        placed.append((m, rot_iii(a, w), (x, y, z), model[5], tex[model[4]]))
+    n, px = world_render(III_MODELS, placed, (0, 0, 64), 1)
+
+    # San Andreas: a text IPL and its binary stream IPL, whose instance names text instance 0 as LOD.
+    v6 = 0x1803FFFF
+    sa_entries = [('sa_quad.dff', quad_dff('sa_quad', 'checker_s', (255, 255, 255, 255), v6)),
+                  ('satex.txd', c8888_txd([('checker_s', tex['checker_s'])], v6))]
+    insts = [((16, 16, 0), (0, 0, 0, 1), 0, -1), ((30, 30, 2), (0, 0, -H, H), 0, 0), ((200, 200, 0), (0.3, 0.1, 0, 0.9487), 0, -1)]
+    bin_inst = b''.join(struct.pack('<3f4fiIi', *p, *q, 2000, flags, lod) for p, q, flags, lod in insts[1:])
+    head = b'bnry' + struct.pack('<6I', 2, 0, 0, 0, 0, 0) + struct.pack('<12I', 0x4C, len(bin_inst), *([0] * 10))
+    sa_entries.append(('sa_stream0.ipl', head + bin_inst))
+    sroot = os.path.join(out, 'world_sa')
+    write(os.path.join(sroot, 'models/gta3.img'), img_v2(sa_entries))
+    write(os.path.join(sroot, 'data/default.dat'), b'\r\n')
+    write(os.path.join(sroot, 'data/gta.dat'), b'IDE DATA\\MAPS\\SA.IDE\r\nIPL DATA\\MAPS\\SA.IPL\r\n')
+    write(os.path.join(sroot, 'data/maps/sa.ide'), b'objs\r\n2000, sa_quad, satex, 299, 0\r\nend\r\n')
+    write(os.path.join(sroot, 'data/maps/sa.ipl'), b'inst\r\n2000, sa_quad, 0, 16, 16, 0, 0, 0, 0, 1, -1\r\nend\r\n')
+    sa_placed = [(2000, rot_sa(insts[1][1]), insts[1][0], (255, 255, 255, 255), tex['checker_s'])]  # text instance 0 is LOD
+    sn, spx = world_render([(2000, 'sa_quad', 'satex', 299, 'checker_s')], sa_placed, (0, 0, 64), 1)
+    return {
+        'iii_world': dict(instances=len(III_INST), lod=[False, False, True], render=dict(width=n, height=n, fnv=fnv(px))),
+        'sa_world': dict(instances=3, lod=[True, False, False], render=dict(width=sn, height=sn, fnv=fnv(spx))),
+    }
+
+
 def main():
     out = sys.argv[1]
     write(os.path.join(out, 'gta1/GTADATA/STYLE001.GRY'), g1_style())
@@ -388,6 +554,7 @@ def main():
     ref['gta1'] = dict(objects=1, cars=1, routes=1, nav=['Downtown', 'Liberty'], police_stations=1)
     ref['gta2'] = dict(zones=[[1, 'Downtown'], [14, 'Zaibatsu']], objects=1, lights=1, animations=1,
                        chunks=['ANIM', 'DMAP', 'JUNK', 'LGHT', 'MOBJ', 'PSXM', 'ZONE'])
+    ref.update(write_worlds(out))
     with open(os.path.join(out, 'map_reference.json'), 'w', newline='\n') as f:
         f.write(json.dumps(ref, indent=2) + '\n')
 

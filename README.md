@@ -30,7 +30,7 @@ the **text** of the 2D games. Models and other data will follow.
 * **Export Map files** (top of every game version whose map format is documented):
   * **raw**: every map file byte for byte;
   * **individual files**: the map data as JSON, an SVG overlay of zones, objects and lights, each radar tile;
-  * **full maps**: GTA1, London and GTA2 cities rendered top-down at the games' native 64 pixels per block (one PNG and optional tiles), and the radar map and pause-menu map of GTA III, Vice City and San Andreas.
+  * **full maps**: GTA1, London and GTA2 cities rendered top-down at the games' native 64 pixels per block (one PNG and optional tiles); the radar map and pause-menu map of GTA III, Vice City and San Andreas; and (PC) their whole placed world as a 3D glTF scene and a top-down render.
 * **Textures:**
   * A thumbnail grid or a list, and a large preview with zoom, mip levels and a transparency checkerboard.
   * Supported natives: Direct3D 8/9 (PC), Xbox and PS2, including palettes, DXT1/3/5 and swizzled PS2/Xbox data.

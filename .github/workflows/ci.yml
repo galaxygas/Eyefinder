@@ -76,3 +76,20 @@ jobs:
           python-version: "3.13"
       - run: python3 tools/fixtures/map_fixtures.py /tmp/maps
       - run: diff -r /tmp/maps crates/ef-map/tests/fixtures
+
+  gltf-validation:
+    # Exports the synthetic GTA III and San Andreas worlds (crates/ef-map/tests/fixtures) and checks the
+    # glTF scenes with the Khronos glTF validator.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - run: npm install --prefix /tmp/val gltf-validator@2.0.0-dev.3.10
+      - run: |
+          cargo run -q -p ef-map --example export_fixture -- crates/ef-map/tests/fixtures/world3 gta3 /tmp/w3 0.25
+          cargo run -q -p ef-map --example export_fixture -- crates/ef-map/tests/fixtures/world_sa sa /tmp/wsa 0.25
+          NODE_PATH=/tmp/val/node_modules node tools/fixtures/validate_gltf.js /tmp/w3/scene/scene.gltf
+          NODE_PATH=/tmp/val/node_modules node tools/fixtures/validate_gltf.js /tmp/wsa/scene/scene.gltf

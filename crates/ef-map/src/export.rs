@@ -35,6 +35,12 @@ pub struct ExportOptions {
     pub tiles: bool,
     /// 3D games: radar map and pause-menu map.
     pub premade: bool,
+    /// 3D games: the whole placed world as a glTF scene.
+    pub scene: bool,
+    /// 3D games: a top-down render of the placed world.
+    pub world_topdown: bool,
+    /// Pixels per world unit of the world top-down render (0 = 1).
+    pub world_ppu: f32,
     /// Styles chosen for maps the sources do not pair (map path -> style paths).
     pub styles: BTreeMap<String, Vec<String>>,
 }
@@ -285,8 +291,30 @@ pub fn export(
         }
     }
 
+    if (opts.scene || opts.world_topdown || opts.individual)
+        && !rep.cancelled
+        && matches!(install.game, ef_core::Game::Gta3 | ef_core::Game::ViceCity | ef_core::Game::SanAndreas)
+    {
+        progress(done, total, "placed world");
+        match export_world(
+            install,
+            opts,
+            out,
+            &|d, t| progress(done + d * 63 / t.max(1), total, "placed world"),
+            cancel,
+        ) {
+            Ok((mut outs, mut notes)) => {
+                rep.written += outs.len();
+                outputs.append(&mut outs);
+                notices.append(&mut notes);
+            }
+            Err(e) => rep.failed.push(("placed world".into(), e.to_string())),
+        }
+        done += 64;
+    }
+
     if opts.premade && !rep.cancelled {
-        if let Some((grid, files)) = &cat.radar {
+        if let Some((grid, files)) = cat.radar.as_ref().filter(|(_, f)| f.found() > 0) {
             progress(done, total, "radar map");
             match radar::radar_map(vfs, *grid, files, &|d, t| progress(done + d * 48 / t.max(1), total, "radar map")) {
                 Ok(pic) => {
@@ -380,7 +408,7 @@ pub fn export(
         "user_choice": install.user_choice,
         "source": install.vfs.describe(),
         "detection": install.evidence,
-        "options": {"raw": opts.raw, "individual": opts.individual, "topdown": opts.topdown, "tiles": opts.tiles, "premade": opts.premade, "styles": opts.styles},
+        "options": {"raw": opts.raw, "individual": opts.individual, "topdown": opts.topdown, "tiles": opts.tiles, "premade": opts.premade, "scene": opts.scene, "world_topdown": opts.world_topdown, "world_ppu": opts.world_ppu, "styles": opts.styles},
         "outputs": outputs,
         "notices": notices,
         "failures": rep.failed,
@@ -581,6 +609,103 @@ fn export_level(
             source: source.into(),
             notes: vec![],
         });
+    }
+    Ok((outs, notes))
+}
+
+const WORLD: &str = "re3 / reVC / gta-reversed FileLoader.cpp (IDE, IPL, instance matrix), IplStore.cpp, tBinaryIplFile.h; librw 18532c2e (DFF clumps, geometry, rotation)";
+
+/// The placed world of a 3D game: `world.json` (individual), `scene/` glTF, `world_topdown.png`.
+fn export_world(
+    install: &GameInstall,
+    opts: &ExportOptions,
+    out: &Path,
+    progress: &(dyn Fn(usize, usize) + Sync),
+    cancel: &AtomicBool,
+) -> Result<(Vec<Output>, Vec<String>), Error> {
+    let mut outs = Vec::new();
+    let world = crate::world::build(install);
+    let mut notes = world.problems.clone();
+    if opts.individual {
+        let instances: Vec<_> = world
+            .instances
+            .iter()
+            .map(|i| {
+                serde_json::json!({
+                    "model": i.model, "name": i.name, "area": i.area, "lod": i.is_lod, "lod_index": i.lod_index,
+                    "file": world.ipl_files.get(i.file), "position": i.matrix[3],
+                    "right": i.matrix[0], "forward": i.matrix[1], "up": i.matrix[2],
+                })
+            })
+            .collect();
+        let models: Vec<_> = world
+            .models
+            .values()
+            .map(|m| serde_json::json!({"id": m.id, "name": m.name, "txd": m.txd, "draw_distance": m.draw_distance, "flags": m.flags}))
+            .collect();
+        let doc = serde_json::json!({
+            "note": "Matrices are in game space (Z up): right, forward, up are the images of the x, y and z axes.",
+            "ipl_files": world.ipl_files, "txd_parents": world.txd_parents, "global_txds": world.global_txds,
+            "models": models, "instances": instances,
+        });
+        write_atomic(&out.join("world.json"), &json(&doc)?)?;
+        outs.push(Output {
+            path: "world.json".into(),
+            kind: format!("placed world data: {} models, {} instances", world.models.len(), world.instances.len()),
+            support: FROM_SPEC,
+            source: WORLD.into(),
+            notes: vec![],
+        });
+    }
+    if !(opts.scene || opts.world_topdown) || install.platform != ef_core::Platform::Pc {
+        return Ok((outs, notes));
+    }
+    let all: Vec<usize> = (0..world.instances.len()).collect();
+    let detail: Vec<usize> =
+        all.iter().copied().filter(|&i| world.instances[i].area == 0 && !world.instances[i].is_lod).collect();
+    let wanted = if opts.scene { &all } else { &detail };
+    let scene = crate::scene::load(install, &world, wanted, &|d, t| progress(d * 20 / t.max(1), 64), cancel);
+    notes.extend(scene.problems.iter().cloned());
+    if opts.scene && !cancel.load(Ordering::Relaxed) {
+        let dir = out.join("scene");
+        let n = crate::gltf::write(&world, &scene, &all, &dir, &|d, t| progress(20 + d * 20 / t.max(1), 64), cancel)?;
+        outs.push(Output {
+            path: "scene/scene.gltf".into(),
+            kind: format!(
+                "3D map scene (glTF 2.0): {n} placed instances, {} models, {} textures",
+                scene.meshes.len(),
+                scene.textures.len()
+            ),
+            support: FROM_SPEC,
+            source: WORLD.into(),
+            notes: vec![
+                "Grouped by area (0 = the outside world) and full / low detail; Z-up game space under a Y-up root."
+                    .into(),
+            ],
+        });
+    }
+    if opts.world_topdown && !cancel.load(Ordering::Relaxed) {
+        let grid = crate::radar::grid(install.game).expect("3D game");
+        let ppu = if opts.world_ppu > 0.0 { opts.world_ppu } else { 1.0 };
+        let view = crate::render3d::View::of(grid, ppu);
+        let path = out.join("world_topdown.png");
+        if let Some(px) = crate::render3d::render(
+            &world,
+            &scene,
+            &detail,
+            &view,
+            &path,
+            &|d, t| progress(40 + d * 23 / t.max(1), 64),
+            cancel,
+        )? {
+            outs.push(Output {
+                path: "world_topdown.png".into(),
+                kind: format!("top-down render of the placed world, {px} x {px} px ({ppu} px per unit, world {} .. {})", grid.min, -grid.min),
+                support: FROM_SPEC,
+                source: WORLD.into(),
+                notes: vec!["Full-detail models of the outside world, nearest texels, prelit colours; no lighting, water or sky.".into()],
+            });
+        }
     }
     Ok((outs, notes))
 }

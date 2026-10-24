@@ -9,11 +9,16 @@
 
 pub mod catalog;
 pub mod cmp;
+pub mod dff;
 pub mod export;
+pub mod gltf;
 pub mod gmp;
 pub mod lid;
 pub mod radar;
+pub mod render3d;
+pub mod scene;
 pub mod topdown;
+pub mod world;
 
 pub use catalog::{Availability, MapCatalog};
 
