@@ -13,8 +13,10 @@ A format moves to **Verified** only when someone runs Eyefinder on a real copy a
 The **Documentation** page of the app shows, per game, every file type with its status
 (verified, implemented but unverified, documented but not implemented, not supported, undocumented),
 its sources and its real-file confirmations. Its data is `crates/ef-core/data/formats.json`, from
-which [MISSING.md](../MISSING.md) is generated. The **Index** page lists every release of every GTA
-game that the cited sources name (`crates/ef-core/data/release_index.json`).
+which [MISSING.md](../MISSING.md) is generated. The **Index** page lists every documented build and
+version of every GTA game ([the build database](DATABASE.md)), next to the dump records Eyefinder
+identifies copies by (`crates/ef-core/data/release_index.json`). Its support badges are per platform:
+a level applies only to the platform it was earned on.
 
 ## The 2D games (new, unverified implementations)
 

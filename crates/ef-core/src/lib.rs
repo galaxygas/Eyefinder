@@ -2,6 +2,7 @@
 
 pub mod console;
 pub mod cue;
+pub mod database;
 pub mod discimg;
 pub mod docs;
 pub mod edition;

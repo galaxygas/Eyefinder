@@ -1,0 +1,949 @@
+# Grand Theft Auto: Chinatown Wars: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "6.4"
+origin = "md:1292"
+title = "6.4 Grand Theft Auto: Chinatown Wars (DS 2009 · PSP 2009 · iOS 2010 · iPad HD 2010 · Android/Fire OS 2014)"
+games = ["ctw"]
+text = "Developed by **Rockstar Leeds** with **Rockstar North**. Published by Rockstar Games, and in Japan by **Cyberfront** (DS). The Android port, and per Wikipedia's footnotes the 2014 iOS re-port, are credited to **War Drum Studios** [40][41][42]."
+
+[[section]]
+id = "6.4.1"
+origin = "md:1296"
+title = "6.4.1 Development and pre-release"
+games = ["ctw"]
+
+[[section]]
+id = "6.4.2"
+origin = "md:1311"
+title = "6.4.2 Nintendo DS"
+games = ["ctw"]
+
+[[section]]
+id = "6.4.3"
+origin = "md:1321"
+title = "6.4.3 PSP"
+games = ["ctw"]
+
+[[section]]
+id = "6.4.4"
+origin = "md:1337"
+title = "6.4.4 iOS (iPhone/iPod touch, iPad HD) and Android/Fire OS"
+games = ["ctw"]
+text = "> **Cross-reference:** compilations and bundles that include the handheld games, if any, are covered in Section 12. No Redump or No-Intro entry found here is a multi-game compilation. GameFAQs lists a PS2 product \"Grand Theft Auto: Liberty City Stories / Vice City Stories\" dated 2009-06-23 [60] — for Section 12 (not verified further here)."
+
+[[entry]]
+id = "6.4.1-1"
+origin = "md:1300"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "Announcement"
+platforms = ["nds"]
+platform_text = "DS"
+region = "–"
+date = "2008-07-15"
+date_text = "**2008-07-15**"
+id_text = "–"
+notes = "Announced at a Nintendo press conference, with release planned for \"the following winter\". GTA Wiki says the project grew from mutual interest between Rockstar and Nintendo."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-41"]
+sources_text = "[40][41]"
+
+[[entry]]
+id = "6.4.1-2"
+origin = "md:1301"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "Code size"
+platforms = ["nds"]
+platform_text = "DS"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "\"Over 900,000\" hand-optimised lines (Nintendo World Report) vs \"at least 800,000\" (Official Nintendo Magazine)."
+confidence = "single-source"
+confidence_text = "⚠️ (conflict)"
+sources = ["6-40", "6-41", "6-42"]
+sources_text = "[40][41][42]"
+
+[[entry]]
+id = "6.4.1-3"
+origin = "md:1302"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "Pre-order and launch promos"
+platforms = ["nds"]
+platform_text = "DS"
+region = "NA"
+date = "2009-03"
+date_text = "2009-03"
+id_text = "–"
+notes = "GameStop promo van; in-store \"credit cards\" worth $10,000 in-game; Amazon pre-order code for a bulletproof Infernus."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40"]
+sources_text = "[40]"
+
+[[entry]]
+id = "6.4.1-4"
+origin = "md:1303"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "PSP Test Sample 0.01, **July 28, 2009**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "build date 2009-07-28"
+serials = ["ULUX-80386"]
+id_text = "Sony DADC test-sample UMD \"TEDL 026940 … Test Sample 3 **ULUX-80386** Take Two .01\""
+notes = "Hidden Palace: \"Dumped, not released\"; earliest known build, about two months before the final."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-55"]
+sources_text = "[55]"
+
+[[entry]]
+id = "6.4.1-5"
+origin = "md:1304"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "PSP Test Sample 1.00, **August 26, 2009**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date_text = "build date 2009-08-26"
+serials = ["ULUS-10490"]
+id_text = "Sony DADC test-sample UMD \"TESS 026860 … **ULUS-10490** Take Two 1.00\""
+notes = "Hidden Palace: \"Dumped, not released\"; about one month before the final. (HP alias: \"US 1.0 prototype\".)"
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-55"]
+sources_text = "[55]"
+
+[[entry]]
+id = "6.4.1-6"
+origin = "md:1305"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "PSP Pre-production 1.00 (EFIGS), **August 28, 2009**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU"
+date_text = "build date 2009-08-28"
+serials = ["ULES-01347"]
+id_text = "Pre-production UMD, product code **ULES-01347/1.00**"
+notes = "Hidden Palace: \"Dumped, not released\"."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-55"]
+sources_text = "[55]"
+
+[[entry]]
+id = "6.4.1-7"
+origin = "md:1306"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "PSP Pre-production 0.01, **August 31, 2009**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU (ULET)"
+date = "2020-12-12"
+date_text = "build date 2009-08-31 17:40:17; released **2020-12-12** by **Sor3nt** (also dumper)"
+serials = ["ULET-01349", "ULES-01349"]
+id_text = "Pre-production UMD, label \"ULET-01349/0.01\", product code **ULES-01349/0.01**"
+notes = "Hidden Palace links Redump disc 79083 and a BetaArchive entry for this build."
+confidence = "confirmed"
+confidence_text = "✅ (HP + Redump link)"
+sources = ["6-55"]
+sources_text = "[55]"
+
+[[entry]]
+id = "6.4.1-8"
+origin = "md:1307"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "PSP Pre-production 0.02, **September 15, 2009**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU (ULET)"
+date = "2021-04-27"
+date_text = "build date 2009-09-15 12:42:47; released **2021-04-27** (anonymous)"
+serials = ["ULET-01349", "ULES-01349"]
+id_text = "Pre-production UMD, label \"ULET-01349/0.02\", product code **ULES-01349/0.02**"
+notes = "\"Built 12 days before its final iteration\"; HP links Redump disc 79084."
+confidence = "confirmed"
+confidence_text = "✅ (HP + Redump link)"
+sources = ["6-55"]
+sources_text = "[55]"
+
+[[entry]]
+id = "6.4.1-9"
+origin = "md:1308"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "PSP final build date (HP)"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA/EU"
+date_text = "–"
+id_text = "US and EU finals built **2009-09-27**"
+notes = "From HP infoboxes (build date, not on-sale date)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-55"]
+sources_text = "[55]"
+
+[[entry]]
+id = "6.4.1-10"
+origin = "md:1309"
+section = "6.4.1"
+kind = "prototype"
+games = ["ctw"]
+title = "DS / iOS prototypes"
+platforms = ["nds", "ios"]
+platform_text = "DS/iOS"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "**None documented.** No DS prototype appears in No-Intro (whose DS DAT does include prototypes of other games), and Hidden Palace lists only PSP CTW prototypes (checked 2026-10-24)."
+confidence = "confirmed"
+confidence_text = "✅ (absence)"
+sources = ["6-43", "6-55"]
+sources_text = "[43][55]"
+
+[[entry]]
+id = "6.4.2-1"
+origin = "md:1315"
+section = "6.4.2"
+kind = "retail"
+games = ["ctw"]
+title = "Retail"
+platforms = ["nds"]
+platform_text = "DS"
+region = "NA"
+date = "2009-03-17"
+date_text = "**2009-03-17**"
+serials = ["NTR-YGXE-USA"]
+id_text = "Cartridge **NTR-YGXE-USA** (GameFAQs; UPC 710425353000), game code **YGXE**. No-Intro: \"(USA) (En,Fr,De,Es,It)\", 128 MiB (1 Gbit) ROM, CRC32 `CC50CF7E`"
+notes = "Five radio stations; touch-screen minigames. Just under 90,000 US units sold in the first two weeks (GameSpot, 2009-04-16)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-41", "6-42", "6-43"]
+sources_text = "[40][41][42][43]"
+
+[[entry]]
+id = "6.4.2-2"
+origin = "md:1316"
+section = "6.4.2"
+kind = "retail"
+games = ["ctw"]
+title = "Retail"
+platforms = ["nds"]
+platform_text = "DS"
+region = "AU"
+date = "2009-03-19"
+date_text = "**2009-03-19** (Wikipedia, GameFAQs)"
+serials = ["NTR-YGXP-AUS"]
+id_text = "Cartridge **NTR-YGXP-AUS** (GameFAQs; EAN 5026555043267) — the YGXP game code is shared with Europe"
+notes = "Rated MA."
+confidence = "mixed"
+confidence_text = "✅ (date) / ⚠️ (code)"
+sources = ["6-40", "6-60"]
+sources_text = "[40][60]"
+
+[[entry]]
+id = "6.4.2-3"
+origin = "md:1317"
+section = "6.4.2"
+kind = "retail"
+games = ["ctw"]
+title = "Retail"
+platforms = ["nds"]
+platform_text = "DS"
+region = "EU"
+date = "2009-03-20"
+date_text = "**2009-03-20**"
+serials = ["NTR-YGXP-EUR"]
+id_text = "Cartridge **NTR-YGXP-EUR** (GameFAQs; EAN 5026555042451), game code **YGXP**. No-Intro: \"(Europe) (En,Fr,De,Es,It)\", 128 MiB, CRC32 `19936579`"
+notes = "Debuted at No. 5 in the UK chart."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-42", "6-43"]
+sources_text = "[40][42][43]"
+
+[[entry]]
+id = "6.4.2-4"
+origin = "md:1318"
+section = "6.4.2"
+kind = "retail"
+games = ["ctw"]
+title = "Japan (Cyberfront)"
+platforms = ["nds"]
+platform_text = "DS"
+region = "JP"
+date = "2009-10-29"
+date_text = "**2009-10-29**"
+serials = ["NTR-YGXJ-JPN"]
+id_text = "Cartridge **NTR-YGXJ-JPN** (GameFAQs; JAN 4521923250083), game code **YGXJ**. No-Intro: \"(Japan)\", 128 MiB, CRC32 `A41E4AA8`"
+notes = "Rated CERO Z; per ja.wikipedia, the first and only CERO Z title on DS."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-43", "6-44", "6-45"]
+sources_text = "[43][44][45]"
+
+[[entry]]
+id = "6.4.2-5"
+origin = "md:1319"
+section = "6.4.2"
+kind = "retail"
+games = ["ctw"]
+title = "Revisions"
+platforms = ["nds"]
+platform_text = "DS"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "No Rev 1 or kiosk demo is listed in No-Intro."
+confidence = "confirmed"
+confidence_text = "✅ (absence)"
+sources = ["6-43"]
+sources_text = "[43]"
+
+[[entry]]
+id = "6.4.3-1"
+origin = "md:1325"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "PSP version announced"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date = "2009-06-22"
+date_text = "2009-06-22"
+id_text = "–"
+notes = "Take-Two announcement (cited by Wikipedia)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40"]
+sources_text = "[40]"
+
+[[entry]]
+id = "6.4.3-2"
+origin = "md:1326"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "Retail UMD"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date = "2009-10-20"
+date_text = "**2009-10-20**"
+serials = ["ULUS-10490"]
+id_text = "**ULUS-10490**"
+notes = "Non-cel-shaded graphics, QTE minigames in place of touch, new Melanie Mallard missions, 11 radio stations (6 PSP-exclusive), 2-player multiplayer."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-10", "6-40", "6-41", "6-42"]
+sources_text = "[10][40][41][42]"
+
+[[entry]]
+id = "6.4.3-3"
+origin = "md:1327"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "PSN download"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "NA"
+date = "2009-10-20"
+date_text = "**2009-10-20** (GameFAQs, same day as UMD) ⚠️"
+id_text = "**UP1004-ULUS10490_00-RCKCHINATOWNWARS** (En/Fr/De/Es/It)"
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (date)"
+sources = ["6-12", "6-60"]
+sources_text = "[12][60]"
+
+[[entry]]
+id = "6.4.3-4"
+origin = "md:1328"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "Canadian Greatest Hits UMD"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA (Canada)"
+date = "2009-10-20"
+date_text = "listed **2009-10-20** by GameFAQs ⚠️"
+id_text = "**ULUS-10490GHF** (UPC 710425336935)"
+notes = "Not in the Redump DAT."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["6-60"]
+sources_text = "[60]"
+
+[[entry]]
+id = "6.4.3-5"
+origin = "md:1329"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "Retail UMD"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU"
+date = "2009-10-23"
+date_text = "**2009-10-23**"
+serials = ["ULES-01347"]
+id_text = "**ULES-01347** (En/Fr/De/Es/It)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-10", "6-40", "6-42"]
+sources_text = "[10][40][42]"
+
+[[entry]]
+id = "6.4.3-6"
+origin = "md:1330"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "PSN download"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "EU / AU"
+date = "2009-10-23"
+date_text = "**2009-10-23** (GameFAQs, EU and AU Store) ⚠️"
+id_text = "**EP1004-ULES01347_00-GPCGRANDTH000001**"
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (date)"
+sources = ["6-12", "6-60"]
+sources_text = "[12][60]"
+
+[[entry]]
+id = "6.4.3-7"
+origin = "md:1331"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "Retail UMD"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "AU"
+date = "2009-10-28"
+date_text = "**2009-10-28** (Wikipedia, GameFAQs)"
+serials = ["ULES-01347"]
+id_text = "ULES-01347 (GameFAQs)"
+notes = "Rated MA."
+confidence = "confirmed"
+confidence_text = "✅ (date)"
+sources = ["6-40", "6-60"]
+sources_text = "[40][60]"
+
+[[entry]]
+id = "6.4.3-8"
+origin = "md:1332"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "Retail UMD"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "KR"
+date = "2009-11-02"
+date_text = "**2009-11-02** (GameFAQs; publisher Take-Two Interactive, rated 18)"
+serials = ["ULKS-46223"]
+id_text = "**ULKS-46223** (EAN 5026555282598)"
+notes = "Korean release not previously documented here; not in the Redump DAT."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["6-60"]
+sources_text = "[60]"
+
+[[entry]]
+id = "6.4.3-9"
+origin = "md:1333"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "Retail UMD"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "Asia"
+date = "2009-11-04"
+date_text = "**2009-11-04** (GameFAQs)"
+serials = ["ULUS-10490"]
+id_text = "ULUS-10490 (barcode 0710425337345)"
+notes = "Asian distribution of the US disc."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["6-60"]
+sources_text = "[60]"
+
+[[entry]]
+id = "6.4.3-10"
+origin = "md:1334"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "Japan"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "JP"
+date = "2010-03-11"
+date_text = "**2010-03-11** (from a reference title cited by ja.wikipedia; not stated in the article body)"
+serials = ["ULJM-05604", "ULJM-05804"]
+id_text = "**ULJM-05604** (original; GameFAQs JAN 4521923200361, 2010-03-11) and **ULJM-05804** (same image, CRC `6BFA2786`) = **\"PSP Best Hits\"** reissue dated **2010-12-09** by GameFAQs (JAN 4521923270074)"
+notes = "Japanese publisher of both PSP releases: **CyberFront** per GameFAQs."
+confidence = "mixed"
+confidence_text = "✅ (serials) / ⚠️ (date, publisher, reissue — GameFAQs plus a ja.wikipedia reference title for the launch date)"
+sources = ["6-10", "6-45", "6-60"]
+sources_text = "[10][45][60]"
+
+[[entry]]
+id = "6.4.3-11"
+origin = "md:1335"
+section = "6.4.3"
+kind = "retail"
+games = ["ctw"]
+title = "PSN download"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "JP"
+date = "2015-06-04"
+date_text = "**2015-06-04** (GameFAQs; publisher Rockstar Games) ⚠️"
+id_text = "**JP0230-NPJH00138_00-0000000000000000**"
+notes = "NPJH-prefixed digital release (No-Intro: ISO 883,654,656 B, CRC `46DFD73D`)."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (date)"
+sources = ["6-12", "6-60"]
+sources_text = "[12][60]"
+
+[[entry]]
+id = "6.4.4-1"
+origin = "md:1341"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS port announced"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "–"
+date = "2009-08-31"
+date_text = "2009-08-31"
+id_text = "–"
+notes = "Joystiq, cited by Wikipedia and GTA Wiki."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-41"]
+sources_text = "[40][41]"
+
+[[entry]]
+id = "6.4.4-2"
+origin = "md:1342"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 1.0.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "**2010-01-17** (Wikipedia, GTA Wiki); Grand Theft Wiki and GameFAQs say 2010-01-18; App Store history dates v1.0.0 **2010-01-07**"
+version = "1.0.0"
+id_text = "App Store **id344186162**, v1.0.0"
+notes = "$9.99 at launch (later $4.99). 186 MB. DS-style graphics, touch controls, Independence FM custom station built from the iTunes library. No multiplayer and no Social Club."
+confidence = "mixed"
+confidence_text = "✅ (date ⚠️)"
+sources = ["6-40", "6-41", "6-42", "6-46", "6-60"]
+sources_text = "[40][41][42][46][60]"
+
+[[entry]]
+id = "6.4.4-3"
+origin = "md:1343"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "*Chinatown Wars Lite* (demo)"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2010-02-24"
+date_text = "**2010-02-24** (TouchArcade app database)"
+id_text = "App Store **id357140081**"
+notes = "Free demo with the first three missions (\"Yu Jian\", \"Pursuit Farce\", \"Under the Gun\") and two radio stations. GTA Wiki: removed from the App Store in 2015. (The first-pass \"around 2010-01\" was not sourced to a date and is replaced.)"
+confidence = "single-source"
+confidence_text = "⚠️ (single source for date/ID)"
+sources = ["6-41", "6-42", "6-58"]
+sources_text = "[41][42][58]"
+
+[[entry]]
+id = "6.4.4-4"
+origin = "md:1344"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 1.0.1"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2010-02-04"
+date_text = "2010-02-04"
+id_text = "1.0.1"
+notes = "Independence FM playlists now shuffle; bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "6.4.4-5"
+origin = "md:1345"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 1.1.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2010-03-28"
+date_text = "**2010-03-28**"
+id_text = "1.1.0"
+notes = "Added the six PSP-exclusive radio stations (over 100 minutes of music); size grew to 232 MB."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-41", "6-42", "6-46"]
+sources_text = "[40][41][42][46]"
+
+[[entry]]
+id = "6.4.4-6"
+origin = "md:1346"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "*GTA: Chinatown Wars HD* (iPad)"
+platforms = ["ios"]
+platform_text = "iPadOS"
+region = "WW"
+date = "2010-09-09"
+date_text = "**2010-09-09** (also TouchArcade app database and its 2010-09-09 release article)"
+id_text = "App Store **id386183589** (TouchArcade and GameFAQs); version history not retrievable (the App Store page now returns an error)"
+notes = "1024×768 HD graphics; IGN 9.0/10. Take-Two said on 2010-06-09 that it would ship \"within a month\". Its final store description (preserved by TouchArcade) says the update was \"for current users only\", the HD version \"will be retired on **4/3/15**\" (3 Apr 2015) and is \"identical to our new universal version\", \"Updated iOS Version developed by War Drum Studios\", requires iOS 7.0. Wikipedia/GTA Wiki say it was retired in Dec 2014 when the iPhone app went universal (2014-12-18); the store text instead gives 3 Apr 2015 as the retirement date ⚠️ (conflict unresolved). Existing owners kept access."
+confidence = "mixed"
+confidence_text = "✅ (date, ID) / ⚠️ (retirement date)"
+sources = ["6-40", "6-41", "6-47", "6-58", "6-60"]
+sources_text = "[40][41][47][58][60]"
+
+[[entry]]
+id = "6.4.4-7"
+origin = "md:1347"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "*GTA: Chinatown Wars HD Lite* (iPad demo)"
+platforms = ["ios"]
+platform_text = "iPadOS"
+region = "WW"
+date = "2010-11-18"
+date_text = "**2010-11-18** (TouchArcade app database)"
+id_text = "App Store **id390987389**"
+notes = "Free iPad demo with the first three missions of the full game (store description). Not mentioned in the first-pass sources."
+confidence = "single-source"
+confidence_text = "⚠️ (single source)"
+sources = ["6-58"]
+sources_text = "[58]"
+
+[[entry]]
+id = "6.4.4-8"
+origin = "md:1348"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "App Store removal"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "**2013-10-13** → returned **2013-12-21**"
+id_text = "–"
+notes = "Pulled with no statement, believed due to iOS 7 incompatibility. It returned with fixes, matching v2.0."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-46"]
+sources_text = "[40][46]"
+
+[[entry]]
+id = "6.4.4-9"
+origin = "md:1349"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 2.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2013-12-20"
+date_text = "2013-12-20"
+id_text = "2.0"
+notes = "iOS 7 compatibility; Retina support for iPhone 4/4S."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "6.4.4-10"
+origin = "md:1350"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 3.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2014-02-03"
+date_text = "2014-02-03"
+id_text = "3.0"
+notes = "Bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "6.4.4-11"
+origin = "md:1351"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 4.1 (universal)"
+platforms = ["ios"]
+platform_text = "iOS/iPadOS"
+region = "WW"
+date = "2014-12-18"
+date_text = "**2014-12-18**"
+id_text = "4.1"
+notes = "Universal iPhone/iPad app, full Retina resolution, widescreen support, MFi controllers, customisable controls; requires iOS 7. No 4.0 appears in the App Store history."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-46", "6-47"]
+sources_text = "[40][46][47]"
+
+[[entry]]
+id = "6.4.4-12"
+origin = "md:1352"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 4.3"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2015-02-24"
+date_text = "2015-02-24"
+id_text = "4.3"
+notes = "Bug fixes; notice asking HD buyers to re-download the universal app."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "6.4.4-13"
+origin = "md:1353"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 4.4"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2016-05-04"
+date_text = "2016-05-04"
+id_text = "4.4"
+notes = "64-bit support; expanded Retina support."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "6.4.4-14"
+origin = "md:1354"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 4.5"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2019-05-13"
+date_text = "2019-05-13"
+id_text = "4.5"
+notes = "Bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "6.4.4-15"
+origin = "md:1355"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS 4.5.1 – 4.5.9"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "2023-10-19 → 2024-11-19"
+id_text = "4.5.1 (2023-10-19), .2 (2023-11-02), .3 (2023-11-20), .4 (2023-12-13), .5 (2024-02-28), .6 (2024-05-24), .7 (2024-07-02), .8 (2024-09-02), **.9 (2024-11-19, latest listed)**"
+notes = "Current listing: free download, 30-minute trial, $4.99 full-game in-app purchase; iOS 13+; Apple-silicon Mac compatible; 959.3 MB; En/Fr/De/It/Ja/Es. These dates match the LCS 2.4.14x–15x updates (§6.2.5), so the two apps were updated in lockstep."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "6.4.4-16"
+origin = "md:1356"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "Android launch"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2014-12-18"
+date_text = "**2014-12-18**"
+id_text = "package `com.rockstargames.gtactw`"
+notes = "Port by War Drum Studios. $4.99 at launch with no in-app purchases; Android TV support; Bluetooth/USB gamepads; En/Fr/De/It/Ja/Es. The Play listing (checked 2026-10) shows \"Updated on 2026-03-09\", 10M+ downloads, a 30-minute-trial model and no version number."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-40", "6-48", "6-49"]
+sources_text = "[40][48][49]"
+
+[[entry]]
+id = "6.4.4-17"
+origin = "md:1357"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "Android v1.01"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2015-02-24"
+date_text = "2015-02-24"
+version = "1.01"
+id_text = "v1.01"
+notes = "Improved touch controls and menus; bug fixes."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["6-57"]
+sources_text = "[57]"
+
+[[entry]]
+id = "6.4.4-18"
+origin = "md:1358"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "Android v1.04"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2019-05-21"
+date_text = "2019-05-21"
+version = "1.04"
+id_text = "v1.04"
+notes = "General bug fixes."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["6-57"]
+sources_text = "[57]"
+
+[[entry]]
+id = "6.4.4-19"
+origin = "md:1359"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "Android v4.4.151 → v4.4.243"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date_text = "2023-10-17 → 2026-03-09"
+id_text = "v4.4.151 (2023-10-17), v4.4.164 (2023-11-20), v4.4.187 (2024-07-02), v4.4.221 (2024-11-19), **v4.4.243 (2026-03-09)**"
+notes = "\"Bug fixes and improvements\". The last date matches the Play listing's \"Updated on 2026-03-09\". The jump from v1.04 to v4.4.x is as listed by Rockstar."
+confidence = "confirmed"
+confidence_text = "✅ (primary + Play date)"
+sources = ["6-57", "6-49"]
+sources_text = "[57][49]"
+
+[[entry]]
+id = "6.4.4-20"
+origin = "md:1360"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "iOS updates per Rockstar"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "2016-05-04 → 2024-11-19"
+id_text = "v4.4 (2016-05-04), v4.5 (2019-05-13), v4.5.1 (2023-10-17), v4.5.3 (2023-11-20), internal builds **v2024.0621.1200** (2024-07-02) and **v2024.1113.1216** (2024-11-19)"
+notes = "Rockstar dates 4.5.1 to 2023-10-17 (App Store: 2023-10-19 ⚠️) and calls the 2019 update a fix for iOS 12 and iPhone X support."
+confidence = "mixed"
+confidence_text = "✅ (primary) / ⚠️ (date)"
+sources = ["6-57", "6-46"]
+sources_text = "[57][46]"
+
+[[entry]]
+id = "6.4.4-21"
+origin = "md:1361"
+section = "6.4.4"
+kind = "mobile-version"
+games = ["ctw"]
+title = "Fire OS"
+platforms = ["fireos"]
+platform_text = "Fire OS"
+region = "WW"
+date = "2014-12-18"
+date_text = "**2014-12-18** (Wikipedia groups it with Android)"
+id_text = "Amazon ASIN not documented"
+notes = "Rockstar lists one Amazon update: **Amazon v1.01** (2015-02-24): sharper UI, art and fonts for high-resolution screens; tutorial prompts updated for TV devices such as Fire TV; bug fixes."
+confidence = "mixed"
+confidence_text = "⚠️ (launch date) / ✅ (v1.01)"
+sources = ["6-40", "6-57"]
+sources_text = "[40][57]"
+
+[sources]
+6-10 = { text = "Redump DAT \"Sony - PlayStation Portable\" (libretro-database mirror, DAT version 2026.10.07): https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%20Portable.dat (origin: http://redump.org/downloads/)", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%20Portable.dat", origin = "md:1400" }
+6-12 = { text = "No-Intro DAT \"Sony - PlayStation Portable (PSN)\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%20Portable%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%20Portable%20(PSN", origin = "md:1402" }
+6-40 = { text = "Wikipedia — Grand Theft Auto: Chinatown Wars: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars", origin = "md:1430" }
+6-41 = { text = "GTA Wiki (Fandom) — Grand Theft Auto: Chinatown Wars: https://gta.fandom.com/wiki/Grand_Theft_Auto:_Chinatown_Wars", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Chinatown_Wars", origin = "md:1431" }
+6-42 = { text = "Grand Theft Wiki — Grand Theft Auto: Chinatown Wars: https://www.grandtheftwiki.com/Grand_Theft_Auto:_Chinatown_Wars", url = "https://www.grandtheftwiki.com/Grand_Theft_Auto:_Chinatown_Wars", origin = "md:1432" }
+6-43 = { text = "No-Intro DAT \"Nintendo - Nintendo DS\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Nintendo%20-%20Nintendo%20DS.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Nintendo%20-%20Nintendo%20DS.dat", origin = "md:1433" }
+6-44 = { text = "Japanese Wikipedia — グランド・セフト・オートシリーズ (series article): https://ja.wikipedia.org/wiki/グランド・セフト・オートシリーズ", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートシリーズ", origin = "md:1434" }
+6-45 = { text = "Japanese Wikipedia — グランド・セフト・オート・チャイナタウンウォーズ: https://ja.wikipedia.org/wiki/グランド・セフト・オート・チャイナタウンウォーズ", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート・チャイナタウンウォーズ", origin = "md:1435" }
+6-46 = { text = "Apple App Store — GTA: Chinatown Wars (id344186162), version history: https://apps.apple.com/us/app/id344186162", url = "https://apps.apple.com/us/app/id344186162", origin = "md:1436" }
+6-47 = { text = "TouchArcade (2014-12-18) — Grand Theft Auto: Chinatown Wars major update: http://toucharcade.com/2014/12/18/grand-theft-auto-chinatown-wars-major-update/", url = "http://toucharcade.com/2014/12/18/grand-theft-auto-chinatown-wars-major-update/", origin = "md:1437" }
+6-48 = { text = "Android Police (2014-12-18) — Grand Theft Auto: Chinatown Wars expands to the Play Store: http://www.androidpolice.com/2014/12/18/grand-theft-auto-chinatown-wars-expands-play-store-finally-wants-call-android-home/", url = "http://www.androidpolice.com/2014/12/18/grand-theft-auto-chinatown-wars-expands-play-store-finally-wants-call-android-home/", origin = "md:1438" }
+6-49 = { text = "Google Play — GTA: Chinatown Wars (com.rockstargames.gtactw): https://play.google.com/store/apps/details?id=com.rockstargames.gtactw", url = "https://play.google.com/store/apps/details?id=com.rockstargames.gtactw", origin = "md:1439" }
+6-55 = { text = "Hidden Palace — Grand Theft Auto: Chinatown Wars prototype pages (Jul 28, Aug 26, Aug 28, Aug 31, Sep 15 2009): https://hiddenpalace.org/Grand_Theft_Auto:_Chinatown_Wars_(Aug_31,_2009_prototype) (and sibling pages)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_Chinatown_Wars_(Aug_31,_2009_prototype", origin = "md:1445" }
+6-57 = { text = "Rockstar Games Support — \"Grand Theft Auto: Chinatown Wars Mobile Title Update Notes (Android/iOS)\" (last updated 2026-03-09; read 2026-10-24): https://support.rockstargames.com/articles/3npV5Ux53CdrzLJ9JuFHwb/grand-theft-auto-chinatown-wars-mobile-title-update-notes-android-ios", url = "https://support.rockstargames.com/articles/3npV5Ux53CdrzLJ9JuFHwb/grand-theft-auto-chinatown-wars-mobile-title-update-notes-android-ios", origin = "md:1447" }
+6-58 = { text = "TouchArcade app database — \"Grand Theft Auto: Chinatown Wars HD\" (id386183589), \"Grand Theft Auto: Chinatown Wars HD Lite\" (id390987389), \"Grand Theft Auto: Chinatown Wars Lite\" (id357140081): https://toucharcade.com/games/grand-theft-auto-chinatown-wars-hd ; https://toucharcade.com/games/grand-theft-auto-chinatown-wars-hd-lite ; https://toucharcade.com/games/grand-theft-auto-chinatown-wars-lite", url = "https://toucharcade.com/games/grand-theft-auto-chinatown-wars-hd", origin = "md:1448" }
+6-60 = { text = "GameFAQs release-data pages (user-contributed; read 2026-10-24): LCS https://gamefaqs.gamespot.com/psp/925776-grand-theft-auto-liberty-city-stories/data ; VCS https://gamefaqs.gamespot.com/psp/933097-grand-theft-auto-vice-city-stories/data ; CTW https://gamefaqs.gamespot.com/ds/950922-grand-theft-auto-chinatown-wars/data", url = "https://gamefaqs.gamespot.com/psp/925776-grand-theft-auto-liberty-city-stories/data", origin = "md:1450" }

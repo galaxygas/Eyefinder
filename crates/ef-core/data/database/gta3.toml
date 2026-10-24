@@ -1,0 +1,1656 @@
+# Grand Theft Auto III: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "3"
+origin = "md:419"
+title = "3. Grand Theft Auto III (2001)"
+games = ["gta3"]
+text = '''
+Developer: DMA Design (credited on the original PS2 release), later Rockstar North; publisher Rockstar Games (Capcom for the Japanese-language release; Zoo Corporation for the earlier English-language PC release in Japan). [1] Xbox port by Rockstar Vienna; Mac OS X / iOS / Android / 10th Anniversary ports by War Drum Studios. [1] PCGamingWiki credits TransGaming Inc. as Mac developer. [9] (The 2021 Definitive Edition is covered in its own section.)
+
+Legend: ✅ confirmed by 2+ independent sources or official source · ⚠️ single community source · ❓ rumour / disputed.'''
+
+[[section]]
+id = "3.1"
+origin = "md:425"
+title = "3.1 Development timeline and pre-release builds"
+games = ["gta3"]
+text = '''
+**Documented post-9/11 changes before release** (Rockstar described the game as "about 1% different") [1]:
+- Police cars: blue with white stripes (NYPD-like) → black-and-white. ✅ [1][19][21]
+- Dodo/plane flight path altered so the aircraft no longer appeared to fly into/behind a skyscraper. ✅ [1]
+- A mission referencing terrorists removed ("We removed only one mission that referenced terrorists" — Rockstar Q&A, reported 5 Jan 2012); some pedestrian dialogue, car details and talk-radio content changed. ✅ [1][19][22]
+- Original cover art replaced in North America (original art kept in Europe). ✅ [1][4]
+- Darkel (revolutionary character) cut — Dan Houser: "months before [release]", i.e. not a 9/11 change. ✅ [1][20]
+- School bus / schoolchildren: Rockstar called pre-release schoolchildren reports "nonsense"; GTA Wiki states Darkel never had a school-bus mission (rumour). ❓ [1][19]
+- Destructible AirTrain shown in trailers cut. ⚠️ [19]
+
+**Early mission names** (Game On 2009 exhibition, Taiwan): "Lips Forelli's Last Lunch" → "Mike Lips Last Lunch"; "Kill Chunky Lee" → (the Chunky Lee Chong mission); "Escort Town" → "Cipriani's Chauffeur"; "The Bank Job" → "The Getaway"; "Plane to Sea" → "S.A.M."; "Gone in 60 Grand" → "Grand Theft Auto"; "Wanted Man" → "The Exchange". ⚠️ [3]'''
+
+[[section]]
+id = "3.2"
+origin = "md:454"
+title = "3.2 Preserved / leaked prototype builds"
+games = ["gta3"]
+text = "Leftovers in shipped builds (TCRF): unused first-person mode (FPS_PUNCH, FPS_ROCKET anims), scrapped online multiplayer (maps left in mobile port), debug menu, flyable-helicopter code, early \"Luigi's Girls\" mission script in the iOS port, cut song \"Wash Him Off\" (Marydancin), internal string \"GTA3v2\". ⚠️ [2]"
+
+[[section]]
+id = "3.3"
+origin = "md:466"
+title = "3.3 PlayStation 2 releases"
+games = ["gta3"]
+text = "Note on disc versions: PS2 discs carry a `VER` value in SYSTEM.CNF; Redump names dumps by it (e.g. \"(v1.40)\", \"(v1.60)\"). First pass: Redump.org could not be fetched and data came from mirrors. Second pass: the Redump disc pages were read directly in a browser (disc IDs given in the sources), so version, EXE date and edition data below is primary dump-database data. Redump's \"Edition\" field lists every retail printing that a given disc image was verified against. Matching DAT entries are in Appendix A."
+
+[[section]]
+id = "3.4"
+origin = "md:487"
+title = "3.4 Windows PC releases, patches and digital versions"
+games = ["gta3"]
+text = "Downgrade note: the community \"downgraded exe\" (1.0-compatible gta3.exe) is widely used because mods (CLEO, Widescreen fix, Windowed mode) target 1.0; the 1.1 patcher does not recognise the Steam exe. ⚠️ [29][30]"
+
+[[section]]
+id = "3.4a"
+origin = "md:501"
+title = "3.4a PC executable builds recognised by modding tools"
+games = ["gta3"]
+text = "Community modding toolkits must tell PC executables apart, so their detection code is evidence of which distinct `.exe` builds exist. Plugin-SDK (the main C++ modding SDK for the 3D-era games) recognises exactly three GTA III executables, identified by the address of a known function prologue (`55 89 E5 53`, read as 0x53E58955). This confirms at least these three distinct builds (v1.0, v1.1, Steam); other executables (e.g. Japanese, Rockstar Games Launcher, Mac) exist but are not handled by Plugin-SDK. It gives no file sizes or dates; the gtamods.com exe table (sizes/timestamps) was offline during research."
+
+[[section]]
+id = "3.5"
+origin = "md:512"
+title = "3.5 Xbox (Rockstar Vienna port)"
+games = ["gta3"]
+
+[[section]]
+id = "3.6"
+origin = "md:524"
+title = "3.6 Mac OS X"
+games = ["gta3"]
+
+[[section]]
+id = "3.7"
+origin = "md:532"
+title = "3.7 PlayStation 3 and PlayStation 4 re-releases (PS2 emulation)"
+games = ["gta3"]
+
+[[section]]
+id = "3.8"
+origin = "md:540"
+title = "3.8 Mobile: *Grand Theft Auto III: 10 Year Anniversary Edition* (War Drum Studios)"
+games = ["gta3"]
+text = "Announced by Rockstar in October 2011 (with a 1,500-unit Claude action figure, US$149.99). Described by Wikipedia as almost identical to the Windows version, with enhanced models/textures and touchscreen controls; it was the first 3D-Universe game officially translated into Korean, and the version later sold in South Korea. Contains leftover multiplayer maps, a working debug SCM and mission source files (early \"Luigi's Girls\"). [1][2][4]"
+
+[[section]]
+id = "3.9"
+origin = "md:565"
+title = "3.9 Censored / regional variants (summary)"
+games = ["gta3"]
+
+[[section]]
+id = "3.10"
+origin = "md:575"
+title = "3.10 Cross-references"
+games = ["gta3"]
+text = '''
+- *Grand Theft Auto: Double Pack* (PS2/Xbox), *Grand Theft Auto: The Trilogy* (2005, PS2/PC/Mac), and the 2021 Rockstar Store classic bundle → compilations section.
+- *Grand Theft Auto III – The Definitive Edition* (2021/2023) → Definitive Edition section.
+- Fan projects (not official builds): "Grand Theft Auto 3D" pre-release-recreation mod (Jan 2019) [21]; re3 reverse-engineered source (not covered here).'''
+
+[[section]]
+id = "3.11"
+origin = "md:581"
+title = "3.11 Known gaps"
+games = ["gta3"]
+text = '''
+- **Resolved in second pass:** PS2 disc versions (Redump: NA has a single v1.40 disc for all printings incl. Greatest Hits; PAL Platinum/Double Pack = v1.60), the role of SLES-50793 (Australian censored replacement), JP disc versions, Xbox disc serials (TT-014 for all regions), PS3 PSN content IDs, PS4 CUSA IDs/patch, the full iOS version history (1.0 → 1.5) including a separate German iOS app, the regional Android packages (WW/AU/DE/JP) and their current versions, Mac App Store dates, and the GBA prototypes on Hidden Palace.
+- **Still open:** gtamods.com was offline ("Back soon", site maintenance) and the Internet Archive was "temporarily offline", so **PC exe sizes/identification data for 1.0 / 1.1 / Steam / Japanese / RGL are still undocumented**. SafeDisc version, PC retail product codes and Mac app version numbers are not documented. Android per-version dates (1.0 → 1.9 / 1.10.x) are not documented: Google Play shows only the current version, APKMirror doesn't carry the classic app, and APKPure, MobyGames, PCGamingWiki, TCRF and SerialStation sit behind Cloudflare checks. EU/AU PS3 release dates come only from Wikipedia. The content difference of the AU edit (SLES-50793) is disputed between Redump and Wikipedia/TCRF. No Korean PS2 or PC release was found (only the mobile version is reported as sold in Korea).
+- No publicly preserved standalone pre-release PS2/PC/Xbox GTA III build (E3/press/preview/demo disc) was identified. The only preserved prototype is the cancelled Crawfish GBA port (16 Apr 2002 build on Hidden Palace).'''
+
+[[entry]]
+id = "3.1-1"
+origin = "md:429"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Dreamcast tech demo / early build (cancelled)"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+region = "—"
+date_text = "c. 1999–2000 (never released)"
+id_text = "none"
+notes = "Tech demo built on Dreamcast around end of GTA2 development (1999). After Take-Two bought DMA (Sept 1999) the team started on Dreamcast and moved to PS2 after about four months; Obbe Vermeij: change \"not due to hardware constraints\", Dreamcast not commercially viable. No build is known to be preserved."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-4", "3-19"]
+sources_text = "[1][4][19]"
+
+[[entry]]
+id = "3.1-2"
+origin = "md:430"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "`handling.cfg` file date"
+platform_text = "(dev files)"
+region = "—"
+date = "1999-12-10"
+date_text = "10 Dec 1999"
+id_text = "—"
+notes = "Earliest dated asset noted by TCRF."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-3"
+origin = "md:431"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Wireframe test #1 (leak)"
+platforms = ["ps2"]
+platform_text = "PS2 dev"
+region = "—"
+date = "2000-07-21"
+date_text = "21 Jul 2000"
+id_text = "—"
+notes = "Leaked to the Gouranga fansite: protagonist entering/exiting a car."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-4"
+origin = "md:432"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Edge renders (Chinatown)"
+platform_text = "—"
+region = "UK"
+date = "2000-06"
+date_text = "June 2000"
+id_text = "—"
+notes = "3D renders leaked via Edge Magazine (issue not identified)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-5"
+origin = "md:433"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Wireframe test #2 (leak)"
+platforms = ["ps2"]
+platform_text = "PS2 dev"
+region = "—"
+date = "2000-10-09"
+date_text = "9 Oct 2000"
+id_text = "—"
+notes = "Car theft and escape from gang member, leaked to Gouranga."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-6"
+origin = "md:434"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Take-Two announcement"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date = "2000-11-07"
+date_text = "7 Nov 2000"
+id_text = "—"
+notes = "Next-gen GTA planned for \"Summer 2001\" on PS2 (archived IGN interview)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-7"
+origin = "md:435"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "December 2000 build (magazine reveal)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "UK"
+date_text = "Jan 2001 issue"
+id_text = "—"
+notes = "Revealed in Official PlayStation 2 Magazine UK (Jan 2001). Mentions dog-walking peds, 30-min day cycle, inter-island ferry, insult button."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-8"
+origin = "md:436"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "First trailer"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "WW"
+date = "2001-02-19"
+date_text = "19 Feb 2001"
+id_text = "—"
+notes = "Released online."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-9"
+origin = "md:437"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "E3 2001 build"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "US (LA)"
+date_text = "17–19 May 2001"
+id_text = "—"
+notes = "Shown at E3; HUD nearing final; E3 trailer shows destructible AirTrain and reactive car antennas (later cut)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3", "3-19"]
+sources_text = "[3][19]"
+
+[[entry]]
+id = "3.1-10"
+origin = "md:438"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "c. Aug 2001 build (PS World Vol. 12 footage)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date_text = "c. Aug 2001 (estimated)"
+id_text = "—"
+notes = "Orange logo, bright-yellow weapons HUD, different sniper crosshair, shootable ped limbs."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-11"
+origin = "md:439"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Pre-9/11 build (PlayZone Nov 2001 footage)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date = "2001"
+date_text = "2001"
+id_text = "—"
+notes = "HUD matches final; last appearance of blue police cars and Bobcat with cushioned trunk."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "3.1-12"
+origin = "md:440"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Delay announcement"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date = "2001-09-19"
+date_text = "19 Sep 2001"
+id_text = "—"
+notes = "Release delayed three weeks after 9/11 (originally set for 3 Oct 2001 per GTA Wiki)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-4"]
+sources_text = "[1][4]"
+
+[[entry]]
+id = "3.1-13"
+origin = "md:441"
+section = "3.1"
+kind = "milestone"
+games = ["gta3"]
+title = "Cancelled GameCube port"
+platforms = ["gc"]
+platform_text = "GameCube"
+region = "—"
+date_text = "c. 2003 (never released)"
+id_text = "none"
+notes = "Planned alongside Vice City; cancelled for unknown reasons."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-3", "3-19"]
+sources_text = "[3][19]"
+
+[[entry]]
+id = "3.2-1"
+origin = "md:458"
+section = "3.2"
+kind = "prototype"
+games = ["gta3"]
+title = "\"v1.40 PAL Prototype\" (Hidden Palace listing)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "PAL"
+date = "2001-10-26"
+date_text = "26 Oct 2001 (shipped retail)"
+version = "1.40"
+serials = ["SLES-50330"]
+id_text = "SLES-50330, disc version v1.40"
+notes = "Hidden Palace lists the *first PAL retail pressing* as a \"very late beta version\" released by mistake: ped line \"I designed the PS2!\", Dodo clipping into building near Portland police station (early flight path), extra Catalina lines in \"The Exchange\", light-blue police cars in intro, unskippable tutorials, Paramedic 100% quirk. Classing it as a prototype is HP's own claim."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-18", "3-17"]
+sources_text = "[18][17]"
+
+[[entry]]
+id = "3.2-2"
+origin = "md:459"
+section = "3.2"
+kind = "prototype"
+games = ["gta3"]
+title = "Game Boy Advance port: announcement"
+platforms = ["gba"]
+platform_text = "GBA"
+region = "—"
+date_text = "E3 2001"
+id_text = "—"
+notes = "At E3 2001 Rockstar announced a deal with Destination Software to bring PS2 games to GBA (Smuggler's Run, Midnight Club, GTA III). Developer: Crawfish Interactive. Cancellation rumours appeared Nov 2002 (denied by Destination). Crawfish then closed about a week later; ex-head Cameron Sheppard blamed \"a number of publishers not paying on time\". The project went to Digital Eclipse and became the unrelated *Grand Theft Auto Advance* (2004; see its own section). Unseen64 says an even earlier, unnamed GBA version was also reportedly cancelled."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-53", "3-54"]
+sources_text = "[53][54]"
+
+[[entry]]
+id = "3.2-3"
+origin = "md:460"
+section = "3.2"
+kind = "prototype"
+games = ["gta3"]
+title = "GBA prototype, 12 Apr 2002 (**new entry**)"
+platforms = ["gba"]
+platform_text = "GBA"
+region = "—"
+date_text = "build 12 Apr 2002 (never released)"
+id_text = "—"
+notes = "Hidden Palace: \"very early prototype\" of Crawfish's GBA GTA III. **Undumped**; shown in an unlisted PtoPOnline video (PtoPOnline published an early tech-demo video in Dec 2016, per Unseen64). Used for physics testing; camera zoom set manually with the shoulder buttons."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-53", "3-55"]
+sources_text = "[53][55]"
+
+[[entry]]
+id = "3.2-4"
+origin = "md:461"
+section = "3.2"
+kind = "prototype"
+games = ["gta3"]
+title = "GBA prototype, 16 Apr 2002 (**new entry**)"
+platforms = ["gba"]
+platform_text = "GBA"
+region = "—"
+date_text = "build 16 Apr 2002 (never released)"
+id_text = "—"
+notes = "Hidden Palace: dump status **Released** (released by \"portraitoflostsouls\"). Same Crawfish GBA project; later build than 12 Apr. Hidden Palace gives no public release date for the file."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-56"]
+sources_text = "[56]"
+
+[[entry]]
+id = "3.2-5"
+origin = "md:462"
+section = "3.2"
+kind = "prototype"
+games = ["gta3"]
+title = "Other leaked GTA III prototype builds"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2 / PC / Xbox"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Hidden Palace's \"Grand Theft Auto III prototypes\" category holds only the two GBA builds above (the \"v1.40 PAL Prototype\" page is a retail disc). Its GTA III assets are an Xbox Double Pack video/EPK and a \"Rockstar E3 2001 Press Kit\". No standalone pre-release PS2/PC/Xbox build (E3/press/preview disc) is publicly preserved in the sources checked (Hidden Palace, TCRF)."
+confidence_text = "—"
+sources = ["3-2", "3-3", "3-18", "3-57"]
+sources_text = "[2][3][18][57]"
+
+[[entry]]
+id = "3.3-1"
+origin = "md:472"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Original release, disc v1.40"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NTSC-U (USA, Canada)"
+date_text = "22 Oct 2001 (TCRF, GTA Wiki) / 23 Oct 2001 (Wikipedia, psxdatacenter)"
+version = "1.40"
+serials = ["SLUS-20062"]
+id_text = "SLUS-20062; disc VER 1.40; EXE date 2001-10-07; CRC 431C2B33, 4,640,997,376 bytes"
+notes = "DVD-5, English only; UPC 710425270796; credited to DMA Design. Redump has only **one** NA disc version, verified against these editions: Original, Greatest Hits, Double Pack, *The Trilogy*, Double Pack Greatest Hits. Volume label GTA3."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-4", "3-13", "3-45"]
+sources_text = "[1][2][4][13][45]"
+
+[[entry]]
+id = "3.3-2"
+origin = "md:473"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Greatest Hits reprint"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NTSC-U"
+date_text = "not documented (eBay listings label it 2003)"
+serials = ["SLUS-20062"]
+id_text = "SLUS-20062GH (Redump disc serial); GH cover/disc art SLUS-20062-F-GH / -D-GH"
+notes = "GTA Wiki: price cut to \"$19\" once it became a Sony Greatest Hits title. Redump: the GH disc is the same v1.40 image as the original (same CRC). Also listed: serial SLUS-20062P3 (a later printing, same image); Double Pack GH spine ID SLUS 27003GH; *The Trilogy* Canadian cover serial SLUS 27006F."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-4", "3-13", "3-45"]
+sources_text = "[4][13][45]"
+
+[[entry]]
+id = "3.3-3"
+origin = "md:474"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Original release, disc v1.40"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "PAL (EU)"
+date = "2001-10-26"
+date_text = "26 Oct 2001"
+version = "1.40"
+serials = ["SLES-50330"]
+id_text = "SLES-50330 (also SLES-50330/EURO); disc VER 1.40; EXE date 2001-09-25; CRC B76D10AF"
+notes = "Multi-5 menus (EN/FR/DE/IT/ES), English voices; EAN 5026555300490. Original (pre-9/11-style) European cover. A German or French UI language turns on the censored gore mode (see 3.9). Redump edition: Original only. Hidden Palace treats this pressing as a mis-released late beta (blue intro police cars, \"I designed the PS2!\" line, etc.)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-14", "3-16", "3-17", "3-18", "3-46"]
+sources_text = "[14][16][17][18][46]"
+
+[[entry]]
+id = "3.3-4"
+origin = "md:475"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Revised disc v1.60"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "PAL (Europe, Australia)"
+date_text = "not documented (EXE date 2001-10-07)"
+version = "1.60"
+serials = ["SLES-50330"]
+id_text = "SLES-50330 and variants SLES-50330#, #2, -P, -T, /EURO, /UK, /UK#, /EURO#, -P-GER; disc VER 1.60; CRC 1582E336; DNAS disc ID 00 00 00 00 24; BBFC reg. VFC29060"
+notes = "Redump editions: Original, **Platinum**, **Double Pack**, so the PAL Platinum and Double Pack discs are v1.60. Redump comment: this version \"was banned in Australia shortly after release\" and was replaced there by SLES-50793. Reported changes vs v1.40: Dodo flight altitude, Catalina's line in \"The Exchange\" shortened, intro police cruisers altered, Portland subway gate collision enlarged (last unconfirmed)."
+confidence = "mixed"
+confidence_text = "✅ (version/editions) / ⚠️ (change list)"
+sources = ["3-16", "3-17", "3-47"]
+sources_text = "[16][17][47]"
+
+[[entry]]
+id = "3.3-5"
+origin = "md:476"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Platinum reprint"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "PAL"
+date_text = "not documented"
+version = "1.60"
+serials = ["SLES-50330"]
+id_text = "SLES-50330-P (disc v1.60)"
+notes = "psxdatacenter lists Platinum front cover art. Redump ties the Platinum serial to the v1.60 image."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-14", "3-47"]
+sources_text = "[14][47]"
+
+[[entry]]
+id = "3.3-6"
+origin = "md:477"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Australian censored replacement"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "AU"
+date_text = "Jan 2002 (Wikipedia/TCRF date for the edited AU release); psxdatacenter lists 26 Oct 2001 (probably carried over from the original)"
+version = "1.00"
+serials = ["SLES-50793"]
+id_text = "**SLES-50793** (also SLES-50793-P Platinum); disc VER 1.00; EXE date 2002-01-17; CRC 11D25D47; EAN 5026555301275"
+notes = "**Purpose resolved:** Redump says this censored version \"was released only in Australia to replace the original release that was banned (SLES-50330)\". Manual and map still carry SLES-50330. OFLC MA15+. Redump says \"the only difference\" is that heads and limbs no longer fly off when shot. That **conflicts** with Wikipedia/TCRF, which say the AU edit removed hiring prostitutes for health. Both claims are kept; this is unresolved. Multi-5 with language selector (psxdatacenter)."
+confidence = "mixed"
+confidence_text = "✅ (serial/purpose) / ⚠️ (content difference)"
+sources = ["3-1", "3-2", "3-15", "3-48"]
+sources_text = "[1][2][15][48]"
+
+[[entry]]
+id = "3.3-7"
+origin = "md:478"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Australian modified release"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "AU"
+date = "2002-01"
+date_text = "Jan 2002"
+serials = ["SLES-50793"]
+id_text = "SLES-50793 (see row above)"
+notes = "Original MA15+ release (26 Oct 2001) was refused classification (banned) by OFLC (28 Nov 2001; ban reaffirmed 11 Dec 2001); edited MA15+ version (no hiring prostitutes for health, per Wikipedia/TCRF) released Jan 2002. Re-rated R18+ Sept 2019."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-48"]
+sources_text = "[1][2][48]"
+
+[[entry]]
+id = "3.3-8"
+origin = "md:479"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Capcom Japan publishing announcement"
+platforms = ["ps2", "pc"]
+platform_text = "PS2, Windows"
+region = "JP"
+date_text = "announced 18 Jun 2003"
+id_text = "—"
+notes = "Capcom to localise, publish and distribute GTA III in Japan under an agreement with Rockstar; planned for \"Fall 2003\" on PS2 and PC."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["3-44"]
+sources_text = "[44]"
+
+[[entry]]
+id = "3.3-9"
+origin = "md:480"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Japanese release (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NTSC-J"
+date = "2003-09-25"
+date_text = "25 Sep 2003"
+version = "1.03"
+serials = ["SLPM-65382"]
+id_text = "SLPM-65382, JAN 4976219954914; disc VER 1.03; EXE date 2003-08-26; CRC E8479164"
+notes = "Redump: one disc image shared by Original, Best Price (SLPM-66789), CapKore (SLPM-65760) and the JP Double Pack (CPCS-01027); voices English. Japanese text; vehicle renames (Policecar, Limousine, Dustcart) and two wheel designs altered. Kanagawa Prefecture designated it \"harmful\" (Wikipedia: June 2005; ITmedia report cited by ja.wikipedia dated 30 May 2005)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-23", "3-49"]
+sources_text = "[1][2][23][49]"
+
+[[entry]]
+id = "3.3-10"
+origin = "md:481"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "CapKore budget reissue"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NTSC-J"
+date = "2004-12-16"
+date_text = "16 Dec 2004"
+serials = ["SLPM-65760"]
+id_text = "SLPM-65760, JAN 4976219651370"
+notes = "Capcom budget label. Redump: same v1.03 disc image as SLPM-65382 (package barcode 4 976219 651370 matches)."
+confidence = "mixed"
+confidence_text = "✅ (serial) / ⚠️ (date)"
+sources = ["3-24", "3-49"]
+sources_text = "[24][49]"
+
+[[entry]]
+id = "3.3-11"
+origin = "md:482"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Best Price reissue"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NTSC-J"
+date = "2007-07-12"
+date_text = "12 Jul 2007"
+serials = ["SLPM-66789"]
+id_text = "SLPM-66789, JAN 4976219022620"
+notes = "Capcom budget label. Redump: same v1.03 disc image as SLPM-65382."
+confidence = "mixed"
+confidence_text = "✅ (serial) / ⚠️ (date)"
+sources = ["3-25", "3-49"]
+sources_text = "[25][49]"
+
+[[entry]]
+id = "3.3-12"
+origin = "md:483"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "Rockstar Classics reissue"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NTSC-J"
+date = "2011-09-29"
+date_text = "29 Sep 2011"
+version = "1.00"
+serials = ["SLPM-55293"]
+id_text = "SLPM-55293, JAN 4571304472009; disc VER 1.00; EXE date 2003-08-26; CRC F72B5A31 (4,693,688,320 bytes)"
+notes = "Publisher listed as Rockstar. Redump: a separate disc image (new mastering, IFPI L271), not the Capcom v1.03 disc, though the EXE date is the same."
+confidence = "mixed"
+confidence_text = "✅ (serial, disc) / ⚠️ (date)"
+sources = ["3-26", "3-50"]
+sources_text = "[26][50]"
+
+[[entry]]
+id = "3.3-13"
+origin = "md:484"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "South Korea"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "KR"
+date_text = "—"
+id_text = "—"
+notes = "GTA Wiki: original game \"initially banned in South Korea through the Korea Media Rating Board\". No Korean PS2 release/serial found."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-4"]
+sources_text = "[4]"
+
+[[entry]]
+id = "3.3-14"
+origin = "md:485"
+section = "3.3"
+kind = "retail"
+games = ["gta3"]
+title = "(Compilation cross-ref) Double Pack"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA / PAL / JP"
+date_text = "NA not documented here; JP 22 Feb 2007"
+serials = ["SLES-50330", "CPCS-01027"]
+id_text = "NA SLUS-27003GH (spine); PAL SLES-50330-T; JP CPCS-01027"
+notes = "GTA III + Vice City; see compilations section. Redump: NA Double Pack GTA III disc = v1.40 SLUS-20062 image; PAL Double Pack disc = v1.60; JP Double Pack disc = CapKore SLPM-65760 (v1.03 image)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-13", "3-27", "3-45", "3-47", "3-49"]
+sources_text = "[13][27][45][47][49]"
+
+[[entry]]
+id = "3.4-1"
+origin = "md:491"
+section = "3.4"
+kind = "retail"
+games = ["gta3"]
+title = "Retail v1.0"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "NA"
+date_text = "20 May 2002 (TCRF, PCGamingWiki; WorthPlaying news 20 May 2002 17:30 PDT says the PC version \"is now available in stores\") / 21 May 2002 (Wikipedia, SteamDB \"original release\"; Gamemeca 29 Apr 2002 reported Rockstar/Take-Two's announced date as 21 May)"
+version = "1.0"
+id_text = "gta3.exe v1.0"
+notes = "Install disc plus a separate \"PLAY disc\" carrying the audio (per 1.1 patch notes). SafeDisc DRM (version not documented); SafeDisc does not run on Windows 10 and is disabled on Vista–8.1 by update KB3086255. Miles Sound System 6.1c. Mouse sensitivity not saved in 1.0. Copyright on loading screen reads \"2002\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-9", "3-10", "3-63", "3-64"]
+sources_text = "[1][2][9][10][63][64]"
+
+[[entry]]
+id = "3.4-2"
+origin = "md:492"
+section = "3.4"
+kind = "retail"
+games = ["gta3"]
+title = "Retail v1.0"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "PAL (EU)"
+date = "2002-05-24"
+date_text = "24 May 2002"
+version = "1.0"
+id_text = "gta3.exe v1.0"
+notes = "German site Gameswelt lists 23 May 2002 for PC (DE). German/French keyboard language enables censored gore (see 3.9)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-28"]
+sources_text = "[1][2][28]"
+
+[[entry]]
+id = "3.4-3"
+origin = "md:493"
+section = "3.4"
+kind = "retail"
+games = ["gta3"]
+title = "Retail (English, Zoo Corporation)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "JP"
+date = "2002-06-28"
+date_text = "28 Jun 2002"
+id_text = "not documented"
+notes = "English-language version distributed by Zoo Corporation until its publishing deal expired."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "3.4-4"
+origin = "md:494"
+section = "3.4"
+kind = "retail"
+games = ["gta3"]
+title = "Japanese-language retail (Capcom)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "JP"
+date = "2003-09-25"
+date_text = "25 Sep 2003"
+id_text = "not documented"
+notes = "Released same day as Capcom PS2 version (Wikipedia, Japanese Wikipedia)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-23"]
+sources_text = "[1][23]"
+
+[[entry]]
+id = "3.4-5"
+origin = "md:495"
+section = "3.4"
+kind = "retail"
+games = ["gta3"]
+title = "Patch v1.1"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW (English)"
+date_text = "27 Jun 2002 (WorthPlaying news 27 Jun 2002 23:29 PDT); listed 28 Jun 2002 on Gamepressure"
+version = "1.1"
+id_text = "gta3.exe → v1.1 (only file changed); patch ~1 MB"
+notes = "Fixes: exception error after blue Rockstar loading screen; errors loading saves; mouse sensitivity now saved; audio can run from HDD by copying PLAY disc Audio folder (disc still needed at start); most copy-protection checks removed. Notes in `gta3patch.txt`. Still hosted by Rockstar Support. Patch is for the English version."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-5", "3-6", "3-7", "3-8"]
+sources_text = "[5][6][7][8]"
+
+[[entry]]
+id = "3.4-6"
+origin = "md:496"
+section = "3.4"
+kind = "retail"
+games = ["gta3"]
+title = "Steam release"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW (excluding DE)"
+date = "2008-01-04"
+date_text = "4 Jan 2008"
+id_text = "Steam AppID 12100, depot 12101"
+notes = "Part of Rockstar's 4 Jan 2008 Steam catalogue launch. Exe reported to correspond to retail 1.1 plus a SteamStub DRM wrapper (⚠️ single blog); PCGamingWiki: most digital versions already include 1.1. A disc check was reportedly left in. German/French censorship removed (TCRF). Vehicle colour bug needing \"Steam Car Colour Fix\". Steam Cloud saves. Restricted in Germany. Retired from the store (publisher request) on 13 Oct 2021 ahead of the Definitive Edition."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-2", "3-9", "3-10", "3-11", "3-12", "3-29", "3-30"]
+sources_text = "[2][9][10][11][12][29][30]"
+
+[[entry]]
+id = "3.4-7"
+origin = "md:497"
+section = "3.4"
+kind = "retail"
+games = ["gta3"]
+title = "Rockstar Games Launcher / Rockstar Store version"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "not documented precisely (Delisted Games lists 17 Sep 2019, the date the launcher went live)"
+id_text = "not documented"
+notes = "Delisted 11–18 Oct 2021; after the DE launch Rockstar said original PC versions would return to the Rockstar Store as a bundle; DE buyers on RGL (11 Nov 2021 – 30 Jun 2022) were promised the originals free (see compilations section)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-11"]
+sources_text = "[11]"
+
+[[entry]]
+id = "3.4a-1"
+origin = "md:507"
+section = "3.4a"
+kind = "exe-build"
+games = ["gta3"]
+title = "v1.0 (English)"
+version = "1.0"
+id_text = "GAME_10EN (100)"
+notes = "Retail v1.0"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-65"]
+sources_text = "65"
+[entry.fields]
+"Detection signature (address → value)" = "0x5C1E70 → 0x53E58955"
+
+[[entry]]
+id = "3.4a-2"
+origin = "md:508"
+section = "3.4a"
+kind = "exe-build"
+games = ["gta3"]
+title = "v1.1 (English)"
+version = "1.1"
+id_text = "GAME_11EN (110)"
+notes = "Official patch 1.1"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-65"]
+sources_text = "65"
+[entry.fields]
+"Detection signature (address → value)" = "0x5C2130 → 0x53E58955"
+
+[[entry]]
+id = "3.4a-3"
+origin = "md:509"
+section = "3.4a"
+kind = "exe-build"
+games = ["gta3"]
+title = "Steam"
+id_text = "GAME_STEAM (120)"
+notes = "Steam executable; distinct code layout from 1.1"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-65"]
+sources_text = "65"
+[entry.fields]
+"Detection signature (address → value)" = "0x5C6FD0 → 0x53E58955"
+
+[[entry]]
+id = "3.4a-4"
+origin = "md:510"
+section = "3.4a"
+kind = "exe-build"
+games = ["gta3"]
+title = "Definitive Edition (Unreal Engine)"
+id_text = "GAME_UNREAL"
+notes = "Plugin-SDK supports the 2021 UE4 version as a separate target"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-65"]
+sources_text = "65"
+[entry.fields]
+"Detection signature (address → value)" = "(no address check; separate build target GTA3_UNREAL)"
+
+[[entry]]
+id = "3.5-1"
+origin = "md:516"
+section = "3.5"
+kind = "retail"
+games = ["gta3"]
+title = "Xbox (in *Grand Theft Auto: Double Pack* with Vice City)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA"
+date_text = "4 Nov 2003 (Wikipedia) / 31 Oct 2003 (TCRF)"
+serials = ["TT-014"]
+id_text = "Disc serial **TT-014** (Redump; English)"
+notes = "Ported by Rockstar Vienna. Rockstar had earlier offered the game to Microsoft Game Studios as an Xbox exclusive; MS declined. Redone billboard graphics (TCRF to-do). Redump: GTA III ships on its own disc (TT-014); the same disc was verified in the Double Pack (\"The Xbox Collection\" alt. name) and in *Grand Theft Auto: The Trilogy*. No Xbox GTA III revision is listed (unlike VC's TT-115 Rev 1)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-4", "3-51"]
+sources_text = "[1][2][4][51]"
+
+[[entry]]
+id = "3.5-2"
+origin = "md:517"
+section = "3.5"
+kind = "retail"
+games = ["gta3"]
+title = "Xbox Double Pack"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "PAL (EU)"
+date = "2004-01-02"
+date_text = "2 Jan 2004"
+serials = ["TT-014"]
+id_text = "TT-014 (EN/FR/DE/IT/ES); disc ID GTA3/DVD/XBOX/EFIS, case ID GTA3/DBL/XBOX/E"
+notes = "Redump: also in *The Trilogy*."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-51"]
+sources_text = "[1][2][51]"
+
+[[entry]]
+id = "3.5-3"
+origin = "md:518"
+section = "3.5"
+kind = "retail"
+games = ["gta3"]
+title = "Xbox Doppelpack"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "DE"
+date_text = "not documented"
+serials = ["TT-014"]
+id_text = "TT-014 (German); disc ID 5242981/GTA3/GER; Xbox COA serial X11-40711"
+notes = "Separate German disc (Redump language: German), verified in the Doppelpack and in the German *Trilogy* (box ID 5242981/SLIP)."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["3-51"]
+sources_text = "[51]"
+
+[[entry]]
+id = "3.5-4"
+origin = "md:519"
+section = "3.5"
+kind = "retail"
+games = ["gta3"]
+title = "Xbox Double Pack"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "AU"
+date_text = "not documented"
+serials = ["TT-014"]
+id_text = "TT-014 (English)"
+notes = "Separate Australian disc dump (Redump)."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["3-51"]
+sources_text = "[51]"
+
+[[entry]]
+id = "3.5-5"
+origin = "md:520"
+section = "3.5"
+kind = "retail"
+games = ["gta3"]
+title = "Xbox (Japan, bundled with Vice City only)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "JP"
+date = "2004-07-29"
+date_text = "29 Jul 2004"
+serials = ["TT-014"]
+id_text = "TT-014; XMID TT01406J; Microsoft ID A4L-00001 (TT014A01 disc)"
+notes = "Opens with an 18+/CERO warning screen that varies between three versions. Redump: Japanese text, English voices; Double Pack (\"The Xbox Collection\") slipcase A4K 00001."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-2", "3-23", "3-51"]
+sources_text = "[2][23][51]"
+
+[[entry]]
+id = "3.5-6"
+origin = "md:521"
+section = "3.5"
+kind = "retail"
+games = ["gta3"]
+title = "Xbox 360 backward compatibility"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "—"
+date_text = "announced 11 Nov 2005"
+id_text = "—"
+notes = "Announced as BC on 11 Nov 2005 but absent from Microsoft's official list; covered via the Double Pack/Trilogy entries. Wiki notes intro chugging and major framerate slowdown when driving."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-31"]
+sources_text = "[31]"
+
+[[entry]]
+id = "3.5-7"
+origin = "md:522"
+section = "3.5"
+kind = "retail"
+games = ["gta3"]
+title = "Xbox One / Series backward compatibility"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Not found in the Xbox One BC list portion reviewed; not documented as available."
+confidence_text = "—"
+sources = ["3-32"]
+sources_text = "[32]"
+
+[[entry]]
+id = "3.6-1"
+origin = "md:528"
+section = "3.6"
+kind = "retail"
+games = ["gta3"]
+title = "Mac OS X port"
+platforms = ["mac"]
+platform_text = "macOS (Intel)"
+region = "WW (digital)"
+date = "2010-11-12"
+date_text = "12 Nov 2010"
+id_text = "not documented"
+notes = "Wikipedia credits War Drum Studios; PCGamingWiki credits TransGaming Inc. Minimum: OS X 10.6.8, Intel Core 2 Duo, 1 GB RAM; encrypted config file. Distribution: Macgamestore.com took pre-orders for III/VC/SA on 20 Oct 2010, shipping 22 Nov 2010. App version numbers not documented in sources reached."
+confidence = "mixed"
+confidence_text = "✅ (date) / ❓ (developer conflict)"
+sources = ["3-1", "3-9", "3-62"]
+sources_text = "[1][9][62]"
+
+[[entry]]
+id = "3.6-2"
+origin = "md:529"
+section = "3.6"
+kind = "retail"
+games = ["gta3"]
+title = "Mac App Store release (**new entry**)"
+platforms = ["mac"]
+platform_text = "macOS"
+region = "US (WW storefronts)"
+date = "2011-08-18"
+date_text = "18 Aug 2011"
+id_text = "not documented (app ID not found)"
+notes = "Arrived on the Mac App Store \"nearly a year\" after the Mac trilogy debuted; US$14.99; requires OS X 10.6.6 or later (Macworld). Vice City followed on 25 Aug 2011 and San Andreas on 1 Sep 2011."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-59", "3-60"]
+sources_text = "[59][60]"
+
+[[entry]]
+id = "3.6-3"
+origin = "md:530"
+section = "3.6"
+kind = "retail"
+games = ["gta3"]
+title = "Mac App Store (Germany)"
+platforms = ["mac"]
+platform_text = "macOS"
+region = "DE"
+date = "2011-12-21"
+date_text = "21 Dec 2011"
+id_text = "not documented"
+notes = "Macerkopf: GTA 3 and Vice City \"now in the Mac App Store\" on the German storefront at €11.99 each. Why it came later than the US is not stated."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-61"]
+sources_text = "[61]"
+
+[[entry]]
+id = "3.7-1"
+origin = "md:536"
+section = "3.7"
+kind = "digital"
+games = ["gta3"]
+title = "PS2 Classic (planned date)"
+platforms = ["ps3"]
+platform_text = "PS3 (PSN)"
+region = "NA"
+date_text = "announced for \"Tuesday, July 31\" (2012)"
+id_text = "not documented"
+notes = "PSU: direct port of the PS2 version, US$9.99, no trophies, NA digital only."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-33"]
+sources_text = "[33]"
+
+[[entry]]
+id = "3.7-2"
+origin = "md:537"
+section = "3.7"
+kind = "digital"
+games = ["gta3"]
+title = "PS2 Classic (actual)"
+platforms = ["ps3"]
+platform_text = "PS3 (PSN)"
+region = "NA / EU / AU"
+date_text = "NA 25 Sep 2012; EU 26 Sep 2012; AU 4 Oct 2012"
+id_text = "NA content ID **UP9000-NPUD20062_00-0000000000000000**; EU (UK) **EP1004-NPED00063_00-GGRANDTHEF000ENG**; Germany EP1004-NPED00063_00-GGRANDTHEF000GER; AU package dumped (4,727,512,784 bytes, CRC 55CAA6C8; content ID not given)"
+notes = "Not released in Japan. Not delisted in Oct 2021 (Delisted Games). Product IDs come from No-Intro's PS3 (PSN) DAT (Appendix A.7). NA title ID NPUD20062 re-uses the PS2 serial number."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-11", "3-23", "3-52"]
+sources_text = "[1][11][23][52]"
+
+[[entry]]
+id = "3.7-3"
+origin = "md:538"
+section = "3.7"
+kind = "digital"
+games = ["gta3"]
+title = "PS2 on PS4"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "NA / EU / AU"
+date = "2015-12-05"
+date_text = "5 Dec 2015 (PS Store concept lists 14 Aug 2015; the US concept page now shows \"Release: 8/13/2015\")"
+serials = ["CUSA03508", "CUSA03550", "SLUS-20062", "SLES-50330"]
+id_text = "PS Store concept 201946; NA **CUSA03508** (content ID UP1004-CUSA03508_00-SLUS200620000001); EU **CUSA03550** (EP1004-CUSA03550_00-SLES503300000001). The content IDs embed the PS2 serials SLUS-20062 / SLES-50330. Latest patch **01.02** (NA 12.8 MB / EU 52 MB, firmware 4.05, created 2016-11-02, \"Bug fix\")"
+notes = "Emulated PS2 version with trophies, 1080p up-rendering, Share Play/Remote Play. TCRF: German/French censorship omitted (USK 18 kept). Delisted 11–18 Oct 2021."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2", "3-11", "3-34", "3-58"]
+sources_text = "[1][2][11][34][58]"
+
+[[entry]]
+id = "3.8-1"
+origin = "md:546"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "Launch release"
+platforms = ["ios", "android"]
+platform_text = "iOS, Android"
+region = "WW"
+date = "2011-12-15"
+date_text = "15 Dec 2011"
+id_text = "app version not documented"
+notes = "Paid download. Metacritic 80/100 (26 reviews)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-23"]
+sources_text = "[1][23]"
+
+[[entry]]
+id = "3.8-2"
+origin = "md:547"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "Fire OS (Amazon Appstore)"
+platforms = ["fireos"]
+platform_text = "Fire OS"
+region = "WW"
+date = "2014-05-15"
+date_text = "15 May 2014"
+id_text = "not documented"
+confidence = "single-source"
+confidence_text = "⚠️ (Wikipedia only)"
+sources = ["3-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "3.8-3"
+origin = "md:548"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "Google Play main listing (\"Grand Theft Auto III\")"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW (Rockstar: North America, most of Europe, most of Asia excl. Japan; not AU/DE/JP)"
+date_text = "Google Play \"released\" date 14 Dec 2011"
+id_text = "package `com.rockstar.gta3`; current version **1.10.106** (requires Android 9 / API 28, target API 36)"
+notes = "1M+ installs (AndroidRank had 1M+ by 24 Apr 2013). Listing updated 9 Mar 2026 (\"General bug fixes and improvements\"); AndroidRank records a last update 9 Oct 2026. Rockstar Support explains the four Android listing names are regional versions."
+confidence = "mixed"
+confidence_text = "✅ (package/regions) / ⚠️ (version, store data only)"
+sources = ["3-35", "3-36", "3-41"]
+sources_text = "[35][36][41]"
+
+[[entry]]
+id = "3.8-4"
+origin = "md:549"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "Google Play AU listing (\"GTA 3\")"
+platforms = ["android"]
+platform_text = "Android"
+region = "AU"
+date_text = "Google Play \"released\" date 14 Dec 2011"
+id_text = "package `com.rockstar.gta3aus`; version **1.9** (requires Android 7.0 / API 24, target API 30)"
+notes = "Rockstar Support: \"GTA 3\" is the version for Australia. Last updated 29 Jun 2022: \"Improved compatibility on recent versions of Android OS and Pixel devices\", added 64-bit support. 50K+ installs. Content differences vs WW listing not documented."
+confidence = "mixed"
+confidence_text = "✅ (purpose) / ⚠️ (version)"
+sources = ["3-37", "3-41"]
+sources_text = "[37][41]"
+
+[[entry]]
+id = "3.8-5"
+origin = "md:550"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "Google Play DE listing (\"Grand Theft Auto 3\")"
+platforms = ["android"]
+platform_text = "Android"
+region = "DE"
+date_text = "Google Play \"released\" date 14 Dec 2011"
+id_text = "package `com.rockstar.gta3ger`; version **1.9** (Android 7.0+, target API 30)"
+notes = "Rockstar Support: \"Grand Theft Auto 3\" is the version for Germany. Last updated 29 Jun 2022 (same compatibility / 64-bit notes, in German). 100K+ installs."
+confidence = "mixed"
+confidence_text = "✅ (purpose) / ⚠️ (version)"
+sources = ["3-41", "3-42"]
+sources_text = "[41][42]"
+
+[[entry]]
+id = "3.8-6"
+origin = "md:551"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "Google Play JP listing (\"GTA III\")"
+platforms = ["android"]
+platform_text = "Android"
+region = "JP"
+date_text = "Google Play \"released\" date 14 Dec 2011"
+id_text = "package `com.rockstar.gta3jpn`; version **1.9** (Android 7.0+, target API 30)"
+notes = "Rockstar Support: \"GTA III\" is the version for Japan. Last updated 29 Jun 2022 (same notes, in Japanese). 100K+ installs."
+confidence = "mixed"
+confidence_text = "✅ (purpose) / ⚠️ (version)"
+sources = ["3-41", "3-43"]
+sources_text = "[41][43]"
+
+[[entry]]
+id = "3.8-7"
+origin = "md:552"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "v1.9 (Softonic listing)"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date_text = "Softonic \"latest update\" 8 Dec 2025"
+version = "1.9"
+id_text = "1.9"
+notes = "Softonic says it requires Android 9.0. Conflicts with Google Play, where the WW listing is now 1.10.106 (Android 9) and 1.9 is the version on the AU/DE/JP listings (Android 7.0)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-38"]
+sources_text = "[38]"
+
+[[entry]]
+id = "3.8-8"
+origin = "md:553"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "13 Dec 2011 (US App Store history) / 14 Dec 2011 (German App Store history)"
+id_text = "App Store id479662730; 1.0"
+notes = "No notes. The history dates come from Apple's store pages and are a day or two off the 15 Dec 2011 launch date."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-9"
+origin = "md:554"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.0.1"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2012-02-29"
+date_text = "29 Feb 2012"
+id_text = "1.0.1"
+notes = "Better stability, especially on iPhone 4 and iPad 1; bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-10"
+origin = "md:555"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.30"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2013-05-29"
+date_text = "29 May 2013"
+id_text = "1.30"
+notes = "Notes match 1.3.1 (the US page lists them twice)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-11"
+origin = "md:556"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.3.1"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2013-05-31"
+date_text = "31 May 2013"
+id_text = "1.3.1"
+notes = "iPhone 5 widescreen support, iCloud save sync, custom playlists (an iTunes playlist named \"GTA3\"); known iPad control-offset issue."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-12"
+origin = "md:557"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.3.2"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "17 Jun 2013 (US) / 14 Jun 2013 (DE)"
+id_text = "1.3.2"
+notes = "Stability and bug fixes."
+confidence = "mixed"
+confidence_text = "✅ (version) / ⚠️ (day)"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-13"
+origin = "md:558"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.3.3"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2015-03-21"
+date_text = "21 Mar 2015"
+id_text = "1.3.3"
+notes = "Native iPhone 6/6 Plus resolution; MFi controller support; bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-14"
+origin = "md:559"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.3.4"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2015-04-07"
+date_text = "7 Apr 2015"
+id_text = "1.3.4"
+notes = "iPad 1 compatibility fix."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-15"
+origin = "md:560"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.3.5"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2015-09-21"
+date_text = "21 Sep 2015"
+id_text = "1.3.5"
+notes = "64-bit support."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-16"
+origin = "md:561"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS 1.5 (current)"
+platforms = ["ios", "mac"]
+platform_text = "iOS / Apple-silicon Mac"
+region = "WW"
+date_text = "4 Jun 2019 (US) / 26 Jun 2019 (DE)"
+id_text = "1.5; iOS 8.0+; 738.2 MB"
+notes = "Full-screen support on iPhone X/XS and iPad Pro. No 1.4 is listed in the history. US$4.99."
+confidence = "mixed"
+confidence_text = "✅ (version) / ⚠️ (day)"
+sources = ["3-39", "3-40"]
+sources_text = "[39][40]"
+
+[[entry]]
+id = "3.8-17"
+origin = "md:562"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "iOS \"GTA III: Deutsche Version\""
+platforms = ["ios"]
+platform_text = "iOS"
+region = "DE"
+date = "2011-12-14"
+date_text = "14 Dec 2011 (1.0)"
+id_text = "App Store id487339330; same version history as WW (1.0 → 1.5)"
+notes = "Separate German App Store listing (€5.99, 18+). The store page does not say how it differs from the WW app; languages listed are EN/FR/IT/DE/ES/JA (+KO in the language field)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-40"]
+sources_text = "[40]"
+
+[[entry]]
+id = "3.8-18"
+origin = "md:563"
+section = "3.8"
+kind = "mobile-version"
+games = ["gta3"]
+title = "Android intermediate versions (1.0 → 1.8, 1.10.x)"
+platforms = ["android"]
+platform_text = "Android"
+region = "—"
+date_text = "not documented"
+id_text = "not documented"
+notes = "Google Play shows only the current version. APKMirror carries only the Definitive Edition (not the classic paid app), APKPure is behind a Cloudflare check, and Uptodown has no page, so per-version Android dates remain a GAP. (Release notes on the Vice City DE listing confirm Rockstar used a 1.10 → 1.12 numbering on Android for VC; not documented for III.)"
+confidence_text = "—"
+sources_text = "—"
+
+[[entry]]
+id = "3.9-1"
+origin = "md:569"
+section = "3.9"
+kind = "regional"
+games = ["gta3"]
+title = "German/French content mode"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2, Windows, Xbox"
+region = "DE (also applied to FR)"
+date_text = "2001–2004"
+id_text = "same discs as PAL (PS2/PC switch by console/keyboard language)"
+notes = "Edited for USK 18: no blood, no headshots/amputations, Rampages removed (with stats), can't attack downed peds, killed peds drop no cash. Take-Two Germany (Gameswelt, 9 Oct 2001): German text, English voices, violence \"slightly toned down\", same missions. Omitted in Steam, PS4 and mobile releases (USK 18 kept). Steam store restricted in Germany."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-2", "3-10", "3-28"]
+sources_text = "[2][10][28]"
+
+[[entry]]
+id = "3.9-2"
+origin = "md:570"
+section = "3.9"
+kind = "regional"
+games = ["gta3"]
+title = "Australian original (MA15+)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "AU"
+date = "2001-10-26"
+date_text = "26 Oct 2001"
+version = "1.60"
+serials = ["SLES-50330"]
+id_text = "SLES-50330 (Redump says the v1.60 disc was the version banned in Australia)"
+notes = "Refused classification by OFLC 28 Nov 2001 (sexual content, violence against prostitutes); ban reaffirmed 11 Dec 2001."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-1", "3-2"]
+sources_text = "[1][2]"
+
+[[entry]]
+id = "3.9-3"
+origin = "md:571"
+section = "3.9"
+kind = "regional"
+games = ["gta3"]
+title = "Australian edited (MA15+)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "AU"
+date = "2002-01"
+date_text = "Jan 2002"
+version = "1.00"
+serials = ["SLES-50793"]
+id_text = "SLES-50793 (disc VER 1.00, EXE date 2002-01-17)"
+notes = "Wikipedia/TCRF: hiring prostitutes for health removed. Redump: \"the only difference\" is no flying heads/limbs when shot (conflict ⚠️). Reclassified R18+ Sept 2019."
+confidence = "mixed"
+confidence_text = "✅ (release/serial) / ⚠️ (content)"
+sources = ["3-1", "3-2", "3-48"]
+sources_text = "[1][2][48]"
+
+[[entry]]
+id = "3.9-4"
+origin = "md:572"
+section = "3.9"
+kind = "regional"
+games = ["gta3"]
+title = "Japanese (Capcom)"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2, Windows, Xbox"
+region = "JP"
+date_text = "2003–2004"
+serials = ["SLPM-65382"]
+id_text = "SLPM-65382 (PS2)"
+notes = "Vehicle renames (Police→Policecar, Stretch→Limousine, Trashmaster→Dustcart), two wheel designs altered; CERO 18+; some content restricted (Japanese Wikipedia)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["3-2", "3-23"]
+sources_text = "[2][23]"
+
+[[entry]]
+id = "3.9-5"
+origin = "md:573"
+section = "3.9"
+kind = "regional"
+games = ["gta3"]
+title = "South Korea"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "KR"
+date_text = "—"
+id_text = "—"
+notes = "Original initially banned by the Korea Media Rating Board; only the 10th Anniversary mobile version was later sold."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["3-4"]
+sources_text = "[4]"
+
+[sources]
+3-1 = { text = "Wikipedia, \"Grand Theft Auto III\" — https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:589" }
+3-2 = { text = "The Cutting Room Floor, \"Grand Theft Auto III\" — https://tcrf.net/Grand_Theft_Auto_III", url = "https://tcrf.net/Grand_Theft_Auto_III", origin = "md:590" }
+3-3 = { text = "The Cutting Room Floor, \"Prerelease:Grand Theft Auto III\" — https://tcrf.net/Prerelease:Grand_Theft_Auto_III", url = "https://tcrf.net/Prerelease:Grand_Theft_Auto_III", origin = "md:591" }
+3-4 = { text = "GTA Wiki (Fandom), \"Grand Theft Auto III\" — https://gta.fandom.com/wiki/Grand_Theft_Auto_III", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_III", origin = "md:592" }
+3-5 = { text = "Rockstar Support, \"Patch Info - Grand Theft Auto 3\" — https://support.rockstargames.com/articles/aHryAQEZa94n4k6sH1meK/patch-info-grand-theft-auto-3", url = "https://support.rockstargames.com/articles/aHryAQEZa94n4k6sH1meK/patch-info-grand-theft-auto-3", origin = "md:593" }
+3-6 = { text = "WorthPlaying, \"'Grand Theft Auto III' Update Patch Available NOW\" (27 Jun 2002) — https://worthplaying.com/article/2002/6/27/news/4478-grand-theft-auto-iii-update-patch-available-now/", url = "https://worthplaying.com/article/2002/6/27/news/4478-grand-theft-auto-iii-update-patch-available-now/", origin = "md:594" }
+3-7 = { text = "Gamepressure, \"Grand Theft Auto III - Game Update - v.1.1\" — https://www.gamepressure.com/download/grand-theft-auto-iii-v11-patch/za622", url = "https://www.gamepressure.com/download/grand-theft-auto-iii-v11-patch/za622", origin = "md:595" }
+3-8 = { text = "GameSpot, \"Grand Theft Auto III patch available\" — https://www.gamespot.com/articles/grand-theft-auto-iii-patch-available/1100-2872718/", url = "https://www.gamespot.com/articles/grand-theft-auto-iii-patch-available/1100-2872718/", origin = "md:596" }
+3-9 = { text = "PCGamingWiki, \"Grand Theft Auto III\" — https://pcgamingwiki.com/wiki/Grand_Theft_Auto_III", url = "https://pcgamingwiki.com/wiki/Grand_Theft_Auto_III", origin = "md:597" }
+3-10 = { text = "SteamDB, App 12100 — https://steamdb.info/app/12100/", url = "https://steamdb.info/app/12100/", origin = "md:598" }
+3-11 = { text = "Delisted Games, \"Grand Theft Auto III\" — https://delistedgames.com/grand-theft-auto-iii/", url = "https://delistedgames.com/grand-theft-auto-iii/", origin = "md:599" }
+3-12 = { text = "Steam News, \"All your favorites from Rockstar Games are now on Steam!\" (4 Jan 2008) — https://store.steampowered.com/news/1395", url = "https://store.steampowered.com/news/1395", origin = "md:600" }
+3-13 = { text = "PlayStation DataCenter, SLUS-20062 — https://psxdatacenter.com/psx2/games2/SLUS-20062.html", url = "https://psxdatacenter.com/psx2/games2/SLUS-20062.html", origin = "md:601" }
+3-14 = { text = "PlayStation DataCenter, SLES-50330 — https://psxdatacenter.com/psx2/games2/SLES-50330.html", url = "https://psxdatacenter.com/psx2/games2/SLES-50330.html", origin = "md:602" }
+3-15 = { text = "PlayStation DataCenter, SLES-50793 — https://psxdatacenter.com/psx2/games2/SLES-50793.html", url = "https://psxdatacenter.com/psx2/games2/SLES-50793.html", origin = "md:603" }
+3-16 = { text = "CDRomance, \"Grand Theft Auto III (Europe)\" (reproduces Redump v1.40/v1.60 naming & CRCs) — https://cdromance.org/ps2-iso/grand-theft-auto-iii-1-60-europe/", url = "https://cdromance.org/ps2-iso/grand-theft-auto-iii-1-60-europe/", origin = "md:604" }
+3-17 = { text = "RetroGameTalk, \"Grand Theft Auto III (Europe) (v1.60)\" (v1.60 change notes) — https://retrogametalk.com/repo/ps2-iso/grand-theft-auto-iii-1-60-europe/", url = "https://retrogametalk.com/repo/ps2-iso/grand-theft-auto-iii-1-60-europe/", origin = "md:605" }
+3-18 = { text = "Hidden Palace, \"Grand Theft Auto III (v1.40 PAL Prototype)\" — https://hiddenpalace.org/Grand_Theft_Auto_III_(v1.40_PAL_Prototype)_(prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_III_(v1.40_PAL_Prototype", origin = "md:606" }
+3-19 = { text = "GTA Wiki (Fandom), \"Beta Releases in GTA III\" — https://gta.fandom.com/wiki/Beta_Releases_in_GTA_III", url = "https://gta.fandom.com/wiki/Beta_Releases_in_GTA_III", origin = "md:607" }
+3-20 = { text = "Grand Theft Wiki, \"Content Changes in GTA III\" — https://www.grandtheftwiki.com/Content_Changes_in_GTA_III", url = "https://www.grandtheftwiki.com/Content_Changes_in_GTA_III", origin = "md:608" }
+3-21 = { text = "Kotaku, \"This Mod Recreates The Pre-Release Version Of GTA 3\" (20 Jan 2019) — https://kotaku.com/this-mod-recreates-the-pre-release-version-of-gta-3-1831906997", url = "https://kotaku.com/this-mod-recreates-the-pre-release-version-of-gta-3-1831906997", origin = "md:609" }
+3-22 = { text = "Game Informer, \"Rockstar Changed 1% Of Grand Theft Auto III After 9/11\" (5 Jan 2012) — https://www.gameinformer.com/b/news/archive/2012/01/05/rockstar-changed-1-of-grand-theft-auto-iii-after-9-11.aspx", url = "https://www.gameinformer.com/b/news/archive/2012/01/05/rockstar-changed-1-of-grand-theft-auto-iii-after-9-11.aspx", origin = "md:610" }
+3-23 = { text = "Japanese Wikipedia, \"グランド・セフト・オートIII\" — https://ja.wikipedia.org/wiki/グランド・セフト・オートIII", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オートIII", origin = "md:611" }
+3-24 = { text = "PlayStation DataCenter, SLPM-65760 (CapKore) — https://psxdatacenter.com/psx2/games2/SLPM-65760.html", url = "https://psxdatacenter.com/psx2/games2/SLPM-65760.html", origin = "md:612" }
+3-25 = { text = "PlayStation DataCenter, SLPM-66789 (Best Price) — https://psxdatacenter.com/psx2/games2/SLPM-66789.html", url = "https://psxdatacenter.com/psx2/games2/SLPM-66789.html", origin = "md:613" }
+3-26 = { text = "PlayStation DataCenter, SLPM-55293 (Rockstar Classics) — https://psxdatacenter.com/psx2/games2/SLPM-55293.html", url = "https://psxdatacenter.com/psx2/games2/SLPM-55293.html", origin = "md:614" }
+3-27 = { text = "PlayStation DataCenter, CPCS-01027 (Double Pack, JP) — https://psxdatacenter.com/psx2/games2/CPCS-01027.html", url = "https://psxdatacenter.com/psx2/games2/CPCS-01027.html", origin = "md:615" }
+3-28 = { text = "Gameswelt, \"Wir haben bei Take 2 nachgefragt\" (9 Oct 2001) — https://www.gameswelt.de/grand-theft-auto-3/news/wir-haben-bei-take-2-nachgefragt-64159", url = "https://www.gameswelt.de/grand-theft-auto-3/news/wir-haben-bei-take-2-nachgefragt-64159", origin = "md:616" }
+3-29 = { text = "Steam Community discussion \"How to downgrade?\" (GTA III) — https://steamcommunity.com/app/12100/discussions/0/1353742967803042453", url = "https://steamcommunity.com/app/12100/discussions/0/1353742967803042453", origin = "md:617" }
+3-30 = { text = "blog.andr.host, \"III radio\" (May 2022; Steam exe vs 1.1) — https://blog.andr.host/posts/2022/05/26-iii-radio/", url = "https://blog.andr.host/posts/2022/05/26-iii-radio/", origin = "md:618" }
+3-31 = { text = "Wikipedia, \"List of Xbox games compatible with Xbox 360\" — https://en.wikipedia.org/wiki/List_of_Xbox_games_compatible_with_Xbox_360", url = "https://en.wikipedia.org/wiki/List_of_Xbox_games_compatible_with_Xbox_360", origin = "md:619" }
+3-32 = { text = "Wikipedia, \"List of backward-compatible games for Xbox One and Series X/S\" — https://en.wikipedia.org/wiki/List_of_backward-compatible_games_for_Xbox_One_and_Series_X/S", url = "https://en.wikipedia.org/wiki/List_of_backward-compatible_games_for_Xbox_One_and_Series_X/S", origin = "md:620" }
+3-33 = { text = "PSU, \"Grand Theft Auto III confirmed for PSN release\" — https://www.psu.com/news/grand-theft-auto-iii-confirmed-for-psn-release/", url = "https://www.psu.com/news/grand-theft-auto-iii-confirmed-for-psn-release/", origin = "md:621" }
+3-34 = { text = "PlayStation Store, \"Grand Theft Auto 3\" (PS4, concept 201946) — https://store.playstation.com/en-us/concept/201946", url = "https://store.playstation.com/en-us/concept/201946", origin = "md:622" }
+3-35 = { text = "Google Play, Grand Theft Auto III (com.rockstar.gta3) — https://play.google.com/store/apps/details?id=com.rockstar.gta3", url = "https://play.google.com/store/apps/details?id=com.rockstar.gta3", origin = "md:623" }
+3-36 = { text = "AndroidRank, com.rockstar.gta3 — https://www.androidrank.org/application/grand_theft_auto_iii/com.rockstar.gta3", url = "https://www.androidrank.org/application/grand_theft_auto_iii/com.rockstar.gta3", origin = "md:624" }
+3-37 = { text = "Google Play, GTA 3 (com.rockstar.gta3aus) — https://play.google.com/store/apps/details?id=com.rockstar.gta3aus", url = "https://play.google.com/store/apps/details?id=com.rockstar.gta3aus", origin = "md:625" }
+3-38 = { text = "Softonic, \"GTA 3\" (Android) — https://gta-3.en.softonic.com/android", url = "https://gta-3.en.softonic.com/android", origin = "md:626" }
+3-39 = { text = "Apple App Store (US), \"Grand Theft Auto III\" (id479662730), Version History — https://apps.apple.com/us/app/-/id479662730", url = "https://apps.apple.com/us/app/-/id479662730", origin = "md:627" }
+3-40 = { text = "Apple App Store (DE), \"GTA III: Deutsche Version\" (id487339330), Version History — https://apps.apple.com/de/app/gta-iii-deutsche-version/id487339330", url = "https://apps.apple.com/de/app/gta-iii-deutsche-version/id487339330", origin = "md:628" }
+3-41 = { text = "Rockstar Support, \"Explanation of different Android Grand Theft Auto III version names\" — https://support.rockstargames.com/articles/71AssPF36GnosaEi4lTDX3/explanation-of-different-android-grand-theft-auto-iii-version-names", url = "https://support.rockstargames.com/articles/71AssPF36GnosaEi4lTDX3/explanation-of-different-android-grand-theft-auto-iii-version-names", origin = "md:629" }
+3-42 = { text = "Google Play, \"Grand Theft Auto 3\" (com.rockstar.gta3ger) — https://play.google.com/store/apps/details?id=com.rockstar.gta3ger", url = "https://play.google.com/store/apps/details?id=com.rockstar.gta3ger", origin = "md:630" }
+3-43 = { text = "Google Play, \"GTA III\" (com.rockstar.gta3jpn) — https://play.google.com/store/apps/details?id=com.rockstar.gta3jpn", url = "https://play.google.com/store/apps/details?id=com.rockstar.gta3jpn", origin = "md:631" }
+3-44 = { text = "Capcom IR, \"Capcom to publish Grand Theft Auto 3 in Japan\" (18 Jun 2003, PDF) — https://www.capcom.co.jp/ir/english/news/pdf/e030618b.pdf", url = "https://www.capcom.co.jp/ir/english/news/pdf/e030618b.pdf", origin = "md:632" }
+3-45 = { text = "Redump, Grand Theft Auto III (USA, Canada) SLUS-20062 v1.40 — http://redump.org/disc/681/", url = "http://redump.org/disc/681/", origin = "md:633" }
+3-46 = { text = "Redump, Grand Theft Auto III (Europe) SLES-50330 v1.40 — http://redump.org/disc/4262/", url = "http://redump.org/disc/4262/", origin = "md:634" }
+3-47 = { text = "Redump, Grand Theft Auto III (Europe, Australia) SLES-50330 v1.60 — http://redump.org/disc/510/", url = "http://redump.org/disc/510/", origin = "md:635" }
+3-48 = { text = "Redump, Grand Theft Auto III (Australia) SLES-50793 v1.00 — http://redump.org/disc/1215/", url = "http://redump.org/disc/1215/", origin = "md:636" }
+3-49 = { text = "Redump, Grand Theft Auto III (Japan) SLPM-65382 v1.03 — http://redump.org/disc/18061/", url = "http://redump.org/disc/18061/", origin = "md:637" }
+3-50 = { text = "Redump, Grand Theft Auto III (Japan) (Rockstar Classics) SLPM-55293 — http://redump.org/disc/42222/", url = "http://redump.org/disc/42222/", origin = "md:638" }
+3-51 = { text = "Redump, Grand Theft Auto III Xbox TT-014 discs — USA http://redump.org/disc/13551/ ; Europe http://redump.org/disc/13357/ ; Germany http://redump.org/disc/12657/ ; Australia http://redump.org/disc/77816/ ; Japan http://redump.org/disc/55478/", url = "http://redump.org/disc/13551/", origin = "md:639" }
+3-52 = { text = "No-Intro, Sony - PlayStation 3 (PSN) DAT (libretro-database mirror) — https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN", origin = "md:640" }
+3-53 = { text = "Unseen64, \"GTA 3 [GBA – Cancelled]\" (31 Jan 2018) — https://www.unseen64.net/2018/01/31/gta-3-gba-cancelled/", url = "https://www.unseen64.net/2018/01/31/gta-3-gba-cancelled/", origin = "md:641" }
+3-54 = { text = "Wikipedia, \"List of cancelled Game Boy Advance games\" (Grand Theft Auto III entry) — https://en.wikipedia.org/wiki/List_of_cancelled_Game_Boy_Advance_games", url = "https://en.wikipedia.org/wiki/List_of_cancelled_Game_Boy_Advance_games", origin = "md:642" }
+3-55 = { text = "Hidden Palace, \"Grand Theft Auto III (Apr 12, 2002 Prototype)\" — https://hiddenpalace.org/Grand_Theft_Auto_III_(Apr_12,_2002_Prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_III_(Apr_12,_2002_Prototype", origin = "md:643" }
+3-56 = { text = "Hidden Palace, \"Grand Theft Auto III (Apr 16, 2002 Prototype)\" — https://hiddenpalace.org/Grand_Theft_Auto_III_(Apr_16,_2002_Prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_III_(Apr_16,_2002_Prototype", origin = "md:644" }
+3-57 = { text = "Hidden Palace, \"Category:Grand Theft Auto III prototypes\" — https://hiddenpalace.org/Category:Grand_Theft_Auto_III_prototypes", url = "https://hiddenpalace.org/Category:Grand_Theft_Auto_III_prototypes", origin = "md:645" }
+3-58 = { text = "ORBISPatches, CUSA03508 (Grand Theft Auto 3, US) — https://orbispatches.com/CUSA03508 ; CUSA03550 (EU) — https://orbispatches.com/CUSA03550", url = "https://orbispatches.com/CUSA03508", origin = "md:646" }
+3-59 = { text = "Macworld, \"Grand Theft Auto III on Mac App Store\" (18 Aug 2011) — https://www.macworld.com/article/213917/grand_theft_auto_iii_on_mac_app_store.html", url = "https://www.macworld.com/article/213917/grand_theft_auto_iii_on_mac_app_store.html", origin = "md:647" }
+3-60 = { text = "MCV/DEVELOP, \"Mac App Store gets GTA Trilogy\" (18 Aug 2011) — https://mcvuk.com/business-news/mac-app-store-gets-gta-trilogy/", url = "https://mcvuk.com/business-news/mac-app-store-gets-gta-trilogy/", origin = "md:648" }
+3-61 = { text = "Macerkopf, \"Grand Theft Auto 3 und Vice City ab sofort im Mac App Store\" (21 Dec 2011) — https://www.macerkopf.de/2011/12/21/grand-theft-auto-3-und-vice-city-ab-sofort-im-mac-app-store/", url = "https://www.macerkopf.de/2011/12/21/grand-theft-auto-3-und-vice-city-ab-sofort-im-mac-app-store/", origin = "md:649" }
+3-62 = { text = "iClarified, \"MacGameStore Begins Grand Theft Auto: The Trilogy Pre-Orders\" (20 Oct 2010) — https://www.iclarified.com/12337/macgamestore-begins-grand-theft-auto-the-trilogy", url = "https://www.iclarified.com/12337/macgamestore-begins-grand-theft-auto-the-trilogy", origin = "md:650" }
+3-63 = { text = "WorthPlaying, \"Grand Theft Auto 3 for PC Ships\" (20 May 2002) — https://worthplaying.com/article/2002/5/20/news/3876-grand-theft-auto-3-for-pc-ships/", url = "https://worthplaying.com/article/2002/5/20/news/3876-grand-theft-auto-3-for-pc-ships/", origin = "md:651" }
+3-64 = { text = "Gamemeca, \"GTA3, PC버전 5월 21일에 출시\" (29 Apr 2002) — https://www.gamemeca.com/view.php?gid=328", url = "https://www.gamemeca.com/view.php?gid=328", origin = "md:652" }
+3-65 = { text = "Plugin-SDK source, `shared/GameVersion.cpp` (detect_game_id) and `GameVersion.h`, commit 15f15b6 (2026-09-08) — https://github.com/DK22Pac/plugin-sdk/blob/15f15b60bbf74c106e1b496ff92c98764abf4605/shared/GameVersion.cpp ; https://github.com/DK22Pac/plugin-sdk/blob/15f15b60bbf74c106e1b496ff92c98764abf4605/shared/GameVersion.h", url = "https://github.com/DK22Pac/plugin-sdk/blob/15f15b60bbf74c106e1b496ff92c98764abf4605/shared/GameVersion.cpp", origin = "md:653" }

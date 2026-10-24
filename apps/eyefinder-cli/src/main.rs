@@ -20,9 +20,16 @@ USAGE:
     eyefinder-cli text     <game folder, asset file or disc image> [choice]
     eyefinder-cli files    <game folder or disc image>
     eyefinder-cli docs     missing
+    eyefinder-cli db       info | validate [folder] | export <file.toml> | import <file.toml|pack.zip>
+    eyefinder-cli db       pack <folder> <pack.zip> | update
 
 scan lists the copies found in Steam libraries, the Rockstar Games Launcher and the usual Rockstar
 Games folders, with the store each belongs to.
+
+db works on the build database (docs/DATABASE.md): info shows the loaded database, validate checks it
+(or a database folder) and fails on any problem, export saves your own additions as one file, import adds
+a file or installs a pack, pack writes a pack .zip and its .sha256, update installs a newer pack from
+GitHub.
 
 Disc images: ISO, BIN/CUE, GDI and CDI (Dreamcast), VCD (PS2 POPStarter). Cartridge ROMs: GB, GBC, GBA.
 A folder holding several games (GTA1 with London 1969/1961 installed into it) needs --game.
@@ -43,6 +50,109 @@ TEXTURE OPTIONS:
     --mipmaps           also write every mip level
     --no-dds            do not save DXT-compressed textures untouched as .dds
     --only <dictionary> export one texture dictionary (path as listed, e.g. models/gta3.img/hud.txd)";
+
+/// `eyefinder-cli db ...`
+fn db(args: &[String]) -> ExitCode {
+    use ef_core::database::{self, Database};
+    let paths = database::paths();
+    let fail = |e: &dyn std::fmt::Display| {
+        eprintln!("error: {e}");
+        ExitCode::from(1)
+    };
+    match (args.first().map(String::as_str), args.get(1), args.get(2)) {
+        (Some("info"), None, None) => {
+            let db = Database::load(paths);
+            println!("version	{}	{:?}	built-in {}", db.version, db.base, db.built_in_version);
+            println!("entries	{}	sections	{}	sources	{}", db.entries.len(), db.sections.len(), db.sources.len());
+            for g in &db.games {
+                println!("{}	{}	{}", g.id, db.entries_of(&g.id).count(), g.title);
+            }
+            for f in &db.user_files {
+                println!("user file	{f}");
+            }
+            for n in &db.notices {
+                println!("notice	{n}");
+            }
+            for p in &db.problems {
+                println!("problem	{}	{}", p.file, p.message);
+            }
+            ExitCode::SUCCESS
+        }
+        (Some("validate"), dir, None) => {
+            let db = match dir {
+                Some(d) => Database::load_complete(&PathBuf::from(d)),
+                None => Database::load(paths),
+            };
+            for p in &db.problems {
+                println!("{}	{}", p.file, p.message);
+            }
+            println!(
+                "{} entries, {} sections, {} sources, {} problems",
+                db.entries.len(),
+                db.sections.len(),
+                db.sources.len(),
+                db.problems.len()
+            );
+            if db.problems.is_empty() { ExitCode::SUCCESS } else { ExitCode::from(1) }
+        }
+        (Some("export"), Some(out), None) => match Database::export_user(paths, &PathBuf::from(out)) {
+            Ok(n) => {
+                println!("{n} entries written to {out}");
+                ExitCode::SUCCESS
+            }
+            Err(e) => fail(&e),
+        },
+        (Some("import"), Some(file), None) => match database::import(paths, &PathBuf::from(file)) {
+            Ok(r) => {
+                println!("{r:?}");
+                ExitCode::SUCCESS
+            }
+            Err(e) => fail(&e),
+        },
+        (Some("pack"), Some(dir), Some(out)) => {
+            let out = PathBuf::from(out);
+            match database::write_pack_zip(&PathBuf::from(dir), &out) {
+                Ok(sha) => {
+                    let name = out.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
+                    let sum = PathBuf::from(format!("{}.sha256", out.display()));
+                    if let Err(e) = std::fs::write(
+                        &sum,
+                        format!(
+                            "{sha}  {name}
+"
+                        ),
+                    ) {
+                        return fail(&e);
+                    }
+                    println!("{sha}  {name}");
+                    ExitCode::SUCCESS
+                }
+                Err(e) => fail(&e),
+            }
+        }
+        (Some("update"), None, None) => {
+            let db = Database::load(paths);
+            match database::check_update(&db.version) {
+                Ok(None) => {
+                    println!("The database is up to date ({}).", db.version);
+                    ExitCode::SUCCESS
+                }
+                Ok(Some(a)) => match database::download_and_install(paths, &a) {
+                    Ok(v) => {
+                        println!("Database {v} installed.");
+                        ExitCode::SUCCESS
+                    }
+                    Err(e) => fail(&e),
+                },
+                Err(e) => fail(&e),
+            }
+        }
+        _ => {
+            eprintln!("{USAGE}");
+            ExitCode::from(2)
+        }
+    }
+}
 
 fn value<'a>(args: &'a [String], flag: &str) -> Option<&'a str> {
     args.iter().position(|a| a == flag).and_then(|i| args.get(i + 1)).map(String::as_str)
@@ -113,6 +223,9 @@ fn main() -> ExitCode {
             }
         }
         return ExitCode::SUCCESS;
+    }
+    if cmd == "db" {
+        return db(&args[1..]);
     }
     let Some(path) = args.get(1) else {
         eprintln!("{USAGE}");

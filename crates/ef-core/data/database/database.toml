@@ -1,0 +1,163 @@
+# The build database: games, platforms and kinds. Every other .toml file in this folder holds
+# [[section]], [[entry]] and [sources] items (see docs/DATABASE.md).
+
+[database]
+version = "2026.10.24"
+schema = 1
+
+[[game]]
+id = "gta1"
+title = "Grand Theft Auto"
+eyefinder = "gta1"
+
+[[game]]
+id = "london1969"
+title = "Grand Theft Auto: London 1969"
+eyefinder = "london1969"
+
+[[game]]
+id = "london1961"
+title = "Grand Theft Auto: London 1961"
+eyefinder = "london1961"
+
+[[game]]
+id = "gta2"
+title = "Grand Theft Auto 2"
+eyefinder = "gta2"
+
+[[game]]
+id = "gta3"
+title = "Grand Theft Auto III"
+eyefinder = "gta3"
+
+[[game]]
+id = "vc"
+title = "Grand Theft Auto: Vice City"
+eyefinder = "vc"
+
+[[game]]
+id = "advance"
+title = "Grand Theft Auto Advance"
+eyefinder = "advance"
+
+[[game]]
+id = "sa"
+title = "Grand Theft Auto: San Andreas"
+eyefinder = "sa"
+
+[[game]]
+id = "lcs"
+title = "Grand Theft Auto: Liberty City Stories"
+
+[[game]]
+id = "vcs"
+title = "Grand Theft Auto: Vice City Stories"
+
+[[game]]
+id = "gta4"
+title = "Grand Theft Auto IV"
+
+[[game]]
+id = "tlad"
+title = "Grand Theft Auto IV: The Lost and Damned"
+
+[[game]]
+id = "ctw"
+title = "Grand Theft Auto: Chinatown Wars"
+
+[[game]]
+id = "tbogt"
+title = "Grand Theft Auto: The Ballad of Gay Tony"
+
+[[game]]
+id = "eflc"
+title = "Grand Theft Auto: Episodes from Liberty City"
+
+[[game]]
+id = "gta5"
+title = "Grand Theft Auto V"
+
+[[game]]
+id = "gta-online"
+title = "Grand Theft Auto Online"
+
+[[game]]
+id = "trilogy-de"
+title = "Grand Theft Auto: The Trilogy – The Definitive Edition"
+
+[[game]]
+id = "gta6"
+title = "Grand Theft Auto VI"
+
+[[game]]
+id = "collections"
+title = "Collections and compilations"
+
+[[game]]
+id = "cancelled"
+title = "Cancelled, unreleased and lost projects"
+
+[[game]]
+id = "media"
+title = "Related media and licensed releases"
+
+[[game]]
+id = "series"
+title = "The whole series"
+
+[platforms]
+pc = "PC (DOS / Windows)"
+mac = "Mac"
+linux = "Linux"
+ps1 = "PlayStation"
+ps2 = "PlayStation 2"
+psp = "PlayStation Portable"
+vita = "PlayStation Vita"
+ps3 = "PlayStation 3"
+ps4 = "PlayStation 4"
+ps5 = "PlayStation 5"
+xbox = "Xbox"
+x360 = "Xbox 360"
+xone = "Xbox One"
+xsx = "Xbox Series X/S"
+dc = "Dreamcast"
+saturn = "Sega Saturn"
+n64 = "Nintendo 64"
+gc = "GameCube"
+gbc = "Game Boy Color"
+gba = "Game Boy Advance"
+nds = "Nintendo DS"
+switch = "Nintendo Switch"
+ios = "iOS"
+android = "Android"
+fireos = "Fire OS"
+winphone = "Windows Phone"
+palm = "Palm OS"
+j2me = "J2ME"
+stadia = "Stadia"
+
+[kinds]
+retail = "Retail releases and disc revisions"
+reissue = "Re-releases and budget reissues"
+patch = "Patches"
+title-update = "Title updates and package versions"
+exe-build = "Executable builds"
+digital = "Digital releases"
+mobile-version = "Mobile app versions"
+edition = "Editions and offers"
+compilation = "Compilations"
+dlc = "Updates and DLC"
+app = "Companion apps"
+demo = "Demos"
+prototype = "Prototypes and pre-release builds"
+leak = "Leaks"
+milestone = "Development milestones"
+cancelled = "Cancelled projects"
+regional = "Regional versions and censorship"
+rating = "Ratings"
+languages = "Languages"
+dump = "Preserved dumps"
+third-party = "Third-party products"
+media = "Related media"
+note = "Notes"
+gap = "Known gaps"

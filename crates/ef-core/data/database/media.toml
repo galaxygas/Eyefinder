@@ -1,0 +1,135 @@
+# Related media and licensed releases: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "11.9"
+origin = "md:3217"
+title = "11.9 Related official media & licensed releases (not covered elsewhere)"
+games = ["media"]
+
+[[entry]]
+id = "11.9-1"
+origin = "md:3221"
+section = "11.9"
+kind = "media"
+games = ["media"]
+title = "*Grand Theft Auto: iFruit* and *Grand Theft Auto V: The Manual*"
+date = "2013-09-16"
+date_text = "2013-09-16"
+notes = "Covered in §8.4b (platforms, versions, iFruit shutdown on 2022-12-12)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources_text = "(§8)"
+[entry.fields]
+Type = "Official companion apps"
+
+[[entry]]
+id = "11.9-2"
+origin = "md:3222"
+section = "11.9"
+kind = "media"
+games = ["media"]
+title = "*GTA 2: The Movie*"
+date = "1999"
+date_text = "1999"
+notes = "~8 min, filmed in New York; dir. Alex De Rakoff, script Dan Houser; Scott Maslen as Claude Speed; distributed on Rockstar's website."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-64"]
+sources_text = "[64]"
+[entry.fields]
+Type = "Live-action short (game intro)"
+
+[[entry]]
+id = "11.9-3"
+origin = "md:3223"
+section = "11.9"
+kind = "media"
+games = ["media"]
+title = "*The Gamechangers*"
+date = "2015-09-15"
+date_text = "2015-09-15"
+notes = "Based on David Kushner's *Jacked*; Daniel Radcliffe (Sam Houser), Bill Paxton (Jack Thompson); Rockstar sued BBC for trademark infringement (May 2015)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-55"]
+sources_text = "[55]"
+[entry.fields]
+Type = "BBC Two docudrama (unauthorised)"
+
+[[entry]]
+id = "11.9-4"
+origin = "md:3224"
+section = "11.9"
+kind = "media"
+games = ["media"]
+title = "*GTA: The Trilogy – The Definitive Edition* on Netflix Games"
+date_text = "Announced 2023-11-29; released 2023-12-14"
+notes = "GTA III, Vice City, San Andreas DE via Netflix app and standalone iOS/Android apps for subscribers (see §10)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-56"]
+sources_text = "[56]"
+[entry.fields]
+Type = "Mobile (subscription)"
+
+[[entry]]
+id = "11.9-5"
+origin = "md:3225"
+section = "11.9"
+kind = "media"
+games = ["media"]
+title = "*Grand Theft Auto VI: The Album*"
+date_text = "Announced 2026-09-17; due 2026-11-19"
+notes = "Official album (Wikipedia: 34 songs); artists reported include Travis Scott, PinkPantheress, Morgan Wallen, Keith Richards."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-17", "11-24"]
+sources_text = "[17][24]"
+[entry.fields]
+Type = "Soundtrack album (Atlantic Records)"
+
+[[entry]]
+id = "11.9-6"
+origin = "md:3226"
+section = "11.9"
+kind = "media"
+games = ["media"]
+title = "*Grand Theft Auto VI: An Extended Look*"
+date = "2026-08-27"
+date_text = "2026-08-27"
+notes = "Gameplay showcase captured on PS5; has its own Wikipedia article."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-19", "11-22"]
+sources_text = "[19][22]"
+[entry.fields]
+Type = "Netflix/YouTube premiere"
+
+[[entry]]
+id = "11.9-7"
+origin = "md:3227"
+section = "11.9"
+kind = "media"
+games = ["media"]
+title = "*GTA VI* Launch Trailer"
+date = "2026-10-15"
+date_text = "2026-10-15"
+notes = "See 11.1."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["11-27"]
+sources_text = "[27]"
+[entry.fields]
+Type = "Trailer"
+
+[sources]
+11-17 = { text = "Endgame Tools — list of official Rockstar Newswire GTA VI posts (fan aggregator; used for post titles/dates, corroborated where marked ✅): https://endgametools.com/en/gta-6/newswire", url = "https://endgametools.com/en/gta-6/newswire", origin = "md:3256" }
+11-19 = { text = "Rockstar Newswire — \"Grand Theft Auto VI: An Extended Look\": https://www.rockstargames.com/newswire/article/9k2kaa1o3297k9/grand-theft-auto-vi-an-extended-look ; Wikipedia: https://en.wikipedia.org/wiki/Grand_Theft_Auto_VI:_An_Extended_Look", url = "https://www.rockstargames.com/newswire/article/9k2kaa1o3297k9/grand-theft-auto-vi-an-extended-look", origin = "md:3258" }
+11-22 = { text = "TechSpot — \"GTA 6 Extended Look draws over 50 million views, crashing Netflix…\": https://www.techspot.com/news/113726-gta-6-extended-look-draws-over-50-million.html", url = "https://www.techspot.com/news/113726-gta-6-extended-look-draws-over-50-million.html", origin = "md:3261" }
+11-24 = { text = "Music Business World Wide — \"Atlantic Records to release Grand Theft Auto VI: The Album…\": https://www.musicbusinessworldwide.com/atlantic-records-to-release-grand-theft-auto-vi-the-album-featuring-travis-scott-pinkpantheress-morgan-wallen-and-keith-richards/ ; Digital Music News (17 Sep 2026): https://www.digitalmusicnews.com/2026/09/17/grand-theft-auto-vi-the-album-release/", url = "https://www.musicbusinessworldwide.com/atlantic-records-to-release-grand-theft-auto-vi-the-album-featuring-travis-scott-pinkpantheress-morgan-wallen-and-keith-richards/", origin = "md:3263" }
+11-27 = { text = "Rockstar Games — \"Grand Theft Auto VI – Launch Trailer\" video: https://www.rockstargames.com/videos/76orsa95 ; 9to5Toys (15 Oct 2026): https://9to5toys.com/2026/10/15/rockstar-new-grand-theft-auto-vi-launch-trailer/", url = "https://www.rockstargames.com/videos/76orsa95", origin = "md:3266" }
+11-55 = { text = "Wikipedia — \"The Gamechangers\": https://en.wikipedia.org/wiki/The_Gamechangers", url = "https://en.wikipedia.org/wiki/The_Gamechangers", origin = "md:3294" }
+11-56 = { text = "TechCrunch — Netflix to add GTA Trilogy (29 Nov 2023): https://techcrunch.com/2023/11/29/netflix-gta-the-trilogy-mobile-games/", url = "https://techcrunch.com/2023/11/29/netflix-gta-the-trilogy-mobile-games/", origin = "md:3295" }
+11-64 = { text = "Wikipedia — \"Grand Theft Auto 2\" (GTA 2: The Movie; cites PC Gamer https://www.pcgamer.com/revisiting-grand-theft-auto-2-the-weirdest-gta-of-them-all/): https://en.wikipedia.org/wiki/Grand_Theft_Auto_2", url = "https://www.pcgamer.com/revisiting-grand-theft-auto-2-the-weirdest-gta-of-them-all/", origin = "md:3303" }

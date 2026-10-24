@@ -1,0 +1,638 @@
+# Grand Theft Auto: Vice City Stories: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "6.3"
+origin = "md:1242"
+title = "6.3 Grand Theft Auto: Vice City Stories (PSP 2006 · PS2 2007 · PS3 PSN 2013)"
+games = ["vcs"]
+text = "Developed by **Rockstar Leeds** with **Rockstar North**. Published by Rockstar Games, and by **Capcom** in Japan [34][35][36][37]."
+
+[[section]]
+id = "6.3.1"
+origin = "md:1246"
+title = "6.3.1 Development and pre-release"
+games = ["vcs"]
+
+[[section]]
+id = "6.3.2"
+origin = "md:1261"
+title = "6.3.2 PSP (UMD) retail versions"
+games = ["vcs"]
+
+[[section]]
+id = "6.3.3"
+origin = "md:1275"
+title = "6.3.3 PS2 version and digital releases"
+games = ["vcs"]
+
+[[entry]]
+id = "6.3.1-1"
+origin = "md:1250"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "E3 2006 reveal"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date = "2006-05-10"
+date_text = "**2006-05-10**"
+id_text = "–"
+notes = "Revealed at E3 2006 with an \"October 2006\" window. The first trailer was shown at E3; two later trailers are undated."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-38"]
+sources_text = "[38]"
+
+[[entry]]
+id = "6.3.1-2"
+origin = "md:1251"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Pre-release footage and screenshots"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date = "2006"
+date_text = "2006"
+id_text = "–"
+notes = "Changes visible in previews: Vic's casual clothes were yellow (blue in the final game), Vic had a tattoo, Louise was older with black hair, Lance wore a red shirt, mission markers and \"Mission Passed\" text were yellow, the subtitle font differed, and a debug-menu number appears in one screenshot."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-38"]
+sources_text = "[38]"
+
+[[entry]]
+id = "6.3.1-3"
+origin = "md:1252"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "BradyGames guide content (pre-final build)"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date = "2006"
+date_text = "2006"
+id_text = "–"
+notes = "The official BradyGames guide describes a pre-final build that differs from retail: a boat ambush in \"Soldier\", 1,000 rockets in \"Last Stand\", different rampages (25 of 30 differ), placeholder side-mission names (\"Hunter\" became \"Skywolf\", \"Air Race\" became \"Crims on Wings\"), \"Mpirian Real Estate\" renamed \"Ionic\", and the Violator internally named \"Scarab\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-38"]
+sources_text = "[38]"
+
+[[entry]]
+id = "6.3.1-4"
+origin = "md:1253"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Planned dates"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA / EU"
+date_text = "2006-10-17 (NA), 2006-10-20 (EU)"
+id_text = "–"
+notes = "First dates announced by Take-Two. In early Sept 2006 they were delayed to 2006-10-31 (NA) and 2006-11-03 (EU)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-34", "6-35", "6-36"]
+sources_text = "[34][35][36]"
+
+[[entry]]
+id = "6.3.1-5"
+origin = "md:1254"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Pre-production 0.01, **August 8, 2006**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU (ULET)"
+date_text = "build date 2006-08-08"
+serials = ["ULET-00417"]
+id_text = "Pre-production UMD, creation date 08.08.2006, product code **ULET-00417/0.01**"
+notes = "Hidden Palace: \"Dumped, not released\"; \"first earlier build ever known\". Centred (smaller) loading bar like LCS, debug at spawn point on new game, different minimap and possibly a different loading screen."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-54"]
+sources_text = "[54]"
+
+[[entry]]
+id = "6.3.1-6"
+origin = "md:1255"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Test Sample 1.01, **September 1, 2006**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date_text = "build date 2006-09-01 01:03"
+serials = ["ULUS-10160"]
+id_text = "Sony DADC test-sample UMD \"TEDL 015240\", **ULUS-10160 1.01**"
+notes = "Hidden Palace: \"Dumped, not released\". Larger loading bar, BMX cannot jump, yellow teleporters, different fonts, LCS Rockstar logo intro and early credits movie; HP says this matches the build used for the **BradyGames** guide (see above)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-54"]
+sources_text = "[54]"
+
+[[entry]]
+id = "6.3.1-7"
+origin = "md:1256"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Pre-production 0.06 \"AD'S LIGHTING MODEL\", **September 24, 2006**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU (ULET)"
+date_text = "build date 2006-09-24 16:00"
+serials = ["ULET-00417"]
+id_text = "Pre-production UMD titled \"AD'S LIGHTING MODEL\" (codename), product code **ULET-00417/0.06**"
+notes = "Hidden Palace: status **Released** (also mirrored on archive.org item `gta-vcs-v-0.06-ulet-00417`); debug prototype, debug enabled with an HP-hosted `MAIN.SCM` patch by Gonzo; playable in PPSSPP 1.17. Per the UMDatabase text quoted on HP, nearly final with only last-minute script, regional and language differences; likely sent to press/reviewers close to release. Releaser not recorded (HP to-do asks whether \"The-Dude1\" dumped it)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-54"]
+sources_text = "[54]"
+
+[[entry]]
+id = "6.3.1-8"
+origin = "md:1257"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Pre-production 0.07 \"AD'S LIGHTING MODEL\", **October 4, 2006**"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU (ULET)"
+date = "2025-01-25"
+date_text = "build date 2006-10-04; released **2025-01-25** by Rain0x06 (dumper anonymous)"
+serials = ["ULET-00417"]
+id_text = "Pre-production UMD, product code **ULET-00417/0.07**"
+notes = "HP: built on the same day as the final version; only `EBOOT.BIN`, `PARAM.SFO`, `BOOT.BIN` and `UMD_DATA.BIN` differ from retail. Only the EBOOT.BIN was supplied, so it was combined with an EU retail disc. Playable in PPSSPP 1.17."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["6-54"]
+sources_text = "[54]"
+
+[[entry]]
+id = "6.3.1-9"
+origin = "md:1258"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Other leaked or preserved prototypes"
+platforms = ["psp", "ps2"]
+platform_text = "PSP/PS2"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "No PS2 VCS prototype is listed on Hidden Palace (checked 2026-10-24). TCRF's GTA prototype index (as shown on the LCS prototype page) lists no VCS prototype; TCRF's `Proto:` page for VCS could not be opened."
+confidence = "confirmed"
+confidence_text = "✅ (absence on TCRF/HP for PS2)"
+sources = ["6-32", "6-37", "6-54"]
+sources_text = "[32][37][54]"
+
+[[entry]]
+id = "6.3.1-10"
+origin = "md:1259"
+section = "6.3.1"
+kind = "prototype"
+games = ["vcs"]
+title = "Debug leftovers"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "Debug menu and trainers spawn the FBI Rancher (ID 268), slide-door Police Maverick (279) and VCN Maverick (260). Land mines are accessible and tear gas works; unused Hidden Package stats remain."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["6-37"]
+sources_text = "[37]"
+
+[[entry]]
+id = "6.3.2-1"
+origin = "md:1265"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date = "2006-10-31"
+date_text = "**2006-10-31**"
+serials = ["ULUS-10160"]
+id_text = "**ULUS-10160**"
+notes = "US-only song: Berlin, \"Sex (I'm A...)\" with its Wave 103 DJ banter. US RRP $49.99."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-34", "6-35", "6-36", "6-37", "6-10"]
+sources_text = "[34][35][36][37][10]"
+
+[[entry]]
+id = "6.3.2-2"
+origin = "md:1266"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Greatest Hits"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA"
+date_text = "not documented (GameFAQs lists only a Canadian Greatest Hits, **ULUS-10160GHF**, dated 2007)"
+id_text = "**ULUS-10160GH**"
+notes = "Same image as the original (CRC `F705A610`)."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10", "6-60"]
+sources_text = "[10][60]"
+
+[[entry]]
+id = "6.3.2-3"
+origin = "md:1267"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "EU/UK"
+date = "2006-11-03"
+date_text = "**2006-11-03** (UK); 2006-11-10 for continental Europe (excluding UK and Ireland, after a delay)"
+serials = ["ULES-00502"]
+id_text = "**ULES-00502**; also ULES-00502/5236362 and **ULES-00502/P** (Platinum)"
+notes = "En/Fr/De/Es/It. All three pressings share CRC `B44AC795`. UK RRP £34.99. GameFAQs dates the EU **Platinum** (ULES-00502/P) **2008-02-18** and an AU Platinum \"February 2008\"."
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (Platinum dates)"
+sources = ["6-34", "6-36", "6-10", "6-60"]
+sources_text = "[34][36][10][60]"
+
+[[entry]]
+id = "6.3.2-4"
+origin = "md:1268"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "DE"
+date_text = "not documented"
+serials = ["ULES-00503"]
+id_text = "**ULES-00503**"
+notes = "German version, blood removed."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-37", "6-10"]
+sources_text = "[37][10]"
+
+[[entry]]
+id = "6.3.2-5"
+origin = "md:1269"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "AU/NZ"
+date = "2006-11-10"
+date_text = "**2006-11-10**"
+id_text = "(uses EU serial, not separately documented)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-34", "6-36", "6-37"]
+sources_text = "[34][36][37]"
+
+[[entry]]
+id = "6.3.2-6"
+origin = "md:1270"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "KR"
+date = "2007-02-28"
+date_text = "**2007-02-28** (TCRF and GameFAQs)"
+id_text = "serial not documented (no Korean VCS entry in Redump; GameFAQs gives no product ID)"
+confidence = "confirmed"
+confidence_text = "✅ (date)"
+sources = ["6-37", "6-10", "6-60"]
+sources_text = "[37][10][60]"
+
+[[entry]]
+id = "6.3.2-7"
+origin = "md:1271"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Japan (Capcom)"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "JP"
+date = "2007-12-06"
+date_text = "**2007-12-06**"
+serials = ["ULJM-05297", "ULJM-05395"]
+id_text = "**ULJM-05297** (original; JAN 4976219024044 per GameFAQs). **ULJM-05395** (same image, CRC `B01F3CB4`) is the Capcom **Best Price** reissue dated **2009-02-19** by GameFAQs (JAN 4976219028653) ⚠️"
+notes = "Censored: no bleeding or dismemberment, no cash drops, downed enemies can't be attacked, and Empire businesses renamed (\"drugs\" to \"sugar\", \"prostitution\" to \"dispatch\"). Also lower damage taken, higher analog sensitivity, the \"Burning Bridges\" weapon-loss bug fixed, and the rampage and \"Soldier\" changes later seen on PS2."
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (reissue date)"
+sources = ["6-37", "6-10", "6-39", "6-60"]
+sources_text = "[37][10][39][60]"
+
+[[entry]]
+id = "6.3.2-8"
+origin = "md:1272"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Japan \"Rockstar Classics\""
+platforms = ["psp"]
+platform_text = "PSP"
+region = "JP"
+date = "2011-06-23"
+date_text = "**2011-06-23** (GameFAQs; publisher Rockstar Games, JAN 4571304477059)"
+serials = ["ULJM-05884"]
+id_text = "**ULJM-05884**"
+notes = "Different image (CRC `11C768BB`). Same date as the LCS Rockstar Classics reissue."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (date)"
+sources = ["6-10", "6-60"]
+sources_text = "[10][60]"
+
+[[entry]]
+id = "6.3.2-9"
+origin = "md:1273"
+section = "6.3.2"
+kind = "retail"
+games = ["vcs"]
+title = "Disc revisions"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "–"
+date_text = "–"
+id_text = "–"
+notes = "Redump lists **no version-numbered revisions** of VCS, unlike LCS."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["6-10"]
+sources_text = "[10]"
+
+[[entry]]
+id = "6.3.3-1"
+origin = "md:1279"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "PS2 port announced"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "–"
+date = "2007-02-07"
+date_text = "2007-02-07"
+id_text = "–"
+notes = "Announced by Rockstar. Budget launch price of $19.99 / £19.99."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-34", "6-35", "6-36"]
+sources_text = "[34][35][36]"
+
+[[entry]]
+id = "6.3.3-2"
+origin = "md:1280"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date = "2007-03-06"
+date_text = "**2007-03-06** (GTA Wiki, Grand Theft Wiki, ja.wikipedia, Wikipedia body text); Wikipedia infobox, TCRF and GameFAQs give 2007-03-05"
+serials = ["SLUS-21590"]
+id_text = "**SLUS-21590**; also **SLUS-21590P2**"
+notes = "Higher resolution and draw distance, a Trails option, multiplayer removed, six new side missions (Caddy Daddy, Crims on Water Wings, Hyman Memorial O.D.T., Playground on the Park, Playground on the Dock, Rush!), five new rampages and five new stunt jumps, and a \"Seagulls Sniped\" stat."
+confidence = "mixed"
+confidence_text = "✅ (date ⚠️)"
+sources = ["6-11", "6-34", "6-35", "6-36", "6-37", "6-39", "6-60"]
+sources_text = "[11][34][35][36][37][39][60]"
+
+[[entry]]
+id = "6.3.3-3"
+origin = "md:1281"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "EU/AU"
+date = "2007-03-09"
+date_text = "**2007-03-09**"
+serials = ["SLES-54622"]
+id_text = "**SLES-54622**, **SLES-54622/P** (Platinum), SLES-54622/P-ANZ"
+notes = "Redump label \"Europe, Australia\", En/Fr/De/Es/It."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-11", "6-34", "6-36", "6-37"]
+sources_text = "[11][34][36][37]"
+
+[[entry]]
+id = "6.3.3-4"
+origin = "md:1282"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "Retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "DE"
+date_text = "not documented (GameFAQs dates SLES-54623 2007-03-09 but labels it \"EU\" and lists SLES-54622 as \"UK\"; Redump identifies SLES-54623 as Germany, En/De); GameFAQs dates **SLES-54623/P** (Platinum) \"January 2008\" ⚠️"
+serials = ["SLES-54623"]
+id_text = "**SLES-54623**, **SLES-54623/P**"
+notes = "En/De."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (dates)"
+sources = ["6-11", "6-60"]
+sources_text = "[11][60]"
+
+[[entry]]
+id = "6.3.3-5"
+origin = "md:1283"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "Japan (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2007-12-06"
+date_text = "**2007-12-06** (ja.wikipedia release table; TCRF gives 2007-12-06 for Japan)"
+serials = ["SLPM-66917"]
+id_text = "**SLPM-66917** (original; GameFAQs JAN 4976219024037, 2007-12-06)"
+notes = "Capcom release."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-11", "6-37", "6-39", "6-60"]
+sources_text = "[11][37][39][60]"
+
+[[entry]]
+id = "6.3.3-6"
+origin = "md:1284"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "Japan \"Best Price\" (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2009-05-28"
+date_text = "**2009-05-28** (GameFAQs; same day as LCS PS2 Best Price!)"
+serials = ["SLPM-55135"]
+id_text = "**SLPM-55135** (JAN 4976219028646)"
+notes = "Budget reissue."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["6-11", "6-60"]
+sources_text = "[11][60]"
+
+[[entry]]
+id = "6.3.3-7"
+origin = "md:1285"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "PSN download (PSP format)"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "NA"
+date = "2009-10-22"
+date_text = "**2009-10-22** (GameFAQs) ⚠️"
+id_text = "**UP1004-ULUS10160_00-GTAVICECITYST000**"
+notes = "Delisted by 2017-07-24 (see below)."
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (date)"
+sources = ["6-12", "6-33", "6-60"]
+sources_text = "[12][33][60]"
+
+[[entry]]
+id = "6.3.3-8"
+origin = "md:1286"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "PSN download (PSP format)"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "EU / DE"
+date = "2009-10-13"
+date_text = "EU and AU **2009-10-13** (GameFAQs) ⚠️; DE not documented"
+id_text = "**EP1004-ULES00502_00-GPCGRANDTH000001** (EU), **EP1004-ULES00503_00-GPCGRANDTH000002** (DE)"
+confidence = "mixed"
+confidence_text = "✅ (dat) / ⚠️ (date)"
+sources = ["6-12", "6-60"]
+sources_text = "[12][60]"
+
+[[entry]]
+id = "6.3.3-9"
+origin = "md:1287"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "PSN download (Japan)"
+platforms = ["psp", "vita"]
+platform_text = "PSP/PS Vita"
+region = "JP"
+date = "2015-06-04"
+date_text = "**2015-06-04** (GameFAQs)"
+serials = ["NPJH-50827"]
+id_text = "**NPJH-50827** (publisher Rockstar Games per GameFAQs)"
+notes = "Not in the No-Intro PSN DAT. Same date as the LCS (NPJH-50825) and CTW (NPJH-00138) Japanese Store entries."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["6-60"]
+sources_text = "[60]"
+
+[[entry]]
+id = "6.3.3-10"
+origin = "md:1288"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "PS2 Classic on PS3"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "NA / EU"
+date_text = "**2013-04-02** (NA), **2013-04-03** (EU)"
+serials = ["NPUD-21590", "NPED-00065"]
+id_text = "**NPUD-21590** (US, SCEA) and **NPED-00065** (EU) per GameFAQs; No-Intro's PS3 PSN DAT lists VCS (USA) and (Europe) PS2 Classics PKGs (4,180,448,176 B CRC 83759D81 / 4,168,019,584 B CRC 50CC6CE0) under obfuscated file names, without IDs"
+notes = "$9.99 / €9.99 / £7.99. Grand Theft Wiki dates the PSN release \"3 April 2012\", which conflicts with the 2013 press coverage (and with GameFAQs, which gives 2013)."
+confidence = "mixed"
+confidence_text = "✅ (dates) / ⚠️ (IDs)"
+sources = ["6-22", "6-23", "6-34", "6-60", "6-61"]
+sources_text = "[22][23][34][60][61]"
+
+[[entry]]
+id = "6.3.3-11"
+origin = "md:1289"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "PSN delisting"
+platforms = ["ps3", "psp"]
+platform_text = "PS3 + PSP PSN"
+region = "WW"
+date = "2017-07-24"
+date_text = "by **2017-07-24**"
+id_text = "–"
+notes = "The PS3 PS2 Classic and the PSP PSN download were both removed; first noticed on GameFAQs on 2017-07-24. No reason was given (music licensing is suspected). LCS stayed on sale."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["6-34", "6-33"]
+sources_text = "[34][33]"
+
+[[entry]]
+id = "6.3.3-12"
+origin = "md:1290"
+section = "6.3.3"
+kind = "retail"
+games = ["vcs"]
+title = "PS4 version (ESRB rating only)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "NA"
+date_text = "rated 2017-09-29"
+id_text = "–"
+notes = "Same situation as LCS (§6.2.3): rated, listing later removed, not released as of Oct 2018; GameFAQs lists a US PlayStation Store (PS4) entry with release status **\"Canceled\"**; no PS4/PS5 product found in the US PlayStation Store on 2026-10-24."
+confidence = "mixed"
+confidence_text = "❓ (rating) / ⚠️ (cancelled)"
+sources = ["6-28", "6-33", "6-59", "6-60"]
+sources_text = "[28][33][59][60]"
+
+[sources]
+6-10 = { text = "Redump DAT \"Sony - PlayStation Portable\" (libretro-database mirror, DAT version 2026.10.07): https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%20Portable.dat (origin: http://redump.org/downloads/)", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%20Portable.dat", origin = "md:1400" }
+6-11 = { text = "Redump DAT \"Sony - PlayStation 2\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", origin = "md:1401" }
+6-12 = { text = "No-Intro DAT \"Sony - PlayStation Portable (PSN)\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%20Portable%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%20Portable%20(PSN", origin = "md:1402" }
+6-22 = { text = "PlayStation LifeStyle (2013-03-29) — VCS and LCS come to PS2 Classics on April 2nd/3rd: http://www.playstationlifestyle.net/2013/03/29/grand-theft-auto-vice-city-stories-and-liberty-city-stories-come-to-ps2-classics-on-april-2nd3rd/", url = "http://www.playstationlifestyle.net/2013/03/29/grand-theft-auto-vice-city-stories-and-liberty-city-stories-come-to-ps2-classics-on-april-2nd3rd/", origin = "md:1412" }
+6-23 = { text = "TheGTAPlace (2013-04-03) — Liberty City Stories & Vice City Stories Now Available On PSN: https://thegtaplace.com/gtavcs/", url = "https://thegtaplace.com/gtavcs/", origin = "md:1413" }
+6-28 = { text = "LevelUp (2017-09-29) — Listan GTA: Liberty City Stories y Vice City Stories para PS4 (ESRB): https://www.levelup.com/noticias/listan-gta-liberty-city-stories-y-vice-city-stories-para-ps4/", url = "https://www.levelup.com/noticias/listan-gta-liberty-city-stories-y-vice-city-stories-para-ps4/", origin = "md:1418" }
+6-32 = { text = "The Cutting Room Floor — Proto: Grand Theft Auto: Liberty City Stories: https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", url = "https://tcrf.net/Proto:Grand_Theft_Auto:_Liberty_City_Stories", origin = "md:1422" }
+6-33 = { text = "Delisted Games — Grand Theft Auto: Vice City Stories: https://delistedgames.com/grand-theft-auto-vice-city-stories/", url = "https://delistedgames.com/grand-theft-auto-vice-city-stories/", origin = "md:1423" }
+6-34 = { text = "Wikipedia — Grand Theft Auto: Vice City Stories: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories", origin = "md:1424" }
+6-35 = { text = "GTA Wiki (Fandom) — Grand Theft Auto: Vice City Stories: https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City_Stories", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City_Stories", origin = "md:1425" }
+6-36 = { text = "Grand Theft Wiki — Grand Theft Auto: Vice City Stories: https://www.grandtheftwiki.com/Grand_Theft_Auto:_Vice_City_Stories", url = "https://www.grandtheftwiki.com/Grand_Theft_Auto:_Vice_City_Stories", origin = "md:1426" }
+6-37 = { text = "The Cutting Room Floor — Grand Theft Auto: Vice City Stories: https://tcrf.net/Grand_Theft_Auto:_Vice_City_Stories", url = "https://tcrf.net/Grand_Theft_Auto:_Vice_City_Stories", origin = "md:1427" }
+6-38 = { text = "The Cutting Room Floor — Prerelease: Grand Theft Auto: Vice City Stories: https://tcrf.net/Prerelease:Grand_Theft_Auto:_Vice_City_Stories", url = "https://tcrf.net/Prerelease:Grand_Theft_Auto:_Vice_City_Stories", origin = "md:1428" }
+6-39 = { text = "Japanese Wikipedia — グランド・セフト・オート・バイスシティ・ストーリーズ: https://ja.wikipedia.org/wiki/グランド・セフト・オート・バイスシティ・ストーリーズ", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート・バイスシティ・ストーリーズ", origin = "md:1429" }
+6-54 = { text = "Hidden Palace — Grand Theft Auto: Vice City Stories prototype pages (Aug 8, Sep 1, Sep 24, Oct 4 2006): https://hiddenpalace.org/Grand_Theft_Auto:_Vice_City_Stories_(Sep_24,_2006_prototype) (and sibling pages)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_Vice_City_Stories_(Sep_24,_2006_prototype", origin = "md:1444" }
+6-59 = { text = "PlayStation Store (US) search results for \"liberty city stories\" and \"vice city stories\" (checked 2026-10-24): https://store.playstation.com/en-us/search/liberty%20city%20stories ; https://store.playstation.com/en-us/search/vice%20city%20stories", url = "https://store.playstation.com/en-us/search/liberty%20city%20stories", origin = "md:1449" }
+6-60 = { text = "GameFAQs release-data pages (user-contributed; read 2026-10-24): LCS https://gamefaqs.gamespot.com/psp/925776-grand-theft-auto-liberty-city-stories/data ; VCS https://gamefaqs.gamespot.com/psp/933097-grand-theft-auto-vice-city-stories/data ; CTW https://gamefaqs.gamespot.com/ds/950922-grand-theft-auto-chinatown-wars/data", url = "https://gamefaqs.gamespot.com/psp/925776-grand-theft-auto-liberty-city-stories/data", origin = "md:1450" }
+6-61 = { text = "No-Intro DAT \"Sony - PlayStation 3 (PSN)\" (libretro-database mirror, 2026-10): https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN", origin = "md:1451" }

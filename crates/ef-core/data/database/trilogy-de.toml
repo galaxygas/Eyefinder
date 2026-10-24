@@ -1,0 +1,1878 @@
+# Grand Theft Auto: The Trilogy – The Definitive Edition: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "10"
+origin = "md:2628"
+title = "10. Grand Theft Auto: The Trilogy – The Definitive Edition"
+games = ["trilogy-de"]
+text = '''
+_Remastered compilation of Grand Theft Auto III, Vice City and San Andreas. Developed by Grove Street Games (formerly War Drum Studios) on Unreal Engine 4, published by Rockstar Games. Each of the three games is a separately installed application with its own title ID and its own update stream on every platform; the "Trilogy" is a store bundle of the three. Mobile versions (Netflix Games, 2023) are attributed by Wikipedia (citing Eurogamer.pl, 2024-01-24) to Video Games Deluxe ⚠️ (single secondary source; Netflix's announcement credits only Rockstar Games) — see 10.5._
+
+Confidence key: ✅ confirmed by primary source or ≥2 independent sources · ⚠️ single community/secondary source · ❓ rumour/unverified.'''
+
+[[section]]
+id = "10.1"
+origin = "md:2634"
+title = "10.1 Pre-release, announcement and launch timeline"
+games = ["trilogy-de"]
+text = '''
+**Engine / basis.** Unreal Engine 4 replaced the originals' RenderWare engine; physics code carried over from the originals; >100,000 textures AI-upscaled then hand-adjusted (Wikipedia citing USA Today/TheGamer) ✅ [1]. The launch press release credits the games as "originally developed by Rockstar Games and adapted to modern platforms by Grove Street Games", lists "Unreal Engine", 4K/up to 60 FPS on PS5 and Xbox Series X, NVIDIA DLSS on PC, gyro aiming and touchscreen camera on Switch ✅ [5]. SteamDB lists technologies "Unreal Engine, Rockstar Launcher" ✅ [17].
+
+**Datamined/removed content.** Per Wikipedia, journalists reported (based on data miners) that removed content included radio songs, developer notes and the "Hot Coffee" minigame files ⚠️ [1]. SteamDB shows all three Steam app IDs were first created on 2021-02-05 (changelists #10666223/#10666229/#10666235), ~8 months before announcement ✅ [16, 17, 43].
+
+**Removal of originals and return.** Rockstar's 2021-10-08 announcement stated the existing versions "will be removed from digital storefronts next week" ✅ [3]; delisted 2021-10-13 [1]. On 2021-11-19 Rockstar said the original PC versions would return on the Rockstar Store as a bundle and be free to DE PC buyers (purchases through 2022-06-30) ✅ [7, 1]; delivered 2021-12-03 [1].'''
+
+[[section]]
+id = "10.2"
+origin = "md:2665"
+title = "10.2 Platforms, editions and title IDs"
+games = ["trilogy-de"]
+text = '''
+Each game is a separate application; stores also sell the three-game "Trilogy" bundle. Physical PS4/Xbox discs were scheduled for 2021-12-07 and slipped to 2021-12-17; Switch physical slipped to 2022-02-11. No PS5 or PC physical release appears in Rockstar's physical-date announcements (not documented).
+
+
+PC requirements (San Andreas – DE, Rockstar Support, updated 2024-05-02): Windows 10 64-bit; min i5-6600K/FX-6300, 8 GB, GTX 760 2 GB/R9 280; rec. i7-2700K/Ryzen 5 2600, 16 GB, GTX 970/RX 570; 45 GB; Rockstar Games account/launcher required ✅ [38].'''
+
+[[section]]
+id = "10.3"
+origin = "md:2709"
+title = "10.3 Console & PC title updates"
+games = ["trilogy-de"]
+text = "Rockstar names updates \"Title Update 1.0x\" across platforms. PlayStation package numbers (e.g. 1.003, 1.005) and Switch versions (e.g. 1.0.3/1.0.4) differ per platform and per game. The full PS4, PS5 and Switch package histories are now in **§10.3a** below. Xbox and Steam/Epic per-build numbers are still **not documented**."
+
+[[section]]
+id = "10.3a"
+origin = "md:2727"
+title = "10.3a Per-platform package / build versions (PS4, PS5, Switch)"
+games = ["trilogy-de"]
+text = '''
+- **PS4:** ORBISPatches **creation dates**, i.e. when the package was built, usually days before release.
+- **PS5:** ProsperoPatches **"Date Added"**, i.e. when the tracker first saw the package.
+- **Switch:** blawar/titledb `versions.json` dates, i.e. when each update version was first registered. titledb stores update versions as integers (multiples of 65536). Nintendo Life's reported TU 1.02 Switch versions match them: GTA III 1.0.3 = v196608 (3×65536) and VC 1.0.4 = v262144 (4×65536), both dated 2021-11-22. The "1.0.n = n×65536" reading of the other versions is **inferred from that pattern — not sourced** ❓, so the raw integers are given.
+- **Matching TU:** given only where a package date coincides with a Rockstar TU date from §10.3; otherwise "—".
+
+**PS5** (all nine PPSA IDs: III 03527/03528/03529, VC 03530/03531/03532, SA 03524/03525/03526) carry identical version numbers and dates [40]:
+
+
+**Conflict:** ProsperoPatches lists **no 01.004.000** for any of the nine PS5 IDs, but MP1st reported a San Andreas PS5 "1.004" on 2021-12-03 [13]. ⚠️
+
+**PS4** (all nine CUSA IDs; same version numbers, creation dates within a day or two of each other) [39]:
+
+
+Which public TU each PS4 package shipped as is not stated by ORBISPatches. The creation dates precede the TU dates in §10.3 (1.02 → 2021-11-19; 1.03 → 11-30; Dec-3 stability update; 1.04 → 2022-02-28; 1.04.5 → 2022-10-18; 1.112 → 2024-11-13), but matching them by order is **inferred — not sourced** ❓.
+
+**Nintendo Switch** update versions (titledb) [56]:
+
+
+Points to note:
+- The Switch TU 1.03 build, which Rockstar said was coming "in the coming days" after 2021-11-30, corresponds to the update registered **2021-12-02** for all three games (v327680).
+- GTA III and SA skip v262144 there.
+- The TU 1.04 Switch build (v393216) was registered 2022-02-24, matching reports that the Switch notes surfaced before the 2022-02-28 rollout.
+- tinfoil.io shows GTA III – DE at "Version v8" [57]. ✅
+
+**December 2024 update?** No December 2024 console/PC update was found; the restored-lighting/credit-change update is November 2024 (TU 1.112). December 2024 is when GTA III and Vice City left Netflix [1, 21].
+
+**Developer reaction.** Grove Street Games CEO Thomas Williamson: "Speaking entire hypothetically: It's a dick move to remove primary developers from credits in an update, especially when an update includes hundreds of fixes that were provided by those developers … that stayed out of players' hands for years" ✅ [32, 1].'''
+
+[[section]]
+id = "10.4"
+origin = "md:2780"
+title = "10.4 Rockstar Store originals bundle (related re-release)"
+games = ["trilogy-de", "gta3", "vc", "sa"]
+
+[[section]]
+id = "10.5"
+origin = "md:2786"
+title = "10.5 Mobile versions (iOS / Android)"
+games = ["trilogy-de"]
+text = '''
+Released via Netflix Games on 2023-12-14 (pre-registration from 2023-11-29), listed on the App Store, Google Play and inside the Netflix app, with no ads/IAP for members [19]. Wikipedia attributes the ports to Video Games Deluxe ⚠️ [1] and quotes the Nov 2023 announcement as "available for Netflix subscribers and individual purchase" ⚠️ [1]. Download figures (Wikipedia): >18 M by Jan 2024; >30 M by Jun 2024; SA reached 57.4 M by Nov 2025 ⚠️ [1]. GTA III and VC were removed from Netflix after 2024-12-13 ("games will be removed from Netflix as licenses expire") ✅ [21]; San Andreas removed Dec 2025 ⚠️ [1]. Netflix-era Android version numbers are now documented from APKMirror's upload history [58]; dates are APKMirror upload dates. iOS Netflix-era version numbers are still not documented.
+
+Rockstar Support nevertheless lists 2025 mobile title updates for all three DE games (after III/VC left Netflix); the pages do not say through which storefront these builds ship ⚠️.
+
+
+**Standalone (non-Netflix) Rockstar Google Play apps.** Google Play also has three separate Rockstar Games listings with the package suffix **`.de`**. The store names show it stands for "**Definitive**", not German: "GTA III - Definitive", "GTA: Vice City - Definitive" and "GTA: San Andreas - Definitive". The III and VC descriptions offer a **30-minute free trial**, then a one-time in-app purchase of the full game ($19.99 per item, US store), or unlimited access for **GTA+** members while the game is in GTA+. Read on the US store, 2026-10-24 [62]:
+
+
+Notes on this table:
+- The "Released on" date of **2023-12-08** is Google Play's own field. It is six days earlier than the 2023-12-14 Netflix launch and may be the date the listing was created; Play does not say when the paid/trial model began.
+- The Play versions of III (1.84.3) and SA (1.87.0) are the same numbers as Rockstar Support's 2025 Android title updates in the table above. That suggests, but does not state, that those 2025 builds ship through these standalone apps. Rockstar's Play "Updated on" dates (2025-11-05 / 2025-11-04) are one week **earlier** than Rockstar Support's 2025-11-12 entries, so both dates are kept ⚠️.
+- For Vice City, Play shows **1.90.0** (updated 2025-09-04), while the latest Rockstar Support VC Android entry is v1.84.5 (2025-08-28). This is a numbering conflict ⚠️.
+- The brief's "(German)" label for these packages is **wrong**: the store names show `.de` means Definitive.
+- No other San Andreas DE standalone package was found; the guessed variants returned 404, and `com.rockstargames.gtasa.de` is the SA equivalent.
+
+Note: the separate classic **San Andreas mobile** port (War Drum Studios, 2013; Android v1.03 → v2.11.311, iOS v1.01 → v2.2.21) is a different product with its own Rockstar Support page and is out of scope here [37]. Rockstar Support (updated 2026-08-18) states Rockstar titles on iOS require iOS 17+ for further updates/support (titles not enumerated) ⚠️ [53].'''
+
+[[section]]
+id = "10.6"
+origin = "md:2825"
+title = "10.6 Gaps / not documented"
+games = ["trilogy-de"]
+text = '''
+- **Resolved in 2nd pass (2026-10-24):**
+  - Full PS4, PS5 and Switch package/version histories (§10.3a).
+  - Switch title IDs and NSUIDs; Switch NA cartridge code HAC-P-A5RBA (⚠️ single catalogue).
+  - Microsoft Store product IDs.
+  - Android package names and Netflix-era Android versions; SA iOS App Store ID.
+  - Confirmation that no console/PC update after 1.112 exists in the trackers.
+- Still not documented:
+  - Xbox per-build version numbers; Steam/Epic build history beyond the Deck-test builds (SteamDB not usable: bot challenge).
+  - Whether the Switch cartridge holds all three games; EU Switch cartridge code; PS4 disc serials (CUSA disc variants); Xbox disc product codes.
+  - Asian-region PS4/PS5 title IDs.
+  - iOS App Store IDs for III and VC; iOS Netflix-era version numbers. Storefront for the 2025 Android builds: *partly resolved*, since the standalone Rockstar Google Play apps `com.rockstargames.gta3.de` / `gtavc.de` / `gtasa.de` carry matching version numbers (§10.5), but the iOS standalone equivalents are not documented.
+  - Japanese disc/cartridge codes. (Resolved: JP digital release 2021-11-11 with CERO Z; JP PS4/Switch package edition 2022-01-27.)
+- **Open conflict:** PS5 "1.004" (MP1st, 2021-12-03) vs ProsperoPatches (no 01.004.000).'''
+
+[[entry]]
+id = "10.1-1"
+origin = "md:2638"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Kotaku reports remastered trilogy in development (initially attributed to Rockstar Dundee)"
+date = "2021-08-12"
+date_text = "2021-08-12"
+confidence = "confirmed"
+confidence_text = "✅ (report)"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.1-2"
+origin = "md:2639"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "South Korea's Game Rating and Administration Committee rates \"Grand Theft Auto: The Trilogy – The Definitive Edition\" (spotted by Nibel)"
+date = "2021-09-30"
+date_text = "2021-09-30 (reported)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1", "10-4"]
+sources_text = "1, 4"
+
+[[entry]]
+id = "10.1-3"
+origin = "md:2640"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Rockstar Games Launcher update found to contain logos, artwork and achievements for the trilogy (datamined)"
+date = "2021-10-06"
+date_text = "2021-10-06 (reported)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.1-4"
+origin = "md:2641"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Official announcement by Rockstar (20th-anniversary month of GTA III): PS5, Xbox Series, PS4, Xbox One, Switch, PC (Rockstar Games Launcher) in 2021; iOS/Android announced for first half of 2022 (actually released 2023-12-14)"
+date = "2021-10-08"
+date_text = "2021-10-08"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1", "10-3"]
+sources_text = "1, 3"
+
+[[entry]]
+id = "10.1-5"
+origin = "md:2642"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Original (pre-DE) versions of GTA III, Vice City, San Andreas delisted from digital console and PC stores (GTA Wiki gives 2021-10-11 — dates conflict)"
+date = "2021-10-13"
+date_text = "2021-10-13"
+confidence = "mixed"
+confidence_text = "✅ (event) / ⚠️ (exact day)"
+sources = ["10-1", "10-46"]
+sources_text = "1, 46"
+
+[[entry]]
+id = "10.1-6"
+origin = "md:2643"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Pre-orders open; first full trailer and screenshots"
+date = "2021-10-22"
+date_text = "2021-10-22"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.1-7"
+origin = "md:2644"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Digital release on PS4, PS5, Xbox One, Xbox Series X\\|S, Nintendo Switch, Windows (Rockstar Games Launcher). PlayStation Store error unlocked it early in Australia/New Zealand"
+date = "2021-11-11"
+date_text = "2021-11-11"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.1-8"
+origin = "md:2645"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Rockstar Games Launcher offline ~28 h; Windows version unplayable/withdrawn until 14 Nov. GTA Wiki attributes the PC pull (12–15 Nov) to files found for the \"Hot Coffee\" minigame and ~20 songs previously removed for licensing reasons"
+date_text = "2021-11-11 → 2021-11-14"
+confidence = "mixed"
+confidence_text = "✅ (outage) / ⚠️ (reason)"
+sources = ["10-1", "10-46"]
+sources_text = "1, 46"
+
+[[entry]]
+id = "10.1-9"
+origin = "md:2646"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Rockstar statement/apology; announces originals will return as a bundle on the Rockstar Store"
+date = "2021-11-19"
+date_text = "2021-11-19"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.1-10"
+origin = "md:2647"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Rockstar announces physical delay: PS4/Xbox One/Xbox Series X moved 7 Dec → 17 Dec 2021; Switch physical moved to \"early 2022\" (later 11 Feb 2022)"
+date = "2021-11-30"
+date_text = "2021-11-30"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-6", "10-1"]
+sources_text = "6, 1"
+
+[[entry]]
+id = "10.1-11"
+origin = "md:2648"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Original PC versions delivered free to DE owners on Rockstar Launcher (offer for purchases until 2022-06-30)"
+date = "2021-12-03"
+date_text = "2021-12-03"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.1-12"
+origin = "md:2649"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Rockstar Games Launcher update found containing Epic IDs tagged `gta3unreal`, `gtavcunreal`, `gtasaunreal` and Steam IDs for the three games (datamined)"
+date = "2022-12-06"
+date_text = "2022-12-06 (reported)"
+confidence = "single-source"
+confidence_text = "⚠️ (single outlet)"
+sources = ["10-15"]
+sources_text = "15"
+
+[[entry]]
+id = "10.1-13"
+origin = "md:2650"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Steam release (3 separate apps, Rockstar Launcher still required; Steam Deck \"Playable\")"
+date = "2023-01-19"
+date_text = "2023-01-19"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-16", "10-17", "10-18", "10-1"]
+sources_text = "16, 17, 18, 1"
+
+[[entry]]
+id = "10.1-14"
+origin = "md:2651"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Epic Games Store release (year inferred by Wikipedia from context)"
+date = "2023-02-15"
+date_text = "2023-02-15"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.1-15"
+origin = "md:2652"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Netflix announces mobile versions; pre-registration opens"
+date = "2023-11-29"
+date_text = "2023-11-29"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-19"]
+sources_text = "19"
+
+[[entry]]
+id = "10.1-16"
+origin = "md:2653"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "iOS/Android release via Netflix Games (App Store, Google Play, Netflix app)"
+date = "2023-12-14"
+date_text = "2023-12-14"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-19", "10-1"]
+sources_text = "19, 1"
+
+[[entry]]
+id = "10.1-17"
+origin = "md:2654"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Title Update 1.112 (Classic Lighting etc.); Grove Street Games removed from intro/main menu"
+date_text = "2024-11-12/13"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-2", "10-20", "10-1"]
+sources_text = "2, 20, 1"
+
+[[entry]]
+id = "10.1-18"
+origin = "md:2655"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "Last day for GTA III and Vice City DE on Netflix (licence expiry)"
+date = "2024-12-13"
+date_text = "2024-12-13"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-21", "10-1"]
+sources_text = "21, 1"
+
+[[entry]]
+id = "10.1-19"
+origin = "md:2656"
+section = "10.1"
+kind = "milestone"
+games = ["trilogy-de"]
+title = "San Andreas DE removed from Netflix"
+date = "2025-12"
+date_text = "2025-12"
+confidence = "single-source"
+confidence_text = "⚠️ (Wikipedia citing mobile sales tracker)"
+sources = ["10-1"]
+sources_text = "1"
+
+[[entry]]
+id = "10.2-1"
+origin = "md:2671"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III – DE (digital)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "US (SIEA)"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["CUSA23501"]
+id_text = "CUSA23501 · UP1004-CUSA23501_00-GTATHREE00000001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-39", "10-1"]
+sources_text = "39, 1"
+
+[[entry]]
+id = "10.2-2"
+origin = "md:2672"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III – DE (digital)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "EU (SIEE)"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["CUSA26613"]
+id_text = "CUSA26613 · EP1004-CUSA26613_00-GTATHREE00000001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-39", "10-1"]
+sources_text = "39, 1"
+
+[[entry]]
+id = "10.2-3"
+origin = "md:2673"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III – DE (digital)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "JP (Take-Two Interactive Japan GK)"
+date = "2021-11-11"
+date_text = "2021-11-11 (JP digital, gamebiz)"
+serials = ["CUSA26614"]
+id_text = "CUSA26614 · JP0230-CUSA26614_00-GTATHREE00000001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅ (ID, date)"
+sources = ["10-39", "10-60"]
+sources_text = "39, 60"
+
+[[entry]]
+id = "10.2-4"
+origin = "md:2674"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: Vice City – DE"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "US"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["CUSA26615"]
+id_text = "CUSA26615 · UP1004-CUSA26615_00-GTAVICECITY00001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-39", "10-1"]
+sources_text = "39, 1"
+
+[[entry]]
+id = "10.2-5"
+origin = "md:2675"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: Vice City – DE"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "EU"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["CUSA26616"]
+id_text = "CUSA26616 · EP1004-CUSA26616_00-GTAVICECITY00001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-39", "10-1"]
+sources_text = "39, 1"
+
+[[entry]]
+id = "10.2-6"
+origin = "md:2676"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: Vice City – DE"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "JP"
+date = "2021-11-11"
+date_text = "2021-11-11 (JP digital, gamebiz)"
+serials = ["CUSA26617"]
+id_text = "CUSA26617 · JP0230-CUSA26617_00-GTAVICECITY00001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅ (ID, date)"
+sources = ["10-39", "10-60"]
+sources_text = "39, 60"
+
+[[entry]]
+id = "10.2-7"
+origin = "md:2677"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: San Andreas – DE"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "US"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["CUSA26618"]
+id_text = "CUSA26618 · UP1004-CUSA26618_00-GTASANANDREAS001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-39", "10-1"]
+sources_text = "39, 1"
+
+[[entry]]
+id = "10.2-8"
+origin = "md:2678"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: San Andreas – DE"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "EU"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["CUSA26619"]
+id_text = "CUSA26619 · EP1004-CUSA26619_00-GTASANANDREAS001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-39", "10-1"]
+sources_text = "39, 1"
+
+[[entry]]
+id = "10.2-9"
+origin = "md:2679"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: San Andreas – DE"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "JP"
+date = "2021-11-11"
+date_text = "2021-11-11 (JP digital, gamebiz)"
+serials = ["CUSA26620"]
+id_text = "CUSA26620 · JP0230-CUSA26620_00-GTASANANDREAS001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅ (ID, date)"
+sources = ["10-39", "10-60"]
+sources_text = "39, 60"
+
+[[entry]]
+id = "10.2-10"
+origin = "md:2680"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "US"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["PPSA03527"]
+id_text = "PPSA03527 · UP1004-PPSA03527_00-GTATHREE00000001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-40", "10-1"]
+sources_text = "40, 1"
+
+[[entry]]
+id = "10.2-11"
+origin = "md:2681"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "EU"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["PPSA03528"]
+id_text = "PPSA03528 · EP1004-PPSA03528_00-GTATHREE00000001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-40", "10-1"]
+sources_text = "40, 1"
+
+[[entry]]
+id = "10.2-12"
+origin = "md:2682"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "JP"
+date = "2021-11-11"
+date_text = "2021-11-11 (JP digital, gamebiz)"
+serials = ["PPSA03529"]
+id_text = "PPSA03529 · JP0230-PPSA03529_00-GTATHREE00000001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅ (ID, date)"
+sources = ["10-40", "10-60"]
+sources_text = "40, 60"
+
+[[entry]]
+id = "10.2-13"
+origin = "md:2683"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: Vice City – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "US"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["PPSA03530"]
+id_text = "PPSA03530 · UP1004-PPSA03530_00-GTAVICECITY00001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-40", "10-1"]
+sources_text = "40, 1"
+
+[[entry]]
+id = "10.2-14"
+origin = "md:2684"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: Vice City – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "EU"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["PPSA03531"]
+id_text = "PPSA03531 · EP1004-PPSA03531_00-GTAVICECITY00001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-40", "10-1"]
+sources_text = "40, 1"
+
+[[entry]]
+id = "10.2-15"
+origin = "md:2685"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: Vice City – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "JP"
+date = "2021-11-11"
+date_text = "2021-11-11 (JP digital, gamebiz)"
+serials = ["PPSA03532"]
+id_text = "PPSA03532 · JP0230-PPSA03532_00-GTAVICECITY00001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅ (ID, date)"
+sources = ["10-40", "10-60"]
+sources_text = "40, 60"
+
+[[entry]]
+id = "10.2-16"
+origin = "md:2686"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: San Andreas – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "US"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["PPSA03524"]
+id_text = "PPSA03524 · UP1004-PPSA03524_00-GTASANANDREAS001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-40", "10-1"]
+sources_text = "40, 1"
+
+[[entry]]
+id = "10.2-17"
+origin = "md:2687"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: San Andreas – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "EU"
+date = "2021-11-11"
+date_text = "2021-11-11"
+serials = ["PPSA03525"]
+id_text = "PPSA03525 · EP1004-PPSA03525_00-GTASANANDREAS001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-40", "10-1"]
+sources_text = "40, 1"
+
+[[entry]]
+id = "10.2-18"
+origin = "md:2688"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: San Andreas – DE"
+platforms = ["ps5"]
+platform_text = "PS5"
+region = "JP"
+date = "2021-11-11"
+date_text = "2021-11-11 (JP digital, gamebiz)"
+serials = ["PPSA03526"]
+id_text = "PPSA03526 · JP0230-PPSA03526_00-GTASANANDREAS001"
+notes = "Launch"
+confidence = "confirmed"
+confidence_text = "✅ (ID, date)"
+sources = ["10-40", "10-60"]
+sources_text = "40, 60"
+
+[[entry]]
+id = "10.2-19"
+origin = "md:2689"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Trilogy bundle \"(PS5 & PS4)\""
+platforms = ["ps4", "ps5"]
+platform_text = "PS4/PS5 store product"
+region = "US"
+date = "2021-11-11"
+date_text = "2021-11-11"
+id_text = "UP1004-PPSA05804_00-GTATRILOGYBUNDLE (concept 10003543)"
+notes = "Bundle of the 3 games, cross-gen entitlement"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-41"]
+sources_text = "41"
+
+[[entry]]
+id = "10.2-20"
+origin = "md:2690"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Trilogy bundle \"(PS5 & PS4)\""
+platforms = ["ps4", "ps5"]
+platform_text = "PS4/PS5 store product"
+region = "EU"
+date = "2021-11-11"
+date_text = "2021-11-11"
+id_text = "EP1004-PPSA05805_00-GTATRILOGYBUNDLE"
+notes = "Bundle"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-41"]
+sources_text = "41"
+
+[[entry]]
+id = "10.2-21"
+origin = "md:2691"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Japan release (digital)"
+platforms = ["ps5", "ps4", "switch", "xsx", "xone", "pc"]
+platform_text = "PS5, PS4, Switch, XSX\\|S, XB1, Rockstar Games Launcher"
+region = "JP"
+date = "2021-11-11"
+date_text = "2021-11-11"
+id_text = "—"
+notes = "¥7,700 incl. tax per download version; **CERO Z** (18+); publisher Rockstar Games (ロックスター・ゲームス)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-60"]
+sources_text = "60"
+
+[[entry]]
+id = "10.2-22"
+origin = "md:2692"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Japan release (physical)"
+platforms = ["ps4", "switch"]
+platform_text = "PS4, Switch"
+region = "JP"
+date = "2022-01-27"
+date_text = "2022-01-27 (originally planned 2021-12-07)"
+id_text = "disc/cartridge codes not documented"
+notes = "Package edition"
+confidence = "single-source"
+confidence_text = "⚠️ (single outlet)"
+sources = ["10-61"]
+sources_text = "61"
+
+[[entry]]
+id = "10.2-23"
+origin = "md:2693"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Asian (HK) store variant"
+platforms = ["ps4", "ps5"]
+platform_text = "PS4/PS5"
+region = "Asia"
+date_text = "not documented"
+id_text = "concept 10003550 (GTA III; \"Simplified Chinese, English, Korean, Traditional Chinese\"); title IDs not found"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["10-41"]
+sources_text = "41"
+
+[[entry]]
+id = "10.2-24"
+origin = "md:2694"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Physical (disc)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "NA/EU"
+date = "2021-12-17"
+date_text = "2021-12-17 (delayed from 2021-12-07)"
+id_text = "disc serial not documented"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅ (date)"
+sources = ["10-6", "10-47", "10-48", "10-5"]
+sources_text = "6, 47, 48, 5"
+
+[[entry]]
+id = "10.2-25"
+origin = "md:2695"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Physical (disc)"
+platforms = ["xone", "xsx"]
+platform_text = "Xbox One / Xbox Series X\\|S (single box \"Xbox Series X and Xbox One\")"
+region = "NA/EU"
+date = "2021-12-17"
+date_text = "2021-12-17 (delayed from 2021-12-07)"
+id_text = "Best Buy Canada model/UPC 710425598371"
+notes = "—"
+confidence = "mixed"
+confidence_text = "✅ (date) / ⚠️ (UPC)"
+sources = ["10-6", "10-5", "10-44"]
+sources_text = "6, 5, 44"
+
+[[entry]]
+id = "10.2-26"
+origin = "md:2696"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Physical (cartridge)"
+platforms = ["switch"]
+platform_text = "Nintendo Switch"
+region = "NA/EU"
+date = "2022-02-11"
+date_text = "2022-02-11 (delayed from 2021-12-07, then \"early 2022\")"
+id_text = "NA product code **HAC-P-A5RBA** (VGCollect: \"HAC P A5RBA USA\", UPC 045496597535, back code 115099A). A second NA VGCollect entry has the same code, UPC **710425653513**, back code 65351-3 and a listed date of 2025-07-28, apparently a later print run. That entry's description also says the box lists \"Grand Theft Auto II\", probably a cataloguing typo. Whether the cartridge holds all three games or needs a download is **not documented**."
+notes = "—"
+confidence = "mixed"
+confidence_text = "✅ (date) / ⚠️ (codes; single community catalogue)"
+sources = ["10-9", "10-6", "10-1", "10-54"]
+sources_text = "9, 6, 1, 54"
+
+[[entry]]
+id = "10.2-27"
+origin = "md:2697"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Digital"
+platforms = ["xone", "xsx"]
+platform_text = "Xbox One / Xbox Series X\\|S (Microsoft Store)"
+region = "WW"
+date = "2021-11-11"
+date_text = "2021-11-11"
+id_text = "Microsoft Store product IDs: Trilogy bundle **9MXMJFNZMVWD** (store release date 11/11/2021); GTA III – DE **9NF3HCF7MWB4**; Vice City – DE **9PC16M34CB91**; San Andreas – DE **9P7RSGG6Z699**"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-5", "10-1", "10-55"]
+sources_text = "5, 1, 55"
+
+[[entry]]
+id = "10.2-28"
+origin = "md:2698"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Digital"
+platforms = ["switch"]
+platform_text = "Nintendo Switch (eShop)"
+region = "WW"
+date = "2021-11-11"
+date_text = "2021-11-11 (US$59.99 / £49.99)"
+serials = ["0100C3C012718000", "0100182014022000", "010065A014024000"]
+id_text = "Title IDs: GTA III – DE **0100C3C012718000** (NSUID 70010000032443); Vice City – DE **0100182014022000** (NSUID 70010000037677); San Andreas – DE **010065A014024000** (NSUID 70010000037679). Trilogy bundle NSUID **70070000013113**, which matches the number in the Nintendo.com US listing image paths. titledb lists release date 2021-11-11 for all four."
+notes = "Each game is a separate eShop application, as on PS/Xbox"
+confidence = "confirmed"
+confidence_text = "✅ (eShop-derived dataset + Nintendo.com path match; tinfoil.io page confirms GTA III's ID)"
+sources = ["10-9", "10-49", "10-56", "10-57"]
+sources_text = "9, 49, 56, 57"
+
+[[entry]]
+id = "10.2-29"
+origin = "md:2699"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Digital code (retail)"
+platforms = ["switch"]
+platform_text = "Nintendo Switch"
+region = "CA"
+date_text = "not documented"
+id_text = "Best Buy Canada model 045496666750 (download code)"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["10-45"]
+sources_text = "45"
+
+[[entry]]
+id = "10.2-30"
+origin = "md:2700"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Digital"
+platforms = ["pc"]
+platform_text = "Windows – Rockstar Games Launcher"
+region = "WW"
+date = "2021-11-11"
+date_text = "2021-11-11 (offline/pulled 2021-11-11/12 → 2021-11-14)"
+id_text = "—"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-1", "10-5"]
+sources_text = "1, 5"
+
+[[entry]]
+id = "10.2-31"
+origin = "md:2701"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III – DE"
+platforms = ["pc"]
+platform_text = "Windows – Steam"
+region = "WW"
+date_text = "2023-01-19 18:05 UTC"
+id_text = "Steam app 1546970 (first seen 2021-02-05, changelist 10666223; Deck-tested build 9982740)"
+notes = "Rockstar Launcher still required; Steam Deck \"Playable\""
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-17", "10-42", "10-18"]
+sources_text = "17, 42, 18"
+
+[[entry]]
+id = "10.2-32"
+origin = "md:2702"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: Vice City – DE"
+platforms = ["pc"]
+platform_text = "Windows – Steam"
+region = "WW"
+date_text = "2023-01-19 18:06 UTC"
+id_text = "Steam app 1546990 (first seen 2021-02-05, changelist 10666229; tested build 9982774; recommended runtime proton-7.0-6)"
+notes = "as above"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-43", "10-42"]
+sources_text = "43, 42"
+
+[[entry]]
+id = "10.2-33"
+origin = "md:2703"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA: San Andreas – DE"
+platforms = ["pc"]
+platform_text = "Windows – Steam"
+region = "WW"
+date = "2023-01-19"
+date_text = "2023-01-19"
+id_text = "Steam app 1547000 (first seen 2021-02-05, changelist 10666235; tested build 9982854, 2023-01-18)"
+notes = "as above"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-16", "10-42"]
+sources_text = "16, 42"
+
+[[entry]]
+id = "10.2-34"
+origin = "md:2704"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "Trilogy"
+platforms = ["pc"]
+platform_text = "Windows – Epic Games Store"
+region = "WW"
+date = "2023-02-15"
+date_text = "2023-02-15 (Wikipedia; year inferred)"
+id_text = "Launcher strings `gta3unreal` / `gtavcunreal` / `gtasaunreal` (Epic IDs per datamine)"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["10-1", "10-15"]
+sources_text = "1, 15"
+
+[[entry]]
+id = "10.2-35"
+origin = "md:2705"
+section = "10.2"
+kind = "retail"
+games = ["trilogy-de"]
+title = "GTA III / VC / SA – DE"
+platforms = ["ios", "android"]
+platform_text = "iOS, Android (Netflix Games)"
+region = "WW"
+date = "2023-12-14"
+date_text = "2023-12-14"
+id_text = "Android packages: **com.netflix.NGP.GTAIIIDefinitiveEdition**, **com.netflix.NGP.GTAViceCityDefinitiveEdition**, **com.netflix.NGP.GTASanAndreasDefinitiveEdition** (store names \"GTA III – NETFLIX\", \"GTA: Vice City – NETFLIX\", \"GTA: San Andreas – NETFLIX\"; min. Android 11/API 30). iOS: San Andreas App Store ID **6450280702** (Apple's apple.co short link redirects to apps.apple.com/us/app/gta-san-andreas-netflix/id6450280702; the page now returns \"can't be found\"). The iOS IDs for III and VC are not documented."
+notes = "Netflix-subscriber release (no ads/IAP)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-19", "10-1", "10-58", "10-59"]
+sources_text = "19, 1, 58, 59"
+
+[[entry]]
+id = "10.3-1"
+origin = "md:2715"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "1.00 (launch)"
+platform_text = "All 6 launch platforms"
+region = "WW"
+date = "2021-11-11"
+date_text = "2021-11-11"
+id_text = "launch build numbers not documented"
+notes = "Initial release"
+confidence = "confirmed"
+confidence_text = "✅ (date)"
+sources = ["10-1", "10-5"]
+sources_text = "1, 5"
+
+[[entry]]
+id = "10.3-2"
+origin = "md:2716"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Title Update 1.02"
+platforms = ["ps5", "ps4", "xsx", "xone", "switch"]
+platform_text = "PS5, PS4, Xbox Series X\\|S, Xbox One, Switch (PC not listed in notes; PC version was offline at the time)"
+region = "WW"
+date = "2021-11-19"
+date_text = "2021-11-19 (notes published; VGC reports \"out now\" 2021-11-20)"
+id_text = "PS build not documented"
+notes = "First patch: localisation/subtitle fixes, collision/map holes, textures, cutscene models, audio; per-game mission fixes (e.g. GTA III early Staunton access hole, VC TV→table-mode crash, SA rain, Flint County bridge, grey peds); Xbox crash/achievement fixes; Switch language-setting persistence"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-8", "10-7", "10-9"]
+sources_text = "8, 7, 9"
+
+[[entry]]
+id = "10.3-3"
+origin = "md:2717"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "TU 1.02 (Switch builds)"
+platforms = ["switch"]
+platform_text = "Switch"
+region = "WW"
+date_text = "as of 2021-11-23"
+id_text = "GTA III **1.0.3**, Vice City **1.0.4**, San Andreas **1.0.3**"
+notes = "Switch versions of TU 1.02 content"
+confidence = "single-source"
+confidence_text = "⚠️ (single outlet)"
+sources = ["10-9"]
+sources_text = "9"
+
+[[entry]]
+id = "10.3-4"
+origin = "md:2718"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Title Update 1.03"
+platforms = ["ps5", "ps4", "xsx", "xone", "pc"]
+platform_text = "PS5, PS4, Xbox Series X\\|S, Xbox One, PC (Switch \"in the coming days\"; Switch update v327680 registered 2021-12-02 per titledb, §10.3a)"
+region = "WW"
+date = "2021-11-30"
+date_text = "2021-11-30"
+id_text = "PS5 **1.003** (ProsperoPatches: 01.003.000 first seen 2021-11-30 on all nine PPSA IDs)"
+notes = "New cinematic camera mode; SA high-altitude cloud cover; Max Fat/Max Muscle walk/run anims; VC vehicle ad banners; rain-indoors fixes; crashes; Xbox One freeze fix; PC ultrawide/controller/menu/settings-save fixes. Sizes reported: GTA III 448 MB, VC \"875\" (unit missing)"
+confidence = "confirmed"
+confidence_text = "✅ (notes, PS5 build)"
+sources = ["10-10", "10-11", "10-12", "10-51", "10-50", "10-40", "10-56"]
+sources_text = "10, 11, 12, 51, 50, 40, 56"
+
+[[entry]]
+id = "10.3-5"
+origin = "md:2719"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Update (mp1st: \"1.04\")"
+platforms = ["ps4", "xone", "ps5", "switch"]
+platform_text = "PS4, Xbox One (stability notes); PS5; Switch"
+region = "WW"
+date = "2021-12-03"
+date_text = "2021-12-03"
+id_text = "PS5 **1.004** (San Andreas) per MP1st. **Conflicts** with ProsperoPatches, which lists no 01.004.000 for any PS5 ID (01.003.000 → 01.005.000). Switch: v327680 registered 2021-12-02 (titledb)."
+notes = "Rockstar stability note (PS4/XB1, dated 2021-12-03): \"Performance improvements to address a gameplay delay experienced by some players while driving\"; menu SFX changes; Switch menu gains Fog ON/OFF setting (Wikipedia/Eurogamer report SA fog option on 2021-11-30)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["10-13", "10-1"]
+sources_text = "13, 1"
+
+[[entry]]
+id = "10.3-6"
+origin = "md:2720"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Title Update 1.04"
+platforms = ["ps5", "ps4", "xsx", "xone", "switch", "pc"]
+platform_text = "PS5, PS4, Xbox Series X\\|S, Xbox One, Switch, PC"
+region = "WW"
+date = "2022-02-28"
+date_text = "2022-02-28 (announced 2022-02-24 as \"next week\"; Switch notes surfaced first)"
+id_text = "PS5 **1.005** (GTA III, SA, Trilogy reports; ProsperoPatches 01.005.000 first seen 2022-02-28 on all nine PPSA IDs); Switch v393216 (registered 2022-02-24)"
+notes = "\"100+\" fixes: performance across all graphics modes, stability, checkpoint retry fixes, collision/texture/signage; GTA III partial sprint with Tap to Sprint; SA haircut/first-person vehicle camera, save-load bugs, Big Head cheat persistence; VC traffic lights/achievements; PC Dodo controls & Social Club overlay; Xbox One offline achievement popup. PC cumulative patch sizes ≈19 GB SA / 9 GB VC / 4 GB III"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-14", "10-22", "10-23", "10-24", "10-25", "10-26", "10-52", "10-1"]
+sources_text = "14, 22, 23, 24, 25, 26, 52, 1"
+
+[[entry]]
+id = "10.3-7"
+origin = "md:2721"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Title Update 1.04.5"
+platforms = ["ps5", "ps4", "xsx", "xone", "switch", "pc"]
+platform_text = "PS5, PS4, Xbox Series X\\|S, Xbox One, Switch, PC"
+region = "WW"
+date = "2022-10-18"
+date_text = "2022-10-18"
+id_text = "PS5 **1.006** (GTA III, SA; ProsperoPatches 01.006.000 first seen 2022-10-18 on all nine PPSA IDs); Switch v458752 (2022-10-18); PS4 probably 01.06 (created 2022-09-01/02; matched by order — not sourced ❓)"
+notes = "\"Stability improvements across all three titles on all platforms.\" PC download sizes: SA 18.53 GB, VC 8.96 GB, III 4.23 GB"
+confidence = "mixed"
+confidence_text = "✅ (Rockstar notes via 2 outlets; PS5 build via MP1st + ProsperoPatches) / ⚠️ (sizes)"
+sources = ["10-27", "10-28", "10-29", "10-30", "10-40", "10-56"]
+sources_text = "27, 28, 29, 30, 40, 56"
+
+[[entry]]
+id = "10.3-8"
+origin = "md:2722"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Steam / Epic launch build"
+platforms = ["pc"]
+platform_text = "Windows (Steam, Epic)"
+region = "WW"
+date_text = "2023-01-19 / 2023-02-15"
+id_text = "Steam builds 9982740 (III), 9982774 (VC), 9982854 (SA)"
+notes = "Same game as Launcher version; no new patch at Steam launch"
+confidence = "mixed"
+confidence_text = "✅ (Steam) / ⚠️ (Epic)"
+sources = ["10-16", "10-17", "10-43", "10-18"]
+sources_text = "16, 17, 43, 18"
+
+[[entry]]
+id = "10.3-9"
+origin = "md:2723"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Title Update **1.112** (GTABase titles it \"1.12\")"
+platforms = ["ps5", "xsx", "pc"]
+platform_text = "PS5, Xbox Series X\\|S, PC"
+region = "WW"
+date = "2024-11-12"
+date_text = "2024-11-12"
+id_text = "PS5 **01.007.000** (ProsperoPatches, first seen 2024-11-12, all nine PPSA IDs); Xbox/PC build numbers not documented"
+notes = "\"Numerous fixes and improvements\"; **Classic Lighting** mode recreating the originals' sky (ported from the mobile version per Wikipedia)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-2", "10-31", "10-33", "10-1"]
+sources_text = "2, 31, 33, 1"
+
+[[entry]]
+id = "10.3-10"
+origin = "md:2724"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Title Update 1.112"
+platform_text = "All platforms, all titles (incl. PS4, Xbox One, Switch)"
+region = "WW"
+date = "2024-11-13"
+date_text = "2024-11-13"
+id_text = "PS4 **01.07** (package created 2024-10-02; the only PS4 package after 2022, so the match is by elimination); Switch **v524288** (registered 2024-11-16); Xbox not documented"
+notes = "Same as above. Community-documented (not in notes): run-and-gun with shotguns/rifles/flamethrowers in III & VC; volumetric fog; flying through clouds & all SA weather visible; corrected skeleton posture; parallax interiors removed; pause during cutscenes; open-water exploits to locked islands fixed; SA soda-drinking anim fix; **Grove Street Games logo/mentions removed from intro splash & main menu** (intro credits Rockstar, Take-Two, Epic Games; GSG remains in end credits). Rockstar page last updated 2024-11-25"
+confidence = "mixed"
+confidence_text = "✅ (notes) / ⚠️ (unlisted changes)"
+sources = ["10-2", "10-20", "10-31", "10-32", "10-1"]
+sources_text = "2, 20, 31, 32, 1"
+
+[[entry]]
+id = "10.3-11"
+origin = "md:2725"
+section = "10.3"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Later console/PC title updates"
+platform_text = "—"
+region = "—"
+date_text = "none as of 2026-10"
+id_text = "—"
+notes = "No console/PC TU after 1.112 is documented. This is corroborated by the package trackers: the latest PS4 package is 01.07 (created 2024-10-02), the latest PS5 package 01.007.000 (2024-11-12) and the latest Switch update v524288 (2024-11-16) for all three games, with nothing newer as of 2026-10-24 (§10.3a)."
+confidence = "confirmed"
+confidence_text = "✅ (no later update found)"
+sources = ["10-2", "10-37", "10-39", "10-40", "10-56"]
+sources_text = "2, 37, 39, 40, 56"
+
+[[entry]]
+id = "10.3a-1"
+origin = "md:2738"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.000.000"
+date = "2021-11-03"
+date_text = "2021-11-03"
+[entry.fields]
+"PKG size (III / VC / SA, US)" = "4.9 / 10 / 21.1 GB"
+"Matching TU" = "Pre-launch package (launch 2021-11-11)"
+
+[[entry]]
+id = "10.3a-2"
+origin = "md:2739"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.001.000"
+date = "2021-11-10"
+date_text = "2021-11-10"
+[entry.fields]
+"PKG size (III / VC / SA, US)" = "5 / 10.5 / 21.4 GB"
+"Matching TU" = "Day-one package"
+
+[[entry]]
+id = "10.3a-3"
+origin = "md:2740"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.002.000"
+date = "2021-11-19"
+date_text = "2021-11-19"
+[entry.fields]
+"PKG size (III / VC / SA, US)" = "4.8 / 10.3 / 21.3 GB"
+"Matching TU" = "TU 1.02 (2021-11-19)"
+
+[[entry]]
+id = "10.3a-4"
+origin = "md:2741"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.003.000"
+date = "2021-11-30"
+date_text = "2021-11-30"
+[entry.fields]
+"PKG size (III / VC / SA, US)" = "4.9 / 10.4 / 21.6 GB"
+"Matching TU" = "TU 1.03 (2021-11-30)"
+
+[[entry]]
+id = "10.3a-5"
+origin = "md:2742"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.005.000"
+date = "2022-02-28"
+date_text = "2022-02-28"
+[entry.fields]
+"PKG size (III / VC / SA, US)" = "5.1 / 11.2 / 23.3 GB"
+"Matching TU" = "TU 1.04 (2022-02-28)"
+
+[[entry]]
+id = "10.3a-6"
+origin = "md:2743"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.006.000"
+date = "2022-10-18"
+date_text = "2022-10-18"
+[entry.fields]
+"PKG size (III / VC / SA, US)" = "5.1 / 11.1 / 23.3 GB"
+"Matching TU" = "TU 1.04.5 (2022-10-18)"
+
+[[entry]]
+id = "10.3a-7"
+origin = "md:2744"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "**01.007.000**"
+date = "2024-11-12"
+date_text = "2024-11-12"
+[entry.fields]
+"PKG size (III / VC / SA, US)" = "5.1 / 11.1 / 23.3 GB"
+"Matching TU" = "TU 1.112 (2024-11-12) — latest"
+
+[[entry]]
+id = "10.3a-8"
+origin = "md:2752"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.01"
+date = "2021-11-02"
+date_text = "2021-11-02"
+[entry.fields]
+"PKG size (III / VC / SA)" = "0.55–0.56 GB / 5.9 GB / 2.1–2.2 GB"
+"ORBISPatches description" = "\"Fixes and Performance improvements\" (day-one)"
+
+[[entry]]
+id = "10.3a-9"
+origin = "md:2753"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.02"
+date = "2021-11-16"
+date_text = "2021-11-16"
+[entry.fields]
+"PKG size (III / VC / SA)" = "4.7 / 10.2 / 21.2 GB"
+"ORBISPatches description" = "\"Update 01.02 - Includes a range of across-the-board improvements…\""
+
+[[entry]]
+id = "10.3a-10"
+origin = "md:2754"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.03"
+date = "2021-11-24"
+date_text = "2021-11-24"
+[entry.fields]
+"PKG size (III / VC / SA)" = "4.7 / 10.2 / 21.2 GB"
+"ORBISPatches description" = "— (no description)"
+
+[[entry]]
+id = "10.3a-11"
+origin = "md:2755"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.04"
+date_text = "2021-11-30 / 2021-12-01"
+[entry.fields]
+"PKG size (III / VC / SA)" = "4.7 / 10.2 / 21.2 GB"
+"ORBISPatches description" = "— (no description)"
+
+[[entry]]
+id = "10.3a-12"
+origin = "md:2756"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.05"
+date_text = "III 2022-01-19; VC 2022-01-28/29; SA 2022-02-08/09"
+[entry.fields]
+"PKG size (III / VC / SA)" = "4.7 / 10.2 / 21.2 GB"
+"ORBISPatches description" = "\"Includes a range of across-the-board improvements and bug fixes\""
+
+[[entry]]
+id = "10.3a-13"
+origin = "md:2757"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "01.06"
+date_text = "2022-09-01 / 2022-09-02"
+[entry.fields]
+"PKG size (III / VC / SA)" = "4.7 / 10.1 / 21.1 GB"
+"ORBISPatches description" = "\"Stability and performance improvements\""
+
+[[entry]]
+id = "10.3a-14"
+origin = "md:2758"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "**01.07**"
+date = "2024-10-02"
+date_text = "2024-10-02"
+[entry.fields]
+"PKG size (III / VC / SA)" = "4.7 / 10.1 / 21.1 GB"
+"ORBISPatches description" = "\"Various bugfixes and improvements\" — latest"
+
+[[entry]]
+id = "10.3a-15"
+origin = "md:2766"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "GTA III – DE (0100C3C012718000)"
+[entry.fields]
+"Versions → date first registered" = "v65536 2021-10-28 · v131072 2021-11-03 · v196608 2021-11-22 · v327680 2021-12-02 · v393216 2022-02-24 · v458752 2022-10-18 · **v524288 2024-11-16**"
+
+[[entry]]
+id = "10.3a-16"
+origin = "md:2767"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "Vice City – DE (0100182014022000)"
+[entry.fields]
+"Versions → date first registered" = "v131072 2021-10-28 · v196608 2021-11-03 · v262144 2021-11-22 · v327680 2021-12-02 · v393216 2022-02-24 · v458752 2022-10-18 · **v524288 2024-11-16**"
+
+[[entry]]
+id = "10.3a-17"
+origin = "md:2768"
+section = "10.3a"
+kind = "title-update"
+games = ["trilogy-de"]
+title = "San Andreas – DE (010065A014024000)"
+[entry.fields]
+"Versions → date first registered" = "v65536 2021-10-28 · v131072 2021-11-03 · v196608 2021-11-22 · v327680 2021-12-02 · v393216 2022-02-24 · v458752 2022-10-18 · **v524288 2024-11-16**"
+
+[[entry]]
+id = "10.4-1"
+origin = "md:2784"
+section = "10.4"
+kind = "reissue"
+games = ["trilogy-de", "gta3", "vc", "sa"]
+title = "Classic GTA III / VC / SA (original PC versions) bundle"
+platforms = ["pc"]
+platform_text = "Windows (Rockstar Store / Launcher)"
+region = "WW"
+date_text = "announced 2021-11-19; delivered 2021-12-03"
+id_text = "—"
+notes = "Originals re-listed after Oct 2021 delisting; free to DE PC buyers on Rockstar Store through 2022-06-30"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-7", "10-1", "10-46"]
+sources_text = "7, 1, 46"
+
+[[entry]]
+id = "10.5-1"
+origin = "md:2794"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "Netflix launch build"
+platforms = ["ios", "android"]
+platform_text = "iOS, Android"
+region = "WW"
+date = "2023-12-14"
+date_text = "2023-12-14"
+id_text = "Android **1.72.42919648** for all three games (APKMirror uploads dated 2023-12-14; target API 33, min. Android 11). iOS version not documented."
+notes = "Launch of III, VC, SA – DE"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-19", "10-1", "10-58"]
+sources_text = "19, 1, 58"
+
+[[entry]]
+id = "10.5-2"
+origin = "md:2795"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "Netflix update"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2024-04-08"
+date_text = "2024-04-08 (upload)"
+id_text = "GTA III & VC **1.83.44255649**; SA **1.86.44544238**"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅ (as uploaded)"
+sources = ["10-58"]
+sources_text = "58"
+
+[[entry]]
+id = "10.5-3"
+origin = "md:2796"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "Netflix update"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2024-11-12"
+date_text = "2024-11-12 (upload)"
+id_text = "GTA III & VC **1.90.48899882** (no matching SA upload on APKMirror)"
+notes = "Same day as console/PC TU 1.112"
+confidence = "confirmed"
+confidence_text = "✅ (as uploaded)"
+sources = ["10-58"]
+sources_text = "58"
+
+[[entry]]
+id = "10.5-4"
+origin = "md:2797"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III – DE v1.84.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2025-07-09"
+date_text = "2025-07-09"
+version = "1.84.0"
+id_text = "—"
+notes = "\"General fixes and improvements\""
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-34"]
+sources_text = "34"
+
+[[entry]]
+id = "10.5-5"
+origin = "md:2798"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III – DE v1.84.15"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2025-07-09"
+date_text = "2025-07-09"
+version = "1.84.15"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-34"]
+sources_text = "34"
+
+[[entry]]
+id = "10.5-6"
+origin = "md:2799"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III – DE v1.84.1"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2025-07-17"
+date_text = "2025-07-17"
+version = "1.84.1"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-34"]
+sources_text = "34"
+
+[[entry]]
+id = "10.5-7"
+origin = "md:2800"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III – DE v1.84.18"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2025-07-17"
+date_text = "2025-07-17"
+version = "1.84.18"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-34"]
+sources_text = "34"
+
+[[entry]]
+id = "10.5-8"
+origin = "md:2801"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III – DE v1.84.2"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2025-08-18"
+date_text = "2025-08-18"
+version = "1.84.2"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-34"]
+sources_text = "34"
+
+[[entry]]
+id = "10.5-9"
+origin = "md:2802"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III – DE v1.84.21"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2025-08-18"
+date_text = "2025-08-18"
+version = "1.84.21"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-34"]
+sources_text = "34"
+
+[[entry]]
+id = "10.5-10"
+origin = "md:2803"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III – DE v1.84.3"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2025-11-12"
+date_text = "2025-11-12"
+version = "1.84.3"
+id_text = "—"
+notes = "General fixes and improvements (listed number lower than prior 1.84.21 — as printed by Rockstar)"
+confidence = "confirmed"
+confidence_text = "✅ (as listed)"
+sources = ["10-34"]
+sources_text = "34"
+
+[[entry]]
+id = "10.5-11"
+origin = "md:2804"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "Vice City – DE v1.84.5"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2025-08-28"
+date_text = "2025-08-28"
+version = "1.84.5"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-35"]
+sources_text = "35"
+
+[[entry]]
+id = "10.5-12"
+origin = "md:2805"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "Vice City – DE v1.84.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2025-08-28"
+date_text = "2025-08-28"
+version = "1.84.0"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-35"]
+sources_text = "35"
+
+[[entry]]
+id = "10.5-13"
+origin = "md:2806"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "San Andreas – DE v1.87.0"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date = "2025-11-12"
+date_text = "2025-11-12"
+version = "1.87.0"
+id_text = "—"
+notes = "General fixes and improvements"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["10-36"]
+sources_text = "36"
+
+[[entry]]
+id = "10.5-14"
+origin = "md:2812"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA III - Definitive (`com.rockstargames.gta3.de`)"
+date = "2023-12-08"
+date_text = "2023-12-08"
+confidence = "confirmed"
+confidence_text = "✅ (primary store page)"
+sources = ["10-62"]
+sources_text = "62"
+[entry.fields]
+"Version (Play \"About this game\")" = "**1.84.3**"
+"Play \"Updated on\"" = "2025-11-05"
+Requires = "Android 11+"
+Downloads = "1,000,000+"
+
+[[entry]]
+id = "10.5-15"
+origin = "md:2813"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA: Vice City - Definitive (`com.rockstargames.gtavc.de`)"
+date = "2023-12-08"
+date_text = "2023-12-08"
+confidence = "confirmed"
+confidence_text = "✅ (primary store page)"
+sources = ["10-62"]
+sources_text = "62"
+[entry.fields]
+"Version (Play \"About this game\")" = "**1.90.0**"
+"Play \"Updated on\"" = "2025-09-04"
+Requires = "Android 11+"
+Downloads = "5,000,000+"
+
+[[entry]]
+id = "10.5-16"
+origin = "md:2814"
+section = "10.5"
+kind = "mobile-version"
+games = ["trilogy-de"]
+title = "GTA: San Andreas - Definitive (`com.rockstargames.gtasa.de`)"
+date = "2023-12-08"
+date_text = "2023-12-08"
+confidence = "confirmed"
+confidence_text = "✅ (primary store page)"
+sources = ["10-62"]
+sources_text = "62"
+[entry.fields]
+"Version (Play \"About this game\")" = "**1.87.0**"
+"Play \"Updated on\"" = "2025-11-04"
+Requires = "Android 11+"
+Downloads = "50,000+"
+
+[sources]
+10-1 = { text = "Wikipedia – Grand Theft Auto: The Trilogy – The Definitive Edition: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Trilogy_–_The_Definitive_Edition", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Trilogy_–_The_Definitive_Edition", origin = "md:2843" }
+10-2 = { text = "Rockstar Support – Title Update Notes 1.112: https://support.rockstargames.com/articles/4e0yPJAj1C2GtrbdzhkEaR/grand-theft-auto-the-trilogy-the-definitive-edition-title-update-notes-1-112-playstation-5-playstation-4-xbox-series-x-s-xbox-one-nintendo-switch-pc", url = "https://support.rockstargames.com/articles/4e0yPJAj1C2GtrbdzhkEaR/grand-theft-auto-the-trilogy-the-definitive-edition-title-update-notes-1-112-playstation-5-playstation-4-xbox-series-x-s-xbox-one-nintendo-switch-pc", origin = "md:2844" }
+10-3 = { text = "Gematsu – announcement (2021-10-08): https://gematsu.com/2021/10/grand-theft-auto-the-trilogy-the-definitive-edition-announced-for-ps5-xbox-series-ps4-xbox-one-switch-pc-ios-and-android", url = "https://gematsu.com/2021/10/grand-theft-auto-the-trilogy-the-definitive-edition-announced-for-ps5-xbox-series-ps4-xbox-one-switch-pc-ios-and-android", origin = "md:2845" }
+10-4 = { text = "Kotaku – GRAC rating (2021-09-30): https://kotaku.com/the-gta-remastered-trilogy-sure-seems-imminent-now-1847774767", url = "https://kotaku.com/the-gta-remastered-trilogy-sure-seems-imminent-now-1847774767", origin = "md:2846" }
+10-5 = { text = "Business Wire – launch press release (2021-11-11): https://www.businesswire.com/news/home/20211111005478/en/Grand-Theft-Auto-The-Trilogy-The-Definitive-Edition-Now-Available-for-PlayStation-5-Xbox-Series-XS-Nintendo-Switch-PlayStation-4-Xbox-One-and-PC-via-the-Rockstar-Games-Launcher", url = "https://www.businesswire.com/news/home/20211111005478/en/Grand-Theft-Auto-The-Trilogy-The-Definitive-Edition-Now-Available-for-PlayStation-5-Xbox-Series-XS-Nintendo-Switch-PlayStation-4-Xbox-One-and-PC-via-the-Rockstar-Games-Launcher", origin = "md:2847" }
+10-6 = { text = "VGC – physical versions delayed (2021-11-30): https://www.videogameschronicle.com/news/the-physical-versions-of-gta-trilogy-definitive-edition-have-been-delayed", url = "https://www.videogameschronicle.com/news/the-physical-versions-of-gta-trilogy-definitive-edition-have-been-delayed", origin = "md:2848" }
+10-7 = { text = "VGC – Rockstar apology & first patch (2021-11-20): https://videogameschronicle.com/news/rockstar-admits-gta-trilogy-didnt-meet-our-standards-and-releases-first-patch", url = "https://videogameschronicle.com/news/rockstar-admits-gta-trilogy-didnt-meet-our-standards-and-releases-first-patch", origin = "md:2849" }
+10-8 = { text = "GTABase – Title Update 1.02 patch notes (2021-11-19): https://www.gtabase.com/articles/gta-the-trilogy-definitive-edition-title-update-1-02-patch-notes", url = "https://www.gtabase.com/articles/gta-the-trilogy-definitive-edition-title-update-1-02-patch-notes", origin = "md:2850" }
+10-9 = { text = "Nintendo Life – Switch update / 1.02 notes (2021-11-23): https://www.nintendolife.com/news/2021/11/grand-theft-auto-trilogys-nintendo-switch-update-is-now-available-here-are-the-full-patch-notes", url = "https://www.nintendolife.com/news/2021/11/grand-theft-auto-trilogys-nintendo-switch-update-is-now-available-here-are-the-full-patch-notes", origin = "md:2851" }
+10-10 = { text = "Shacknews – TU 1.03 notes (2021-11-30): https://www.shacknews.com/article/127896/gta-trilogy-definitive-edition-title-update-103-patch-notes", url = "https://www.shacknews.com/article/127896/gta-trilogy-definitive-edition-title-update-103-patch-notes", origin = "md:2852" }
+10-11 = { text = "MP1st – Update 1.03 (PS5 1.003): https://mp1st.com/news/gta-the-trilogy-the-definitive-edition-update-1-03-out-this-november-30", url = "https://mp1st.com/news/gta-the-trilogy-the-definitive-edition-update-1-03-out-this-november-30", origin = "md:2853" }
+10-12 = { text = "The FPS Review – TU 1.03: https://www.thefpsreview.com/?p=61391", url = "https://www.thefpsreview.com/?p=61391", origin = "md:2854" }
+10-13 = { text = "MP1st – San Andreas DE update 1.04 (2021-12-03, PS5 1.004): https://mp1st.com/news/gta-san-andreas-the-definitive-edition-update-1-04-released-this-dec-3", url = "https://mp1st.com/news/gta-san-andreas-the-definitive-edition-update-1-04-released-this-dec-3", origin = "md:2855" }
+10-14 = { text = "Shacknews – TU 1.04 notes (2022-02-28): https://shacknews.com/article/129074/grand-theft-auto-the-trilogy-update-104-patch-notes", url = "https://shacknews.com/article/129074/grand-theft-auto-the-trilogy-update-104-patch-notes", origin = "md:2856" }
+10-15 = { text = "TechRaptor – Steam/Epic IDs in launcher (2022-12-06): https://Techraptor.net/gaming/news/gta-trilogy-definitive-edition-apparently-headed-to-steam-soon", url = "https://Techraptor.net/gaming/news/gta-trilogy-definitive-edition-apparently-headed-to-steam-soon", origin = "md:2857" }
+10-16 = { text = "SteamDB – app 1547000 (San Andreas – DE): https://steamdb.info/app/1547000/patchnotes/", url = "https://steamdb.info/app/1547000/patchnotes/", origin = "md:2858" }
+10-17 = { text = "SteamDB – app 1546970 (GTA III – DE): https://steamdb.info/app/1546970/", url = "https://steamdb.info/app/1546970/", origin = "md:2859" }
+10-18 = { text = "Kotaku via Yahoo – \"GTA Trilogy Arrives On Steam\" (2023-01-19): https://malaysia.news.yahoo.com/gta-trilogy-arrives-steam-still-225635295.html", url = "https://malaysia.news.yahoo.com/gta-trilogy-arrives-steam-still-225635295.html", origin = "md:2860" }
+10-19 = { text = "Netflix – \"GTA: The Trilogy – The Definitive Edition arrives on Netflix\" (2023-11-29): http://about.netflix.com/en/news/grand-theft-auto-the-trilogy-the-definitive-edition-arrives-on-netflix", url = "http://about.netflix.com/en/news/grand-theft-auto-the-trilogy-the-definitive-edition-arrives-on-netflix", origin = "md:2861" }
+10-20 = { text = "Gfinity – 2024 update (2024-11-13): https://www.gfinityesports.com/article/gta-trilogy-the-definitive-edition-gets-its-most-needed-update-after-3-years", url = "https://www.gfinityesports.com/article/gta-trilogy-the-definitive-edition-gets-its-most-needed-update-after-3-years", origin = "md:2862" }
+10-21 = { text = "What's on Netflix – GTA III & VC leaving (2024-11-14): https://whats-on-netflix.com/leaving-soon/grand-theft-auto-iii-and-vice-city-leaving-netflix-games-in-december-2024", url = "https://whats-on-netflix.com/leaving-soon/grand-theft-auto-iii-and-vice-city-leaving-netflix-games-in-december-2024", origin = "md:2863" }
+10-22 = { text = "MP1st – Trilogy update 1.05 / PS5 1.005 (2022-02-28): https://mp1st.com/news/gta-the-trilogy-the-definitive-edition-update-1-05-out-this-february-28 ; GTA III: https://mp1st.com/news/gta-3-the-definitive-edition-update-1-05-released-this-february-28 ; SA: https://mp1st.com/?p=178752", url = "https://mp1st.com/news/gta-the-trilogy-the-definitive-edition-update-1-05-out-this-february-28", origin = "md:2864" }
+10-23 = { text = "TheSixthAxis – 1.04 on Switch (2022-02-28): https://www.thesixthaxis.com/?p=393778", url = "https://www.thesixthaxis.com/?p=393778", origin = "md:2865" }
+10-24 = { text = "Nintendo Life – patches \"next week\" (Feb 2022): https://www.nintendolife.com/news/2022/02/rockstars-gta-trilogy-is-getting-new-patches-next-week", url = "https://www.nintendolife.com/news/2022/02/rockstars-gta-trilogy-is-getting-new-patches-next-week", origin = "md:2866" }
+10-25 = { text = "Pure Xbox – 1.04 notes (2022-03-01): https://www.purexbox.com/news/2022/03/gta-trilogy-definitive-edition-update-1-04-full-patch-notes", url = "https://www.purexbox.com/news/2022/03/gta-trilogy-definitive-edition-update-1-04-full-patch-notes", origin = "md:2867" }
+10-26 = { text = "Club386 – 1.04 (2022-03-01): https://www.club386.com/grand-theft-auto-trilogy-1-04-patch-adds-over-100-fixes-and-improvements/", url = "https://www.club386.com/grand-theft-auto-trilogy-1-04-patch-adds-over-100-fixes-and-improvements/", origin = "md:2868" }
+10-27 = { text = "My Nintendo News – 1.04.5 (2022-10-19): https://mynintendonews.com/2022/10/19/grand-theft-auto-trilogy-gets-version-1-04-5-update-on-nintendo-switch/", url = "https://mynintendonews.com/2022/10/19/grand-theft-auto-trilogy-gets-version-1-04-5-update-on-nintendo-switch/", origin = "md:2869" }
+10-28 = { text = "Sportskeeda – 1.04.5 sizes (2022-10-18): https://sportskeeda.com/gta/what-rockstar-fix-new-gta-trilogy-definitive-edition-update", url = "https://sportskeeda.com/gta/what-rockstar-fix-new-gta-trilogy-definitive-edition-update", origin = "md:2870" }
+10-29 = { text = "MP1st – SA DE update 1.06 / PS5 1.006 (2022-10-18): https://mp1st.com/news/gta-san-andreas-the-definitive-edition-update-1-06-pushed-out-this-october-18", url = "https://mp1st.com/news/gta-san-andreas-the-definitive-edition-update-1-06-pushed-out-this-october-18", origin = "md:2871" }
+10-30 = { text = "MP1st – GTA III DE update 1.06 / PS5 1.006: https://mp1st.com/?p=200431", url = "https://mp1st.com/?p=200431", origin = "md:2872" }
+10-31 = { text = "GamesRadar+ – Nov 2024 patch & GSG removal (2024-11-13): https://www.gamesradar.com/games/grand-theft-auto/there-are-so-many-changes-in-the-gta-trilogy-patch-that-rockstar-didnt-even-try-to-list-them-but-the-ports-original-devs-have-been-scrubbed-from-title-screens/", url = "https://www.gamesradar.com/games/grand-theft-auto/there-are-so-many-changes-in-the-gta-trilogy-patch-that-rockstar-didnt-even-try-to-list-them-but-the-ports-original-devs-have-been-scrubbed-from-title-screens/", origin = "md:2873" }
+10-32 = { text = "Nintendo Life – splash screen removal, CEO responds (2024-11-15): https://www.nintendolife.com/news/2024/11/gta-trilogy-update-removes-dev-from-splash-screen-ceo-responds", url = "https://www.nintendolife.com/news/2024/11/gta-trilogy-update-removes-dev-from-splash-screen-ceo-responds", origin = "md:2874" }
+10-33 = { text = "GTABase – GTA III news/updates index: https://www.gtabase.com/gta-iii/news-updates", url = "https://www.gtabase.com/gta-iii/news-updates", origin = "md:2875" }
+10-34 = { text = "Rockstar Support – GTA III DE Mobile Title Update Notes: https://support.rockstargames.com/articles/2zQ5ZrrXKjs6HGmNGYj2l7/grand-theft-auto-iii-the-definitive-edition-mobile-title-update-notes", url = "https://support.rockstargames.com/articles/2zQ5ZrrXKjs6HGmNGYj2l7/grand-theft-auto-iii-the-definitive-edition-mobile-title-update-notes", origin = "md:2876" }
+10-35 = { text = "Rockstar Support – Vice City DE Mobile Title Update Notes: https://support.rockstargames.com/articles/6v5VkwomylQyycDG6QAGFG/grand-theft-auto-vice-city-the-definitive-edition-mobile-title-update-notes", url = "https://support.rockstargames.com/articles/6v5VkwomylQyycDG6QAGFG/grand-theft-auto-vice-city-the-definitive-edition-mobile-title-update-notes", origin = "md:2877" }
+10-36 = { text = "Rockstar Support – San Andreas DE Mobile Title Update Notes: https://support.rockstargames.com/articles/6GQSAQMDxI7a2eWnWV8uI6/grand-theft-auto-san-andreas-the-definitive-edition-mobile-title-update", url = "https://support.rockstargames.com/articles/6GQSAQMDxI7a2eWnWV8uI6/grand-theft-auto-san-andreas-the-definitive-edition-mobile-title-update", origin = "md:2878" }
+10-37 = { text = "Rockstar Support – San Andreas hub & classic SA mobile notes: https://support.rockstargames.com/sanandreas ; https://support.rockstargames.com/articles/KlYrReNNBKJIkCUhUb0bR/grand-theft-auto-san-andreas-mobile-title-update-notes-android-and-ios", url = "https://support.rockstargames.com/sanandreas", origin = "md:2879" }
+10-38 = { text = "Rockstar Support – SA DE PC system requirements: https://support.rockstargames.com/articles/6b6NA1j6nX9oZFxjIQo882/grand-theft-auto-san-andreas-the-definitive-edition-pc-system-requirements", url = "https://support.rockstargames.com/articles/6b6NA1j6nX9oZFxjIQo882/grand-theft-auto-san-andreas-the-definitive-edition-pc-system-requirements", origin = "md:2880" }
+10-39 = { text = "ORBISPatches (PS4): https://orbispatches.com/CUSA23501 · https://orbispatches.com/CUSA26613 · https://orbispatches.com/CUSA26614 · https://orbispatches.com/CUSA26615 · https://orbispatches.com/CUSA26616 · https://orbispatches.com/CUSA26617 · https://orbispatches.com/CUSA26618 · https://orbispatches.com/CUSA26619 · https://orbispatches.com/CUSA26620", url = "https://orbispatches.com/CUSA23501", origin = "md:2881" }
+10-40 = { text = "PROSPEROPatches (PS5): https://prosperopatches.com/PPSA03524 · /PPSA03525 · /PPSA03526 · /PPSA03527 · /PPSA03528 · /PPSA03529 · /PPSA03530 · /PPSA03531 · /PPSA03532", url = "https://prosperopatches.com/PPSA03524", origin = "md:2882" }
+10-41 = { text = "PlayStation Store: https://store.playstation.com/en-us/product/UP1004-PPSA05804_00-GTATRILOGYBUNDLE ; https://store.playstation.com/en-no/product/EP1004-PPSA05805_00-GTATRILOGYBUNDLE ; https://store.playstation.com/concept/10003543 ; https://store.playstation.com/en-hk/concept/10003550", url = "https://store.playstation.com/en-us/product/UP1004-PPSA05804_00-GTATRILOGYBUNDLE", origin = "md:2883" }
+10-42 = { text = "Steam store search (app IDs & release dates): https://store.steampowered.com/search/?term=Definitive+Edition+Grand+Theft+Auto", url = "https://store.steampowered.com/search/?term=Definitive+Edition+Grand+Theft+Auto", origin = "md:2884" }
+10-43 = { text = "SteamDB – app 1546990 (Vice City – DE): https://steamdb.info/app/1546990/", url = "https://steamdb.info/app/1546990/", origin = "md:2885" }
+10-44 = { text = "Best Buy Canada – Xbox Series X/One physical: https://bestbuy.ca/en-ca/product/15781553", url = "https://bestbuy.ca/en-ca/product/15781553", origin = "md:2886" }
+10-45 = { text = "Best Buy Canada – Switch digital code: https://www.bestbuy.ca/en-ca/product/16247107", url = "https://www.bestbuy.ca/en-ca/product/16247107", origin = "md:2887" }
+10-46 = { text = "GTA Wiki (Fandom): https://gta.fandom.com/wiki/Grand_Theft_Auto:_The_Trilogy_-_The_Definitive_Edition", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto:_The_Trilogy_-_The_Definitive_Edition", origin = "md:2888" }
+10-47 = { text = "Sportskeeda – patch notes & physical dates: https://www.sportskeeda.com/gta/news-recent-news-gta-trilogy-patch-notes-physical-copies-release-dates", url = "https://www.sportskeeda.com/gta/news-recent-news-gta-trilogy-patch-notes-physical-copies-release-dates", origin = "md:2889" }
+10-48 = { text = "PlayStation LifeStyle – physical delay (2021-11-30): https://www.playstationlifestyle.net/?p=858212", url = "https://www.playstationlifestyle.net/?p=858212", origin = "md:2890" }
+10-49 = { text = "Nintendo.com US store listing: https://www.nintendo.com/us/store/products/grand-theft-auto-the-trilogy-the-definitive-edition-switch/", url = "https://www.nintendo.com/us/store/products/grand-theft-auto-the-trilogy-the-definitive-edition-switch/", origin = "md:2891" }
+10-50 = { text = "Windows Central – patch 1.03 (2021-11-30): https://windowscentral.com/latest-patch-gta-trilogy-definitive-edition-fixes-lot-major-bugs-and-issues", url = "https://windowscentral.com/latest-patch-gta-trilogy-definitive-edition-fixes-lot-major-bugs-and-issues", origin = "md:2892" }
+10-51 = { text = "ComicBook.com – 1.03 notes (2021-11-30): https://comicbook.com/gaming/news/grand-theft-auto-gta-the-trilogy-definitive-edition-update-patch-notes", url = "https://comicbook.com/gaming/news/grand-theft-auto-gta-the-trilogy-definitive-edition-update-patch-notes", origin = "md:2893" }
+10-52 = { text = "ComicBook.com – Feb 2022 update notes: https://comicbook.com/gaming/news/gta-trilogy-definitive-edition-update-patch-notes-switch-ps4-ps5-xbox/", url = "https://comicbook.com/gaming/news/gta-trilogy-definitive-edition-update-patch-notes-switch-ps4-ps5-xbox/", origin = "md:2894" }
+10-53 = { text = "Rockstar Support – End of support for iOS before 17: https://support.rockstargames.com/articles/1lIRstW5MnvGXTaBRFvwP0/end-of-support-for-rockstar-games-titles-on-apple-ios-before-version-17", url = "https://support.rockstargames.com/articles/1lIRstW5MnvGXTaBRFvwP0/end-of-support-for-rockstar-games-titles-on-apple-ios-before-version-17", origin = "md:2895" }
+10-54 = { text = "VGCollect – Switch NA entries: https://vgcollect.com/item/215036 (HAC P A5RBA USA, UPC 045496597535) ; https://vgcollect.com/item/287311 (HAC P A5RBA, UPC 710425653513)", url = "https://vgcollect.com/item/215036", origin = "md:2896" }
+10-55 = { text = "Xbox.com (Microsoft Store), read 2026-10-24: https://www.xbox.com/en-US/games/store/grand-theft-auto-the-trilogy-the-definitive-edition/9MXMJFNZMVWD (links to /grand-theft-auto-iii-the-definitive-edition/9nf3hcf7mwb4, /grand-theft-auto-vice-city-the-definitive-edition/9pc16m34cb91, /grand-theft-auto-san-andreas-the-definitive-edition/9p7rsgg6z699)", url = "https://www.xbox.com/en-US/games/store/grand-theft-auto-the-trilogy-the-definitive-edition/9MXMJFNZMVWD", origin = "md:2897" }
+10-56 = { text = "blawar/titledb (Nintendo eShop-derived dataset), `US.en.json` and `versions.json`: https://github.com/blawar/titledb (raw: https://raw.githubusercontent.com/blawar/titledb/master/US.en.json ; https://raw.githubusercontent.com/blawar/titledb/master/versions.json), fetched 2026-10-24", url = "https://github.com/blawar/titledb", origin = "md:2898" }
+10-57 = { text = "tinfoil.io – GTA III – The Definitive Edition (0100C3C012718000): https://tinfoil.io/Title/0100C3C012718000", url = "https://tinfoil.io/Title/0100C3C012718000", origin = "md:2899" }
+10-58 = { text = "APKMirror – upload histories and release pages: https://www.apkmirror.com/uploads/?appcategory=gta-iii-netflix ; https://www.apkmirror.com/uploads/?appcategory=gta-vice-city-netflix ; https://www.apkmirror.com/uploads/?appcategory=gta-san-andreas-netflix ; e.g. https://apkmirror.com/apk/netflix-inc/gta-san-andreas-netflix/gta-san-andreas-netflix-1-72-42919648-release", url = "https://www.apkmirror.com/uploads/?appcategory=gta-iii-netflix", origin = "md:2900" }
+10-59 = { text = "Apple short link for \"GTA: San Andreas – NETFLIX\" → https://apps.apple.com/us/app/gta-san-andreas-netflix/id6450280702 (via https://apple.co/46DGMWb)", url = "https://apps.apple.com/us/app/gta-san-andreas-netflix/id6450280702", origin = "md:2901" }
+10-60 = { text = "gamebiz – 『グランド・セフト・オート:トリロジー:決定版』DL版が11月11日に配信開始 (2021): https://gamebiz.jp/news/335881", url = "https://gamebiz.jp/news/335881", origin = "md:2902" }
+10-61 = { text = "Gamer (gamer.ne.jp) – PS4/Switch package edition on 2022-01-27 (2021-12-17): https://www.gamer.ne.jp/news/202112170050/", url = "https://www.gamer.ne.jp/news/202112170050/", origin = "md:2903" }
+10-62 = { text = "Google Play (US store, read in a browser 2026-10-24; \"About this game\" dialogs): https://play.google.com/store/apps/details?id=com.rockstargames.gta3.de ; https://play.google.com/store/apps/details?id=com.rockstargames.gtavc.de ; https://play.google.com/store/apps/details?id=com.rockstargames.gtasa.de", url = "https://play.google.com/store/apps/details?id=com.rockstargames.gta3.de", origin = "md:2904" }

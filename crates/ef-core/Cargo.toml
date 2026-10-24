@@ -11,6 +11,11 @@ serde.workspace = true
 serde_json.workspace = true
 dirs.workspace = true
 sha1 = "0.11.0"
+toml = { version = "1.1", features = ["preserve_order"] }
+indexmap = { version = "2.14", features = ["serde"] }
+zip = { version = "9", default-features = false, features = ["deflate"] }
+sha2 = "0.11.1"
+ureq = "3.5"
 
 [target.'cfg(windows)'.dependencies]
 winreg.workspace = true

@@ -1,0 +1,1320 @@
+# Grand Theft Auto 2: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "2"
+origin = "md:230"
+title = "2. Grand Theft Auto 2 (1999)"
+games = ["gta2"]
+text = '''
+Developer: DMA Design (Dundee; lead programmer Keith Hamilton) — GBC port by Tarantula Studios — Publisher: Rockstar Games (Russia PC: Buka Entertainment; Japan PC: Zoo) [1][2][5][6].
+Original working title / pre-rebrand name: "Grievous Bodily Harm" (G.B.H.) ⚠️ [4]; rejected working title "Eh Stole E' Motur" [1].'''
+
+[[section]]
+id = "2.1"
+origin = "md:235"
+title = "2.1 Pre-release builds, prototypes & demos"
+games = ["gta2"]
+text = "Demo notes: Take-Two's 21 Oct 1999 shipping press release states the demo had \"over 1 million Internet downloads\" [13]. Softpedia mirrors the demo as `GTA2DEMO.exe` (12.3 MB) [14]. gtamp.com labels its mirror the \"8.6 timed demo\" (\"playable 6 minute demo\") — conflicts with gta.wiki's \"v8.9\"; exact demo version therefore ⚠️ [3][15]."
+
+[[section]]
+id = "2.2"
+origin = "md:257"
+title = "2.2 Original retail releases (1999–2001)"
+games = ["gta2"]
+text = '''
+Note: release dates conflict heavily between sources; all variants are listed. Take-Two press release (Business Wire, 21 Oct 1999): PlayStation and PC versions "began shipping to retailers worldwide", >1.2 million units to ship over three days, expected >US$33 m gross revenue in FQ ending 31 Oct 1999 [13].
+
+
+Dreamcast porting studio: Sega Retro credits the Dreamcast version to "**DMA Design, Liquid Games**" [52]. No second source was found: gta.wiki's Dreamcast page, the GameSpot preview, Grand Theft Wiki ("DMA Design/Tarantula Studios" for all platforms) and The Dreamcast Junkyard name no porter, and MobyGames credits were blocked by a bot check. ⚠️ (single source).
+
+PAL Dreamcast date: the build dates (Redump 2 Jul 2000; Hidden Palace 3 Jul 2000; French disc 16 Jul 2000) and Sega Retro's retailer-sourced dates (UK/DE 4 Aug, FR 2 Aug) all point to **late Jul–Aug 2000**. The 2 May and 20 May 2000 PAL dates are contradicted by every build date [8][48][52].'''
+
+[[section]]
+id = "2.3"
+origin = "md:291"
+title = "2.3 PC executable versions & patches (official and community)"
+games = ["gta2"]
+text = '''
+**Original retail version:** redump.org records **version 9.6** for the original 1999 US and EU retail discs (masters dated 9–15 Oct 1999), and for every later Western reissue it lists (Xplosiv, Gamer's Choice, PC Best Buy, Take Two Heritage, Złota Edycja, Classics Collection 2004). The Russian Buka disc is **10.1** (Nov 1999) and the Japanese Zoo disc **10.5** (Jan 2000) [48]. No dated list of official Rockstar patches was found. The other numbers below come from community sources.
+
+
+Related multiplayer tooling: GTA2 Game Hunter (by Sektor) — first version 24 Jan 2005; v1.483 (13 Feb 2008), v1.484 (15 Feb 2008), v1.485 (22 Feb 2008), v1.487 (6 Mar 2008) [35][36]. Native MP: up to 6 players via DirectPlay (Internet/LAN/serial/modem; ports TCP/UDP 2300–2400, 47624) [2][6].
+Debug: registry value `bob_debug_display`=1 under `HKLM\SOFTWARE\DMA Design Ltd\GTA2\Debug` unlocks a Debug tab in GTA2Manager (debug keys, camera/teleport) [7].'''
+
+[[section]]
+id = "2.4"
+origin = "md:321"
+title = "2.4 Re-releases, digital & freeware distribution"
+games = ["gta2"]
+
+[[section]]
+id = "2.5"
+origin = "md:331"
+title = "2.5 Regional / content differences & ratings"
+games = ["gta2"]
+text = '''
+- ESRB: PC & Dreamcast M; PlayStation & GBC T (toned-down language/violence) [5][19]. BBFC 18; USK 16; OFLC AU MA15+; OFLC NZ R18; SELL 16 [5]. Japan (PC) R-18 per ja.wikipedia [18].
+- Germany: No censored German version documented; game shipped multi-language with German included (PS1 PAL Multi-5) [5][22]. "not documented" for any German-specific cut.
+- France (Dreamcast): parental lock code `WFUSDFCF` required at boot, supplied on separate insert ("not appropriate for people under the age of 16"); fr.wikipedia states the code was given out by retailers [27][42]. Redump records the **same code for the French PlayStation disc SLES-02453** (French only, EXE 1999-10-04). The French-specific DC disc is T-40502D-09 (v1.000) [48].
+- Germany (disc evidence): no German-only GTA 2 disc appears in Redump. The German Software Pyramide PC reissue and the GameStar cover-disc full versions are multilingual [48].
+- Russia: Buka localisation "GTA 2: Беспредел" [16].
+- Japan: PC-only Japanese edition via Zoo (30 Mar 2001); DC unreleased in JP [8][17].
+- PlayStation vs PC: PS1 day-only, no narrator, fewer cars/peds, 25 tokens per district (PC 50), Residential max wanted 6 (PC 5); PC offers noon/dusk; DC dusk only; GBC day only, password saves, protagonist choice [5][6].
+- Blood: ja.wikipedia notes corpse blood removed vs other titles, re-enabled by cheat (region-specificity not stated) [18].'''
+
+[[section]]
+id = "2.6"
+origin = "md:342"
+title = "2.6 Related media"
+games = ["gta2"]
+text = '''
+- **"GTA 2: The Movie"** (unofficial title; film itself unnamed) — ~8-minute live-action short shot in New York City in 1999; written by Dan Houser, directed by Alex De Rakoff; Scott Maslen as Claude Speed. Released on Rockstar's website as 8-part QuickTime or single RealVideo file, and on the Moving Shadow 99.1 mix CD. In-game intro (Bink .bik) cut from the footage at higher quality; step-van driver shooting omitted from game intro [1][6][43]. ja.wikipedia notes a longer version of the intro exists [18].
+- GBH soundtrack (pre-rebrand music) published 22 Oct 2024 for 25th anniversary ⚠️ [4].
+- Sales: >1.2 m shipped at launch; ~2 million lifetime (Wikipedia; GTA Fandom "over 2 million") [1][6].'''
+
+[[section]]
+id = "2.7"
+origin = "md:348"
+title = "2.7 Research gaps (Section 2)"
+games = ["gta2"]
+text = '''
+- Resolved in the Oct 2026 pass: retail PC disc version (9.6, Redump); Dreamcast serials (T-42102N, T-40502D-18/-61/-09, T-40502D-05 per Sega Retro); GBC cart codes (CGB-BGTP / CGB-BGAE); GTA 2 GBC ROM hashes; PS1 Greatest Hits (same serial, tag SLUS-00789GH); PS1 EU Rev 1 and French SLES-02453; Rockstar Classics date (22 Dec 2004); the Sep 1999 PS1 preview prototype; Patch 1.03 existence (2002 GameStar cover discs).
+- Official Rockstar/DMA patch history: still undocumented. Nobody explains how "1.03" relates to exe versions 9.6 / 10.x, or who released it.
+- Dreamcast porting studio: only Sega Retro ("Liquid Games"). MobyGames credits (Cloudflare) and TCRF (bot check) could not be read.
+- GBC USA cart code CGB-BGAE: gbhwdb only.
+- Steam: exact date sales ended (between 2013, an unsourced user claim, and Oct 2022) and exact store-page removal date (mid/late Jul 2025, from news reports). SteamDB history is behind a bot check, and Wayback snapshots needed per-load approval, so they were not used.
+- SLES-02458 (psxdatacenter): no Redump match. It may be a typo for SLES-02453 (French) or an undumped disc; not resolved.
+- TCRF prototype/prerelease subpages for GTA 2 (Windows): tcrf.net bot check, not read.
+- PS1 PAL Rev 1 changes, and the DC French v1.000 vs PAL v1.003 differences: not documented.'''
+
+[[entry]]
+id = "2.1-1"
+origin = "md:239"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "GTA 2 Design Document (1998 revision)"
+platform_text = "Document"
+region = "—"
+date = "1998"
+date_text = "1998"
+id_text = "not documented"
+notes = "Cited for cut features (save system, building destruction, power-ups, wishlist weapons)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-4"]
+sources_text = "[4]"
+
+[[entry]]
+id = "2.1-2"
+origin = "md:240"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "\"Grievous Bodily Harm\" (G.B.H.) concept"
+platforms = ["pc"]
+platform_text = "PC"
+region = "—"
+date_text = "not documented"
+id_text = "—"
+notes = "Name of project before rebrand as GTA sequel; GBH soundtrack published 22 Oct 2024 for 25th anniversary."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-4"]
+sources_text = "[4]"
+
+[[entry]]
+id = "2.1-3"
+origin = "md:241"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "GameStar magazine prototype/demo footage"
+platforms = ["pc"]
+platform_text = "PC"
+region = "DE (magazine)"
+date = "1999-09"
+date_text = "Sep 1999"
+id_text = "not documented"
+notes = "Prototype/demo shown in German GameStar preview video; build itself not preserved publicly."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-4"]
+sources_text = "[4]"
+
+[[entry]]
+id = "2.1-4"
+origin = "md:242"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "GTA2 Demo v8.9 (\"GTA2 Demo Level\" / in-game \"GTA2 PREVIEW\")"
+platforms = ["pc"]
+platform_text = "Windows 95–7"
+region = "Worldwide (web)"
+date = "1999-09"
+date_text = "Sep 1999"
+version = "8.9"
+id_text = "v8.9"
+notes = "Free download from official GTA2 site. Downtown District (Area 1) only, timed (6-min warning), 6 gang missions (2 per Yakuza/Zaibatsu/Loonies), noon/dusk choice, no saves. Sound bank built on pre-release Industrial District bank (police dispatch names Industrial neighbourhoods); some text strings from PS version; early mission names (\"WHO'S BEHIND YOU!\", \"DRUG DEALING!\", \"KILL LOONIES!\"). In-game string \"GTA2... OUT 22 OCTOBER 1999\". Archived on Internet Archive. TCRF notes an unused menu screen from the demo."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-3", "2-4", "2-7"]
+sources_text = "[3][4][7]"
+
+[[entry]]
+id = "2.1-5"
+origin = "md:243"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "Pre-release screenshots (Gouranga site, IGN, GameSpot UK, Evil Avatar, Rockstar)"
+platform_text = "—"
+region = "—"
+date = "1999"
+date_text = "1999"
+id_text = "—"
+notes = "Show early HUD icons, Respect-o-meter, unused zones (Romanova, Azimuth, Barking, Kyabetsu), Avalon as \"Civic Center\", Rednecks mission, Loony alias \"Huggy Bear\", cut weapons (ElectroBaton, Instant Vehicle Bomb, Instant Gang, Silencer)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-4"]
+sources_text = "[4]"
+
+[[entry]]
+id = "2.1-6"
+origin = "md:244"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "Windows prototype (TCRF \"Proto:\" page)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "—"
+date_text = "not documented"
+id_text = "not documented"
+notes = "TCRF series table lists \"Grand Theft Auto 2 (Prototype)\" with separate Prototype & Prerelease info pages. Contents still not read: tcrf.net showed a bot-check page in Oct 2026 and was not bypassed"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-7"]
+sources_text = "[7]"
+
+[[entry]]
+id = "2.1-7"
+origin = "md:245"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "PC demo as archived by Hidden Palace (\"Sep 22, 1999 demo\")"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "—"
+date = "1999-09-22"
+date_text = "Hidden Palace date **22 Sep 1999**, which it says is \"inaccurate\", being \"based on the most recent modification date of the files\""
+id_text = "—"
+notes = "Hidden Palace copy has the installer plus the installed build"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-45"]
+sources_text = "[45]"
+
+[[entry]]
+id = "2.1-8"
+origin = "md:246"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "**PlayStation \"Preview\" CD-R, labelled \"GTA 2 9-13-99 For Preview Only\"**"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "(PAL per Hidden Palace's comparison)"
+date = "2021-04-17"
+date_text = "build **10 Sep 1999 13:16:30**; released by Hidden Palace **17 Apr 2021** (Project Deluge)"
+id_text = "Image `PSX - GTA 2 9-13-99 For Preview Only.img`, 545,722,800 B, CRC32 10E564F3, MD5 8b27be6177237731d88c31bba822a310"
+notes = "\"Compiled 9 days before the final PAL build\" (19 Sep 1999). Title screen adds PlayStation and ratings trademark text. No payphone outside the safehouse: a man standing there gives the Training tutorial, respawns each time and breaks loading saves. Emulatable; status \"redump needed\"; also on Internet Archive (GrandTheftAuto2Sep101999prototype)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-45"]
+sources_text = "[45]"
+
+[[entry]]
+id = "2.1-9"
+origin = "md:247"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "PS1 prototype disc seen in MattJ155's video"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "—"
+date_text = "not documented"
+id_text = "—"
+notes = "Hidden Palace's London 1969 \"PAL PSX BETA 37\" page says it was \"spotted in a MattJ155 video, along with a GTA 2 prototype disc\". Undumped; whether it is the same build as the Sep 1999 preview is not documented"
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["2-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "2.1-10"
+origin = "md:248"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "Dreamcast prototype \"Apr 7, 2000\""
+platforms = ["dc"]
+platform_text = "Dreamcast"
+region = "US/EU (\"UE\")"
+date_text = "Build 7 Apr 2000 01:32:32 (1ST_READ.BIN); volume created 2000-04-06"
+version = "0.800"
+id_text = "Header: \"GRAND THEFT AUTO 2 - TEST VERSION - DO NOT DISTRIBUTE\"; product no. T42102N; V0.800; header date 20000301; maker \"SEGA LC-T-421\""
+notes = "GD-R, Project Deluge lot; released by Hidden Palace 18 Sep 2021. 16 days before US final build (26 Apr 2000). No opening sequences, different display-select screen (hangs), no car radio, overlapping dialogue; not emulatable as of Sep 2021. 1ST_READ.BIN MD5 8e1bc324533e42f4fb2babb2af17ca7d."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-8", "2-9"]
+sources_text = "[8][9]"
+
+[[entry]]
+id = "2.1-11"
+origin = "md:249"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "Palm OS colour demo (cancelled port)"
+platforms = ["palm"]
+platform_text = "Palm OS"
+region = "NA (web)"
+date_text = "2001; Hidden Palace page \"Nov 26, 2001 demo\" (date taken from file modification dates)"
+id_text = "not documented"
+notes = "Take-Two announced in Mar 2001 that Global Star Software would publish a Palm version \"of the original top-down GTA\" for the holiday season. Colour and monochrome demo packages were hosted on palmgamingworld (Wayback 10 Feb 2005) and globalstarsoftware.com/gta_pos (Wayback 1 Dec 2001: colour only, grey \"coming soon\"; the site claims a 4 MB colour version, but the colour demo is 2.33 MB uncompressed). Port cancelled by Jun 2002 (fan-site sources). Music differs from the GBC GTA 2; title shows \"Grand Theft Auto\" without the \"2\". **Note:** Hidden Palace files this under GTA 2, but the announcement text describes the *original* GTA. Which game it is remains ⚠️ (see also Section 1.1)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-10"]
+sources_text = "[10]"
+
+[[entry]]
+id = "2.1-12"
+origin = "md:250"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "Palm OS **monochrome** demo"
+platforms = ["palm"]
+platform_text = "Palm OS"
+region = "NA (web)"
+date_text = "Hidden Palace page \"Nov 19, 2001 demo\" (file modification dates)"
+id_text = "not documented"
+notes = "The monochrome counterpart of the colour demo above"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-47"]
+sources_text = "[47]"
+
+[[entry]]
+id = "2.1-13"
+origin = "md:251"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "GamePro press CD \"CD 298, Rockstar and Take-Two Interactive\""
+platform_text = "Press disc"
+region = "US"
+date = "1999-05"
+date_text = "May 1999"
+id_text = "GAMEPRO-CDS.298"
+notes = "Press-asset disc covering 9 Take-Two/Rockstar titles incl. GTA2 (E3 1999 timeframe ❓); disc image downloadable from VGHF digital archive."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-11"]
+sources_text = "[11]"
+
+[[entry]]
+id = "2.1-14"
+origin = "md:252"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "GamePro press CD \"CD 295, Grand Theft Auto 2\""
+platform_text = "Press disc"
+region = "US"
+date = "1999-10"
+date_text = "Oct 1999"
+id_text = "VGHF digital object 13161"
+notes = "GTA2-specific press CD in GamePro collection; contents not itemised."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-12"]
+sources_text = "[12]"
+
+[[entry]]
+id = "2.1-15"
+origin = "md:253"
+section = "2.1"
+kind = "prototype"
+games = ["gta2"]
+title = "E3 build / other preserved alpha-beta builds"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Hidden Palace's full GTA 2 list (checked Oct 2026): Sep 10, 1999 PS1 prototype; Sep 22, 1999 PC demo; Apr 7, 2000 DC prototype; Nov 19 and Nov 26, 2001 Palm OS demos. No E3 build or PC alpha/beta executable is listed"
+confidence_text = "—"
+sources = ["2-45"]
+sources_text = "[45]"
+
+[[entry]]
+id = "2.2-1"
+origin = "md:263"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail (Rockstar Games)"
+platforms = ["pc"]
+platform_text = "Windows 95/98"
+region = "NA"
+date_text = "22 Oct 1999 (Wikipedia, PCGW, GTA Fandom); 27 Oct 1999 (gta.wiki, TCRF category); 30 Sep 1999 (ja.wikipedia, Rockstar Fandom, wikigta)"
+version = "9.6"
+id_text = "Redump **version 9.6**; **SafeDisc 1.30.010**; volume created **1999-10-15**; barcode 7 10425 21051 8; En/Es"
+notes = "Disc check; ESRB M. SafeDisc does not run on Win10/11. Demo string: \"AVAILABLE FRIDAY 22 OCTOBER 1999\" in final. A Canadian \"Rerelease\" (v9.6, SafeDisc 1.30.010, volume 1999-10-11, pressed by Saturn, Canada, barcode 7 78399 00131 0) is also verified. The 15 Oct 1999 mastering date rules out a 30 Sep 1999 street date for this disc"
+confidence = "mixed"
+confidence_text = "✅ (22 Oct) / ⚠️ others; ✅ disc (Redump)"
+sources = ["2-1", "2-2", "2-3", "2-5", "2-6", "2-7", "2-18", "2-21", "2-44", "2-48"]
+sources_text = "[1][2][3][5][6][7][18][21][44][48]"
+
+[[entry]]
+id = "2.2-2"
+origin = "md:264"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail (Rockstar Games / Take-Two Europe)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "EU/UK"
+date_text = "22 Oct 1999 (Wikipedia); 27 Oct 1999 (gta.wiki)"
+version = "9.6"
+id_text = "Redump **version 9.6**; **SafeDisc 1.30.010**; Disctronics masters \"GTA 2 CD 03\" (volume 1999-10-11) and \"GTA 2 CD 01\" (volume 1999-10-09); barcodes 5 026555 031851 / 5 026555 032018"
+notes = "BBFC 18 / ELSPA 18; USK 16 (Germany); 5 languages (EN/FR/DE/IT/ES). The \"CD 01\" master was also sold as \"Gamer's Choice\" (barcodes 4 033841 100093 / 100208)"
+confidence = "mixed"
+confidence_text = "⚠️ date / ✅ disc (Redump)"
+sources = ["2-1", "2-5", "2-48"]
+sources_text = "[1][5][48]"
+
+[[entry]]
+id = "2.2-3"
+origin = "md:265"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "AU/NZ"
+date = "1999-10-27"
+date_text = "27 Oct 1999 (gta.wiki)"
+id_text = "not documented"
+notes = "OFLC (AU) MA15+; OFLC (NZ) R18."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-5"]
+sources_text = "[5]"
+
+[[entry]]
+id = "2.2-4"
+origin = "md:266"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "\"GTA 2: Беспредел\" (Buka Entertainment localisation)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Russia"
+date = "1999-11-04"
+date_text = "4 Nov 1999 (gta.wiki)"
+version = "10.1"
+id_text = "Redump **version 10.1**; volume created **1999-11-25**; pressed by UEP-CD (ring \"UL 99515R\")"
+notes = "Russian localisation published by Buka. Redump: Russian text, **English voices**; the disc also carries demos (*Gromada*, *Demo 22*, *Horde: Northern Wind*, rolling demos of *Storm* and *Red Comrades 2*). The 25 Nov 1999 mastering date conflicts with gta.wiki's 4 Nov 1999 release"
+confidence = "mixed"
+confidence_text = "⚠️ date / ✅ disc (Redump)"
+sources = ["2-2", "2-5", "2-16", "2-48"]
+sources_text = "[2][5][16][48]"
+
+[[entry]]
+id = "2.2-5"
+origin = "md:267"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "\"Grand Theft Auto 2 日本語版\" (Zoo / Rockstar Games)"
+platforms = ["pc"]
+platform_text = "Windows 95/98"
+region = "Japan"
+date = "2001-03-30"
+date_text = "30 Mar 2001"
+version = "10.5"
+id_text = "Redump **version 10.5**; volume created **2000-01-14**; barcode 4 537243 997614; ring \"888008 OP012B\""
+notes = "¥8,800 (excl. tax); req. Pentium MMX 233 MHz, 32 MB RAM, 65 MB HDD; official site zoo.co.jp/games/gta2/. ja.wikipedia lists rating R-18. Only Japanese release of GTA2 found."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-17", "2-18", "2-48"]
+sources_text = "[17][18][48]"
+
+[[entry]]
+id = "2.2-6"
+origin = "md:268"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "\"GTA2: Złota Edycja\""
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Poland"
+date_text = "not documented"
+version = "9.6"
+id_text = "Redump version 9.6; volume 2000-09-18"
+notes = "Polish manual. Installer in En/Fr/De/It/Es; the other in-game languages \"erroneously display Polish characters\" (Redump)"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["2-48"]
+sources_text = "[48]"
+
+[[entry]]
+id = "2.2-7"
+origin = "md:269"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail (Rockstar Games)"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "NA"
+date_text = "22 Oct 1999 (Wikipedia/press); 25 Oct 1999 (Rockstar Fandom); 10 Nov 1999 (psxdatacenter)"
+serials = ["SLUS-00789"]
+id_text = "SLUS-00789; UPC 710425230370. Redump: **EXE date 1999-10-04**, volume 1999-10-05 (Hidden Palace's US final build date is 4 Oct 1999); barcode 7 10425 23037 0; ring \"PSRM-016440\""
+notes = "English only; 1 memory-card block; Analog compatible. ESRB T (toned-down language/violence). Day only (no dusk), no narrator per GTA Fandom; 25 tokens/district vs 50 on PC; Residential max wanted level 6."
+confidence = "confirmed"
+confidence_text = "✅ (serial)"
+sources = ["2-1", "2-6", "2-19", "2-20", "2-21", "2-45", "2-48"]
+sources_text = "[1][6][19][20][21][45][48]"
+
+[[entry]]
+id = "2.2-8"
+origin = "md:270"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "EU (PAL)"
+date_text = "22 Oct 1999 (Rockstar Fandom/gta.wiki); 25 Oct 1999 (psxdatacenter)"
+serials = ["SLES-01404"]
+id_text = "SLES-01404; EAN 5026555190770. Redump original: **EXE date 1999-09-19** (Hidden Palace's EU final build date is 19 Sep 1999), volume 1999-09-21; also the Collector's Edition disc (SLES-01404/COLL.)"
+notes = "Multi-5 (EN/FR/DE/IT/ES); ELSPA 18. Centre for Computing History holds SLES 01404 (Oct 1999)."
+confidence = "confirmed"
+confidence_text = "✅ (serial)"
+sources = ["2-5", "2-22", "2-23", "2-45", "2-48"]
+sources_text = "[5][22][23][45][48]"
+
+[[entry]]
+id = "2.2-9"
+origin = "md:271"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail **Rev 1**"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "EU (PAL)"
+date_text = "not documented"
+serials = ["SLES-01404"]
+id_text = "SLES-01404. Redump \"Rev 1\": **EXE date 1999-09-30**, volume 1999-09-30; barcodes 5 026555 190206 / 5 026555 190794; BBFC VFC 12400; on-disc alternative title \"GTa2\""
+notes = "Second PAL master 11 days after the original. Changes not documented"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["2-48"]
+sources_text = "[48]"
+
+[[entry]]
+id = "2.2-10"
+origin = "md:272"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "**French** retail"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "**France**"
+date_text = "not documented"
+serials = ["SLES-02453"]
+id_text = "**SLES-02453** (Redump); **EXE date 1999-10-04**; French only"
+notes = "Redump comment: \"**Parental lock code: WFUSDFCF**\", the same code TCRF gives for the French Dreamcast release (see 2.5)"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["2-48"]
+sources_text = "[48]"
+
+[[entry]]
+id = "2.2-11"
+origin = "md:273"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "PAL alternate release (psxdatacenter \"SLES-02458\")"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "EU (PAL)"
+date = "2002-03-08"
+date_text = "8 Mar 2002 (psxdatacenter)"
+serials = ["SLES-02458"]
+id_text = "SLES-02458; EAN 5026555190268"
+notes = "Multi-5; psxdatacenter itself is inconsistent about this entry. **Redump has no SLES-02458.** Its separate GTA 2 PAL serial is **SLES-02453**, the French-only disc above. Whether \"02458\" is a psxdatacenter typo for 02453, or a real disc nobody has dumped, is not documented"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-24", "2-48"]
+sources_text = "[24][48]"
+
+[[entry]]
+id = "2.2-12"
+origin = "md:274"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Greatest Hits"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "NA"
+date_text = "not documented"
+serials = ["SLUS-00789"]
+id_text = "SLUS-00789 (Redump tag \"**SLUS-00789GH**\"; same data as the original)"
+notes = "Greatest Hits covers shown on psxdatacenter; GTA Fandom: \"PS1 Greatest Hits\". Redump also lists the Collector's Edition disc (tag SLUS-00789CE, barcode 7 10425 23180 3, spine ID SLUS-07001CE)"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["2-6", "2-20", "2-48"]
+sources_text = "[6][20][48]"
+
+[[entry]]
+id = "2.2-13"
+origin = "md:275"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "AU/NZ"
+date = "1999"
+date_text = "1999 (day not documented)"
+id_text = "not documented"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-5"]
+sources_text = "[5]"
+
+[[entry]]
+id = "2.2-14"
+origin = "md:276"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "PC budget / covermount reissues (Redump-verified)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "various"
+date_text = "see notes"
+id_text = "see notes"
+notes = "**Xplosiv** (Empire Interactive), serial **EI-1249**: two masters, one with volume 2000-10-19 and one v9.6 with volume 2002-02-15; barcode 5 017783 553420. **Software Pyramide** (Germany), volume 2001-02-01, barcode 4 012160 461108. **PC Best Buy** (Scandinavia, \"game 66 in series\"), v9.6, volume 2000-11-08. Italian covermount with *Giochi per il Mio Computer* n°11 (Nov 2001), serial 10026, v9.6. **Take Two Heritage** (France, French), v9.6, volume 2002-04-05 (ring \"MPO GTA2 10 AVR 02\"). Full game on German **GameStar 10/2002** demo CD and **GameStar Sonderheft 01/2003**. **Grand Theft Auto: The Classics Collection** (US 2004): v9.6, **SecuROM 5.03.04.0005**, volume 2004-04-20"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["2-48"]
+sources_text = "[48]"
+
+[[entry]]
+id = "2.2-15"
+origin = "md:277"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "Japan"
+date_text = "—"
+id_text = "—"
+notes = "No Japanese PlayStation release found (ja.wikipedia lists only Windows 95 Japanese version; Yahoo Chiebukuro user answer also says not released in Japan). Supporting evidence: redump.org lists no Japanese GTA 2 PS1 disc (it has the Japanese GTA 1 PS1 discs SLPS-01554 / SLPM-87007 and the Japanese GTA 2 PC disc), psxdatacenter's Japanese list has only the two GTA 1 entries, and Hidden Palace gives the PS1 Japanese release as \"Unreleased\""
+confidence = "confirmed"
+confidence_text = "✅ (not released; multiple sources agree, though this rests on absence)"
+sources = ["2-18", "2-25", "2-45", "2-48"]
+sources_text = "[18][25][45][48]"
+
+[[entry]]
+id = "2.2-16"
+origin = "md:278"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail (Rockstar Games)"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+region = "NA"
+date_text = "1 May 2000 (Wikipedia, TCRF); 30 Apr 2000 (Hidden Palace, Rockstar Fandom); 2 May 2000 (gta.wiki; Sega Retro, citing an archived EB World new-releases page)"
+version = "1.002"
+id_text = "**T-42102N** (Redump: confirms the prototype's product number on retail). **Version 1.002**; build date **2000-04-25**; barcode 7 10425 26042 1; ring \"T-42102N maxell CA USA\"; En"
+notes = "Hidden Palace gives the US final build as 26 Apr 2000; Redump's build date is 25 Apr 2000 (one-day difference, probably timezone or source field, not resolved). ESRB M. Dusk-only lighting; restores PC features missing from PS1."
+confidence = "confirmed"
+confidence_text = "✅ (date range); ✅ serial (prototype header + Redump)"
+sources = ["2-1", "2-8", "2-21", "2-27", "2-48", "2-52"]
+sources_text = "[1][8][21][27][48][52]"
+
+[[entry]]
+id = "2.2-17"
+origin = "md:279"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+region = "EU (PAL)"
+date = "2000-08-04"
+date_text = "20 May 2000 (Wikipedia, Hidden Palace); 28 Jul 2000 (TCRF, Rockstar Fandom); 2 May 2000 (gta.wiki). **Sega Retro, citing contemporary retailer pages:** UK **4 Aug 2000** (Chips, Amazon UK; RRP £39.99 per Dreamcast Magazine #9 and DC-UK Jun 2000), Germany 4 Aug 2000, \"ES/UK/IT\" 4 Aug 2000, Spain 30 Aug 2000 (Centro Mail), Australia 29 Aug 2000 (FutureGamez); Sega Retro also lists a UK-only code **T-40502D-05**; Italian distributor Cidiverte Italia"
+version = "1.003"
+id_text = "**T-40502D-18 / T-40502D-61** (Redump); **version 1.003**; build date **2000-07-02**; internal serial \"T40502D 93\"; Sega ID 830-0119-61; barcodes 5 026555 220071 / 5 026555 220088; En/Fr/De/It/Es, chosen from the console BIOS language; pressed by EMI CD Holland"
+notes = "EU final build dated 3 Jul 2000 (Hidden Palace); Redump build date 2 Jul 2000. **Both rule out a 20 May 2000 or 2 May 2000 PAL release** and fit TCRF's and Rockstar Fandom's 28 Jul 2000"
+confidence = "mixed"
+confidence_text = "✅ serial (Redump) / ⚠️ date (build dates and retailer listings point to late Jul–Aug 2000)"
+sources = ["2-1", "2-8", "2-21", "2-27", "2-48", "2-52"]
+sources_text = "[1][8][21][27][48][52]"
+
+[[entry]]
+id = "2.2-18"
+origin = "md:280"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail, **France**"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+region = "France"
+date = "2000-08-02"
+date_text = "**2 Aug 2000** (Sega Retro, citing a Micromania product page)"
+version = "1.000"
+id_text = "**T-40502D-09** (Redump); **version 1.000**; build date **2000-07-16**; Sega ID 830-0119-09; barcode 5 026555 220064; EMI CD Holland"
+notes = "French variant: parental lock code `WFUSDFCF` printed on the \"Important: Parents\" insert; title screen always French (TCRF). Its version number (1.000) is lower than the multi-language PAL disc (1.003), but its build date is two weeks later"
+confidence = "mixed"
+confidence_text = "✅ (Redump + TCRF) / ⚠️ date"
+sources = ["2-27", "2-48", "2-52"]
+sources_text = "[27][48][52]"
+
+[[entry]]
+id = "2.2-19"
+origin = "md:281"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["dc"]
+platform_text = "Dreamcast"
+region = "Japan"
+date_text = "—"
+id_text = "—"
+notes = "Unreleased in Japan (Hidden Palace)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-8"]
+sources_text = "[8]"
+
+[[entry]]
+id = "2.2-20"
+origin = "md:282"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail (Rockstar Games; dev. Tarantula Studios)"
+platforms = ["gbc"]
+platform_text = "Game Boy Color"
+region = "EU"
+date = "2000-11-10"
+date_text = "10 Nov 2000 (gta.wiki, Rockstar Fandom)"
+serials = ["CGB-BGTP", "CGB-BGTP-UKV"]
+id_text = "Cart code **CGB-BGTP-0** (gbhwdb); box model **CGB-BGTP-UKV** (arcade-history). Internal version string \"g2gb3710.gb\". No-Intro: `Grand Theft Auto 2 (Europe) (En,Fr,De,Es,It).gbc`, 2,097,152 B (2 MiB), CRC32 AD563BD9, MD5 7DE54692E7B42E945B318D20079A5EFD, SHA-1 A7577D81DE3AB03B93B364F9E775C303C842DAD2"
+notes = "Directed by Simon Crisp; music Anthony Paton. Password saves; choice of protagonist; ESRB T. Unused string \"(C)2000 Take 2 Interactive Europe Ltd.\"; hidden credits screen. Colour-only cart (CGB- prefix; the GTA 1 GBC cart is dual-mode DMG-)"
+confidence = "mixed"
+confidence_text = "⚠️ (date) / ✅ (string, cart code, ROM)"
+sources = ["2-5", "2-21", "2-28", "2-49", "2-50", "2-51"]
+sources_text = "[5][21][28][49][50][51]"
+
+[[entry]]
+id = "2.2-21"
+origin = "md:283"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["gbc"]
+platform_text = "Game Boy Color"
+region = "NA"
+date_text = "Dec 2000 (Wikipedia); 25 Dec 2000 (gta.wiki)"
+serials = ["CGB-BGAE"]
+id_text = "Cart code **CGB-BGAE-0** (gbhwdb only). Internal version string \"g2gb3708.us\". No-Intro: `Grand Theft Auto 2 (USA).gbc`, 2,097,152 B, CRC32 68610203, MD5 05A9C516D6E744135A6303AA5B4A8887, SHA-1 6FD4B31D410CA98452ADA0A1F3C0E2590E7DF099"
+notes = "Note that the US code (BGA-) and EU code (BGT-) use different game-code letters, as recorded by gbhwdb"
+confidence = "mixed"
+confidence_text = "⚠️ (date, cart code) / ✅ (ROM, string)"
+sources = ["2-1", "2-5", "2-28", "2-49", "2-50"]
+sources_text = "[1][5][28][49][50]"
+
+[[entry]]
+id = "2.2-22"
+origin = "md:284"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Retail"
+platforms = ["gbc"]
+platform_text = "Game Boy Color"
+region = "AU/NZ"
+date = "2000"
+date_text = "2000 (day not documented)"
+id_text = "not documented"
+notes = "Playable on GameCube via Game Boy Player (gta.wiki)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-5"]
+sources_text = "[5]"
+
+[[entry]]
+id = "2.2-23"
+origin = "md:285"
+section = "2.2"
+kind = "retail"
+games = ["gta2"]
+title = "Palm OS port (Global Star Software)"
+platforms = ["palm"]
+platform_text = "Palm OS"
+region = "NA"
+date_text = "Cancelled (by Jun 2002)"
+id_text = "—"
+notes = "Announced Mar 2001; only demos released (see 2.1)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-10"]
+sources_text = "[10]"
+
+[[entry]]
+id = "2.3-1"
+origin = "md:297"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "Demo 8.6 / 8.9"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "1999-09"
+date_text = "Sep 1999"
+id_text = "8.6 (gtamp) vs 8.9 (gta.wiki)"
+notes = "Timed Downtown demo (see 2.1)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-3", "2-15"]
+sources_text = "[3][15]"
+
+[[entry]]
+id = "2.3-2"
+origin = "md:298"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "Retail 1999 build"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "1999-10"
+date_text = "Oct 1999"
+id_text = "**9.6** (Redump, US and EU originals)"
+notes = "SafeDisc **1.30.010** (Redump). The disc version matches the community \"v9.6\" below"
+confidence = "confirmed"
+confidence_text = "✅ (Redump + community)"
+sources = ["2-2", "2-48"]
+sources_text = "[2][48]"
+
+[[entry]]
+id = "2.3-3"
+origin = "md:299"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "Russian retail (Buka)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "RU"
+date = "1999-11"
+date_text = "Nov 1999"
+id_text = "**10.1** (Redump)"
+notes = "Localised build; see 2.2"
+confidence = "mixed"
+confidence_text = "✅ (Redump) / ⚠️ (ru.wikipedia gives 10.3)"
+sources = ["2-16", "2-48"]
+sources_text = "[16][48]"
+
+[[entry]]
+id = "2.3-4"
+origin = "md:300"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "Japanese retail (Zoo)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "JP"
+date_text = "disc mastered Jan 2000; released 30 Mar 2001"
+id_text = "**10.5** (Redump)"
+notes = "Same number as the \"10.5 Freeloader\" build below. Whether they share code is not documented"
+confidence = "confirmed"
+confidence_text = "✅ (Redump)"
+sources = ["2-17", "2-48"]
+sources_text = "[17][48]"
+
+[[entry]]
+id = "2.3-5"
+origin = "md:301"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "v9.6"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "not documented"
+version = "9.6"
+id_text = "9.6 / \"9.6.0.0\""
+notes = "Patch-pack description: \"Fixed glitches with grenades/Molotov cocktails\". Steam-forum users call 9.6 the latest official version and the version on the Rockstar Classics site; includes music & movie folders. FrontendFix mod is \"Only compatible with GTA2 version 9.6\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-2", "2-29", "2-30", "2-31"]
+sources_text = "[2][29][30][31]"
+
+[[entry]]
+id = "2.3-6"
+origin = "md:302"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "v9.6f (\"free version\")"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW (web)"
+date_text = "not documented (see 2.4)"
+version = "9.6f"
+id_text = "9.6f"
+notes = "Patch pack: \"free version of the game\"; cannot type \".\" and \"/\" in chat; radio plays from hard drive; player names not displayed."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-29"]
+sources_text = "[29]"
+
+[[entry]]
+id = "2.3-7"
+origin = "md:303"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "v10.3"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "not documented"
+version = "10.3"
+id_text = "10.3"
+notes = "\"all missions and maps fixed\"; chat accepts \".\" and \"/\"; radio does not start from hard drive; names displayed. ru.wikipedia infobox also lists \"Версия 10.3\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-16", "2-29"]
+sources_text = "[16][29]"
+
+[[entry]]
+id = "2.3-8"
+origin = "md:304"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "v10.5 (\"GTA2 Freeloader\")"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW (web)"
+date_text = "not documented"
+version = "10.5"
+id_text = "10.5"
+notes = "\"Same as 10.3, but in the package from freeloader.com. Some critical bugs have been fixed\"; distributed as a .reg-file patch. gtamp.com offers \"GTA2 Freeloader … licensed by the former freeloader.com company\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-15", "2-29"]
+sources_text = "[15][29]"
+
+[[entry]]
+id = "2.3-9"
+origin = "md:305"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "\"Patch 1.03\""
+platforms = ["pc"]
+platform_text = "Windows"
+region = "—"
+date_text = "in circulation by Aug 2002 (on the GameStar 10/2002 cover CD, volume dated 2002-08-21)"
+id_text = "1.03"
+notes = "PCGamingWiki: \"The latest official patch 1.03\"; a Steam-forum user advises \"Do not use patch 1.03\". Redump's contents lists for **GameStar 10/2002 (Demo-CD)** and **GameStar Sonderheft 01/2003** both include \"Patches: Grand Theft Auto 2 v1.03\". So the patch existed and was distributed in 2002. Who released it (Rockstar or not) and how \"1.03\" maps to the exe numbering (9.6 / 10.x) are not documented"
+confidence = "mixed"
+confidence_text = "✅ (exists) / ❓ (official status)"
+sources = ["2-2", "2-30", "2-48"]
+sources_text = "[2][30][48]"
+
+[[entry]]
+id = "2.3-10"
+origin = "md:306"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "Windows XP launch patch (tAC)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "—"
+date_text = "upload 15 Sep 2020 (LibertyCity mirror)"
+id_text = "replacement gta2.exe"
+notes = "Fan-made XP launch fix; \"no longer relevant\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-32"]
+sources_text = "[32]"
+
+[[entry]]
+id = "2.3-11"
+origin = "md:307"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "vike's GTA2 update 11.0 → 11.2 (incl. 11.2beta05–beta15, 11.1 debug build)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "undated (pre-2010)"
+id_text = "11.0–11.2"
+notes = "Unofficial (Vike & Sektor). 11.0: lobby crash fix, MMP limit removed, F8 disabled in MP, registry HKLM→HKCU. 11.1: debug version for MP modding. 11.2: built for GTA2 Game Hunter 1.5; forced TCP; -c/-j command line."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33"]
+sources_text = "[33]"
+
+[[entry]]
+id = "2.3-12"
+origin = "md:308"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.3beta1 → 11.3beta06"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "01 Jan 2010 – 14 Mar 2010"
+id_text = "11.3betaN"
+notes = "beta1 (01.01.2010) custom GXT/GCI in MP; beta2 (03.01.2010); beta3 (28.01.2010); beta4 (26.02.2010) car limit 15→127; beta05 (12.03.2010) density 500→400; beta06 (14.03.2010) bus sync fix. 11.3beta1 broke Windows 8 compatibility (beta0 fine)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33", "2-34"]
+sources_text = "[33][34]"
+
+[[entry]]
+id = "2.3-13"
+origin = "md:309"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.37"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "21 Mar 2010 / 4 Apr 2010"
+id_text = "11.37"
+notes = "Numbering switched to 11.xx; debug counters disabled in MP."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33"]
+sources_text = "[33]"
+
+[[entry]]
+id = "2.3-14"
+origin = "md:310"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.38"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "30 May 2010 / 30 Jul 2010"
+id_text = "11.38"
+notes = "Windowed mode without 16-bit colour; always-on-top option."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33"]
+sources_text = "[33]"
+
+[[entry]]
+id = "2.3-15"
+origin = "md:311"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.39"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2010-07-30"
+date_text = "30 Jul 2010"
+id_text = "11.39"
+notes = "Multiple instances; \"v11.39 and newer can run in a window with 32bit colours\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-15", "2-33"]
+sources_text = "[15][33]"
+
+[[entry]]
+id = "2.3-16"
+origin = "md:312"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.40"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2010-08-22"
+date_text = "22 Aug 2010"
+id_text = "11.40"
+notes = "MP fixes."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33"]
+sources_text = "[33]"
+
+[[entry]]
+id = "2.3-17"
+origin = "md:313"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.41"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2010-09-05"
+date_text = "5 Sep 2010"
+id_text = "11.41"
+notes = "New logos, replay fixes."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33"]
+sources_text = "[33]"
+
+[[entry]]
+id = "2.3-18"
+origin = "md:314"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.42"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2012-06-08"
+date_text = "8 Jun 2012"
+id_text = "11.42"
+notes = "Chat changes."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33", "2-34"]
+sources_text = "[33][34]"
+
+[[entry]]
+id = "2.3-19"
+origin = "md:315"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.43"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "17 Oct 2012 (LibertyCity changelog) / 21 Oct 2012 (gtamp post)"
+id_text = "11.43"
+notes = "Windows 8 support; F8 runs gta2manager.exe."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["2-33", "2-34"]
+sources_text = "[33][34]"
+
+[[entry]]
+id = "2.3-20"
+origin = "md:316"
+section = "2.3"
+kind = "patch"
+games = ["gta2"]
+title = "11.44"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "not documented"
+id_text = "11.44 (~17 MB)"
+notes = "Current gtamp.com community release; \"ONLY release supported by GTA2 Game Hunter\"; Win10/11; windowed mode; per-user settings; FPS cap 25→30; ships without music and intro movie; incompatible with FrontendFix."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["2-2", "2-15", "2-33"]
+sources_text = "[2][15][33]"
+
+[[entry]]
+id = "2.4-1"
+origin = "md:325"
+section = "2.4"
+kind = "reissue"
+games = ["gta2"]
+title = "Xplosiv budget release (Empire Interactive)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "EU"
+date_text = "Release date not documented. Redump has two masters, with volumes dated **2000-10-19** and **2002-02-15** (v9.6). Neither dumped master dates from 1999, which goes against the Eli wiki's \"1999 European Release\" label; packaging lists Win 95–XP"
+id_text = "Redump serial **EI-1249**; Product ID 017783-553420; EAN 5017783553420"
+notes = "Plastic clamshell; 18+."
+confidence = "mixed"
+confidence_text = "⚠️ date / ✅ serial"
+sources = ["2-37", "2-48"]
+sources_text = "[37][48]"
+
+[[entry]]
+id = "2.4-2"
+origin = "md:326"
+section = "2.4"
+kind = "reissue"
+games = ["gta2"]
+title = "Rockstar Classics freeware"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW (web)"
+date = "2004-12-22"
+date_text = "**22 Dec 2004** (ru.wikipedia; confirmed by the contemporary AnandTech thread \"Grand Theft Auto 2 FREE courtesy of Rockstar\", first post 22 Dec 2004, linking rockstargames.com/classics, \"happy holidays\")"
+id_text = "9.6 / 9.6f (community)"
+notes = "Free download from rockstargames.com/classics (initially for mailing-list subscribers per PCGW); 344 MB `GTA2INSTALLER.ZIP` mirror on Softpedia; service now offline. On launch day AnandTech users quoted a server message: \"Due to overwhelming response, we have had to limit the number of concurrent connections to our download server\". The same thread mentions Wild Metal downloads. Steam-forum claim: Classics web exes are DRM-free builds."
+confidence = "confirmed"
+confidence_text = "✅ (date, freeware)"
+sources = ["2-2", "2-16", "2-29", "2-30", "2-38", "2-56"]
+sources_text = "[2][16][29][30][38][56]"
+
+[[entry]]
+id = "2.4-3"
+origin = "md:327"
+section = "2.4"
+kind = "reissue"
+games = ["gta2"]
+title = "Steam"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2008-01-04"
+date_text = "4 Jan 2008"
+id_text = "App ID 12180; depot 12181"
+notes = "Part of \"Rockstar Games Brings Full Line-up to Steam\" launch (10% off, Rockstar Collection $53.95). DRM-free after install; Steam Cloud. Two stages. (1) **Sales ended:** unpurchasable worldwide by **12 Oct 2022** at the latest (Steam Community thread: \"Rockstar just removed the game from Steam\"). One user there claims \"removed on all of Steam, since 2013\", which is unsourced ❓; it matches the May 2013 shutdown of Rockstar Classics downloads, but nothing links the two. (2) **Store page removed:** it now redirects to the Steam home page. ixbt.games ran \"Rockstar удалила страницу Grand Theft Auto 2 из Steam\" with a URL dated **17 Jul 2025** (page body not retrievable). GTAboom (30 Jul 2025) says fans noticed \"earlier this week\". So the page went in **mid/late Jul 2025** ⚠️. PCGW: unavailable. SteamDB still lists the app (last record update 29 Sep 2026; its pages are behind a bot check)"
+confidence = "mixed"
+confidence_text = "✅ release / ⚠️ delist dates"
+sources = ["2-1", "2-2", "2-39", "2-40", "2-53", "2-54", "2-55"]
+sources_text = "[1][2][39][40][53][54][55]"
+
+[[entry]]
+id = "2.4-4"
+origin = "md:328"
+section = "2.4"
+kind = "reissue"
+games = ["gta2"]
+title = "PlayStation Network (PS one Classics)"
+platforms = ["ps3", "psp"]
+platform_text = "PS3/PSP"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "No evidence of a PSN re-release found."
+confidence_text = "—"
+sources_text = "—"
+
+[[entry]]
+id = "2.4-5"
+origin = "md:329"
+section = "2.4"
+kind = "reissue"
+games = ["gta2"]
+title = "Compilations"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "GTA2 appears in compilations (e.g. PS1 \"Grand Theft Auto: Collector's Edition\" 2000 with GTA + London 1969 [41]; PC \"Grand Theft Auto Classics Collection\" (SecuROM) [2]; Cenega Poland trilogy [2]) — see compilations section."
+confidence_text = "—"
+sources = ["2-2", "2-41"]
+sources_text = "[2][41]"
+
+[sources]
+2-1 = { text = "Wikipedia — Grand Theft Auto 2: https://en.wikipedia.org/wiki/Grand_Theft_Auto_2", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_2", origin = "md:361" }
+2-2 = { text = "PCGamingWiki — Grand Theft Auto 2: https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_2", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_2", origin = "md:362" }
+2-3 = { text = "gta.wiki — GTA2 Demo v8.9: https://gta.wiki/w/GTA2_Demo_v8.9", url = "https://gta.wiki/w/GTA2_Demo_v8.9", origin = "md:363" }
+2-4 = { text = "gta.wiki — Beta Content in GTA 2: https://gta.wiki/w/Beta_Content_in_GTA_2", url = "https://gta.wiki/w/Beta_Content_in_GTA_2", origin = "md:364" }
+2-5 = { text = "gta.wiki — Grand Theft Auto 2: https://gta.wiki/w/Grand_Theft_Auto_2", url = "https://gta.wiki/w/Grand_Theft_Auto_2", origin = "md:365" }
+2-6 = { text = "GTA Wiki (Fandom) — Grand Theft Auto 2: https://gta.fandom.com/wiki/Grand_Theft_Auto_2", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_2", origin = "md:366" }
+2-7 = { text = "TCRF — Grand Theft Auto 2 (Windows): https://tcrf.net/Grand_Theft_Auto_2_(Windows)", url = "https://tcrf.net/Grand_Theft_Auto_2_(Windows", origin = "md:367" }
+2-8 = { text = "Hidden Palace — Grand Theft Auto 2 (Apr 7, 2000 prototype): https://hiddenpalace.org/Grand_Theft_Auto_2_(Apr_7,_2000_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto_2_(Apr_7,_2000_prototype", origin = "md:368" }
+2-9 = { text = "GTAForums — Pre-release build of GTA2 Dreamcast (APR/2000) (title only; page not retrievable): https://gtaforums.com/topic/975813-pre-release-build-of-gta2-dreamcast-apr2000/", url = "https://gtaforums.com/topic/975813-pre-release-build-of-gta2-dreamcast-apr2000/", origin = "md:369" }
+2-10 = { text = "Hidden Palace — Grand Theft Auto 2 (Nov 26, 2001 demo) [Palm OS]: https://hiddenpalace.org/Grand_Theft_Auto_2_(Nov_26,_2001_demo)", url = "https://hiddenpalace.org/Grand_Theft_Auto_2_(Nov_26,_2001_demo", origin = "md:370" }
+2-11 = { text = "Video Game History Foundation Library — CD 298, Rockstar and Take-Two Interactive, May 1999: https://library.gamehistory.org/repositories/2/archival_objects/21320", url = "https://library.gamehistory.org/repositories/2/archival_objects/21320", origin = "md:371" }
+2-12 = { text = "VGHF Library — CD 295, Grand Theft Auto 2, October 1999: https://library.gamehistory.org/repositories/2/digital_objects/13161", url = "https://library.gamehistory.org/repositories/2/digital_objects/13161", origin = "md:372" }
+2-13 = { text = "Business Wire via Gale (21 Oct 1999) — Take-Two/Rockstar begins shipping GTA2: https://go.gale.com/ps/anonymous?id=GALE%7CA56690333", url = "https://go.gale.com/ps/anonymous?id=GALE%7CA56690333", origin = "md:373" }
+2-14 = { text = "Softpedia — Grand Theft Auto 2 Demo: https://games.softpedia.com/get/Games-Demo/Grand-Theft-Auto-2.shtml", url = "https://games.softpedia.com/get/Games-Demo/Grand-Theft-Auto-2.shtml", origin = "md:374" }
+2-15 = { text = "GTAMP — GTA2 downloads page: https://gtamp.com/gta2/", url = "https://gtamp.com/gta2/", origin = "md:375" }
+2-16 = { text = "Russian Wikipedia — Grand Theft Auto 2: https://ru.wikipedia.org/wiki/Grand_Theft_Auto_2", url = "https://ru.wikipedia.org/wiki/Grand_Theft_Auto_2", origin = "md:376" }
+2-17 = { text = "4Gamer — PC版 Grand Theft Auto 2 日本語版: https://www.4gamer.net/games/019/G001915/", url = "https://www.4gamer.net/games/019/G001915/", origin = "md:377" }
+2-18 = { text = "Japanese Wikipedia — グランド・セフト・オート2: https://ja.wikipedia.org/wiki/グランド・セフト・オート2", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート2", origin = "md:378" }
+2-19 = { text = "StrategyWiki — Grand Theft Auto 2: https://strategywiki.org/wiki/Grand_Theft_Auto_2", url = "https://strategywiki.org/wiki/Grand_Theft_Auto_2", origin = "md:379" }
+2-20 = { text = "PSXDataCenter — SLUS-00789: https://psxdatacenter.com/games/U/G/SLUS-00789.html", url = "https://psxdatacenter.com/games/U/G/SLUS-00789.html", origin = "md:380" }
+2-21 = { text = "Rockstar Games Wiki (Fandom) — GTA 2: https://rockstargames.fandom.com/wiki/GTA_2", url = "https://rockstargames.fandom.com/wiki/GTA_2", origin = "md:381" }
+2-22 = { text = "PSXDataCenter — SLES-01404: https://psxdatacenter.com/games/P/G/SLES-01404.html", url = "https://psxdatacenter.com/games/P/G/SLES-01404.html", origin = "md:382" }
+2-23 = { text = "Centre for Computing History — Grand Theft Auto 2 (CH6924): https://www.computinghistory.org.uk/det/6924/Grand%20Theft%20Auto%202/", url = "https://www.computinghistory.org.uk/det/6924/Grand%20Theft%20Auto%202/", origin = "md:383" }
+2-24 = { text = "PSXDataCenter — SLES-02458: https://psxdatacenter.com/games/P/G/SLES-02458", url = "https://psxdatacenter.com/games/P/G/SLES-02458", origin = "md:384" }
+2-25 = { text = "Yahoo! Chiebukuro — GTA2 DC/PS Japan question: https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1042293320", url = "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1042293320", origin = "md:385" }
+2-26 = { text = "(merged into [21])", origin = "md:386" }
+2-27 = { text = "TCRF — Grand Theft Auto 2 (Dreamcast): https://tcrf.net/Grand_Theft_Auto_2_(Dreamcast)", url = "https://tcrf.net/Grand_Theft_Auto_2_(Dreamcast", origin = "md:387" }
+2-28 = { text = "TCRF — Grand Theft Auto 2 (Game Boy Color): https://tcrf.net/Grand_Theft_Auto_2_(Game_Boy_Color)", url = "https://tcrf.net/Grand_Theft_Auto_2_(Game_Boy_Color", origin = "md:388" }
+2-29 = { text = "LibertyCity.net — GTA 2 \"Patch Pack\" (Rysta, Freeloader.com): https://libertycity.net/files/gta-2/149447-gta-2-patch-pack.html", url = "https://libertycity.net/files/gta-2/149447-gta-2-patch-pack.html", origin = "md:389" }
+2-30 = { text = "Steam Community — \"Is 9.6.0.0 The Latest Version?\": https://steamcommunity.com/app/12180/discussions/0/598518313861059958/", url = "https://steamcommunity.com/app/12180/discussions/0/598518313861059958/", origin = "md:390" }
+2-31 = { text = "Steam Community — GTA2 discussion (11.44 / 9.6 / Classics music): https://steamcommunity.com/app/12180/discussions/0/2592234299540706162", url = "https://steamcommunity.com/app/12180/discussions/0/2592234299540706162", origin = "md:391" }
+2-32 = { text = "LibertyCity.net — GTA 2 WindowsXP Patch: https://libertycity.net/files/gta-2/145114-gta-2-windowsxp-patch.html", url = "https://libertycity.net/files/gta-2/145114-gta-2-windowsxp-patch.html", origin = "md:392" }
+2-33 = { text = "LibertyCity.net — Vike's GTA2 Update Patch v.11.44 (changelog): https://libertycity.net/files/gta-2/143416-vikes-gta2-update-patch-v.11.44.html", url = "https://libertycity.net/files/gta-2/143416-vikes-gta2-update-patch-v.11.44.html", origin = "md:393" }
+2-34 = { text = "GTAMP forum — vike's GTA2 update patch v11.44 thread: https://gtamp.com/forum/viewtopic.php?p=6762", url = "https://gtamp.com/forum/viewtopic.php?p=6762", origin = "md:394" }
+2-35 = { text = "WikiGTA — GTA2 Game Hunter: https://en.m.wikigta.org/wiki/GTA2_Game_Hunter", url = "https://en.m.wikigta.org/wiki/GTA2_Game_Hunter", origin = "md:395" }
+2-36 = { text = "GTAMP news archive (Game Hunter 1.483–1.485): https://gtamp.com/page/50", url = "https://gtamp.com/page/50", origin = "md:396" }
+2-37 = { text = "Eli Software Encyclopedia — GTA2 (PC) Empire Interactive/Xplosiv: https://elisoftware.org/wiki/Grand_Theft_Auto_2_(PC,_CD-ROM)_Empire_Interactive_-_1999_European_Release", url = "https://elisoftware.org/wiki/Grand_Theft_Auto_2_(PC,_CD-ROM", origin = "md:397" }
+2-38 = { text = "Softpedia — Grand Theft Auto 2 (freeware): https://games.softpedia.com/get/Freeware-Games/Rockstar-Grand-Theft-Auto-2.shtml", url = "https://games.softpedia.com/get/Freeware-Games/Rockstar-Grand-Theft-Auto-2.shtml", origin = "md:398" }
+2-39 = { text = "Steam News (4 Jan 2008) — Rockstar Games Brings Full Line-up to Steam: https://store.steampowered.com/news/1395/", url = "https://store.steampowered.com/news/1395/", origin = "md:399" }
+2-40 = { text = "SteamDB — App 12180: https://steamdb.info/app/12180/", url = "https://steamdb.info/app/12180/", origin = "md:400" }
+2-41 = { text = "German Wikipedia — Grand Theft Auto 2: https://de.wikipedia.org/wiki/Grand_Theft_Auto_2", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_2", origin = "md:401" }
+2-42 = { text = "French Wikipedia — Grand Theft Auto 2: https://fr.wikipedia.org/wiki/Grand_Theft_Auto_2", url = "https://fr.wikipedia.org/wiki/Grand_Theft_Auto_2", origin = "md:402" }
+2-43 = { text = "gta.wiki — GTA 2: The Movie: https://gta.wiki/w/GTA_2:_The_Movie", url = "https://gta.wiki/w/GTA_2:_The_Movie", origin = "md:403" }
+2-44 = { text = "WikiGTA — GTA2: https://en.wikigta.org/wiki/GTA2", url = "https://en.wikigta.org/wiki/GTA2", origin = "md:404" }
+2-45 = { text = "Hidden Palace — GTA 2 builds: https://hiddenpalace.org/Grand_Theft_Auto_2_(Sep_10,_1999_prototype) (archive copy https://archive.org/details/GrandTheftAuto2Sep101999prototype) ; https://hiddenpalace.org/Grand_Theft_Auto_2_(Sep_22,_1999_demo) ; page list via https://hiddenpalace.org/w/api.php (allpages prefix \"Grand Theft Auto 2\")", url = "https://hiddenpalace.org/Grand_Theft_Auto_2_(Sep_10,_1999_prototype", origin = "md:405" }
+2-46 = { text = "Hidden Palace — Grand Theft Auto: London 1969 (Apr 11, 1999 prototype) (mentions a GTA 2 prototype disc in MattJ155's video): https://hiddenpalace.org/Grand_Theft_Auto:_London_1969_(Apr_11,_1999_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_London_1969_(Apr_11,_1999_prototype", origin = "md:406" }
+2-47 = { text = "Hidden Palace — Grand Theft Auto 2 (Nov 19, 2001 demo) [Palm OS, monochrome]: https://hiddenpalace.org/Grand_Theft_Auto_2_(Nov_19,_2001_demo)", url = "https://hiddenpalace.org/Grand_Theft_Auto_2_(Nov_19,_2001_demo", origin = "md:407" }
+2-48 = { text = "redump.org — GTA 2 discs: PC US http://redump.org/disc/53722/ ; Canada /disc/16558/ ; EU /disc/31547/ ; Gamer's Choice /disc/36441/ ; Russia /disc/104121/ ; Japan /disc/114259/ ; Poland /disc/105800/ ; Xplosiv /disc/30622/ and /disc/42862/ ; Software Pyramide /disc/97544/ ; PC Best Buy /disc/134155/ ; Italy covermount /disc/31461/ ; Take Two Heritage /disc/105438/ ; Classics Collection /disc/10981/ ; GameStar 10/2002 /disc/123257/ ; GameStar Sonderheft 01/2003 /disc/101412/ ; PS1 SLUS-00789 /disc/524/ ; SLES-01404 /disc/1295/ ; SLES-01404 Rev 1 /disc/188/ ; SLES-02453 /disc/2577/ ; DC US /disc/22119/ ; DC EU /disc/19717/ ; DC France /disc/61592/ (all http://redump.org)", url = "http://redump.org/disc/53722/", origin = "md:408" }
+2-49 = { text = "No-Intro Nintendo Game Boy Color DAT (libretro-database mirror): https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/no-intro/Nintendo%20-%20Game%20Boy%20Color.dat", url = "https://raw.githubusercontent.com/libretro/libretro-database/master/metadat/no-intro/Nintendo%20-%20Game%20Boy%20Color.dat", origin = "md:409" }
+2-50 = { text = "Game Boy hardware database (gbhwdb), GBC cartridges: https://gbhwdb.gekkio.fi/cartridges/gbc.html", url = "https://gbhwdb.gekkio.fi/cartridges/gbc.html", origin = "md:410" }
+2-51 = { text = "Arcade-History — Grand Theft Auto 2 [Model CGB-BGTP-UKV]: https://www.arcade-history.com/game/67969/?o=13", url = "https://www.arcade-history.com/game/67969/?o=13", origin = "md:411" }
+2-52 = { text = "Sega Retro — Grand Theft Auto 2 (Dreamcast; developer credit, regional release dates and codes, citing EB World, Chips, Amazon UK, Micromania, Centro Mail, FutureGamez archived pages): https://segaretro.org/Grand_Theft_Auto_2", url = "https://segaretro.org/Grand_Theft_Auto_2", origin = "md:412" }
+2-53 = { text = "Steam Community — GTA 2 discussion (Oct–Nov 2022) on removal from sale: https://steamcommunity.com/app/12180/discussions/0/3648503910213179647", url = "https://steamcommunity.com/app/12180/discussions/0/3648503910213179647", origin = "md:413" }
+2-54 = { text = "GTAboom — \"A Classic Grand Theft Auto Game Just Vanished from Steam Without a Word\", 30 Jul 2025: https://www.gtaboom.com/steam-just-removed-a-classic-grand-theft-auto-game-f271", url = "https://www.gtaboom.com/steam-just-removed-a-classic-grand-theft-auto-game-f271", origin = "md:414" }
+2-55 = { text = "iXBT.games — \"Rockstar удалила страницу Grand Theft Auto 2 из Steam\" (URL dated 17 Jul 2025; title/date only, body not retrievable): https://ixbt.games/news/2025/07/17/rockstar-udalila-stranicu-grand-theft-auto-2-iz-steam.html", url = "https://ixbt.games/news/2025/07/17/rockstar-udalila-stranicu-grand-theft-auto-2-iz-steam.html", origin = "md:415" }
+2-56 = { text = "AnandTech Forums — \"Grand Theft Auto 2 FREE courtesy of Rockstar\", 22–23 Dec 2004: https://forums.anandtech.com/threads/grand-theft-auto-2-free-courtesy-of-rockstar.1480403", url = "https://forums.anandtech.com/threads/grand-theft-auto-2-free-courtesy-of-rockstar.1480403", origin = "md:416" }

@@ -45,6 +45,11 @@ tools/txd-ref/build.sh /tmp/txdref crates/ef-texture/tests/fixtures
 The texture fixtures are deterministic: CI regenerates them and checks they are unchanged. The TGA
 fixtures alone can be rebuilt with `python3 tools/txd-ref/tga_fixtures.py crates/ef-texture/tests/fixtures`.
 
+The build database (every documented build, version, patch, edition, demo, prototype and leak) is
+plain TOML in `crates/ef-core/data/database/`. Corrections and additions are welcome as pull
+requests, with a source for every entry; see [docs/DATABASE.md](docs/DATABASE.md). Check them with
+`cargo run -p eyefinder-cli -- db validate crates/ef-core/data/database`.
+
 The release index (every GTA release the redump / No-Intro DATs, redump's PC DAT, Wikipedia and
 titledb list; used for detection and shown on the Index page) is generated from pinned sources
 named in the script. The downloads go to a cache folder, so a second run works offline:

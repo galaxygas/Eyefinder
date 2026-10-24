@@ -1,0 +1,1485 @@
+# Grand Theft Auto: Vice City: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "4"
+origin = "md:656"
+title = "4. Grand Theft Auto: Vice City (2002)"
+games = ["vc"]
+text = "Developer: Rockstar North (PS2/PC); Rockstar Vienna (Xbox port, per TCRF); War Drum Studios (2012 mobile port, per TCRF). Publisher: Rockstar Games (Capcom in Japan). Announced at E3, 22 May 2002 [1]. Scope note: the 2021 Definitive Edition and Vice City Stories (2006) are covered in other sections."
+
+[[section]]
+id = "4.1"
+origin = "md:660"
+title = "4.1 Development timeline and pre-release"
+games = ["vc"]
+text = '''
+Notes:
+- No other Vice City prototype (pre-release disc, demo disc or PC beta) is listed on Hidden Palace as of research date; Hidden Palace lists only the Oct 1, 2002 PS2 build plus an EPK, a Take-Two 2003 catalogue and a Double Pack Xbox video (non-prototype material) [3].
+- No playable PC/Xbox demo of Vice City was found documented — "not documented".
+- TCRF's main Vice City page lists a "Development Info" subpage but no "Proto:" prototype page; Hidden Palace says TCRF has a research article on the Oct 2002 build. The Development Info subpage could not be fetched (site error) — content not verified here.
+- The 2025 press coverage disagrees on purpose of the build: Rockstar Intel/GTABoom/Time Extension relay forum speculation that it was a GameSpot/press preview build; jasondeegan.com suggests a developer beta. Treat as unresolved ❓.'''
+
+[[section]]
+id = "4.2"
+origin = "md:678"
+title = "4.2 PlayStation 2 — retail releases and disc revisions"
+games = ["vc"]
+
+[[section]]
+id = "4.2.ps2-internal-version-revisions-per-tcrf"
+origin = "md:696"
+title = "PS2 internal version revisions (per TCRF)"
+games = ["vc"]
+text = "Haitian controversy timeline (context for v3.00): Nov 2003 protests by Haitian Centers Council and Haitian Americans for Human Rights in NYC; Mayor Bloomberg threatened legal action; Take-Two apologised and agreed to remove the statements from future copies (GameDeveloper/Gamasutra report dated 10 Dec 2003) [1][20][21]."
+
+[[section]]
+id = "4.3"
+origin = "md:709"
+title = "4.3 Windows PC — retail, patch, digital"
+games = ["vc"]
+text = "Gaps: exact byte sizes / timestamps of the v1.0, v1.1, Steam, Japanese and RGL executables (normally on gtamods.com) could not be retrieved. gtamods.com returned server errors in the first pass and a maintenance page in the second. Patch 1.1 date: 19 May 2003 from a single source group (⚠️)."
+
+[[section]]
+id = "4.3a"
+origin = "md:731"
+title = "4.3a PC executable builds recognised by modding tools"
+games = ["vc"]
+text = "Community modding toolkits must tell PC executables apart, so their detection code is evidence of which distinct `.exe` builds exist. Plugin-SDK (the main C++ modding SDK for the 3D-era games) recognises exactly three Vice City executables, identified by the address of a known function prologue (`55 89 E5 53`, read as 0x53E58955). This confirms at least these three distinct builds (v1.0, v1.1, Steam); other executables (e.g. Japanese, Rockstar Games Launcher, Mac) exist but are not handled by Plugin-SDK. It gives no file sizes or dates; the gtamods.com exe table (sizes/timestamps) was offline during research."
+
+[[section]]
+id = "4.4"
+origin = "md:742"
+title = "4.4 Xbox"
+games = ["vc"]
+
+[[section]]
+id = "4.5"
+origin = "md:754"
+title = "4.5 Mac OS X"
+games = ["vc"]
+
+[[section]]
+id = "4.6"
+origin = "md:762"
+title = "4.6 Mobile — 10th Anniversary Edition (War Drum Studios port)"
+games = ["vc"]
+text = "Announced 26 Oct 2012, detailed 21 Nov 2012 (GTA Wiki); launch price US$4.99 (UK £2.99 App Store / £3.29 Google Play) [13]. Features: native hi-res graphics, updated character models & lighting, customisable controls [13]. Songs removed vs PS2/PC (licensing): \"Billie Jean\", \"Wanna Be Startin' Somethin'\" (Michael Jackson), \"Rockit\" (Herbie Hancock), \"Looking For The Perfect Beat\" (Afrika Bambaataa), \"The Smurf\" (Tyrone Brunson), \"Bark at the Moon\" (Ozzy Osbourne), \"Añunga Ñunga\" (Irakere), \"Wow\" (Kate Bush); \"Self-Control\" (Laura Branigan) replaces the first-vehicle song [11]. Japanese-version censorship not present on smartphone version (ja.wikipedia) [19]."
+
+[[section]]
+id = "4.7"
+origin = "md:782"
+title = "4.7 PlayStation 3 / PlayStation 4 re-releases"
+games = ["vc"]
+
+[[section]]
+id = "4.8"
+origin = "md:789"
+title = "4.8 Other platforms / regional summary"
+games = ["vc"]
+text = '''
+- Dreamcast (unofficial fan port, not a Rockstar release): team led by SKMP (Stefanos Kornilios Mitsis Poiitidis) with Falco Girgis, following their GTA III Dreamcast port; preview reported 24 Feb 2025 (no sound at first), public beta released 2 Apr 2025 (adds 2xFSAA, 24bpp framebuffer mode), runnable on Dreamcast hardware. Underlying codebase (e.g. reVC decompilation) not stated by the article. ⚠️ [40]
+- Korean, Russian, Polish and Brazilian editions: only publisher names (KR PC Inplay Interactive; KR mobile Selvas; RU 1C-SoftClub; PL Cenega Classics) are documented; serials/dates not documented [18][22].
+- Ratings recorded by Grand Theft Wiki: ESRB M, BBFC 18, ACB MA15+, OFLC (NZ) R18, USK 16+, aDeSe +18, VET/SFB 18, DJCTQ 18 [14]. German digital/10th-Anniversary releases are USK 18 and uncensored (TCRF) [15].
+- Compilations containing Vice City (one-line cross-reference only): Grand Theft Auto: Double Pack (PS2/Xbox, 2003), Grand Theft Auto: The Trilogy (2005 Xbox/PS2/PC; 2010 Mac), Rockstar Store "originals" bundle (Dec 2021), and The Definitive Edition (2021) — see compilations and section 10.'''
+
+[[section]]
+id = "4.9"
+origin = "md:796"
+title = "4.9 Key gaps / unresolved items"
+games = ["vc"]
+text = '''
+1. gtamods.com (exe version table, sizes, entry points for v1.0 / v1.1 / Steam / Japanese / RGL) was still unreachable in the second pass (GTANet "Back soon" maintenance page; Internet Archive "temporarily offline"), so PC exe identification data is still not documented here.
+2. PC patch v1.1 date is now 19 May 2003 from one source group (Gamepressure/GRY-Online) ⚠️ and needs independent confirmation.
+3. ~~Redump PS2 versions/GH/Platinum~~ resolved in the second pass from Redump disc pages (v1.40 NA, v1.50 EU, v2.01 NA, v2.03 EU, v3.00 NA/EU, v4.00 NA Trilogy, AU v1.00, DE v1.03, JP v1.02, JP Rockstar Classics SLPM-55291). Still open: release dates of GH/Platinum printings, and what changed in v4.00 and in Xbox Rev 1 (TT-115).
+4. Steam audio history (Dec 2012 "new audio" depot vs "original audio") contradictory between PCGW, TCRF and user reports.
+5. Android: current versions and the German package (com.rockstargames.gtavcger, v1.12) are documented, as is the existence of 1.10. Per-version dates are not documented, and neither is the Fire OS version history.
+6. ~~PS4 CUSA / PS3 PSN IDs~~ resolved (CUSA03509/CUSA03546; NPUD20552/NPED00121). EU/AU PS3 release dates are still not documented.
+7. Australian-specific content differences (if any) not documented despite separate serial SLES-51316 (Redump: v1.00, EXE 2002-10-22) and the Steam AUS exe depot.
+8. NA PS2 release day conflict: 27 Oct 2002 (GTA Wiki, Grand Theft Wiki, Namu, TCRF categories) vs 29 Oct 2002 (Wikipedia, PSXDC, Hidden Palace).
+9. No pre-release PC/Xbox build, demo disc or E3 2002 demo build is documented as preserved (Hidden Palace's VC prototype category still holds only the Oct 1, 2002 build).
+10. TCRF "Development Info" subpage still unreadable (Cloudflare check). Korean PS2/PC serials and dates are not documented. Mac App Store app IDs and version numbers are not documented.'''
+
+[[entry]]
+id = "4.1-1"
+origin = "md:664"
+section = "4.1"
+kind = "milestone"
+games = ["vc"]
+title = "Announcement"
+platform_text = "—"
+region = "—"
+date = "2002-05-22"
+date_text = "22 May 2002 (E3)"
+id_text = "—"
+notes = "Announced at E3 2002. Origin: began as a planned GTA III mission pack, then made stand-alone; full production from late 2001 / early 2002."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "4.1-2"
+origin = "md:665"
+section = "4.1"
+kind = "milestone"
+games = ["vc"]
+title = "Release date slip"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date_text = "announced 5 Sep 2002"
+id_text = "—"
+notes = "Rockstar moved NA release from 22 Oct to 29 Oct 2002."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "4.1-3"
+origin = "md:666"
+section = "4.1"
+kind = "milestone"
+games = ["vc"]
+title = "Oct 1, 2002 prototype (self-labelled \"v1.50\")"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "PAL (EU)"
+date_text = "Compiled 1 Oct 2002 22:34:23 (in-game text shows \"Wed 02/10/2002\"; some files dated 27 Sep 2002); publicly released 1 Feb 2025"
+version = "1.50"
+serials = ["SLES-51061"]
+id_text = "Disc serial SLES-51061"
+notes = "Dumped by \"johndoe2\", released on GTAForums by IAmNotToniCipriani, amplified by Vadim M. (@NationalPepper). Despite calling itself v1.50 it predates the final US v1.40. Contains debug view (L1+R1+L3+R3), early vehicle/character models (e.g. SWAT), different wheels, alternative theme mix, different intro/cutscene cameras & animations, thicker black HUD text outlines. Speculated (not proven) to be a press/preview build for outlets like GameSpot. Context: Redump has a **retail** EU disc that is also v1.50 (SLES-51061, EXE date 2002-10-06, edition \"Original\"; see 4.2). So \"v1.50\" was the version number of the first EU retail pressing, and the prototype carries the same number five days before that retail EXE date."
+confidence = "mixed"
+confidence_text = "✅ (build) / ❓ (press-build origin)"
+sources = ["4-3", "4-4", "4-5", "4-6", "4-38", "4-39", "4-45"]
+sources_text = "[3][4][5][6][38][39][45]"
+
+[[entry]]
+id = "4.1-4"
+origin = "md:667"
+section = "4.1"
+kind = "milestone"
+games = ["vc"]
+title = "Final build (\"gold\") NA"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date = "2002-10-06"
+date_text = "6 Oct 2002"
+id_text = "—"
+notes = "Final build date given by Hidden Palace."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-3"]
+sources_text = "[3]"
+
+[[entry]]
+id = "4.1-5"
+origin = "md:668"
+section = "4.1"
+kind = "milestone"
+games = ["vc"]
+title = "Final build (\"gold\") EU"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "EU"
+date = "2002-10-15"
+date_text = "15 Oct 2002"
+id_text = "—"
+notes = "Final build date given by Hidden Palace; Wikipedia also states development stopped by 15 Oct 2002 when submitted for manufacturing."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-3"]
+sources_text = "[1][3]"
+
+[[entry]]
+id = "4.1-6"
+origin = "md:669"
+section = "4.1"
+kind = "milestone"
+games = ["vc"]
+title = "Cut/unused content (retail data)"
+platforms = ["ps2", "pc"]
+platform_text = "PS2/PC"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Unused weapons in files (Grenade Launcher, Steyr AUG, AK-47 [PC only], Short Python, Tazer, Staplegun, Nailgun, \"Silenced Colt\"/Wildey, Short MP5, early Uzi/M16, GTA III shotgun); unused \"Vice City News\" (VCN) radio logo; unused HUD/radio map icons; \"MC Tommy\" outfit string; tire-slashing stat; cut helicopter-physics cheat; hidden \"SA Goon\" rating (1000–1005)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-2"]
+sources_text = "[2]"
+
+[[entry]]
+id = "4.1-7"
+origin = "md:670"
+section = "4.1"
+kind = "milestone"
+games = ["vc"]
+title = "Pre-release media differences"
+platform_text = "—"
+region = "—"
+date = "2002"
+date_text = "2002 (pre-release screenshots/trailers)"
+id_text = "—"
+notes = "Grand Theft Wiki (page flagged for cleanup/verification): taser, nailgun, landmines, grenade launcher, Steyr AUG seen in beta; GTA III shotgun/rocket launcher originally present; silenced Ingram on official-site poster; longer-barrel M4; unsilenced PSG-1; early Infernus/Virgo/Blista Compact designs; longer intro; cut Fort Baxter runway, bus shelters, Hyman Memorial Stadium elements; Haitian \"I Want YOU\" shirt later \"RELAX\"."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-34"]
+sources_text = "[34]"
+
+[[entry]]
+id = "4.2-1"
+origin = "md:682"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Original retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date = "2002-10-29"
+date_text = "29 Oct 2002 (some wikis say 27 Oct 2002)"
+version = "1.40"
+serials = ["SLUS-20552"]
+id_text = "SLUS-20552; UPC 710425271458; DVD-5; disc VER 1.40; EXE date 2002-10-06; CRC 09DA2E43"
+notes = "English only; 60 Hz, 16:9 option, Dolby Digital. Wikipedia/PSXDC give 29 Oct; GTA Wiki/Grand Theft Wiki/TCRF categories/Namu give 27 Oct (unreconciled). Redump edition: Original only. Volume label VICE_CITY."
+confidence = "mixed"
+confidence_text = "✅ (serial/version) / ⚠️ (exact day)"
+sources = ["4-1", "4-7", "4-13", "4-14", "4-41"]
+sources_text = "[1][7][13][14][41]"
+
+[[entry]]
+id = "4.2-2"
+origin = "md:683"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Original retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "EU (PAL)"
+date = "2002-11-08"
+date_text = "8 Nov 2002"
+serials = ["SLES-51061"]
+id_text = "SLES-51061; EAN 5026555301008; disc VER **1.50**; EXE date 2002-10-06; CRC 66C68FEB; BBFC reg. VFC40278"
+notes = "Multi-5 text (EN/FR/DE/IT/ES), English voice; 50 Hz only per PSXDC. Redump edition: Original only (first EU pressing)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-8", "4-45"]
+sources_text = "[1][8][45]"
+
+[[entry]]
+id = "4.2-3"
+origin = "md:684"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Australian retail"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "AU (PAL)"
+date_text = "21 Nov 2002 (PSXDC); 8 Nov 2002 (Grand Theft Wiki)"
+version = "1.00"
+serials = ["SLES-51316"]
+id_text = "SLES-51316 (also SLES-51316-P Platinum); EAN 5026555301138; disc VER 1.00; EXE date 2002-10-22; CRC 91FFCC79"
+notes = "Separate AU serial, English only, OFLC MA15+. Redump: one disc image for Original and Platinum. Content differences vs EU not documented. Steam later shipped a separate \"gtavc_aus_exe\" depot, which may point to an AU-specific build line (inference, not documented)."
+confidence = "mixed"
+confidence_text = "✅ (serial/version) / ⚠️ (date)"
+sources = ["4-9", "4-14", "4-48"]
+sources_text = "[9][14][48]"
+
+[[entry]]
+id = "4.2-4"
+origin = "md:685"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "German censored (\"Deutsche Version\")"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "DE (PAL)"
+date = "2003-04-15"
+date_text = "15 Apr 2003 (PSXDC)"
+version = "1.03"
+serials = ["SLES-51595"]
+id_text = "SLES-51595 (Redump serials SLES-51595-P Platinum, SLES-51595-T); EAN 5026555301787; disc VER 1.03; EXE date 2003-04-15; CRC 31DB9DFE"
+notes = "PSXDC: \"censored version for the German market\". Redump: same comment; language chosen via the console's BIOS setting; English voices, EN/FR/DE/IT/ES subtitles. TCRF: carries over GTA III's German censorship; missions \"Messing with the Man\" and \"Dirty Lickin's\" removed; rampages removed; stats adjusted. Uncensored in the 10th Anniversary and later digital releases (USK 18)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-10", "4-11", "4-49"]
+sources_text = "[10][11][49]"
+
+[[entry]]
+id = "4.2-5"
+origin = "md:686"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Japanese retail (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2004-05-20"
+date_text = "20 May 2004"
+version = "1.02"
+serials = ["SLPM-65488"]
+id_text = "SLPM-65488; JAN 4976219649933; disc VER 1.02; EXE date 2004-04-08; CRC EB12FCFA"
+notes = "Redump: one disc image shared by Original, Best Price (SLPM-66790), CapKore (SLPM-66034) and the JP Double Pack (CPCS-01027). Title グランド・セフト・オート・バイスシティ. Published by Capcom. Japanese subtitles only (no dub). CERO 18+ splash added. Uses \"Haitian-friendly\" v3.00-type script (TCRF). Censorship: Candy Suxxx posters → kittens/flowers, drug/cocaine scenes in \"The Shootist\"/\"No Escape?\" shortened, Candy's moaning removed, chainsaw blood removed, headshot decapitation cut (ja.wikipedia); several mission bug fixes; two extra skins (Tache, Wild). PSXDC lists date 29 Oct 2002 & US UPC for this serial — clearly copied in error."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-11", "4-12", "4-15", "4-19", "4-37", "4-50"]
+sources_text = "[1][11][12][15][19][37][50]"
+
+[[entry]]
+id = "4.2-6"
+origin = "md:687"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "CapKore (Capcom Collection) budget"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2005-05-19"
+date_text = "19 May 2005"
+serials = ["SLPM-66034"]
+id_text = "SLPM-66034; JAN 4976219652940"
+notes = "Capcom budget reissue. Redump: same v1.02 disc image as SLPM-65488 (package barcode 4 976219 652940 matches)."
+confidence = "mixed"
+confidence_text = "✅ (serial) / ⚠️ (date)"
+sources = ["4-16", "4-50"]
+sources_text = "[16][50]"
+
+[[entry]]
+id = "4.2-7"
+origin = "md:688"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Best Price budget"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2007-07-12"
+date_text = "12 Jul 2007"
+serials = ["SLPM-66790"]
+id_text = "SLPM-66790; JAN 4976219022637"
+notes = "Capcom budget reissue. Redump: same v1.02 disc image as SLPM-65488."
+confidence = "mixed"
+confidence_text = "✅ (serial) / ⚠️ (date)"
+sources = ["4-17", "4-50"]
+sources_text = "[17][50]"
+
+[[entry]]
+id = "4.2-8"
+origin = "md:689"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Rockstar Classics reissue (**new entry**)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date_text = "not documented"
+version = "1.00"
+serials = ["SLPM-55291"]
+id_text = "SLPM-55291; disc VER 1.00; EXE date 2004-04-08; CRC 7C4DD6F9 (4,695,523,328 bytes)"
+notes = "Redump: a separate Rockstar Classics disc image (not the Capcom v1.02 image, though the EXE date is the same). Counterpart of GTA III's Rockstar Classics SLPM-55293 (29 Sep 2011); its own release date was not found."
+confidence = "confirmed"
+confidence_text = "✅ (disc) / date not documented"
+sources = ["4-51"]
+sources_text = "[51]"
+
+[[entry]]
+id = "4.2-9"
+origin = "md:690"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Greatest Hits (NA)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date_text = "not documented (date)"
+id_text = "SLUS-20552GH"
+notes = "Redump: the GH serial was verified on **two** disc images: v2.01 (EXE 2003-04-25; editions \"Original, Greatest Hits Double Pack\") and v3.00 (EXE 2004-01-16; editions Greatest Hits, Double Pack Greatest Hits, *The Trilogy*). So early GH copies are v2.01 and later ones v3.00. PSXDC shows a GH cover under SLUS-20552."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-7", "4-42", "4-43"]
+sources_text = "[7][42][43]"
+
+[[entry]]
+id = "4.2-10"
+origin = "md:691"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Platinum (PAL)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "EU"
+date_text = "not documented (date)"
+serials = ["SLES-51061"]
+id_text = "SLES-51061-P"
+notes = "Redump: Platinum was verified on **two** EU disc images: v2.03 (EXE 2003-03-12; editions Original, Platinum, Double Pack) and v3.00 (EXE 2004-01-16; editions Original, Platinum, *The Trilogy*). TCRF: later Platinum/Greatest Hits copies are v3.00."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-11", "4-46", "4-47"]
+sources_text = "[11][46][47]"
+
+[[entry]]
+id = "4.2-11"
+origin = "md:692"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Third NA printing (\"P3\")"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date_text = "not documented"
+id_text = "SLUS-20552P3"
+notes = "Redump: the P3 serial appears on v3.00 (USA, Canada) and on a **v4.00** disc (EXE 2004-01-16; edition *Grand Theft Auto: The Trilogy*; CRC B17BA0A2; 3,837,526,016 bytes, noticeably smaller than the other images)."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["4-43", "4-44"]
+sources_text = "[43][44]"
+
+[[entry]]
+id = "4.2-12"
+origin = "md:693"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Korean release"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "KR"
+date_text = "not documented"
+id_text = "not documented"
+notes = "Namu Wiki lists Korean publishers only for PC (인플레이 인터렉티브 / Inplay Interactive) and mobile (셀바스 / Selvas); no Korean PS2 serial found."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["4-18"]
+sources_text = "[18]"
+
+[[entry]]
+id = "4.2-13"
+origin = "md:694"
+section = "4.2"
+kind = "retail"
+games = ["vc"]
+title = "Double Pack (with GTA III)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA/EU/JP"
+date_text = "—"
+serials = ["SLES-51061", "SLES-50330", "CPCS-01027"]
+id_text = "SLUS-27003GH (NA GH); SLES-51061-T + SLES-50330-T (EU); CPCS-01027 (JP)"
+notes = "Compilation; see compilations section. Redump: EU Double Pack VC disc = v2.03 (SLES-51061-T); NA \"Double Pack Greatest Hits\" = v3.00 (v2.01 disc edition field reads \"Greatest Hits Double Pack\"); JP Double Pack = CapKore SLPM-66034 (v1.02 image)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-7", "4-8", "4-42", "4-43", "4-46", "4-50"]
+sources_text = "[7][8][42][43][46][50]"
+
+[[entry]]
+id = "4.2.ps2-internal-version-revisions-per-tcrf-1"
+origin = "md:700"
+section = "4.2.ps2-internal-version-revisions-per-tcrf"
+kind = "retail"
+games = ["vc"]
+title = "v1.40"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA (first print)"
+date = "2002-10"
+date_text = "Oct 2002 (Redump EXE date 2002-10-06)"
+version = "1.40"
+id_text = "in-game version \"1.40\""
+notes = "Redump: the EU first print is numbered **v1.50**, not 1.40 (SLES-51061, same EXE date 2002-10-06); whether its content matches NA v1.40 is not documented. Real-world weapon names/graphics; \"Running With the Night\" (Lionel Richie) on Flash FM; original Cuban/Haitian dialogue; Tear Gas weapon present; \"Trial By Dirt\" rain/Haitians/barrels on first attempt; The Driver intro uses \"In a Big Country\". Hidden Palace notes the Oct 1 prototype calls itself \"v1.50\" despite predating v1.40."
+confidence = "mixed"
+confidence_text = "✅ (version/date, Redump) / ⚠️ (content list)"
+sources = ["4-3", "4-11", "4-41", "4-45"]
+sources_text = "[3][11][41][45]"
+
+[[entry]]
+id = "4.2.ps2-internal-version-revisions-per-tcrf-2"
+origin = "md:701"
+section = "4.2.ps2-internal-version-revisions-per-tcrf"
+kind = "retail"
+games = ["vc"]
+title = "v1.50 (EU retail)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "EU"
+date = "2002-11"
+date_text = "Nov 2002 (Redump EXE date 2002-10-06)"
+version = "1.50"
+serials = ["SLES-51061"]
+id_text = "disc VER 1.50 (SLES-51061, CRC 66C68FEB)"
+notes = "First EU retail pressing (Redump edition \"Original\"). Same version number as the Oct 1, 2002 prototype. TCRF does not describe a separate 1.50 content set."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["4-45"]
+sources_text = "[45]"
+
+[[entry]]
+id = "4.2.ps2-internal-version-revisions-per-tcrf-3"
+origin = "md:702"
+section = "4.2.ps2-internal-version-revisions-per-tcrf"
+kind = "retail"
+games = ["vc"]
+title = "v2.01"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date = "2003"
+date_text = "2003 (exact date not documented)"
+version = "2.01"
+id_text = "\"2.01\""
+notes = "Shipped with the Double Pack. Weapons renamed/graphics altered (licensing); \"Running With the Night\" removed; fixes Trial By Dirt stat glitch, Detonator bug, Cherry Poppers save glitch; trails option also toggles rain/blood droplets; Boomshine Saigon blur changed; Recruitment Drive clothing changed; original Haitian/Cuban dialogue retained. Redump: NA v2.01 disc (SLUS-20552 / SLUS-20552GH) EXE date **2003-04-25**, editions \"Original, Greatest Hits Double Pack\"."
+confidence = "mixed"
+confidence_text = "⚠️ (content) / ✅ (disc)"
+sources = ["4-11", "4-42"]
+sources_text = "[11][42]"
+
+[[entry]]
+id = "4.2.ps2-internal-version-revisions-per-tcrf-4"
+origin = "md:703"
+section = "4.2.ps2-internal-version-revisions-per-tcrf"
+kind = "retail"
+games = ["vc"]
+title = "v2.03 (EU)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "EU"
+date = "2003"
+date_text = "2003 (Redump EXE date 2003-03-12)"
+version = "2.03"
+serials = ["SLES-51061"]
+id_text = "disc VER 2.03 (SLES-51061#, -P, -T; CRC 5C222A03)"
+notes = "Redump editions: Original, Platinum, **Double Pack** (the EU Double Pack disc is v2.03, not 2.01). Presumably the EU counterpart of NA v2.01, but a content comparison is not documented ❓."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["4-46"]
+sources_text = "[46]"
+
+[[entry]]
+id = "4.2.ps2-internal-version-revisions-per-tcrf-5"
+origin = "md:704"
+section = "4.2.ps2-internal-version-revisions-per-tcrf"
+kind = "retail"
+games = ["vc"]
+title = "v3.00 (\"Haitian-friendly\")"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA/PAL/JP"
+date_text = "after Dec 2003 (Take-Two pledged on ~9–10 Dec 2003 to edit \"all future editions\")"
+version = "3.00"
+id_text = "\"3.00\""
+notes = "Nearly all Haitian/Cuban references removed (incl. \"Kill all the Haitians\" objective text); Tear Gas removed (Washington Beach pickup → grenades); Trial By Dirt stat glitch returns; Kaufman Cab audio too fast; Ammu-Nation clerks no longer attack when aimed at; loading other-revision saves starts new game; more music removed; The Driver intro music changed to \"The Message\" (Grandmaster Flash). Also used for Japanese release; sold as Greatest Hits/Platinum. Redump: NA v3.00 (SLUS-20552GH / P3; \"USA, Canada\"; CRC 7D2BFCF4) and EU v3.00 (SLES-51061#2 / -P#; CRC 60DA431A) both have EXE date **2004-01-16**, after the Dec 2003 pledge. Editions: GH, Double Pack GH, *The Trilogy* (NA); Original, Platinum, *The Trilogy* (EU). Note: Redump numbers the JP disc v1.02 (EXE 2004-04-08), so \"v3.00-type\" for Japan refers to script content, not the disc VER."
+confidence = "mixed"
+confidence_text = "⚠️ (content detail) / ✅ (disc, dialogue-edit pledge)"
+sources = ["4-11", "4-20", "4-21", "4-43", "4-47", "4-50"]
+sources_text = "[11][20][21][43][47][50]"
+
+[[entry]]
+id = "4.2.ps2-internal-version-revisions-per-tcrf-6"
+origin = "md:705"
+section = "4.2.ps2-internal-version-revisions-per-tcrf"
+kind = "retail"
+games = ["vc"]
+title = "v4.00 (NA, *The Trilogy*)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date_text = "not documented (shipped in *The Trilogy*; see compilations section for its date); EXE date 2004-01-16"
+version = "4.00"
+id_text = "disc VER 4.00 (SLUS-20552P3; CRC B17BA0A2; 3,837,526,016 bytes)"
+notes = "**New entry.** Redump: a VC disc found only in *Grand Theft Auto: The Trilogy* (NA). Its image is about 860 MB smaller than v3.00 even though the EXE date is the same. What changed is not documented."
+confidence = "confirmed"
+confidence_text = "✅ (disc) / content not documented"
+sources = ["4-44"]
+sources_text = "[44]"
+
+[[entry]]
+id = "4.3-1"
+origin = "md:713"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Retail v1.0"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "NA"
+date_text = "13 May 2003 (Wikipedia); 12 May 2003 (Namu, Grand Theft Wiki); PCGW header says 1 May 2003"
+version = "1.0"
+id_text = "gta-vc.exe \"v1.0\" (community designation)"
+notes = "SecuROM 4 disc-check DRM. v1.0 exe is the one most mods require (CLEO, SkyGfx, widescreen fix). PCGW and TCRF document SecuROM tamper-penalties (permanent rain, no traffic paths, sniper no damage, garages disabled after 35 min, etc.). A cracked copy appeared 3 days before launch (TCRF)."
+confidence = "mixed"
+confidence_text = "✅ (release) / ⚠️ (exact day)"
+sources = ["4-1", "4-2", "4-14", "4-18", "4-22"]
+sources_text = "[1][2][14][18][22]"
+
+[[entry]]
+id = "4.3-2"
+origin = "md:714"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Retail v1.0"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "EU"
+date_text = "16 May 2003 (Wikipedia); 15 May 2003 (Namu/Grand Theft Wiki)"
+version = "1.0"
+id_text = "gta-vc.exe v1.0"
+notes = "Separate German patch download exists (implies German-language PC build)."
+confidence = "mixed"
+confidence_text = "✅ / ⚠️"
+sources = ["4-1", "4-14", "4-18", "4-23"]
+sources_text = "[1][14][18][23]"
+
+[[entry]]
+id = "4.3-3"
+origin = "md:715"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Retail v1.0"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "AU/NZ"
+date = "2003-05-20"
+date_text = "20 May 2003 (Grand Theft Wiki only)"
+version = "1.0"
+id_text = "not documented"
+notes = "Steam later carried a separate \"gtavc_aus_exe\" depot (12117)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-14", "4-24"]
+sources_text = "[14][24]"
+
+[[entry]]
+id = "4.3-4"
+origin = "md:716"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "German PC version"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "DE"
+date_text = "not documented"
+id_text = "not documented"
+notes = "Rockstar distributed a separate German v1.1 patch (vicepatch_11_german.zip); PCGW notes German version uses GTAtitles.mpg differently. Censorship content same as German PS2 per TCRF (applies to German retail releases generally)."
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (content)"
+sources = ["4-11", "4-22", "4-23"]
+sources_text = "[11][22][23]"
+
+[[entry]]
+id = "4.3-5"
+origin = "md:717"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Patch v1.1"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW + German"
+date_text = "19 May 2003 (Gamepressure / GRY-Online \"date added\", which describes it as \"the first patch\"; both sites belong to the same publisher, so this is one source) ⚠️. PC-Welt also covered the release (1.8 MB, polygon display problems on some graphics cards), but its page now shows 21 Feb 2007, apparently a re-dated archive page, so it is not used for the date."
+version = "1.1"
+id_text = "gta-vc.exe \"version 1.1\" (only file changed); vicepatch_11.zip ≈1.9 MB"
+notes = "Official Rockstar Support: \"unsupported graphics fix for polygon corruption on certain video card and PC combinations\"; \"the only change that has been made from your original version\"; only patches an unmodified GTA-VC.EXE. Files: vicepatch_11.zip / vicepatch_11_german.zip containing ViceCity_Patch_11.exe + ReadmeNOW.txt. PCGW: \"Patch v1.1 is the latest patch available. Most digital distribution versions already include this patch.\""
+confidence = "mixed"
+confidence_text = "✅ (patch) / ⚠️ (date)"
+sources = ["4-22", "4-23", "4-55", "4-56"]
+sources_text = "[22][23][55][56]"
+
+[[entry]]
+id = "4.3-6"
+origin = "md:718"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Japanese PC (Capcom)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "JP"
+date_text = "20 May 2004 (Wikipedia); 25 Sep 2003 (Grand Theft Wiki — conflicts, probably confused with GTA III JP date)"
+id_text = "not documented"
+notes = "Published by Capcom. Same censorship as JP PS2 except fire texture yellow/larger (Windows-only) and wheel-rim change PS2-only (TCRF). Weapon purchase controls reversed."
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (date)"
+sources = ["4-1", "4-11", "4-14"]
+sources_text = "[1][11][14]"
+
+[[entry]]
+id = "4.3-7"
+origin = "md:719"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Russian PC (1C-SoftClub)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "RU"
+date_text = "not documented"
+id_text = "not documented"
+notes = "PCGW lists 1C-SoftClub as Russian publisher."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-22"]
+sources_text = "[22]"
+
+[[entry]]
+id = "4.3-8"
+origin = "md:720"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Korean PC (Inplay Interactive)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "KR"
+date_text = "not documented"
+id_text = "not documented"
+notes = "Namu Wiki: PC publisher 인플레이 인터렉티브; Korean language only via unofficial patch; rated 청소년 이용불가 (not for minors)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-18"]
+sources_text = "[18]"
+
+[[entry]]
+id = "4.3-9"
+origin = "md:721"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Polish Cenega \"Classics\""
+platforms = ["pc"]
+platform_text = "Windows"
+region = "PL"
+date_text = "not documented"
+id_text = "not documented"
+notes = "PCGW: \"require Internet activation, but have no DRM.\""
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-22"]
+sources_text = "[22]"
+
+[[entry]]
+id = "4.3-10"
+origin = "md:722"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Steam (app 12110)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date = "2008-01-04"
+date_text = "4 Jan 2008"
+id_text = "Steam App 12110; public build 2745 (built 26 May 2012 per SteamDB depots page)"
+notes = "Depots: 12111 content (1.47 GiB), 12113 gtavc_new_audio, 12114 gtavc_original_audio, 12112 Optional Low Violence (gtavc_lv_content), 12115 gtavc_EU_exe, 12116 gtavc_us_exe, 12117 gtavc_aus_exe. Steam exe is a different build from retail (\"new gta-vc.exe\", DEP-incompatible, reports file version 0.0.0.0); different save format from retail (Silent's \"Vice City Save Converter\" v1.0, 29 Dec 2013). Activated product names include \"Grand Theft Auto: Vice City New Audio NA (WW)\". Community downgraders replace Steam exe with v1.0. Store state now \"retired\" (publisher request)."
+confidence = "mixed"
+confidence_text = "✅ (app/depots) / ⚠️ (exe details)"
+sources = ["4-24", "4-25", "4-26", "4-27", "4-28"]
+sources_text = "[24][25][26][27][28]"
+
+[[entry]]
+id = "4.3-11"
+origin = "md:723"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Steam \"Low Violence\" mode"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+region = "locale-triggered"
+date_text = "—"
+id_text = "depot 12112"
+notes = "PCGW: low-violence gameplay triggers with certain keyboard layouts/locales: ar-EG, de-AT, en-AU, es-ES, fr-CA, qu-PE, se-FI, sr-SP, zh-HK; SilentPatch fixes."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-22", "4-24"]
+sources_text = "[22][24]"
+
+[[entry]]
+id = "4.3-12"
+origin = "md:724"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Steam audio change (\"new audio\")"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+region = "WW"
+date_text = "c. Dec 2012 (rumoured)"
+id_text = "depots 12113/12114"
+notes = "PCGW: \"The current Steam version as of December 2012 was rumored to have some radio songs removed… However, it was reported that the 'New Audio' Steam version still has the full soundtrack.\" Steam forum users (2018, 2020) dispute whether tracks were removed. TCRF: Steam version \"still contains the songs removed from the 10th Anniversary releases\" and keeps original (pre-v3.00) Haitian dialogue. Contradictory evidence — unresolved."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["4-11", "4-22", "4-26", "4-27"]
+sources_text = "[11][22][26][27]"
+
+[[entry]]
+id = "4.3-13"
+origin = "md:725"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "2013 retail re-release"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "not documented"
+date = "2013"
+date_text = "2013"
+id_text = "not documented"
+notes = "PCGW: \"the 2013 retail re-release\" has music cuts matching the mobile port. No further details documented."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-22"]
+sources_text = "[22]"
+
+[[entry]]
+id = "4.3-14"
+origin = "md:726"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Rockstar Games Launcher version"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "WW"
+date_text = "added Sep 2019"
+id_text = "RGL exe (version not documented)"
+notes = "PCGW: has the music cuts from the mobile port/2013 re-release; \"VC RGSC Downgrader\" restores v1.0 exe and removed tracks; Launcher may undo downgrade. SilentPatch added RGL support in 2019."
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (details)"
+sources = ["4-13", "4-22", "4-29"]
+sources_text = "[13][22][29]"
+
+[[entry]]
+id = "4.3-15"
+origin = "md:727"
+section = "4.3"
+kind = "retail"
+games = ["vc"]
+title = "Digital delisting"
+platforms = ["pc"]
+platform_text = "Windows/consoles"
+region = "WW"
+date = "2021-10-13"
+date_text = "13 Oct 2021"
+id_text = "—"
+notes = "Original versions pulled from digital retailers ahead of the Definitive Edition; Rockstar Store bundle of originals announced 19 Nov 2021, given free to DE owners 3 Dec 2021, available with DE purchases until 30 Jun 2022. (DE itself: see section 10.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-30"]
+sources_text = "[30]"
+
+[[entry]]
+id = "4.3a-1"
+origin = "md:737"
+section = "4.3a"
+kind = "exe-build"
+games = ["vc"]
+title = "v1.0 (English)"
+version = "1.0"
+id_text = "GAME_10EN (100)"
+notes = "Retail v1.0"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-62"]
+sources_text = "62"
+[entry.fields]
+"Detection signature (address → value)" = "0x667BF0 → 0x53E58955"
+
+[[entry]]
+id = "4.3a-2"
+origin = "md:738"
+section = "4.3a"
+kind = "exe-build"
+games = ["vc"]
+title = "v1.1 (English)"
+version = "1.1"
+id_text = "GAME_11EN (110)"
+notes = "Official patch 1.1"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-62"]
+sources_text = "62"
+[entry.fields]
+"Detection signature (address → value)" = "0x667C40 → 0x53E58955"
+
+[[entry]]
+id = "4.3a-3"
+origin = "md:739"
+section = "4.3a"
+kind = "exe-build"
+games = ["vc"]
+title = "Steam"
+id_text = "GAME_STEAM (120)"
+notes = "Steam executable"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-62"]
+sources_text = "62"
+[entry.fields]
+"Detection signature (address → value)" = "0x666BA0 → 0x53E58955"
+
+[[entry]]
+id = "4.3a-4"
+origin = "md:740"
+section = "4.3a"
+kind = "exe-build"
+games = ["vc"]
+title = "Definitive Edition (Unreal Engine)"
+id_text = "GAME_UNREAL"
+notes = "2021 UE4 version"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-62"]
+sources_text = "62"
+[entry.fields]
+"Detection signature (address → value)" = "(separate build target GTAVC_UNREAL)"
+
+[[entry]]
+id = "4.4-1"
+origin = "md:746"
+section = "4.4"
+kind = "retail"
+games = ["vc"]
+title = "Xbox port (in Grand Theft Auto: Double Pack)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA"
+date_text = "4 Nov 2003 (Take-Two press release \"Rockstar Games Ships Grand Theft Auto Double Pack for Xbox\", 4 Nov 2003 7:56 AM ET); Namu says 31 Oct 2003"
+serials = ["TT-015", "TT-115"]
+id_text = "Disc serial **TT-015** (Double Pack); revised disc **TT-115 \"Rev 1\"** (Redump; Rev 1 verified in *The Trilogy*)"
+notes = "Redump: VC has its own disc in the Double Pack (\"The Xbox Collection\" alt. name). A Rev 1 pressing with a new serial (TT-115) exists in the USA, Europe and Australia. What changed in Rev 1 is not documented. Port by Rockstar Vienna. First Xbox release of VC was only inside the Double Pack (compilation — see compilations section). Xbox internal revision number not documented. (TCRF states the PC version is \"based on the 2.10 and 3.00 editions\", Steam excluded — note 2.10 is not otherwise listed among PS2 revisions; Redump's PS2 discs are 1.40, 1.50, 2.01, 2.03, 3.00, 4.00, plus 1.00/1.02/1.03 for AU/JP/DE, and none is 2.10.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-2", "4-18", "4-31", "4-52"]
+sources_text = "[1][2][18][31][52]"
+
+[[entry]]
+id = "4.4-2"
+origin = "md:747"
+section = "4.4"
+kind = "retail"
+games = ["vc"]
+title = "Xbox (Double Pack)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "EU"
+date = "2004-01-02"
+date_text = "2 Jan 2004"
+serials = ["TT-015", "TT-115"]
+id_text = "TT-015 (EN/FR/ES/IT; disc ID GTAVC/DVD/XBOX/EFIS, case ID GTAVC/DBL/XBOX/E); Rev 1 TT-115 (Redump: \"edition unconfirmed\")"
+notes = "The EU disc lists no German (Redump languages EN/FR/IT/ES); Germany had its own disc (next row)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-52"]
+sources_text = "[1][52]"
+
+[[entry]]
+id = "4.4-3"
+origin = "md:748"
+section = "4.4"
+kind = "retail"
+games = ["vc"]
+title = "Xbox Doppelpack"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "DE"
+date_text = "not documented"
+serials = ["TT-015"]
+id_text = "TT-015 (German); disc ID 5242981/GTAVC/GER"
+notes = "Separate German disc, verified in the Doppelpack and the German *Trilogy* (barcode 5 026555 242981)."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["4-52"]
+sources_text = "[52]"
+
+[[entry]]
+id = "4.4-4"
+origin = "md:749"
+section = "4.4"
+kind = "retail"
+games = ["vc"]
+title = "Xbox Double Pack"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "AU"
+date_text = "not documented"
+serials = ["TT-015", "TT-115"]
+id_text = "TT-015 (disc ID GTAVC/DVD/XBOX/A); Rev 1 TT-115 (\"region/edition unverified\")"
+notes = "Separate Australian disc dumps."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["4-52"]
+sources_text = "[52]"
+
+[[entry]]
+id = "4.4-5"
+origin = "md:750"
+section = "4.4"
+kind = "retail"
+games = ["vc"]
+title = "Xbox"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "JP"
+date = "2004-07-29"
+date_text = "29 Jul 2004 (Grand Theft Wiki; the same date appears in the GTA III section from TCRF/ja.wikipedia for the JP Xbox bundle)"
+serials = ["TT-115"]
+id_text = "**TT-115**; XMID TT11502J; Microsoft ID A1M-00001 (TT115A01 disc); slipcase A4K 00001"
+notes = "Redump: Japanese Double Pack (\"The Xbox Collection\"), Japanese text with English voices. It \"corresponds to Rev 1 from other regions, but Rev 0 was not released in Japan\". ja.wikipedia cites a \"カプコン XBOX ニューズ\" reference."
+confidence = "mixed"
+confidence_text = "✅ (disc) / ⚠️ (date)"
+sources = ["4-14", "4-19", "4-52"]
+sources_text = "[14][19][52]"
+
+[[entry]]
+id = "4.4-6"
+origin = "md:751"
+section = "4.4"
+kind = "retail"
+games = ["vc"]
+title = "Xbox 360 backward compatibility"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "WW"
+date_text = "—"
+id_text = "—"
+notes = "Listed as BC with issues: \"chugging during the intro. Major frame rate slowdown while driving. Radio is quiet during gameplay.\""
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-32"]
+sources_text = "[32]"
+
+[[entry]]
+id = "4.4-7"
+origin = "md:752"
+section = "4.4"
+kind = "retail"
+games = ["vc"]
+title = "Cancelled GameCube port"
+platforms = ["gc"]
+platform_text = "GameCube"
+region = "—"
+date_text = "rumoured Apr 2003"
+id_text = "—"
+notes = "Only evidence: GameCubicle article 28 Apr 2003 claiming GTA III & VC for GameCube/Xbox; existence unconfirmed (Lost Media Wiki). Grand Theft Wiki also cites a 2004 IGN article."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["4-33", "4-34"]
+sources_text = "[33][34]"
+
+[[entry]]
+id = "4.5-1"
+origin = "md:758"
+section = "4.5"
+kind = "retail"
+games = ["vc"]
+title = "Mac OS X (Cider wrapper)"
+platforms = ["mac"]
+platform_text = "Mac OS X (Intel)"
+region = "WW"
+date = "2010-11-12"
+date_text = "12 Nov 2010"
+id_text = "not documented"
+notes = "Ported by TransGaming Inc. using Cider; released as part of Grand Theft Auto: The Trilogy (Mac). Min macOS 10.6.8, Intel Core 2 Duo, 1 GB RAM; PowerPC unsupported; \"does not work on macOS Catalina (version 10.15) or later.\" TCRF: two skins (Tache, Wild) were intended for the Mac port. Macgamestore.com took pre-orders for III/VC/SA on 20 Oct 2010, shipping 22 Nov 2010."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-11", "4-22", "4-61"]
+sources_text = "[1][11][22][61]"
+
+[[entry]]
+id = "4.5-2"
+origin = "md:759"
+section = "4.5"
+kind = "retail"
+games = ["vc"]
+title = "Mac App Store release (**new entry**)"
+platforms = ["mac"]
+platform_text = "macOS"
+region = "US (WW storefronts)"
+date = "2011-08-25"
+date_text = "25 Aug 2011 (announced 18 Aug 2011 alongside GTA III's Mac App Store launch)"
+id_text = "not documented (app ID not found)"
+notes = "US$14.99 (MCV citing IGN), one week after GTA III (18 Aug) and before San Andreas (1 Sep 2011)."
+confidence = "mixed"
+confidence_text = "✅ (schedule, two sources) / ⚠️ (actual-day confirmation)"
+sources = ["4-58", "4-59"]
+sources_text = "[58][59]"
+
+[[entry]]
+id = "4.5-3"
+origin = "md:760"
+section = "4.5"
+kind = "retail"
+games = ["vc"]
+title = "Mac App Store (Germany)"
+platforms = ["mac"]
+platform_text = "macOS"
+region = "DE"
+date = "2011-12-21"
+date_text = "21 Dec 2011"
+id_text = "not documented"
+notes = "Macerkopf: GTA 3 and Vice City \"now in the Mac App Store\" on the German storefront at €11.99 each."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-60"]
+sources_text = "[60]"
+
+[[entry]]
+id = "4.6-1"
+origin = "md:768"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date_text = "6 Dec 2012 (launch); App Store history lists 1.0 as 30 Nov 2012"
+id_text = "App Store id578448682"
+notes = "Launch."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-35"]
+sources_text = "[1][35]"
+
+[[entry]]
+id = "4.6-2"
+origin = "md:769"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.1"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2012-12-16"
+date_text = "16 Dec 2012"
+id_text = "1.1"
+notes = "\"Tap to Shoot\" enabled by default; can be disabled in Controls."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-3"
+origin = "md:770"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.2"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2013-01-21"
+date_text = "21 Jan 2013"
+id_text = "1.2"
+notes = "Fixed helicopter spin; shake device to change custom-playlist song; keyboard-appearing fix."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-4"
+origin = "md:771"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.3"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2013-03-22"
+date_text = "22 Mar 2013"
+id_text = "1.3"
+notes = "Stability on iPod touch 4th gen."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-5"
+origin = "md:772"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.4"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2015-03-18"
+date_text = "18 Mar 2015"
+id_text = "1.4"
+notes = "Native iPhone 6/6 Plus resolution; MFi controller support."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-6"
+origin = "md:773"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.5"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2015-04-06"
+date_text = "6 Apr 2015"
+id_text = "1.5"
+notes = "4-inch resolution fix; iPad 1 fix."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-7"
+origin = "md:774"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.6"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2016-05-20"
+date_text = "20 May 2016"
+id_text = "1.6"
+notes = "64-bit support; expanded Retina support."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-8"
+origin = "md:775"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.7"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "WW"
+date = "2019-02-12"
+date_text = "12 Feb 2019"
+id_text = "1.7"
+notes = "Full-screen iPhone X/XS & iPad Pro."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-9"
+origin = "md:776"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "iOS 1.8 (current)"
+platforms = ["ios", "mac"]
+platform_text = "iOS / Apple-silicon Mac"
+region = "WW"
+date = "2019-05-21"
+date_text = "21 May 2019"
+id_text = "1.8; requires iOS 8.0+; 1.2 GB"
+notes = "Fixed MIXTAPE radio custom playlists. Still listed at $4.99."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-35"]
+sources_text = "[35]"
+
+[[entry]]
+id = "4.6-10"
+origin = "md:777"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "Android launch"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW"
+date_text = "12 Dec 2012 (delayed from 6 Dec by technical issues); Google Play's own \"released\" date for the listing is 6 Dec 2012"
+id_text = "package com.rockstargames.gtavc; current version **1.12.259** (requires Android 9 / API 28, target API 36)"
+notes = "Google Play listing last updated 6 Jan 2026 (\"General bug fixes and improvements\"); 1M+ installs. Per-version history not retrievable: APKMirror does not carry the classic paid app (only the Definitive Edition), and APKPure is behind a Cloudflare check."
+confidence = "mixed"
+confidence_text = "✅ (launch) / ⚠️ (current version, store data only)"
+sources = ["4-1", "4-14", "4-36"]
+sources_text = "[1][14][36]"
+
+[[entry]]
+id = "4.6-11"
+origin = "md:778"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "Android German listing (\"Grand Theft Auto: ViceCity\") (**new entry**)"
+platforms = ["android"]
+platform_text = "Android"
+region = "DE"
+date_text = "Google Play \"released\" date 6 Dec 2012"
+id_text = "package `com.rockstargames.gtavcger`; version **1.12** (Android 7.0+ / API 24, target API 30)"
+notes = "Separate German Google Play listing; 100K+ installs. Last updated 9 Aug 2022: compatibility with recent Android/Pixel devices, 64-bit support, and a fix for \"saves from versions prior to 1.10 being incompatible\" (so saves from 1.10 no longer load). That confirms Android versions 1.10 and 1.12 existed; their dates are not documented. Rockstar has not documented content differences (compare GTA III's regional Android listings, section 3.8)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-54"]
+sources_text = "[54]"
+
+[[entry]]
+id = "4.6-12"
+origin = "md:779"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "Fire OS (Amazon Appstore)"
+platforms = ["fireos"]
+platform_text = "Fire OS"
+region = "—"
+date = "2014-05-15"
+date_text = "15 May 2014"
+id_text = "not documented"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1"]
+sources_text = "[1]"
+
+[[entry]]
+id = "4.6-13"
+origin = "md:780"
+section = "4.6"
+kind = "mobile-version"
+games = ["vc"]
+title = "Korean mobile"
+platforms = ["ios", "android"]
+platform_text = "iOS/Android"
+region = "KR"
+date_text = "not documented"
+id_text = "—"
+notes = "Namu: Korean mobile publisher 셀바스 (Selvas); Korean subtitles on mobile."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["4-18"]
+sources_text = "[18]"
+
+[[entry]]
+id = "4.7-1"
+origin = "md:786"
+section = "4.7"
+kind = "digital"
+games = ["vc"]
+title = "PS2 Classic (PSN)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "NA; EU and AU also exist (No-Intro); EU/AU dates not documented"
+date_text = "30 Jan 2013 (Wikipedia, Grand Theft Wiki); 29 Jan 2013 (Namu)"
+id_text = "NA content ID **UP9000-NPUD20552_00-0000000000000000**; EU **EP1004-NPED00121_00-GGRANDTHEF000ENG**; AU package dumped (4,598,388,992 bytes, CRC BE990385; content ID not given)"
+notes = "Product IDs from No-Intro's PS3 (PSN) DAT (Appendix A.7). NA title ID re-uses the PS2 serial number (SLUS-20552). Emulated PS2 version. ESRB ratings for GTA III & VC PS3 appeared in 2012 and were later retracted before release (Grand Theft Wiki). GTA Wiki: Police Scanner plays in slow motion on later PS2 and PS3 versions. TCRF groups PS3 with the 10th-Anniversary music removals. Namu claims PS3 release was \"based on the mobile port\" — unverified."
+confidence = "mixed"
+confidence_text = "✅ (release, IDs) / ❓ (Namu claim)"
+sources = ["4-1", "4-11", "4-13", "4-14", "4-18", "4-53"]
+sources_text = "[1][11][13][14][18][53]"
+
+[[entry]]
+id = "4.7-2"
+origin = "md:787"
+section = "4.7"
+kind = "digital"
+games = ["vc"]
+title = "PS2 Classic (PS2-on-PS4 emulation)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "WW"
+date = "2015-12-05"
+date_text = "5 Dec 2015"
+serials = ["CUSA03509", "CUSA03546", "SLUS-20552", "SLES-51061"]
+id_text = "PS Store concept 201960; NA **CUSA03509** (content ID UP1004-CUSA03509_00-SLUS205520000001); EU **CUSA03546** (EP1004-CUSA03546_00-SLES510610000001). The content IDs embed the PS2 serials SLUS-20552 / SLES-51061. Latest patch **01.02** (NA 13.8 MB / EU 59.3 MB, firmware 4.05, created 2016-11-01, \"Bug fix\")"
+notes = "Emulated, upscaled to 1080p, Trophy support. Has 10th-Anniversary music removals (TCRF)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["4-1", "4-11", "4-57"]
+sources_text = "[1][11][57]"
+
+[sources]
+4-1 = { text = "Wikipedia – Grand Theft Auto: Vice City — https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", origin = "md:811" }
+4-2 = { text = "The Cutting Room Floor – Grand Theft Auto: Vice City — https://tcrf.net/Grand_Theft_Auto:_Vice_City", url = "https://tcrf.net/Grand_Theft_Auto:_Vice_City", origin = "md:812" }
+4-3 = { text = "Hidden Palace – Grand Theft Auto: Vice City (Oct 1, 2002 prototype) — https://hiddenpalace.org/Grand_Theft_Auto:_Vice_City_(Oct_1,_2002_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_Vice_City_(Oct_1,_2002_prototype", origin = "md:813" }
+4-4 = { text = "Rockstar Intel – \"Pre-release build of GTA Vice City leaks\" (1 Feb 2025) — https://rockstarintel.com/pre-release-build-of-gta-vice-city-leaks/", url = "https://rockstarintel.com/pre-release-build-of-gta-vice-city-leaks/", origin = "md:814" }
+4-5 = { text = "GTABoom – \"A pre-release GTA Vice City build with hidden features has been leaked\" (1 Feb 2025) — https://www.gtaboom.com/a-pre-release-gta-vice-city-build-with-hidden-features-has-been-leaked-1e55", url = "https://www.gtaboom.com/a-pre-release-gta-vice-city-build-with-hidden-features-has-been-leaked-1e55", origin = "md:815" }
+4-6 = { text = "Time Extension – Vice City prototype build leaks online (3 Feb 2025) — https://www.timeextension.com/news/2025/02/grand-theft-auto-vice-city-prototype-build-leaks-online-featuring-a-surprising-amount-of-differences-from-release", url = "https://www.timeextension.com/news/2025/02/grand-theft-auto-vice-city-prototype-build-leaks-online-featuring-a-surprising-amount-of-differences-from-release", origin = "md:816" }
+4-7 = { text = "PSX Data Center – SLUS-20552 — https://psxdatacenter.com/psx2/games2/SLUS-20552.html", url = "https://psxdatacenter.com/psx2/games2/SLUS-20552.html", origin = "md:817" }
+4-8 = { text = "PSX Data Center – SLES-51061 — https://psxdatacenter.com/psx2/games2/SLES-51061.html", url = "https://psxdatacenter.com/psx2/games2/SLES-51061.html", origin = "md:818" }
+4-9 = { text = "PSX Data Center – SLES-51316 (Australia) — https://psxdatacenter.com/psx2/games2/SLES-51316.html", url = "https://psxdatacenter.com/psx2/games2/SLES-51316.html", origin = "md:819" }
+4-10 = { text = "PSX Data Center – SLES-51595 (Germany) — https://psxdatacenter.com/psx2/games2/SLES-51595.html", url = "https://psxdatacenter.com/psx2/games2/SLES-51595.html", origin = "md:820" }
+4-11 = { text = "TCRF – Version and Platform Differences — https://tcrf.net/Grand_Theft_Auto:_Vice_City/Version_and_Platform_Differences (and Regional Differences — https://tcrf.net/Grand_Theft_Auto:_Vice_City/Regional_Differences)", url = "https://tcrf.net/Grand_Theft_Auto:_Vice_City/Version_and_Platform_Differences", origin = "md:821" }
+4-12 = { text = "Raido – GTA Vice City (Japanese library entry) — https://raido.moe/gamelibrary/ps2/gtavc.htm", url = "https://raido.moe/gamelibrary/ps2/gtavc.htm", origin = "md:822" }
+4-13 = { text = "GTA Wiki (Fandom) – Grand Theft Auto: Vice City — https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto:_Vice_City", origin = "md:823" }
+4-14 = { text = "Grand Theft Wiki – GTA Vice City — https://www.grandtheftwiki.com/GTA_Vice_City", url = "https://www.grandtheftwiki.com/GTA_Vice_City", origin = "md:824" }
+4-15 = { text = "TCRF – Regional Differences — https://tcrf.net/Grand_Theft_Auto:_Vice_City/Regional_Differences", url = "https://tcrf.net/Grand_Theft_Auto:_Vice_City/Regional_Differences", origin = "md:825" }
+4-16 = { text = "PSX Data Center – SLPM-66034 (CapKore) — https://psxdatacenter.com/psx2/games2/SLPM-66034.html", url = "https://psxdatacenter.com/psx2/games2/SLPM-66034.html", origin = "md:826" }
+4-17 = { text = "PSX Data Center – SLPM-66790 (Best Price) — https://psxdatacenter.com/psx2/games2/SLPM-66790.html", url = "https://psxdatacenter.com/psx2/games2/SLPM-66790.html", origin = "md:827" }
+4-18 = { text = "Namu Wiki – GTA Vice City — https://namu.moe/w/GTA%20Vice%20City", url = "https://namu.moe/w/GTA%20Vice%20City", origin = "md:828" }
+4-19 = { text = "Japanese Wikipedia – グランド・セフト・オート・バイスシティ — https://ja.wikipedia.org/wiki/グランド・セフト・オート・バイスシティ", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート・バイスシティ", origin = "md:829" }
+4-20 = { text = "NBC News – \"Video game to change offensive dialogue\" (Dec 2003) — https://www.nbcnews.com/id/wbna3694032", url = "https://www.nbcnews.com/id/wbna3694032", origin = "md:830" }
+4-21 = { text = "Game Developer (Gamasutra) – \"Take-Two censors Vice City\" (10 Dec 2003) — https://gamedeveloper.com/game-platforms/take-two-censors-vice-city", url = "https://gamedeveloper.com/game-platforms/take-two-censors-vice-city", origin = "md:831" }
+4-22 = { text = "PCGamingWiki – Grand Theft Auto: Vice City — https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_Vice_City", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_Vice_City", origin = "md:832" }
+4-23 = { text = "Rockstar Support – Patch Info: Grand Theft Auto: Vice City — https://support.rockstargames.com/articles/7GURvptaC0GFJUBu2A4lhu/patch-info-grand-theft-auto-vice-city", url = "https://support.rockstargames.com/articles/7GURvptaC0GFJUBu2A4lhu/patch-info-grand-theft-auto-vice-city", origin = "md:833" }
+4-24 = { text = "SteamDB – App 12110 (and /depots/) — https://steamdb.info/app/12110/ ; https://steamdb.info/app/12110/depots/", url = "https://steamdb.info/app/12110/", origin = "md:834" }
+4-25 = { text = "Dedoimedo – GTA Vice City Steam version: startup errors and saves — https://www.dedoimedo.com/games/gta-vice-city-steam.html", url = "https://www.dedoimedo.com/games/gta-vice-city-steam.html", origin = "md:835" }
+4-26 = { text = "Steam Community discussion (2020, removed tracks) — https://steamcommunity.com/app/12110/discussions/0/1743391865798813123", url = "https://steamcommunity.com/app/12110/discussions/0/1743391865798813123", origin = "md:836" }
+4-27 = { text = "Steam Community discussion (2018, \"New Audio NA (WW)\") — https://steamcommunity.com/app/12110/discussions/0/1699415798754261958", url = "https://steamcommunity.com/app/12110/discussions/0/1699415798754261958", origin = "md:837" }
+4-28 = { text = "GTAGarage – Vice City Save Converter (Silent, 29 Dec 2013) — https://www.gtagarage.com/mods/show.php?id=25369", url = "https://www.gtagarage.com/mods/show.php?id=25369", origin = "md:838" }
+4-29 = { text = "Silent's Blog – SilentPatch for GTA: Vice City — https://silentsblog.com/mods/gta-vc/", url = "https://silentsblog.com/mods/gta-vc/", origin = "md:839" }
+4-30 = { text = "Wikipedia – Grand Theft Auto: The Trilogy – The Definitive Edition — https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Trilogy_–_The_Definitive_Edition", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Trilogy_–_The_Definitive_Edition", origin = "md:840" }
+4-31 = { text = "Take-Two Interactive IR – \"Rockstar Games Ships Grand Theft Auto Double Pack for Xbox\" (4 Nov 2003) — https://ir.take2games.com/static-files/9358f4f0-b5ee-4bde-a7bc-c4b7c6aed94a", url = "https://ir.take2games.com/static-files/9358f4f0-b5ee-4bde-a7bc-c4b7c6aed94a", origin = "md:841" }
+4-32 = { text = "Wikipedia – List of Xbox games compatible with Xbox 360 — https://en.wikipedia.org/wiki/List_of_Xbox_games_compatible_with_Xbox_360", url = "https://en.wikipedia.org/wiki/List_of_Xbox_games_compatible_with_Xbox_360", origin = "md:842" }
+4-33 = { text = "Lost Media Wiki – GTA III and Vice City (cancelled GameCube ports) — https://lostmediawiki.com/Grand_Theft_Auto_III_and_Grand_Theft_Auto:_Vice_City_(lost_builds_of_cancelled_GameCube_ports_of_open-world_games;_existence_unconfirmed;_early_2000%27s)", url = "https://lostmediawiki.com/Grand_Theft_Auto_III_and_Grand_Theft_Auto:_Vice_City_(lost_builds_of_cancelled_GameCube_ports_of_open-world_games", origin = "md:843" }
+4-34 = { text = "Grand Theft Wiki – Changed Content in GTA Vice City — https://www.grandtheftwiki.com/Changed_Content_in_GTA_Vice_City", url = "https://www.grandtheftwiki.com/Changed_Content_in_GTA_Vice_City", origin = "md:844" }
+4-35 = { text = "Apple App Store – Grand Theft Auto: Vice City (id578448682) — https://apps.apple.com/us/app/grand-theft-auto-vice-city/id578448682", url = "https://apps.apple.com/us/app/grand-theft-auto-vice-city/id578448682", origin = "md:845" }
+4-36 = { text = "Google Play – com.rockstargames.gtavc — https://play.google.com/store/apps/details?id=com.rockstargames.gtavc", url = "https://play.google.com/store/apps/details?id=com.rockstargames.gtavc", origin = "md:846" }
+4-37 = { text = "PSX Data Center – SLPM-65488 — https://psxdatacenter.com/psx2/games2/SLPM-65488.html", url = "https://psxdatacenter.com/psx2/games2/SLPM-65488.html", origin = "md:847" }
+4-38 = { text = "jasondeegan.com – leaked Vice City prototype (18 Feb 2025) — https://jasondeegan.com/a-leaked-prototype-of-this-iconic-gta-episode-shows-it-could-have-been-a-completely-different-game/", url = "https://jasondeegan.com/a-leaked-prototype-of-this-iconic-gta-episode-shows-it-could-have-been-a-completely-different-game/", origin = "md:848" }
+4-39 = { text = "Sportskeeda – \"Another GTA leak apparently surfaces online… Vice City\" — https://www.sportskeeda.com/gta/news-another-gta-leak-apparently-surfaces-online-time-related-to-vice-city", url = "https://www.sportskeeda.com/gta/news-another-gta-leak-apparently-surfaces-online-time-related-to-vice-city", origin = "md:849" }
+4-40 = { text = "Time Extension – \"The team that ported GTA 3 to Dreamcast is bringing Vice City over next\" (24 Feb 2025, updated 2 Apr 2025) — https://timeextension.com/news/2025/02/the-team-that-ported-gta-3-to-dreamcast-is-bringing-vice-city-over-next", url = "https://timeextension.com/news/2025/02/the-team-that-ported-gta-3-to-dreamcast-is-bringing-vice-city-over-next", origin = "md:850" }
+4-41 = { text = "Redump – Grand Theft Auto: Vice City (USA) SLUS-20552 v1.40 — http://redump.org/disc/2440/", url = "http://redump.org/disc/2440/", origin = "md:851" }
+4-42 = { text = "Redump – Grand Theft Auto: Vice City (USA) SLUS-20552 v2.01 — http://redump.org/disc/18930/", url = "http://redump.org/disc/18930/", origin = "md:852" }
+4-43 = { text = "Redump – Grand Theft Auto: Vice City (USA, Canada) SLUS-20552GH/P3 v3.00 — http://redump.org/disc/6376/", url = "http://redump.org/disc/6376/", origin = "md:853" }
+4-44 = { text = "Redump – Grand Theft Auto: Vice City (USA) SLUS-20552P3 v4.00 — http://redump.org/disc/74208/", url = "http://redump.org/disc/74208/", origin = "md:854" }
+4-45 = { text = "Redump – Grand Theft Auto: Vice City (Europe) SLES-51061 v1.50 — http://redump.org/disc/1013/", url = "http://redump.org/disc/1013/", origin = "md:855" }
+4-46 = { text = "Redump – Grand Theft Auto: Vice City (Europe) SLES-51061 v2.03 — http://redump.org/disc/511/", url = "http://redump.org/disc/511/", origin = "md:856" }
+4-47 = { text = "Redump – Grand Theft Auto: Vice City (Europe) SLES-51061 v3.00 — http://redump.org/disc/4639/", url = "http://redump.org/disc/4639/", origin = "md:857" }
+4-48 = { text = "Redump – Grand Theft Auto: Vice City (Australia) SLES-51316 v1.00 — http://redump.org/disc/11014/", url = "http://redump.org/disc/11014/", origin = "md:858" }
+4-49 = { text = "Redump – Grand Theft Auto: Vice City (Germany) SLES-51595 v1.03 — http://redump.org/disc/26822/", url = "http://redump.org/disc/26822/", origin = "md:859" }
+4-50 = { text = "Redump – Grand Theft Auto: Vice City (Japan) SLPM-65488 v1.02 — http://redump.org/disc/18062/", url = "http://redump.org/disc/18062/", origin = "md:860" }
+4-51 = { text = "Redump – Grand Theft Auto: Vice City (Japan) (Rockstar Classics) SLPM-55291 — http://redump.org/disc/68387/", url = "http://redump.org/disc/68387/", origin = "md:861" }
+4-52 = { text = "Redump – Grand Theft Auto: Vice City Xbox discs — USA TT-015 http://redump.org/disc/13550/ ; USA TT-115 Rev 1 http://redump.org/disc/29348/ ; Europe TT-015 http://redump.org/disc/18869/ ; Europe TT-115 http://redump.org/disc/50496/ ; Germany TT-015 http://redump.org/disc/12658/ ; Australia TT-015 http://redump.org/disc/87609/ ; Australia TT-115 http://redump.org/disc/60539/ ; Japan TT-115 http://redump.org/disc/55479/", url = "http://redump.org/disc/13550/", origin = "md:862" }
+4-53 = { text = "No-Intro – Sony - PlayStation 3 (PSN) DAT (libretro-database mirror) — https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN", origin = "md:863" }
+4-54 = { text = "Google Play – Grand Theft Auto: ViceCity (com.rockstargames.gtavcger) — https://play.google.com/store/apps/details?id=com.rockstargames.gtavcger", url = "https://play.google.com/store/apps/details?id=com.rockstargames.gtavcger", origin = "md:864" }
+4-55 = { text = "Gamepressure – \"Grand Theft Auto: Vice City - Game Update - v.1.1\" (added 19 May 2003) — https://www.gamepressure.com/download/grand-theft-auto-vice-city-v11-patch/z8b33 (Polish sister page: https://www.gry-online.pl/s030.asp?ID=2867)", url = "https://www.gamepressure.com/download/grand-theft-auto-vice-city-v11-patch/z8b33", origin = "md:865" }
+4-56 = { text = "PC-Welt – \"GTA Vice City – Patch\" — https://www.pcwelt.de/?p=1143161", url = "https://www.pcwelt.de/?p=1143161", origin = "md:866" }
+4-57 = { text = "ORBISPatches – CUSA03509 (Grand Theft Auto: Vice City, US) — https://orbispatches.com/CUSA03509 ; CUSA03546 (EU) — https://orbispatches.com/CUSA03546 ; PS Store concept 201960 — https://store.playstation.com/en-us/concept/201960/", url = "https://orbispatches.com/CUSA03509", origin = "md:867" }
+4-58 = { text = "Macworld – \"Grand Theft Auto III on Mac App Store\" (18 Aug 2011; gives VC date 25 Aug 2011) — https://www.macworld.com/article/213917/grand_theft_auto_iii_on_mac_app_store.html", url = "https://www.macworld.com/article/213917/grand_theft_auto_iii_on_mac_app_store.html", origin = "md:868" }
+4-59 = { text = "MCV/DEVELOP – \"Mac App Store gets GTA Trilogy\" (18 Aug 2011) — https://mcvuk.com/business-news/mac-app-store-gets-gta-trilogy/", url = "https://mcvuk.com/business-news/mac-app-store-gets-gta-trilogy/", origin = "md:869" }
+4-60 = { text = "Macerkopf – \"Grand Theft Auto 3 und Vice City ab sofort im Mac App Store\" (21 Dec 2011) — https://www.macerkopf.de/2011/12/21/grand-theft-auto-3-und-vice-city-ab-sofort-im-mac-app-store/", url = "https://www.macerkopf.de/2011/12/21/grand-theft-auto-3-und-vice-city-ab-sofort-im-mac-app-store/", origin = "md:870" }
+4-61 = { text = "iClarified – \"MacGameStore Begins Grand Theft Auto: The Trilogy Pre-Orders\" (20 Oct 2010) — https://www.iclarified.com/12337/macgamestore-begins-grand-theft-auto-the-trilogy", url = "https://www.iclarified.com/12337/macgamestore-begins-grand-theft-auto-the-trilogy", origin = "md:871" }
+4-62 = { text = "Plugin-SDK source, `shared/GameVersion.cpp` (detect_game_id) and `GameVersion.h`, commit 15f15b6 (2026-09-08) — https://github.com/DK22Pac/plugin-sdk/blob/15f15b60bbf74c106e1b496ff92c98764abf4605/shared/GameVersion.cpp ; https://github.com/DK22Pac/plugin-sdk/blob/15f15b60bbf74c106e1b496ff92c98764abf4605/shared/GameVersion.h", url = "https://github.com/DK22Pac/plugin-sdk/blob/15f15b60bbf74c106e1b496ff92c98764abf4605/shared/GameVersion.cpp", origin = "md:872" }

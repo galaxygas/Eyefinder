@@ -1,0 +1,2311 @@
+# Grand Theft Auto: San Andreas: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "5"
+origin = "md:875"
+title = "5. Grand Theft Auto: San Andreas (2004)"
+games = ["sa"]
+text = '''
+Developer: Rockstar North (original); TransGaming (Mac OS X port, Cider); War Drum Studios (mobile, 2013–14; TCRF also credits the 2014 UWP version to them) [S3][S4][S2]. The Xbox 360 (2014) and PS3 (2015) versions are built on the mobile port [S2][S5]; their developer credit was not confirmed in fetched sources. Publisher: Rockstar Games (Capcom in Japan, 2007) [S3].
+The 2021 *Definitive Edition* is covered in its own section; the PS2/Xbox *Trilogy* compilations are covered in the compilations section (one-line cross-references only here).
+
+Confidence legend: ✅ confirmed by ≥2 independent sources or a primary/database source · ⚠️ single community source · ❓ rumour / unverified.'''
+
+[[section]]
+id = "5.1"
+origin = "md:882"
+title = "5.1 Pre-release timeline, builds and leaks"
+games = ["sa"]
+
+[[section]]
+id = "5.2"
+origin = "md:905"
+title = "5.2 PlayStation 2 releases and disc revisions"
+games = ["sa"]
+text = "Redump-derived dat (libretro-database `metadat/redump/Sony - PlayStation 2.dat`) lists every verified SA PS2 disc; serial variants sharing one hash are the same disc pressing sold under different catalogue numbers (e.g. budget lines) [S17]. Version strings (v1.00/v1.03/v2.01/v3.00) are the redump-recorded in-disc versions. TCRF calls the post–Hot Coffee build \"Version 2 (2.01)\" (July 2005) and says it is the build used by the Second Edition, Greatest Hits/Platinum and Trilogy copies [S2] — note redump labels the North American re-release **v3.00**, not 2.01 [S17]."
+
+[[section]]
+id = "5.3"
+origin = "md:927"
+title = "5.3 Windows PC — retail, patches, Steam, Rockstar Games Launcher, Microsoft Store"
+games = ["sa"]
+text = "**Note on gtamods.com:** the GTAMods wiki pages (`San_Andreas`, `Gta_sa.exe`) could not be retrieved (first pass: server error / robots block; second pass, 2026-10-24: GTANet \"Back soon\" maintenance page, no archive.today capture), so exe file sizes and checksums from that wiki are **not reproduced**. Executable identification below comes from the open-source modding SDKs that detect each exe (plugin-sdk, gta-reversed), PCGamingWiki and TCRF."
+
+[[section]]
+id = "5.4"
+origin = "md:949"
+title = "5.4 Original Xbox (2005) and Xbox Originals on Xbox 360"
+games = ["sa"]
+
+[[section]]
+id = "5.5"
+origin = "md:963"
+title = "5.5 Mac OS X (2010)"
+games = ["sa"]
+
+[[section]]
+id = "5.6"
+origin = "md:969"
+title = "5.6 Mobile port (War Drum Studios, 2013–2014) and app version history"
+games = ["sa"]
+
+[[section]]
+id = "5.7"
+origin = "md:1006"
+title = "5.7 Mobile-based \"10th anniversary\" console ports: Xbox 360 (2014) and PS3 (2015)"
+games = ["sa"]
+
+[[section]]
+id = "5.8"
+origin = "md:1021"
+title = "5.8 PlayStation 4 (PS2 Classic, 2015)"
+games = ["sa"]
+
+[[section]]
+id = "5.9"
+origin = "md:1028"
+title = "5.9 \"Hot Coffee\", re-ratings and censored / regional versions"
+games = ["sa"]
+
+[[section]]
+id = "5.10"
+origin = "md:1045"
+title = "5.10 Known gaps (not documented / could not be verified)"
+games = ["sa"]
+text = '''
+- **gtamods.com exe table** (file sizes/checksums for 1.0 US, 1.0 EU, 1.01, 2.0, 3.0, newsteam r1/r2, RGL) — still not retrieved. On 2026-10-24 gtamods.com showed a GTANet "Back soon" maintenance page; archive.today has no capture of `wiki/Gta_sa.exe`, the Wayback Machine reported no capture for the 2024 URL tried, and further Wayback queries were refused in the browser. Only SDK detection signatures and the gta-reversed "Compact" exe size (5,189,632 B) are recorded. SilentPatch's contributor guide confirms the modding community's working set is "version 1.0 … preferably also the new binaries (newsteam/RGL)" [S24].
+- **Exact release days still missing** for: first NA v3.00 pressing (Greatest Hits now dated 20 Feb 2006 by GameFAQs only), German PS2 (v1.00 and v2.01), SLUS-20946P3 Rev 1, Xbox Rev 1 discs (which retail edition each Redump revision belongs to is unknown), the Xbox 360 TT-2232 disc (GameFAQs dates only budget-line SKUs), PS3 TU 1.01. Most newly added reissue dates rest on GameFAQs (user-contributed) alone and are flagged ⚠️; JP Best Price (12 Jul 2007), Rockstar Classics (29 Sep 2011) and PS3 Japan (17 Dec 2015) are confirmed by Kakaku.com.
+- **SLPM-55092**: Kakaku.com lists a second "Best Price!" reissue on 23 Jul 2009 without a serial; the link to SLPM-55092 is inferred, not sourced.
+- **PS2 Special Edition** date conflict (8 Oct / 17 Oct / 18 Oct / Nov 2005) unresolved.
+- **Xbox 360 TU1** rests on one community database (XboxUnity); its Microsoft release date and contents are not documented. **PS3**: only TU 1.01 is documented (no date); whether later PS3 patches exist is unknown (Sony update XML, psdevwiki, serialstation and RPCS3 forum pages were blocked by Cloudflare/TLS). **PS4**: patch 01.01 for CUSA03506 rests on ORBISPatches alone.
+- **Windows Phone and Fire OS version histories** — not documented. Rockstar's notes list three 2014 "Android" entries (Fire TV support, controller update, Fire Phone support) whose numbers overlap the Google Play builds; whether these were the Amazon build line is not stated. Android history is otherwise documented from Rockstar's own notes (from v1.03, Dec 2013, to v2.11.311, Jan 2026), with gaps between v1.08 (2015) and v2.0 (2019) and between v2.0 and v2.11.204 (2024).
+- **Microsoft Store (Windows 8.1/10) app**: release day differs between sources (14 vs 17 Feb 2014); version history not documented.
+- **Korean releases**: no Korean PS2 release found (Redump, PCSX2, GameFAQs); Korean digital releases of the remaster (X360 4 Feb 2015, PS3 2 Dec 2015) rest on GameFAQs only.
+- **Prototypes**: Hidden Palace lists only the Xbox 8 Mar 2005 debug build (dumped, not released) and the Aug/Sep 2014 Steam beta-branch builds; no PS2 or PC prototype disc. The Feb 2025 partial-code leak remains unverified. TCRF could not be re-checked (Cloudflare challenge).'''
+
+[[entry]]
+id = "5.1-1"
+origin = "md:886"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Development start"
+platform_text = "—"
+region = "—"
+date = "2002-10"
+date_text = "Oct 2002"
+id_text = "—"
+notes = "Development began after Vice City's release (Wikipedia)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-2"
+origin = "md:887"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Take-Two announcement (untitled)"
+platform_text = "—"
+region = "—"
+date = "2003-10"
+date_text = "Oct 2003"
+id_text = "—"
+notes = "Take-Two announced next GTA for Q3 2004."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-3"
+origin = "md:888"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Title trademark"
+platform_text = "—"
+region = "US"
+date = "2003-12"
+date_text = "Dec 2003"
+id_text = "—"
+notes = "\"GTA: San Andreas\" registered with USPTO."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-4"
+origin = "md:889"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Official announcement"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA/EU"
+date = "2004-03"
+date_text = "Mar 2004"
+id_text = "—"
+notes = "Announced with release dates 19 Oct (NA) / 22 Oct (EU) 2004."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-5"
+origin = "md:890"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "E3 / Game Informer preview material"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date = "2004-05"
+date_text = "May 2004"
+id_text = "—"
+notes = "First details and screenshots at E3 2004 alongside a Game Informer cover story. No preview/press build has been publicly preserved — not documented."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-6"
+origin = "md:891"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Internal content memo"
+platform_text = "—"
+region = "—"
+date = "2004-07-14"
+date_text = "14 Jul 2004"
+id_text = "—"
+notes = "Sam Houser email listing planned sexual content; code later made inaccessible (\"Hot Coffee\" origin)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S6"]
+sources_text = "S6"
+
+[[entry]]
+id = "5.1-7"
+origin = "md:892"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Rating-avoidance alterations"
+platform_text = "—"
+region = "—"
+date = "2004-08-16"
+date_text = "16 Aug 2004"
+id_text = "—"
+notes = "Terry Donovan sends Houser alterations needed to avoid AO rating."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S6"]
+sources_text = "S6"
+
+[[entry]]
+id = "5.1-8"
+origin = "md:893"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Trailers 1 & 2"
+platform_text = "—"
+region = "—"
+date_text = "Aug 2004 / Sep 2004"
+id_text = "—"
+notes = "Official site + trailer 1 (Aug); trailer 2 (Sep)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-9"
+origin = "md:894"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Release delay"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA/EU"
+date = "2004-09"
+date_text = "Sep 2004"
+id_text = "—"
+notes = "Delayed to 26 Oct (NA) / 29 Oct (EU) 2004; Windows version announced for early 2005."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-10"
+origin = "md:895"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Pre-release leak (PS2 disc image)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date_text = "c. 20 Oct 2004"
+id_text = "—"
+notes = "An \"illegally obtained version\" plus images of the game and manual circulated on P2P/newsgroups (playable only on modded PS2). Rockstar/Take-Two statement dated 20 Oct 2004; launch dates unchanged. Build type (final vs. pre-final) not stated in sources."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S7", "5-S8"]
+sources_text = "S7, S8"
+
+[[entry]]
+id = "5.1-11"
+origin = "md:896"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "\"Early build leaked by hackers\""
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "—"
+date = "2004-10"
+date_text = "Oct 2004"
+id_text = "—"
+notes = "Wikipedia describes the Oct 2004 leak as an early build; same event as above."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.1-12"
+origin = "md:897"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "`notusedtext.txt` / cut missions (CSH2, BCESAR1, HEIST8, DOC1, CRASH5, WUZI3)"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "TCRF Development page documents cut missions and an unused-text file \"from an earlier point in development\"; no dated builds."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S9"]
+sources_text = "S9"
+
+[[entry]]
+id = "5.1-13"
+origin = "md:898"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Definitive Edition leftover dev material"
+platform_text = "—"
+region = "—"
+date = "2021"
+date_text = "2021"
+id_text = "—"
+notes = "TCRF: the Definitive Edition \"unintentionally included material related to the original game's development, including uncompiled mission scripts and other documents\" (see Definitive Edition section)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S9"]
+sources_text = "S9"
+
+[[entry]]
+id = "5.1-14"
+origin = "md:899"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Claimed \"source code\" archive (hoax)"
+platform_text = "—"
+region = "—"
+date_text = "5–6 Jan 2025"
+id_text = "—"
+notes = "Password-protected archive sold as SA source code; size matched retail game; contained Rhysida-ransomware-encrypted files; investigators called it a hoax."
+confidence = "confirmed"
+confidence_text = "✅ (as hoax)"
+sources = ["5-S10", "5-S11"]
+sources_text = "S10, S11"
+
+[[entry]]
+id = "5.1-15"
+origin = "md:900"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Partial source / beta code leak"
+platforms = ["pc"]
+platform_text = "PC (unspecified)"
+region = "—"
+date_text = "c. 15 Feb 2025"
+id_text = "—"
+notes = "Partial code (\"just the executable stuff\") reported on GTAForums (\"GTA San Andreas beta discussion and finds\"): cut 2-player/LAN/GameSpy references, ragdoll, skateboard, oil slicks, surface handling, first-person mode, developer comments. Authenticity reported as \"appears to be legitimate\" by GTABoom but \"unverified\" by TweakTown; Rockstar never commented. No build date or platform documented."
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["5-S12", "5-S13", "5-S14"]
+sources_text = "S12, S13, S14"
+
+[[entry]]
+id = "5.1-16"
+origin = "md:901"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Xbox debug prototype, **8 Mar 2005**"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "—"
+date_text = "build date 2005-03-08 13:50:29"
+id_text = "Dev-kit HDD build (owner: modular511)"
+notes = "Hidden Palace: status **\"Dumped, not released\"** (not publicly available). Debug prototype: a second controller controls the camera, mission select and teleport; a USB keyboard enables further debug options. The HP contributor says \"Hot Coffee\" and what appears to be network multiplayer are in place and estimates ~70% completion. HP records the Xbox final builds as EU **10 May 2005 14:15:21** and US **10 May 2005 14:26:19**. HP links the (archived) Assembler Games thread \"GTA San Andreas debug/beta version XBOX\" as the origin discussion."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["5-S40", "5-S15"]
+sources_text = "S40, S15"
+
+[[entry]]
+id = "5.1-17"
+origin = "md:902"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Steam \"beta\" branch builds (unreleased)"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+region = "US / EU (inferred by HP from files)"
+date = "2014-09-02"
+date_text = "exe built **28 Aug 2014 23:59:29**; manifests dated **2 Sep 2014**"
+id_text = "Steam depot manifests **4724889147718564839** and **5712455383574999089**"
+notes = "Hidden Palace (released by **Rain0x06**, origin: Steam depot): a \"beta\"-branch build never released; apart from the executable, files are identical to the version released 7 Nov 2014 (newsteam r1). Manifest 5712455383574999089 adds `french.gxt`/`german.gxt`/`italian.gxt` (so HP thinks it is the European build). Audio files missing (crashes before main menu)."
+confidence = "single-source"
+confidence_text = "⚠️ (HP only)"
+sources = ["5-S40"]
+sources_text = "S40"
+
+[[entry]]
+id = "5.1-18"
+origin = "md:903"
+section = "5.1"
+kind = "prototype"
+games = ["sa"]
+title = "Other preserved PS2/PC prototype discs"
+platform_text = "—"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Hidden Palace lists only the two SA entries above (checked 2026-10-24); no PS2 SA prototype is listed. TCRF main/Development pages list no dated SA prototype. A GTAForums thread titled \"GTA San Andreas: Beta Version PS2 Never Released\" exists (title only)."
+confidence = "confirmed"
+confidence_text = "✅ (absence on HP)"
+sources = ["5-S9", "5-S15", "5-S40"]
+sources_text = "S9, S15, S40"
+
+[[entry]]
+id = "5.2-1"
+origin = "md:911"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Original release v1.03"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA (USA)"
+date = "2004-10-26"
+date_text = "26 Oct 2004"
+version = "1.03"
+serials = ["SLUS-20946"]
+id_text = "SLUS-20946 · v1.03 · ISO 4,499,767,296 B · CRC 1C5E0EEE"
+notes = "First retail build; contains the inaccessible \"Hot Coffee\" content. TCRF lists v1 bugs (Supply Lines Baron uses fuel while gliding; Life's a Beach needs 4000 pts; Cluckin' Bell (Market) unmarked; extra broken Pay 'n' Spray in Las Venturas)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S17", "5-S2"]
+sources_text = "S3, S17, S2"
+
+[[entry]]
+id = "5.2-2"
+origin = "md:912"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Original release v1.03"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Europe / Australia (En,Fr,De,Es,It)"
+date = "2004-10-29"
+date_text = "29 Oct 2004 (PAL)"
+version = "1.03"
+serials = ["SLES-52541"]
+id_text = "SLES-52541 and SLES-52541-ANZ · v1.03 · ISO 4,502,913,024 B · CRC 412E2349"
+notes = "Same disc image sold in Europe and Australia/NZ. Australian OFLC originally rated it MA15+; classification revoked 29 Jul 2005 (Hot Coffee)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S17", "5-S6"]
+sources_text = "S3, S17, S6"
+
+[[entry]]
+id = "5.2-3"
+origin = "md:913"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "German release v1.00"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Germany (En,De)"
+date = "2004-10"
+date_text = "Oct 2004 (exact day not documented)"
+version = "1.00"
+serials = ["SLES-52927"]
+id_text = "SLES-52927 · v1.00 · ISO 4,500,586,496 B · CRC F876D6C7"
+notes = "Separate German build; German Wikipedia: USK 16 retained, ability to kick downed opponents removed; Hot Coffee still unlockable."
+confidence = "mixed"
+confidence_text = "✅ (disc) / ⚠️ (cuts)"
+sources = ["5-S17", "5-S21", "5-S25"]
+sources_text = "S17, S21, S25"
+
+[[entry]]
+id = "5.2-4"
+origin = "md:914"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Second edition v3.00 (\"M\" re-release, post–Hot Coffee)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA (USA, Canada)"
+date = "2006-02-20"
+date_text = "c. late Jul–Sep 2005 (exact day of the first v3.00 pressing not documented); GameFAQs dates the **Greatest Hits** (SLUS-20946GH, UPC 710425278884) **20 Feb 2006** ⚠️"
+version = "3.00"
+serials = ["SLUS-20946"]
+id_text = "SLUS-20946 / SLUS-20946GH (Greatest Hits) / SLUS-20946P / SLUS-20946P3 · v3.00 · ISO 4,517,036,032 B · CRC F3884E41"
+notes = "Hot Coffee assets removed; fixes Supply Lines fuel, Life's a Beach 2500 pts, marks Cluckin' Bell. Re-rated M after AO re-rating of 20 Jul 2005. Same image used for Greatest Hits and other reprints."
+confidence = "mixed"
+confidence_text = "✅ (disc) / ⚠️ (GH date)"
+sources = ["5-S17", "5-S2", "5-S6", "5-S51"]
+sources_text = "S17, S2, S6, S51"
+
+[[entry]]
+id = "5.2-5"
+origin = "md:915"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Second edition v3.00 Rev 1"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA (USA)"
+date_text = "not documented"
+version = "3.00"
+id_text = "SLUS-20946P3 · v3.00 (Rev 1) · ISO 4,501,209,088 B · CRC D43D36D5"
+notes = "A distinct later pressing (different image size/hash) with the P3 catalogue code. Differences from v3.00 not documented."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["5-S17"]
+sources_text = "S17"
+
+[[entry]]
+id = "5.2-6"
+origin = "md:916"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Second edition v2.01"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Europe / Australia (En,Fr,De,Es,It)"
+date = "2006-04-01"
+date_text = "2005 (exact day not documented; GameFAQs lists a Take-Two \"Reprint\", EAN 5026555303019, dated only \"2005\"); **Platinum** (SLES-52541/P) and AU Platinum (EAN 5026555304313) dated **1 Apr 2006** by GameFAQs ⚠️"
+version = "2.01"
+serials = ["SLES-52541"]
+id_text = "SLES-525413, SLES-52541-ANZ, SLES-52541-P (Platinum), SLES-52541/ANZ-P · v2.01 · ISO 4,520,214,528 B · CRC 13A51F88"
+notes = "Post–Hot Coffee build. In Australia, a modified version was re-classified MA15+ after the ban (Wikipedia Hot Coffee article gives \"September 2015\", apparently an error for 2005 — date not otherwise verified)."
+confidence = "mixed"
+confidence_text = "✅ (disc) / ⚠️ (AU date, Platinum date)"
+sources = ["5-S17", "5-S6", "5-S51"]
+sources_text = "S17, S6, S51"
+
+[[entry]]
+id = "5.2-7"
+origin = "md:917"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "German second edition v2.01"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Germany (En,De)"
+date = "2005"
+date_text = "2005 (not documented)"
+version = "2.01"
+serials = ["SLES-52927"]
+id_text = "SLES-529273, SLES-52927-P (Platinum) · v2.01 · ISO 4,517,888,000 B · CRC 218461E5"
+notes = "Post–Hot Coffee German build."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S17"]
+sources_text = "S17"
+
+[[entry]]
+id = "5.2-8"
+origin = "md:918"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Special Edition (bonus DVD with *Sunday Driver* documentary + *The Introduction*)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA (and others)"
+date = "2005-10-17"
+date_text = "8 Oct 2005 (en.Wikipedia SA) / 18 Oct 2005 (de.Wikipedia) / **17 Oct 2005** (GameFAQs) / \"November 2005\" (en.Wikipedia Hot Coffee)"
+version = "3.00"
+id_text = "GameFAQs: **SLUS-20946P**, UPC 710425279188. Redump lists serial SLUS-20946P under the v3.00 image (CRC F3884E41), i.e. the game disc of that catalogue number is the v3.00 build."
+notes = "Released without Hot Coffee. Release date still conflicts between sources (four values)."
+confidence = "single-source"
+confidence_text = "⚠️ (date conflict)"
+sources = ["5-S3", "5-S25", "5-S6", "5-S51", "5-S17"]
+sources_text = "S3, S25, S6, S51, S17"
+
+[[entry]]
+id = "5.2-9"
+origin = "md:919"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Japanese release (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Japan"
+date = "2007-01-25"
+date_text = "25 Jan 2007"
+serials = ["SLPM-65984"]
+id_text = "SLPM-65984 · ISO 4,495,507,456 B · CRC E5542967"
+notes = "Published by Capcom; rated **CERO Z** (Kakaku.com, GameFAQs; RRP ¥6,980 per Kakaku; JAN 4976219653541 per GameFAQs) (TCRF: intro adds an \"18 and older\" warning screen). Based on the second version (no Hot Coffee). Censorship: no money drops, instant wanted level on shooting peds, no stomping, Pimping removed, drug/sex references removed, two Rampages disabled, Restricted Area renamed \"No Fly Zone\", intro adds 18+ warning and Capcom screens, circle/X swapped."
+confidence = "mixed"
+confidence_text = "✅ (date/serial/rating) / ⚠️ (details)"
+sources = ["5-S3", "5-S16", "5-S17", "5-S26", "5-S51", "5-S52"]
+sources_text = "S3, S16, S17, S26, S51, S52"
+
+[[entry]]
+id = "5.2-10"
+origin = "md:920"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Japanese \"Best Price\" reprint"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Japan"
+date = "2007-07-12"
+date_text = "**12 Jul 2007** (Kakaku.com \"ベストプライス\", RRP ¥2,980; GameFAQs gives the same date for SLPM-66788, JAN 4976219022644)"
+serials = ["SLPM-66788", "SLPM-65984"]
+id_text = "SLPM-66788 (same image as SLPM-65984)"
+notes = "Capcom budget reissue. PCSX2 names it \"[Best Price]\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S17", "5-S21", "5-S51", "5-S52"]
+sources_text = "S17, S21, S51, S52"
+
+[[entry]]
+id = "5.2-11"
+origin = "md:921"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Japanese \"Best Price\" reprint (second)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Japan"
+date = "2009-07-23"
+date_text = "Kakaku.com lists a second Capcom reissue, \"（Best Price!)\", dated **23 Jul 2009** (RRP ¥1,900) — Kakaku gives no serial, so linking it to SLPM-55092 is **inferred, not sourced** ❓"
+serials = ["SLPM-55092", "SLPM-65984"]
+id_text = "SLPM-55092 (same image as SLPM-65984)"
+notes = "PCSX2 names it \"[Best Price]\". Not listed on GameFAQs."
+confidence = "mixed"
+confidence_text = "✅ (disc) / ❓ (date link)"
+sources = ["5-S17", "5-S21", "5-S52"]
+sources_text = "S17, S21, S52"
+
+[[entry]]
+id = "5.2-12"
+origin = "md:922"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Japanese \"Rockstar Classics\" reprint"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Japan"
+date = "2011-09-29"
+date_text = "**29 Sep 2011** (Kakaku.com, RRP ¥1,715; GameFAQs same date, JAN 4571304472016)"
+serials = ["SLPM-55292"]
+id_text = "SLPM-55292 · ISO 4,492,525,568 B · CRC C99DFE12"
+notes = "Published by Take-Two (not Capcom). TCRF: matches the Japanese release with less censorship, using a build \"a few weeks older than the original release's\"."
+confidence = "mixed"
+confidence_text = "✅ (disc, date) / ⚠️ (details)"
+sources = ["5-S16", "5-S17", "5-S21", "5-S51", "5-S52"]
+sources_text = "S16, S17, S21, S51, S52"
+
+[[entry]]
+id = "5.2-13"
+origin = "md:923"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Korean release"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Korea"
+date_text = "—"
+id_text = "—"
+notes = "No Korean (SLKA/SCKA) SA disc appears in the redump dat or PCSX2 GameIndex, and GameFAQs lists no Korean PS2 release. **No Korean PS2 release found.** Korean digital releases of the 2014–15 remaster are listed by GameFAQs: Xbox 360 Games on Demand (KO) **4 Feb 2015** and PS3 PSN (KO, Take-Two, NPUB-31790) **2 Dec 2015** (see 5.7)."
+confidence = "mixed"
+confidence_text = "✅ (absence, PS2) / ⚠️ (digital KO dates)"
+sources = ["5-S17", "5-S21", "5-S51"]
+sources_text = "S17, S21, S51"
+
+[[entry]]
+id = "5.2-14"
+origin = "md:924"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "*GTA: The Trilogy* (PS2)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date = "2006-12-04"
+date_text = "4 Dec 2006"
+id_text = "—"
+notes = "Compilation — see compilations section."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.2-15"
+origin = "md:925"
+section = "5.2"
+kind = "retail"
+games = ["sa"]
+title = "Action Replay companion discs"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "UK / Germany / USA / France"
+date_text = "—"
+id_text = "unlicensed CDs"
+notes = "Redump also lists \"Action Replay Ultimate Cheats/Codes for Use with GTA – San Andreas\" discs (UK, Germany, USA, France) — third-party, not Rockstar releases."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S17"]
+sources_text = "S17"
+
+[[entry]]
+id = "5.3-1"
+origin = "md:933"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "v1.0 US"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "NA"
+date = "2005-06-07"
+date_text = "7 Jun 2005"
+version = "1.0"
+id_text = "gta_sa.exe \"1.0 US\" (two binaries in circulation: plugin-sdk distinguishes `GAME_10US_HOODLUM` [0x401000 = 0x16197BE9] and `GAME_10US_COMPACT` [0x401000 = 0x53EC8B55])"
+notes = "Retail DVD with SecuROM 7 disc check (Polish copies: StarForce 5). US exe lacks French/German/Italian localization. The \"Compact\" exe is a community-distributed no-CD 1.0 US binary required by gta-reversed and is \"exactly 5,189,632 bytes\"; the \"HoodLum\" exe is the scene no-CD 1.0 US exe — both are modding-community binaries, not official releases. Hot Coffee unlockable via Patrick Wildenborg's mod (released 9 Jun 2005 on GTAGarage)."
+confidence = "mixed"
+confidence_text = "✅ (release) / ⚠️ (exe variants)"
+sources = ["5-S3", "5-S1", "5-S22", "5-S23", "5-S6"]
+sources_text = "S3, S1, S22, S23, S6"
+
+[[entry]]
+id = "5.3-2"
+origin = "md:934"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "v1.0 EU"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Europe"
+date = "2005-06-10"
+date_text = "10 Jun 2005"
+version = "1.0"
+id_text = "gta_sa.exe \"1.0 EU\" (plugin-sdk check 0x8245BC = 0x94BF)"
+notes = "Requires all 5 translation files in `text` folder."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S1", "5-S22"]
+sources_text = "S3, S1, S22"
+
+[[entry]]
+id = "5.3-3"
+origin = "md:935"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "v1.0 German / Austrian exes"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "DE / AT"
+date = "2005"
+date_text = "2005"
+version = "1.0"
+id_text = "separate German and Austrian EXE IDs (save files carry the EXE ID)"
+notes = "GTASnP documents German v2 and Austrian v2 EXEs that load only saves with matching IDs. German PC version is cut (kicking downed opponents removed); fan \"Blut-Patches\" restore it."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S27", "5-S25"]
+sources_text = "S27, S25"
+
+[[entry]]
+id = "5.3-4"
+origin = "md:936"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "v1.01 patch (\"No More Hot Coffee\")"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "US and EU/AU (separate patches)"
+date_text = "10 Aug 2005 (Gamepressure upload & TCRF); 11 Aug 2005 (en.Wikipedia); 9 Aug 2005 (de.Wikipedia)"
+version = "1.01"
+id_text = "gta_sa.exe 1.01 US (0x8252FC = 0x94BF) / 1.01 EU (0x82533C = 0x94BF); patch download 10.9 MB per region"
+notes = "Disables Hot Coffee; adds 720p/1080i HDTV support and version number on title screen; fixes 32 MB VRAM crash, dual-monitor crash, \"user account period bug\", \"Rain / Thunderstorm bug\", destroyed-car colours, dirty cars, Numpad 5 remap, user-radio crash with frame limiter off; improves DVD streaming."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S28", "5-S29", "5-S2", "5-S6", "5-S25", "5-S22"]
+sources_text = "S28, S29, S2, S6, S25, S22"
+
+[[entry]]
+id = "5.3-5"
+origin = "md:937"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "v2.00 \"Second Edition\" re-print"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "NA/EU"
+date = "2005-09-13"
+date_text = "By Sep 2005 (en.Wikipedia: edited M-rated version for Windows and Xbox); GameFAQs dates the US PC **Second Edition** (UPC 710425314933; Canadian Second Edition UPC 710425218897) **13 Sep 2005** ⚠️"
+version = "2.00"
+id_text = "Menu shows \"v2.00\"; otherwise ≈ v1.01"
+notes = "Hot Coffee assets removed; gta3.img size check (crash if modified) = anti-modding; v2 saves won't load in earlier versions. GTASnP gta3.img: v1 = 940,064,768 B (CRC32 c8ccf06f), v2 = 937,680,896 B (CRC32 c8a97aca). Steam-forum community description: 2.00 is \"the DVD re-release with the 1.01 patch applied\"; downgrade targets used by modders are 1.00 or 3.00."
+confidence = "mixed"
+confidence_text = "✅ / ⚠️ (exact day)"
+sources = ["5-S1", "5-S2", "5-S6", "5-S27", "5-S39", "5-S51"]
+sources_text = "S1, S2, S6, S27, S39, S51"
+
+[[entry]]
+id = "5.3-6"
+origin = "md:938"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "v3.0 (initial Steam release)"
+platforms = ["pc"]
+platform_text = "Windows (Steam, app 12120)"
+region = "Worldwide"
+date = "2008-01-04"
+date_text = "4 Jan 2008"
+version = "3.0"
+id_text = "v3.0"
+notes = "Built on the Xbox version code path (smaller subtitles/radio headers, Xbox-like save menu); frame limiter 26 FPS; mouse steering on by default; required Steam online; fixes jetpack weapon icon and an armed/unarmed lighting bug. Steam release timestamp 4 Jan 2008 18:01 UTC (SteamDB)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S2", "5-S30", "5-S1"]
+sources_text = "S2, S30, S1"
+
+[[entry]]
+id = "5.3-7"
+origin = "md:939"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "\"NewSteam r1\" (Steam 3.1)"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+region = "Worldwide"
+date = "2014-11-07"
+date_text = "7 Nov 2014"
+id_text = "newsteam r1"
+notes = "18 licensed songs removed (expired licences); \"bad date\" music plays regardless; XInput support added (no pressure triggers/rumble); DirectInput and 5:4 resolutions removed; version number no longer shown; made DRM-free (PCGW: \"DRM-free as the November 7, 2014 patch\")."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S2", "5-S1"]
+sources_text = "S2, S1"
+
+[[entry]]
+id = "5.3-8"
+origin = "md:940"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "\"NewSteam r2\" (Steam 3.2)"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+region = "Worldwide"
+date_text = "9 Dec 2014 (PCGW); \"about one month after 3.1\" (TCRF)"
+id_text = "newsteam r2 (plugin-sdk `GAME_SR2`, check 0x858D51 = 0x3539F633)"
+notes = "Adds 16:9 resolutions (slightly squished); TCRF says .img check and DRM removed (partly moddable). Limited SilentPatch support."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S2", "5-S1", "5-S22"]
+sources_text = "S2, S1, S22"
+
+[[entry]]
+id = "5.3-9"
+origin = "md:941"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "\"NewSteam r2-LV\" (\"German version\")"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+region = "Germany"
+date = "2014"
+date_text = "2014 (not separately dated)"
+id_text = "plugin-sdk `GAME_SR2LV` (check 0x858C61 = 0x3539F633), described as \"'German version'\""
+notes = "Low-violence Steam binary. PCGW notes the German Steam version for OS X does not work."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S22", "5-S1"]
+sources_text = "S22, S1"
+
+[[entry]]
+id = "5.3-10"
+origin = "md:942"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "Rockstar Games Launcher version"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Worldwide"
+date = "2019-09-17"
+date_text = "17 Sep 2019 (launcher launch; SA given free)"
+id_text = "RGL build (same family as newsteam; GTASnP: Steam/RSG \"primarily uses v2 files\")"
+notes = "Anti-modding measures; missing licensed songs; can be launched via Steam if Steam copy detected; \"SA RGSC Downgrader\" for offline play. Later given free to Definitive Edition buyers on Rockstar Store before 30 Jun 2022."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S31", "5-S1", "5-S27"]
+sources_text = "S31, S1, S27"
+
+[[entry]]
+id = "5.3-11"
+origin = "md:943"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "Delisting of Steam/RGL version"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Worldwide"
+date = "2021-10"
+date_text = "Oct 2021"
+id_text = "—"
+notes = "\"No longer sold digitally due to the release of The Definitive Edition\"; later returned as a bundle on the Rockstar Store."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S1", "5-S3"]
+sources_text = "S1, S3"
+
+[[entry]]
+id = "5.3-12"
+origin = "md:944"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "Microsoft Store / Windows (UWP) version"
+platforms = ["pc"]
+platform_text = "Windows 8.1/10 (incl. ARM)"
+region = "Worldwide"
+date = "2014-02-14"
+date_text = "Available by **14 Feb 2014** (OnMSFT news post of 14 Feb 2014: \"now on the Windows Store\" for Windows 8.1 and 8.1 RT, £4.99, ~1.84 GB, x86/x64/ARM); WinFuture reported it \"ab sofort\" in a post dated 17 Feb 2014 (€5.99, Windows 8.1 x86 and Windows RT 8.1, seven languages). TCRF: \"UWP: 2014, by War Drum Studios\"."
+id_text = "Store app (mobile-port codebase)"
+notes = "\"Different port of the game, same as the mobile version\"; ARM build exclusive to the Microsoft Store; lacks some radio songs. GTA Wiki: Windows 8.1 store edition available until 30 Jun 2023."
+confidence = "mixed"
+confidence_text = "✅ (release window) / ⚠️ (other details)"
+sources = ["5-S1", "5-S2", "5-S5", "5-S49", "5-S50"]
+sources_text = "S1, S2, S5, S49, S50"
+
+[[entry]]
+id = "5.3-13"
+origin = "md:945"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "Polish retail"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Poland"
+date = "2005"
+date_text = "2005"
+id_text = "StarForce 5 DRM"
+notes = "Only DRM difference documented."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S1"]
+sources_text = "S1"
+
+[[entry]]
+id = "5.3-14"
+origin = "md:946"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "Other PC retail editions/reprints (GameFAQs)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "US / EU / AU"
+date = "2011-06-15"
+date_text = "US 7 Jun 2005; EU \"Limited Edition\" and UK (product code GTASA/PCORING/E, EAN 5026555038539) 10 Jun 2005; AU (5052658/IN) 10 Jun 2005; US \"Second Edition Minibox\" (UPC 710425313516) 2008; EU **Green Pepper** budget reissue by **ak tronic** (EAN 4012160163644) **15 Jun 2011**"
+id_text = "see dates"
+notes = "Retail SKUs only; which exe version each carries is not stated by GameFAQs."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["5-S51"]
+sources_text = "S51"
+
+[[entry]]
+id = "5.3-15"
+origin = "md:947"
+section = "5.3"
+kind = "retail"
+games = ["sa"]
+title = "*The Trilogy* PC"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "—"
+date_text = "—"
+id_text = "—"
+notes = "Compilation — see compilations section."
+confidence_text = "—"
+sources = ["5-S1"]
+sources_text = "S1"
+
+[[entry]]
+id = "5.4-1"
+origin = "md:953"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "Original release"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA (USA) (En,Es)"
+date = "2005-06-07"
+date_text = "7 Jun 2005"
+serials = ["TT-130"]
+id_text = "Redump TT-130 · ISO 7,825,162,240 B · CRC 2378641A"
+notes = "Start screen unique to Xbox; \"LOADING...\" indicator with variable load times; heavy DDS texture compression; full-colour radio icons. ESRB submission 7 Jan 2005 (auto M)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S18", "5-S2", "5-S6"]
+sources_text = "S3, S18, S2, S6"
+
+[[entry]]
+id = "5.4-2"
+origin = "md:954"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "Rev 1"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA (USA) (En,Es)"
+date_text = "not documented"
+serials = ["TT-163"]
+id_text = "Redump TT-163 · CRC DF7590E6"
+notes = "Later pressing; content differences not documented in dat (an edited M-rated Xbox version shipped by Sep 2005 per Wikipedia — linkage to Rev 1 not verified)."
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["5-S18", "5-S6"]
+sources_text = "S18, S6"
+
+[[entry]]
+id = "5.4-3"
+origin = "md:955"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "Original release"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "Europe (En,Fr,De,Es,It)"
+date = "2005-06-10"
+date_text = "10 Jun 2005"
+serials = ["TT-134"]
+id_text = "Redump TT-134 · CRC 91A884F1"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S18"]
+sources_text = "S3, S18"
+
+[[entry]]
+id = "5.4-4"
+origin = "md:956"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "Rev 1"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "Europe"
+date_text = "not documented"
+serials = ["TT-164"]
+id_text = "Redump TT-164 · CRC 5EC3253B"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["5-S18"]
+sources_text = "S18"
+
+[[entry]]
+id = "5.4-5"
+origin = "md:957"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "German release"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "Germany (En,De)"
+date = "2005-06"
+date_text = "Jun 2005"
+serials = ["TT-149"]
+id_text = "Redump TT-149 · CRC E951D1A9"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["5-S18"]
+sources_text = "S18"
+
+[[entry]]
+id = "5.4-6"
+origin = "md:958"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "German Rev 1"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "Germany"
+date_text = "not documented"
+serials = ["TT-165"]
+id_text = "Redump TT-165 · CRC EB73734C"
+notes = "—"
+confidence = "confirmed"
+confidence_text = "✅ (disc)"
+sources = ["5-S18"]
+sources_text = "S18"
+
+[[entry]]
+id = "5.4-7"
+origin = "md:959"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "Later Xbox retail editions (GameFAQs)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "US / EU"
+date_text = "German release dated **10 Jul 2005** by GameFAQs (EAN 5026555241915) ⚠️ vs \"Jun 2005\" above; US **Second Edition** (UPC 710425298875) **13 Sep 2005**; EU **Classics** (5243193/IN, EAN 5026555243193) **3 Feb 2006**; US **Platinum Hits** 2006"
+id_text = "see dates"
+notes = "Which Redump revision (TT-163/164/165) corresponds to which edition is not stated. US launch product code RCK-29695 (UPC 710425296956)."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["5-S51"]
+sources_text = "S51"
+
+[[entry]]
+id = "5.4-8"
+origin = "md:960"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "Xbox Originals (emulated Xbox game, download)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "Worldwide"
+date = "2008-10-20"
+date_text = "20 Oct 2008 (also GameFAQs \"Games on Demand\" 20 Oct 2008)"
+id_text = "Xbox Live Marketplace download"
+notes = "Replaced on 26 Oct 2014 by the mobile-based remaster (below)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S2", "5-S51"]
+sources_text = "S3, S2, S51"
+
+[[entry]]
+id = "5.4-9"
+origin = "md:961"
+section = "5.4"
+kind = "retail"
+games = ["sa"]
+title = "*The Trilogy* (Xbox)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA"
+date = "2005-10-08"
+date_text = "8 Oct 2005"
+id_text = "—"
+notes = "Compilation — see compilations section."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3"]
+sources_text = "S3"
+
+[[entry]]
+id = "5.5-1"
+origin = "md:967"
+section = "5.5"
+kind = "retail"
+games = ["sa"]
+title = "Mac OS X port"
+platforms = ["mac"]
+platform_text = "Mac OS X (Intel)"
+region = "Worldwide"
+date = "2012-02-13"
+date_text = "12 Nov 2010 (en.Wikipedia, PCGW, GameFAQs \"Online\"); \"Ende 2010\" (de.Wikipedia). GameFAQs also lists a Mac **Steam** release (app 12120) dated **13 Feb 2012** ⚠️"
+id_text = "Cider wrapper by TransGaming"
+notes = "Released standalone and in *The Trilogy* (Mac). Min. macOS 10.6.8, Core 2 Duo, 1 GB RAM; no PowerPC; does not run on macOS 10.15 Catalina+ (32-bit). German Steam OS X version doesn't work."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S1", "5-S4", "5-S25", "5-S51"]
+sources_text = "S3, S1, S4, S25, S51"
+
+[[entry]]
+id = "5.6-1"
+origin = "md:973"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Initial release"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "Worldwide"
+date = "2013-12-12"
+date_text = "12 Dec 2013"
+version = "1.0"
+id_text = "App Store id763692274 · v1.0 (App Store history lists v1.0 dated 12/04/2013)"
+notes = "Port by War Drum Studios (later Grove Street Games); revamped HUD/menus (radar top-left), upscaled textures, cloud saves via Social Club, mid-mission checkpoints; missing heat-haze/fog/grass effects; some licensed songs missing; US$6.99. Metacritic 84."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S32", "5-S2", "5-S25"]
+sources_text = "S3, S32, S2, S25"
+
+[[entry]]
+id = "5.6-2"
+origin = "md:974"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Initial release"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date_text = "19 Dec 2013 (en.Wikipedia, TCRF) / 21 Dec 2013 (de.Wikipedia) / 7 Jan 2014 (GameFAQs ⚠️; contradicted by Rockstar's own note of an Android v1.03 crash fix on 20 Dec 2013)"
+id_text = "Google Play `com.rockstargames.gtasa`"
+notes = "Bluetooth keyboard/gamepad cheat entry works on Android and UWP but not iOS. Google Play page (fetched Oct 2026): last updated 21 Jan 2026, 5M+ downloads, rated 18+. Android version history: see the Rockstar Support rows below."
+confidence = "confirmed"
+confidence_text = "✅ (dates)"
+sources = ["5-S3", "5-S2", "5-S25", "5-S33", "5-S42", "5-S51"]
+sources_text = "S3, S2, S25, S33, S42, S51"
+
+[[entry]]
+id = "5.6-3"
+origin = "md:975"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.03"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2013-12-20"
+date_text = "20 Dec 2013"
+version = "1.03"
+id_text = "v1.03"
+notes = "\"Fix for crash at launch\". (Rockstar's list also has a different \"v1.03\" dated 2 Jun 2014 — see below.)"
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-4"
+origin = "md:976"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.05 (WW) / v1.02 (Germany)"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW / DE"
+date = "2014-03-21"
+date_text = "21 Mar 2014"
+id_text = "v1.05 / v1.02 (DE)"
+notes = "Additional Android KitKat (4.4.x) compatibility; stability fixes; save-state resume fixes. Shows a separate German Android build with its own numbering."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-5"
+origin = "md:977"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.02 (Fire TV support)"
+platforms = ["android"]
+platform_text = "Android (as labelled; Fire TV)"
+region = "—"
+date = "2014-05-20"
+date_text = "20 May 2014"
+version = "1.02"
+id_text = "v1.02"
+notes = "\"Added support for FireTV\". Rockstar labels these three 2014 entries \"Android\"; their numbers overlap the Google Play builds above, so they are probably a separate (Amazon) build line — **not stated by Rockstar** ❓."
+confidence = "mixed"
+confidence_text = "✅ (entry) / ❓ (build line)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-6"
+origin = "md:978"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.03 (controller update)"
+platforms = ["android"]
+platform_text = "Android (as labelled)"
+region = "—"
+date = "2014-06-02"
+date_text = "2 Jun 2014"
+version = "1.03"
+id_text = "v1.03"
+notes = "\"Game controller updates\"."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-7"
+origin = "md:979"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.04 (Fire Phone support)"
+platforms = ["android"]
+platform_text = "Android (as labelled; Fire Phone)"
+region = "—"
+date = "2014-07-23"
+date_text = "23 Jul 2014"
+version = "1.04"
+id_text = "v1.04"
+notes = "\"Adds support for Fire Phone\"."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-8"
+origin = "md:980"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.06"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2014-10-27"
+date_text = "27 Oct 2014"
+version = "1.06"
+id_text = "v1.06"
+notes = "Fix for \"The Da Nang Thang\"; assorted fixes."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-9"
+origin = "md:981"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.05 (Germany)"
+platforms = ["android"]
+platform_text = "Android"
+region = "DE"
+date = "2014-11-04"
+date_text = "4 Nov 2014"
+version = "1.05"
+id_text = "v1.05 (DE)"
+notes = "Fixed German boot crash; \"The Da Nang Thang\" fix."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-10"
+origin = "md:982"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v1.08 (WW) / v1.07 (Germany)"
+platforms = ["android"]
+platform_text = "Android"
+region = "WW / DE"
+date = "2015-03-20"
+date_text = "20 Mar 2015"
+id_text = "v1.08 / v1.07 (DE)"
+notes = "\"Various Bug Fixes\"."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-11"
+origin = "md:983"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v2.0"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2019-04-15"
+date_text = "15 Apr 2019"
+version = "2.0"
+id_text = "v2.0"
+notes = "Android 9.0 (Pie) support; full-screen support; graphics-corruption fix; advises loading a manual save instead of \"Resume\" once."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-12"
+origin = "md:984"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v2.11.204"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2024-04-17"
+date_text = "17 Apr 2024"
+version = "2.11.204"
+id_text = "v2.11.204"
+notes = "Performance and stability improvements."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-13"
+origin = "md:985"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v2.11.229"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2024-07-02"
+date_text = "2 Jul 2024"
+version = "2.11.229"
+id_text = "v2.11.229"
+notes = "Bug fixes and improvements."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-14"
+origin = "md:986"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v2.11.277"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2025-05-13"
+date_text = "13 May 2025"
+version = "2.11.277"
+id_text = "v2.11.277"
+notes = "Traffic fade-in and ramp fixes; frame-rate-limiter fix; shadows enabled on Adreno GPUs (previous Adreno 320 implementation disabled); updated icons."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-15"
+origin = "md:987"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v2.11.306"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2026-01-12"
+date_text = "12 Jan 2026"
+version = "2.11.306"
+id_text = "v2.11.306"
+notes = "General bug fixes."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S42"]
+sources_text = "S42"
+
+[[entry]]
+id = "5.6-16"
+origin = "md:988"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Android v2.11.311"
+platforms = ["android"]
+platform_text = "Android"
+region = "Worldwide"
+date = "2026-01-21"
+date_text = "21 Jan 2026"
+version = "2.11.311"
+id_text = "v2.11.311"
+notes = "Fixed a crash when downloading game assets. Matches the Google Play \"last updated 21 Jan 2026\"."
+confidence = "confirmed"
+confidence_text = "✅ (primary + Play date)"
+sources = ["5-S42", "5-S33"]
+sources_text = "S42, S33"
+
+[[entry]]
+id = "5.6-17"
+origin = "md:989"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Initial release"
+platforms = ["winphone"]
+platform_text = "Windows Phone"
+region = "Worldwide"
+date = "2014-01-27"
+date_text = "27 Jan 2014 (also GameFAQs)"
+id_text = "Windows Phone Store"
+notes = "Windows Phone version-number history: not documented (not covered by Rockstar's mobile update notes)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S25", "5-S51"]
+sources_text = "S3, S25, S51"
+
+[[entry]]
+id = "5.6-18"
+origin = "md:990"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Initial release"
+platforms = ["fireos"]
+platform_text = "Fire OS (Amazon Appstore)"
+region = "Worldwide"
+date = "2014-05-15"
+date_text = "15 May 2014 (en.Wikipedia)"
+id_text = "Amazon Appstore"
+notes = "Rockstar's update notes list \"Added support for FireTV\" on 20 May 2014 and \"Adds support for Fire Phone\" on 23 Jul 2014 (see Android rows). A separate Fire OS version-number history is not given by Rockstar."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S3", "5-S42"]
+sources_text = "S3, S42"
+
+[[entry]]
+id = "5.6-19"
+origin = "md:991"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "Windows 8.1/10 UWP"
+platforms = ["pc"]
+platform_text = "Windows (x86/ARM)"
+region = "Worldwide"
+date_text = "by 14 Feb 2014 (OnMSFT); WinFuture post 17 Feb 2014"
+id_text = "Microsoft Store"
+notes = "Same mobile-port codebase; see 5.3."
+confidence = "confirmed"
+confidence_text = "✅ (2 news sources, day differs)"
+sources = ["5-S1", "5-S2", "5-S49", "5-S50"]
+sources_text = "S1, S2, S49, S50"
+
+[[entry]]
+id = "5.6-20"
+origin = "md:992"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 1.01"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2014-01-06"
+date_text = "6 Jan 2014 (App Store and Rockstar)"
+id_text = "1.01"
+notes = "Rockstar notes: fixed random crashes; updated controller mappings; assorted fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-21"
+origin = "md:993"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 1.02"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2014-01-24"
+date_text = "24 Jan 2014 (App Store and Rockstar)"
+id_text = "1.02"
+notes = "Rockstar notes: \"Pier 69\" mission fix; assorted fixes. (The first-pass row put the crash/controller notes here; Rockstar attaches them to 1.01.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-22"
+origin = "md:994"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 1.03"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2014-02-18"
+date_text = "18 Feb 2014 (App Store and Rockstar)"
+id_text = "1.03"
+notes = "Rockstar notes: stability across devices; fixed video-poker payouts; assorted fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-23"
+origin = "md:995"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 1.04"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2014-03-07"
+date_text = "7 Mar 2014 (App Store and Rockstar)"
+id_text = "1.04"
+notes = "Assorted bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-24"
+origin = "md:996"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 1.5 (Rockstar: \"v1.05\")"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date_text = "25 Oct 2014 (App Store) / 27 Oct 2014 (Rockstar) ⚠️"
+version = "1.05"
+id_text = "1.5 (App Store) / 1.05 (Rockstar)"
+notes = "Native iPhone 6 / 6 Plus resolution; fix for \"The Da Nang Thang\". Version label and date differ between the two sources."
+confidence = "mixed"
+confidence_text = "✅ (content) / ⚠️ (label/date)"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-25"
+origin = "md:997"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 1.6"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2015-04-21"
+date_text = "21 Apr 2015"
+id_text = "1.6"
+notes = "Various bug fixes. (Not listed in Rockstar's notes.)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32"]
+sources_text = "S32"
+
+[[entry]]
+id = "5.6-26"
+origin = "md:998"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 2.0"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2017-05-24"
+date_text = "24 May 2017 (App Store and Rockstar)"
+id_text = "2.0"
+notes = "64-bit support; ReplayKit screen recording; Rockstar also lists fixes for Burglary coronas, Audio Setup text overlap (Fr/De/It/Ru/Es), \"Up, Up and Away\" Leviathan crash, Hunter rockets with touch controls, white stretched textures, \"Architectural Espionage\" crash, and Japanese language option missing on some devices."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-27"
+origin = "md:999"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 2.01"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2017-06-07"
+date_text = "7 Jun 2017 (App Store and Rockstar)"
+id_text = "2.01"
+notes = "Fixed iOS 8.0 crash; restored dynamic shadows."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-28"
+origin = "md:1000"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 2.02"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date_text = "1 May 2018 (App Store) / 2 May 2018 (Rockstar) ⚠️"
+id_text = "2.02"
+notes = "iPhone X full-screen support."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-29"
+origin = "md:1001"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 2.1"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date_text = "19 Mar 2019 (App Store) / 21 Mar 2019 (Rockstar) ⚠️"
+id_text = "2.1"
+notes = "Rockstar: full iOS 12 support; fixed cutscene audio drop-outs."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-30"
+origin = "md:1002"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 2.2"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date = "2019-04-12"
+date_text = "12 Apr 2019 (App Store and Rockstar)"
+id_text = "2.2"
+notes = "Advises loading a manual save instead of \"Resume\" after update."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42"]
+sources_text = "S32, S42"
+
+[[entry]]
+id = "5.6-31"
+origin = "md:1003"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 2.2.12 / 2.2.13 / 2.2.14"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date_text = "27 / 28 / 29 Jun 2023"
+id_text = "2.2.12–2.2.14"
+notes = "Bug fixes."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32"]
+sources_text = "S32"
+
+[[entry]]
+id = "5.6-32"
+origin = "md:1004"
+section = "5.6"
+kind = "mobile-version"
+games = ["sa"]
+title = "iOS 2.2.15 – 2.2.21"
+platforms = ["ios"]
+platform_text = "iOS"
+region = "—"
+date_text = "17 Apr 2024 (2.2.15), 25 Apr 2024 (2.2.16), 24 May 2024 (2.2.17), 2 Jul 2024 (2.2.18), 2 Sep 2024 (2.2.19), 5 Dec 2024 (2.2.20), 29 May 2025 (2.2.21, current at fetch)"
+id_text = "2.2.15–2.2.21"
+notes = "\"Miscellaneous fixes and improvements\". Current listing: 2.7 GB, iOS/iPadOS 13.0+, also on Apple-silicon Macs (macOS 11+). Rockstar's notes confirm 2.2.15 (17 Apr 2024) and 2.2.21 (29 May 2025: traffic fade-in/ramp fixes, frame-rate-limiter fix) and list the 2 Jul 2024 iOS update under the internal build number **v2024.0621.1548** (the App Store shows 2.2.18 on that date). Rockstar Support (18 Aug 2026): Rockstar titles now require **iOS 17 or later** to keep receiving updates and support."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S32", "5-S42", "5-S43"]
+sources_text = "S32, S42, S43"
+
+[[entry]]
+id = "5.7-1"
+origin = "md:1010"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Enhanced/remastered version (download)"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "Worldwide"
+date_text = "26 Oct 2014 (en.Wikipedia, TCRF); GameFAQs dates Games on Demand US/EU **27 Oct 2014**, AU **18 Nov 2014**, KO **4 Feb 2015** ⚠️"
+id_text = "Xbox Live Marketplace (replaced the 2008 Xbox Originals listing)"
+notes = "Based on the mobile port (HUD from mobile); higher resolution, draw distance, new menu, 33 achievements. TCRF: no AA (slight blur), cutscene skipping removed in two missions, audio dropouts, Pilot School freeze, Michelle-date camera bug; poor optimization at launch \"fixed about a week later\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S5", "5-S2", "5-S34", "5-S51"]
+sources_text = "S3, S5, S2, S34, S51"
+
+[[entry]]
+id = "5.7-2"
+origin = "md:1011"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Title Update 1"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "Worldwide"
+date = "2014-11-05"
+date_text = "XboxUnity upload date **5 Nov 2014** (community TU archive; Microsoft release date not given)"
+id_text = "Title ID **545408B8**, Media ID 63709911, TU version **1** (base version 00000003), TitleUpdateID 23953, SHA-1 `C175FCC15A2B8029738CD9039AE5CF54D1929DD1`, listed size 13400 (unit not stated by XboxUnity)"
+notes = "The only TU XboxUnity lists for the 2014 version; its date is consistent with TCRF's \"fixed about a week later\", but no source explicitly ties TU1 to that fix. A second XboxUnity 360 entry, title ID 54540841 (\"GTA San Andreas (Xbox 360)\"), lists no updates; XboxUnity lists the original-Xbox SA under 54540082 / 54540086 (Xbox1 type). No-Intro's Xbox 360 Title Updates DAT contains no SA entry."
+confidence = "single-source"
+confidence_text = "⚠️ (single community DB)"
+sources = ["5-S41", "5-S2"]
+sources_text = "S41, S2"
+
+[[entry]]
+id = "5.7-3"
+origin = "md:1012"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Disc release"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "USA, Europe (En,Ja,Fr,De,Es,It,Ru)"
+date_text = "GameFAQs: US **Platinum Hits** 24 Jun 2015; AU **Classics** (EAN 5026555264990) 10 Jul 2015; EU **Classics** 17 Jul 2015 ⚠️ (which of these is the Redump TT-2232 disc is not stated)"
+serials = ["TT-2232"]
+id_text = "Redump TT-2232 · ISO 7,838,695,424 B · CRC F8B79CA5"
+notes = "Physical disc of the 2014 version (budget-line only per GameFAQs). Xbox One backward compatibility added 7 Jun 2018 (listed \"Disc Only\"; GameFAQs also lists an Xbox Store entry dated 7 Jun 2018); delisted after Definitive Edition launch, re-added Dec 2021."
+confidence = "mixed"
+confidence_text = "✅ (disc) / ⚠️ (BC, dates)"
+sources = ["5-S19", "5-S35", "5-S51"]
+sources_text = "S19, S35, S51"
+
+[[entry]]
+id = "5.7-4"
+origin = "md:1013"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "PS2 Classic (emulated PS2 version)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "NA / EU / JP"
+date_text = "NA **11 Dec 2012** (en.Wikipedia, GameFAQs); EU **12 Dec 2012** (GameFAQs); EU \"re-release\" 1 Apr 2015 (GameFAQs); JP **26 Aug 2015** (GameFAQs)"
+serials = ["NPUD-20946", "NPED-00070", "NPJD-00107", "NPUD20946", "NPED00070"]
+id_text = "PSN: **NPUD-20946** (US, SCEA), **NPED-00070** (EU), **NPJD-00107** (JP). No-Intro's PS3 PSN DAT confirms NPUD20946 and NPED00070 (EU ENG/ITA/USK licences)."
+notes = "Replaced by the remaster on 1 Dec 2015."
+confidence = "mixed"
+confidence_text = "✅ (NA date, IDs) / ⚠️ (EU/JP dates)"
+sources = ["5-S3", "5-S2", "5-S45", "5-S51"]
+sources_text = "S3, S2, S45, S51"
+
+[[entry]]
+id = "5.7-5"
+origin = "md:1014"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Enhanced version (download)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Worldwide"
+date = "2015-12-02"
+date_text = "1 Dec 2015 (released without announcement; GameFAQs gives 1 Dec 2015 for US NPUB-31790 and EU/AU NPEB-02369, and **2 Dec 2015** for Korea, Take-Two, NPUB-31790)"
+serials = ["NPUB31790", "NPEB02369"]
+id_text = "PSN NPUB31790 (US) / NPEB02369 (EU)"
+notes = "Same mobile-based port as Xbox 360. PS3-exclusive: 2-player free-roam/rampages, vibration, fixed 16:9 cutscene freeze. Bugs: static waterfall, dance timing delay, down-sampled mono audio. 33 trophies."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S5", "5-S2", "5-S45", "5-S51"]
+sources_text = "S3, S5, S2, S45, S51"
+
+[[entry]]
+id = "5.7-6"
+origin = "md:1015"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Enhanced version"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Japan"
+date = "2015-12-17"
+date_text = "**17 Dec 2015** (ja.Wikipedia, Kakaku.com, GameFAQs)"
+serials = ["BLJM-61327", "NPJB-00794"]
+id_text = "Disc BLJM-61327 (redump; JAN 4571304473457 per GameFAQs); PSN NPJB-00794 (Take-Two, GameFAQs)"
+notes = "Kakaku.com: Take-Two Interactive, CERO Z, RRP ¥3,240."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S26", "5-S20", "5-S51", "5-S52"]
+sources_text = "S26, S20, S51, S52"
+
+[[entry]]
+id = "5.7-7"
+origin = "md:1016"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Disc release"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "USA (En,Fr,De,Es,It,Ru)"
+date = "2015-12-01"
+date_text = "**1 Dec 2015** (GameFAQs, as **Greatest Hits**: UPC 710425476938, product 2100891; Canadian Greatest Hits UPC 710425476945, product 2101109) ⚠️"
+serials = ["BLUS-31584"]
+id_text = "BLUS-31584 · ISO 2,489,647,104 B · CRC 8B71771B"
+notes = "GameFAQs does not give the BLUS serial for these SKUs."
+confidence = "mixed"
+confidence_text = "✅ (disc) / ⚠️ (date)"
+sources = ["5-S20", "5-S51"]
+sources_text = "S20, S51"
+
+[[entry]]
+id = "5.7-8"
+origin = "md:1017"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Disc release"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Europe / Australia (En,Fr,De,Es,It,Ru)"
+date = "2015-12-01"
+date_text = "**1 Dec 2015** (GameFAQs: EU BLES-02219, EAN 5026555419550; AU EAN 5026555419482) ⚠️"
+serials = ["BLES-02219"]
+id_text = "BLES-02219 · CRC 2EDA26B0"
+notes = "—"
+confidence = "mixed"
+confidence_text = "✅ (disc) / ⚠️ (date)"
+sources = ["5-S20", "5-S51"]
+sources_text = "S20, S51"
+
+[[entry]]
+id = "5.7-9"
+origin = "md:1018"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "Title Update 1.01"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "—"
+date_text = "release date **not documented** (Rockstar article \"Last Updated: April 21, 2024\" is an edit date, not the release date)"
+id_text = "1.01"
+notes = "Rockstar Support patch notes: fixed crash during Flight School; brief hang when flying over cities in Air Races; crash when starting a Roulette save; short XMB delay when restarting; rare corruption of Japanese saves; size of some Russian text. Whether later PS3 updates exist is **not documented** (Sony update XML, psdevwiki, serialstation and RPCS3 forum pages could not be fetched)."
+confidence = "confirmed"
+confidence_text = "✅ (primary)"
+sources = ["5-S44"]
+sources_text = "S44"
+
+[[entry]]
+id = "5.7-10"
+origin = "md:1019"
+section = "5.7"
+kind = "retail"
+games = ["sa"]
+title = "PSN digital IDs (2015 version and PS2 Classic)"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "US / EU"
+date_text = "—"
+serials = ["NPUB31790", "NPEB02369", "NPUD20946", "NPED00070"]
+id_text = "2015 version: **NPUB31790** (US), **NPEB02369** (EU; PKG `EP1004-NPEB02369_00-GTASANANDREASPS3`, 2,220,121,744 B, CRC D6328B6F). PS2 Classic: **NPUD20946** (US, `UP9000-NPUD20946_00-0000000000000000`), **NPED00070** (EU; separate ENG / ITA / USK licences, plus France and Germany PKGs)"
+notes = "From No-Intro's PS3 (PSN) DAT. RPCS3's compatibility list rates BLUS31584, BLES02219, BLJM61327, NPUB31790 and NPEB02369 \"Playable\"."
+confidence = "confirmed"
+confidence_text = "✅ (dat)"
+sources = ["5-S45", "5-S46"]
+sources_text = "S45, S46"
+
+[[entry]]
+id = "5.8-1"
+origin = "md:1025"
+section = "5.8"
+kind = "digital"
+games = ["sa"]
+title = "PS2 Classic (emulated PS2 version, trophy-enabled)"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "Worldwide (PlayStation Blog: on sale 8:00 pm GMT)"
+date = "2015-12-05"
+date_text = "**5 Dec 2015** (also GameFAQs, US/EU/AU)"
+serials = ["CUSA03506", "CUSA03541"]
+id_text = "PSN **CUSA03506** (US; content ID `UP1004-CUSA03506_00-SLUS209460000001`), **CUSA03541** (EU/AU; content ID `EP1004-CUSA03541_00-SLES525410000001`) (GameFAQs, ORBISPatches)"
+notes = "PlayStation Blog post of 4 Dec 2015 (URL dated /2015/12/04/): GTA: San Andreas is among the first eight PS2 games on PS4, going on sale \"8.00pm GMT tomorrow, 5th December\", up-rendered to 1080p, with trophies, Remote Play, Share Play and second-screen manuals; God is a Geek (URL dated 2015/12) lists SA at US$14.99 among the PS2 games launching \"starting tomorrow\", tied to PlayStation Experience 2015. TCRF: PS4 used the emulated PS2 original until delisted 11 Oct 2021 in favour of the Definitive Edition. GTA Wiki: original PS3/PS4/360 versions had 33 trophies/achievements each. Post-launch update: see next row."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S3", "5-S2", "5-S5", "5-S47", "5-S48", "5-S51", "5-S53"]
+sources_text = "S3, S2, S5, S47, S48, S51, S53"
+
+[[entry]]
+id = "5.8-2"
+origin = "md:1026"
+section = "5.8"
+kind = "digital"
+games = ["sa"]
+title = "Patch 01.01"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "US (CUSA03506)"
+date = "2016-06-03"
+date_text = "PKG creation date **3 Jun 2016** (release date not given)"
+id_text = "01.01 · 13.3 MB · required firmware 3.11"
+notes = "Notes: \"Bug fixes.\" ORBISPatches lists no patch for the EU title CUSA03541."
+confidence = "single-source"
+confidence_text = "⚠️ (single tracker)"
+sources = ["5-S53"]
+sources_text = "S53"
+
+[[entry]]
+id = "5.9-1"
+origin = "md:1032"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "Hot Coffee content on original discs"
+platforms = ["ps2", "xbox", "pc"]
+platform_text = "PS2 v1.03 / v1.00 (DE), Xbox launch discs, PC v1.0"
+region = "All"
+date_text = "Oct 2004 – Jun 2005"
+id_text = "see 5.2–5.4"
+notes = "FTC: discs of all three original M-rated versions contained the unused nude images and disabled mini-game code; PC accessed via an online program, PS2/Xbox required accessories/cheat devices. Rockstar cited Action Replay codes for retail PS2."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S36", "5-S37", "5-S6"]
+sources_text = "S36, S37, S6"
+
+[[entry]]
+id = "5.9-2"
+origin = "md:1033"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "\"Hot Coffee\" mod (Patrick Wildenborg)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "—"
+date = "2005-06-09"
+date_text = "9 Jun 2005 (GTAGarage)"
+id_text = "third-party mod"
+notes = "Downloaded >1 million times in four weeks."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S6", "5-S3"]
+sources_text = "S6, S3"
+
+[[entry]]
+id = "5.9-3"
+origin = "md:1034"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "Rockstar \"hackers\" statement"
+platform_text = "—"
+region = "—"
+date_text = "13 Jul 2005 (Gamasutra/Game Developer, Shacknews); 14 Jul 2005 (Wikipedia)"
+id_text = "—"
+notes = "Blamed \"a determined group of hackers\"."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S37", "5-S38", "5-S6"]
+sources_text = "S37, S38, S6"
+
+[[entry]]
+id = "5.9-4"
+origin = "md:1035"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "ESRB investigation → re-rating M→AO"
+platform_text = "All"
+region = "NA"
+date_text = "investigation 8 Jul 2005; AO 20 Jul 2005"
+id_text = "—"
+notes = "Walmart, Target, Best Buy, Circuit City pulled the game; Take-Two suspended production until a version blocking Hot Coffee was ready."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S6", "5-S36"]
+sources_text = "S6, S36"
+
+[[entry]]
+id = "5.9-5"
+origin = "md:1036"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "Australian ban"
+platform_text = "All"
+region = "AU"
+date_text = "OFLC investigation 12 Jul 2005; classification revoked 29 Jul 2005"
+serials = ["SLES-52541"]
+id_text = "SLES-52541-ANZ (PS2)"
+notes = "Original MA15+ revoked. Re-released as an edited version re-rated MA15+ (date given as \"September 2015\" in en.Wikipedia, evidently a typo for 2005; not independently verified)."
+confidence = "mixed"
+confidence_text = "✅ (ban) / ⚠️ (re-rating date)"
+sources = ["5-S6", "5-S25"]
+sources_text = "S6, S25"
+
+[[entry]]
+id = "5.9-6"
+origin = "md:1037"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "PC \"No More Hot Coffee\" patch v1.01"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "NA / EU-AU"
+date_text = "10–11 Aug 2005"
+version = "1.01"
+id_text = "v1.01"
+notes = "Distributed via nomorehotcoffee.com under an agreement with the ESRB (FTC). See 5.3."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S36", "5-S28", "5-S6"]
+sources_text = "S36, S28, S6"
+
+[[entry]]
+id = "5.9-7"
+origin = "md:1038"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "Edited \"M\" re-releases (Second Edition)"
+platforms = ["ps2", "pc", "xbox"]
+platform_text = "PS2 (v3.00 NA / v2.01 EU, DE), Windows (v2.00), Xbox"
+region = "All"
+date_text = "By Sep 2005 (Windows/Xbox per en.Wikipedia); PS2 dates not documented"
+id_text = "see 5.2–5.4"
+notes = "Hot Coffee assets removed; re-rated M."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S6", "5-S2", "5-S17", "5-S36"]
+sources_text = "S6, S2, S17, S36"
+
+[[entry]]
+id = "5.9-8"
+origin = "md:1039"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "German versions"
+platforms = ["ps2", "xbox", "pc"]
+platform_text = "PS2 (SLES-52927 v1.00 / SLES-529273 v2.01), Xbox (TT-149 / TT-165), PC (German & Austrian EXE IDs), Steam (newsteam r2-LV)"
+region = "DE/AT"
+date_text = "2004–2014"
+id_text = "see tables above"
+notes = "USK 16 retained; cut: kicking/stomping downed opponents. Hot Coffee still unlockable on early German version. Fan \"Blut-Patches\" restore PC content. Full list of German cuts **not documented** (TCRF lists German changes as undocumented)."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S25", "5-S16", "5-S17", "5-S18", "5-S22", "5-S27"]
+sources_text = "S25, S16, S17, S18, S22, S27"
+
+[[entry]]
+id = "5.9-9"
+origin = "md:1040"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "Japanese CERO-era version (Capcom)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2007-01-25"
+date_text = "25 Jan 2007"
+serials = ["SLPM-65984", "SLPM-66788", "SLPM-55092"]
+id_text = "SLPM-65984 (+ Best Price SLPM-66788, SLPM-55092)"
+notes = "Based on second version; extensive censorship (see 5.2); TCRF says delayed/modified because of Hot Coffee (ja.Wikipedia also)."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S16", "5-S26", "5-S17"]
+sources_text = "S16, S26, S17"
+
+[[entry]]
+id = "5.9-10"
+origin = "md:1041"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "Japanese \"Rockstar Classics\""
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "JP"
+date = "2011"
+date_text = "2011"
+serials = ["SLPM-55292"]
+id_text = "SLPM-55292"
+notes = "Take-Two release; less censored; built from a slightly older build than the Capcom release."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S16", "5-S17"]
+sources_text = "S16, S17"
+
+[[entry]]
+id = "5.9-11"
+origin = "md:1042"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "FTC settlement"
+platform_text = "—"
+region = "US"
+date = "2006-06-08"
+date_text = "8 Jun 2006"
+id_text = "—"
+notes = "No fine; violation of FTC Act for failing to disclose content."
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["5-S36", "5-S6"]
+sources_text = "S36, S6"
+
+[[entry]]
+id = "5.9-12"
+origin = "md:1043"
+section = "5.9"
+kind = "regional"
+games = ["sa"]
+title = "Consumer class action settlement"
+platform_text = "—"
+region = "US"
+date = "2008-01-28"
+date_text = "28 Jan 2008 (decertified 31 Jul 2008)"
+id_text = "—"
+notes = "Up to US$35 per claimant."
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["5-S6"]
+sources_text = "S6"
+
+[sources]
+5-S1 = { text = "PCGamingWiki, \"Grand Theft Auto: San Andreas\": https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_San_Andreas", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_San_Andreas", origin = "md:1059" }
+5-S2 = { text = "The Cutting Room Floor, \"Grand Theft Auto: San Andreas/Version and Platform Differences\": https://new.tcrf.net/Grand_Theft_Auto:_San_Andreas/Version_and_Platform_Differences", url = "https://new.tcrf.net/Grand_Theft_Auto:_San_Andreas/Version_and_Platform_Differences", origin = "md:1060" }
+5-S3 = { text = "Wikipedia, \"Grand Theft Auto: San Andreas\": https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", origin = "md:1061" }
+5-S4 = { text = "The Cutting Room Floor, \"Grand Theft Auto: San Andreas\": https://tcrf.net/Grand_Theft_Auto:_San_Andreas", url = "https://tcrf.net/Grand_Theft_Auto:_San_Andreas", origin = "md:1062" }
+5-S5 = { text = "GTA Wiki (Fandom), \"Grand Theft Auto: San Andreas\": https://gta.fandom.com/wiki/Grand_Theft_Auto:_San_Andreas ; \"Achievements and Trophies in GTA San Andreas\": https://gta.fandom.com/wiki/Achievements_and_Trophies_in_GTA_San_Andreas", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto:_San_Andreas", origin = "md:1063" }
+5-S6 = { text = "Wikipedia, \"Hot Coffee mod\": https://en.wikipedia.org/wiki/Hot_Coffee_mod", url = "https://en.wikipedia.org/wiki/Hot_Coffee_mod", origin = "md:1064" }
+5-S7 = { text = "Worthplaying, \"GTA: San Andreas PS2 Leaked On The Web\" (20 Oct 2004): https://worthplaying.com/article/2004/10/20/news/20031-gta-san-andreas-ps2-leaked-on-the-web/", url = "https://worthplaying.com/article/2004/10/20/news/20031-gta-san-andreas-ps2-leaked-on-the-web/", origin = "md:1065" }
+5-S8 = { text = "TechSpot, \"Grand Theft Auto San Andreas leaked\" (22 Oct 2004): https://www.techspot.com/news/16154-grand-theft-auto-san-andreas-leaked.html", url = "https://www.techspot.com/news/16154-grand-theft-auto-san-andreas-leaked.html", origin = "md:1066" }
+5-S9 = { text = "The Cutting Room Floor, \"Development:Grand Theft Auto: San Andreas\": https://tcrf.net/Development:Grand_Theft_Auto:_San_Andreas", url = "https://tcrf.net/Development:Grand_Theft_Auto:_San_Andreas", origin = "md:1067" }
+5-S10 = { text = "Rockstar Intel, GTA SA source code \"leak\" hoax (6 Jan 2025): https://rockstarintel.com/gta-sa-source-code-leaked-hoax/", url = "https://rockstarintel.com/gta-sa-source-code-leaked-hoax/", origin = "md:1068" }
+5-S11 = { text = "Sportskeeda, \"Leaked GTA San Andreas source code is reportedly fake\": https://www.sportskeeda.com/gta/news-leaked-gta-san-andreas-source-code-reportedly-fake", url = "https://www.sportskeeda.com/gta/news-leaked-gta-san-andreas-source-code-reportedly-fake", origin = "md:1069" }
+5-S12 = { text = "GTABoom, \"Leaked GTA: San Andreas Code Uncovers Hidden Multiplayer Mode and Ragdoll Physics\" (16 Feb 2025): https://www.gtaboom.com/leaked-gta-san-andreas-code-uncovers-hidden-multiplayer-mode-and-ragdoll-physics-6142", url = "https://www.gtaboom.com/leaked-gta-san-andreas-code-uncovers-hidden-multiplayer-mode-and-ragdoll-physics-6142", origin = "md:1070" }
+5-S13 = { text = "TweakTown, \"Source code for GTA title leaks online…\": https://www.tweaktown.com/news/103313/source-code-for-gta-title-leaks-online-sparking-mass-community-reaction/index.html", url = "https://www.tweaktown.com/news/103313/source-code-for-gta-title-leaks-online-sparking-mass-community-reaction/index.html", origin = "md:1071" }
+5-S14 = { text = "Sportskeeda, \"GTA San Andreas beta build apparently leaked online, fans react\": https://sportskeeda.com/gta/gta-san-andreas-beta-build-apparently-leaked-online-fans-react", url = "https://sportskeeda.com/gta/gta-san-andreas-beta-build-apparently-leaked-online-fans-react", origin = "md:1072" }
+5-S15 = { text = "Assembler Games thread \"Gta San Andreas debug/beta version XBOX\" (title only; content not retrievable): https://assemblergames.org/viewtopic.php?t=17624 ; GTAForums \"GTA San Andreas: Beta Version PS2 Never Released\" (title only): https://gtaforums.com/topic/924236-gta-san-andreas-beta-version-ps2-never-released/", url = "https://assemblergames.org/viewtopic.php?t=17624", origin = "md:1073" }
+5-S16 = { text = "The Cutting Room Floor, \"Grand Theft Auto: San Andreas/Regional Differences\": https://tcrf.net/Grand_Theft_Auto:_San_Andreas/Regional_Differences", url = "https://tcrf.net/Grand_Theft_Auto:_San_Andreas/Regional_Differences", origin = "md:1074" }
+5-S17 = { text = "libretro-database (Redump-derived), \"Sony - PlayStation 2.dat\": https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%202.dat", origin = "md:1075" }
+5-S18 = { text = "libretro-database (Redump-derived), \"Microsoft - Xbox.dat\": https://github.com/libretro/libretro-database/blob/master/metadat/redump/Microsoft%20-%20Xbox.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Microsoft%20-%20Xbox.dat", origin = "md:1076" }
+5-S19 = { text = "libretro-database (Redump-derived), \"Microsoft - Xbox 360.dat\": https://github.com/libretro/libretro-database/blob/master/metadat/redump/Microsoft%20-%20Xbox%20360.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Microsoft%20-%20Xbox%20360.dat", origin = "md:1077" }
+5-S20 = { text = "libretro-database (Redump-derived), \"Sony - PlayStation 3.dat\": https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%203.dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/redump/Sony%20-%20PlayStation%203.dat", origin = "md:1078" }
+5-S21 = { text = "PCSX2 GameIndex.yaml: https://github.com/PCSX2/pcsx2/blob/master/bin/resources/GameIndex.yaml", url = "https://github.com/PCSX2/pcsx2/blob/master/bin/resources/GameIndex.yaml", origin = "md:1079" }
+5-S22 = { text = "plugin-sdk (DK22Pac), shared/GameVersion.h and GameVersion.cpp: https://github.com/DK22Pac/plugin-sdk/blob/master/shared/GameVersion.h ; https://github.com/DK22Pac/plugin-sdk/blob/master/shared/GameVersion.cpp", url = "https://github.com/DK22Pac/plugin-sdk/blob/master/shared/GameVersion.h", origin = "md:1080" }
+5-S23 = { text = "gta-reversed README: https://github.com/gta-reversed/gta-reversed/blob/master/README.md", url = "https://github.com/gta-reversed/gta-reversed/blob/master/README.md", origin = "md:1081" }
+5-S24 = { text = "SilentPatch README (CookiePLMonster): https://github.com/CookiePLMonster/SilentPatch/blob/master/README.md", url = "https://github.com/CookiePLMonster/SilentPatch/blob/master/README.md", origin = "md:1082" }
+5-S25 = { text = "German Wikipedia, \"Grand Theft Auto: San Andreas\": https://de.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", origin = "md:1083" }
+5-S26 = { text = "Japanese Wikipedia, \"グランド・セフト・オート・サンアンドレアス\": https://ja.wikipedia.org/wiki/グランド・セフト・オート・サンアンドレアス", url = "https://ja.wikipedia.org/wiki/グランド・セフト・オート・サンアンドレアス", origin = "md:1084" }
+5-S27 = { text = "GTASnP, \"Grand Theft Auto: San Andreas\" help page: https://gtasnp.com/help/games/gtasa", url = "https://gtasnp.com/help/games/gtasa", origin = "md:1085" }
+5-S28 = { text = "Gamepressure, \"GTA: San Andreas Game Update v.1.01 US\": https://www.gamepressure.com/download/grand-theft-auto-san-andreas-v101-us-patch/z22196", url = "https://www.gamepressure.com/download/grand-theft-auto-san-andreas-v101-us-patch/z22196", origin = "md:1086" }
+5-S29 = { text = "Gamepressure, \"GTA: San Andreas Game Update v.1.01 EU/AU\": https://www.gamepressure.com/download/grand-theft-auto-san-andreas-v101-euau-patch/z32197", url = "https://www.gamepressure.com/download/grand-theft-auto-san-andreas-v101-euau-patch/z32197", origin = "md:1087" }
+5-S30 = { text = "SteamDB, app 12120: https://steamdb.info/app/12120/patchnotes/", url = "https://steamdb.info/app/12120/patchnotes/", origin = "md:1088" }
+5-S31 = { text = "Wikipedia, \"Rockstar Games Launcher\": https://en.wikipedia.org/wiki/Rockstar_Games_Launcher", url = "https://en.wikipedia.org/wiki/Rockstar_Games_Launcher", origin = "md:1089" }
+5-S32 = { text = "Apple App Store, \"Grand Theft Auto: San Andreas\" (id763692274), version history: https://apps.apple.com/us/app/grand-theft-auto-san-andreas/id763692274", url = "https://apps.apple.com/us/app/grand-theft-auto-san-andreas/id763692274", origin = "md:1090" }
+5-S33 = { text = "Google Play, `com.rockstargames.gtasa`: https://play.google.com/store/apps/details?id=com.rockstargames.gtasa", url = "https://play.google.com/store/apps/details?id=com.rockstargames.gtasa", origin = "md:1091" }
+5-S34 = { text = "Rockstar Support, \"Xbox network version of Grand Theft Auto San Andreas won't start on Xbox 360\": https://support.rockstargames.com/articles/2n6DkzQ7YvQOK0VSwSsUd0/xbox-network-version-of-grand-theft-auto-san-andreas-won-t-start-on-xbox-360", url = "https://support.rockstargames.com/articles/2n6DkzQ7YvQOK0VSwSsUd0/xbox-network-version-of-grand-theft-auto-san-andreas-won-t-start-on-xbox-360", origin = "md:1092" }
+5-S35 = { text = "Wikipedia, \"List of backward-compatible games for Xbox One and Series X/S\": https://en.wikipedia.org/wiki/List_of_backward-compatible_games_for_Xbox_One_and_Series_X/S", url = "https://en.wikipedia.org/wiki/List_of_backward-compatible_games_for_Xbox_One_and_Series_X/S", origin = "md:1093" }
+5-S36 = { text = "FTC press release (8 Jun 2006): https://www.ftc.gov/news-events/news/press-releases/2006/06/makers-grand-theft-auto-san-andreas-settle-ftc-charges", url = "https://www.ftc.gov/news-events/news/press-releases/2006/06/makers-grand-theft-auto-san-andreas-settle-ftc-charges", origin = "md:1094" }
+5-S37 = { text = "Game Developer (Gamasutra), \"Rockstar Issues Official Statement On 'Hot Coffee' Mod\" (13 Jul 2005): https://www.gamedeveloper.com/game-platforms/rockstar-issues-official-statement-on-hot-coffee-mod", url = "https://www.gamedeveloper.com/game-platforms/rockstar-issues-official-statement-on-hot-coffee-mod", origin = "md:1095" }
+5-S38 = { text = "Shacknews, \"Coffee Talk w/ Rockstar\" (13 Jul 2005): https://www.shacknews.com/article/37760/coffee-talk-w-rockstar", url = "https://www.shacknews.com/article/37760/coffee-talk-w-rockstar", origin = "md:1096" }
+5-S39 = { text = "Steam Community discussion (app 12120) on SA versions/downgrading (Jul 2018): https://steamcommunity.com/app/12120/discussions/0/1726450077684744468", url = "https://steamcommunity.com/app/12120/discussions/0/1726450077684744468", origin = "md:1097" }
+5-S40 = { text = "Hidden Palace, \"Grand Theft Auto: San Andreas (Mar 8, 2005 prototype)\" [Xbox] and \"Grand Theft Auto: San Andreas (Aug 28, 2014 prototype)\" [PC Steam]: https://hiddenpalace.org/Grand_Theft_Auto:_San_Andreas_(Mar_8,_2005_prototype) ; https://hiddenpalace.org/Grand_Theft_Auto:_San_Andreas_(Aug_28,_2014_prototype)", url = "https://hiddenpalace.org/Grand_Theft_Auto:_San_Andreas_(Mar_8,_2005_prototype", origin = "md:1098" }
+5-S41 = { text = "XboxUnity title-update database (JSON endpoints `TitleList.php?search=San Andreas` and `TitleUpdateInfo.php?titleid=545408B8`, read 2026-10-24): https://xboxunity.net/Resources/Lib/TitleUpdateInfo.php?titleid=545408B8", url = "https://xboxunity.net/Resources/Lib/TitleUpdateInfo.php?titleid=545408B8", origin = "md:1099" }
+5-S42 = { text = "Rockstar Games Support, \"Grand Theft Auto: San Andreas Mobile Title Update Notes (Android/iOS)\" (last updated 21 Jan 2026; read 2026-10-24): https://support.rockstargames.com/articles/KlYrReNNBKJIkCUhUb0bR/grand-theft-auto-san-andreas-mobile-title-update-notes-android-and-ios", url = "https://support.rockstargames.com/articles/KlYrReNNBKJIkCUhUb0bR/grand-theft-auto-san-andreas-mobile-title-update-notes-android-and-ios", origin = "md:1100" }
+5-S43 = { text = "Rockstar Games Support, San Andreas hub page (featured article \"End of support for Rockstar Games titles on Apple iOS before version 17\", 18 Aug 2026): https://support.rockstargames.com/sanandreas", url = "https://support.rockstargames.com/sanandreas", origin = "md:1101" }
+5-S44 = { text = "Rockstar Games Support, \"GTA: San Andreas Title Update 1.01 (PS3)\": https://support.rockstargames.com/articles/uxEMHFAEDoer1lhcNpaBb/gta-san-andreas-title-update-1-01-ps3", url = "https://support.rockstargames.com/articles/uxEMHFAEDoer1lhcNpaBb/gta-san-andreas-title-update-1-01-ps3", origin = "md:1102" }
+5-S45 = { text = "libretro-database (No-Intro-derived), \"Sony - PlayStation 3 (PSN).dat\": https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN).dat", url = "https://github.com/libretro/libretro-database/blob/master/metadat/no-intro/Sony%20-%20PlayStation%203%20(PSN", origin = "md:1103" }
+5-S46 = { text = "RPCS3 compatibility list API (query \"San Andreas\", read 2026-10-24): https://rpcs3.net/compatibility?api=v1&g=San%20Andreas", url = "https://rpcs3.net/compatibility?api=v1&g=San%20Andreas", origin = "md:1104" }
+5-S47 = { text = "PlayStation Blog (EU), \"8 fan-favourite PS2 games launch on PS4 tomorrow\" (4 Dec 2015): https://blog.playstation.com/archive/2015/12/04/8-fan-favourite-ps2-games-launch-on-ps4-tomorrow/", url = "https://blog.playstation.com/archive/2015/12/04/8-fan-favourite-ps2-games-launch-on-ps4-tomorrow/", origin = "md:1105" }
+5-S48 = { text = "God is a Geek, \"Eight Classic PS2 Games Are Launching on PS4 Tomorrow\" (URL dated Dec 2015; article date not shown): https://godisageek.com/2015/12/ps2-ps4-games-launch-backwards-compatibility/", url = "https://godisageek.com/2015/12/ps2-ps4-games-launch-backwards-compatibility/", origin = "md:1106" }
+5-S49 = { text = "OnMSFT (Zac Bowden), Windows 8.1 / RT release of GTA: San Andreas (14 Feb 2014): https://onmsft.com/?p=11237", url = "https://onmsft.com/?p=11237", origin = "md:1107" }
+5-S50 = { text = "WinFuture, \"Grand Theft Auto: San Andreas jetzt für Windows 8.1\" (17 Feb 2014): https://winfuture.de/news,80362.html", url = "https://winfuture.de/news,80362.html", origin = "md:1108" }
+5-S51 = { text = "GameFAQs, \"Grand Theft Auto: San Andreas – Release Details\" (all-platform release-data tables, user-contributed; read 2026-10-24): https://gamefaqs.gamespot.com/ps2/914983-grand-theft-auto-san-andreas/data", url = "https://gamefaqs.gamespot.com/ps2/914983-grand-theft-auto-san-andreas/data", origin = "md:1109" }
+5-S52 = { text = "Kakaku.com product pages: PS2 original (41104013892), ベストプライス (41104014086), （Best Price!) (K0000041794), ロックスター・クラシックス (K0000273744), PS3 (K0000829122): https://kakaku.com/item/41104014086/spec/ (and sibling item IDs)", url = "https://kakaku.com/item/41104014086/spec/", origin = "md:1110" }
+5-S53 = { text = "ORBISPatches, CUSA03506 (US) and CUSA03541 (EU): https://orbispatches.com/CUSA03506 ; https://orbispatches.com/CUSA03541", url = "https://orbispatches.com/CUSA03506", origin = "md:1111" }

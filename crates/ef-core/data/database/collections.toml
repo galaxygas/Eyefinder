@@ -1,0 +1,1623 @@
+# Collections and compilations: builds, versions, releases and history
+# Imported from docs/research/GTA_Builds_Versions_Database.md by tools/db/import_research_md.py.
+# This file is the source of truth now: edit it by hand (see docs/DATABASE.md).
+
+[[section]]
+id = "12"
+origin = "md:3312"
+title = "12. Compilations, Collections, Bundles & Special Editions"
+games = ["collections"]
+text = "Scope: every multi-game compilation, bundle, \"special/collector's/complete\" edition and console-hardware bundle of Grand Theft Auto titles. Single-game platform ports, budget reprints of a single game and expansions are covered in their own sections; they appear here only where they were sold as part of a bundle or as a named special edition. Confidence key: ✅ confirmed by an official or multiple independent sources; ⚠️ single community/database source, or sources conflict; ❓ rumour/unverified. \"Not documented\" means no source was found during this research pass — not that the item does not exist."
+
+[[section]]
+id = "12.1"
+origin = "md:3316"
+title = "12.1 2D era (1997–2004)"
+games = ["collections"]
+text = '''
+Notes:
+- MobyGames treats "Grand Theft Auto: The Classics Collection" and "Grand Theft Auto: Collectors' Edition" as alternate titles of one compilation (Moby ID 16649), released for PlayStation and Windows [8]. GameFAQs keeps them as separate products: Collectors' Edition (PS) and The Classics Collection (PC) [59][60].
+- The task brief also mentions "The Grand Theft Auto Collection (PS1 GTA+London)" and "GTA: The Collection". No source in this pass documents a release under exactly those names. The PS1 GTA + London two-disc sets are documented as **Director's Cut** (NA) and **Double Feature** (AU) [1][58].'''
+
+[[section]]
+id = "12.2"
+origin = "md:3339"
+title = "12.2 3D universe era (2003–2010)"
+games = ["collections"]
+text = '''
+Notes:
+- The Trilogy also served as the revised retail package for San Andreas after the July 2005 "Hot Coffee" recall (Wikipedia series article). The PS4 re-release Wikipedia mentions is now partly documented: GameFAQs lists an Australian PS Store Trilogy on 9 Feb 2016 [62]. The separate PS2-on-PS4 games came out on 5 Dec 2015 [17, 18].
+- The 2006 PS2 Trilogy was announced as US-only. GameFAQs dates a European PS2 Trilogy to 31 Jul 2009 [62] ⚠️.'''
+
+[[section]]
+id = "12.3"
+origin = "md:3365"
+title = "12.3 HD universe — GTA IV era (2008–2012)"
+games = ["collections"]
+text = '''
+Notes:
+- The task brief mentions a possible "Rockstar Games Collection (Edition 1, PC 2006?)". The only documented "Rockstar Games Collection: Edition 1" is the 2012 PS3/Xbox 360 North American release above; contemporaneous reports said a PC or European version was unconfirmed [40]. No 2006 PC release under that name was found.
+- An Xbox 360 hardware bundle with GTA IV + Episodes from Liberty City is widely remembered but was **not verified** in this pass. ❓'''
+
+[[section]]
+id = "12.4"
+origin = "md:3381"
+title = "12.4 HD universe — GTA V era (2013–present)"
+games = ["collections"]
+text = '''
+Notes:
+- Retailer pre-order and "special edition" in-game bonuses for GTA V are described in Wikipedia only as "extra in-game features" [42, 47].
+- Xbox One and Xbox 360 hardware bundles for GTA V are widely reported but were **not verified** here. ❓'''
+
+[[section]]
+id = "12.5"
+origin = "md:3403"
+title = "12.5 Remaster era (2021–present)"
+games = ["collections"]
+
+[[section]]
+id = "12.6"
+origin = "md:3414"
+title = "12.6 Budget and \"hits\" reissue labels (multi-region)"
+games = ["collections"]
+text = '''
+Single-game reprints are listed only to record which label each game appeared under. Wikipedia's lists give **no dates** for individual GTA entries unless stated; dates below come from GameFAQs release data.
+
+
+Not verified in this pass: PlayStation Hits (PS4) GTA V. Not documented here.'''
+
+[[section]]
+id = "12.7"
+origin = "md:3440"
+title = "12.7 Regional and other items not verified"
+games = ["collections"]
+
+[[entry]]
+id = "12.1-1"
+origin = "md:3320"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Director's Cut"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "NA"
+date_text = "3 May 1999 (psxdatacenter and GameFAQs agree). Wikipedia gives 30 Apr 1999 for London 1969 and says the Director's Cut came out at the same time"
+serials = ["SLUS-00106", "SLUS-00846"]
+id_text = "SLUS-00106 (disc 1), SLUS-00846 (disc 2); UPC 710425230424 (psxdatacenter, GameFAQs). Redump lists both discs with edition \"Director's Cut\""
+notes = "GTA (1997) + Mission Pack #1: London 1969 on 2 discs; publisher Take-Two Interactive (psxdatacenter) / Rockstar Games (GameFAQs)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-1", "12-2", "12-3", "12-58", "12-68"]
+sources_text = "1, 2, 3, 58, 68"
+
+[[entry]]
+id = "12.1-2"
+origin = "md:3321"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "\"Double Feature: Grand Theft Auto / GTA Mission Pack #1: London, 1969\""
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "Australia"
+date = "1999"
+date_text = "1999 (no day given)"
+id_text = "EAN 9325683000248"
+notes = "GTA + London 1969; publisher Take-Two Interactive; rated MA"
+confidence = "single-source"
+confidence_text = "⚠️ (GameFAQs only)"
+sources = ["12-58"]
+sources_text = "58"
+
+[[entry]]
+id = "12.1-3"
+origin = "md:3322"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Director's Cut"
+platforms = ["pc"]
+platform_text = "Windows (MS-DOS/Win95 discs)"
+region = "US"
+date_text = "GameFAQs: 2000. Wikipedia: 1999"
+id_text = "UPC 663593170026 (GameFAQs)"
+notes = "GTA + London 1969. Wikipedia says London 1969 shipped \"as part of Grand Theft Auto: Director's Cut, a compilation also including the original Grand Theft Auto\". Redump has a US PC disc with edition \"Director's Cut\""
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (year)"
+sources = ["12-1", "12-2", "12-4", "12-58", "12-68"]
+sources_text = "1, 2, 4, 58, 68"
+
+[[entry]]
+id = "12.1-4"
+origin = "md:3323"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "\"Double Feature: Grand Theft Auto / GTA Mission Pack #1: London, 1969\""
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Europe"
+date = "1999"
+date_text = "1999 (GameFAQs)"
+id_text = "GTADBL/CARTON/E; EAN 5026555031622"
+notes = "GTA + London 1969; publisher Take-Two Interactive. Redump lists European PC GTA and London discs with edition \"Double Feature\" (serials 76896-423942 / 76896-428002 on the GTA disc)"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-58", "12-68"]
+sources_text = "58, 68"
+
+[[entry]]
+id = "12.1-5"
+origin = "md:3324"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "\"Grand Theft Auto & GTA London (Extra Value)\""
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Europe"
+date = "2002-01-31"
+date_text = "31 Jan 2002 (GameFAQs)"
+id_text = "SOV.2.2; EAN 5037999003793"
+notes = "GTA + London 1969, budget reissue by Sold Out Software. Redump lists \"Sold Out Software (Double Feature)\" discs of both games"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-58", "12-68"]
+sources_text = "58, 68"
+
+[[entry]]
+id = "12.1-6"
+origin = "md:3325"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Director's Cut"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "PAL (Europe)"
+date_text = "psxdatacenter lists **no** European Director's Cut. PAL GTA and London were sold separately (London 1969 PAL SLES-01714, 31 Mar 1999). The only PAL two-game PS1 set found is the Australian \"Double Feature\" above"
+id_text = "—"
+notes = "—"
+confidence = "single-source"
+confidence_text = "⚠️ (absence)"
+sources = ["12-5", "12-58"]
+sources_text = "5, 58"
+
+[[entry]]
+id = "12.1-7"
+origin = "md:3326"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: London – Special Edition"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "PAL (UK per Wikipedia)"
+date_text = "10 Mar 2000 (psxdatacenter) vs 26 Jan 2001 (GameFAQs); \"2000\" (Wikipedia)"
+serials = ["SLES-03389"]
+id_text = "SLES-03389; EAN 5026555190602 (psxdatacenter and GameFAQs agree)"
+notes = "Standalone London 1969 that does not need the GTA disc, plus a GTA London poster; EN/FR/DE/IT/ES"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (date)"
+sources = ["12-2", "12-6", "12-58"]
+sources_text = "2, 6, 58"
+
+[[entry]]
+id = "12.1-8"
+origin = "md:3327"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Collector's Edition (a.k.a. Grand Theft Auto: The Classics Collection)"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "NA"
+date_text = "17 Dec 2002 (psxdatacenter); GameFAQs gives only \"2002\""
+id_text = "Box/sleeve spine **SLUS-07001CE** (GameFAQs; redump: \"Collector's Edition Box Sleeve Spine ID: SLUS-07001CE\"). Discs SLUS-00106CE, SLUS-00846CE, SLUS-00789CE (redump). UPC 710425231803"
+notes = "GTA + London 1969 + GTA 2 on 3 discs; publisher Rockstar Games"
+confidence = "mixed"
+confidence_text = "✅ (existence, serials) / ⚠️ (day)"
+sources = ["12-7", "12-8", "12-58", "12-59", "12-68"]
+sources_text = "7, 8, 58, 59, 68"
+
+[[entry]]
+id = "12.1-9"
+origin = "md:3328"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Collectors' Edition"
+platforms = ["ps1"]
+platform_text = "PlayStation"
+region = "PAL"
+date = "2002-12-17"
+date_text = "17 Dec 2002 (psxdatacenter and GameFAQs agree)"
+serials = ["SLES-00032", "SLES-01404", "SLES-03389", "SLES-01714"]
+id_text = "Discs SLES-00032/COLL., SLES-01404/COLL. and **SLES-03389/COLL** (the standalone London disc; redump). GameFAQs also lists SLES-00032 / SLES-03389 / SLES-01404. This settles psxdatacenter's internal SLES-01714 vs SLES-03389 disagreement in favour of SLES-03389. EAN 5026555191708"
+notes = "GTA + GTA 2 + standalone London 1969, 3 discs; EN/FR/DE/IT/ES (no Spanish in GTA1)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-5", "12-6", "12-9", "12-59", "12-68"]
+sources_text = "5, 6, 9, 59, 68"
+
+[[entry]]
+id = "12.1-10"
+origin = "md:3329"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Classics Collection"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "US (GameFAQs)"
+date_text = "23 Nov 2004 (GameFAQs) vs 2003 (Wikipedia series table)"
+id_text = "UPC 710425776533 (GameFAQs)"
+notes = "GTA + London 1969 + GTA 2. Redump lists the three US PC discs (GTA v1.0.0.1, London, GTA 2) with edition \"Grand Theft Auto: The Classics Collection\""
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (date)"
+sources = ["12-4", "12-8", "12-60", "12-68"]
+sources_text = "4, 8, 60, 68"
+
+[[entry]]
+id = "12.1-11"
+origin = "md:3330"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Rockstar Classics (freeware series)"
+platforms = ["pc"]
+platform_text = "Windows (download)"
+region = "Worldwide (Rockstar mailing-list members)"
+date_text = "From 2003 per WikiGTA (NL); discontinued mid-July 2012 per WikiGTA; Wikipedia: \"currently unavailable\""
+id_text = "n/a"
+notes = "Free full downloads of Grand Theft Auto, GTA 2 and Wild Metal (Country), patched for modern PCs; link e-mailed to newsletter subscribers"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (dates, single community wiki)"
+sources = ["12-10", "12-11"]
+sources_text = "10, 11"
+
+[[entry]]
+id = "12.1-12"
+origin = "md:3331"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Trylogia"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Poland"
+date = "2007-05-18"
+date_text = "18 May 2007 (gamepressure)"
+id_text = "CENEGA 568/PCDVD-ROM/2007 (redump)"
+notes = "GTA + London 1969 + GTA 2 + GTA III with Polish text (redump disc contents: GTA En/Fr/De/It/Pl, London En/De/Pl, GTA 2 En/Fr/De/Es/It/Pl, GTA III En/Fr/De/Es/It/Pl). Published in Cenega's \"Kolekcja Klasyki\" line; later reissued in \"Pomarańczowa Kolekcja Klasyki\""
+confidence = "confirmed"
+confidence_text = "✅ (gamepressure + redump)"
+sources = ["12-12", "12-68"]
+sources_text = "12, 68"
+
+[[entry]]
+id = "12.1-13"
+origin = "md:3332"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto in \"Extreme Action Pack\" (Limited Edition)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Europe (UK serial)"
+date_text = "Not documented"
+id_text = "1000734.101.UK (redump)"
+notes = "Third-party multi-game pack containing the GTA PC disc"
+confidence = "single-source"
+confidence_text = "⚠️ (redump only)"
+sources = ["12-68"]
+sources_text = "68"
+
+[[entry]]
+id = "12.1-14"
+origin = "md:3333"
+section = "12.1"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto in \"GT Collect: The Great Race Collection\""
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Europe"
+date_text = "Not documented"
+id_text = "Not documented"
+notes = "Third-party compilation containing the GTA PC disc (v11.5)"
+confidence = "single-source"
+confidence_text = "⚠️ (redump only)"
+sources = ["12-68"]
+sources_text = "68"
+
+[[entry]]
+id = "12.2-1"
+origin = "md:3343"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto Double Pack (MobyGames: \"Rockstar Games Double Pack: Grand Theft Auto\")"
+platforms = ["ps2"]
+platform_text = "PlayStation 2"
+region = "NA, EU"
+date_text = "NA: shipped 21 Oct 2003; EU: 24 Oct 2003 (WorthPlaying and GameFAQs agree)"
+serials = ["SLES-51061", "SLES-50330"]
+id_text = "NA (Greatest Hits-branded box): **SLUS-27003GH**, UPC 710425273001 (GameFAQs; redump: \"Spine ID from Double Pack Greatest Hits box: SLUS 27003GH\"; discs SLUS-20062GH and SLUS-20552GH). EU: **SLES-51061-T / SLES-50330-T**, EAN 5026555301640 (GameFAQs; redump lists both -T discs with edition \"Double Pack\")"
+notes = "GTA III + GTA: Vice City; MSRP $39.99 (Gaming Nexus)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-13", "12-14", "12-15", "12-61", "12-68"]
+sources_text = "13, 14, 15, 61, 68"
+
+[[entry]]
+id = "12.2-2"
+origin = "md:3344"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto Double Pack"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA, EU, AU, JP"
+date_text = "NA: 4 Nov 2003 (Take-Two press release; GameFAQs). EU: 2 Jan 2004 (Wikipedia; GameFAQs). AU: Jan 2004 (GameFAQs). JP: 29 Jul 2004, Capcom (GameFAQs; same date in §13)"
+serials = ["TT-014", "TT-015", "TT-115"]
+id_text = "NA **RCK-29284**, UPC 710425292842 (Canada 710425293061). EU GTADBL/SC/XBOX/E, EAN 5026555240345. AU GTADBL/SC/XBOX/A, EAN 5026555240512. JP **A4K-00001**, JAN 4976219650359. Discs TT-014 (III) + TT-015 (VC); the JP set uses TT-014 + TT-115 (redump)"
+notes = "GTA III + Vice City, the first Xbox release of both games, with custom soundtracks and improved audio and models. Over 1.59 million US copies sold. Redump records the alternate edition name \"The Xbox Collection\"; the German box is \"Rockstar Games Doppelpack\""
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-16", "12-17", "12-18", "12-61", "12-68"]
+sources_text = "16, 17, 18, 61, 68"
+
+[[entry]]
+id = "12.2-3"
+origin = "md:3345"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto Double Pack: **regional disc variants** (Redump)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "USA, Europe, **Germany**, **Australia**, Japan"
+date_text = "as for the Double Pack row above"
+serials = ["TT-014", "TT-015", "TT-115"]
+id_text = "Serials on all discs are TT-014 / TT-015 (TT-115 in Japan); the region variants are told apart by their Redump disc entries and languages, not by serial"
+notes = "Redump lists separate disc dumps for each region. **Australia**: GTA III **TT-014** (disc 77816) and Vice City **TT-015** (disc 87609), both English-only, edition \"Rockstar Games Double Pack\". **Germany**: GTA III **TT-014** (disc 12657) and Vice City **TT-015** (disc 12658), both German-language, edition \"Rockstar Games **Doppelpack**, Grand Theft Auto: The Trilogy\", so the same German discs also went into the German Trilogy. **Europe**: TT-014 (13357; En/Fr/De/It/Es; also in the Trilogy) and TT-015 (18869; En/Fr/It/Es). **USA**: TT-014 (13551; also in the Trilogy) and TT-015 (13550). **Japan**: TT-014 (55478) and TT-115 (55479), both Japanese."
+confidence = "confirmed"
+confidence_text = "✅ (redump disc pages)"
+sources = ["12-68", "12-74"]
+sources_text = "68, 74"
+
+[[entry]]
+id = "12.2-4"
+origin = "md:3346"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto Double Pack Xbox EPK (\"Grand Theft Auto Xbox Collection\" press kit)"
+platforms = ["xbox"]
+platform_text = "Xbox (press material)"
+region = "—"
+date_text = "Files dated about 2003-09-09 to 2003-10-17 (many modification dates are wrong); released on Hidden Palace 2021-10-07 by casualarchiver (Internet Archive item `GTA_Xbox_Collection_Press_Kit`)"
+id_text = "—"
+notes = "Electronic press kit for the Xbox Double Pack (\"Xbox Collection Edition\"); \"may be incomplete\""
+confidence = "single-source"
+confidence_text = "⚠️ (single archive)"
+sources = ["12-75"]
+sources_text = "75"
+
+[[entry]]
+id = "12.2-5"
+origin = "md:3347"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto Double Pack (グランド・セフト・オート ダブルパック)"
+platforms = ["ps2"]
+platform_text = "PlayStation 2"
+region = "Japan"
+date = "2007-02-22"
+date_text = "22 Feb 2007 (Dengeki; GameFAQs)"
+serials = ["CPCS-01027", "SLPM-65760", "SLPM-66034"]
+id_text = "**CPCS-01027**; JAN 4976219021241 (GameFAQs, redump). Contents SLPM-65760 (III, CapKore) + SLPM-66034 (VC, CapKore) (redump)"
+notes = "GTA III Capcom Collection + GTA: Vice City Capcom Collection; ¥6,279 incl. tax; publisher Capcom"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-19", "12-61", "12-68"]
+sources_text = "19, 61, 68"
+
+[[entry]]
+id = "12.2-6"
+origin = "md:3348"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA, EU"
+date_text = "NA: 17 Oct 2005 (GameFAQs), announced for 18 Oct 2005 (Take-Two press release), 19 Oct 2005 (GTA Wiki); Wikipedia (SA article): 8 Oct 2005. EU: 4 Nov 2005 (GTA Wiki and GameFAQs agree)"
+serials = ["TT-014", "TT-115", "TT-163", "TT-164", "TT-165"]
+id_text = "NA **RCK-29917**, UPC 710425299179 (GameFAQs). Discs TT-014 (III), TT-115 (VC Rev 1), TT-163 (SA US Rev 1) / TT-164 (SA EU) / TT-165 (SA DE) (redump). German box EAN 5026555242981, box ID 5242981/SLIP (redump)"
+notes = "GTA III + Vice City + San Andreas, 3 discs; $59.99; M-rated, no \"Hot Coffee\" content"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (NA date, 4 values)"
+sources = ["12-20", "12-21", "12-22", "12-23", "12-62", "12-68"]
+sources_text = "20, 21, 22, 23, 62, 68"
+
+[[entry]]
+id = "12.2-7"
+origin = "md:3349"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy: **regional disc sets** (Redump)"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "USA, Europe, **Germany**"
+date_text = "as above"
+id_text = "as given"
+notes = "Redump discs with edition \"Grand Theft Auto: The Trilogy\". **Germany**: GTA III TT-014 (disc 12657, German), Vice City TT-015 (disc 12658, German), San Andreas **TT-165 Rev 1** (disc 83311). **Europe**: TT-014 (13357) and San Andreas **TT-164 Rev 1** (19487; also \"Classics\"); Redump lists no European Vice City disc with the Trilogy edition. **USA**: TT-014 (13551), Vice City **TT-115 Rev 1** (29348) and San Andreas **TT-163 Rev 1** (29347; also \"Platinum Hits\"). **No Australian Trilogy disc** is listed: Redump's Australian Xbox GTA discs are the Double Pack TT-014/TT-015 and a Vice City TT-115 Rev 1 (disc 60539) with no edition tag. So the reported \"Australian Trilogy discs\" are **not** confirmed by Redump."
+confidence = "confirmed"
+confidence_text = "✅ (redump; Australian Trilogy not found)"
+sources = ["12-68", "12-74"]
+sources_text = "68, 74"
+
+[[entry]]
+id = "12.2-8"
+origin = "md:3350"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy"
+platforms = ["ps2"]
+platform_text = "PlayStation 2"
+region = "NA"
+date_text = "5 Dec 2006 (GameFAQs) vs 4 Dec 2006 (Wikipedia, GamesRadar)"
+serials = ["SLUS-27006", "SLUS-20062"]
+id_text = "**SLUS-27006** (Canada SLUS-27006F), UPC 710425371110 (GameFAQs; redump quotes the Canadian cover serial SLUS 27006F). Discs: SLUS-20062 (III v1.40), SLUS-20552P3 (VC v3.00/v4.00), SLUS-20946P3 (SA v3.00; a later SA disc \"removes some audio files due to expired music licensing\") (redump)"
+notes = "GTA III + Vice City + San Andreas; $40. Rockstar told GamesRadar (8 Nov 2006) there were no UK plans \"for the foreseeable future\""
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-23", "12-24", "12-62", "12-68"]
+sources_text = "23, 24, 62, 68"
+
+[[entry]]
+id = "12.2-9"
+origin = "md:3351"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy"
+platforms = ["ps2"]
+platform_text = "PlayStation 2"
+region = "Europe"
+date = "2009-07-31"
+date_text = "31 Jul 2009 (GameFAQs)"
+serials = ["SLES-50330", "SLES-51061", "SLES-52541"]
+id_text = "SLES-50330 / SLES-51061 / SLES-52541 (GameFAQs)"
+notes = "GTA III + Vice City + San Andreas. Redump lists the European VC v3.00 disc (SLES-51061) with edition \"Grand Theft Auto: The Trilogy\""
+confidence = "single-source"
+confidence_text = "⚠️ (date: GameFAQs only)"
+sources = ["12-62", "12-68"]
+sources_text = "62, 68"
+
+[[entry]]
+id = "12.2-10"
+origin = "md:3352"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "US, Germany"
+date_text = "US: 30 Jun 2009 (GameFAQs) vs 2007 (MobyGames). German edition: 2009 (GameFAQs). Steam: 6 Jan 2011 (GameFAQs, Steam ID 11902)"
+id_text = "UPC 710425315862 (GameFAQs)"
+notes = "GTA III + Vice City + San Andreas. Redump: US discs 31586-1.1/1.2 (III), 31586-1.3/1.4 (VC), 31586-1.5 (SA \"Second Edition\"); German Green Pepper / Software Pyramide Trilogy discs"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (year)"
+sources = ["12-25", "12-62", "12-68"]
+sources_text = "25, 62, 68"
+
+[[entry]]
+id = "12.2-11"
+origin = "md:3353"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy"
+platforms = ["mac"]
+platform_text = "Mac OS X"
+region = "NA, EU"
+date_text = "12 Nov 2010 digital via TransGaming's GameTreeMac.com (30-day exclusive, $14.99 per game). Retail boxed: 22 Nov 2010 NA; GameFAQs gives 20 Nov 2010 EU and 22 Nov 2010 US"
+id_text = "Not documented"
+notes = "GTA III + Vice City + San Andreas, ported with TransGaming Cider"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-26", "12-27", "12-17", "12-62"]
+sources_text = "26, 27, 17, 62"
+
+[[entry]]
+id = "12.2-12"
+origin = "md:3354"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy (PS2 Classics)"
+platforms = ["ps3"]
+platform_text = "PlayStation 3 / PS Store (listed under the PS2 product)"
+region = "NA, EU, AU"
+date_text = "NA 14 Apr 2015 (SCEA, NPUB-50277); EU/AU 11 May 2015 (NPED-00063) (GameFAQs)"
+serials = ["NPUB-50277", "NPED-00063"]
+id_text = "NPUB-50277; NPED-00063"
+notes = "Digital bundle of the three PS2 Classics"
+confidence = "single-source"
+confidence_text = "⚠️ (GameFAQs only)"
+sources = ["12-62"]
+sources_text = "62"
+
+[[entry]]
+id = "12.2-13"
+origin = "md:3355"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy (PS Store)"
+platforms = ["ps4"]
+platform_text = "PlayStation 4"
+region = "AU"
+date = "2016-02-09"
+date_text = "9 Feb 2016 (GameFAQs)"
+id_text = "Not documented"
+notes = "Digital bundle of the PS2-on-PS4 releases. This matches Wikipedia's statement that The Trilogy was \"re-released for … PlayStation 4\""
+confidence = "single-source"
+confidence_text = "⚠️ (GameFAQs only)"
+sources = ["12-62", "12-17"]
+sources_text = "62, 17"
+
+[[entry]]
+id = "12.2-14"
+origin = "md:3356"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: San Andreas Special Edition"
+platforms = ["ps2"]
+platform_text = "PlayStation 2"
+region = "Not explicitly documented (announced in a North American Take-Two/Rockstar release cycle)"
+date = "2005-10-08"
+date_text = "8 Oct 2005 (Wikipedia)"
+version = "3.00"
+serials = ["SLUS-20946"]
+id_text = "Redump lists the US/Canada SA v3.00 disc (serials SLUS-20946, -GH, -P, -P3) with editions including \"Special Edition\" and \"Second Edition\"; which serial belongs to which edition is not stated"
+notes = "Game + second DVD with \"The Introduction\" CG film and the *Sunday Driver* documentary (The Majestics car club); \"Hot Coffee\" removed"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-21", "12-23", "12-68"]
+sources_text = "21, 23, 68"
+
+[[entry]]
+id = "12.2-15"
+origin = "md:3357"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Liberty City Stories / Vice City Stories (a.k.a. \"Grand Theft Auto Double Pack: Liberty City Stories & Vice City Stories\", \"GTA LCS & VCS 2 Pack\")"
+platforms = ["ps2"]
+platform_text = "PlayStation 2"
+region = "US"
+date = "2009-06-23"
+date_text = "**23 Jun 2009** (GameFAQs \"06/23/09\"; Grand Theft Wiki)"
+serials = ["SLUS-27035"]
+id_text = "**SLUS-27035**; UPC 710425376269 (GameFAQs). Rockstar Warehouse SKU RS-7-10425-37587-3 (Grand Theft Wiki link)"
+notes = "GTA: Liberty City Stories + GTA: Vice City Stories; publisher Take-Two Interactive (GameFAQs). Redump lists the US LCS (SLUS-21423) and VCS (SLUS-21590) discs with edition \"Grand Theft Auto Double Pack\" and records \"Sleeve serial: SLUS 27035\""
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump + Grand Theft Wiki)"
+sources = ["12-28", "12-63", "12-68", "12-73"]
+sources_text = "28, 63, 68, 73"
+
+[[entry]]
+id = "12.2-16"
+origin = "md:3358"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "GTA Liberty City Stories + Vice City Stories double pack"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "Europe"
+date_text = "Reportedly 31 Jul 2009 (\"alleged\" date)"
+id_text = "Not documented"
+notes = "LCS + VCS; €29.99. MobyGames lists \"Grand Theft Auto: A Rockstar Games Double Pack\" (PSP 2009, PlayStation 3 2016)"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["12-29", "12-13"]
+sources_text = "29, 13"
+
+[[entry]]
+id = "12.2-17"
+origin = "md:3359"
+section = "12.2"
+kind = "compilation"
+games = ["collections"]
+title = "Rockstar Games Double Pack: Grand Theft Auto — PS3 listing"
+platforms = ["ps3"]
+platform_text = "PlayStation 3"
+region = "Not documented"
+date_text = "MobyGames lists a PlayStation 3 release in 2016 under \"Grand Theft Auto: A Rockstar Games Double Pack\""
+id_text = "Not documented"
+notes = "Not documented (likely digital; no source gives contents)"
+confidence = "unverified"
+confidence_text = "❓"
+sources = ["12-13"]
+sources_text = "13"
+
+[[entry]]
+id = "12.3-1"
+origin = "md:3369"
+section = "12.3"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto IV Special Edition"
+platforms = ["ps3", "x360"]
+platform_text = "PlayStation 3, Xbox 360"
+region = "NA, EU, AU (GameFAQs lists all three)"
+date_text = "29 Apr 2008 (with the base game). Announced 21 May 2007 at $89.99 for the original Oct 2007 date"
+serials = ["BLUS-30149", "BLUS30149", "BLES-00229"]
+id_text = "PS3 US **BLUS-30149**, UPC 780332006061 (GameFAQs; also in the Redump/No-Intro DAT as \"Grand Theft Auto IV (Special Edition) (USA)\" BLUS30149). Canada PS3 BLUS-30127F. X360 US RCK-39012, UPC 710425392429. PS3 EU BLES-00229 (GameFAQs)"
+notes = "Game disc, separate soundtrack CD + case, hardcover art book, black metal safe-deposit box with key, Rockstar keychain, black GTA IV duffel bag"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-30", "12-31", "12-32", "12-64"]
+sources_text = "30, 31, 32, 64"
+
+[[entry]]
+id = "12.3-2"
+origin = "md:3370"
+section = "12.3"
+kind = "compilation"
+games = ["collections"]
+title = "GTA IV Pre-Order Pack (Benelux)"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "Benelux"
+date_text = "\"Around Christmas\" before launch; year not stated (page last edited Jul 2008)"
+id_text = "Not documented"
+notes = "Retail kit (€10, refunded as €10 off the game): GTA IV postcards, GTA \"credit card\" voucher, DVD with the three trailers released so far"
+confidence = "single-source"
+confidence_text = "⚠️"
+sources = ["12-33"]
+sources_text = "33"
+
+[[entry]]
+id = "12.3-3"
+origin = "md:3371"
+section = "12.3"
+kind = "compilation"
+games = ["collections"]
+title = "PlayStation 3 + Grand Theft Auto IV hardware bundle"
+platforms = ["ps3"]
+platform_text = "PlayStation 3 (40 GB per Wikipedia GTA IV)"
+region = "Europe (Joystiq, 23 Apr 2008, \"GTA IV bundle confirmed for Europe\", cited in Wikipedia \"PlayStation 3 models\"); Australia"
+date_text = "GameFAQs lists \"Grand Theft Auto IV (Bundle)\" for PS3 in Europe (29 Apr 2008, BLES-00229) and Australia (1 May 2008). It does not say whether this is the hardware bundle ⚠️"
+id_text = "Not documented"
+notes = "40 GB PS3 + GTA IV"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (date, config)"
+sources = ["12-32", "12-34", "12-64"]
+sources_text = "32, 34, 64"
+
+[[entry]]
+id = "12.3-4"
+origin = "md:3372"
+section = "12.3"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: Episodes from Liberty City (standalone disc)"
+platforms = ["x360", "ps3", "pc"]
+platform_text = "Xbox 360; PS3; Windows"
+region = "NA, EU, AU, KR, JP"
+date_text = "X360: 29 Oct 2009 (KR 2 Nov 2009; JP 10 Jun 2010). PS3 & Windows: 13 Apr 2010 NA / 15 Apr 2010 AU / 16 Apr 2010 EU (PS3 KR 16 Apr 2010; PC KR 3 Jun 2010; PS3 JP 10 Jun 2010) (GameFAQs)"
+serials = ["BLUS-30524", "BLES-00887", "BLKS-20198", "BLJM-60235", "BLAS-50197"]
+id_text = "X360 US RCK-39634 (UPC 710425396342), JP JES1-00058. PS3 US BLUS-30524 (Canada BLUS-30524F), EU/AU BLES-00887, KR BLKS-20198, JP BLJM-60235, Asia BLAS-50197. PC US RCK-31781. Steam app 12220"
+notes = "The Lost and Damned + The Ballad of Gay Tony on one disc; does not need GTA IV. Steam app 12220 (Steam date 12 Apr 2010); Windows standalone discontinued in 2020. The X360 disc (TT-2034) is also the EFLC disc of the Complete Edition and of Rockstar Games Collection: Edition 1 (redump)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-4", "12-32", "12-35", "12-64", "12-68"]
+sources_text = "4, 32, 35, 64, 68"
+
+[[entry]]
+id = "12.3-5"
+origin = "md:3373"
+section = "12.3"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto IV: The Complete Edition (\"Grand Theft Auto IV & Episodes from Liberty City\" on MobyGames and on the discs)"
+platforms = ["ps3", "x360", "pc"]
+platform_text = "PS3, Xbox 360, Windows"
+region = "NA, EU, AU, KR, JP"
+date_text = "26 Oct 2010 NA; 29 Oct 2010 EU/AU. KR: PS3 9 Dec 2010, X360 13 Dec 2010, PC 7 Dec 2011. JP (PS3 and X360): 23 Jun 2011 (GameFAQs)"
+serials = ["BLUS-30682", "BLES-01128", "BLJM-60346", "BLAS-50284"]
+id_text = "PS3 US **BLUS-30682** (UPC 710425378720), EU/AU **BLES-01128** (AU EAN 5026555405638), JP **BLJM-60346** (JAN 4571304473082), Asia BLAS-50284 (redump). X360 US UPC 710425398711 (Canada RCK-39874), JP **JES1-00145** (JAN 4571304475079)"
+notes = "GTA IV + EFLC (TLAD + TBoGT). Xbox 360 on two discs, PS3 on one disc; the console version boots to a three-logo game-select screen. The original PC version was two separately installed games (PC discs 5057172/DVD1–4, redump). A Russian PC \"Полное издание\" exists (redump)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-13", "12-32", "12-36", "12-64", "12-68"]
+sources_text = "13, 32, 36, 64, 68"
+
+[[entry]]
+id = "12.3-6"
+origin = "md:3374"
+section = "12.3"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto IV: The Complete Edition (2020 PC rebuild)"
+platforms = ["pc"]
+platform_text = "Windows (Steam, Rockstar Games Launcher)"
+region = "Worldwide"
+date_text = "19 Mar 2020 update (GTA Wiki) / Steam store date 24 Mar 2020"
+id_text = "Steam app 12210, package 443542"
+notes = "Merged GTA IV + EFLC; Games for Windows – LIVE removed, multiplayer removed, some licensed music removed (EFLC stations Vice City FM, Self-Actualization FM, RamJam FM restored 3 Jun 2020). Existing Steam owners and retail keys upgraded free. $19.99"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-36", "12-37", "12-38"]
+sources_text = "36, 37, 38"
+
+[[entry]]
+id = "12.3-7"
+origin = "md:3375"
+section = "12.3"
+kind = "compilation"
+games = ["collections"]
+title = "Rockstar Games Collection: Edition 1"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "North America only"
+date_text = "6 Nov 2012 (announced 11 Oct 2012) vs 30 Oct 2012 (GameFAQs, both consoles). PS3 digital (PS Store) 4 Dec 2012 (GameFAQs)"
+serials = ["NPUB-31100", "TT-2034"]
+id_text = "PS3 UPC 710425472299; PS Store NPUB-31100. X360 **RCK-49228**, UPC 710425492280 (GameFAQs). EFLC X360 disc TT-2034 (redump)"
+notes = "Grand Theft Auto: Episodes from Liberty City + Red Dead Redemption + L.A. Noire + Midnight Club: Los Angeles Complete Edition; $59.99"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (date)"
+sources = ["12-39", "12-40", "12-41", "12-66", "12-68"]
+sources_text = "39, 40, 41, 66, 68"
+
+[[entry]]
+id = "12.4-1"
+origin = "md:3385"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto V Special Edition"
+platforms = ["ps3", "x360", "xone", "pc"]
+platform_text = "PS3, Xbox 360 (physical); bonuses later purchasable in-game on PS4/XB1/PC"
+region = "Worldwide"
+date = "2013-09-17"
+date_text = "17 Sep 2013 (announced 23 May 2013)"
+serials = ["BLUS-41019", "BLUS41019", "BLES-01807", "TT-2215"]
+id_text = "PS3 US **BLUS-41019** (GameFAQs; Redump/No-Intro DAT \"Grand Theft Auto V (Special Edition) (USA)\" BLUS41019). PS3 EU BLES-01807, EAN 5026555410212 / 5026555413060; PS3 AU EAN 5026555410328. X360 EU EAN 5026555258043 (GameFAQs). X360 discs TT-2215 (redump lists them with editions Special and Collector's)"
+notes = "Steelbook in \"V\" sleeve, blueprint map (54.6 × 67.9 cm) with UV-revealed locations, Special Ability Boost, Stunt Plane Trials, bonus outfits/tattoos, extra weapons (Pistol .50, Bullpup Shotgun, Hammer); pre-orders also got the Atomic Blimp"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-42", "12-43", "12-65", "12-68"]
+sources_text = "42, 43, 65, 68"
+
+[[entry]]
+id = "12.4-2"
+origin = "md:3386"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto V Collector's Edition"
+platforms = ["ps3", "x360"]
+platform_text = "PS3, Xbox 360"
+region = "Worldwide"
+date = "2013-09-17"
+date_text = "17 Sep 2013 (announced 23 May 2013)"
+serials = ["BLES-01807"]
+id_text = "PS3 EU/AU disc BLES-01807 (redump edition \"Collector's Edition\"; GameFAQs). GameFAQs also lists a US \"GameStop Exclusive Collector's Edition\" for PS3 and X360"
+notes = "Everything in the Special Edition plus security deposit bag with logo key, New Era 9FIFTY snapback, GTA Online custom characters (Niko, Claude, Misty as parents), Hotknife and Carbon RS vehicles with garage property; matte black box"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-42", "12-44", "12-65", "12-68"]
+sources_text = "42, 44, 65, 68"
+
+[[entry]]
+id = "12.4-3"
+origin = "md:3387"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "PlayStation 3 500 GB + GTA V hardware bundle"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "US pricing quoted ($); announced at Sony's E3 2013 conference"
+date_text = "Announced 11 Jun 2013; in stores 17 Sep 2013"
+id_text = "Not documented"
+notes = "500 GB PS3 + GTA V Blu-ray, 30-day PlayStation Plus trial; $299 (Push Square). Wikipedia also lists GTA V-branded headphones; Push Square describes a GTA V Pulse Elite headset announced alongside at $179.99"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-42", "12-69", "12-70"]
+sources_text = "42, 69, 70"
+
+[[entry]]
+id = "12.4-4"
+origin = "md:3388"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "PlayStation 4 + GTA V Black Friday bundle"
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "US ($ pricing)"
+date_text = "28 Nov 2014 (Black Friday), limited quantities"
+id_text = "Not documented"
+notes = "500 GB PS4 + GTA V + The Last of Us Remastered download voucher; $400 (HotHardware, 16 Nov 2014)"
+confidence = "single-source"
+confidence_text = "⚠️ (one press source)"
+sources = ["12-71"]
+sources_text = "71"
+
+[[entry]]
+id = "12.4-5"
+origin = "md:3389"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "\"PlayStation 4 Grand Theft Auto V Pack\""
+platforms = ["ps4"]
+platform_text = "PS4"
+region = "Japan"
+date = "2014-12-11"
+date_text = "11 Dec 2014 (announced 23 Oct 2014)"
+id_text = "Not documented"
+notes = "Jet Black 500 GB PS4, GTA V (PS4), code for GTA$1,000,000, 15-day PS Plus trial, DualShock 4, mono headset; ¥44,980 + tax"
+confidence = "single-source"
+confidence_text = "⚠️ (one press source)"
+sources = ["12-72"]
+sources_text = "72"
+
+[[entry]]
+id = "12.4-6"
+origin = "md:3390"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto V: Premium Online Edition"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, Xbox One, Windows"
+region = "US, JP"
+date = "2017-12-20"
+date_text = "GameFAQs: US PS4 and XB1 **20 Dec 2017**; JP PS4 14 Jun 2018. GTA Wiki (Section 9): retail bundle from 20 Apr 2018 ⚠️"
+serials = ["PLJM-16196"]
+id_text = "PS4 US UPC 710425570322; XB1 US UPC 710425590337; PS4 JP **PLJM-16196**, JAN 4571304474249 (GameFAQs)"
+notes = "GTA V + GTA Online + Criminal Enterprise Starter Pack (PCGamingWiki lists Gamersgate and Green Man Gaming as selling the \"Premium Online Edition\")"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (dates conflict)"
+sources = ["12-45", "12-65"]
+sources_text = "45, 65"
+
+[[entry]]
+id = "12.4-7"
+origin = "md:3391"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto V: Premium Edition"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, Xbox One, Windows (later PS5/XSX standalone)"
+region = "Worldwide"
+date_text = "GameFAQs: PS4 AU 20 Apr 2018 (EAN 5026555424349); XB1 AU Jul 2019; PS4 EU 21 Aug 2019; PS4 JP 7 Nov 2019; PS4 Asia 2019; PC Epic Games Store 14 May 2020"
+serials = ["PLJM-16543", "PLAS-10176"]
+id_text = "PS4 JP **PLJM-16543** (JAN 4571304474430); PS4 Asia PLAS-10176 (GameFAQs)"
+notes = "GTA V + GTA Online + Criminal Enterprise Starter Pack; most PC stores list this edition (PCGamingWiki). Epic Games Store gave GTA V away free for a few days in May 2020 (German Wikipedia)"
+confidence = "mixed"
+confidence_text = "✅ (existence) / ⚠️ (dates: GameFAQs only)"
+sources = ["12-45", "12-46", "12-65"]
+sources_text = "45, 46, 65"
+
+[[entry]]
+id = "12.4-8"
+origin = "md:3392"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "Criminal Enterprise Starter Pack (bundle component, also sold separately)"
+platforms = ["ps4", "xone", "pc"]
+platform_text = "PS4, Xbox One, Windows"
+region = "Worldwide"
+date = "2017-12-14"
+date_text = "14 Dec 2017 (GTA Wiki; see Section 9)"
+id_text = "n/a"
+notes = "GTA$1,000,000 plus properties, weapons and vehicles for GTA Online"
+confidence = "confirmed"
+confidence_text = "✅ (existence)"
+sources = ["12-45"]
+sources_text = "45"
+
+[[entry]]
+id = "12.4-9"
+origin = "md:3393"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "Retail GTA V for Windows (7-DVD box)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Worldwide"
+date = "2015-04-14"
+date_text = "14 Apr 2015"
+id_text = "US RCK-41456, UPC 710425414565 (GameFAQs)"
+notes = "7 DVDs; key also unlocks a Rockstar Games Launcher download. Redump: first press v1.0.231.0 (discs 41453-1.1–1.7 / 5063883/DVD1–7); European reprint v1.0.505.2"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-45", "12-65", "12-68"]
+sources_text = "45, 65, 68"
+
+[[entry]]
+id = "12.4-10"
+origin = "md:3394"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "GTA V (Expanded & Enhanced) + standalone GTA Online"
+platforms = ["ps5", "xsx"]
+platform_text = "PS5, Xbox Series X/S"
+region = "Worldwide"
+date_text = "15 Mar 2022 (digital). Physical discs 12 Apr 2022 (GameFAQs)"
+serials = ["PPSA-04264", "PPSA-01721", "PPSA-03420"]
+id_text = "PS5 physical US **PPSA-04264** (UPC 710425578649), EU/AU **PPSA-01721** (EAN 5026555431835 / 5026555431910). XSX physical US UPC 710425598654, EU EAN 5026555366694. Standalone GTA Online PS5 US PPSA-03420 (GameFAQs)"
+notes = "Enhanced GTA V with GTA Online; GTA Online also sold standalone (free on PS5 for its first three months) with Career Builder"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-47", "12-48", "12-65"]
+sources_text = "47, 48, 65"
+
+[[entry]]
+id = "12.4-11"
+origin = "md:3395"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "\"Grand Theft Auto V & Megalodon Shark Cash Card Bundle\""
+platforms = ["xone"]
+platform_text = "Xbox One (store page also lists Xbox Series X\\|S under \"Play with\"). **MobyGames lists it as PS3, 2016**"
+region = "WW (en-US store)"
+date_text = "MobyGames: 2016. Store release date not shown"
+id_text = "Microsoft Store product **C54TNMRCBH0C**"
+notes = "GTA V (Xbox One) + Megalodon Shark Cash Card (GTA$8,000,000 for GTA Online)"
+confidence = "mixed"
+confidence_text = "✅ (Xbox One bundle exists) / ⚠️ (platform conflict with MobyGames; no PS3 listing found)"
+sources = ["12-76", "12-79"]
+sources_text = "76, 79"
+
+[[entry]]
+id = "12.4-12"
+origin = "md:3396"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "\"Grand Theft Auto V & Whale Shark Cash Card Bundle\""
+platforms = ["xone"]
+platform_text = "Xbox One (also lists Xbox Series X\\|S). **MobyGames lists it as PS3, 2016**"
+region = "WW (en-US store)"
+date_text = "MobyGames: 2016"
+id_text = "Microsoft Store product **C47BS8W7K7FS**"
+notes = "GTA V (Xbox One) + Whale Shark Cash Card (GTA$3,500,000)"
+confidence = "mixed"
+confidence_text = "✅ (Xbox One bundle exists) / ⚠️ (platform conflict)"
+sources = ["12-76", "12-79"]
+sources_text = "76, 79"
+
+[[entry]]
+id = "12.4-13"
+origin = "md:3397"
+section = "12.4"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto V Enhanced & Great White Shark Card"
+platforms = ["pc"]
+platform_text = "Windows (Steam)"
+region = "Worldwide"
+date_text = "Steam store date 4 Mar 2025"
+id_text = "Steam app 3240220, packages 1148516 (base) and 1251933 (shark card bundle)"
+notes = "GTA V Enhanced + Great White Shark Card; $44.99 (base Enhanced $29.99)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-49"]
+sources_text = "49"
+
+[[entry]]
+id = "12.5-1"
+origin = "md:3407"
+section = "12.5"
+kind = "compilation"
+games = ["collections"]
+title = "Grand Theft Auto: The Trilogy – The Definitive Edition (digital)"
+platforms = ["switch", "ps4", "ps5", "pc", "xone", "xsx"]
+platform_text = "Switch, PS4, PS5, Windows, Xbox One, Xbox Series X/S"
+region = "Worldwide"
+date = "2021-11-11"
+date_text = "11 Nov 2021 (announced 8 Oct 2021)"
+serials = ["CUSA-29728", "CUSA-29729", "PPSA-05804", "PPSA-05805", "PPSA-05806"]
+id_text = "PS4 CUSA-29728 (NA/Asia), CUSA-29729 (EU/AU); PS5 PPSA-05804 (NA/Asia), PPSA-05805 (EU/AU), PPSA-05806 (JP) (GameFAQs)"
+notes = "Remastered GTA III + Vice City + San Andreas; developer Grove Street Games, publisher Rockstar Games. Japanese title \"Grand Theft Auto Trilogy Ketteiban\" (GameFAQs)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-4", "12-50", "12-67"]
+sources_text = "4, 50, 67"
+
+[[entry]]
+id = "12.5-2"
+origin = "md:3408"
+section = "12.5"
+kind = "compilation"
+games = ["collections"]
+title = "GTA: The Trilogy – The Definitive Edition (physical)"
+platforms = ["ps4", "xone", "xsx", "switch"]
+platform_text = "PS4, Xbox One, Xbox Series X; Switch"
+region = "Worldwide"
+date_text = "First planned 7 Dec 2021; delayed to 17 Dec 2021 (PS4, XB1, XSX) and 11 Feb 2022 (Switch). Japan (PS4 and Switch): 27 Jan 2022 (GameFAQs). No physical date given for PS5 or Windows"
+serials = ["CUSA-29728", "CUSA-29729", "PLJM-16936"]
+id_text = "PS4 US CUSA-29728 (UPC 710425578335), EU CUSA-29729 (EAN 5026555430791), JP PLJM-16936. Xbox US UPC 710425598340 (Canada 710425598371), EU EAN 5026555365963. Switch US HAC-P-A5RBA-USA (UPC 045496597535), EU TSA-HAC-A5RBA-UKV, AU TRA-HAC-A5RBB-AUS, JP TRA-HAC-A5RBB-JPN (GameFAQs)"
+notes = "As above. EU Switch \"Code in a Box\" reissue 5 Sep 2025 (EAN 5026555072236, GameFAQs)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-50", "12-67"]
+sources_text = "50, 67"
+
+[[entry]]
+id = "12.5-3"
+origin = "md:3409"
+section = "12.5"
+kind = "compilation"
+games = ["collections"]
+title = "GTA: The Trilogy – The Definitive Edition (Steam / Epic)"
+platforms = ["pc"]
+platform_text = "Windows"
+region = "Worldwide"
+date_text = "Steam 19 Jan 2023; Epic Games Store 15 Feb 2023"
+id_text = "Steam package 817628 = apps 1546970 (III DE), 1546990 (VC DE), 1547000 (SA DE)"
+notes = "Steam package bundles the three DE apps; $59.99"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-50", "12-51"]
+sources_text = "50, 51"
+
+[[entry]]
+id = "12.5-4"
+origin = "md:3410"
+section = "12.5"
+kind = "compilation"
+games = ["collections"]
+title = "GTA: The Trilogy – The Definitive Edition (mobile)"
+platforms = ["android", "ios"]
+platform_text = "Android, iOS"
+region = "Worldwide"
+date = "2023-12-14"
+date_text = "14 Dec 2023"
+id_text = "n/a"
+notes = "Through Netflix Games and for separate purchase; III and VC left Netflix in Dec 2024, SA in Dec 2025"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-50"]
+sources_text = "50"
+
+[[entry]]
+id = "12.5-5"
+origin = "md:3411"
+section = "12.5"
+kind = "compilation"
+games = ["collections"]
+title = "\"Grand Theft Auto: The Trilogy\" classic bundle (original PC versions)"
+platforms = ["pc"]
+platform_text = "Windows (Rockstar Store / Games Launcher)"
+region = "Worldwide"
+date_text = "Announced 19 Nov 2021; added free for PC DE buyers on 3 Dec 2021; offer ran until 30 Jun 2022"
+id_text = "Not documented"
+notes = "Original PC GTA III, Vice City and San Andreas, sold again as a bundle after being delisted on 13 Oct 2021"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-50", "12-52", "12-53"]
+sources_text = "50, 52, 53"
+
+[[entry]]
+id = "12.5-6"
+origin = "md:3412"
+section = "12.5"
+kind = "compilation"
+games = ["collections"]
+title = "GTA+ games library"
+platforms = ["ps5", "xsx", "pc"]
+platform_text = "PS5, Xbox Series X/S; Windows from 4 Mar 2025 (Steam app 3482260)"
+region = "Worldwide"
+date_text = "GTA+ launched Mar 2022; Trilogy DE in library by Sep 2023"
+id_text = "Steam package 1229928"
+notes = "Subscription ($7.99/month) with a rotating set of Rockstar titles, including Trilogy DE"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-48", "12-54"]
+sources_text = "48, 54"
+
+[[entry]]
+id = "12.6-1"
+origin = "md:3420"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Greatest Hits"
+platforms = ["ps1"]
+platform_text = "PS1"
+region = "NA"
+date_text = "GTA: 23 Apr 2001; GTA 2: 2001"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-58", "12-64", "12-68"]
+sources_text = "58, 64, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA (SLUS-00106GH); GTA 2 (SLUS-00789GH)"
+
+[[entry]]
+id = "12.6-2"
+origin = "md:3421"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Platinum"
+platforms = ["ps1"]
+platform_text = "PS1"
+region = "PAL"
+date = "1999"
+date_text = "1999"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-58", "12-68"]
+sources_text = "58, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA (SLES-00032; EAN 5026555190084 / 5026555190114)"
+
+[[entry]]
+id = "12.6-3"
+origin = "md:3422"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Pokkiri 1400 Series"
+platforms = ["ps1"]
+platform_text = "PS1"
+region = "Japan"
+date = "2002-01-17"
+date_text = "17 Jan 2002"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-58", "12-68"]
+sources_text = "58, 68"
+[entry.fields]
+"GTA titles documented on the label" = "\"G.T.A: Grand Theft Auto\" (Syscom, SLPM-87007)"
+
+[[entry]]
+id = "12.6-4"
+origin = "md:3423"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Greatest Hits"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "NA"
+date_text = "VC: Feb 2005; others not documented"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-18", "12-55", "12-15", "12-61", "12-68"]
+sources_text = "18, 55, 15, 61, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA III (SLUS-20062GH), Vice City (SLUS-20552GH; re-released Feb 2005 per Wikipedia), San Andreas (SLUS-20946GH). Greatest Hits **Double Pack** box SLUS-27003GH (see §12.2)"
+
+[[entry]]
+id = "12.6-5"
+origin = "md:3424"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Platinum"
+platforms = ["ps2"]
+platform_text = "PS2 (PSP titles also on the same list)"
+region = "PAL"
+date_text = "Not documented"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-56", "12-68"]
+sources_text = "56, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA III, Vice City, San Andreas, Liberty City Stories, Vice City Stories (Wikipedia list; redump confirms PS2 Platinum discs of all five, and \"Platinum: The Best of PSP\" for LCS and VCS PSP)"
+
+[[entry]]
+id = "12.6-6"
+origin = "md:3425"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Best Price / CapKore (カプコレ)"
+platforms = ["ps2"]
+platform_text = "PS2"
+region = "Japan"
+date_text = "Not documented (CapKore before Feb 2007)"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-19", "12-68"]
+sources_text = "19, 68"
+[entry.fields]
+"GTA titles documented on the label" = "Redump lists \"Best Price\" editions of GTA III, Vice City, San Andreas, LCS and VCS (PS2) and \"CapKore\" editions of GTA III (SLPM-65760) and Vice City (SLPM-66034). The further SLPM-66xxx serials in the DATs (III 66789, VC 66790, SA 66788, LCS 66851, VCS 66917) are not tied to a specific label by the sources ❓"
+
+[[entry]]
+id = "12.6-7"
+origin = "md:3426"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Rockstar Classics"
+platforms = ["ps2", "psp", "ps3", "x360"]
+platform_text = "PS2 / PSP / PS3 / X360"
+region = "Japan"
+date_text = "as given"
+confidence = "confirmed"
+confidence_text = "✅ (DATs + redump + GameFAQs)"
+sources = ["12-64", "12-68"]
+sources_text = "64, 68"
+[entry.fields]
+"GTA titles documented on the label" = "PS2: Vice City SLPM-55291, San Andreas SLPM-55292, GTA III SLPM-55293. PSP: LCS ULJM-05885, VCS ULJM-05884. PS3: EFLC BLJM-60459 (29 Mar 2012), IV Complete Edition BLJM-60525 (22 Nov 2012) and BLJM-61180 (2014 reprint). X360: IV Complete Edition 5XX-00001 (27 Jun 2013), 2nd print 4Y2-00001 (1 May 2014)"
+
+[[entry]]
+id = "12.6-8"
+origin = "md:3427"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Platinum Hits"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "NA"
+date_text = "Not documented"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-57", "12-68"]
+sources_text = "57, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA: San Andreas (TT-163), Grand Theft Auto: Double Pack"
+
+[[entry]]
+id = "12.6-9"
+origin = "md:3428"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Classics"
+platforms = ["xbox"]
+platform_text = "Xbox"
+region = "PAL"
+date_text = "Not documented"
+confidence = "single-source"
+confidence_text = "⚠️ (redump only)"
+sources = ["12-68"]
+sources_text = "68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA: San Andreas (TT-164, redump edition \"Classics\")"
+
+[[entry]]
+id = "12.6-10"
+origin = "md:3429"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Platinum Hits"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "NA"
+date_text = "as given"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-57", "12-64", "12-68"]
+sources_text = "57, 64, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA: San Andreas (Xbox 360 disc TT-2232), GTA IV (Oct 2009), GTA: Episodes from Liberty City (2010), GTA V, GTA IV Complete Edition (\"Greatest Hits\" in GameFAQs, 2016)"
+
+[[entry]]
+id = "12.6-11"
+origin = "md:3430"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Classics / Classics: Best Sellers"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "PAL"
+date_text = "as given"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-64", "12-68"]
+sources_text = "64, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA IV (Classics Oct 2009, GameFAQs; \"Classics: Best Sellers\" also in redump), GTA: San Andreas (TT-2232)"
+
+[[entry]]
+id = "12.6-12"
+origin = "md:3431"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Platinum Collection"
+platforms = ["x360"]
+platform_text = "Xbox 360"
+region = "Japan"
+date_text = "Not documented"
+confidence = "confirmed"
+confidence_text = "✅"
+sources = ["12-57", "12-65"]
+sources_text = "57, 65"
+[entry.fields]
+"GTA titles documented on the label" = "GTA IV (priced ¥3,800 instead of the usual ¥2,800). GTA V Japanese reprint 4XP-00001 (26 Jun 2014; label not named by GameFAQs)"
+
+[[entry]]
+id = "12.6-13"
+origin = "md:3432"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Greatest Hits"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "NA"
+date_text = "as given"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-64", "12-65", "12-68"]
+sources_text = "64, 65, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA IV (BLUS-30127GH, Q4 2009), EFLC (Canada BLUS-30524FGH, 2010), IV Complete Edition (BLUS-30682GH, 16 Apr 2013), San Andreas PS3 (BLUS-31584, redump), GTA V (Canada, 2013)"
+
+[[entry]]
+id = "12.6-14"
+origin = "md:3433"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Platinum / Essentials"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "PAL"
+date_text = "as given"
+confidence = "confirmed"
+confidence_text = "✅ (GameFAQs + redump)"
+sources = ["12-64", "12-68"]
+sources_text = "64, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA IV Platinum (EU 16 Oct 2009; AU 2010, EAN 5026555402996); EFLC Essentials (redump); IV Complete Edition Essentials (BLES-01128/E, 8 May 2015)"
+
+[[entry]]
+id = "12.6-15"
+origin = "md:3434"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "PlayStation 3 the Best / Best Price"
+platforms = ["ps3"]
+platform_text = "PS3"
+region = "Japan"
+date_text = "as given"
+confidence = "confirmed"
+confidence_text = "✅ (DATs + redump + GameFAQs)"
+sources = ["12-65", "12-68"]
+sources_text = "65, 68"
+[entry.fields]
+"GTA titles documented on the label" = "GTA IV \"PlayStation 3 the Best\" BLJM-55011; GTA V \"Best Price Version\" BLJM-61182 (26 Jun 2014) and a further reprint BLJM-61304 (8 Oct 2015)"
+
+[[entry]]
+id = "12.6-16"
+origin = "md:3435"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "Greatest Hits / Best Price / Best Hit Selection"
+platforms = ["psp"]
+platform_text = "PSP"
+region = "NA / Japan / Korea"
+date_text = "Not documented"
+confidence = "single-source"
+confidence_text = "⚠️ (redump only)"
+sources = ["12-68"]
+sources_text = "68"
+[entry.fields]
+"GTA titles documented on the label" = "LCS and VCS Greatest Hits (US); LCS Greatest Hits Korea (ULKS-46157); LCS and VCS \"Best Price\" (JP); Chinatown Wars \"Best Hit Selection\" (JP, ULJM-05604)"
+
+[[entry]]
+id = "12.6-17"
+origin = "md:3436"
+section = "12.6"
+kind = "reissue"
+games = ["collections"]
+title = "PS4 reprint (label not named)"
+platforms = ["ps4", "xone"]
+platform_text = "PS4 / XB1"
+region = "Japan"
+date = "2015-10-08"
+date_text = "8 Oct 2015"
+confidence = "single-source"
+confidence_text = "⚠️ (GameFAQs only)"
+sources = ["12-65"]
+sources_text = "65"
+[entry.fields]
+"GTA titles documented on the label" = "GTA V PS4 PLJM-84031 and XB1 TL9-00001 (both 8 Oct 2015)"
+
+[[entry]]
+id = "12.7-1"
+origin = "md:3444"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "Japanese \"Grand Theft Auto Triple Pack\" / Capcom compilation"
+notes = "Not documented. The documented Japanese compilations are Capcom's **Grand Theft Auto Double Pack** for Xbox (29 Jul 2004, A4K-00001) and PS2 (22 Feb 2007, CPCS-01027) [19][61], plus the Japanese Complete Edition (23 Jun 2011) and Trilogy Ketteiban (27 Jan 2022 physical) [64][67]."
+
+[[entry]]
+id = "12.7-2"
+origin = "md:3445"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "Korean compilation editions"
+notes = "No Korean compilation found. GameFAQs lists Korean releases of GTA IV: The Complete Edition (PS3 9 Dec 2010, X360 13 Dec 2010, PC 7 Dec 2011) [64]. Redump lists a Korean PSP LCS \"Greatest Hits\" (ULKS-46157) [68]."
+
+[[entry]]
+id = "12.7-3"
+origin = "md:3446"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "German \"Gold Edition\" / Australian bundles"
+notes = "No German \"Gold Edition\" found. Related finds: the German Xbox \"Rockstar Games Doppelpack\" (§12.2), Poland's \"GTA2: Złota Edycja\" (\"Gold Edition\", single game, PC; redump) [68] and the Australian PS1 \"Double Feature\" (§12.1) [58]."
+
+[[entry]]
+id = "12.7-4"
+origin = "md:3447"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "GTA Mega Collection, Best of Rockstar, Rockstar Classics retail compilation"
+notes = "Not documented as retail compilations. \"Rockstar Classics\" is documented as the free PC download series (§12.1) and, separately, as a Japanese budget label (§12.6)."
+
+[[entry]]
+id = "12.7-5"
+origin = "md:3448"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "Steam \"Grand Theft Auto Complete Pack\" / \"Rockstar Complete Pack\""
+notes = "Not verified. The current Steam store lists no GTA bundle except the GTA V Enhanced editions. The delisted Steam apps (GTA III 12100, VC 12110, SA 12120, EFLC 12220, GTA V Legacy 271590) return no package data from the Steam store API, and steamdb.info answered with a bot check. GameFAQs gives Steam ID 11902 for the PC/Mac Trilogy (6 Jan 2011) [62]. *Update (audit pass):* a 2013 Steam \"Grand Theft Auto Complete Pack\" (sub 18832) is now partly documented; see the follow-up row below."
+
+[[entry]]
+id = "12.7-6"
+origin = "md:3449"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "**Steam \"Grand Theft Auto Complete Pack\"** (follow-up)"
+notes = "**Partly verified.** Cowcotland (2013-04-28): a Steam bundle at €12.49 with seven games: GTA, GTA 2, GTA III, Vice City, San Andreas, GTA IV and Episodes from Liberty City. A Steam Community thread (opened 2013-12-27) has a buyer who bought it on 2013-03-29 and got GTA 1 and 2 under the package name \"GTA Complete Pack (ROW)\", linking SteamDB **sub 18832**. Steam's packagedetails API returns `success:false` for 18832 (delisted). MobyGames separately lists \"Grand Theft Auto: Complete Pack\" (2010, Windows) and \"Grand Theft Auto Complete Package\" (2013, Windows). Whether those are this Steam bundle is **not documented**; the dates differ. [77][78][79] ⚠️"
+
+[[entry]]
+id = "12.7-7"
+origin = "md:3450"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "MobyGames-only listings (audit §14.2)"
+notes = "Seen only in the MobyGames \"Grand Theft Auto series\" group (Wayback capture 2026-01-10): **\"Grand Theft Auto: Collection\" (2008, Windows)** and **\"Grand Theft Auto: Online – Shark: Extortionate Value\" (2015, Windows)**. MobyGames was behind a Cloudflare check on 2026-10-24, so the game pages could not be read. A GameFAQs search for \"grand theft auto collection / complete / pack\" and \"shark extortionate\" found neither, and a web search for \"Extortionate Value\" returned only the current Microsoft Store shark-card bundles. Contents, IDs and exact dates are **not documented**. [79][80] ⚠️ (listing only)"
+
+[[entry]]
+id = "12.7-8"
+origin = "md:3451"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "GTA V \"Game of the Year\"-style edition"
+notes = "No such edition found; GTA V's later editions are the Premium Online Edition / Premium Edition (§12.4)."
+
+[[entry]]
+id = "12.7-9"
+origin = "md:3452"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "Xbox One / Xbox 360 GTA V console bundles; Xbox 360 GTA IV + EFLC console bundle"
+notes = "❓ Widely reported but not verified with a source in this pass. The PS3 (2013) and PS4 (US 2014, Japan 2014) GTA V bundles are now sourced (§12.4)."
+
+[[entry]]
+id = "12.7-10"
+origin = "md:3453"
+section = "12.7"
+kind = "compilation"
+games = ["collections"]
+title = "\"Grand Theft Auto: The Collection\" / \"The Grand Theft Auto Collection\" (PS1)"
+notes = "Not documented under those names (§12.1 note)."
+
+[sources]
+12-1 = { text = "psxdatacenter — Grand Theft Auto [Director's Cut] (NTSC-U): https://psxdatacenter.com/games/U/G/SLUS-00106DC.html", url = "https://psxdatacenter.com/games/U/G/SLUS-00106DC.html", origin = "md:3457" }
+12-2 = { text = "Wikipedia — Grand Theft Auto: London 1969: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1969", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_London_1969", origin = "md:3458" }
+12-3 = { text = "eBay (supporting only) — GTA Director's Cut PS1 listing: https://www.ebay.de/itm/326796525080", url = "https://www.ebay.de/itm/326796525080", origin = "md:3459" }
+12-4 = { text = "Wikipedia — Grand Theft Auto (series): https://en.wikipedia.org/wiki/Grand_Theft_Auto", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto", origin = "md:3460" }
+12-5 = { text = "psxdatacenter — Grand Theft Auto – Mission Pack #1: London 1969 (PAL): https://psxdatacenter.com/games/P/G/SLES-01714.html", url = "https://psxdatacenter.com/games/P/G/SLES-01714.html", origin = "md:3461" }
+12-6 = { text = "psxdatacenter — Grand Theft Auto – London [Special Edition] (PAL): https://psxdatacenter.com/games/P/G/SLES-03389.html", url = "https://psxdatacenter.com/games/P/G/SLES-03389.html", origin = "md:3462" }
+12-7 = { text = "psxdatacenter — Grand Theft Auto – Collector's Edition (NTSC-U): https://psxdatacenter.com/games/U/G/SLUS-00106CE.html", url = "https://psxdatacenter.com/games/U/G/SLUS-00106CE.html", origin = "md:3463" }
+12-8 = { text = "MobyGames — Grand Theft Auto: The Classics Collection (specs): https://mobygames.com/game/16649/grand-theft-auto-the-classics-collection-grand-theft-auto-grand-/specs ; eBay.de PC listing \"(2004)\" (supporting only): https://www.ebay.de/itm/306598532950", url = "https://mobygames.com/game/16649/grand-theft-auto-the-classics-collection-grand-theft-auto-grand-/specs", origin = "md:3464" }
+12-9 = { text = "psxdatacenter — Grand Theft Auto – Collector's Edition (PAL): https://psxdatacenter.com/games/P/G/SLES-00032CE.html", url = "https://psxdatacenter.com/games/P/G/SLES-00032CE.html", origin = "md:3465" }
+12-10 = { text = "Wikipedia — Grand Theft Auto (1997 video game): https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game)", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_(video_game", origin = "md:3466" }
+12-11 = { text = "WikiGTA (NL) — Rockstar Classics: https://static.wikigta.org/wiki/Rockstar_Classics", url = "https://static.wikigta.org/wiki/Rockstar_Classics", origin = "md:3467" }
+12-12 = { text = "Gamepressure — Grand Theft Auto: Trylogia: https://www.gamepressure.com/games/grand-theft-auto-trylogia/zc1c3e", url = "https://www.gamepressure.com/games/grand-theft-auto-trylogia/zc1c3e", origin = "md:3468" }
+12-13 = { text = "MobyGames — Rockstar Games Double Pack: Grand Theft Auto (and related-compilations list): https://mobygames.com/game/rockstar-games-double-pack-grand-theft-auto", url = "https://mobygames.com/game/rockstar-games-double-pack-grand-theft-auto", origin = "md:3469" }
+12-14 = { text = "WorthPlaying — \"Various Console Games Ships\" (21 Oct 2003): https://worthplaying.com/archive/2003/10/21/", url = "https://worthplaying.com/archive/2003/10/21/", origin = "md:3470" }
+12-15 = { text = "Gaming Nexus — Grand Theft Auto Double Pack review (PS2): https://www.gamingnexus.com/Article/364/Grand-Theft-Auto-Double-Pack ; eBay Greatest Hits Double Pack listing (supporting only): https://www.ebay.de/itm/297493711238", url = "https://www.gamingnexus.com/Article/364/Grand-Theft-Auto-Double-Pack", origin = "md:3471" }
+12-16 = { text = "Take-Two Interactive IR — \"Rockstar Games Ships Grand Theft Auto Double Pack for Xbox\" (4 Nov 2003): https://ir.take2games.com/static-files/9358f4f0-b5ee-4bde-a7bc-c4b7c6aed94a", url = "https://ir.take2games.com/static-files/9358f4f0-b5ee-4bde-a7bc-c4b7c6aed94a", origin = "md:3472" }
+12-17 = { text = "Wikipedia — Grand Theft Auto III: https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_III", origin = "md:3473" }
+12-18 = { text = "Wikipedia — Grand Theft Auto: Vice City: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City", origin = "md:3474" }
+12-19 = { text = "Dengeki Online — GTA Double Pack (Capcom, PS2, 22 Feb 2007) (1 Feb 2007): https://dengekionline.com/data/news/2007/2/1/3f94cb1d24bf801d7db39478f650f111.html", url = "https://dengekionline.com/data/news/2007/2/1/3f94cb1d24bf801d7db39478f650f111.html", origin = "md:3475" }
+12-20 = { text = "Take-Two Interactive IR — \"Rockstar Games to Release Grand Theft Auto Trilogy for Xbox This Fall\" (23 Sep 2005): https://ir.take2games.com/static-files/554fac11-272e-422b-88c9-862d1b9fcc1f ; mirror: https://www.webwire.com/ViewPressRel.asp?aId=4326", url = "https://ir.take2games.com/static-files/554fac11-272e-422b-88c9-862d1b9fcc1f", origin = "md:3476" }
+12-21 = { text = "Game Developer (Gamasutra) — \"Rockstar To Debut GTA Special Editions\" (23 Sep 2005): https://gamedeveloper.com/game-platforms/rockstar-to-debut-i-gta-i-special-editions", url = "https://gamedeveloper.com/game-platforms/rockstar-to-debut-i-gta-i-special-editions", origin = "md:3477" }
+12-22 = { text = "GTA Wiki (Fandom) — Grand Theft Auto: The Trilogy: https://gta.fandom.com/wiki/Grand_Theft_Auto:_The_Trilogy", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto:_The_Trilogy", origin = "md:3478" }
+12-23 = { text = "Wikipedia — Grand Theft Auto: San Andreas: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_San_Andreas", origin = "md:3479" }
+12-24 = { text = "GamesRadar — \"No GTA: The Trilogy for UK... yet\" (8 Nov 2006): https://gamesradar.com/no-gta-the-trilogy-for-uk-yet", url = "https://gamesradar.com/no-gta-the-trilogy-for-uk-yet", origin = "md:3480" }
+12-25 = { text = "MobyGames related-compilation list (via ref 13); eBay German PC Trilogy listing (supporting only): https://www.ebay.de/p/17050705996", url = "https://www.ebay.de/p/17050705996", origin = "md:3481" }
+12-26 = { text = "9to5Mac — \"Grand Theft Auto comes to the Mac on November 22nd\" (12 Nov 2010): https://9to5mac.com/2010/11/12/grand-theft-auto-comes-to-the-mac-on-november-22nd", url = "https://9to5mac.com/2010/11/12/grand-theft-auto-comes-to-the-mac-on-november-22nd", origin = "md:3482" }
+12-27 = { text = "The Loop — \"Grand Theft Auto trilogy comes to Mac via GameTreeMac.com first\" (13 Nov 2010): https://loopinsight.com/2010/11/13/grand-theft-auto-trilogy-comes-to-mac-via-gametreemac-com-first", url = "https://loopinsight.com/2010/11/13/grand-theft-auto-trilogy-comes-to-mac-via-gametreemac-com-first", origin = "md:3483" }
+12-28 = { text = "Grand Theft Wiki — GTA Liberty City Stories & Vice City Stories 2 Pack: https://www.grandtheftwiki.com/GTA_Liberty_City_Stories_%26_Vice_City_Stories_2_Pack ; category: https://www.grandtheftwiki.com/Category:Compilation_Packs", url = "https://www.grandtheftwiki.com/GTA_Liberty_City_Stories_%26_Vice_City_Stories_2_Pack", origin = "md:3484" }
+12-29 = { text = "PlayStation LifeStyle — \"Europe Packs a Double Dose of GTA\" (22 Jul 2009): https://www.playstationlifestyle.net/?p=35906", url = "https://www.playstationlifestyle.net/?p=35906", origin = "md:3485" }
+12-30 = { text = "Engadget — \"Grand Theft Auto IV special edition announced at $90\" (21 May 2007): https://www.engadget.com/2007-05-21-grand-theft-auto-iv-special-edition-announced-at-90.html", url = "https://www.engadget.com/2007-05-21-grand-theft-auto-iv-special-edition-announced-at-90.html", origin = "md:3486" }
+12-31 = { text = "CollectorsEdition.org — Grand Theft Auto IV Special Edition (PS3): https://collectorsedition.org/game-db/grand-theft-auto-iv-special-edition-ps3-brd-2", url = "https://collectorsedition.org/game-db/grand-theft-auto-iv-special-edition-ps3-brd-2", origin = "md:3487" }
+12-32 = { text = "Wikipedia — Grand Theft Auto IV: https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV ; WikiGTA (NL) GTA IV: https://static.wikigta.org/wiki/Grand_Theft_Auto_IV", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_IV", origin = "md:3488" }
+12-33 = { text = "WikiGTA (NL) — Pre-Order Pack Benelux (GTA IV): https://static.wikigta.org/wiki/Pre-Order_Pack_Benelux_%28GTA_IV%29", url = "https://static.wikigta.org/wiki/Pre-Order_Pack_Benelux_%28GTA_IV%29", origin = "md:3489" }
+12-34 = { text = "Wikipedia — PlayStation 3 models (ref. to Joystiq, \"GTA IV bundle confirmed for Europe\", 23 Apr 2008): https://en.wikipedia.org/wiki/PlayStation_3_models", url = "https://en.wikipedia.org/wiki/PlayStation_3_models", origin = "md:3490" }
+12-35 = { text = "Steam store API — Episodes from Liberty City (app 12220): https://store.steampowered.com/api/appdetails?appids=12220", url = "https://store.steampowered.com/api/appdetails?appids=12220", origin = "md:3491" }
+12-36 = { text = "GTA Wiki (Fandom) — Grand Theft Auto IV: The Complete Edition: https://gta.fandom.com/wiki/Grand_Theft_Auto_IV:_The_Complete_Edition", url = "https://gta.fandom.com/wiki/Grand_Theft_Auto_IV:_The_Complete_Edition", origin = "md:3492" }
+12-37 = { text = "Steam store API — GTA IV: The Complete Edition (app 12210 / package 443542): https://store.steampowered.com/api/appdetails?appids=12210 ; https://store.steampowered.com/api/packagedetails?packageids=443542", url = "https://store.steampowered.com/api/appdetails?appids=12210", origin = "md:3493" }
+12-38 = { text = "PCGamingWiki — Grand Theft Auto IV: https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_IV", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_IV", origin = "md:3494" }
+12-39 = { text = "Gematsu — \"Rockstar Games Collection: Edition 1 announced\" (11 Oct 2012): https://gematsu.com/2012/10/rockstar-games-collection-edition-1-announced", url = "https://gematsu.com/2012/10/rockstar-games-collection-edition-1-announced", origin = "md:3495" }
+12-40 = { text = "Softpedia — \"The Rockstar Games Collection Edition 1 Arrives on November 6\": https://games.softpedia.com/blog/The-Rockstar-Games-Collection-Edition-1-Arrives-on-November-6-298974.shtml", url = "https://games.softpedia.com/blog/The-Rockstar-Games-Collection-Edition-1-Arrives-on-November-6-298974.shtml", origin = "md:3496" }
+12-41 = { text = "WikiGTA (NL) — Rockstar Games Collection Edition 1: https://static.wikigta.org/wiki/Rockstar_Games_Collection_Edition_1", url = "https://static.wikigta.org/wiki/Rockstar_Games_Collection_Edition_1", origin = "md:3497" }
+12-42 = { text = "Wikipedia — Development of Grand Theft Auto V: https://en.wikipedia.org/wiki/Development_of_Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Development_of_Grand_Theft_Auto_V", origin = "md:3498" }
+12-43 = { text = "WikiGTA (NL) — Grand Theft Auto V Special Edition: https://static.wikigta.org/wiki/Grand_Theft_Auto_V_Special_Edition", url = "https://static.wikigta.org/wiki/Grand_Theft_Auto_V_Special_Edition", origin = "md:3499" }
+12-44 = { text = "WikiGTA (NL) — Grand Theft Auto V Collector's Edition: https://static.wikigta.org/wiki/Grand_Theft_Auto_V_Collector%27s_Edition", url = "https://static.wikigta.org/wiki/Grand_Theft_Auto_V_Collector%27s_Edition", origin = "md:3500" }
+12-45 = { text = "PCGamingWiki — Grand Theft Auto V: https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_V", url = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto_V", origin = "md:3501" }
+12-46 = { text = "Wikipedia (German) — Grand Theft Auto V: https://de.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://de.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:3502" }
+12-47 = { text = "Wikipedia — Grand Theft Auto V: https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_V", origin = "md:3503" }
+12-48 = { text = "Wikipedia — Grand Theft Auto Online: https://en.wikipedia.org/wiki/Grand_Theft_Auto_Online", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto_Online", origin = "md:3504" }
+12-49 = { text = "Steam store API — Grand Theft Auto V Enhanced (app 3240220): https://store.steampowered.com/api/appdetails?appids=3240220", url = "https://store.steampowered.com/api/appdetails?appids=3240220", origin = "md:3505" }
+12-50 = { text = "Wikipedia — Grand Theft Auto: The Trilogy – The Definitive Edition: https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Trilogy_%E2%80%93_The_Definitive_Edition", url = "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_The_Trilogy_%E2%80%93_The_Definitive_Edition", origin = "md:3506" }
+12-51 = { text = "Steam store API — package 817628 (Trilogy DE): https://store.steampowered.com/api/packagedetails?packageids=817628 ; app 1546990: https://store.steampowered.com/api/appdetails?appids=1546990", url = "https://store.steampowered.com/api/packagedetails?packageids=817628", origin = "md:3507" }
+12-52 = { text = "Game Informer — \"Rockstar Is Bringing Back Original PC Versions Of GTA Trilogy\" (19 Nov 2021): https://gameinformer.com/2021/11/19/rockstar-is-bringing-back-original-pc-versions-of-gta-trilogy", url = "https://gameinformer.com/2021/11/19/rockstar-is-bringing-back-original-pc-versions-of-gta-trilogy", origin = "md:3508" }
+12-53 = { text = "Stevivor — \"Original Grand Theft Auto Trilogy versions relisted on PC\": https://stevivor.com/news/original-grand-theft-auto-trilogy-versions-relisted-pc", url = "https://stevivor.com/news/original-grand-theft-auto-trilogy-versions-relisted-pc", origin = "md:3509" }
+12-54 = { text = "Steam store API — GTA+ (app 3482260): https://store.steampowered.com/api/appdetails?appids=3482260", url = "https://store.steampowered.com/api/appdetails?appids=3482260", origin = "md:3510" }
+12-55 = { text = "Wikipedia — Greatest Hits (PlayStation): https://en.wikipedia.org/wiki/Greatest_Hits_(PlayStation)", url = "https://en.wikipedia.org/wiki/Greatest_Hits_(PlayStation", origin = "md:3511" }
+12-56 = { text = "Wikipedia — Platinum Range: https://en.wikipedia.org/wiki/Platinum_Range", url = "https://en.wikipedia.org/wiki/Platinum_Range", origin = "md:3512" }
+12-57 = { text = "Wikipedia — Platinum Hits: https://en.wikipedia.org/wiki/Platinum_Hits", url = "https://en.wikipedia.org/wiki/Platinum_Hits", origin = "md:3513" }
+12-58 = { text = "GameFAQs — Grand Theft Auto (PC/PS/GBC), London 1969, Director's Cut and Double Feature release data: https://gamefaqs.gamespot.com/pc/197476-grand-theft-auto/data", url = "https://gamefaqs.gamespot.com/pc/197476-grand-theft-auto/data", origin = "md:3514" }
+12-59 = { text = "GameFAQs — Grand Theft Auto: Collectors' Edition (PS) release data: https://gamefaqs.gamespot.com/ps/919882-grand-theft-auto-collectors-edition/data", url = "https://gamefaqs.gamespot.com/ps/919882-grand-theft-auto-collectors-edition/data", origin = "md:3515" }
+12-60 = { text = "GameFAQs — Grand Theft Auto: The Classics Collection (PC) release data: https://gamefaqs.gamespot.com/pc/931344-grand-theft-auto-the-classics-collection/data", url = "https://gamefaqs.gamespot.com/pc/931344-grand-theft-auto-the-classics-collection/data", origin = "md:3516" }
+12-61 = { text = "GameFAQs — Grand Theft Auto Double Pack (PS2, Xbox) release data: https://gamefaqs.gamespot.com/xbox/468550-grand-theft-auto-double-pack/data", url = "https://gamefaqs.gamespot.com/xbox/468550-grand-theft-auto-double-pack/data", origin = "md:3517" }
+12-62 = { text = "GameFAQs — Grand Theft Auto: The Trilogy (Xbox, PS2, PC, Mac, PS4) release data: https://gamefaqs.gamespot.com/pc/960639-grand-theft-auto-the-trilogy/data", url = "https://gamefaqs.gamespot.com/pc/960639-grand-theft-auto-the-trilogy/data", origin = "md:3518" }
+12-63 = { text = "GameFAQs — Grand Theft Auto: Liberty City Stories / Vice City Stories (PS2) release data: https://gamefaqs.gamespot.com/ps2/960657-grand-theft-auto-liberty-city-stories-vice-city/data", url = "https://gamefaqs.gamespot.com/ps2/960657-grand-theft-auto-liberty-city-stories-vice-city/data", origin = "md:3519" }
+12-64 = { text = "GameFAQs — Grand Theft Auto IV, The Complete Edition, TLAD/TBoGT and Episodes from Liberty City release data: https://gamefaqs.gamespot.com/pc/952150-grand-theft-auto-iv/data ; https://gamefaqs.gamespot.com/pc/987737-grand-theft-auto-episodes-from-liberty-city/data ; GTA 2 data: https://gamefaqs.gamespot.com/pc/197478-grand-theft-auto-2/data", url = "https://gamefaqs.gamespot.com/pc/952150-grand-theft-auto-iv/data", origin = "md:3520" }
+12-65 = { text = "GameFAQs — Grand Theft Auto V and Grand Theft Auto Online release data (all platforms): https://gamefaqs.gamespot.com/pc/805606-grand-theft-auto-v/data ; https://gamefaqs.gamespot.com/pc/805608-grand-theft-auto-online/data", url = "https://gamefaqs.gamespot.com/pc/805606-grand-theft-auto-v/data", origin = "md:3521" }
+12-66 = { text = "GameFAQs — Rockstar Games Collection: Edition 1 (PS3, X360) release data: https://gamefaqs.gamespot.com/ps3/686417-rockstar-games-collection-edition-1/data", url = "https://gamefaqs.gamespot.com/ps3/686417-rockstar-games-collection-edition-1/data", origin = "md:3522" }
+12-67 = { text = "GameFAQs — Grand Theft Auto: The Trilogy – The Definitive Edition release data: https://gamefaqs.gamespot.com/switch/333627-grand-theft-auto-the-trilogy-the-definitive/data", url = "https://gamefaqs.gamespot.com/switch/333627-grand-theft-auto-the-trilogy-the-definitive/data", origin = "md:3523" }
+12-68 = { text = "redump.org — disc database, quick search \"grand-theft-auto\" (edition/serial columns) and disc pages, incl. /disc/681/, 6376, 18930, 74208, 129895, 6377, 5363, 5355, 13551, 13550, 13357, 18869, 12658, 12657, 77816, 87609, 55478, 55479, 18061, 18062, 510, 511, 4639, 29347, 29348, 19487, 83311, 10502, 10501, 10494, 523, 524, 1296, 1295, 1272, 527, 10982, 10981, 30124, 15252, 36999, 62530, 29510, 12492, 7716, 31387, 133381, 105800: http://redump.org/discs/quicksearch/grand-theft-auto/ (disc pages at http://redump.org/disc/<id>/); also the Redump/No-Intro DAT extract /home/claude/gta_dat_entries.md", url = "http://redump.org/discs/quicksearch/grand-theft-auto/", origin = "md:3524" }
+12-69 = { text = "PlayStation Blog — \"New PlayStation 3 Grand Theft Auto V Bundle and Custom Pulse Elite Edition Headset\" (11 Jun 2013): https://blog.playstation.com/archive/2013/06/11/new-playstation-3-grand-theft-auto-v-bundle-and-custom-pulse-elite-edition-headset", url = "https://blog.playstation.com/archive/2013/06/11/new-playstation-3-grand-theft-auto-v-bundle-and-custom-pulse-elite-edition-headset", origin = "md:3525" }
+12-70 = { text = "Push Square — \"E3 2013: Grand Theft Auto V PS3 Bundle Coming This September\" (11 Jun 2013): https://www.pushsquare.com/news/2013/06/e3_2013_grand_theft_auto_v_ps3_bundle_coming_this_september", url = "https://www.pushsquare.com/news/2013/06/e3_2013_grand_theft_auto_v_ps3_bundle_coming_this_september", origin = "md:3526" }
+12-71 = { text = "HotHardware — \"Sony Reveals Grand Theft Auto V, Lego Batman 3 Black Friday PlayStation 4 Console Bundles\" (16 Nov 2014): https://hothardware.com/News/Sony-Reveals-Grand-Theft-Auto-V-Lego-Batman-3-Black-Friday-PlayStation-4-Console-Bundles/", url = "https://hothardware.com/News/Sony-Reveals-Grand-Theft-Auto-V-Lego-Batman-3-Black-Friday-PlayStation-4-Console-Bundles/", origin = "md:3527" }
+12-72 = { text = "Game*Spark — 「PlayStation 4 Grand Theft Auto V Pack」の国内発売決定 (23 Oct 2014): https://www.gamespark.jp/article/2014/10/23/52489.html", url = "https://www.gamespark.jp/article/2014/10/23/52489.html", origin = "md:3528" }
+12-73 = { text = "Grand Theft Wiki — Grand Theft Auto Double Pack: Liberty City Stories & Vice City Stories: https://www.grandtheftwiki.com/Grand_Theft_Auto_Double_Pack:_Liberty_City_Stories_%26_Vice_City_Stories", url = "https://www.grandtheftwiki.com/Grand_Theft_Auto_Double_Pack:_Liberty_City_Stories_%26_Vice_City_Stories", origin = "md:3529" }
+12-74 = { text = "redump.org — Xbox disc pages (read in a browser 2026-10-24): GTA III TT-014 http://redump.org/disc/77816/ (AU), http://redump.org/disc/12657/ (DE), http://redump.org/disc/13357/ (EU), http://redump.org/disc/13551/ (US), http://redump.org/disc/55478/ (JP); Vice City http://redump.org/disc/87609/ (AU TT-015), http://redump.org/disc/12658/ (DE TT-015), http://redump.org/disc/18869/ (EU TT-015), http://redump.org/disc/13550/ (US TT-015), http://redump.org/disc/55479/ (JP TT-115), http://redump.org/disc/29348/ (US TT-115 Rev 1), http://redump.org/disc/60539/ (AU TT-115 Rev 1); San Andreas http://redump.org/disc/83311/ (DE TT-165 Rev 1), http://redump.org/disc/19487/ (EU TT-164 Rev 1), http://redump.org/disc/29347/ (US TT-163 Rev 1); search list http://redump.org/discs/quicksearch/grand-theft-auto/system/xbox/", url = "http://redump.org/disc/77816/", origin = "md:3530" }
+12-75 = { text = "Hidden Palace — \"Grand Theft Auto Double Pack Xbox EPK\" (external: https://archive.org/details/GTA_Xbox_Collection_Press_Kit): https://hiddenpalace.org/Grand_Theft_Auto_Double_Pack_Xbox_EPK", url = "https://archive.org/details/GTA_Xbox_Collection_Press_Kit", origin = "md:3531" }
+12-76 = { text = "Xbox.com (Microsoft Store) product pages, read 2026-10-24: https://www.xbox.com/en-US/games/store/grand-theft-auto-v-megalodon-shark-cash-card-bundle/C54TNMRCBH0C ; https://www.xbox.com/en-US/games/store/grand-theft-auto-v-whale-shark-cash-card-bundle/C47BS8W7K7FS", url = "https://www.xbox.com/en-US/games/store/grand-theft-auto-v-megalodon-shark-cash-card-bundle/C54TNMRCBH0C", origin = "md:3532" }
+12-77 = { text = "Cowcotland — \"Bons plans Jibaka : Grand Theft Auto Complete Pack\" (2013-04-28): https://www.cowcotland.com/news/36531/bons-plans-jibaka-grand-theft-auto-complete-pack.html", url = "https://www.cowcotland.com/news/36531/bons-plans-jibaka-grand-theft-auto-complete-pack.html", origin = "md:3533" }
+12-78 = { text = "Steam Community — \"Grand Theft Auto Complete Pack\" thread (2013-12-27; links SteamDB sub 18832); Steam packagedetails API for 18832 (`success:false`, read 2026-10-24): https://steamcommunity.com/discussions/forum/1/648814843515062721/ ; https://store.steampowered.com/api/packagedetails?packageids=18832", url = "https://steamcommunity.com/discussions/forum/1/648814843515062721/", origin = "md:3534" }
+12-79 = { text = "MobyGames — Grand Theft Auto series group (Wayback capture 2026-01-10, as cited in §14; live site behind a Cloudflare check on 2026-10-24): https://web.archive.org/web/20260110104639/https://www.mobygames.com/group/167/grand-theft-auto-series/", url = "https://web.archive.org/web/20260110104639/https://www.mobygames.com/group/167/grand-theft-auto-series/", origin = "md:3535" }
+12-80 = { text = "GameFAQs game search (queries \"grand theft auto collection\", \"grand theft auto complete\", \"grand theft auto pack\", \"shark extortionate\", \"grand theft auto online shark\"; read 2026-10-24): https://gamefaqs.gamespot.com/search?game=grand+theft+auto+collection", url = "https://gamefaqs.gamespot.com/search?game=grand+theft+auto+collection", origin = "md:3536" }
