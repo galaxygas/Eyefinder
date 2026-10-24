@@ -1,0 +1,5 @@
+MainOrBonus = MAIN
+GMPFile = data\wil.gmp
+STYFile = data\wil.sty
+SCRFile = data\wil.scr
+Description = Downtown

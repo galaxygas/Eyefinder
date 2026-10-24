@@ -9,3 +9,4 @@ license.workspace = true
 ef-core.workspace = true
 ef-audio.workspace = true
 ef-texture.workspace = true
+ef-map.workspace = true

@@ -562,6 +562,162 @@ Source: Truevision Inc., "Truevision TGA File Format Specification, Version 2.0"
   * The fixtures Pillow 12.3.0 writes are compared with Pillow's decoding.
   * Pillow expands 5-bit channels by shifting (`v << 3`) and handles the attribute bit its own way, so the 16-bit fixtures are compared with a reference computed from the specification instead.
 
+# Maps (`ef_map`)
+
+The map export ("Export Map files" in the game header, `eyefinder-cli maps`) writes raw files, individual
+files and full maps, with `manifest.json` / `manifest.csv`. Everything below is implemented from the
+sources named; none of it is confirmed on real files yet (`SupportLevel::FromSpec`).
+
+## GTA1 / London city maps (`.CMP`)
+
+Source: DMA Design, [CityScape Data Structure 12.10](https://misc.daniel-marschall.de/spiele/gta1/cds.pdf),
+sections 2.1–2.9 (the registry's earlier "2.9 (v331)" meant section 2.9 of this document, not a
+document version). Version code **331**.
+
+* **Header** (28 bytes): u32 version, u8 style number, u8 sample number, u16 reserved, then u32 sizes
+  of route, object_pos, column, block and nav_data.
+* **Sections in order:** `base` (256 × 256 u32 byte offsets into `column`, `y` outer), `column`,
+  `block`, `object_pos`, `route`, `location_data` (3 × 6 × 6 bytes), `nav_data`.
+* **Column:** u16 `height` (= 6 − N), then N u16 block numbers.
+* **block_info** (8 bytes): u16 `type_map`, u8 `type_map_ext`, u8 left, right, top, bottom, lid.
+  * `type_map`: bits 0–3 directions, 4–6 block type, 7 flat, 8–13 slope, 14–15 lid rotation.
+  * `type_map_ext`: bits 0–2 traffic lights, 3–4 lid remap, 5 / 6 flips, 7 railway.
+  * Lid 0 means no lid.
+* **object_pos** (14 bytes): u16 x, y, z, u8 type, u8 remap (≥ 128: a car), three Ang16.
+  * Positions are 64 units per block (OpenGTA `gl_cityview.cpp`).
+  * The angle scale is not documented (OpenGTA calls its own "guesswork"), so angles are exported raw.
+* **Routes:** u8 count, u8 type (255 police, else roadblock number), count × (u8 x, y, z).
+* **nav_data** (35 bytes): u8 x, y, w, h, sample, char[30] name.
+* **Style of a map:** the header's style number *n* names `STYLEnnn`. The retail game loads `.GRY`
+  (8-bit) or `.G24` (24-bit) (sections 3.7, 3.8), and Eyefinder renders with each one present.
+  * London 1961's `STY001.G24` matches no documented name, so its maps need a choice of style.
+* **Conflict, resolved in favour of OpenGTA:** section 2.4 says `blockd[0]` is the ground block.
+  OpenGTA ([madebr/OpenGTA](https://github.com/madebr/OpenGTA) @ `1ae34ae3`, `read_cmp.cpp`
+  `getBlockAtNew`), which draws the retail maps, reads `blockd[N-1]` as the lowest. A real-file
+  check settles this.
+* **Lid rotation:** OpenGTA `gl_cityview.cpp` `drawBlock` with `slope1_data.h`. The flat lid's
+  corners SW, SE, NE, NW take texture corners (0,1), (1,1), (1,0), (0,0), starting *rotation*
+  corners later. So each step turns the tile **a quarter turn clockwise**.
+* **Lid remap:** a value 1–3 is the lid's palette variant (section 3.4 `remap_index`; G24 virtual
+  palettes `tile*4+variant`).
+
+## GTA2 maps (`.gmp`)
+
+Source: DMA Design, GBH Map Format 8.2, 18 August 1999
+([gtamp.com transcription](https://gtamp.com/gta2/gta2-gmp-map-file-format/)).
+
+* **Header:** `"GBMP"`, u16 version **500**, then chunks `{char[4] type, u32 size}` in any order.
+  * Read: `UMAP` (uncompressed `[8][256][256]` blocks), `CMAP` (16-bit), `DMAP` (32-bit), `ZONE`,
+    `MOBJ`, `LGHT`, `ANIM`.
+  * Others (`PSXM`, `RGEN`, unknown) are listed with their sizes.
+  * The compressed map is preferred: it is what the game loads.
+* **DMAP / CMAP:**
+  * `base[256][256]` (`[y][x]`, gta2_re `map_0x370.hpp`) word/dword offsets into `column`;
+    `column_words`; `column`; `num_blocks`; `block_info[]`.
+  * A column is u8 height, u8 offset (DMAP: then u16 pad), then `height − offset` block numbers
+    from z = offset.
+* **block_info** (12 bytes): u16 left, right, top, bottom, lid; u8 arrows; u8 slope_type (bits 0–1
+  ground type, 2–7 slope code).
+* **Face word:**
+  * bits 0–9 tile, 10 wall, 11 bullet wall (lid: 10–11 lighting level), 12 flat, 13 flip, 14–15
+    rotation.
+  * Tiles 992–1022 are reserved and 1023 marks a 3-sided diagonal slope. gta2_re
+    `InitTileMapping_5AA950` maps 0–991 to themselves and 992–1023 to no texture, and tile 0 is never drawn.
+* **ZONE:** u8 type, x, y, w, h, name_length, name.
+* **MOBJ** (6 bytes): Fix16 x, y in (1.8.7) blocks (signed value / 128), Ang8, u8 type.
+* **LGHT** (16 bytes): u32 ARGB, Fix16 x, y, z, radius, u8 intensity, shape, on, off.
+* **ANIM:** u16 base, u8 frame rate, repeat, length, unused, u16 tiles[length].
+* **Map and style pairing:** the game loads the one `data\*.seq` file. Each MAIN / BONUS stage
+  gives `GMPFile`, `STYFile`, `SCRFile`, `Description` (gta2_re `Frontend.cpp` `LoadSeqFile`,
+  `GetSeqItem_4B48D0`, which skips whitespace).
+  * Maps the stage list does not name (multiplayer maps) need a choice of style.
+* **Lid orientation:** gta2_re ([CriminalRETeam/gta2_re](https://github.com/CriminalRETeam/gta2_re)
+  @ `edb484d3`) `MapRenderer.cpp`. `kLidFlags_620FA4[lid >> 13]` = {0, 8, 0x20, 0x28, 0x40, 0x48,
+  0x60, 0x68}, and `draw_4F3FB0` turns the flags into the texel corner at NW, NE, SE, SW:
+
+  | rotation | flip | NW | NE | SE | SW |
+  |---|---|---|---|---|---|
+  | 0 | no | (0,0) | (1,0) | (1,1) | (0,1) |
+  | 0 | yes | (1,0) | (0,0) | (0,1) | (1,1) |
+  | 1 | no | (0,1) | (0,0) | (1,0) | (1,1) |
+  | 1 | yes | (0,0) | (0,1) | (1,1) | (1,0) |
+  | 2 | no | (1,1) | (0,1) | (0,0) | (1,0) |
+  | 2 | yes | (0,1) | (1,1) | (1,0) | (0,0) |
+  | 3 | no | (1,0) | (1,1) | (0,1) | (0,0) |
+  | 3 | yes | (1,1) | (1,0) | (0,0) | (0,1) |
+
+  Rotation 1 is a quarter turn clockwise, as in GTA1; flip mirrors left to right.
+* **Lid shapes** (`draw_lid_4EE130`, `DrawPartialBlock*`):
+  * Diagonals 45–48 and 4-sided diagonal slopes 49–52 keep one triangle of the lid: up-left NE–SE–SW,
+    up-right NW–SE–SW, down-left NW–NE–SE, down-right SW–NW–NE.
+    Their flag tables (`dword_621004`, `dword_621024`, `dword_620FE4`) keep each corner's texel, so
+    the texture is the full lid's, masked.
+  * Partial blocks 53–61 cover 3/8 or 5/8 of the block (24 and 40 of 64 pixels:
+    `kFpThreeEighths_6F6428`, `kFpFiveEighths_6F6430`), with the texture cropped.
+
+## Top-down renders of the 2D cities
+
+At 64 pixels per block (the tiles' native size), every lid of every column is drawn lowest first.
+* **Flat lids** are drawn transparently (CityScape 2.1 bit 7, GBH Map 3): their palette-0 texels show
+  the lid below. Other lids are opaque.
+* **Not drawn:**
+  * block sides (edge-on from above);
+  * slope geometry (an orthographic view shows a slope's lid as its square);
+  * GTA2 lighting levels 1–3 (their darkening is set by the game at run time);
+  * tile animations, which show their first frame.
+* **Extent:** the blocks that draw anything.
+* **Output:** one PNG, streamed band by band (a whole city is up to 16384 × 16384 pixels), and
+  optionally 16 × 16-block PNG tiles.
+* **Overlay:** an `overlay.svg` places zones, objects, cars, lights and service bases over it.
+
+## GTA III / Vice City / San Andreas: premade maps
+
+* **Radar map:**
+  * Every `.txd` entry of a CD image becomes a dictionary slot of that name (re3 / reVC
+    `Streaming.cpp` `LoadCdDirectory`). The radar draws each `radarNN` slot's first texture.
+  * GTA III, Vice City ([re3](https://github.com/Cai1Hsu/re3) mirror, `main` @ `19d2deaa` and `miami`
+    @ `e19f4061`, `src/core/Radar.cpp`): 8 × 8 tiles, tile (x, y) = `radar{x + 8y}`, world X −2000
+    to 2000.
+  * San Andreas (gta-reversed @ `f6221419`, `Radar.cpp`): 12 × 12 tiles, `radar{y·12 + x:02}`,
+    X −3000 to 3000.
+  * Tiles are 500 units. Texture u runs east and v south (`TransformRealWorldToTexCoordSpace`), so
+    tiles are placed as stored, row 0 north.
+  * A dictionary with several textures is skipped and reported: which one is "first" depends on
+    RenderWare's list order.
+* **Pause-menu map:**
+  * GTA III (PC) has none: re3's is an addition (`config.h` `MENU_MAP`).
+  * Vice City draws `mapTop01`, `mapTop02`, `mapTop03`, `mapMid01` … `mapBot03` of
+    `MODELS/FRONTEN2.TXD` as a 3 × 3 grid of equal squares (reVC `Frontend.cpp` `PrintMap`,
+    `FrontendFilenames`).
+  * San Andreas draws the radar tiles over a rectangle of `MENU_MAP_BACKGROUND` (111, 137, 170)
+    (gta-reversed `MenuManager_Pages.cpp` `PrintMap`, `MenuManager.h`).
+* **Map files for the raw export:**
+  * The level files: `DATA\DEFAULT.DAT`, then `DATA\GTA3.DAT` / `GTA_VC.DAT` / `GTA.DAT` (re3
+    `win.cpp`, reVC `main.cpp` `InitialiseGame`, gta-reversed `app.h` `GAME_LEVEL_FILE`).
+  * What their `IDE`, `IPL`, `COLFILE level path`, `TEXDICTION`, `MODELFILE`, `HIERFILE`, `MAPZONE`,
+    `IMG` and `CDIMAGE` lines name (`LoadLevel`; `LoadLine` turns commas and control characters into
+    spaces).
+  * The DFF and TXD entries named by IDE `objs`, `tobj` (and in San Andreas `anim`) lines, all of
+    which start with *id, model, txd*.
+  * The `.col` entries Vice City and San Andreas stream from IMG archives, San Andreas' `.ipl` and
+    `nodes*.dat` entries (gta-reversed `Streaming.cpp`), and the radar dictionaries.
+* **Not implemented yet:** the 3D map scene and its top-down render (IPL instances, DFF models, COL).
+  * Their sources are named in the registry: re3 `LoadObjectInstance` (rotation by −2·acos *w* about
+    the instance's axis), `LoadCollisionModel`, and librw.
+
+## Tests
+
+* `tools/fixtures/map_fixtures.py` writes the synthetic fixtures in `crates/ef-map/tests/fixtures`
+  from the layouts above:
+  * a GTA1 GRY and CMP;
+  * a GTA2 STY, GMP and `.seq`, covering rotations, flips, flat lids, diagonals, partial blocks, a
+    3-sided slope and a reserved tile;
+  * GTA III v1 and San Andreas VER2 IMG archives of radar dictionaries.
+* The script computes the expected top-down and radar images in image order from the pixel patterns
+  and the corner tables above, independently of the Rust code. `crates/ef-map/tests/fixtures.rs`
+  compares hashes, parsed records, the catalog's map/style pairing and a full export with its
+  manifest.
+
 # Release index
 `crates/ef-core/data/release_index.json` (`ef_core::index`) lists every Grand Theft Auto game and
 every release, edition and version the cited sources name. It is generated by

@@ -256,6 +256,7 @@ pub struct EyefinderApp {
     pub(crate) scan: Option<ScanState>,
     pub(crate) audio_export: Option<AudioExportDialog>,
     pub(crate) texture_export: Option<TextureExportDialog>,
+    pub(crate) map_export: Option<crate::map_view::MapExportDialog>,
     pub(crate) job: Option<Job>,
     pub(crate) toast: Option<(String, Instant)>,
     pub(crate) show_about: bool,
@@ -333,6 +334,7 @@ impl EyefinderApp {
             scan: None,
             audio_export: None,
             texture_export: None,
+            map_export: None,
             job: None,
             toast: None,
             show_about: false,
@@ -857,6 +859,7 @@ impl eframe::App for EyefinderApp {
         // keyboard
         let modal_open = self.audio_export.is_some()
             || self.texture_export.is_some()
+            || self.map_export.is_some()
             || self.job.is_some()
             || self.import.is_some()
             || self.scan.is_some()
@@ -903,6 +906,7 @@ impl eframe::App for EyefinderApp {
                     self.welcome(ui, &p, &ctx);
                 } else if self.loading_or_failed(ui, &p) {
                 } else {
+                    self.game_header(ui, &p, &ctx);
                     match self.view.clone() {
                         View::Audio(_) => self.audio_browser(ui, &p, &ctx),
                         View::Textures(_) => self.texture_browser(ui, &p, &ctx),
@@ -939,6 +943,7 @@ impl eframe::App for EyefinderApp {
         self.scan_modal(&p, &ctx);
         self.audio_export_modal(&p, &ctx);
         self.texture_export_modal(&p, &ctx);
+        self.map_export_modal(&p, &ctx);
         self.job_modal(&p, &ctx);
         self.entry_editor_modal(&p, &ctx);
         self.db_task_modal(&p, &ctx);
@@ -2558,6 +2563,58 @@ mod import_tests {
         assert!(!android.iter().any(|t| t.contains("Verified")), "{android:?}");
         let pc = index_texts("Grand Theft Auto III", "pc");
         assert!(pc.iter().any(|t| t.contains("Verified")), "{pc:?}");
+    }
+
+    #[test]
+    fn game_header_offers_the_map_export() {
+        let ctx = egui::Context::default();
+        theme::install(&ctx);
+        let p = theme::palette(&ctx);
+        let root = fixture_game(Game::Gta2, "maps");
+        let maps = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../crates/ef-map/tests/fixtures/gta2/data");
+        for f in ["wil.gmp", "wil.sty", "test.seq"] {
+            std::fs::copy(maps.join(f), root.join("DATA").join(f)).unwrap();
+        }
+        let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test".into()));
+        app.begin_import(root.clone());
+        settle(&mut app, &ctx);
+        app.confirm_import(vec![None], &ctx);
+        loaded(&mut app, &ctx);
+        let mut texts = Vec::new();
+        let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+            egui::CentralPanel::default().show(ui, |ui| {
+                let c = ui.ctx().clone();
+                app.game_header(ui, &p, &c)
+            });
+        });
+        out.textures_delta.clear();
+        fn collect(shape: &egui::Shape, out: &mut Vec<String>) {
+            match shape {
+                egui::Shape::Text(t) => out.push(t.galley.text().to_string()),
+                egui::Shape::Vec(v) => v.iter().for_each(|s| collect(s, out)),
+                _ => {}
+            }
+        }
+        out.shapes.iter().for_each(|s| collect(&s.shape, &mut texts));
+        assert!(texts.iter().any(|t| t.contains("Export Map files")), "{texts:?}");
+        // The dialog reads the map files on a worker thread and pairs the map with its style.
+        app.open_map_export(0, &ctx);
+        let deadline = Instant::now() + Duration::from_secs(15);
+        loop {
+            let ready = app.map_export.as_ref().unwrap().catalog.lock().unwrap().clone();
+            if let Some(c) = ready {
+                let c = c.unwrap();
+                assert_eq!(c.levels.len(), 1);
+                assert_eq!(c.levels[0].styles.len(), 1);
+                break;
+            }
+            assert!(Instant::now() < deadline, "map catalog timed out");
+            thread::sleep(Duration::from_millis(5));
+        }
+        let mut out = ctx.run_ui(egui::RawInput::default(), |_| app.map_export_modal(&p, &ctx));
+        out.textures_delta.clear();
+        assert!(app.map_export.as_ref().unwrap().opts.topdown);
+        std::fs::remove_dir_all(root.parent().unwrap()).unwrap();
     }
 
     #[test]

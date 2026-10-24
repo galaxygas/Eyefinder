@@ -17,6 +17,7 @@ USAGE:
     eyefinder-cli list     <game folder, asset file or disc image> [choice]
     eyefinder-cli export   <game folder, asset file or disc image> <output folder> [choice] [audio options]
     eyefinder-cli textures <game folder, asset file or disc image> <output folder> [choice] [texture options]
+    eyefinder-cli maps     <game folder, asset file or disc image> <output folder> [choice] [map options]
     eyefinder-cli text     <game folder, asset file or disc image> [choice]
     eyefinder-cli files    <game folder or disc image>
     eyefinder-cli docs     missing
@@ -45,6 +46,14 @@ AUDIO OPTIONS:
     --no-split          do not write per-marker track files
     --no-bitstream      do not save the original movie audio bitstream
     --only <category>   export one category (e.g. \"Radio Stations\")
+
+MAP OPTIONS (default: everything this game supports except tiles):
+    --raw               only the map files, byte for byte
+    --individual        only the individual files (map.json, overlay.svg, radar tiles)
+    --topdown           only the full top-down maps of the 2D cities
+    --tiles             also cut the top-down maps into 16 x 16-block PNG tiles
+    --premade           only the radar and pause-menu maps
+    --style <map>=<style>  the style of a map no source pairs (paths as `maps` lists them)
 
 TEXTURE OPTIONS:
     --mipmaps           also write every mip level
@@ -280,6 +289,9 @@ fn main() -> ExitCode {
     if cmd == "textures" {
         return textures(&install, &args);
     }
+    if cmd == "maps" {
+        return maps(&install, &args);
+    }
     if cmd == "text" {
         return text(&install);
     }
@@ -413,6 +425,71 @@ fn textures(install: &GameInstall, args: &[String]) -> ExitCode {
             }
             println!("{} textures, {} files written, {} skipped -> {out}", r.textures, r.written, r.skipped.len());
             ExitCode::SUCCESS
+        }
+        Err(e) => {
+            eprintln!("error: {e}");
+            ExitCode::from(1)
+        }
+    }
+}
+
+/// `eyefinder-cli maps`: the map export (ef_map).
+fn maps(install: &GameInstall, args: &[String]) -> ExitCode {
+    let Some(out) = args.get(2).filter(|a| !a.starts_with("--")) else {
+        eprintln!("{USAGE}");
+        return ExitCode::from(2);
+    };
+    let avail = ef_map::catalog::availability(install.game, install.platform);
+    if !avail.any() {
+        eprintln!("error: {}", avail.raw.err().unwrap_or_default());
+        return ExitCode::from(1);
+    }
+    let cat = ef_map::catalog::build(install);
+    for n in &cat.notices {
+        eprintln!("note: {n}");
+    }
+    for l in &cat.levels {
+        let styles: Vec<&str> = l.styles.iter().map(|s| s.path.as_str()).collect();
+        eprintln!(
+            "map {} ({}): styles {}",
+            l.name,
+            l.map,
+            if styles.is_empty() { "none paired, use --style".into() } else { styles.join(", ") }
+        );
+    }
+    let flag = |f: &str| args.iter().any(|a| a == f);
+    let chosen = ["--raw", "--individual", "--topdown", "--premade"].iter().any(|f| flag(f));
+    let mut opts = ef_map::export::ExportOptions {
+        raw: flag("--raw") || (!chosen && avail.raw.is_ok()),
+        individual: flag("--individual") || (!chosen && (avail.cities.is_ok() || avail.premade.is_ok())),
+        topdown: flag("--topdown") || (!chosen && avail.cities.is_ok()),
+        tiles: flag("--tiles"),
+        premade: flag("--premade") || (!chosen && avail.premade.is_ok()),
+        styles: Default::default(),
+    };
+    let mut i = 0;
+    while i < args.len() {
+        if args[i] == "--style"
+            && let Some((m, s)) = args.get(i + 1).and_then(|v| v.split_once('='))
+        {
+            opts.styles.entry(m.to_string()).or_default().push(s.to_string());
+            i += 1;
+        }
+        i += 1;
+    }
+    let cancel = AtomicBool::new(false);
+    let progress = |d: usize, t: usize, c: &str| {
+        if !c.is_empty() {
+            eprintln!("[{d}/{t}] {c}");
+        }
+    };
+    match ef_map::export::export(install, &cat, &opts, &PathBuf::from(out), &progress, &cancel) {
+        Ok(r) => {
+            for (f, e) in &r.failed {
+                eprintln!("failed {f}: {e}");
+            }
+            println!("{} outputs written, {} failed -> {out}", r.written, r.failed.len());
+            if r.failed.is_empty() { ExitCode::SUCCESS } else { ExitCode::from(1) }
         }
         Err(e) => {
             eprintln!("error: {e}");

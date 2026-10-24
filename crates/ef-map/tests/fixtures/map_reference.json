@@ -1,0 +1,56 @@
+{
+  "gta1_topdown": {
+    "width": 256,
+    "height": 128,
+    "fnv": "712f867ce4ee94c5"
+  },
+  "gta2_topdown": {
+    "width": 256,
+    "height": 192,
+    "fnv": "66212d6f888e336d"
+  },
+  "gta3_radar": {
+    "width": 64,
+    "height": 64,
+    "fnv": "682b817d5f928f25"
+  },
+  "sa_radar": {
+    "width": 48,
+    "height": 48,
+    "fnv": "53a4d54496338325"
+  },
+  "gta1": {
+    "objects": 1,
+    "cars": 1,
+    "routes": 1,
+    "nav": [
+      "Downtown",
+      "Liberty"
+    ],
+    "police_stations": 1
+  },
+  "gta2": {
+    "zones": [
+      [
+        1,
+        "Downtown"
+      ],
+      [
+        14,
+        "Zaibatsu"
+      ]
+    ],
+    "objects": 1,
+    "lights": 1,
+    "animations": 1,
+    "chunks": [
+      "ANIM",
+      "DMAP",
+      "JUNK",
+      "LGHT",
+      "MOBJ",
+      "PSXM",
+      "ZONE"
+    ]
+  }
+}

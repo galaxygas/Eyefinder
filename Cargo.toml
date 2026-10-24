@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/ef-core", "crates/ef-audio", "crates/ef-texture", "apps/eyefinder", "apps/eyefinder-cli"]
+members = ["crates/ef-core", "crates/ef-audio", "crates/ef-texture", "crates/ef-map", "apps/eyefinder", "apps/eyefinder-cli"]
 
 [workspace.package]
 version = "0.3.0"
@@ -14,6 +14,7 @@ authors = ["Eyefinder contributors"]
 ef-core = { path = "crates/ef-core" }
 ef-audio = { path = "crates/ef-audio" }
 ef-texture = { path = "crates/ef-texture" }
+ef-map = { path = "crates/ef-map" }
 thiserror = "2.0.21"
 anyhow = "1.0.104"
 serde = { version = "1.0.229", features = ["derive"] }

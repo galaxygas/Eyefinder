@@ -52,10 +52,11 @@ All three must pass. CI runs them on Windows, macOS and Linux. On Linux the GUI 
 | `crates/ef-audio` | Audio codecs, the asset catalog, decoding (`open`), export with manifests |
 | `crates/ef-audio/src/tables` | Generated stream / sample tables (do not edit by hand) |
 | `crates/ef-texture` | RenderWare texture dictionaries: natives for D3D8/9, Xbox and PS2, decoding, PNG/DDS export |
+| `crates/ef-map` | Map files: catalog, GTA1 CMP and GTA2 GMP readers, top-down renders, radar and pause-menu maps, the map export |
 | `apps/eyefinder` | The egui desktop application |
 | `apps/eyefinder-cli` | Headless `scan` / `info` / `versions` / `list` / `export` / `textures` |
 | `tools/legacy-c` | The original, real-file-verified GTA III ripper; reference implementation for tests |
-| `tools/fixtures` | Audio fixture generator (needs ffmpeg and genisoimage) |
+| `tools/fixtures` | Audio fixture generator (needs ffmpeg and genisoimage); `map_fixtures.py` writes the map fixtures and their reference |
 | `tools/db` | The one-off import of `docs/research/GTA_Builds_Versions_Database.md` into the build database |
 | `tools/txd-ref` | Texture fixtures and their reference (librw harness + specification decoder) |
 | `docs/` | Support matrix and format specifications |

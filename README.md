@@ -27,6 +27,10 @@ the **text** of the 2D games. Models and other data will follow.
   * The database updates without a new Eyefinder build: **Database → Check for a database update**, or import a pack.
 * **Documentation page:** a tracker for this build. Per game, every file type with its status (verified, implemented but unverified, documented but not implemented, not supported, undocumented), sources, real-file confirmations and what is missing, plus how copies are recognised and which executables and versions are known.
 * **Sidebar sections per asset type** (Audio by category, Textures by folder or archive), or switch to the **file tree**. IMG archives open like folders, and any file can be inspected and copied byte for byte.
+* **Export Map files** (top of every game version whose map format is documented):
+  * **raw**: every map file byte for byte;
+  * **individual files**: the map data as JSON, an SVG overlay of zones, objects and lights, each radar tile;
+  * **full maps**: GTA1, London and GTA2 cities rendered top-down at the games' native 64 pixels per block (one PNG and optional tiles), and the radar map and pause-menu map of GTA III, Vice City and San Andreas.
 * **Textures:**
   * A thumbnail grid or a list, and a large preview with zoom, mip levels and a transparency checkerboard.
   * Supported natives: Direct3D 8/9 (PC), Xbox and PS2, including palettes, DXT1/3/5 and swizzled PS2/Xbox data.
