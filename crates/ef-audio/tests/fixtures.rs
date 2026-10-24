@@ -132,6 +132,10 @@ fn gta3_ps2_iso_matches_vgmstream() {
         let c = chunks(&out.join(rel));
         assert_eq!(sha(&c[b"data"]), want.as_str().unwrap(), "{rel}");
     }
+    let manifest: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(out.join("manifest.json")).unwrap()).unwrap();
+    assert_eq!(manifest["edition"], serde_json::to_value(&install.edition).unwrap());
+    assert_eq!(manifest["user_choice"], false);
     // CHAT plays at 16 kHz on the PS2 (IsThisTrackAt16KHz)
     let c = chunks(&out.join("Radio Stations/09 - CHATTERBOX FM (CHAT).wav"));
     assert_eq!(u32::from_le_bytes(c[b"fmt "][4..8].try_into().unwrap()), 16000);
@@ -239,4 +243,133 @@ fn unrecognised_folders_are_rejected() {
     let d = temp("empty");
     assert!(ef_core::open_and_detect(&d).is_err());
     std::fs::remove_dir_all(d).ok();
+}
+
+#[test]
+fn gta1_pcm_banks_match_ffmpeg_and_seek_exactly() {
+    let install = ef_core::open_and_detect(&fixtures().join("gta1_pc")).unwrap();
+    assert_eq!(install.game, Game::Gta1);
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("gta1_audio_reference.json")).unwrap()).unwrap();
+    assert_eq!(cat.assets.len(), 10);
+    for asset in &cat.assets {
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap());
+        assert_seek_exact(open, &asset.game_id);
+        let mut source = open();
+        source.seek(u64::MAX).unwrap();
+        assert!(decode_all(source.as_mut()).is_empty());
+    }
+    let (out, report) = export_all(&fixtures().join("gta1_pc"), "gta1");
+    assert_eq!(report.written, 10);
+    assert!(report.failed.is_empty());
+    std::fs::remove_dir_all(out).unwrap();
+}
+
+#[test]
+fn gta2_pcm_banks_match_ffmpeg_and_seek_exactly() {
+    let install = ef_core::open_and_detect(&fixtures().join("gta2_pc")).unwrap();
+    assert_eq!(install.game, Game::Gta2);
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("gta2_audio_reference.json")).unwrap()).unwrap();
+    assert_eq!(cat.assets.len(), 4);
+    for asset in &cat.assets {
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap());
+        assert_seek_exact(open, &asset.game_id);
+        let mut source = open();
+        source.seek(u64::MAX).unwrap();
+        assert!(decode_all(source.as_mut()).is_empty());
+    }
+    let (out, report) = export_all(&fixtures().join("gta2_pc"), "gta2");
+    assert_eq!(report.written, 4);
+    assert!(report.failed.is_empty());
+    std::fs::remove_dir_all(out).unwrap();
+}
+
+#[test]
+fn london_banks_identify_1969_and_also_serve_1961() {
+    use std::sync::Arc;
+    let root = temp("london");
+    let audio = root.join("GTADATA/UK/AUDIO");
+    std::fs::create_dir_all(&audio).unwrap();
+    for name in ["LEVEL000.SDT", "LEVEL000.RAW", "LEVEL001.SDT", "LEVEL001.RAW"] {
+        std::fs::copy(fixtures().join("gta1_pc/GTADATA/AUDIO").join(name), audio.join(name)).unwrap();
+    }
+    let vfs = Arc::new(ef_core::vfs::FolderVfs::new(&root));
+    // The UK banks are London 1969's; London 1961 ships none of its own and plays them.
+    assert_eq!(ef_core::detect(vfs.clone()).unwrap().game, Game::London1969);
+    for game in [Game::London1969, Game::London1961] {
+        let choice = ef_core::ImportChoice { game, platform: Platform::Pc, edition: "unknown".into() };
+        let install = ef_core::detect_with(vfs.clone(), Some(&choice)).unwrap();
+        assert_eq!(install.game, game);
+        assert_eq!(install.user_choice, game == Game::London1961);
+        let cat = catalog::build(&install).unwrap();
+        assert_eq!(cat.assets.len(), 10);
+        assert!(cat.assets.iter().all(|a| a.source.to_ascii_uppercase().starts_with("GTADATA/UK/")));
+    }
+    std::fs::remove_dir_all(root).unwrap();
+}
+
+#[test]
+fn cd_audio_tracks_match_ffmpeg_and_seek_exactly() {
+    // A mixed-mode PlayStation BIN/CUE: the CUE names DISC.BIN, the file is disc.bin.
+    let install = ef_core::open_and_detect(&fixtures().join("cdda_ps1/disc.cue")).unwrap();
+    assert_eq!((install.game, install.platform), (Game::Gta1, Platform::Ps1));
+    assert_eq!(install.edition.id, "ps1-SLUS-00106");
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("cdda_reference.json")).unwrap()).unwrap();
+    let tracks: Vec<_> = cat.assets.iter().filter(|a| a.category == Category::CdAudio).collect();
+    assert_eq!(tracks.len(), 2);
+    assert_eq!(cat.assets.len(), 2, "the PlayStation data track itself is not decoded");
+    for asset in tracks {
+        assert_eq!(asset.support, ef_core::SupportLevel::FromSpec);
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap());
+        assert_seek_exact(open, &asset.game_id);
+    }
+    let (out, report) = export_all(&fixtures().join("cdda_ps1/disc.cue"), "cdda");
+    assert_eq!(report.written, 2);
+    assert!(report.failed.is_empty());
+    std::fs::remove_dir_all(out).unwrap();
+}
+
+#[test]
+fn dreamcast_str_streams_match_vgmstream_and_seek_exactly() {
+    let install = ef_core::open_and_detect(&fixtures().join("gta2_dc/disc.gdi")).unwrap();
+    assert_eq!((install.game, install.platform), (Game::Gta2, Platform::Dreamcast));
+    assert_eq!(install.edition.id, "dc-T-42102N");
+    let cat = catalog::build(&install).unwrap();
+    let refs: serde_json::Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("dc_reference.json")).unwrap()).unwrap();
+    assert_eq!(cat.assets.len(), 2);
+    for asset in &cat.assets {
+        assert!(matches!(asset.kind, AssetKind::DcStr { .. }));
+        let open = || ef_audio::open::open(asset, install.vfs.as_ref(), DecodeOptions::default()).unwrap().source;
+        let mut source = open();
+        let want = &refs[&asset.game_id];
+        assert_eq!(source.format().channels as u64, want["channels"].as_u64().unwrap());
+        assert_eq!(source.format().rate as u64, want["rate"].as_u64().unwrap());
+        assert_eq!(source.total_frames().unwrap(), want["frames"].as_u64().unwrap());
+        assert_eq!(sha(&decode_all(source.as_mut())), want["sha256"].as_str().unwrap(), "{}", asset.game_id);
+        assert_seek_exact(open, &asset.game_id);
+    }
 }

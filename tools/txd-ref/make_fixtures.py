@@ -213,3 +213,9 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Non-RenderWare styles use the same fixture regeneration entry point.
+import style_fixtures
+style_fixtures.generate(sys.argv[2])
+style_fixtures.generate_sty(sys.argv[2])
+style_fixtures.generate_fon(sys.argv[2])

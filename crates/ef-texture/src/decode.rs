@@ -264,6 +264,12 @@ impl Raster {
         let pal = self.format & (fmt::PAL8 | fmt::PAL4) != 0;
         let entries = if self.format & fmt::PAL4 != 0 { 16 } else { 256 };
         let pixels = match self.platform {
+            NativePlatform::DmaStyle | NativePlatform::Targa => {
+                if lv.data.len() != (lv.width as usize) * (lv.height as usize) * 4 {
+                    return Err(Error::Malformed("invalid normalized style raster"));
+                }
+                lv.data.clone()
+            }
             NativePlatform::D3d8 | NativePlatform::D3d9 | NativePlatform::Xbox => {
                 let xbox = self.platform == NativePlatform::Xbox;
                 if self.dxt != 0 {

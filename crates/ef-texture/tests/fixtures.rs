@@ -105,6 +105,7 @@ fn catalog_finds_loose_and_archived_dictionaries() {
         vfs: Arc::new(FolderVfs::new(fixtures())),
         evidence: vec![],
         user_choice: false,
+        store: ef_core::Store::Unknown,
     };
     let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
     let paths: Vec<&str> = cat.sources.iter().map(|s| s.path.as_str()).collect();
@@ -128,6 +129,7 @@ fn export_writes_png_dds_and_manifest() {
         vfs: Arc::new(FolderVfs::new(fixtures())),
         evidence: vec![],
         user_choice: false,
+        store: ef_core::Store::Unknown,
     };
     let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
     let pick: Vec<usize> =
@@ -157,5 +159,150 @@ fn export_writes_png_dds_and_manifest() {
     assert_eq!(&dds[128..], &body[..]);
     let manifest: Value = serde_json::from_str(&std::fs::read_to_string(out.join("manifest.json")).unwrap()).unwrap();
     assert_eq!(manifest["textures"].as_array().unwrap().len(), rep.textures);
+    assert_eq!(manifest["edition"], serde_json::to_value(&install.edition).unwrap());
+    assert_eq!(manifest["user_choice"], false);
     std::fs::remove_dir_all(&out).ok();
+}
+
+#[test]
+fn dma_style_pixels_match_specification_reference() {
+    let reference: Value =
+        serde_json::from_slice(&std::fs::read(fixtures().join("style_reference.json")).unwrap()).unwrap();
+    for (file, rows) in reference.as_object().unwrap() {
+        let bytes = std::fs::read(fixtures().join(file)).unwrap();
+        let collection = ef_texture::collection::parse(&bytes).unwrap();
+        assert_eq!(collection.rw_version, 0);
+        assert_eq!(collection.textures.len(), rows.as_array().unwrap().len());
+        for (texture, want) in collection.textures.iter().zip(rows.as_array().unwrap()) {
+            assert_eq!(texture.name, want["name"].as_str().unwrap());
+            assert_eq!(texture.raster.support().0, ef_core::SupportLevel::FromSpec);
+            let image = texture.raster.decode(0).unwrap();
+            assert_eq!(image.width as u64, want["width"].as_u64().unwrap());
+            assert_eq!(image.height as u64, want["height"].as_u64().unwrap());
+            assert_eq!(fnv(&image.pixels), want["fnv"].as_str().unwrap(), "{file} {}", texture.name);
+        }
+        for n in [0, 3, 4, 50, 63, 100, bytes.len() - 1] {
+            assert!(ef_texture::collection::parse(&bytes[..n]).is_err(), "truncated {file} at {n}");
+        }
+        let mut bad = bytes.clone();
+        bad[4..8].copy_from_slice(&u32::MAX.to_le_bytes());
+        assert!(ef_texture::collection::parse(&bad).is_err());
+    }
+}
+
+#[test]
+fn styles_use_normal_catalog_preview_and_png_export() {
+    for game in [Game::Gta1, Game::Gta2] {
+        let install = GameInstall {
+            game,
+            platform: Platform::Pc,
+            edition: ef_core::Edition::unknown(),
+            vfs: Arc::new(FolderVfs::new(fixtures())),
+            evidence: vec![],
+            user_choice: false,
+            store: ef_core::Store::Unknown,
+        };
+        let cat = ef_texture::catalog::build(&install, &|_, _| {}, &AtomicBool::new(false));
+        let picked: Vec<_> = cat
+            .assets
+            .iter()
+            .enumerate()
+            .filter(|(_, a)| a.platform == NativePlatform::DmaStyle)
+            .map(|(i, _)| i)
+            .collect();
+        assert!(!picked.is_empty());
+        if game == Game::Gta1 {
+            assert!(cat.sources.iter().any(|s| s.container == "GTA1 FON"));
+        }
+        let root = std::env::temp_dir().join(format!("ef-style-export-{game:?}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&root);
+        let report = ef_texture::export::export(
+            &install,
+            &cat,
+            &picked,
+            &root,
+            ef_texture::export::ExportOptions::default(),
+            &|_, _| {},
+            &AtomicBool::new(false),
+        )
+        .unwrap();
+        assert!(report.skipped.is_empty(), "{:?}", report.skipped);
+        assert_eq!(report.textures, picked.len());
+        assert_eq!(report.written, picked.len());
+        let manifest: Value = serde_json::from_slice(&std::fs::read(root.join("manifest.json")).unwrap()).unwrap();
+        // Each encoded PNG must match the same catalog object used by preview workers.
+        for i in picked {
+            let asset = &cat.assets[i];
+            let src = &cat.sources[asset.source];
+            let expected = cat.load(&install, asset.source).unwrap().textures[asset.index].raster.decode(0).unwrap();
+            let stem = &src.path;
+            let png = std::fs::read(root.join(stem).join(format!("{}.png", asset.name))).unwrap();
+            let mut reader = png::Decoder::new(std::io::Cursor::new(png)).read_info().unwrap();
+            let mut pixels = vec![0; reader.output_buffer_size().unwrap()];
+            reader.next_frame(&mut pixels).unwrap();
+            assert_eq!(pixels, expected.pixels);
+        }
+        assert!(!manifest.to_string().contains("Direct3D"));
+        std::fs::remove_dir_all(root).unwrap();
+    }
+}
+
+#[test]
+fn fon_images_match_reference_and_reject_truncation() {
+    let bytes = std::fs::read(fixtures().join("images.fon")).unwrap();
+    let rows: Value = serde_json::from_slice(&std::fs::read(fixtures().join("fon_reference.json")).unwrap()).unwrap();
+    let collection = ef_texture::collection::parse_named(&bytes, "IMAGES.FON").unwrap();
+    assert_eq!(collection.kind, "GTA1 FON");
+    assert_eq!(collection.textures.len(), 3);
+    assert_eq!(collection.problems.len(), 1); // zero-width spacer
+    for (tex, want) in collection.textures.iter().zip(rows.as_array().unwrap()) {
+        let image = tex.raster.decode(0).unwrap();
+        assert_eq!(tex.name, want["name"].as_str().unwrap());
+        assert_eq!(image.width as u64, want["width"].as_u64().unwrap());
+        assert_eq!(image.height, 16);
+        assert_eq!(fnv(&image.pixels), want["fnv"].as_str().unwrap());
+        assert_eq!(tex.raster.support().0, ef_core::SupportLevel::FromSpec);
+    }
+    for n in 0..bytes.len() {
+        assert!(ef_texture::fon::parse(&bytes[..n]).is_err(), "truncated at {n}");
+    }
+    let mut bad = bytes.clone();
+    bad[1] = 0;
+    assert!(ef_texture::fon::parse(&bad).is_err());
+    bad = bytes.clone();
+    bad.push(0);
+    assert!(ef_texture::fon::parse(&bad).is_err());
+    // No magic: unrelated containers cannot be silently treated as fonts.
+    assert!(ef_texture::collection::parse(&bytes).is_err());
+}
+
+#[test]
+fn tga_images_match_their_reference() {
+    use sha2::{Digest, Sha256};
+    let refs: Value = serde_json::from_slice(&std::fs::read(fixtures().join("tga_reference.json")).unwrap()).unwrap();
+    let refs = refs.as_object().unwrap();
+    assert_eq!(refs.len(), 6);
+    for (name, want) in refs {
+        let bytes = std::fs::read(fixtures().join(name)).unwrap();
+        let c = ef_texture::collection::parse_named(&bytes, &format!("data/frontend/{name}")).unwrap();
+        assert_eq!((c.kind, c.textures.len()), ("Truevision TGA", 1));
+        let t = &c.textures[0];
+        assert_eq!(t.raster.platform, NativePlatform::Targa);
+        let image = t.raster.decode(0).unwrap();
+        assert_eq!(image.width as u64, want["width"].as_u64().unwrap(), "{name}");
+        assert_eq!(image.height as u64, want["height"].as_u64().unwrap(), "{name}");
+        let got: String = Sha256::digest(&image.pixels).iter().map(|b| format!("{b:02x}")).collect();
+        assert_eq!(got, want["sha256"].as_str().unwrap(), "{name} ({})", want["reference"]);
+        // Pillow appends the 26-byte TGA 2.0 footer ("TRUEVISION-XFILE.\0"), which the image
+        // does not need; cutting anywhere before it must fail.
+        let footer = if bytes.ends_with(b"TRUEVISION-XFILE.\0") { 26 } else { 0 };
+        for n in 0..bytes.len() - footer {
+            assert!(ef_texture::tga::parse(&bytes[..n], name).is_err(), "{name} truncated at {n}");
+        }
+    }
+    // Right-to-left order (descriptor bit 4), which Pillow does not read: a 2x1 24-bit image.
+    let mut rtl = vec![0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 24, 0x30];
+    rtl.extend([1, 2, 3, 4, 5, 6]); // stored B,G,R: first stored pixel is the rightmost
+    let image = ef_texture::tga::parse(&rtl, "x.tga").unwrap().textures[0].raster.decode(0).unwrap();
+    assert_eq!(image.pixels, [6, 5, 4, 255, 3, 2, 1, 255]);
 }

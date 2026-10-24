@@ -20,6 +20,10 @@ pub enum Category {
     MissionAudio,
     Movies,
     SfxBank,
+    /// Music stored as audio files (GTA2 `GTAUDIO`).
+    Music,
+    /// Red Book audio tracks of a disc image.
+    CdAudio,
     Other,
 }
 
@@ -35,10 +39,12 @@ impl Category {
             Category::MissionAudio => "Mission Audio",
             Category::Movies => "Intro Movies",
             Category::SfxBank => "SFX Bank",
+            Category::Music => "Music",
+            Category::CdAudio => "CD Audio Tracks",
             Category::Other => "Other Audio Files",
         }
     }
-    pub const ALL: [Category; 10] = [
+    pub const ALL: [Category; 12] = [
         Category::Radio,
         Category::Streams,
         Category::PoliceAmbience,
@@ -48,6 +54,8 @@ impl Category {
         Category::MissionAudio,
         Category::Movies,
         Category::SfxBank,
+        Category::Music,
+        Category::CdAudio,
         Category::Other,
     ];
 }
@@ -68,6 +76,8 @@ impl From<StreamCategory> for Category {
 /// How an asset's bytes are decoded.
 #[derive(Debug, Clone)]
 pub enum AssetKind {
+    /// GTA1/London 12-byte SDT record; PCM metadata comes from the documented bank rules.
+    LegacyPcm { raw: String, offset: u32, size: u32, rate: u32, channels: u16, bits: u8 },
     /// RIFF/WAVE, raw MPEG audio or Ogg, detected from the contents.
     Stream { path: String },
     /// Vice City PC radio: MPEG audio XOR 0x22.
@@ -78,6 +88,22 @@ pub enum AssetKind {
     Movie { path: String },
     /// GTA III / Vice City `SFX.SDT` entry (20 bytes) into `SFX.RAW`.
     Sfx { raw: String, offset: u32, size: u32, rate: u32, loop_start: u32, loop_end: i32 },
+    /// GTA2 24-byte SDT record; displacement is stored verbatim, not randomized on export.
+    /// `bits` is 16 (signed) or 8 (unsigned, the police radio slots), see [`crate::legacy`].
+    Gta2Sfx {
+        raw: String,
+        offset: u32,
+        size: u32,
+        rate: u32,
+        bits: u8,
+        random_displacement: i32,
+        loop_start: u32,
+        loop_end: i32,
+    },
+    /// A Sega Dreamcast `.STR` stream (GTA2 Dreamcast), see [`crate::dcstr`].
+    DcStr { path: String },
+    /// A Red Book CD audio track: raw 16-bit stereo PCM at 44100 Hz ([`ef_core::vfs::CD_AUDIO_DIR`]).
+    CdAudio { path: String },
     /// San Andreas stream pack track.
     SaTrack { pack: String, offset: u32, size: u32 },
     /// San Andreas SFX bank sound.
@@ -137,16 +163,96 @@ fn level(game: Game, platform: Platform) -> SupportLevel {
     match (game, platform) {
         (Game::Gta3, Platform::Pc) => SupportLevel::Verified,
         (Game::Gta3 | Game::ViceCity, Platform::Pc | Platform::Ps2) => SupportLevel::FromSpec,
-        (Game::SanAndreas, Platform::Pc) => SupportLevel::FromSpec,
+        (Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 | Game::SanAndreas, Platform::Pc) => {
+            SupportLevel::FromSpec
+        }
         _ => SupportLevel::DetectedOnly,
     }
+}
+
+/// Dreamcast `.STR` streams: every `.STR` file whose header matches vgmstream's `str_sega`
+/// checks. Which GTA2 files these are is not documented, so they are listed by path.
+fn dreamcast_streams(vfs: &dyn ef_core::vfs::Vfs, notices: &mut Vec<String>) -> Vec<AudioAsset> {
+    use std::io::Read;
+    let mut out = Vec::new();
+    for (path, e) in ef_core::vfs::walk_files(vfs, "") {
+        if !path.to_ascii_lowercase().ends_with(".str") {
+            continue;
+        }
+        let mut head = vec![0u8; crate::dcstr::DATA_START as usize];
+        let ok = vfs.open(&path).and_then(|mut f| f.read_exact(&mut head)).is_ok();
+        let h = match ok.then(|| crate::dcstr::header(&head, e.size)) {
+            Some(Ok(h)) => h,
+            Some(Err(err)) => {
+                notices.push(format!("{path}: {err}"));
+                continue;
+            }
+            None => continue,
+        };
+        let decodable = h.tracks == 1 && h.bits == 4;
+        if !decodable {
+            notices.push(format!(
+                "{path}: {} tracks, {} bits per sample; only single-track 4-bit streams are decoded",
+                h.tracks, h.bits
+            ));
+        }
+        let file = path.rsplit('/').next().unwrap_or(&path).to_string();
+        let stem = file.rsplit_once('.').map_or(file.as_str(), |(s, _)| s).to_string();
+        out.push(AudioAsset {
+            category: Category::Streams,
+            group: path.rsplit_once('/').map(|(d, _)| d.to_string()),
+            title: stem.clone(),
+            game_id: file.clone(),
+            source: path.clone(),
+            bytes: e.size,
+            file_stem: sanitize(&stem),
+            kind: AssetKind::DcStr { path },
+            support: if decodable { SupportLevel::FromSpec } else { SupportLevel::DetectedOnly },
+        });
+    }
+    out
+}
+
+/// The CD audio tracks of a disc image (BIN/CUE), in track order.
+fn cd_audio(vfs: &dyn ef_core::vfs::Vfs) -> Vec<AudioAsset> {
+    let dir = ef_core::vfs::CD_AUDIO_DIR;
+    vfs.list(dir)
+        .unwrap_or_default()
+        .into_iter()
+        .filter(|e| !e.is_dir && e.size > 0)
+        .map(|e| {
+            let stem = e.name.trim_end_matches(".cdda").to_string();
+            AudioAsset {
+                category: Category::CdAudio,
+                group: None,
+                title: stem.clone(),
+                game_id: stem.clone(),
+                source: format!("{dir}/{}", e.name),
+                bytes: e.size,
+                file_stem: sanitize(&stem),
+                kind: AssetKind::CdAudio { path: format!("{dir}/{}", e.name) },
+                support: SupportLevel::FromSpec,
+            }
+        })
+        .collect()
 }
 
 pub fn build(install: &GameInstall) -> Result<Catalog> {
     let vfs = install.vfs.as_ref();
     let support = level(install.game, install.platform);
     let mut cat = Catalog::default();
+    let mut cd = cd_audio(vfs);
+    if install.platform == Platform::Dreamcast {
+        cd.extend(dreamcast_streams(vfs, &mut cat.notices));
+    }
     if !support.can_decode() {
+        cat.assets = cd;
+        if !cat.assets.is_empty() {
+            cat.notices.push(format!(
+                "{} streams with a documented format (CD audio tracks, Dreamcast STR) are listed; the game's other audio data is not decoded.",
+                cat.assets.len()
+            ));
+        }
         cat.notices.push(format!(
             "{} for {} was recognised, but its audio format has no documented specification in Eyefinder yet, so nothing can be decoded. {}",
             install.game.name(),
@@ -157,6 +263,11 @@ pub fn build(install: &GameInstall) -> Result<Catalog> {
     }
 
     match install.game {
+        Game::Gta1 | Game::Gta2 | Game::London1969 | Game::London1961 | Game::GtaAdvance => {
+            let mut cat = crate::legacy::catalog(install)?;
+            cat.assets.extend(cd);
+            return Ok(cat);
+        }
         Game::Gta3 | Game::ViceCity => {
             let gxt = vfs.read_all("TEXT/AMERICAN.GXT").ok().and_then(|d| Gxt::parse(&d));
             if gxt.is_none() {

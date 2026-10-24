@@ -22,3 +22,4 @@ c++ -O1 -std=c++11 -DRW_NULL -I"$work/librw" "$here/txdref.cpp" "$work/librw/bui
 rm -rf "$out"
 python3 "$here/make_fixtures.py" "$work/txdref" "$out"
 python3 "$here/make_reference.py" "$work/txdref" "$out" 2> >(grep -v "Invalid raster format" >&2)
+python3 "$here/tga_fixtures.py" "$out"

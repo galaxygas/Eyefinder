@@ -384,14 +384,14 @@ pub struct RawPcmSource {
 
 impl RawPcmSource {
     pub fn new(s: ByteStream, rate: u32, codec: &str) -> Self {
-        let total = s.len() / 2;
-        Self {
-            s,
-            format: PcmFormat::new(SampleKind::I16, 1, rate),
-            info: SourceInfo { codec: codec.into(), rate, channels: 1, ..Default::default() },
-            pos: 0,
-            total,
-        }
+        Self::with_format(s, PcmFormat::new(SampleKind::I16, 1, rate), codec)
+    }
+
+    pub fn with_format(s: ByteStream, format: PcmFormat, codec: &str) -> Self {
+        let total = s.len() / format.frame_bytes() as u64;
+        let info =
+            SourceInfo { codec: codec.into(), rate: format.rate, channels: format.channels, ..Default::default() };
+        Self { s, format, info, pos: 0, total }
     }
 }
 
@@ -411,15 +411,16 @@ impl PcmSource for RawPcmSource {
             return Ok(0);
         }
         let start = out.len();
-        out.resize(start + n * 2, 0);
-        let got = read_up_to(&mut self.s, &mut out[start..])? / 2;
-        out.truncate(start + got * 2);
+        let fb = self.format.frame_bytes();
+        out.resize(start + n * fb, 0);
+        let got = read_up_to(&mut self.s, &mut out[start..])? / fb;
+        out.truncate(start + got * fb);
         self.pos += got as u64;
         Ok(got)
     }
     fn seek(&mut self, frame: u64) -> Result<()> {
         self.pos = frame.min(self.total);
-        self.s.seek(SeekFrom::Start(self.pos * 2))?;
+        self.s.seek(SeekFrom::Start(self.pos * self.format.frame_bytes() as u64))?;
         Ok(())
     }
 }

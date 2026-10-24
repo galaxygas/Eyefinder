@@ -2,9 +2,12 @@
 
 mod app;
 mod audio_view;
+mod docs_view;
 mod files_view;
+mod index_view;
 mod player;
 mod settings;
+mod table_columns;
 mod texture_view;
 mod theme;
 mod thumbs;
@@ -40,7 +43,10 @@ fn icon() -> egui::IconData {
 fn main() -> eframe::Result {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_title("Eyefinder")
+            .with_title(format!(
+                "Eyefinder — {}",
+                &env!("EYEFINDER_REVISION")[..7.min(env!("EYEFINDER_REVISION").len())]
+            ))
             .with_app_id("eyefinder")
             .with_inner_size([1320.0, 820.0])
             .with_min_inner_size([960.0, 600.0])

@@ -231,11 +231,37 @@ Raster format bits (librw `rwobjects.h`):
   * librw also differs from the specifications in three places: its D3D palette path reads indices two texels ahead, its DXT5 colour block uses the DXT1 three-colour mode, and its Xbox path keeps the unused top bit of X1R5G5B5 as alpha. Eyefinder follows the specifications in all three.
 
 # Game versions (`ef_core::edition`)
-* **PC:** DK22Pac plugin-sdk `shared/GameVersion.cpp` (commit `15f15b60`) identifies each executable by one 32-bit value at a fixed virtual address.
-  * Eyefinder reads that value from the file, mapping the address through the PE section table (Microsoft "PE Format").
-  * Executables that are packed or encrypted on disk are reported as unknown.
-  * Executable names: `gta3.exe`, `gta-vc.exe`, `gta_sa.exe` (retail), `gta-sa.exe` (Steam).
+* **PC (III, VC, SA):** each executable build is identified by one 32-bit value at a fixed virtual address.
+  * DK22Pac plugin-sdk `shared/GameVersion.cpp` (commit `15f15b60`): III/VC 1.0, 1.1 and Steam; SA 1.0 US "compact" and "HOODLUM" (both at 0x401000), 1.0 EU, 1.01 US/EU, Steam and Steam low violence.
+  * CookiePLMonster SilentPatch `SilentPatch/MemoryMgr.GTA.h` (MIT, commit `74976544`), San Andreas:
+    * 1.0 US: `0x82457C == 0x94BF`;
+    * 3.0: `0x85EC4A == 0x94BF`;
+    * newsteam r1: `0x858D21 == 0x3539F633`;
+    * newsteam r2: `0x858D51` (plugin-sdk's "Steam");
+    * newsteam r2 lv: `0x858C61`;
+    * Rockstar Games Launcher 1.0.22.0: `0x858501`.
+  * SilentPatch has only three III/VC builds, and its launcher announcement (silentsblog.com, 2019-09-22) says only San Andreas needed an update for the Rockstar Games Launcher. The III/VC "Steam" value is therefore labelled **Steam / Rockstar Games Launcher**: the executable cannot tell the two stores apart.
+  * Eyefinder reads the value from the file, mapping the address through the PE section table (Microsoft "PE Format"). Executables that are packed or encrypted on disk are reported as unknown.
+  * **Every** executable present is examined and listed in the evidence. The version shown is the build of the executable the store starts: `gta-sa.exe` on Steam (Steam launch configuration), `gta_sa.exe` on the Rockstar Games Launcher (Galaxy-Plugin-Rockstar `game_cache.py` `launchEXE`, commit `5518f066`). Otherwise it is the first that matches.
+  * The `VS_FIXEDFILEINFO` file version (Microsoft "VS_FIXEDFILEINFO", "VS_VERSIONINFO"; PE ".rsrc Section") is added to the evidence as stored. It is not mapped to a build.
+  * Executable names: `gta3.exe`, `gta-vc.exe`, `gta_sa.exe`, `gta-sa.exe`; GTA1/London `gtawin\gtawin.exe`, `gtawin\gta_uk.exe`, `gtawin\gta_61.exe` (Marschall `misc.html`, `patches.html`); the GTA1 retail disc's `GTAWIN\GRAND THEFT AUTO.EXE` and `GTADOS\GTA24.EXE`, `GTA8.EXE`, `GTAFX.EXE` (DiscImageCreator log of redump disc 33511, and the maintainer's disc); London 1969 `GTADOS\GTA24_UK.EXE`, `GTA8_UK.EXE`, `GTAFX_UK.EXE` (archive.org item `grandtheftautomissionpack1london1969pc`, whose Windows executable is only inside `SETUP\DATA1.CAB`); GTA2 `gta2.exe` (gta2_re). DOS executables are reported as such.
+  * GTA1/London/GTA2 have no build table (see `MISSING.md`). Executables from real-file reports are identified by size and SHA-1 (`REAL_FILE_BUILDS`): GTA2 `gta2.exe` 1,667,072 bytes, SHA-1 `646e1d47…`, file version 9.6.0.0, labelled "Rockstar Games 2004 re-release" after its `readme.txt` ("(c) 2004 Rockstar Games … modified from its original version to enable support for modern PC's"); GTA1 `GTAWIN\GRAND THEFT AUTO.EXE` 909,824 bytes, SHA-1 `03856186…`.
+* **PC discs (BIN/CUE):** the tracks are compared with redump's IBM PC DAT in the [release index](#release-index). A redump track file holds its track's pregap, while a CUE `PREGAP` command generates silence that is not in the FILE (libcdio bincue), so a track matches when its size equals redump's or equals it after adding the generated pregap. The data track's SHA-1 must then equal redump's track 1. Releases with the same data track share one version (`pc-disc-<first 8 hex of its SHA-1>`).
 * **PS2:** the serial is the boot file named by `BOOT2` in `SYSTEM.CNF` (PCSX2 `ExecutablePathToSerial`). It is looked up in PCSX2 `GameIndex.yaml` (commit `5b6e6e23`).
+* **PS1, Dreamcast, Game Boy Color, Game Boy Advance:** see [Console releases](#console-releases).
+
+# Stores (`ef_core::store`)
+The store is separate from the executable build.
+* **Steam:** the folder is `<library>/steamapps/common/<installdir>`, and `<library>/steamapps/appmanifest_<id>.acf` names that `installdir` for one of the app IDs below.
+* **Rockstar Games Launcher** (Windows): the launcher registers each title at `HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\<GUID>`, with its folder in `InstallLocation`. Source: tylerbrawl Galaxy-Plugin-Rockstar `src/local.py`, `src/consts.py`, `src/game_cache.py`, commit `5518f066`. The GUIDs:
+
+  | Game | GUID |
+  |---|---|
+  | GTA III | `{92B94569-6683-4617-8C54-EB27A1B51B30}` |
+  | Vice City | `{4B35F00C-E63D-40DC-9839-DF15A33EAC46}` |
+  | San Andreas | `{D417C96A-FCC7-4590-A1BB-FAF73F5BC98E}` |
+* **Retail setup** (Windows): `Rockstar Games\GTA San Andreas\Installation\ExePath` and `Rockstar Games\GTAIII\Path`.
+* GTA1 and GTA2 were delisted from Steam (apps 12170 and 12180). No evidence of a Rockstar Games Launcher release of them was found, so no store is identified for them.
 
 # Finding installed copies (`ef_core::locate`)
 * **Steam app IDs** (Steam app info via api.steamcmd.net): 12100 GTA III, 12110 Vice City, 12120 San Andreas, 12230 GTA III (Mac), 12250 San Andreas (Mac).
@@ -246,7 +272,311 @@ Raster format bits (librw `rwobjects.h`):
 * **Steam libraries:**
   * Read from `steamapps/libraryfolders.vdf`, in both its current and older layout.
   * Each game's folder comes from `steamapps/appmanifest_<id>.acf` `installdir`.
-* **Windows retail installs:**
-  * The setup registry values `Rockstar Games\GTA San Andreas\Installation\ExePath` and `Rockstar Games\GTAIII\Path`.
-  * Any folder directly inside `Program Files\Rockstar Games` that contains a game executable.
-* Every candidate must pass detection before it is offered.
+* **Windows:**
+  * The Rockstar Games Launcher and retail registry entries above.
+  * Any folder directly inside `Program Files\Rockstar Games` that passes detection. This includes 2D games; folder names are not assumed.
+* Every candidate must pass detection before it is offered. Each one is labelled with its store.
+
+## GTA1 / London PC sample banks
+
+Source: Daniel Marschall's firsthand [SDT analysis](https://misc.daniel-marschall.de/spiele/gta1/format_sdt.html)
+and [retail inventory](https://misc.daniel-marschall.de/spiele/gta1/files/index.html),
+corroborated for record layout and bit depth by OpenGTA
+`1ae34ae3409d37bf484364d2a1db2e183a8527bd`, `read_sdt.cpp` and `util/sound_fx_cache.cpp`.
+
+* `GTADATA/AUDIO/*.SDT`: consecutive `{u32 offset, u32 length, u32 sample_rate}`
+  records into the same-stem `.RAW`. Only documented audio banks are interpreted;
+  graphics `.RAW` files are never treated as audio.
+* `LEVEL000`: signed little-endian 16-bit PCM; entries 0–2 stereo, subsequent entries mono.
+* `LEVEL001`, `LEVEL002`, `LEVEL003`, `MISBRIEF`, `VOCALCOM`: unsigned 8-bit mono PCM.
+* London uses `GTADATA/UK/AUDIO`; `LEVEL002/003` in that subtree are GTA1 leftovers
+  and are excluded. The shared layout does not identify 1969 versus 1961: users must
+  choose the expansion. Neither executable version nor complete expansion coverage
+  is inferred from these bank names.
+* Truncated index records, zero rates, out-of-file ranges and partial PCM frames
+  reject the bank with a catalog notice. Empty entries are skipped. PCM bytes are
+  preserved without resampling; loose WAVs use the existing content-based reader.
+* Synthetic fixtures include all three channel/depth combinations and nonzero
+  bank offsets, compared with ffmpeg PCM output and exact-seek tests.
+
+## GTA2 PC sample banks
+
+Source: [gta2_re](https://github.com/CriminalRETeam/gta2_re/tree/edb484d3b71d5cadaf3a9ea0e435f56993c747e7),
+`cSampleManager.hpp::sdt_entry_0x18`, `cSampleManager.cpp::LoadWavSdtData_58E980`,
+`AllocSamples_58D9F0` and `InitialiseChannel3D_58DDF0`. Only layout facts are used;
+no source code is copied.
+
+`DATA/AUDIO/<style>.SDT` has **24-byte** records of six little-endian signed 32-bit
+fields: offset, length, playback rate, random displacement, loop start, loop end.
+Companion RAW samples are signed 16-bit mono PCM (Miles format 1, flags 1), except slots
+**69-136**, the police radio words, which are **unsigned 8-bit mono**:
+* `sound_obj.cpp` `EnqueueRadioWord_4271B0` clamps every queued word to 69..136, and
+  `ProcessPoliceRadioWordsPlayback_427220` / `UpdateRadioChatterLoop_41FCA0` play them with
+  `cSampleManager::PlayAtIdx_58E7F0` / `PlaySampleRange_58E8C0` on `field_98_hSample`;
+* `AllocSample_58DA80` types that handle `AIL_set_sample_type(.., 0, 0)`: Miles `DIG_F_MONO_8`
+  without `DIG_PCM_SIGN` (`3rdParty/mss.h`), i.e. unsigned. Every other handle is
+  `AIL_set_sample_type(.., 1, 1)` (`AllocSamples_58D9F0`).
+* Real `WIL`, `STE` and `bil` banks of the 2004 release (docs/SUPPORT.md): slots 69-136 are the only
+  5500 Hz records, 34-36 of them have odd byte sizes, and their bytes average 127.6; all other
+  slots have even sizes. All 68 decode identically to ffmpeg's `u8` reading at the SDT rate.
+
+A record that fails validation is skipped with a notice; the rest of the bank is kept.
+Random displacement is preserved as metadata; export uses the stored playback rate.
+Loop byte offsets and the `-1` end sentinel are preserved. `DATA/FSTYLE.STY` and its
+frontend audio bank identify the PC layout. Loose WAVs in the audio subtree are
+also catalogued. Synthetic sample references are generated with ffmpeg.
+
+## DMA style textures (GTA1 / London PC)
+
+Sources: DMA Design, [CityScape Data Structure 12.10](https://misc.daniel-marschall.de/spiele/gta1/cds.pdf),
+sections 3.3–3.8; OpenGTA at the revision above, `read_gry.cpp`, `read_g24.cpp`.
+The GRY version contradiction in the document is resolved in favor of **325**, the
+version actually accepted by OpenGTA. Version 305 is not silently treated as 325.
+G24 is **336**. These are separate containers, not synthetic TXDs.
+
+* GRY header: 13 u32 fields (version plus side/lid/aux/animation/palette/remap/
+  remap-index/object/car/sprite-info/sprite-graphics/sprite-number byte sizes).
+* G24 header: 16 u32 fields; palette/remap fields are replaced with CLUT size,
+  tile/sprite/new-car/font virtual CLUT byte counts and palette-index byte size.
+* Tiles are 64×64, indexed 8-bit pixels in 256-pixel-wide strips. The combined tile
+  store is padded to a multiple of four tiles, independent of section size fields.
+* GRY palette is 256 RGB triples. Remaps contain 256 byte-index permutations;
+  each lid has four remap identifiers in the 256×4 remap-index table.
+* G24 physical CLUT storage rounds up to 65536 bytes. Physical palette columns
+  contain BGRA entries: `(palette/64)*65536 + color*256 + (palette%64)*4`.
+  A u16 palette-index table maps virtual to physical palettes. Tile variants use
+  `tile*4+variant`; sprite palettes start at `tileclut_size/1024`.
+* GRY sprite records are 10 bytes and G24 records are 12: width, height, delta
+  count, compression byte, u16 pixel count; G24 adds a u16 palette. The final
+  u32 is the byte offset into the 256-pixel-wide sprite store. Each delta adds
+  `{u16 size,u32 offset}`. Compressed sprites are rejected.
+* Delta streams repeat `{u16 relative_offset,u8 length,u8 pixels[length]}`.
+  Offsets use 256-pixel-wide page coordinates. Each stored delta is exported as
+  its own modified sprite, retaining transparent erasures.
+* Palette index zero is transparent; other indices are opaque. The palette's
+  unused fourth byte is not interpreted as ordinary straight alpha.
+
+## GTA2 PC STY
+
+Sources: DMA Design, [GBH Style Format 4.6](https://gtamp.com/gta2/gta2-style-sty-graphics-file-format/),
+sections 3–6 and 12; gta2_re at the revision above,
+`gtx_0x106C.cpp::LoadSty_5AB750` verifies retail **700**, rather than the older
+600 in the published spec. The independent viewer
+[izawartka/gta2-sty-viewer-js](https://github.com/izawartka/gta2-sty-viewer-js/tree/582f0eb68d495fdbf6838ec0312e2906d639d1f1)
+also accepts 700.
+
+* Header `GBST` + u16 version; chunks `{char id[4],u32 size,payload}` to EOF.
+  Chunk order is independent; unknown chunks are skipped; duplicates/truncation fail.
+* `TILE`: paged 64×64 indexed tiles. `PPAL`: BGRA palette columns as above.
+  `PALX`: 16384 u16 virtual-to-physical palette entries. `PALB`: eight u16 counts;
+  cumulative counts give the bases, so the first count is the sprite palette base.
+* `SPRX`: `{u32 byte_offset,u8 width,u8 height,u16 padding}` into `SPRG` pages.
+* `DELX`: `{u16 sprite,u8 count,u8 padding,u16 sizes[count]}`. `DELS` contains the
+  corresponding delta streams in sequence. Delta instructions use the layout above.
+
+The shared catalog loads a container-neutral collection. Style images use their own
+platform label and RGBA representation; RenderWare version is absent in the UI and
+empty in export metadata. PNG preview/export share the same decoding path. No DDS
+is fabricated for indexed styles. Tile variants, base sprites and individual stored
+deltas are included; sprite remaps, combined delta states and standalone graphics
+are explicitly not yet enumerated. New entries remain **FromSpec**.
+
+`tools/txd-ref/build.sh` also generates GRY/G24/STY fixtures and
+`style_reference.json`. Expected RGBA is generated separately in image order from
+semantic patterns, independently of the parser's offset/page calculations. Fixtures
+exercise tile strip crossings/padding, sprite page crossings, the second CLUT page,
+remaps, transparent pixels and delta erasures. Catalog-to-PNG round trips compare
+with preview pixels; truncated inputs and invalid sizes are rejected.
+
+### GTA1 / London PC FON images
+
+Source: [Daniel Marschall's firsthand FON analysis](https://misc.daniel-marschall.de/spiele/gta1/format_fon.html).
+Two header bytes specify the image count and shared height. Each image has one
+width byte followed by width × height row-major palette indices. A trailing
+256-entry RGB palette occupies 768 bytes. OpenGTA commit
+`1ae34ae3409d37bf484364d2a1db2e183a8527bd`, `read_fnt.cpp::getCharacterBitmap`
+and `read_gry.cpp::RGBPalette::apply`, establish index-zero transparency.
+
+There is no magic identifier; dispatch requires a `.fon` filename in a GTA1 or
+London catalog. Images retain numeric indices, without guessing character maps.
+Zero-width images are reported and skipped; malformed/truncated containers fail.
+Synthetic variable-width images, spacers, all palette indices, and truncated
+inputs are tested against a semantic pixel reference through the regular texture
+fixture generators. Catalog previews and PNG export use the same collection.
+
+### Identifying the 2D PC games
+
+Marker files (at least two thirds of a set must be present):
+* **GTA1** (Marschall retail inventory):
+  * `GTADATA/{NYC,MIAMI,SANB}.CMP`;
+  * `GTADATA/{ENGLISH.FXT, MISSION.INI, STYLE001.G24, STYLE001.GRY}`;
+  * the sample banks.
+* **London 1969** (in `GTADATA/UK`):
+  * `UK.CMP`, `ENGUK.FXT`, `MISSUK.INI`, `STYLE001.G24`;
+  * the `AUDIO` banks.
+* **London 1961** (in `GTADATA/UK`):
+  * `uke.cmp`, `enguke.fxt`, `missuke.ini`, `Sty001.g24`.
+  * It ships only `AUDIO/0e.wav` and requires the London CD, so it plays London 1969's banks. Those banks allow choosing 1961 but do not identify it.
+* **GTA2** (gta2_re strings):
+  * `gta2.exe`, `data/fstyle.sty`, `data/e.gxt`, `data/nyc.gci`;
+  * or `data/fstyle.sty` with its `data/audio/fstyle` bank.
+
+A folder that holds several games (London installed into a GTA1 `GTADATA`) is offered as a choice,
+and each chosen game becomes its own library entry. Loose files are identified by content:
+* GTA2: STY version 700, a `GBL` GXT header, or a `.SDT` of whole 24-byte records with its `.RAW`;
+* GTA1/London: GRY 325, G24 336, FON, the documented bank names.
+
+Loose GTA1/London files can belong to more than one of those games, so they need a choice.
+
+### Import roots and raw CD images
+
+The folder/file resolver accepts an installation root, a `GTADATA`/`DATA` or
+`AUDIO` subfolder, or a supported asset file. Selecting an asset retains its
+companion files by importing the enclosing installation/data directory. A wrapper
+folder containing exactly one recognized installation or CUE/data image resolves
+to it; multiple candidates require an explicit selection. Loose GTA1/London
+styles and fonts require a game choice because their format does not identify
+which game supplied them. STY requires the `GBST` header and version 700. No
+executable/version identity is inferred from the user's directory name.
+
+BIN reading implements 2352-byte Mode 1 (payload at 16) and Mode 2 Form 1
+(payload at 24), exposing 2048 logical bytes per sector. Source:
+[psx-spx CDROM Format, Sector Encoding](https://psx-spx.consoledev.net/cdromformat/#cdrom-sector-encoding).
+Each read validates synchronization and mode; Mode 2 also validates the duplicated
+subheader and rejects Form 2. Seeking and nested IMG offsets remain in logical
+bytes, so physical sector headers and trailers never enter decoded asset data.
+This reader does not correct ECC errors or decode CD-DA/XA Form 2 audio.
+
+CUE `FILE`, `TRACK`, and `INDEX` interpretation follows
+[libcdio's BIN/CUE driver](https://github.com/libcdio/libcdio/blob/master/lib/driver/image/bincue.c)
+(inspected 2026-10-21). One data track is supported: MODE1/2048, MODE1/2352 or
+MODE2/2352, backed by a BINARY file. INDEX 01 specifies the data start at 75 frames
+per second; INDEX 00 of a following track bounds the stored data extent. Generated
+PREGAP does not occupy source bytes. Audio-only, multiple-data-track and unsupported
+sector-mode CUEs report explicit errors. This is disc-container support, not a
+claim that PlayStation GTA asset decoders are implemented.
+
+# Console releases
+Console releases are looked up in the release index (`crates/ef-core/data/release_index.json`,
+see [Release index](#release-index)), generated from the redump and No-Intro DAT files in
+libretro-database (commit `12c21cf7`). The serials were cross-checked with the redump disc pages and
+the DuckStation game database. Serial variants in the DATs (`SLUS-00106CE`,
+`SLES-00032/COLL.`, `SLES-000322` for redump's `#2`) name the same boot executable and are reduced
+to the plain serial.
+
+* **PlayStation** (`ef_core::console`):
+  * `SYSTEM.CNF` `BOOT = cdrom:\SLUS_001.06;1`: the boot executable is the serial with `-` replaced by `_` and a dot after the third digit (psx-spx, "CDROM File Playstation EXE and SYSTEM.CNF"). A PS2 disc uses `BOOT2` instead.
+  * Releases: GTA1 SLUS-00106, SLES-00032, SLPS-01554, SLPM-87007, SLED-01295; London 1969 SLES-01714, SLUS-00846, SLES-03389; GTA2 SLUS-00789, SLES-01404, SLES-02453.
+* **Dreamcast:**
+  * `IP.BIN` is the system area of the high-density data track (ECMA-119 sectors 0-15).
+  * Fields (KallistiOS makeip `src/field.c`, commit `146b310e`): hardware ID `"SEGA SEGAKATANA "` at 0x00, product number at 0x40 (10 bytes), version at 0x4A, release date at 0x50 (`YYYYMMDD`), title at 0x80.
+  * The product number is the disc's *internal* serial, not the box serial. redump disc 19717 (Europe, T-40502D-18 and T-40502D-61) says "Internal Serial : T40502D 93", and its IP.BIN header dump shows `T40502D 93`, `V1.003`, `20000702`. Discs are therefore matched on product number, version and date as redump's disc pages show them (`tools/data/redump_dc_ipbin.tsv`):
+
+    | redump disc | Serials | IP.BIN product | Version | Date |
+    |---|---|---|---|---|
+    | 22119 | T-42102N (USA) | `T42102N` | V1.002 | 20000425 |
+    | 19717 | T-40502D-18, T-40502D-61 (Europe) | `T40502D 93` | V1.003 | 20000702 |
+    | 61592 | T-40502D-09 (France) | `T40502D 09` | V1.000 | 20000716 |
+* **Game Boy Color:**
+  * Pan Docs "The Cartridge Header": title at 0x134, CGB flag 0x80/0xC0 at 0x143, header checksum at 0x14D (`x = x - byte - 1` over 0x134-0x14C).
+  * Releases are identified by SHA-1 (No-Intro).
+* **Game Boy Advance:**
+  * GBATEK "GBA Cartridge Header": title at 0xA0, game code at 0xAC, fixed 0x96 at 0xB2, complement check at 0xBD (`-(sum of 0xA0..0xBC) - 0x19`).
+  * GTA Advance is BGTE (USA) and BGTP (Europe), and is identified by SHA-1.
+
+A console disc or ROM that is valid but not in the table can still be added as one of that
+platform's 2D games, by explicit choice.
+
+## GD-ROM images (`.gdi`)
+Source: AltoRetrato gditools3 `gditools3.py` (commit `79030a47`).
+* The first line is the track count. Each further line is `track lba type sector_size file offset`, where type 0 is audio and 4 is data. A quoted file name may contain spaces.
+* The high-density area starts at LBA 45000 (track 3). Its ISO 9660 records use absolute sector numbers, and a later data track (after an audio track) continues the same file system.
+* Raw 2352-byte sectors carry their 2048 bytes of user data at offset 16, as on CD images.
+* Track files are found case-insensitively.
+
+## POPStarter VCD (PlayStation discs for PS2 POPStarter)
+Source: krHACKen cue2pops v2.0 (2013-05-16), mirror makefu/cue2pops-linux commit `3f2be612`, `cue2pops.c`.
+* A 0x100000-byte header (`HEADERSIZE`, line 20), then the BIN unchanged: raw 2352-byte sectors of one `MODE2/2352` track (lines 659-737, 1088-1158). LBA *n* of the data track is at `0x100000 + n × 2352`; its user data starts 24 bytes into the sector (Mode 2 Form 1).
+* The header starts with the disc descriptors `[0]=0x41`, `[2]=0xA0`, `[8]=0x20` (CD-XA001), `[12]=0xA1`, `[22]=0xA2` (lines 590-649); 10-byte track entries follow from offset 30; the sector count is written twice as a little-endian u32 at 1032 and 1036 (lines 1072-1073). A file is read as a VCD only when all of these hold and the payload holds an ISO 9660 volume.
+* CD audio tracks are stored inline, but the header times depend on cue2pops' gap options and the pregap it may insert (lines 740-960), so Eyefinder does not map them back (`MISSING.md`).
+* Real file: the maintainer's GTA2 PS1 VCD has exactly these bytes, the track entry `41 00 01 00 00 00 00 00 02 00`, 232,342 sectors, and boots SLES-01404.
+
+## DiscJuggler CDI
+Sources: DeXT's cdirip parser in Flycast (commit `fa9d39a3`, `core/deps/chdpsr/cdipsr.cpp`, `core/imgread/cdi.cpp`), Redream (commit `ffb73022`, `src/guest/gdrom/cdi.c`, `disc.c`).
+* The last 8 bytes are `u32 version` (`0x80000004` V2, `0x80000005` V3, `0x80000006` V3.5) and `u32 header_offset`. The descriptor starts at `file_len − header_offset` for V3.5 and at `header_offset` otherwise.
+* Descriptor: `u16 sessions`; per session `u16 tracks`; per track (`CDI_read_track`) a u32 (non-zero: skip 8), the 10-byte start mark `00 00 01 00 00 00 FF FF FF FF` twice, skip 4, `u8` name length, skip name + 19, a u32 (`0x80000000`: skip 8), skip 2, `u32 pregap`, `u32 length`, skip 6, `u32 mode` (0 audio, 1 Mode 1, 2 Mode 2), skip 12, `u32 start_lba`, `u32 total_length`, skip 16, `u32` sector size code (0/1/2 = 2048/2336/2352), skip 29, and unless V2 skip 5 and a u32 (`0xFFFFFFFF`: skip 78). After each session skip 12 (13 unless V2).
+* Track data is stored back to back from offset 0, `total_length × sector_size` bytes each; index 1 starts `pregap × sector_size` into a track, at disc LBA `start_lba + pregap − 150` (Flycast reads ISO 9660 extents at LBA + 150). User data is 16 bytes into Mode 1/2352, 24 into Mode 2/2352 and 8 into Mode 2/2336 sectors (Redream `disc.c`).
+* The data track of the last session holds IP.BIN and the file system (Redream uses session 2 of a Dreamcast image). Audio tracks with 2352-byte sectors are listed as CD audio.
+* Real file: the maintainer's GTA2 Dreamcast CDI is V3.5 (`header_offset` 700), two sessions, data track at LBA 11700 in Mode 2/2336 sectors at file offset 1,408,800; 296 files.
+
+## CD audio tracks
+* The `AUDIO` tracks of a CUE sheet are listed in a virtual `CD Audio` folder of the disc (`Track NN.cdda`). INDEX semantics follow libcdio bincue:
+  * a track runs from INDEX 01 to the next track's INDEX 00 (or 01) in the same FILE, or to the FILE's end;
+  * the pregap is not included.
+* Samples are Red Book 16-bit stereo at 44100 Hz. They are read as little-endian, the order in which bchunk 1.2.0 copies BIN audio sectors unchanged into WAV files (it swaps bytes only on request, `-s`).
+* Fixture: a mixed-mode PlayStation BIN/CUE (Mode 2 data track, pregaps, two audio tracks), compared with ffmpeg's `s16le` decode.
+
+## Sega Dreamcast `.STR` (GTA2 Dreamcast)
+Source: vgmstream `src/meta/str_sega.c`, `src/coding/yamaha_decoder.c`, `src/base/decode.c` (commit `f7f76415`).
+* **Header:** `0x00` tracks (1-16), `0x04` sample rate, `0x08` bits per sample, `0x0C` interleave (multiple of 0x800), `0x10` blocks, `0x14` data size, `0x18` channels per track, `"\0Sega St"` at `0xD4`. The audio starts at `0x800`, and the file size must be `0x800 + blocks × channels × interleave`.
+* **4-bit audio** (vgmstream: "common [GTA2 (DC)]") is Yamaha AICA ADPCM:
+  * mono per channel, low nibble first, channels interleaved in `interleave`-byte blocks;
+  * the step starts at 0x7F;
+  * there are `data_size × 2 / channels` samples per channel.
+* **Expansion of each nibble:**
+  * `hist = hist·254/256` (C truncation);
+  * `delta = ((code&7)·2+1)·step >> 3`, capped at 32767, negated for `code&8`;
+  * `sample = clamp16(hist + delta)`;
+  * `step = step·{230,230,230,230,307,409,512,614}[code&7] >> 8`, clamped to 0x7F..0x6000.
+* Only single-track 4-bit streams are decoded. Fixture: a GD-ROM with random-data mono and stereo streams, whose output is bit-identical to vgmstream-cli.
+* Real file: all 16 `.STR` streams of the maintainer's GTA2 Europe disc (stereo, 22050 Hz) decode bit-identically to vgmstream-cli (2026-10-23).
+
+## Text: GTA1 / London `.FXT`
+Source: Daniel Marschall, "GTA 1 FXT Format" (misc.daniel-marschall.de/spiele/gta1/format_fxt.html; `GTA1/gta1_fxt_format.md` and `FxtToTxt` in danielmarschall/gta_lang_converter, Apache-2.0, commit `2a6e07e5`).
+* **Header mask:** the first 8 bytes are masked: `v = ((b − K[i]) mod 256) + 1`, with `K[0] = 100` and `K[i+1] = (2·K[i] − 1) mod 256` (`K = 64 C7 8D 19 31 61 C1 81`). They are then decoded like the other bytes. The mask turns file(1)'s FXT signature `BF F8 BD 49 62 BE` into `[1001]`, which the tests check.
+* **Codes:**
+  * `0x01` is a line break.
+  * `0x84 x` is `x + 0xBF` (London), and `0xC4 x` is `x + 0x3F` (GTA1).
+  * `0xC3 x` and `0x00 x y` mark characters the font lacks.
+  * `0xE0..0xFF b0 b1` is Shift-JIS `0xZFFE − 0x40·(0xFF − b0) − (0xFF − b1)`.
+  * Any other byte `b` is `b − 1`.
+* **Entries:** the text is Windows-1252, in `[key]text` entries that end with `[]`. Shift-JIS characters are shown as their codes.
+
+## Text: GTA2 `.GXT`
+Sources: gta2_re `text_0x14::Load_5B5E90`, `text_0x14.hpp`, `chunk.hpp` (commit `edb484d3`); Marschall's `GTA2/gta2_gxt_format.md`.
+* **Header:** 6 bytes, `"GBL" + language` and `u16` version 100.
+* **Chunks:** `{char type[4]; i32 size}`.
+  * `TKEY` holds 12-byte `{u32 offset; char key[8]}` records.
+  * `TDAT` holds NUL-terminated UTF-16LE strings.
+* **Prefix codes:** in the real western GXT files (PC 2004 `e.gxt`, `s.gxt`; Dreamcast `E.GXT`) every code unit of 0x100 or above is one of 0x2153-0x217A, at the start of a string. Nothing documents them, so they are shown as `{U+21XX}` (`MISSING.md`).
+* **Characters:** for E/F/G/I/S the code units are Unicode. gta2_re's `kExtendedWesternCharMap` maps each code point 0x80-0xFF to the glyph that Marschall's font chart lists for the same Latin-1 character (checked: 0 differences in 128 entries). Russian and Japanese code units above 0x7F are shown as `{U+XXXX}` (see `MISSING.md`).
+
+## Truevision TGA (GTA2 `data/frontend/*.tga`)
+Source: Truevision Inc., "Truevision TGA File Format Specification, Version 2.0" (1991).
+* **Header:** 18 bytes `{id length, colour-map type, image type, map first, map length, map entry bits, x, y, width, height, pixel depth, descriptor}`.
+* **Image types** 1/2/3 (colour-mapped / true-colour / grey) and 9/10/11 (the same, RLE). RLE packets have a top bit for a run and a 7-bit count minus one.
+* **Colours** are B, G, R(, A). 15/16-bit values are `ARRRRRGG GGGBBBBB`.
+* **Descriptor:** bits 0-3 are the alpha bits, bit 4 right-to-left, bit 5 top-to-bottom.
+* **Conversion:** without alpha bits a pixel is opaque. 5-bit channels follow the colour conversion rule above.
+* **Tests:**
+  * The fixtures Pillow 12.3.0 writes are compared with Pillow's decoding.
+  * Pillow expands 5-bit channels by shifting (`v << 3`) and handles the attribute bit its own way, so the 16-bit fixtures are compared with a reference computed from the specification instead.
+
+# Release index
+`crates/ef-core/data/release_index.json` (`ef_core::index`) lists every Grand Theft Auto game and
+every release, edition and version the cited sources name. It is generated by
+`tools/gen_release_index.py`; every row names its source, and the script names each source's pin:
+
+| Source | Pin | What it gives |
+|---|---|---|
+| libretro-database redump / No-Intro DATs (PS1, PS2, PSP, PSN, PS3, Xbox, Xbox 360, Dreamcast, GBC, GBA, DS) | commit `12c21cf7` | titles with region, languages, version and edition tags; serials; file sizes and SHA-1 |
+| redump IBM PC compatible DAT, Grand Theft Auto entries (`tools/data/redump_pc_gta.dat`) | "Datfile (58837) (2026-06-15 06-43-57)" | PC disc titles; track sizes and SHA-1 |
+| redump Dreamcast disc pages (`tools/data/redump_dc_ipbin.tsv`) | read 2026-10-23 | IP.BIN product number, version and date per disc |
+| English Wikipedia infoboxes | one revision per article, in the script | developer, publisher, release dates per platform and region |
+| blawar/titledb | commit `d4246904` | Nintendo Switch title IDs, release dates, update versions and dates |
+| SilentPatch / plugin-sdk (through `edition.rs`) | `74976544` / `15f15b60` | PC executable builds |
+
+"Advance GTA" (Japan, game code AG7J) is another game and is left out, as are cheat discs.
+Releases no reachable source lists are absent; the index's `gaps` list says which (PlayStation 4/5
+and Xbox One/Series discs, mobile version histories, GTA IV/V PC patch lists, digital PC store
+builds, Mac releases).

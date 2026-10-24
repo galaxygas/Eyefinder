@@ -37,7 +37,25 @@ fn kind_of(name: &str) -> &'static str {
         "mp3" => "MP3 audio",
         "adf" => "Vice City radio stream (obfuscated MP3)",
         "vb" => "PS2 audio stream (PS-ADPCM)",
-        "gxt" => "Game text table",
+        "gxt" => "Game text table (GTA2 GXT, or GTA III / Vice City GXT)",
+        "fxt" => "GTA1 / London text table (FXT)",
+        "sty" => "GTA2 style: tiles, sprites and palettes (STY)",
+        "gry" => "GTA1 / London 8-bit style (GRY)",
+        "g24" => "GTA1 / London 24-bit style (G24)",
+        "fon" => "GTA1 / London font images (FON)",
+        "sdt" => "Sample bank index (SDT)",
+        "raw" => "Sample bank data or raw graphics (RAW)",
+        "cmp" => "GTA1 / London compressed city map (CMP, not viewable yet)",
+        "gmp" => "GTA2 map (GMP, not viewable yet)",
+        "scr" => "GTA2 compiled mission script (not viewable)",
+        "seq" | "mmp" | "ini" => "Text or data file",
+        "smk" => "Smacker movie (not decoded)",
+        "bik" => "Bink movie (not decoded)",
+        "tga" => "Truevision TGA image",
+        "str" => "Sega Dreamcast audio stream (STR)",
+        "cdda" => "CD audio track (Red Book PCM)",
+        "gb" | "gbc" | "cgb" => "Game Boy Color cartridge ROM",
+        "gba" | "agb" => "Game Boy Advance cartridge ROM",
         "dat" | "ide" | "ipl" | "cfg" | "txt" => "Text or data file",
         "exe" => "Windows executable",
         "mpg" | "mpeg" => "MPEG movie",
@@ -157,6 +175,58 @@ impl EyefinderApp {
                     }
                 });
             });
+        // GTA1/London FXT and GTA2 GXT: show the decoded text.
+        let lower = name.to_ascii_lowercase();
+        if lower.ends_with(".fxt") || lower.ends_with(".gxt") {
+            if self.text_cache.as_ref().is_none_or(|(k, _)| k != path) {
+                let parsed = fs.read_all(&inner).map_err(|e| e.to_string()).and_then(|d| {
+                    ef_core::text::parse_named(&name, &d)
+                        .unwrap_or_else(|| Err("not a GTA1/London FXT or GTA2 GXT file".into()))
+                });
+                self.text_cache = Some((path.to_string(), parsed));
+            }
+            if let Some((_, parsed)) = &self.text_cache {
+                ui.add_space(12.0);
+                section_label(ui, p, "Text");
+                ui.add_space(4.0);
+                match parsed {
+                    Err(e) => {
+                        ui.label(RichText::new(e).color(p.muted));
+                    }
+                    Ok(t) => {
+                        for n in &t.notes {
+                            ui.label(RichText::new(format!("{} {n}", icon::INFO)).size(12.0).color(p.muted));
+                        }
+                        egui::Frame::new()
+                            .fill(p.panel)
+                            .stroke(Stroke::new(1.0, p.border))
+                            .corner_radius(CornerRadius::same(8))
+                            .inner_margin(Margin::same(12))
+                            .show(ui, |ui| {
+                                ui.set_width(ui.available_width());
+                                egui::ScrollArea::vertical().id_salt("text-entries").max_height(320.0).show_rows(
+                                    ui,
+                                    18.0,
+                                    t.entries.len(),
+                                    |ui, rows| {
+                                        for (k, v) in &t.entries[rows] {
+                                            ui.horizontal(|ui| {
+                                                ui.add_sized(
+                                                    vec2(90.0, 16.0),
+                                                    egui::Label::new(
+                                                        RichText::new(k).monospace().size(12.0).color(p.accent_text),
+                                                    ),
+                                                );
+                                                ui.label(RichText::new(v.replace('\n', " · ")).size(12.5));
+                                            });
+                                        }
+                                    },
+                                );
+                            });
+                    }
+                }
+            }
+        }
         ui.add_space(12.0);
         section_label(ui, p, "First bytes");
         ui.add_space(4.0);

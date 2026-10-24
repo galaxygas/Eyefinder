@@ -7,18 +7,18 @@
 //!   reads it), and each game's `steamapps/appmanifest_<id>.acf` `installdir`. App IDs and
 //!   install folder names from Steam's app info (api.steamcmd.net): 12100 GTA III, 12110 Vice
 //!   City, 12120 San Andreas, 12230 GTA III (Mac), 12250 San Andreas (Mac).
-//! * Retail discs and the Rockstar Games Launcher (Windows): the install paths the setup
-//!   programs store in the registry (`Rockstar Games\GTA San Andreas\Installation\ExePath`,
-//!   `Rockstar Games\GTAIII\Path`), and every folder directly inside `Rockstar Games` under
-//!   Program Files that contains a game executable. Exact folder names are not assumed.
+//! * Rockstar Games Launcher and retail setups (Windows): the registry entries described in
+//!   [`crate::store`], and every folder directly inside `Rockstar Games` under Program Files that
+//!   passes detection. Exact folder names are not assumed.
 //!
-//! Every candidate is confirmed with [`crate::detect`] before it is offered.
+//! Every candidate is confirmed with [`crate::detect`] before it is offered, and labelled with
+//! the store it belongs to ([`crate::store::identify`]), which is separate from the executable
+//! build ([`crate::edition`]).
 
 use std::path::{Path, PathBuf};
-use std::sync::Arc;
 
-use crate::edition::exe_names;
-use crate::{Game, GameInstall, detect, vfs::FolderVfs};
+use crate::store::Store;
+use crate::{Game, GameInstall, vfs::FolderVfs};
 
 /// Steam app IDs and their `installdir` (api.steamcmd.net app info).
 pub const STEAM_APPS: &[(u32, Game, &str)] = &[
@@ -34,6 +34,8 @@ pub struct Found {
     pub path: PathBuf,
     /// Where it was found, e.g. "Steam library D:\SteamLibrary".
     pub source: String,
+    /// The store the copy belongs to.
+    pub store: Store,
     /// The detected game, or why the folder was not recognised.
     pub result: Result<GameInstall, String>,
 }
@@ -216,32 +218,27 @@ pub fn steam_candidates(roots: &[PathBuf]) -> Vec<(PathBuf, String)> {
     out
 }
 
-/// Folders directly inside `base` that contain one of the games' executables.
-pub fn folders_with_exe(base: &Path) -> Vec<PathBuf> {
+/// Folders directly inside `base` that hold a recognised game.
+pub fn recognised_folders(base: &Path) -> Vec<PathBuf> {
     let Ok(rd) = std::fs::read_dir(base) else { return Vec::new() };
-    let mut out = Vec::new();
-    for e in rd.flatten() {
-        let p = e.path();
-        if !p.is_dir() {
-            continue;
-        }
-        let vfs = FolderVfs::new(&p);
-        let has = [Game::Gta3, Game::ViceCity, Game::SanAndreas]
-            .iter()
-            .any(|g| exe_names(*g).iter().any(|n| crate::vfs::Vfs::exists(&vfs, n)));
-        if has {
-            out.push(p);
-        }
-    }
+    let mut out: Vec<PathBuf> = rd
+        .flatten()
+        .map(|e| e.path())
+        .filter(|p| p.is_dir() && !crate::possible_choices(&FolderVfs::new(p)).is_empty())
+        .collect();
     out.sort();
     out
 }
 
 /// Every candidate on this computer, before detection.
 pub fn candidates() -> Vec<(PathBuf, String)> {
-    let v = steam_candidates(&steam_roots());
+    let mut v = steam_candidates(&steam_roots());
+    v.extend(
+        crate::store::rgl_installs().into_iter().map(|(g, p)| (p, format!("Rockstar Games Launcher ({})", g.short()))),
+    );
+    v.extend(crate::store::retail_installs());
     #[cfg(windows)]
-    let v = [v, windows::rockstar_candidates()].concat();
+    v.extend(windows::program_files_candidates());
     v
 }
 
@@ -251,12 +248,13 @@ pub fn scan() -> Vec<Found> {
     let mut seen: Vec<PathBuf> = Vec::new();
     for (path, source) in candidates() {
         let key = std::fs::canonicalize(&path).unwrap_or_else(|_| path.clone());
-        if seen.contains(&key) {
+        if seen.contains(&key) || !path.is_dir() {
             continue;
         }
         seen.push(key);
-        let result = detect(Arc::new(FolderVfs::new(&path))).map_err(|e| e.to_string());
-        out.push(Found { path, source, result });
+        let result = crate::open_with(&path, None).map_err(|e| e.to_string());
+        let store = result.as_ref().map(|i| i.store.clone()).unwrap_or_else(|_| crate::store::identify(&path).0);
+        out.push(Found { path, source, store, result });
     }
     out
 }
@@ -265,21 +263,9 @@ pub fn scan() -> Vec<Found> {
 mod windows {
     use std::path::PathBuf;
 
-    use winreg::RegKey;
-    use winreg::enums::{HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, KEY_READ, KEY_WOW64_32KEY, KEY_WOW64_64KEY};
+    use winreg::enums::{HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE};
 
-    fn read(root: winreg::HKEY, path: &str, value: &str) -> Vec<String> {
-        let mut v = Vec::new();
-        for view in [KEY_WOW64_32KEY, KEY_WOW64_64KEY] {
-            if let Ok(k) = RegKey::predef(root).open_subkey_with_flags(path, KEY_READ | view)
-                && let Ok(s) = k.get_value::<String, _>(value)
-                && !v.contains(&s)
-            {
-                v.push(s);
-            }
-        }
-        v
-    }
+    use crate::store::windows_read as read;
 
     pub fn steam_roots() -> Vec<PathBuf> {
         let mut v: Vec<PathBuf> = read(HKEY_CURRENT_USER, r"Software\Valve\Steam", "SteamPath")
@@ -290,21 +276,12 @@ mod windows {
         v
     }
 
-    pub fn rockstar_candidates() -> Vec<(PathBuf, String)> {
+    pub fn program_files_candidates() -> Vec<(PathBuf, String)> {
         let mut out = Vec::new();
-        for s in read(HKEY_LOCAL_MACHINE, r"SOFTWARE\Rockstar Games\GTA San Andreas\Installation", "ExePath") {
-            let exe = PathBuf::from(s.trim().trim_matches('"'));
-            if let Some(dir) = exe.parent() {
-                out.push((dir.to_path_buf(), "registry (San Andreas setup)".to_string()));
-            }
-        }
-        for s in read(HKEY_LOCAL_MACHINE, r"SOFTWARE\Rockstar Games\GTAIII", "Path") {
-            out.push((PathBuf::from(s.trim().trim_matches('"')), "registry (GTA III setup)".to_string()));
-        }
         for var in ["ProgramFiles", "ProgramFiles(x86)", "ProgramW6432"] {
             if let Some(pf) = std::env::var_os(var) {
                 let base = PathBuf::from(pf).join("Rockstar Games");
-                for p in super::folders_with_exe(&base) {
+                for p in super::recognised_folders(&base) {
                     out.push((p, format!("{}", base.display())));
                 }
             }
@@ -315,6 +292,8 @@ mod windows {
 
 #[cfg(test)]
 mod tests {
+    use std::sync::Arc;
+
     use super::*;
 
     #[test]
@@ -361,7 +340,7 @@ mod tests {
         let c = steam_candidates(std::slice::from_ref(&root));
         assert_eq!(c.len(), 1, "{c:?}");
         assert!(c[0].0.ends_with("Custom Dir"));
-        let g = detect(Arc::new(FolderVfs::new(&c[0].0))).unwrap();
+        let g = crate::detect(Arc::new(FolderVfs::new(&c[0].0))).unwrap();
         assert_eq!(g.game, Game::ViceCity);
         std::fs::remove_dir_all(root).ok();
     }

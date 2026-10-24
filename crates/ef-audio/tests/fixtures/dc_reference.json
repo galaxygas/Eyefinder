@@ -1,0 +1,15 @@
+{
+  "_provenance": "vgmstream-cli commit f7f764155b227f683adbab25402fe8f2be0b2ec2: SHA-256 of the WAV data chunk",
+  "MONO.STR": {
+    "sha256": "5a30dacfb1beae7965cac3f8920e5be2f8b0d4f65cec1d0d07a22410e4903374",
+    "frames": 11706,
+    "channels": 1,
+    "rate": 22050
+  },
+  "STEREO.STR": {
+    "sha256": "d96b9528fcd617933f37b7de0a057e22461cead780f5a3e179d2cf5e080ab636",
+    "frames": 8192,
+    "channels": 2,
+    "rate": 44100
+  }
+}

@@ -12,8 +12,9 @@ use ef_core::vfs::{Vfs, walk_files};
 use ef_core::{GameInstall, SupportLevel};
 
 use crate::Error;
+use crate::collection::{self, TextureCollection};
 use crate::raster::NativePlatform;
-use crate::txd::{self, Txd};
+use crate::txd;
 
 /// Where a texture dictionary lives.
 #[derive(Debug, Clone)]
@@ -28,6 +29,7 @@ pub struct TxdSource {
     /// Display group: the folder for loose files, the archive for archive entries.
     pub group: String,
     pub rw_version: u32,
+    pub container: &'static str,
 }
 
 #[derive(Debug, Clone)]
@@ -65,10 +67,10 @@ impl TexCatalog {
         }
     }
     /// Reads and parses the dictionary of `source` again (for previews and export).
-    pub fn load(&self, install: &GameInstall, source: usize) -> Result<Txd, Error> {
+    pub fn load(&self, install: &GameInstall, source: usize) -> Result<TextureCollection, Error> {
         let s = &self.sources[source];
         let bytes = self.vfs_of(install, s).read_all(&s.inner)?;
-        txd::parse(&bytes)
+        collection::parse_named(&bytes, &s.inner)
     }
     /// Number of textures per group, in display order.
     pub fn groups(&self) -> Vec<(String, usize)> {
@@ -94,7 +96,20 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
     let mut candidates: Vec<(Option<usize>, String, String, u64, String)> = Vec::new();
     for (path, e) in walk_files(vfs.as_ref(), "") {
         let lower = path.to_ascii_lowercase();
-        if lower.ends_with(".txd") {
+        match install.game {
+            ef_core::Game::Gta1 if lower.starts_with("gtadata/uk/") => continue,
+            ef_core::Game::London1969 | ef_core::Game::London1961
+                if vfs.dir_exists("GTADATA/UK") && !lower.starts_with("gtadata/uk/") =>
+            {
+                continue;
+            }
+            _ => {}
+        }
+        if (install.game == ef_core::Game::Gta2 && (lower.ends_with(".sty") || lower.ends_with(".tga")))
+            || lower.ends_with(".txd")
+            || (matches!(install.game, ef_core::Game::Gta1 | ef_core::Game::London1969 | ef_core::Game::London1961)
+                && (lower.ends_with(".gry") || lower.ends_with(".g24") || lower.ends_with(".fon")))
+        {
             candidates.push((None, path.clone(), path.clone(), e.size, parent(&path)));
         } else if is_img_name(&path) {
             match ImgVfs::open(vfs, &path) {
@@ -137,11 +152,17 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
                 continue;
             }
         };
-        if !txd::looks_like_txd(&data) {
+        let named = inner.to_ascii_lowercase();
+        if !named.ends_with(".fon")
+            && !named.ends_with(".tga")
+            && !txd::looks_like_txd(&data)
+            && !crate::style::looks_like_style(&data)
+            && !data.starts_with(b"GBST")
+        {
             unreadable += 1;
             continue;
         }
-        let t = match txd::parse(&data) {
+        let t = match collection::parse_named(&data, &inner) {
             Ok(t) => t,
             Err(e) => {
                 cat.notices.push(format!("{path}: {e}"));
@@ -152,7 +173,7 @@ pub fn build(install: &GameInstall, progress: Progress, cancel: &AtomicBool) -> 
             cat.notices.push(format!("{path}: {p}"));
         }
         let source = cat.sources.len();
-        cat.sources.push(TxdSource { path, archive, inner, bytes, group, rw_version: t.rw_version });
+        cat.sources.push(TxdSource { path, archive, inner, bytes, group, rw_version: t.rw_version, container: t.kind });
         for (index, tex) in t.textures.iter().enumerate() {
             let r = &tex.raster;
             let (support, why) = r.support();

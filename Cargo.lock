@@ -591,7 +591,7 @@ dependencies = [
 
 [[package]]
 name = "ef-audio"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ef-core",
  "serde",
@@ -603,22 +603,25 @@ dependencies = [
 
 [[package]]
 name = "ef-core"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "dirs",
  "serde",
+ "serde_json",
+ "sha1",
  "thiserror 2.0.21",
  "winreg",
 ]
 
 [[package]]
 name = "ef-texture"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ef-core",
  "png",
  "serde",
  "serde_json",
+ "sha2",
  "thiserror 2.0.21",
 ]
 
@@ -871,7 +874,7 @@ dependencies = [
 
 [[package]]
 name = "eyefinder"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "crossbeam-channel",
  "dirs",
@@ -890,7 +893,7 @@ dependencies = [
 
 [[package]]
 name = "eyefinder-cli"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ef-audio",
  "ef-core",
@@ -2503,6 +2506,17 @@ dependencies = [
  "serde",
  "serde_core",
  "zmij",
+]
+
+[[package]]
+name = "sha1"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "aacc4cc499359472b4abe1bf11d0b12e688af9a805fa5e3016f9a386dc2d0214"
+dependencies = [
+ "cfg-if",
+ "cpufeatures",
+ "digest",
 ]
 
 [[package]]

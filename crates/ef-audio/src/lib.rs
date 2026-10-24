@@ -5,6 +5,7 @@
 
 pub mod catalog;
 pub mod codec;
+pub mod dcstr;
 pub mod export;
 pub mod movie;
 pub mod open;
@@ -45,3 +46,5 @@ impl Error {
 }
 
 pub type Result<T> = std::result::Result<T, Error>;
+
+mod legacy;

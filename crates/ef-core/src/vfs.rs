@@ -23,10 +23,18 @@ pub struct DirEntry {
 
 /// Where the bytes of a file live: a byte range of a host file.
 #[derive(Debug, Clone)]
+pub struct SectorLayout {
+    pub stride: u64,
+    pub payload: u64,
+    pub track_offset: u64,
+}
+
+#[derive(Debug, Clone)]
 pub struct FileLocation {
     pub host: PathBuf,
     pub offset: u64,
     pub len: u64,
+    pub sectors: Option<SectorLayout>,
 }
 
 pub trait Vfs: Send + Sync {
@@ -52,6 +60,21 @@ pub trait Vfs: Send + Sync {
             io::Error::new(io::ErrorKind::NotFound, format!("{path} not found in {}", self.describe()))
         })?;
         RangeFile::open(&loc)
+    }
+    /// The 32 KiB system area of a disc (ECMA-119 6.2.1: logical sectors 0-15), which holds
+    /// `IP.BIN` on a Dreamcast disc. `None` for folders and single files.
+    fn system_area(&self) -> Option<Vec<u8>> {
+        None
+    }
+    /// The image container wrapping the disc's sectors, when it says something about the copy,
+    /// e.g. "DiscJuggler CDI V3.5, 2 session(s), data track at LBA 11702".
+    fn container(&self) -> Option<String> {
+        None
+    }
+    /// The tracks of a BIN/CUE disc image as dumped (see [`crate::cue::DumpTrack`]); empty for
+    /// anything else.
+    fn dump_tracks(&self) -> Vec<crate::cue::DumpTrack> {
+        Vec::new()
     }
     /// Reads a whole (small) file.
     fn read_all(&self, path: &str) -> io::Result<Vec<u8>> {
@@ -99,7 +122,32 @@ impl Read for RangeFile {
         if left == 0 {
             return Ok(0);
         }
-        let n = (buf.len() as u64).min(left) as usize;
+        let mut n = (buf.len() as u64).min(left) as usize;
+        if let Some(layout) = &self.loc.sectors {
+            let logical = self.start + self.pos;
+            let within = logical % 2048;
+            n = n.min((2048 - within) as usize);
+            let physical = layout.track_offset + (logical / 2048) * layout.stride;
+            self.file.seek(SeekFrom::Start(physical))?;
+            if layout.stride == 2352 {
+                let mut header = [0; 24];
+                self.file.read_exact(&mut header)?;
+                let sync = [0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0];
+                let valid = header[..12] == sync
+                    && match layout.payload {
+                        16 => header[15] == 1,
+                        24 => header[15] == 2 && header[16..20] == header[20..24] && header[18] & 0x20 == 0,
+                        _ => false,
+                    };
+                if !valid {
+                    return Err(io::Error::new(
+                        io::ErrorKind::InvalidData,
+                        "not a Mode 1 or Mode 2 Form 1 data sector (CD audio/XA Form 2 are not decoded by the filesystem reader)",
+                    ));
+                }
+            }
+            self.file.seek(SeekFrom::Start(physical + layout.payload + within))?;
+        }
         let got = self.file.read(&mut buf[..n])?;
         self.pos += got as u64;
         Ok(got)
@@ -195,7 +243,7 @@ impl Vfs for FolderVfs {
         if !md.is_file() {
             return None;
         }
-        Some(FileLocation { host: p, offset: 0, len: md.len() })
+        Some(FileLocation { host: p, offset: 0, len: md.len(), sectors: None })
     }
 }
 
@@ -211,9 +259,20 @@ struct IsoNode {
     size: u64,
 }
 
-/// A disc image in plain ISO 9660 form (`.iso`). Raw 2352-byte CD images are not supported.
+/// ISO 9660 filesystem in a plain image or a raw CD data track.
 pub struct IsoVfs {
     image: PathBuf,
+    backing: FileLocation,
+    /// Disc LBA of the first sector of `backing` (45000 for a GD-ROM high-density track).
+    base_lba: u64,
+    /// Further data tracks holding the same filesystem: `(first LBA, track)` (GD-ROM).
+    extra: Vec<(u64, FileLocation)>,
+    /// Red Book audio tracks of a CUE sheet, listed under [`CD_AUDIO_DIR`].
+    audio: Vec<crate::cue::AudioTrack>,
+    /// The wrapping container, when it is not a plain ISO / BIN/CUE / GDI (see [`crate::discimg`]).
+    container: Option<String>,
+    /// The tracks of a BIN/CUE image as dumped.
+    dump: Vec<crate::cue::DumpTrack>,
     block: u64,
     root: IsoNode,
     dirs: Mutex<HashMap<u32, Arc<Vec<IsoNode>>>>,
@@ -225,12 +284,67 @@ pub enum IsoError {
     Io(#[from] io::Error),
     #[error("not an ISO 9660 image (no primary volume descriptor found)")]
     NotIso,
+    #[error("{0}")]
+    Unsupported(String),
 }
 
 impl IsoVfs {
     pub fn open(image: impl Into<PathBuf>) -> Result<Self, IsoError> {
         let image = image.into();
-        let mut f = File::open(&image)?;
+        if image.extension().is_some_and(|e| e.eq_ignore_ascii_case("cue")) {
+            let (host, layout, length) = crate::cue::data_track(&image)?;
+            let audio = crate::cue::audio_tracks(&image).unwrap_or_default();
+            let dump = crate::cue::dump_tracks(&image).unwrap_or_default();
+            let mut v =
+                Self::from_backing(image, FileLocation { host, offset: 0, len: length, sectors: Some(layout) })?;
+            v.audio = audio;
+            v.dump = dump;
+            return Ok(v);
+        }
+        let ext = image.extension().map(|e| e.to_string_lossy().to_ascii_lowercase());
+        if matches!(ext.as_deref(), Some("vcd" | "cdi")) {
+            let t =
+                if ext.as_deref() == Some("vcd") { crate::discimg::vcd(&image)? } else { crate::discimg::cdi(&image)? };
+            let (base, data) = t.data;
+            let mut v = Self::from_backing_at(image, data, base)?;
+            v.audio = t.audio;
+            v.container = Some(t.container);
+            return Ok(v);
+        }
+        if image.extension().is_some_and(|e| e.eq_ignore_ascii_case("gdi")) {
+            let mut tracks = crate::gdi::data_tracks(&image)?.into_iter();
+            let (base, first) =
+                tracks.next().ok_or_else(|| IsoError::Unsupported("GDI: no high-density data track".into()))?;
+            let mut v = Self::from_backing_at(image, first, base)?;
+            v.extra = tracks.collect();
+            return Ok(v);
+        }
+        let length = std::fs::metadata(&image)?.len();
+        let plain = FileLocation { host: image.clone(), offset: 0, len: length, sectors: None };
+        if let Ok(v) = Self::from_backing(image.clone(), plain) {
+            return Ok(v);
+        }
+        for payload in [16, 24] {
+            let backing = FileLocation {
+                host: image.clone(),
+                offset: 0,
+                len: length / 2352 * 2048,
+                sectors: Some(SectorLayout { stride: 2352, payload, track_offset: 0 }),
+            };
+            if let Ok(v) = Self::from_backing(image.clone(), backing) {
+                return Ok(v);
+            }
+        }
+        Err(IsoError::NotIso)
+    }
+
+    fn from_backing(image: PathBuf, backing: FileLocation) -> Result<Self, IsoError> {
+        Self::from_backing_at(image, backing, 0)
+    }
+
+    /// `backing` starts at disc sector `base_lba`; directory records hold absolute sector numbers.
+    fn from_backing_at(image: PathBuf, backing: FileLocation, base_lba: u64) -> Result<Self, IsoError> {
+        let mut f = RangeFile::open(&backing)?;
         // Volume descriptors start at sector 16 (ECMA-119 8.1); type 255 terminates the set.
         for sector in 16u64..64 {
             let mut vd = [0u8; 2048];
@@ -247,21 +361,50 @@ impl IsoVfs {
             if vd[0] == 1 {
                 let block = u16::from_le_bytes([vd[128], vd[129]]) as u64;
                 let root = parse_record(&vd[156..190]).ok_or(IsoError::NotIso)?;
-                if block == 0 {
+                let rel = (root.lba as u64).checked_sub(base_lba).ok_or(IsoError::NotIso)?;
+                if block != 2048 || rel * block + root.size > backing.len {
                     return Err(IsoError::NotIso);
                 }
-                return Ok(Self { image, block, root, dirs: Mutex::new(HashMap::new()) });
+                return Ok(Self {
+                    image,
+                    backing,
+                    base_lba,
+                    extra: Vec::new(),
+                    audio: Vec::new(),
+                    container: None,
+                    dump: Vec::new(),
+                    block,
+                    root,
+                    dirs: Mutex::new(HashMap::new()),
+                });
             }
         }
         Err(IsoError::NotIso)
+    }
+
+    /// The byte range of `size` bytes starting at disc sector `lba`, in whichever track holds it.
+    fn extent(&self, lba: u32, size: u64) -> Option<FileLocation> {
+        let tracks = std::iter::once((self.base_lba, &self.backing)).chain(self.extra.iter().map(|(b, t)| (*b, t)));
+        for (base, t) in tracks {
+            let Some(rel) = (lba as u64).checked_sub(base) else { continue };
+            let offset = rel * self.block;
+            if offset + size <= t.len {
+                return Some(FileLocation {
+                    host: t.host.clone(),
+                    offset: t.offset + offset,
+                    len: size,
+                    sectors: t.sectors.clone(),
+                });
+            }
+        }
+        None
     }
 
     fn read_dir(&self, node: &IsoNode) -> Option<Arc<Vec<IsoNode>>> {
         if let Some(d) = self.dirs.lock().unwrap().get(&node.lba) {
             return Some(d.clone());
         }
-        let mut f = File::open(&self.image).ok()?;
-        f.seek(SeekFrom::Start(node.lba as u64 * self.block)).ok()?;
+        let mut f = RangeFile::open(&self.extent(node.lba, node.size)?).ok()?;
         let mut data = vec![0u8; node.size as usize];
         f.read_exact(&mut data).ok()?;
         let mut out = Vec::new();
@@ -318,10 +461,23 @@ fn parse_record(r: &[u8]) -> Option<IsoNode> {
     if let Some(i) = name.find(';') {
         name.truncate(i); // version number, e.g. ";1"
     }
-    if name.ends_with('.') && !(flags & 2 != 0) {
+    if name.ends_with('.') && flags & 2 == 0 {
         name.pop(); // a file without extension is recorded as "NAME."
     }
     Some(IsoNode { name, is_dir: flags & 2 != 0, lba, size })
+}
+
+/// The virtual folder of a disc image that holds its CD audio tracks, one `Track NN.cdda` file
+/// (raw 2352-byte Red Book sectors) per track.
+pub const CD_AUDIO_DIR: &str = "CD Audio";
+
+impl IsoVfs {
+    fn audio_entries(&self) -> Vec<DirEntry> {
+        self.audio
+            .iter()
+            .map(|t| DirEntry { name: format!("Track {:02}.cdda", t.number), is_dir: false, size: t.bytes })
+            .collect()
+    }
 }
 
 impl Vfs for IsoVfs {
@@ -329,6 +485,20 @@ impl Vfs for IsoVfs {
         self.image.display().to_string()
     }
     fn list(&self, dir: &str) -> Option<Vec<DirEntry>> {
+        if !self.audio.is_empty() {
+            let mut parts = split(dir);
+            match (parts.next(), parts.next()) {
+                (Some(d), None) if d.eq_ignore_ascii_case(CD_AUDIO_DIR) => return Some(self.audio_entries()),
+                (None, _) => {
+                    let mut v = self.find("").and_then(|n| self.read_dir(&n)).map_or_else(Vec::new, |d| {
+                        d.iter().map(|e| DirEntry { name: e.name.clone(), is_dir: e.is_dir, size: e.size }).collect()
+                    });
+                    v.push(DirEntry { name: CD_AUDIO_DIR.into(), is_dir: true, size: 0 });
+                    return Some(v);
+                }
+                _ => {}
+            }
+        }
         let n = self.find(dir)?;
         if !n.is_dir {
             return None;
@@ -341,12 +511,85 @@ impl Vfs for IsoVfs {
         )
     }
     fn locate(&self, path: &str) -> Option<FileLocation> {
+        let mut parts = split(path);
+        if let (Some(d), Some(f), None) = (parts.next(), parts.next(), parts.next())
+            && d.eq_ignore_ascii_case(CD_AUDIO_DIR)
+        {
+            let i = self.audio_entries().iter().position(|e| e.name.eq_ignore_ascii_case(f))?;
+            let t = &self.audio[i];
+            return Some(FileLocation { host: t.file.clone(), offset: t.offset, len: t.bytes, sectors: None });
+        }
         let n = self.find(path)?;
         if n.is_dir {
             return None;
         }
-        Some(FileLocation { host: self.image.clone(), offset: n.lba as u64 * self.block, len: n.size })
+        self.extent(n.lba, n.size)
     }
+    fn container(&self) -> Option<String> {
+        self.container.clone()
+    }
+    fn dump_tracks(&self) -> Vec<crate::cue::DumpTrack> {
+        self.dump.clone()
+    }
+    fn system_area(&self) -> Option<Vec<u8>> {
+        let mut f = RangeFile::open(&FileLocation { len: 16 * 2048, ..self.backing.clone() }).ok()?;
+        let mut v = vec![0; 16 * 2048];
+        f.read_exact(&mut v).ok()?;
+        Some(v)
+    }
+}
+
+/// A single file (a cartridge ROM image) as a one-entry file system.
+pub struct SingleFileVfs {
+    path: PathBuf,
+}
+
+impl SingleFileVfs {
+    pub fn new(path: impl Into<PathBuf>) -> Self {
+        Self { path: path.into() }
+    }
+    fn name(&self) -> String {
+        self.path.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default()
+    }
+}
+
+impl Vfs for SingleFileVfs {
+    fn describe(&self) -> String {
+        self.path.display().to_string()
+    }
+    fn list(&self, dir: &str) -> Option<Vec<DirEntry>> {
+        if split(dir).next().is_some() {
+            return None;
+        }
+        let size = std::fs::metadata(&self.path).ok()?.len();
+        Some(vec![DirEntry { name: self.name(), is_dir: false, size }])
+    }
+    fn locate(&self, path: &str) -> Option<FileLocation> {
+        let mut parts = split(path);
+        let (Some(only), None) = (parts.next(), parts.next()) else { return None };
+        if !only.eq_ignore_ascii_case(&self.name()) {
+            return None;
+        }
+        let len = std::fs::metadata(&self.path).ok()?.len();
+        Some(FileLocation { host: self.path.clone(), offset: 0, len, sectors: None })
+    }
+}
+
+/// `name` in `dir`, matched case-insensitively when the exact spelling does not exist (CUE and
+/// GDI sheets written on Windows name their track files in any case).
+pub fn sibling(dir: &Path, name: &str) -> PathBuf {
+    let exact = dir.join(name);
+    if exact.exists() {
+        return exact;
+    }
+    let mut cur = dir.to_path_buf();
+    for comp in split(name) {
+        let found = std::fs::read_dir(&cur).ok().and_then(|rd| {
+            rd.flatten().map(|e| e.file_name()).find(|n| n.to_string_lossy().eq_ignore_ascii_case(comp))
+        });
+        cur = cur.join(found.map(PathBuf::from).unwrap_or_else(|| PathBuf::from(comp)));
+    }
+    cur
 }
 
 /// Every file below `dir` ("" = root) as `(path, entry)`, directories first visited in name order.
@@ -365,9 +608,22 @@ pub fn walk_files(vfs: &dyn Vfs, dir: &str) -> Vec<(String, DirEntry)> {
     out
 }
 
-/// Opens a folder or a disc image.
+/// Cartridge ROM file extensions (Game Boy / Game Boy Color / Game Boy Advance).
+pub const ROM_EXTENSIONS: &[&str] = &["gb", "gbc", "cgb", "gba", "agb"];
+
+pub fn is_rom(path: &Path) -> bool {
+    path.extension().is_some_and(|e| ROM_EXTENSIONS.iter().any(|r| e.eq_ignore_ascii_case(r)))
+}
+
+/// Opens a folder, a disc image or a cartridge ROM.
 pub fn open_path(path: &Path) -> Result<Arc<dyn Vfs>, IsoError> {
-    if path.is_dir() { Ok(Arc::new(FolderVfs::new(path))) } else { Ok(Arc::new(IsoVfs::open(path)?)) }
+    if path.is_dir() {
+        Ok(Arc::new(FolderVfs::new(path)))
+    } else if is_rom(path) {
+        Ok(Arc::new(SingleFileVfs::new(path)))
+    } else {
+        Ok(Arc::new(IsoVfs::open(path)?))
+    }
 }
 
 #[cfg(test)]
@@ -409,6 +665,61 @@ mod tests {
         img[20 * 2048..20 * 2048 + 4].copy_from_slice(b"abcd");
         img[21 * 2048..21 * 2048 + 5].copy_from_slice(b"BOOT2");
         std::fs::write(path, img).unwrap();
+    }
+
+    #[test]
+    fn raw_cd_and_cue_preserve_file_bytes_and_cross_sector_seeks() {
+        let dir = std::env::temp_dir().join(format!("ef-raw-cd-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let iso = dir.join("plain.iso");
+        build_iso(&iso);
+        let plain = std::fs::read(&iso).unwrap();
+        for (mode, payload) in [(1, 16), (2, 24)] {
+            let mut raw = Vec::new();
+            for sector in plain.as_chunks::<2048>().0 {
+                let mut block = vec![0; 2352];
+                block[1..11].fill(255);
+                block[15] = mode;
+                block[payload..payload + 2048].copy_from_slice(sector);
+                raw.extend(block);
+            }
+            let bin = dir.join("disc track.bin");
+            std::fs::write(&bin, &raw).unwrap();
+            let v = IsoVfs::open(&bin).unwrap();
+            assert_eq!(v.read_all("audio/head.vb").unwrap(), b"abcd");
+            let loc = FileLocation {
+                host: bin.clone(),
+                offset: 2000,
+                len: 4000,
+                sectors: Some(SectorLayout { stride: 2352, payload: payload as u64, track_offset: 0 }),
+            };
+            let mut f = RangeFile::open(&loc).unwrap();
+            let mut bytes = Vec::new();
+            f.read_to_end(&mut bytes).unwrap();
+            assert_eq!(bytes, plain[2000..6000]);
+            f.seek(SeekFrom::Start(2047)).unwrap();
+            let mut bytes = [0; 10];
+            f.read_exact(&mut bytes).unwrap();
+            assert_eq!(bytes, plain[4047..4057]);
+            let mut with_gap = vec![0; 150 * 2352];
+            with_gap.extend(&raw);
+            std::fs::write(&bin, with_gap).unwrap();
+            let cue = dir.join("disc.cue");
+            std::fs::write(&cue, format!("FILE \"disc track.bin\" BINARY\n  TRACK 01 MODE{mode}/2352\n    INDEX 00 00:00:00\n    INDEX 01 00:02:00\n")).unwrap();
+            let v = IsoVfs::open(&cue).unwrap();
+            assert_eq!(v.read_all("audio/head.vb").unwrap(), b"abcd");
+            // A Form 2 sector must not be passed off as 2048-byte file data.
+            if mode == 2 {
+                let mut raw = std::fs::read(&bin).unwrap();
+                raw[(150 + 20) * 2352 + 18] = 0x20;
+                raw[(150 + 20) * 2352 + 22] = 0x20;
+                std::fs::write(&bin, raw).unwrap();
+                assert!(v.read_all("audio/head.vb").is_err());
+            }
+            std::fs::write(&cue, "FILE \"disc track.bin\" BINARY\n TRACK 01 AUDIO\n INDEX 01 00:00:00\n").unwrap();
+            assert!(IsoVfs::open(&cue).is_err());
+        }
+        std::fs::remove_dir_all(dir).unwrap();
     }
 
     #[test]

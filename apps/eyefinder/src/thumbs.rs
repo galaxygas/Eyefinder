@@ -11,7 +11,7 @@ use crossbeam_channel::{Receiver, Sender, unbounded};
 use ef_core::GameInstall;
 use ef_texture::Rgba;
 use ef_texture::catalog::TexCatalog;
-use ef_texture::txd::Txd;
+use ef_texture::collection::TextureCollection;
 use egui::{ColorImage, TextureHandle, TextureOptions};
 
 /// (library entry id, asset index, level, full size?)
@@ -40,7 +40,7 @@ pub const THUMB_SIDE: u32 = 160;
 const CACHE: usize = 900;
 
 fn worker(rx: Receiver<Request>, out: Sender<(Key, Result<Rgba, String>)>, ctx: egui::Context) {
-    let mut txds: VecDeque<((u64, usize), Arc<Txd>)> = VecDeque::new();
+    let mut txds: VecDeque<((u64, usize), Arc<TextureCollection>)> = VecDeque::new();
     while let Ok(req) = rx.recv() {
         let (entry, asset, level, full) = req.key;
         let a = &req.catalog.assets[asset];

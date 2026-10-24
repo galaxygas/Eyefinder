@@ -203,7 +203,7 @@ pub fn export(
                 width: r.width,
                 height: r.height,
                 mip_levels: r.levels.len(),
-                renderware: crate::rw::version_label(tex.rw_version),
+                renderware: if tex.rw_version == 0 { String::new() } else { crate::rw::version_label(tex.rw_version) },
                 support: asset.support.label(),
                 files,
             });
@@ -212,7 +212,12 @@ pub fn export(
     let json = serde_json::to_string_pretty(&serde_json::json!({
         "game": install.game.name(),
         "platform": install.platform.name(),
+        "edition": install.edition,
+        "user_choice": install.user_choice,
         "source": install.vfs.describe(),
+        "tool": format!("Eyefinder {}", env!("CARGO_PKG_VERSION")),
+        "detection": install.evidence,
+        "catalog_notices": catalog.notices,
         "textures": manifest,
         "skipped": report.skipped,
     }))
