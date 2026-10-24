@@ -2502,4 +2502,42 @@ mod import_tests {
         }
         assert_eq!(theme::palette(&ctx).accent, theme::VICE_NIGHT.accent);
     }
+
+    /// Every text the Index page draws for GTA III with this platform filter.
+    fn index_texts(platform: &str) -> Vec<String> {
+        fn collect(shape: &egui::Shape, out: &mut Vec<String>) {
+            match shape {
+                egui::Shape::Text(t) => out.push(t.galley.text().to_string()),
+                egui::Shape::Vec(v) => v.iter().for_each(|s| collect(s, out)),
+                _ => {}
+            }
+        }
+        let ctx = egui::Context::default();
+        theme::install(&ctx);
+        let p = theme::palette(&ctx);
+        let mut app = EyefinderApp::empty(&ctx, Settings::default(), Err("test".into()));
+        app.index_search = "Grand Theft Auto III".into();
+        app.index_platform = Some(platform.into());
+        let mut texts = Vec::new();
+        // The first frame lays out; the second draws with the sizes known.
+        for _ in 0..2 {
+            let mut out = ctx.run_ui(egui::RawInput::default(), |ui| {
+                egui::CentralPanel::default().show(ui, |ui| app.index_page(ui, &p));
+            });
+            out.textures_delta.clear();
+            texts = Vec::new();
+            out.shapes.iter().for_each(|s| collect(&s.shape, &mut texts));
+        }
+        texts
+    }
+
+    #[test]
+    fn index_support_is_per_platform() {
+        // GTA III is verified on PC only; the Android filter must not show that level.
+        let android = index_texts("android");
+        assert!(android.iter().any(|t| t.contains("Not read by Eyefinder")), "{android:?}");
+        assert!(!android.iter().any(|t| t.contains("Verified")), "{android:?}");
+        let pc = index_texts("pc");
+        assert!(pc.iter().any(|t| t.contains("Verified")), "{pc:?}");
+    }
 }

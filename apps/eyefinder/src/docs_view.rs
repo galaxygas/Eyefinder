@@ -225,9 +225,8 @@ impl EyefinderApp {
                         .collect();
                     ui.label(RichText::new(if dates.is_empty() { "—".into() } else { dates.join(", ") }).size(12.0));
                     ui.label(g.releases.iter().filter(|r| r.platform == pl).count().to_string());
-                    let platform = ef_core::Platform::ALL.iter().find(|x| index::platform_id(**x) == pl);
-                    match (g.game(), platform) {
-                        (Some(game), Some(&platform)) => {
+                    match (g.game(), index::platform_of(&pl)) {
+                        (Some(game), Some(platform)) => {
                             let (level, text) = ef_core::support_summary(game, platform);
                             crate::app::support_badge(ui, p, level).on_hover_text(text);
                         }
