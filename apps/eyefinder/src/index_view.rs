@@ -143,19 +143,28 @@ impl EyefinderApp {
             .inner_margin(Margin::same(12))
             .show(ui, |ui| {
                 ui.set_width(ui.available_width());
+                let mut platforms = g.platforms();
+                if let Some(pl) = platform {
+                    platforms.retain(|x| x == pl);
+                }
                 ui.horizontal_wrapped(|ui| {
                     ui.label(RichText::new(&g.title).size(16.0).family(semibold()));
                     ui.label(RichText::new(year(g.first_release.as_deref())).color(p.accent_text).family(semibold()));
-                    match g.game() {
-                        Some(game) => {
-                            let best = ef_core::Platform::ALL
-                                .iter()
-                                .map(|&pl| ef_core::support_summary(game, pl).0)
-                                .max()
-                                .unwrap_or(ef_core::SupportLevel::DetectedOnly);
-                            support_badge(ui, p, best).on_hover_text("Eyefinder's best support on any platform");
+                    // Support is per platform: a level earned on one platform says nothing about another.
+                    let mut unread = Vec::new();
+                    for pl in &platforms {
+                        match (g.game(), index::platform_of(pl)) {
+                            (Some(game), Some(eplat)) => {
+                                ui.label(RichText::new(eplat.short()).size(11.5).color(p.muted));
+                                platform_badge(ui, p, game, eplat);
+                            }
+                            _ => unread.push(idx.platform_name(pl)),
                         }
-                        None => pill(ui, "Not read by Eyefinder yet", p.muted, p.raised),
+                    }
+                    if g.game().is_none() {
+                        pill(ui, "Not read by Eyefinder yet", p.muted, p.raised);
+                    } else if !unread.is_empty() {
+                        pill(ui, &format!("Not read by Eyefinder: {}", unread.join(", ")), p.muted, p.raised);
                     }
                     ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                         if ui
@@ -177,10 +186,6 @@ impl EyefinderApp {
                         .size(12.0)
                         .color(p.muted),
                     );
-                }
-                let mut platforms = g.platforms();
-                if let Some(pl) = platform {
-                    platforms.retain(|x| x == pl);
                 }
                 for pl in platforms {
                     let rels: Vec<&&Release> = shown.iter().filter(|r| r.platform == pl).collect();
@@ -204,6 +209,17 @@ impl EyefinderApp {
                         &rels.len().to_string(),
                         false,
                         |ui| {
+                            ui.horizontal_wrapped(|ui| match (g.game(), index::platform_of(&pl)) {
+                                (Some(game), Some(eplat)) => {
+                                    platform_badge(ui, p, game, eplat);
+                                    ui.label(
+                                        RichText::new(ef_core::support_summary(game, eplat).1)
+                                            .size(12.0)
+                                            .color(p.muted),
+                                    );
+                                }
+                                _ => pill(ui, "Not read by Eyefinder on this platform", p.muted, p.raised),
+                            });
                             if rels.is_empty() {
                                 ui.label(
                                     RichText::new(
@@ -273,6 +289,12 @@ impl EyefinderApp {
             });
         docs
     }
+}
+
+/// Eyefinder's support level for `game` on this one platform.
+fn platform_badge(ui: &mut Ui, p: &Palette, game: ef_core::Game, platform: ef_core::Platform) {
+    let (level, text) = ef_core::support_summary(game, platform);
+    support_badge(ui, p, level).on_hover_text(format!("{} on {}: {text}", game.short(), platform.name()));
 }
 
 fn or_dash(s: &str) -> &str {

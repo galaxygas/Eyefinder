@@ -183,6 +183,12 @@ pub fn platform_id(p: Platform) -> &'static str {
     }
 }
 
+/// The Eyefinder platform of an index platform id; `None` for platforms Eyefinder does not read
+/// (`android`, `ios`, `ps3`, ...).
+pub fn platform_of(id: &str) -> Option<Platform> {
+    Platform::ALL.iter().copied().find(|&p| platform_id(p) == id)
+}
+
 /// The serial a DAT lists, reduced to the boot file's serial: DATs add variant suffixes
 /// (`SLUS-00106CE`, `SLES-00032/COLL.`, `SLES-000322` for redump's `#2`) and list several serials
 /// separated by commas.
@@ -281,6 +287,12 @@ mod tests {
         let dc = i.by_ip_bin("T40502D 93", "V1.003", "20000702");
         assert!(dc.iter().all(|(_, r)| r.title.starts_with("Grand Theft Auto 2 (Europe)")) && dc.len() == 2);
         assert_eq!(serials("SLUS-00106CE, SLES-00032/COLL.", Platform::Ps1), ["SLUS-00106", "SLES-00032"]);
+        for p in Platform::ALL {
+            assert_eq!(platform_of(platform_id(p)), Some(p));
+        }
+        for id in ["android", "ios", "mac", "ps3", ""] {
+            assert_eq!(platform_of(id), None, "{id}");
+        }
         // "Advance GTA" (Japan) is another game and is not in the index.
         assert!(i.releases().all(|(_, r)| !r.title.starts_with("Advance GTA")));
     }
