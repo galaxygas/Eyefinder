@@ -597,7 +597,7 @@ dependencies = [
 
 [[package]]
 name = "ef-audio"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "ef-core",
  "serde",
@@ -609,7 +609,7 @@ dependencies = [
 
 [[package]]
 name = "ef-core"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "dirs",
  "indexmap",
@@ -626,7 +626,7 @@ dependencies = [
 
 [[package]]
 name = "ef-map"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "ef-core",
  "ef-texture",
@@ -638,7 +638,7 @@ dependencies = [
 
 [[package]]
 name = "ef-texture"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "ef-core",
  "png",
@@ -897,7 +897,7 @@ dependencies = [
 
 [[package]]
 name = "eyefinder"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "crossbeam-channel",
  "dirs",
@@ -918,7 +918,7 @@ dependencies = [
 
 [[package]]
 name = "eyefinder-cli"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "ef-audio",
  "ef-core",
