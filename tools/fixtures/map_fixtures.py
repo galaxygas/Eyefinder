@@ -388,7 +388,8 @@ def main():
     ref['gta1'] = dict(objects=1, cars=1, routes=1, nav=['Downtown', 'Liberty'], police_stations=1)
     ref['gta2'] = dict(zones=[[1, 'Downtown'], [14, 'Zaibatsu']], objects=1, lights=1, animations=1,
                        chunks=['ANIM', 'DMAP', 'JUNK', 'LGHT', 'MOBJ', 'PSXM', 'ZONE'])
-    open(os.path.join(out, 'map_reference.json'), 'w').write(json.dumps(ref, indent=2) + '\n')
+    with open(os.path.join(out, 'map_reference.json'), 'w', newline='\n') as f:
+        f.write(json.dumps(ref, indent=2) + '\n')
 
 
 if __name__ == '__main__':
